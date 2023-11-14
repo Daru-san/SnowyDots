@@ -1,7 +1,7 @@
 #Ani cli config, terminal anime client
 {config, pkgs, ...}:
 { 
-  home.packages = with pkgs; [
+  home.packages = with pkgs.unstable; [
     ani-cli
 
     #Anime downloading script for ani-cli

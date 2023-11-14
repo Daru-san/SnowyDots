@@ -9,7 +9,7 @@
       ./ani-cli/ani-cli.nix
       ./translate-shell/default.nix
     ];
-    home.packages = with pkgs; [
+    home.packages = with pkgs.unstable; [
       hello #Hi there
       tree #tree
       figlet #

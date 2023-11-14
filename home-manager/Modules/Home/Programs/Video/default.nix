@@ -2,7 +2,7 @@
   imports = [
     ./mpv/default.nix
   ];
-  home.packages = with pkgs; [
+  home.packages = with pkgs.unstable; [
     vlc
   ];
 }

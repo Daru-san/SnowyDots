@@ -4,6 +4,7 @@
     ./gitui/default.nix
   ];
   programs.git = {
+    package = pkgs.unstable.git;
     enable = true;
     userName = "Daru-san";
     userEmail = "mica.tui@proton.me";

@@ -9,7 +9,7 @@ in {
   ];
   programs.rofi = {
     enable = true;
-    package = pkgs.rofi-wayland; #Set package to rofi-wayland for Hyprland
+    package = pkgs.unstable.rofi-wayland; #Set package to rofi-wayland for Hyprland
 
     plugins = with pkgs; [
       #Rofi plugins
