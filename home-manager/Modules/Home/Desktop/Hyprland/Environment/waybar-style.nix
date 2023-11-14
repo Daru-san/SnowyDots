@@ -1,23 +1,14 @@
 {config, pkgs, lib, ...}:{
 #Waybar styling
   programs.waybar.style = ''
-  @import "waybar-theme.css";
 * {
    
     font-family: JetBrainsMono Nerd Font;
     font-size: 18px;
 }
 
-/*
-* {
-   
-    font-family: Maple Mono NF;
-    font-size: 18px;
-}
-*/
-
 window#waybar {
-    background-color: #202220;
+    background-color: ${config.colorScheme.colors.base00};
     transition-property: background-color;
     transition-duration: .5s;
 
@@ -48,7 +39,7 @@ button:hover {
 
 #workspaces button {
     background-color: transparent;
-    color: #8abf97;
+    color: ${config.colorScheme.colors.base05};
     padding-left: 4px;
     padding-right: 7px;
 
@@ -87,7 +78,7 @@ button:hover {
     margin-bottom: 4px;
     margin-left: 3px;
     margin-right: 3px;
-    background-color: #313231;
+    background-color: ${config.colorScheme.colors.base06};
 
 }
 
@@ -127,7 +118,7 @@ button:hover {
     margin-top: 4px;
     color: #f23131;
     margin-bottom: 4px;
-    background-color: #98ada1;
+    background-color: ${config.colorScheme.colors.base.base04};
     /*border-radius: 2rem 2rem 2rem 2rem;*/
 }
 
@@ -174,14 +165,14 @@ button:hover {
 #tray,
 #custom-notification,
 #bluetooth {
-  background-color: #424242;
-  color: #79bf9f;
+  background-color: ${config.colorScheme.colors.base07};
+  color: ${config.colorScheme.colors.base08};
 }
 #memory,
 #cpu,
 #battery {
 /* background-color: @dark-blue;*/
- color: #102f2a;
+ color: ${config.colorScheme.colors.base03};
 }
 
 @keyframes blink {
