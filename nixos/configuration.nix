@@ -72,6 +72,6 @@
   # Hostname
   networking.hostName = "AspireNixRebuilt";
 
-  # Pin to NixOS unstable
-  system.stateVersion = "unstable";
+  # Pin to NixOS 23.05
+  system.stateVersion = "23.05";
 }
