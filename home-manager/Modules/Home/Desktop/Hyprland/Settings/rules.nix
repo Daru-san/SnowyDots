@@ -1,5 +1,5 @@
 #Window and workspace rules
-{config, ...}:{
+{...}:{
     wayland.windowManager.hyprland = {
       settings = {
 

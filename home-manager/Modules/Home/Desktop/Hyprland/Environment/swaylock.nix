@@ -1,4 +1,4 @@
-{config, pkgs, ...}:{
+{pkgs, ...}:{
 
   #Fix swaylock not unlocking
   security.pam.services.swaylock.text = ''

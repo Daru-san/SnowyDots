@@ -1,4 +1,4 @@
-{config, pkgs, ...}:
+{pkgs, ...}:
 let
   rofi-bluetooth = "${pkgs.rofi-bluetooth}/bin/rofi-bluetooth";
 in {

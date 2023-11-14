@@ -1,16 +1,24 @@
-{config, pkgs, ...}: {
+{pkgs, ...}: {
   imports = [
-    ./kitty-tab-bar.nix #Import custom tab bar for kitty
+    #Import custom tab bar
+    ./kitty-tab-bar.nix 
   ];
-  programs.kitty = let
-    page = "${pkgs.page}/bin/page";
-  in {
+  programs.kitty = {
     enable = true;
+
+    #Set to unstable
+    package = pkgs.unstable.kitty;
+
+    #Kitty theme
     theme = "Adwaita darker";
+
+    #Kitty font
     font = {
       name = "Jetbrains Mono Nerd Font";
       size = 12;
     };
+
+    #Settings
     settings = {
       tab_bar_edge = "top";
       tab_bar_style = "custom";
@@ -32,8 +40,10 @@
       cursor_shape = "beam";
       cursor_blink_interval = 1;
       cursor_stop_blinking_after = 15;
+
+      #Scrollback pager
       scrollback_lines = 100000;
-      scrollback_pager = "${page}";
+      scrollback_pager = "kitty-scroll";
     };
   };
 
@@ -43,6 +53,8 @@
          nvim --noplugin -c "set signcolumn=no showtabline=0" -c "silent! write! /tmp/kitty_scrollback_buffer | te cat /tmp/kitty_scrollback_buffer - "
      '')
   ];
+
+  #Autostart session files
   home.file.".config/kitty/SystemMonitor.conf".text = ''
     new_tab SystemMonitor
     title Btop

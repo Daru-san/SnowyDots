@@ -1,4 +1,4 @@
-{pkgs, config, ...}:{
+{pkgs, ...}:{
   imports = [
     ./rofi/rofi.nix
     ./kitty.nix
@@ -16,8 +16,4 @@
     hyprpicker #I need to get this to work with notifications
     wtype 
   ];
-  home.sessionVariables = {
-    #Make kitty the default terminal
-    TERMINAL = "${config.programs.kitty.package}/bin/kitty";
-  };
 }

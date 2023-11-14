@@ -1,4 +1,4 @@
-{pkgs, ...}:{
+{...}:{
   services.kanshi = {
     enable = true;
     systemdTarget = "hyprland-session.target";
@@ -15,7 +15,7 @@
         ];
       };
 
-      #kanshi setup for monitor
+      #Profile for when monitor is connected
       home = {
         outputs = [
         {
