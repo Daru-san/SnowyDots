@@ -16,8 +16,9 @@
         canTouchEfiVariables = true;
       };
     };
-    #Set the kernel to lqx
-    kernelPackages = pkgs.linuxPackages_lqx;
+    
+    #Set the kernel to lqx unstable(Latest version)
+    kernelPackages = pkgs.unstable.linuxPackages_lqx;
 
     #Make boot silent
     consoleLogLevel = 0; 
