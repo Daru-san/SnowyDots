@@ -1,0 +1,4 @@
+{...}:{
+
+  services.throttled.enable = true;
+}
