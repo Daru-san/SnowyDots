@@ -1,8 +1,6 @@
 {config, pkgs, nix-colors, ...}:{
   imports = [
     ./gtk/gtk.nix
-    ./Waybar/waybar-theme.nix
-    ./hypr/colors.nix
     nix-colors.homeManagerModules.default
   ];
 

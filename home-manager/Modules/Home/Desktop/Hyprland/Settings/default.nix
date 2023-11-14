@@ -13,15 +13,15 @@
       settings = {
         source = [
           "extra.conf"
-          "colors"
-          "colors.conf"
         ];
         general =  {
-          gaps_in = 2;
-          gaps_out = 7;
-          border_size = 2.7;
+          gaps_in = 1.7;
+          gaps_out = 6;
+          border_size = 2.4;
           cursor_inactive_timeout = 4;
           layout = "master";
+          "col.active_border" = ${config.colorScheme.colors.base02};
+          "col.inactive_border" = ${config.colorScheme.colors.base00};            
         };
         input = {
           repeat_delay = 300;
@@ -34,7 +34,10 @@
         };
         master = {
           new_is_master = false;
-          mfact = 0.6;
+          mfact = 0.55;
+          allow_small_split = true;
+          no_gabs_when_only = true;
+
         };
         decoration = {
           rounding = 5;
@@ -43,9 +46,7 @@
             size = 3;
             passes = 1;
             ignore_opacity = true;
-          };
-          "col.active_border" = ${config.colorScheme.colors.base02};
-          "col.inactive_border" = ${config.colorScheme.colors.base00};          
+          };       
           drop_shadow = true;
           shadow_range = 7;
           shadow_render_power = 6;
