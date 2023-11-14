@@ -1,5 +1,4 @@
-# This is your system's configuration file.
-# Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
+# System configurtion
 {
   inputs,
   outputs,
@@ -8,15 +7,7 @@
   pkgs,
   ...
 }: {
-  # You can import other NixOS modules here
   imports = [
-    # If you want to use modules your own flake exports (from modules/nixos):
-    # outputs.nixosModules.example
-
-    # Or modules from other flakes (such as nixos-hardware):
-    # inputs.hardware.nixosModules.common-cpu-amd
-    # inputs.hardware.nixosModules.common-ssd
-
     #NixOS System Modules
     ./Modules/boot.nix
     ./Modules/audio.nix
@@ -27,6 +18,7 @@
     ./Modules/network.nix
     ./Modules/systemd.nix
     ./Modules/performance.nix
+    ./Modules/hardware.nix
 
     # Hardware configuration
     ./hardware-configuration.nix
@@ -40,9 +32,6 @@
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
 
-      # You can also add overlays exported from other flakes:
-      # neovim-nightly-overlay.overlays.default
-
       # Or define it inline, for example:
       # (final: prev: {
       #   hi = final.hello.overrideAttrs (oldAttrs: {
@@ -50,7 +39,8 @@
       #   });
       # })
     ];
-    # Configure your nixpkgs instance
+
+    # Allow unfree packages
     config = {
       # Disable if you don't want unfree packages
       allowUnfree = true;
@@ -79,11 +69,9 @@
     auto-optimise-store = true;
   };
 
-  # FIXME: Add the rest of your current configuration
-
-  # TODO: Set your hostname
+  # Hostname
   networking.hostName = "AspireNixRebuilt";
 
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "23.05";
+  # Pin to NixOS unstable
+  system.stateVersion = "unstable";
 }
