@@ -21,11 +21,14 @@ in
     };
   in 
     {
-#Enable spicetify
-      enable = true;
+
+    #Set spotify to unstable
+    spotifyPackage = pkgs.unstable.spotify;
+    #Enable spicetify
+    enable = true;
 #Spicetify theme
-      theme = {
-        name = "text";
+    theme = {
+      name = "text";
         src = officialThemes;
         appendName = true;
         injectCss = true;
@@ -39,7 +42,7 @@ in
           "xpui.js_repl_8008" = ",$1}32,";
         };
       };
-      colorScheme = "Spotify";
+    colorScheme = "Spotify";
       # customColorScheme = {
       #   accent = "76946A";
       #   accent-active = "98BB6C";
@@ -56,8 +59,8 @@ in
       #   text = "DCD7BA";
       # };
 
-      enabledExtensions = with spicePkgs.extensions; [
-#Extensions for spicetify
+    #Spicetify extensions
+    enabledExtensions = with spicePkgs.extensions; [
         fullAppDisplayMod
         loopyLoop
         powerBar
@@ -71,7 +74,7 @@ in
         playNext
         savePlaylists
         adblock
-        shuffle # shuffle+ (special characters are sanitized out of ext names)
+        shuffle
         lastfm
         playlistIcons
         goToSong
@@ -80,8 +83,9 @@ in
         playlistIntersection
         skipOrPlayLikedSongs
       ];
+
+      #Custom apps
       enabledCustomApps = with spicePkgs.apps; [
-#Custom apps
         new-releases
         marketplace
         localFiles
