@@ -1,7 +1,8 @@
 {config, pkgs,lib, ...}:
+##Currently under construction
 let
 #Declare for style
-  style = "./Themes/Styles/type-1/style-6.rasi";
+  # style = "./Themes/Styles/type-1/style-6.rasi";
 in {
   imports = [
     ./scripts.nix
@@ -27,6 +28,4 @@ in {
   #Plugins that aren't directly included
     rofi-bluetooth
      ];
-  home.file.".config/rofi/colors".source = config.lib.file.mkOutOfStoreSymlink ./Themes/colors;
-  home.file.".config/rofi/Themes".source = config.lib.file.mkOutOfStoreSymlink ./Themes;
 }
