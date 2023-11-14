@@ -1,6 +1,10 @@
 # SnowflakeOS
 My flake-based NixOS configuration featuring Hyprland, Sway and many more
 
+## Note on this branch
+This is the testing branch, where I mainly test packages and configurations, mainly to keep the 'dev' branch clean of commits
+All changes made in this branch will be merged to the 'dev' branch when they're done
+
 ## Status
 Right now this repo is still in it's early development phase so don't expect much of it
 
