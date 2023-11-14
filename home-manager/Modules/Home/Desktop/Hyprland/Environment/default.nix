@@ -8,7 +8,6 @@
     ./playerctl.nix
     ./kanshi.nix
     ./copyq.nix
-    # ./anyrun.nix
     ./swayidle.nix
   ];
   home.packages = with pkgs; [

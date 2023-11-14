@@ -42,12 +42,6 @@
 
     #Prism launcher
     prismlauncher.url = "github:Diegiwg/PrismLauncher-Cracked";
-
-    #anyrun
-    anyrun = {
-      url = "github:Kirottu/anyrun";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
