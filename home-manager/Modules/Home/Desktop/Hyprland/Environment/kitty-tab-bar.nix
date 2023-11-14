@@ -1,4 +1,4 @@
-{config, ...}:{
+{...}:{
   home.file.".config/kitty/tab_bar.py".text = ''
   # pyright: reportMissingImports=false
 from datetime import datetime
@@ -24,7 +24,7 @@ date_color = as_rgb(color_as_int(opts.color8))
 SEPARATOR_SYMBOL, SOFT_SEPARATOR_SYMBOL = ("", "")
 RIGHT_MARGIN = 1
 REFRESH_TIME = 1
-ICON = "  "
+ICON = " "
 UNPLUGGED_ICONS = {
     10: "󰁺",
     20: "󰁻",
@@ -140,7 +140,7 @@ def get_battery_cells() -> list:
             icon_color = UNPLUGGED_COLORS[
                 min(UNPLUGGED_COLORS.keys(), key=lambda x: abs(x - percent))
             ]
-            icon = UNPLUGGED_ICONS[
+        icon = UNPLUGGED_ICONS[
                 min(UNPLUGGED_ICONS.keys(), key=lambda x: abs(x - percent))
             ]
         elif status == "Not charging\n":

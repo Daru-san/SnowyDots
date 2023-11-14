@@ -1,4 +1,4 @@
-{config, pkgs, nix-colors, ...}:{
+{nix-colors, ...}:{
   imports = [
     ./gtk/gtk.nix
     nix-colors.homeManagerModules.default
@@ -26,6 +26,6 @@
       base0D = "#8E7DC6";
       base0E = "#953B9D";
       base0F = "#59325C";
-    }
+    };
   };
 }

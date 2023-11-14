@@ -1,4 +1,4 @@
-{config, pkgs, lib, ...}:{
+{config, ...}:{
 #Waybar styling
   programs.waybar.style = ''
 * {

@@ -1,4 +1,4 @@
-{config, pkgs, ...}:{
+{pkgs, ...}:{
   imports = [
     ./Themes/default.nix
     ./Environment/default.nix
