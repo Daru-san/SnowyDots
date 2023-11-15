@@ -19,4 +19,9 @@
   nixpkgs.config.packageOverrides = pkgs: {
     vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
   };
+
+  system.replaceRuntimeDependencies = [
+({ original = pkgs.mesa; replacement = (import pkgs.stable { }).pkgs.mesa; })
+({ original = pkgs.mesa.drivers; replacement = (import pkgs.stable { }).pkgs.mesa.drivers; })
+];
 }
