@@ -19,6 +19,7 @@
     ./Modules/systemd.nix
     ./Modules/performance.nix
     ./Modules/hardware.nix
+    ./Modules/systemPackages.nix
 
     # Hardware configuration
     ./hardware-configuration.nix
