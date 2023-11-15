@@ -1,6 +1,8 @@
-{...}:{
-#Enable greetd
+{pkgs, ...}:{
+
+#Enable greetd using tuigreet
   services.greetd = {
+    package = pkgs.unstable.greetd;
     enable = true;
     settings = rec {
      initial_session = {
@@ -12,22 +14,36 @@
   };
 
   # X11 (Disabled since I use wayland)
-  services.xserver.enable = false;
+  services = {
+    xserver = {
+      enable = false;
 
-  #Both GNOME AND KDE are disabled but can be reenabled here
+      #Keyboard settings
+      layout = "za";
+      xkbVariant = "";
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = false;
-  services.xserver.desktopManager.gnome.enable = false;
-  
-  #KDE
-  services.xserver.displayManager.sddm.enable = false;
-  services.xserver.desktopManager.plasma5.enable = false;
-
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "za";
-    xkbVariant = "";
+      #Display managers
+      displayManager = {
+        #GDM for gnome
+        gdm = {
+          enable = false;
+        };
+        #SDDM for kde
+        sddm = {
+          enable = false;
+        };
+      };
+      #Desktop environments
+      desktopManager = {
+        #KDE
+        plasma5 = {
+          enable = false;
+        };
+        #GNOME
+        gnome = {
+          enable = false;
+        };
+      };
+    };
   };
-
 }
