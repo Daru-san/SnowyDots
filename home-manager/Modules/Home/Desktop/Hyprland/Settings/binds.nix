@@ -3,7 +3,7 @@
     ./extra-binds.nix
   ];
   wayland.windowManager.hyprland.settings = {
-    binds = let
+    bind = let
       swayosd = "${config.services.swayosd.package}/bin/swayosd";
       rofi = "${config.programs.rofi.package}/bin/rofi";
       rofi-bluetooth = "${pkgs.rofi-bluetooth}/bin/rofi-bluetooth";

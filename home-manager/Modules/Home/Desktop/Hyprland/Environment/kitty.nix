@@ -10,7 +10,7 @@
     package = pkgs.kitty;
 
     #Kitty theme
-    theme = "Solarized Dark Higher Contrast";
+    theme = "Hybrid";
 
     #Kitty font
     font = {
