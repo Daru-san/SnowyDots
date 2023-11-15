@@ -15,17 +15,18 @@
   #User configurations
   users = {
     users = {
-    #My main user
-    daru = {
-      isNormalUser = true;
-      defaultShell = pkgs.zsh;
-      initialPassword = "NixRebuilt";
-      description = "Daru";
-      extraGroups = [ "networkmanager" "wheel" "video" "adbusers" "input"];
+      #My main user
+      daru = {
+        isNormalUser = true;
+        shell = pkgs.unstable.zsh;
+        initialPassword = "NixRebuilt";
+        description = "Daru";
+        extraGroups = [ "networkmanager" "wheel" "video" "adbusers" "input"];
+      };
+      #Disables root user
+      root.hashedPassword = "!";
     };
-    #Disables root user
-    root.hashedPassword = "!";
-    # mutableUsers = false;
-    };
+  #Prevent users from being made outside this file
+    mutableUsers = false;
   };
 }
