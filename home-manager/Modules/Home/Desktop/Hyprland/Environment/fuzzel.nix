@@ -5,7 +5,7 @@
       main = {
         terminal = "${config.programs.kitty.package}/bin/kitty";
         layer = "overlay";
-        anchor = "center";
+        # anchor = "center";
         font = "Jetbrains Mono Nerd Font";
       };
       colors = {
