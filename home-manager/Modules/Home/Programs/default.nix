@@ -11,9 +11,7 @@
   home.packages = with pkgs; [
     libreoffice-fresh
     obsidian
-    #gimp
     pinta
-    mission-center
     newsflash
     evince
     gnome3.nautilus
