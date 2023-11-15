@@ -1,3 +1,3 @@
-{ pkgs, lib, prismlauncher, ... }: {
-  home.packages = [ prismlauncher.packages.${pkgs.system}.prismlauncher ];
+{ pkgs, lib, inputs, ... }: {
+  home.packages = [ inputs.prismlauncher.packages.${pkgs.system}.prismlauncher ];
 }
