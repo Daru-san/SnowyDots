@@ -34,5 +34,7 @@
       browsh
       krabby
       yafetch
+      most #pager
+      pulsemixer
     ];
   }

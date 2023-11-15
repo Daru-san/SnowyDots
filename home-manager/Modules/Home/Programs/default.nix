@@ -24,6 +24,10 @@
     gthumb
     scrcpy
     localsend
+    gnome.file-roller
+    gparted
+    gnome.gnome-software
+    pavucontrol
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
