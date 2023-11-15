@@ -11,7 +11,7 @@ in {
   imports = [
     ./wpaperd/default.nix
   ];
-  home.packages = with pkgs.unstable; [
+  home.packages = with pkgs; [
     swww #Wallpaper support for wayland
     #swaybg #uncomment to enable swaybg
 
