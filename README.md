@@ -1,10 +1,6 @@
 # SnowflakeOS
 My flake-based NixOS configuration featuring Hyprland, Sway and many more
 
-## Note on this branch
-This is the testing branch, where I mainly test packages and configurations, mainly to keep the 'dev' branch clean of commits
-All changes made in this branch will be merged to the 'dev' branch when they're done
-
 ## Status
 Right now this repo is still in it's early development phase so don't expect much of it
 
@@ -15,15 +11,15 @@ Right now this repo is still in it's early development phase so don't expect muc
 
 ## TODO:
 
-### To be done:
-- [ ] Build the config successfully
-- [ ] Implement configuration switching for seperate users and devices
+### Todo:
+- [ ] Implement multi-device configs
 - [ ] Set up shell environments for developing in different languages
 - [ ] Create a deploy script
 - [ ] Set up custom packages
 - [ ] Completely overhaul rofi configuration
 
 ### In Progress:
+- [ ] Build system
 - [ ] Reconfigure home with custom variables
     - [x] Implement color variables
     - [ ] Implement wallpaper variables
@@ -31,9 +27,6 @@ Right now this repo is still in it's early development phase so don't expect muc
 - [ ] Add nixos modules
     - [x] Add system modules
     - [ ] Add extra modules for hardware configurations
-- [ ] Implement global home modules
-    - [x] Add user specific modules 
-    - [ ] Implement shared modules
 - [ ] Finish configuring user environment 
     - [ ] Implement desktop switching 
     - [ ] Implement theme switching
@@ -44,4 +37,4 @@ Right now this repo is still in it's early development phase so don't expect muc
     - [ ] Set up home persistence module
 
 ### Completed
-- [x] Add modules to flake
+- [x] Finish flake
