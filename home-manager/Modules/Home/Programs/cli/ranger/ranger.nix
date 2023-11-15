@@ -1,6 +1,6 @@
 {config, pkgs, lib, ...}:{
 
-  home.packages = with pkgs.unstable; [
+  home.packages = with pkgs; [
     ranger
   ];
   #Symlinking the ranger config

@@ -1,6 +1,6 @@
 {config, pkgs ,...}:{
   programs.java = {
     enable = true;
-    package = pkgs.unstable.openjdk17;
+    package = pkgs.openjdk17;
   };
 }

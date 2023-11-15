@@ -2,7 +2,6 @@
 {config, pkgs, ...}: {
     programs.btop = {
       enable = true;
-      package = pkgs.unstable.btop;
       settings = {
         color_theme = "adapta";
         theme_background = true;
