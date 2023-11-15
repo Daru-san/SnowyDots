@@ -20,7 +20,7 @@
       hdrop = "${inputs.hyprland-contrib.packages.${pkgs.system}.hdrop}/bin/hdrop";
       swaylock = "${config.programs.swaylock.package}/bin/swaylock";
       copyq = "${config.services.copyq.package}/bin/copyq";
-      fuzzel = "${config.programs.fuzzel.package}/bin/fuzzel"
+      fuzzel = "${config.programs.fuzzel.package}/bin/fuzzel";
     in [
       #Basic binds
       "SUPER,space,exec, ${fuzzel}"
