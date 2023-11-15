@@ -14,7 +14,7 @@
         new_is_master = false;
         mfact = 0.55;
         allow_small_split = true;
-        no_gabs_when_only = true;
+        no_gaps_when_only = true;
       };
       decoration = {
         rounding = 5;
