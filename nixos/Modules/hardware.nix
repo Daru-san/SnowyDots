@@ -16,4 +16,7 @@
     driSupport = true;
     driSupport32Bit = true;
   };
+  nixpkgs.config.packageOverrides = pkgs: {
+    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
+  };
 }
