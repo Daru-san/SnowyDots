@@ -1,4 +1,4 @@
-{...}:{
+{pkgs,...}:{
 #Bootloader configs
   boot = {
     loader = {
