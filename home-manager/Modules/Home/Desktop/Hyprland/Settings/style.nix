@@ -1,4 +1,4 @@
-{...}:{
+{config, ...}:{  
   wayland.windowManager.hyprland = {
     settings = {
       general =  {
@@ -7,8 +7,8 @@
         border_size = 2.4;
         cursor_inactive_timeout = 4;
         layout = "master";
-        "col.active_border" = ${config.colorScheme.colors.base02};
-        "col.inactive_border" = ${config.colorScheme.colors.base00};            
+        "col.active_border" = "${config.colorScheme.colors.base02}";
+        "col.inactive_border" = "${config.colorScheme.colors.base00}";            
       };
       master = {
         new_is_master = false;

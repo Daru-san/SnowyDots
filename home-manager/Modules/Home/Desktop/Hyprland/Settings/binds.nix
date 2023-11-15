@@ -2,8 +2,8 @@
   imports = [
     ./extra-binds.nix
   ];
-  wayland.windowManager.hyprland = {
-    bind = let
+  wayland.windowManager.hyprland.settings = {
+    binds = let
       swayosd = "${config.services.swayosd.package}/bin/swayosd";
       rofi = "${config.programs.rofi.package}/bin/rofi";
       rofi-bluetooth = "${pkgs.rofi-bluetooth}/bin/rofi-bluetooth";
@@ -19,7 +19,6 @@
       image-editor = "${pkgs.pinta}/bin/pinta";
       hdrop = "${inputs.hyprland-contrib.packages.${pkgs.system}.hdrop}/bin/hdrop";
       swaylock = "${config.programs.swaylock.package}/bin/swaylock";
-      rofi = "${config.programs.rofi.package}/bin/rofi";
       copyq = "${config.services.copyq.package}/bin/copyq";      
     in [
       #Basic binds

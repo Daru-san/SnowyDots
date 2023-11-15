@@ -5,7 +5,7 @@
     package = pkgs.unstable.mangohud;
     settings = {
       full = true;
-      output_folder = ~/.mango;
+      output_folder = "${config.home.homeDirectory}/.mango";
     };
     enableSessionWide = true;
   };

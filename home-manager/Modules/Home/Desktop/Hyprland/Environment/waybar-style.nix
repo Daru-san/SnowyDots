@@ -118,7 +118,7 @@ button:hover {
     margin-top: 4px;
     color: #f23131;
     margin-bottom: 4px;
-    background-color: ${config.colorScheme.colors.base.base04};
+    background-color: ${config.colorScheme.colors.base04};
     /*border-radius: 2rem 2rem 2rem 2rem;*/
 }
 

@@ -8,9 +8,6 @@ in
     "spotify"
   ];
 
-  # import the flake's module for your system
-  imports = [ spicetify-nix.homeManagerModule ];
-
   # configure spicetify :)
   programs.spicetify = let
     #Import officialThemes since 'text isn't provided by default

@@ -1,5 +1,5 @@
 {config, pkgs, ...}:{
-  wayland.windowManager = {
+  wayland.windowManager.hyprland.settings = {
     exec = let
       wall-program = "swww";
       wallpaper = "~/Wallpapers/plant.png";

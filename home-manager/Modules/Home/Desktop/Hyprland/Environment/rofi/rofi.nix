@@ -5,7 +5,7 @@ let
   # style = "./Themes/Styles/type-1/style-6.rasi";
 in {
   imports = [
-    ./scripts.nix
+    # ./scripts.nix
   ];
   programs.rofi = {
     enable = true;
@@ -19,7 +19,7 @@ in {
     ];
     font = "Jetbrains Mono Nerd Font 14";
     terminal = "${pkgs.kitty}/bin/kitty";
-    theme = "${style}";
+    # theme = "${style}";
     extraConfig = {
       modes = ["drun" "run" "window" "files" "calc" "top"];
     };
@@ -27,5 +27,5 @@ in {
   home.packages = with pkgs; [
   #Plugins that aren't directly included
     rofi-bluetooth
-     ];
+  ];
 }
