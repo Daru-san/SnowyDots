@@ -14,7 +14,7 @@
 	  cpuFreqGovernor = "performance";
 
     #Enable powertop for system monitoring
-    powetop = {
+    powertop = {
       enable = true;
     };
   };

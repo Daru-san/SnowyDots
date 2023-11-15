@@ -16,7 +16,7 @@
 
   #Bluetooth configurations
   services.blueman.enable = true;
-  hardware.bluetooth {
+  hardware.bluetooth = {
     enable = true;
     powerOnBoot = false;
     settings = {

@@ -8,29 +8,30 @@
 
     #GLobal shell aliases
     shellAliases = let     
-    ranger = "${pkgs.ranger}/bin/ranger";
-    w3m = "${pkgs.w3m}/bin/w3m";
-    rsync = "${pkgs.rsync}/bin/rsync";
-  in {
-    #Useful shell aliases
-    ll = "ls -l";
-    ex = "exit";   
-    rs = "reset";
-    cl = "clear";
-    rebootF = "sudo systemctl reboot -f";
-    logout = "loginctl terminate-user $USER";
+      ranger = "${pkgs.ranger}/bin/ranger";
+      w3m = "${pkgs.w3m}/bin/w3m";
+      rsync = "${pkgs.rsync}/bin/rsync";
+    in {
+     #Useful shell aliases
+      ll = "ls -l";
+      ex = "exit";   
+      rs = "reset";
+      cl = "clear";
+      rebootF = "sudo systemctl reboot -f";
+      logout = "loginctl terminate-user $USER";
 
-    #Userful rsync aliases
-    rsync-copy = "${rsync} -avzhe --progress";
-    rsync-move = "${rsync} --remove-source-files -zvh --progress";
+      #Userful rsync aliases
+      rsync-copy = "${rsync} -avzhe --progress";
+      rsync-move = "${rsync} --remove-source-files -zvh --progress";
 
-    #Nix aliases
-    nix-upgrade = "nixos-rebuild --flake .#AspireNixRebuilt --upgrade-all";
-    nix-rebuild = "nixos-rebuild --flake .#AspireNixRebuilt";
-    nix-manual = "${w3m}/bin/w3m file:///nix/store/cvnacwjawy7fi41q5ffklvxcjnhnib3k-nixos-manual-html/share/doc/nixos/index.html";
+      #Nix aliases
+      nix-upgrade = "nixos-rebuild --flake .#AspireNixRebuilt --upgrade-all";
+      nix-rebuild = "nixos-rebuild --flake .#AspireNixRebuilt";
+      nix-manual = "${w3m}/bin/w3m file:///nix/store/cvnacwjawy7fi41q5ffklvxcjnhnib3k-nixos-manual-html/share/doc/nixos/index.html";
     
-    #Program specific aliases
-    r = "${ranger}";
+      #Program specific aliases
+      r = "${ranger}";
+    };
   };
 
   #Enable neovim and set as main editor
