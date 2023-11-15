@@ -2,7 +2,7 @@
   #Intel GPU specific hardware configuration
     hardware.opengl = {
     enable = true;
-    extraPackages = with pkgs.unstable; [
+    extraPackages = with pkgs; [
       intel-media-driver # LIBVA_DRIVER_NAME=iHD
       vaapiIntel         # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
       intel-compute-runtime
@@ -17,6 +17,6 @@
     driSupport32Bit = true;
   };
   nixpkgs.config.packageOverrides = pkgs: {
-    vaapiIntel = pkgs.unstable.vaapiIntel.override { enableHybridCodec = true; };
+    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
   };
 }

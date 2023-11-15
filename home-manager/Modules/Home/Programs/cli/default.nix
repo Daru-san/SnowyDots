@@ -9,7 +9,7 @@
       ./ani-cli/ani-cli.nix
       ./translate-shell/default.nix
     ];
-    home.packages = with pkgs.unstable; [
+    home.packages = with pkgs; [
       hello #Hi there
       tree #tree
       figlet #
@@ -37,4 +37,4 @@
       most #pager
       pulsemixer
     ];
-  }
+ }

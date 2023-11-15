@@ -18,7 +18,7 @@
     };
     
     #Set the kernel to lqx unstable(Latest version)
-    kernelPackages = pkgs.unstable.linuxPackages_lqx;
+    kernelPackages = pkgs.linuxPackages_lqx;
 
     #Make boot silent
     consoleLogLevel = 0; 

@@ -20,8 +20,6 @@ in
   in 
     {
 
-    #Set spotify to unstable
-    spotifyPackage = pkgs.unstable.spotify;
     #Enable spicetify
     enable = true;
 #Spicetify theme

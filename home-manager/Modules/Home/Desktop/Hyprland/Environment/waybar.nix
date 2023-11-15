@@ -7,7 +7,7 @@ in {
     ];
   programs.waybar = {
       #Fix for waybar hyprland scrolling
-    package = pkgs.unstable.waybar.overrideAttrs (oa: {
+    package = pkgs.waybar.overrideAttrs (oa: {
       mesonFlags = (oa.mesonFlags or  []) ++ [ "-Dexperimental=true" ];
       patches = (oa.patches or []) ++ [
         (pkgs.fetchpatch {

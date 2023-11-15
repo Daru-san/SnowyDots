@@ -2,7 +2,6 @@
 
 {config, pkgs, ...}: {
     programs.zsh = {
-      package = pkgs.unstable.zsh;
       enable = true;
       #Aliases for zsh
       shellAliases = let

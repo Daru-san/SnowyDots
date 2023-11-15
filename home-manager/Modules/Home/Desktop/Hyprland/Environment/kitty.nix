@@ -7,7 +7,7 @@
     enable = true;
 
     #Set to unstable
-    package = pkgs.unstable.kitty;
+    package = pkgs.kitty;
 
     #Kitty theme
     theme = "Solarized Dark Higher Contrast";

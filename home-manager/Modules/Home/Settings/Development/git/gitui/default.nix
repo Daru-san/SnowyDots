@@ -1,7 +1,6 @@
 {pkgs, config, ...}:{
   programs.gitui = {
     enable = true;
-    package = pkgs.unstable.gitui;
     keyConfig = ''
 
     '';

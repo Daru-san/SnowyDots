@@ -9,7 +9,7 @@
   #Enable waydroid
   virtualisation.waydroid.enable = true;
 
-  environment.systemPackages = with pkgs.unstable; [
+  environment.systemPackages = with pkgs; [
     #Same as gvfs but can be configured to mount to actual directories
     jmtpfs
   ];

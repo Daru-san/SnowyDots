@@ -2,7 +2,6 @@
 {config, pkgs, ...}:{
   programs.mpv = {
     enable = true;
-    # package = pkgs.unstable.mpv;
     bindings = {
     };
 
@@ -14,7 +13,7 @@
     };
 
     #mpv scripts
-    scripts = with pkgs.unstable.mpvScripts; [
+    scripts = with pkgs.mpvScripts; [
       sponsorblock
       convert
       uosc

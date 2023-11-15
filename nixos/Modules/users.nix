@@ -18,7 +18,7 @@
       #My main user
       daru = {
         isNormalUser = true;
-        shell = pkgs.unstable.zsh;
+        shell = pkgs.zsh;
         initialPassword = "NixRebuilt";
         description = "Daru";
         extraGroups = [ "networkmanager" "wheel" "video" "adbusers" "input"];

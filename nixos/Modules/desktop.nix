@@ -2,7 +2,7 @@
 
 #Enable greetd using tuigreet
   services.greetd = {
-    package = pkgs.unstable.greetd;
+    package = pkgs.greetd;
     enable = true;
     settings = rec {
      initial_session = {
@@ -18,7 +18,7 @@
     enable = true;
 
     #Set hyprland to unstable
-    package = pkgs.unstable.hyprland;
+    package = pkgs.hyprland;
   };
   #Fix swaylock not unlocking
   security.pam.services.swaylock.text = ''

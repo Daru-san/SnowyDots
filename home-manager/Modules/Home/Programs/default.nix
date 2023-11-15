@@ -8,7 +8,7 @@
     ./Browser/default.nix
     ./Images/default.nix
   ];
-  home.packages = with pkgs.unstable; [
+  home.packages = with pkgs; [
     libreoffice-fresh
     obsidian
     pinta

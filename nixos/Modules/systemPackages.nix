@@ -10,13 +10,14 @@
   };
 
   #System packages
-  environment.systemPackages = with pkgs.unstable; [
+  environment.systemPackages = with pkgs; [
     ranger
     htop
     wget
     nix-prefetch-git
     nix-prefetch-github
     gcc
+    glib
     nodejs_20
     unzip
     clang
