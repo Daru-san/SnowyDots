@@ -10,7 +10,7 @@
     package = pkgs.unstable.kitty;
 
     #Kitty theme
-    theme = "Adwaita darker";
+    theme = "Solarized Dark Higher Contrast";
 
     #Kitty font
     font = {
