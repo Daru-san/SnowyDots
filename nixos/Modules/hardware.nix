@@ -21,7 +21,7 @@
   };
 
   system.replaceRuntimeDependencies = [
-({ original = pkgs.mesa; replacement = (import pkgs.stable { }).pkgs.mesa; })
-({ original = pkgs.mesa.drivers; replacement = (import pkgs.stable { }).pkgs.mesa.drivers; })
+({ original = pkgs.mesa; replacement = (pkgs.stable.mesa); })
+({ original = pkgs.mesa.drivers; replacement = (pkgs.stable.mesa.drivers);})
 ];
 }
