@@ -19,6 +19,7 @@
       Anime = "${config.home.homeDirectory}/Anime";
       screenshots = "${config.home.homeDirectory}/screenshots";
       Projects = "${config.home.homeDirectory}/Projects";
+      mango = "${config.home.homeDirectory}/.mango";
     };
   };
 }
