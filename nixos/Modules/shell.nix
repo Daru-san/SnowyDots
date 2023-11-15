@@ -1,10 +1,8 @@
 {pkgs, ...}:{
+  #Enable zsh
+  programs.zsh.enable = true;
   environment = {
     #Installed shells
-    shells = with pkgs; [
-      zsh
-      bashInteractive
-    ];
 
     #GLobal shell aliases
     shellAliases = let     
