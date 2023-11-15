@@ -4,7 +4,7 @@
   inputs = {
 
     # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     
     #Add unstable packages
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
