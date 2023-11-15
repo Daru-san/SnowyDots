@@ -13,6 +13,17 @@
     };
   };
 
+  #Enable Hyprland
+  programs.hyprland = {
+    enable = true;
+
+    #Set hyprland to unstable
+    package = pkgs.unstable.hyprland;
+  };
+  #Fix swaylock not unlocking
+  security.pam.services.swaylock.text = ''
+    auth include login
+   '';
   # X11 (Disabled since I use wayland)
   services = {
     xserver = {
