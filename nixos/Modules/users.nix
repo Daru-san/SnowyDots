@@ -26,6 +26,6 @@
       root.hashedPassword = "!";
     };
   #Prevent users from being made outside this file
-    mutableUsers = false;
+    mutableUsers = true;
   };
 }
