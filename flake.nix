@@ -10,8 +10,8 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Home manager
-    home-manager.url = "github:nix-community/home-manager/release-23.05";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.url = "github:nix-community/home-manager/master";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     #Nix-hardware
     hardware.url = "github:nixos/nixos-hardware";
@@ -25,12 +25,12 @@
     #Spicetify
     spicetify-nix.url = "github:the-argus/spicetify-nix/master";
 
-    #Hyprland#
-    # hyprland = {
-    #   #Hyprland input
-    #   url = "github:hyprwm/Hyprland";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    ##Hyprland##
+    hyprland = {
+      #Add Hyprland to home config
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hyprland-contrib = {
       #Hyprland-contrib for hyprland specific packages
       url = "github:hyprwm/contrib";
@@ -42,12 +42,16 @@
 
     #Prism launcher
     prismlauncher.url = "github:Diegiwg/PrismLauncher-Cracked";
+
+    #Firefox nightly
+    firefox.url = "github:nix-community/flake-firefox-nightly";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    hyprland,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -83,10 +87,11 @@
     nixosConfigurations = {
       #'nixos-rebuild --flake .#AspireNixRebuilt'
       AspireNixRebuilt = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {inherit inputs outputs hyprland;};
         modules = [
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
+          hyprland.nixosModules.default
         ];
       };
     };
