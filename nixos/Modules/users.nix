@@ -19,7 +19,6 @@
       daru = {
         isNormalUser = true;
         shell = pkgs.zsh;
-        initialPassword = "NixRebuilt";
         description = "Daru";
         extraGroups = [ "networkmanager" "wheel" "video" "adbusers" "input"];
       };
