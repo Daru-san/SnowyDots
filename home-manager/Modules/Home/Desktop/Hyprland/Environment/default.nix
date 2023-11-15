@@ -9,6 +9,7 @@
     ./kanshi.nix
     ./copyq.nix
     ./swayidle.nix
+    ./fuzzel.nix
   ];
   home.packages = with pkgs; [
     wl-clipboard

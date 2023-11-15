@@ -19,10 +19,11 @@
       image-editor = "${pkgs.pinta}/bin/pinta";
       hdrop = "${inputs.hyprland-contrib.packages.${pkgs.system}.hdrop}/bin/hdrop";
       swaylock = "${config.programs.swaylock.package}/bin/swaylock";
-      copyq = "${config.services.copyq.package}/bin/copyq";      
+      copyq = "${config.services.copyq.package}/bin/copyq";
+      fuzzel = "${config.programs.fuzzel.package}/bin/fuzzel"
     in [
       #Basic binds
-      "SUPER,space,exec, ${rofi} -show drun"
+      "SUPER,space,exec, ${fuzzel}"
       "SUPER, Return, exec, ${terminal}"
       "SUPER, e, exec, ${hdrop} '${file-manager}'"
       "SUPER, b, exec, ${rofi-bluetooth}"
