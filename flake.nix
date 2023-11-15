@@ -26,11 +26,11 @@
     spicetify-nix.url = "github:the-argus/spicetify-nix/master";
 
     #Hyprland#
-    hyprland = {
-      #Add Hyprland to home config
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # hyprland = {
+    #   #Hyprland input
+    #   url = "github:hyprwm/Hyprland";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     hyprland-contrib = {
       #Hyprland-contrib for hyprland specific packages
       url = "github:hyprwm/contrib";
