@@ -10,7 +10,7 @@
 #Configuring Hyprland 
   wayland.windowManager.hyprland = {
     #Temporarily disabled until I can get it to work
-    enable = false;
+    enable = true;
     #Use unstable package
     package = pkgs.unstable.hyprland;
     # enableNvidiaPatches = true;
