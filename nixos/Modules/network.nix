@@ -20,7 +20,7 @@
     enable = true;
     powerOnBoot = false;
     settings = {
-      DiscoverableTimout = 0;
+      # DiscoverableTimout = 0;
     };
     input = {
     };
