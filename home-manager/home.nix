@@ -11,8 +11,8 @@
   # You can import other home-manager modules here
   imports = [
     inputs.nix-colors.homeManagerModules.default
-    inputs.spicetify-nix.homeManagerModules.default
 
+    inputs.spicetify-nix.homeManagerModules.default
     #Add nur
     inputs.nur.nixosModules.nur
 

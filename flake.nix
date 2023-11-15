@@ -52,6 +52,7 @@
     nixpkgs,
     home-manager,
     hyprland,
+    spicetify-nix,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -87,7 +88,7 @@
     nixosConfigurations = {
       #'nixos-rebuild --flake .#AspireNixRebuilt'
       AspireNixRebuilt = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs hyprland;};
+        specialArgs = {inherit inputs outputs hyprland spicetify-nix;};
         modules = [
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
