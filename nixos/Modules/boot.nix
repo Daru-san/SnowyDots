@@ -18,7 +18,7 @@
           "reboot.conf" = ''
             title Reboot
           '';
-        }
+        };
       };
       efi = {
         canTouchEfiVariables = true;
