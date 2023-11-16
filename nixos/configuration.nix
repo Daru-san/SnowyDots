@@ -82,7 +82,7 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_ZA.UTF-8";
   # Hostname
-  networking.hostName = "AspireNixRebuilt";
+  networking.hostName = "AspireNix";
 
   # Pin to NixOS 23.05
   system.stateVersion = "23.11";
