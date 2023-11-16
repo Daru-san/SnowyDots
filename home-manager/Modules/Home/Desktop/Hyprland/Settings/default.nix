@@ -1,4 +1,4 @@
-{pkgs,  ...}:{
+{...}:{
   imports = [
     ./binds.nix
     ./fonts.nix

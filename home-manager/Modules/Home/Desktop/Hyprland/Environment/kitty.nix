@@ -6,9 +6,6 @@
   programs.kitty = {
     enable = true;
 
-    #Set to unstable
-    package = pkgs.kitty;
-
     #Kitty theme
     theme = "Hybrid";
 
@@ -67,12 +64,12 @@
   home.file.".config/kitty/git.conf".text = ''
     new_tab GitUI
     title GitUI
-    cd ~/Nix-Dots
+    cd ~/snowflake
     launch gitui
 
     new_tab GitFiles
     title Ranger
-    cd ~/Nix-Dots 
+    cd ~/snowflake
     launch ranger
   '';
 }

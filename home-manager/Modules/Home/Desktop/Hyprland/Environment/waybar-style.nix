@@ -9,6 +9,7 @@
 
 window#waybar {
     background-color: #${config.colorScheme.colors.base00};
+
     transition-property: background-color;
     transition-duration: .5s;
 
