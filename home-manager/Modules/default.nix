@@ -1,4 +1,4 @@
-{...}{
+{...}:{
   imports = [
     ./Desktop/default.nix
     ./Programs/default.nix
