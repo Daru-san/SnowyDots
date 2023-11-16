@@ -5,7 +5,7 @@
         gaps_in = 1.7;
         gaps_out = 6;
         border_size = 2.4;
-        cursor_inactive_timeout = 4;
+        cursor_inactive_timeout = 30;
         layout = "master";
         "col.active_border" = "${config.colorScheme.colors.base02}";
         "col.inactive_border" = "${config.colorScheme.colors.base00}";            
