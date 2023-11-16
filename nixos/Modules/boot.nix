@@ -10,10 +10,10 @@
         #Limit configurations to 10 max
         configurationLimit = 10;
       };
-    efi = {
-      canTouchEfiVariables = true;
+      efi = {
+        canTouchEfiVariables = true;
+      };
     };
-    
     #Set the kernel to lqx unstable(Latest version)
     kernelPackages = pkgs.linuxPackages_lqx;
 
