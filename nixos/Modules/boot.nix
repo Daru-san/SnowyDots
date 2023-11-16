@@ -9,42 +9,9 @@
         editor = false;
         #Limit configurations to 10 max
         configurationLimit = 10;
-
-        extraEntries = {
-          "shutdown.conf" = ''
-            title Shutdown
-
-          '';
-          "reboot.conf" = ''
-            title Reboot
-          '';
-        };
       };
-      efi = {
-        canTouchEfiVariables = true;
-      };
-      grub = {
-        #Enable grub
-        enable = true;
-
-        #Use os prober to detect windows
-        useOSProber = true;
-
-        #Limit configuratios to 14 
-        configurationLimit = 14;
-
-        #Enable uefi support
-        efiSupport = true;
-
-        #Set grub installation partition 
-        device = "/dev/disk/by-uuid/5BC9-5E1D";
-      };
-      grub2-theme = {
-        enable = true;
-        theme = "stylish";
-        icon = "color";
-        screen = "1080p";
-      };
+    efi = {
+      canTouchEfiVariables = true;
     };
     
     #Set the kernel to lqx unstable(Latest version)
@@ -53,7 +20,7 @@
     #Make boot silent
     consoleLogLevel = 0; 
     plymouth = {
-      enable = true;
+      enable = false;
     };
     kernelParams = [ "quiet" "udev.log_level=3" ];
     initrd = {
@@ -64,5 +31,12 @@
     #Kernel modules
     kernelModules = [ "kvm-intel" ];
     extraModulePackages = [ ];
+  };
+
+  #Add the system76-scheduler
+  services.system76-scheduler = {
+    enable = true;
+    useStockConfig = true;
+    enableAll = true;
   };
 }
