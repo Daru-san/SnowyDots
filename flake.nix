@@ -90,14 +90,14 @@
 
     # NixOS configuration
     nixosConfigurations = {
-      #'nixos-rebuild --flake .#AspireNixRebuilt'
-      AspireNixRebuilt = nixpkgs.lib.nixosSystem {
+      #'nixos-rebuild --flake .#AspireNix'
+      AspireNix = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs grub-themes hyprland spicetify-nix;};
         modules = [
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
           hyprland.nixosModules.default
-          grub-themes.nixosModule
+          grub-themes.nixosModules.default
         ];
       };
     };
