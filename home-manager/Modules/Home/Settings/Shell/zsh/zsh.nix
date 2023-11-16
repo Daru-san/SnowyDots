@@ -4,41 +4,18 @@
     programs.zsh = {
       enable = true;
       #Aliases for zsh
-      shellAliases =let
-         git = "${config.programs.git.package}/bin/git";
-         neofetch = "${pkgs.neofetch}/bin/neofetch";
-         tty-clock = "${pkgs.tty-clock}/bin/tty-clock";
-         kitty = "${config.programs.kitty.package}/bin/kitty";
+      shellAliases = let
+        git = "${config.programs.git.package}/bin/git";
+        neofetch = "${pkgs.neofetch}/bin/neofetch";
+        tty-clock = "${pkgs.tty-clock}/bin/tty-clock";
+        kitty = "${config.programs.kitty.package}/bin/kitty";
         ani-cli = "${pkgs.ani-cli}/bin/ani-cli";
-  in {
-    g = "${git}";
-    ll = "ls -l";
-    ex = "exit";
-    cat = "ccat";    
-    logout = "loginctl terminate-user $USER";
-    nofetch = "${neofetch} --config none"; 
-    O_O = "echo Hi!";
-    clock = "${tty-clock} -b -s -c -B -r -n -S";
-    nv = "${neovim}";
-    rsync-copy = "rsync -avzhe --progress";
-    rsync-move = "rsync --remove-source-files -zvh --progress";
-    nix-rebuild = "sudo nixos-rebuild switch";
-    nix-edit = "sudoedit /etc/nixos/configuration.nix";
-    nix-editHW = "sudoedit /etc/nixos/hardware-configuration.nix";
-    rs = "reset";
-    cl = "clear";
+      in {
+        g = "${git}";
+        nofetch = "${neofetch} --config none"; 
+        clock = "${tty-clock} -bscBrnS";
         anifetch = "${neofetch} --config ~/.config/neofetch/anifetch.conf";
-        img = "kitten icat --hold";
-        cdots = "cd ~/Nix-Dots/";
-        cdownl = "cd ~/Downloads/";
-        cdocs = "cd ~/Documents/";
-        cwalls = "cd ~/Wallpapers/";
-        ani = "${ani-cli} --rofi --vlc";
-        anidu = "${ani-cli}  --rofi --vlc --dub";
-        anid = "${ani-cli} -d";
-        anidud = "${ani-cli} --dub -d";
         j = "jump";
-        img = "kitten icat --hold";
        };
       history = {
         size = 10000;
@@ -96,5 +73,7 @@
       }
     ];
   };
-  home.file.".marks".source = config.lib.file.mkOutOfStoreSymlink ./marks; #Add marks to home directory (used for autojump)
+
+  #Directory marks for jump plugin
+  home.file.".marks".source = config.lib.file.mkOutOfStoreSymlink ./marks;
 }

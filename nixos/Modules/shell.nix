@@ -1,28 +1,35 @@
 {pkgs, ...}:{
+  #Enable zsh
+  programs.zsh.enable = true;
   environment = {
     #Installed shells
-    shells = with pkgs; [
-      zsh
-      bashInteractive
-    ];
 
     #GLobal shell aliases
     shellAliases = let     
-    ranger = "${pkgs.ranger}/bin/ranger";
-    w3m = "${pkgs.w3m}/bin/w3m";
-  in {
-    ll = "ls -l";
-    ex = "exit";   
-    logout = "loginctl terminate-user $USER";
-    rsync-copy = "rsync -avzhe --progress";
-    rsync-move = "rsync --remove-source-files -zvh --progress";
-    nix-rebuild = "sudo nixos-rebuilt";
-    rs = "reset";
-    cl = "clear";
-    r = "${ranger}";
-    nix-upgrade = "sudo nixos-rebuild switch --upgrade-all";
-    rebootF = "sudo systemctl reboot -f";
-    nix-manual = "${w3m}/bin/w3m file:///nix/store/cvnacwjawy7fi41q5ffklvxcjnhnib3k-nixos-manual-html/share/doc/nixos/index.html";
+      ranger = "${pkgs.ranger}/bin/ranger";
+      w3m = "${pkgs.w3m}/bin/w3m";
+      rsync = "${pkgs.rsync}/bin/rsync";
+    in {
+     #Useful shell aliases
+      ll = "ls -l";
+      ex = "exit";   
+      rs = "reset";
+      cl = "clear";
+      rebootF = "sudo systemctl reboot -f";
+      logout = "loginctl terminate-user $USER";
+
+      #Userful rsync aliases
+      rsync-copy = "${rsync} -avzhe --progress";
+      rsync-move = "${rsync} --remove-source-files -zvh --progress";
+
+      #Nix aliases
+      nix-upgrade = "nixos-rebuild switch --flake .#AspireNixRebuilt --upgrade-all";
+      nix-rebuild = "nixos-rebuild switch --flake .#AspireNixRebuilt";
+      nix-manual = "${w3m}/bin/w3m file:///nix/store/cvnacwjawy7fi41q5ffklvxcjnhnib3k-nixos-manual-html/share/doc/nixos/index.html";
+    
+      #Program specific aliases
+      r = "${ranger}";
+    };
   };
 
   #Enable neovim and set as main editor
@@ -38,9 +45,9 @@
       #Default neovim plugins
       packages.myVimPackage = with pkgs.vimPlugins; {
         start = [ 
-        vim-nix
-        vim-clap
-        barbecue-nvim
+          vim-nix
+          vim-clap
+          barbecue-nvim
         ];
       };
     };

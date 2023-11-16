@@ -2,7 +2,6 @@
 {...}:{
     wayland.windowManager.hyprland = {
       settings = {
-
         windowrulev2 = [
           #Task manager-like window for system monitoring 
           "workspace special:usage,class:(kitty),title:(SystemMonitor)"
@@ -17,8 +16,7 @@
 
           "workspace name:F11,class:(kitty),title:(Files)"
           "workspace name:F12 silent,class:(kitty),title:(Clock)"
-          "fullscreen,class:(kitty),title:(Clock)"
-  
+          "fullscreen,class:(kitty),title:(Clock)" 
         ];
         windowrule = [
           #Window specific worspaces

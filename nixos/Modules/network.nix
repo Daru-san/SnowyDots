@@ -16,11 +16,11 @@
 
   #Bluetooth configurations
   services.blueman.enable = true;
-  hardware.bluetooth {
+  hardware.bluetooth = {
     enable = true;
     powerOnBoot = false;
     settings = {
-      DiscoverableTimout = 0;
+      # DiscoverableTimout = 0;
     };
     input = {
     };

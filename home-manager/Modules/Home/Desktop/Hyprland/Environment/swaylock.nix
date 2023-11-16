@@ -1,9 +1,4 @@
 {pkgs, ...}:{
-
-  #Fix swaylock not unlocking
-  security.pam.services.swaylock.text = ''
-    auth include login
-   '';
   programs.swaylock = {
     enable = true;
     package = pkgs.swaylock-effects;

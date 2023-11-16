@@ -4,13 +4,13 @@
   inputs = {
 
     # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     
     #Add unstable packages
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/release-23.05";
 
     # Home manager
-    home-manager.url = "github:nix-community/home-manager/release-23.05";
+    home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     #Nix-hardware
@@ -25,7 +25,7 @@
     #Spicetify
     spicetify-nix.url = "github:the-argus/spicetify-nix/master";
 
-    #Hyprland#
+    ##Hyprland##
     hyprland = {
       #Add Hyprland to home config
       url = "github:hyprwm/Hyprland";
@@ -42,12 +42,17 @@
 
     #Prism launcher
     prismlauncher.url = "github:Diegiwg/PrismLauncher-Cracked";
+
+    #Firefox nightly
+    firefox.url = "github:nix-community/flake-firefox-nightly";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    hyprland,
+    spicetify-nix,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -79,27 +84,15 @@
     # These are usually stuff you would upstream into home-manager
     homeManagerModules = import ./modules/home-manager;
 
-    # NixOS configuration entrypoint
-    # Available through 'nixos-rebuild --flake .#your-hostname'
+    # NixOS configuration
     nixosConfigurations = {
+      #'nixos-rebuild --flake .#AspireNixRebuilt'
       AspireNixRebuilt = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {inherit inputs outputs hyprland spicetify-nix;};
         modules = [
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
-        ];
-      };
-    };
-
-    # Standalone home-manager configuration entrypoint
-    # Available through 'home-manager --flake .#your-username@your-hostname'
-    homeConfigurations = {
-      "daru@AspireNixRebuilt" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          # > Our main home-manager configuration file <
-          ./home-manager/home.nix
+          hyprland.nixosModules.default
         ];
       };
     };

@@ -1,7 +1,6 @@
-{nix-colors, ...}:{
+{...}:{
   imports = [
     ./gtk/gtk.nix
-    nix-colors.homeManagerModules.default
   ];
 
   #Set colorscheme

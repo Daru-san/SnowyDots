@@ -21,7 +21,6 @@
           natural_scroll = 0;
           sensitivity = 0.1;
           accel_profile = "adaptive";
-          scroll_method = "on_button_down";
           scroll_button = "273";
         };
       };

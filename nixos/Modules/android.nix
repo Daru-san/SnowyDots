@@ -1,4 +1,4 @@
-{...}:{
+{pkgs, ...}:{
 
   #Enable ADB
   programs.adb.enable = true;
@@ -8,4 +8,9 @@
 
   #Enable waydroid
   virtualisation.waydroid.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    #Same as gvfs but can be configured to mount to actual directories
+    jmtpfs
+  ];
 }

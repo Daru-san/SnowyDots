@@ -1,4 +1,4 @@
-{...}:{
+{pkgs,...}:{
 #Bootloader configs
   boot = {
     loader = {
@@ -16,7 +16,8 @@
         canTouchEfiVariables = true;
       };
     };
-    #Set the kernel to lqx
+    
+    #Set the kernel to lqx unstable(Latest version)
     kernelPackages = pkgs.linuxPackages_lqx;
 
     #Make boot silent

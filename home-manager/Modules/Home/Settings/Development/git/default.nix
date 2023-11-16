@@ -5,8 +5,9 @@
   ];
   programs.git = {
     enable = true;
-    userName = "0LaMica";
+    userName = "Daru-san";
     userEmail = "mica.tui@proton.me";
+
     #Git aliases
     aliases = {
       ci = "commit";
@@ -15,6 +16,10 @@
       a = "add";
       p = "push";
       pu = "pull";
+      r = "remote";
+      b = "branch";
+      fe = "fetch";
+      cp = "cherry-pick";
     };
   };
   home.packages = with pkgs; [

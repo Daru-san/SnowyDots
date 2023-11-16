@@ -12,13 +12,14 @@
     pictures = "${config.home.homeDirectory}/Pictures";
     videos = "${config.home.homeDirectory}/Videos";
     download = "${config.home.homeDirectory}/Downloads";
-
+    templates = "${config.home.homeDirectory}/Templates";
     #Special directories
     extraConfig = {
       Emulation = "${config.home.homeDirectory}/Emulation";
       Anime = "${config.home.homeDirectory}/Anime";
       screenshots = "${config.home.homeDirectory}/screenshots";
       Projects = "${config.home.homeDirectory}/Projects";
+      mango = "${config.home.homeDirectory}/.mango";
     };
   };
 }

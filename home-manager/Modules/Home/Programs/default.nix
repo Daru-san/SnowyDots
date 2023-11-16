@@ -11,9 +11,7 @@
   home.packages = with pkgs; [
     libreoffice-fresh
     obsidian
-    #gimp
     pinta
-    mission-center
     newsflash
     evince
     gnome3.nautilus
@@ -24,6 +22,10 @@
     gthumb
     scrcpy
     localsend
+    gnome.file-roller
+    gparted
+    gnome.gnome-software
+    pavucontrol
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [

@@ -1,38 +1,14 @@
-{pkgs, lib, config, ...}: let
-
+{pkgs, lib, config, inputs, ...}: let
     #Import custom css themes from github
-    firefoxOne = pkgs.fetchgit {
-      url = "https://github.com/Godiesc/firefox-one";
-      rev = "974fee10ce0ebc9b4025b90bb18d05d74c46230f";
-      sha256 = "0q4n013iinli1x9s2jwi091wi5qmmqxhljg7sk6sk5fsd6kzvn5p";
-    };
-    blurredfox = pkgs.fetchgit {
-      url = "https://github.com/eromatiya/blurredfox";
-      rev = "6976b5460f47bd28b4dc53bd093012780e6bfed3";
-      sha256 = "Esgw5GQIfULB+G2+M2f6y/AZEBtUNg3JXGK3I/Y9RFY=";
-    };
-    firefoxGX = pkgs.fetchgit {
-      url = "https://github.com/Godiesc/firefox-gx";
-      rev = "218514ac43d7ebcc254ba220a023b9d3cd0b586a";
-      sha256 = "BqSBrAZlNYiXl2DxSclPR37oLIHu786XxOsQhnJyfFw=";
-    };
-
-    user = "daru";
-
-  #Firefox-nightly overlay setup
-  in {
-    nixpkgs.overlays =
-  let
-    # Change this to a rev sha to pin
-    moz-rev = "master";
-    moz-url = builtins.fetchTarball { url = "https://github.com/mozilla/nixpkgs-mozilla/archive/${moz-rev}.tar.gz";};
-    nightlyOverlay = (import "${moz-url}/firefox-overlay.nix");
-  in [
-    nightlyOverlay
-  ];
-
+  firefoxOne = pkgs.fetchgit {
+    url = "https://github.com/Godiesc/firefox-one";
+    rev = "974fee10ce0ebc9b4025b90bb18d05d74c46230f";
+    sha256 = "0q4n013iinli1x9s2jwi091wi5qmmqxhljg7sk6sk5fsd6kzvn5p";
+  };
+in  
+{
   #Theme symlinks 
-  home.file.".mozilla/firefox/${user}/chrome" = {
+  home.file.".mozilla/firefox/daru/chrome" = {
     source = "${firefoxOne}/chrome";
     recursive = true;
   };
@@ -41,15 +17,15 @@
     enable = true;
 
     #Package, firefox-nightly
-    package = pkgs.latest.firefox-nightly-bin;
+    package = inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin;
 
     profiles = {
-      ${user} = {
+      daru = {
         #Name
         name = "daruFox";
 
         #Extensions(from NUR)
-        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+        extensions = with config.nur.repos.rycee.firefox-addons; [
           behave
           boring-rss
           cliget
@@ -202,9 +178,6 @@
           "firefoxone.without-default-colors" = true;
           "firefoxone.main-image" = false;
           
-          #Firefoxgx configs
-          "firefoxgx.left-sidebar" = true;
-          "firefoxgx.main-image" = false;
         };
       };
     };

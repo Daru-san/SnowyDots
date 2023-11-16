@@ -6,11 +6,8 @@
   programs.kitty = {
     enable = true;
 
-    #Set to unstable
-    package = pkgs.unstable.kitty;
-
     #Kitty theme
-    theme = "Adwaita darker";
+    theme = "Hybrid";
 
     #Kitty font
     font = {
@@ -67,12 +64,12 @@
   home.file.".config/kitty/git.conf".text = ''
     new_tab GitUI
     title GitUI
-    cd ~/Nix-Dots
+    cd ~/snowflake
     launch gitui
 
     new_tab GitFiles
     title Ranger
-    cd ~/Nix-Dots 
+    cd ~/snowflake
     launch ranger
   '';
 }

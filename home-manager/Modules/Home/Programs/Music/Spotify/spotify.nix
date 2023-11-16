@@ -1,15 +1,13 @@
-{ pkgs, lib, spicetify-nix, ... }:
+{ pkgs, lib, inputs, ... }:
 let
-  spicePkgs = spicetify-nix.packages.${pkgs.system}.default;
+  spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default;
 in
 {
+  # imports = [ inputs.spicetify-nix.homeManagerModules.default ];
   # allow spotify to be installed if you don't have unfree enabled already
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "spotify"
   ];
-
-  # import the flake's module for your system
-  imports = [ spicetify-nix.homeManagerModule ];
 
   # configure spicetify :)
   programs.spicetify = let
@@ -21,11 +19,12 @@ in
     };
   in 
     {
-#Enable spicetify
-      enable = true;
+
+    #Enable spicetify
+    enable = true;
 #Spicetify theme
-      theme = {
-        name = "text";
+    theme = {
+      name = "text";
         src = officialThemes;
         appendName = true;
         injectCss = true;
@@ -39,7 +38,7 @@ in
           "xpui.js_repl_8008" = ",$1}32,";
         };
       };
-      colorScheme = "Spotify";
+    colorScheme = "Spotify";
       # customColorScheme = {
       #   accent = "76946A";
       #   accent-active = "98BB6C";
@@ -56,8 +55,8 @@ in
       #   text = "DCD7BA";
       # };
 
-      enabledExtensions = with spicePkgs.extensions; [
-#Extensions for spicetify
+    #Spicetify extensions
+    enabledExtensions = with spicePkgs.extensions; [
         fullAppDisplayMod
         loopyLoop
         powerBar
@@ -71,7 +70,7 @@ in
         playNext
         savePlaylists
         adblock
-        shuffle # shuffle+ (special characters are sanitized out of ext names)
+        shuffle
         lastfm
         playlistIcons
         goToSong
@@ -80,8 +79,9 @@ in
         playlistIntersection
         skipOrPlayLikedSongs
       ];
+
+      #Custom apps
       enabledCustomApps = with spicePkgs.apps; [
-#Custom apps
         new-releases
         marketplace
         localFiles
