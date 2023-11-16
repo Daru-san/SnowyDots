@@ -7,8 +7,6 @@
         enable = true;
         #Disable editor
         editor = false;
-        #Set to highest resolution
-        consoleMode = "max";
         #Limit configurations to 10 max
         configurationLimit = 10;
       };
