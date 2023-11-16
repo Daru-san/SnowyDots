@@ -26,12 +26,18 @@
       grub = {
         #Enable grub
         enable = true;
+
         #Use os prober to detect windows
         useOSProber = true;
+
         #Limit configuratios to 14 
         configurationLimit = 14;
+
         #Enable uefi support
         efiSupport = true;
+
+        #Set grub installation partition 
+        device = "/dev/disk/by-uuid/5BC9-5E1D";
       };
       grub2-theme = {
         enable = true;
@@ -47,7 +53,7 @@
     #Make boot silent
     consoleLogLevel = 0; 
     plymouth = {
-      enable = false;
+      enable = true;
     };
     kernelParams = [ "quiet" "udev.log_level=3" ];
     initrd = {
