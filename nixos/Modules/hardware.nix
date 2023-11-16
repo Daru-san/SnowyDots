@@ -1,4 +1,4 @@
-{pkgs, ...}:{
+{pkgs, config, lib, ...}:{
   #Intel GPU specific hardware configuration
     hardware.opengl = {
     enable = true;
@@ -24,4 +24,9 @@
 ({ original = pkgs.mesa; replacement = (pkgs.stable.mesa); })
 ({ original = pkgs.mesa.drivers; replacement = (pkgs.stable.mesa.drivers);})
 ];
+  #Use intel microcode
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  #Enable firmware
+  hardware.enableAllFirmware = true;
 }

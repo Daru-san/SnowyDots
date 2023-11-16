@@ -1,4 +1,4 @@
-{...}:{
+{lib,...}:{
   # Networking configurations
   networking = {
     networkmanager = {
@@ -13,7 +13,8 @@
       enable = true;
     };
   };
-
+  #Enable dhcp
+  networking.useDHCP = lib.mkDefault true;
   #Bluetooth configurations
   services.blueman.enable = true;
   hardware.bluetooth = {

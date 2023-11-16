@@ -1,4 +1,4 @@
-# Hardware configuration
+#Hardware configuration
 {
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/9731c052-6851-4460-a678-4605cd211f70";
@@ -34,9 +34,8 @@
     { device = "/dev/disk/by-uuid/5BC9-5E1D";
       fsType = "vfat";
     };
-  # Set your system kind (needed for flakes)
-  nixpkgs.hostPlatform = "x86_64-linux";
 
+  #swap
   swapDevices = [  
     {
       device = "/var/lib/swapfile";
@@ -44,4 +43,7 @@
       # swappiness = 7;
     }
   ];
+
+  # System kind
+  nixpkgs.hostPlatform = "x86_64-linux";
 }
