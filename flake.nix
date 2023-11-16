@@ -1,5 +1,5 @@
 {
-  description = "My NixOS configuration rebuilt ft Hyprland and flakes";
+  description = "My NixOS configuration rebuilt ft. Hyprland and flakes";
 
   inputs = {
 
