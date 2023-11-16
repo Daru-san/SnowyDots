@@ -4,7 +4,7 @@
     loader = {
       systemd-boot = {
         #Enable systemd-boot
-        enable = false;
+        enable = true;
         #Disable editor
         editor = false;
         #Limit configurations to 10 max
