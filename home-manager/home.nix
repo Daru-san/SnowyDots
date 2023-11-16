@@ -17,7 +17,7 @@
     inputs.nur.nixosModules.nur
 
       #Import home configs
-     ./Modules/Home/default.nix
+     ./Modules/default.nix
   ];
 
   nixpkgs = {
