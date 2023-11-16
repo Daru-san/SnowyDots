@@ -4,14 +4,40 @@
     loader = {
       systemd-boot = {
         #Enable systemd-boot
-        enable = true;
+        enable = false;
         #Disable editor
         editor = false;
         #Limit configurations to 10 max
         configurationLimit = 10;
+
+        extraEntries = {
+          "shutdown.conf" = ''
+            title Shutdown
+
+          '';
+          "reboot.conf" = ''
+            title Reboot
+          '';
+        }
       };
       efi = {
         canTouchEfiVariables = true;
+      };
+      grub = {
+        #Enable grub
+        enable = true;
+        #Use os prober to detect windows
+        useOSProber = true;
+        #Limit configuratios to 14 
+        configurationLimit = 14;
+        #Enable uefi support
+        efiSupport = true;
+      };
+      grub2-theme = {
+        enable = true;
+        theme = "stylish";
+        icon = "color";
+        screen = "1080p";
       };
     };
     

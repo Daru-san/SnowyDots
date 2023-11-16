@@ -16,6 +16,9 @@
     #Nix-hardware
     hardware.url = "github:nixos/nixos-hardware";
 
+    #GRUB theme
+    grub-themes.url = "github:vinceliuice/grub2-themes";
+
     # Colors
     nix-colors.url = "github:misterio77/nix-colors";
 
@@ -53,6 +56,7 @@
     home-manager,
     hyprland,
     spicetify-nix,
+    grub-themes,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -88,11 +92,12 @@
     nixosConfigurations = {
       #'nixos-rebuild --flake .#AspireNixRebuilt'
       AspireNixRebuilt = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs hyprland spicetify-nix;};
+        specialArgs = {inherit inputs outputs grub-themes hyprland spicetify-nix;};
         modules = [
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
           hyprland.nixosModules.default
+          grub-themes.nixosModule
         ];
       };
     };
