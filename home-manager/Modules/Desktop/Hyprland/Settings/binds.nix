@@ -41,7 +41,7 @@
       "SUPER,v,togglefloating"
 
       #Show power menu
-      "SUPER ,x,exec, rofi-power-menu"
+      # "SUPER ,x,exec, rofi-power-menu"
 
       #Lock screen
       "SUPER, l ,exec , ${swaylock} -Ff"
@@ -50,20 +50,33 @@
       "SUPERSHIFT, v, exec, ${copyq} menu"
 
       #Show rofi top
-      "SUPER, p, exec, rofi -show top"
+      # "SUPER, p, exec, rofi -show top"
       #Show rofi window
-      "SUPER,tab, exec, ${rofi} -show window"
+      # "SUPER,tab, exec, ${rofi} -show window"
 
       #'Task manager'
       "SUPERSHIFT,P,exec,${terminal} -T SystemMonitor --session SystemMonitor.conf"
 
+      ##Controls##
+      ############
+
+      #Brightness controll#
+
       # Brightness control using swayosd
       ",XF86MonBrightnessUp, exec,${swayosd} --brightness=raise 5"
       ",XF86MonBrightnessDown, exec,${swayosd} --brightness=lower 5"
+
+      ##Volume Control##
       # Volume using swayosd
       ",XF86AudioRaiseVolume, exec, ${swayosd} --output-volume=raise 5"
       ",XF86AudioLowerVolume, exec, ${swayosd} --output-volume=lower 5"
       ",XF86AudioMute, exec, ${swayosd} --output-volume=mute-toggle"
+
+      #Same but for keyboards without media keys
+      "ALT,F8, exec, ${swayosd} --output-volume=raise 5"
+      "ALT,F6, exec, ${swayosd} --output-volume=lower 5"
+      "ALT,F7, exec, ${swayosd} --output-volume=mute-toggle"
+
 
       #Show when caps lock is pressed
       ",caps_lock,exec,${swayosd} --caps-lock"
@@ -80,6 +93,12 @@
       "ALT,XF86AudioNext,exec,${playerctld} shift"
       "ALT,XF86AudioPrev,exec,${playerctld} unshift"
       "ALT,XF86AudioPlay,exec,systemctl --user restart playerctld"
+
+      #Same but for keyboards without media keys
+      "ALT,F12,exec,${playerctl} next"
+      "ALT,F9,exec,${playerctl} previous"
+      "ALT,F10,exec,${playerctl} play-pause"
+      "ALT,F11,exec,${playerctl} stop"
     ];
   };
 }
