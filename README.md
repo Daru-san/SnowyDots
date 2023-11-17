@@ -42,10 +42,11 @@ With these I aim to manage _everything_ decleratively from the system configurat
     - glow: markdown editor 
     - ani-cli: anime streamer and downloader
 
-
 ## Screenshots
 On the way!
 
+## Note on persistence
+When using persistence it's a good idea to make sure to persist /etc /home /var and /tmp. You should also persist /etc/passwd and /etc/shadow do prevent password issues.Make sure both /tmp and /var/tmp are persisted, if not your configurations will be built in memory which will slow down your system while running 'nixos-rebuild'
 
 ## TODO:
 
@@ -54,15 +55,11 @@ On the way!
 - [ ] Set up shell environments for developing in different languages
 - [ ] Create a deploy script
 - [ ] Set up custom packages
-- [ ] Completely overhaul rofi configuration
 
 ### In Progress:
-- [ ] Set up persistence and encryption
-    - [x] Set up default xdg directories for home
-    - [ ] Set up system persistence module 
-    - [ ] Set up home persistence module
-    - [ ] Set up disk encryption
+- [ ] Fix rofi
 
 ### Completed
 - [x] Finish flake
 - [x] Build system
+- [x] Set up persistence and disk encryption
