@@ -23,7 +23,7 @@
       cp = "cherry-pick";
       rs = "reset";
       df = "diff";
-      in = "init";
+      ini = "init";
     };
   };
   home.packages = with pkgs; [
