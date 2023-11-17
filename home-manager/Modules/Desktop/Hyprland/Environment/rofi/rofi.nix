@@ -8,7 +8,7 @@ in {
     # ./scripts.nix
   ];
   programs.rofi = {
-    enable = true;
+    enable = false;
     package = pkgs.rofi-wayland; #Set package to rofi-wayland for Hyprland
 
     plugins = with pkgs; [
