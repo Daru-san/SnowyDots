@@ -23,9 +23,9 @@
       rsync-move = "${rsync} --remove-source-files -zvh --progress";
 
       #Nix aliases
-      nix-upgrade = "nixos-rebuild switch --flake .#AspireNixRebuilt --upgrade-all";
-      nix-rebuild = "nixos-rebuild switch --flake .#AspireNixRebuilt";
-      nix-manual = "${w3m}/bin/w3m file:///nix/store/cvnacwjawy7fi41q5ffklvxcjnhnib3k-nixos-manual-html/share/doc/nixos/index.html";
+      nix-upgrade = "sudo nixos-rebuild switch --flake .#AspireNix --upgrade-all";
+      nix-rebuild = "sudo nixos-rebuild switch --flake .#AspireNix";
+      nix-manual = "${w3m} file:///nix/store/cvnacwjawy7fi41q5ffklvxcjnhnib3k-nixos-manual-html/share/doc/nixos/index.html";
     
       #Program specific aliases
       r = "${ranger}";
