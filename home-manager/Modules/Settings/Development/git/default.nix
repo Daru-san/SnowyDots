@@ -41,8 +41,8 @@
         ranger
      '')
       (pkgs.writeShellScriptBin "git-alias"''
-        print "These are the available git aliases:"
-        printf "ci = commit\nco = checkout\ncl = clone\nst = status\nad = add\nps = push\npl = pull\nre = remote\nbr = branch\nfe = fetch\ncp = cherry-pick\nrs = reset\ndf = diff\nin = init\n"
+        printf "These are the available git aliases:"
+        printf "ci = commit\nco = checkout\ncl = clone\nst = status\nad = add\nps = push\npl = pull\nre = remote\nbr = branch\nfe = fetch\ncp = cherry-pick\nrs = reset\ndf = diff\nini = init\n"
       '')
   ];
 }
