@@ -10,14 +10,7 @@
   # #Disable power-profiles-daemon for GNOME (if enabled)
   services.power-profiles-daemon.enable = false;
 
-  #Set performance to max
-  # powerManagement = {
-  # 	enable = true;
-	 #  # cpuFreqGovernor = "performance";
-  #
-  #   #Enable powertop for system monitoring
-  #   powertop = {
-  #     enable = true;
-  #   };
-  # };
+  services.udev.extraRules = ''
+    ACTION=="add|change", KERNEL=="[sv]d[a-z]", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="none"
+  '';
 }
