@@ -20,6 +20,7 @@
     ./Modules/performance.nix
     ./Modules/hardware.nix
     ./Modules/systemPackages.nix
+    ./Modules/Sync.nix
 
     # Hardware configuration
     ./hardware-configuration.nix

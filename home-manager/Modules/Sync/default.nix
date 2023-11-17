@@ -1,0 +1,5 @@
+{...}:{
+  imports = [
+    ./Syncthing/default.nix
+  ];
+}
