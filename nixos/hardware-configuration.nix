@@ -77,8 +77,8 @@ in
    files = [
      "/etc/machine-id"
      "/etc/nix/id_rsa"
-     "/etc/passwd"
-     "/etc/shadow"
+     # "/etc/passwd"
+     # "/etc/shadow"
     ];
  };
 }
