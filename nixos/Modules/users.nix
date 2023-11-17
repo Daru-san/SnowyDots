@@ -25,7 +25,6 @@
       #Disables root user
       root.hashedPassword = "!";
     };
-  #Prevent users from being made outside this file
     mutableUsers = true;
   };
 }
