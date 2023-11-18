@@ -22,7 +22,7 @@
           criteria = "Samsung Electric Company SyncMaster 0x45463233";
           mode = "1920x1080@60";
           position = "0,0";
-          scale = 1.1;
+          scale = 1.0;
         }
         {
           criteria = "eDP-1";
