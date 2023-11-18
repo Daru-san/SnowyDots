@@ -10,7 +10,7 @@
     url = "https://github.com/Daru-san/HighQ-Wallpapers";
     rev = "0a6dbb8e252819972d01cc4d2f23c7e15d704089";
     sha256 = "csXI5ufzyXfPEzFPohAfElvQhyzKEx9GSumXstg4XIA=";
-  }
+  };
 in {
 
   imports = [
