@@ -20,7 +20,9 @@
     #Make boot silent
     consoleLogLevel = 0; 
     plymouth = {
-      enable = false;
+      enable = true;
+      theme = "loader_alt";
+      themePackages = [(pkgs.adi1090x-plymouth-themes.override {selected_themes = ["loader_alt"];})];
     };
     kernelParams = [ "quiet" "udev.log_level=3" ];
     initrd = {
@@ -33,6 +35,12 @@
     extraModulePackages = [ ];
   };
 
+  console = {
+    earlySetup = true;
+    font = "${pkgs.terminus_font}/share/consolefonts/ter-132n.psf.gz";
+    packages = with pkgs; [ terminus_font ];
+    keyMap = "us";
+  }; 
   #Add the system76-scheduler
   services.system76-scheduler = {
     enable = true;
