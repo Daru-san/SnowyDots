@@ -23,8 +23,8 @@
       rsync-move = "${rsync} --remove-source-files -zvh --progress";
 
       #Nix aliases
-      nix-upgrade = "cd snowflake && sudo nixos-rebuild switch --flake .#AspireNix --upgrade-all";
-      nix-rebuild = "cd snowflake && sudo nixos-rebuild switch --flake .#AspireNix";
+      nix-upgrade = "j snow && sudo nixos-rebuild switch --flake .#AspireNix --upgrade-all --impure";
+      nix-rebuild = "j snow && sudo nixos-rebuild switch --flake .#AspireNix --impure"; 
     
       #Program specific aliases
       r = "${ranger}";
