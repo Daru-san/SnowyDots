@@ -1,7 +1,7 @@
 # SnowflakeOS
 My flake-based NixOS configuration featuring Hyprland, Sway and many more
 
-<p align="center"><img src="https://i.imgur.com/X5zKxvp.png" width=300px></p>
+![Flake](https://i.imgur.com/X5zKxvp.png)
 
 ## Overview
 These are my personal NixOS dotfiles, written completely in nix.
