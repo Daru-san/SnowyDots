@@ -1,11 +1,16 @@
-# SnowflakeOS
+# Snowflake-dots❄️ 
 My flake-based NixOS configuration featuring Hyprland, Sway and many more
 
-![Flake](https://i.imgur.com/X5zKxvp.png)
+## Big thanks to 
+![Misterio77's nix-starter-configs](https://github.com/Misterio77/nix-starter-configs "nix-starter-configs")
+![misterio's dotfiles](https://git.sr.ht/~misterio/nix-config "dots")
+![D3Ext's aesthetic wallpaper repo](https://github.com/D3Ext/aesthetic-wallpapers "walls")
+![NixOS Manual](https://nixos.org/manual/nixos/unstable/ "nix")
+![Erase your darlings](https://grahamc.com/blog/erase-your-darlings/ "persist")
 
-## Overview
+# Overview
 These are my personal NixOS dotfiles, written completely in nix.
-This repo is a _'semi fork'_ of an older repo ![Nix-Dots](https://github.com/Daru-san/Nix-Dots) that aims to improve on everything it did and go way further with a new structure.
+This repo is a _'semi fork'_ of an older repo ![Nix-Dots](https://github.com/Daru-san/Nix-Dots "Nix-Dots") that aims to improve on everything it did and go way further with a new structure.
 With these I aim to manage _everything_ decleratively from the system configuration down to every single script. They're still in early development but as of now are pretty usable for anyone who's brave enough to dabble in constant error checking and scanning files for syntax errors. I won't stop you though!
 
 ## My environment 
@@ -46,18 +51,19 @@ With these I aim to manage _everything_ decleratively from the system configurat
 On the way!
 
 ## Note on persistence
-When using persistence it's a good idea to make sure to persist /etc /home /var and /tmp. You should also persist /etc/passwd and /etc/shadow do prevent password issues.Make sure both /tmp and /var/tmp are persisted, if not your configurations will be built in memory which will slow down your system while running 'nixos-rebuild'
+When using persistence it's a good idea to make sure to persist /etc /home /var and /tmp. You should also persist /etc/passwd and /etc/shadow do prevent password issues.Make sure both /tmp and /var/tmp are persisted, if not your configurations will be built in memory which will slow down your system while running 'nixos-rebuild'. 
 
 ## TODO:
 
 ### Todo:
 - [ ] Implement multi-device configs
 - [ ] Set up shell environments for developing in different languages
-- [ ] Create a deploy script
 - [ ] Set up custom packages
+- [ ] Add full installation instructions
 
 ### In Progress:
 - [ ] Fix rofi
+- [ ] Document everything
 
 ### Completed
 - [x] Finish flake
