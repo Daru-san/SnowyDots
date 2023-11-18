@@ -2,11 +2,11 @@
 My flake-based NixOS configuration featuring Hyprland, Sway and many more
 
 ## Big thanks to 
-![Misterio77's nix-starter-configs](https://github.com/Misterio77/nix-starter-configs "nix-starter-configs")
-![misterio's dotfiles](https://git.sr.ht/~misterio/nix-config "dots")
-![D3Ext's aesthetic wallpaper repo](https://github.com/D3Ext/aesthetic-wallpapers "walls")
-![NixOS Manual](https://nixos.org/manual/nixos/unstable/ "nix")
-![Erase your darlings](https://grahamc.com/blog/erase-your-darlings/ "persist")
+* ![Misterio77's nix-starter-configs](https://github.com/Misterio77/nix-starter-configs "nix-starter-configs")
+* ![misterio's dotfiles](https://git.sr.ht/~misterio/nix-config "dots")
+* ![D3Ext's aesthetic wallpaper repo](https://github.com/D3Ext/aesthetic-wallpapers "walls")
+* ![NixOS Manual](https://nixos.org/manual/nixos/unstable/ "nix")
+* ![Erase your darlings](https://grahamc.com/blog/erase-your-darlings/ "persist")
 
 # Overview
 These are my personal NixOS dotfiles, written completely in nix.
