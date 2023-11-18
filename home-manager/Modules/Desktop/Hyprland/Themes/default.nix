@@ -7,7 +7,7 @@
   colorScheme = {
     slug = "vibrantgreen";
     name = "Vibrant Green";
-    author = "Daruma";
+    author = "Daru-san";
     colors = {
       base00 = "#202220";
       base01 = "#A6E3A1";

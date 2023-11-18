@@ -6,7 +6,7 @@
     in [
       # "zsh -c 'wall-script -w ${wall-program} -i ${wallpaper}'" #Wallpaper script, calling variables from wallpaper.nix file
       "${pkgs.swaynotificationcenter}/bin/swaync"
-      "${config.programs.wpaperd.package}/bin/wpaperd"
+      "start-wpaperd"
     ];
     exec-once = [
     "${config.programs.waybar.package}/bin/waybar"

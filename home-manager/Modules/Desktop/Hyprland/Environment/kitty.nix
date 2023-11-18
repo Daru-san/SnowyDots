@@ -20,7 +20,7 @@
       tab_bar_edge = "top";
       tab_bar_style = "custom";
       #tab_powerline_style = "round";
-      tab_activity_symbol = "!";
+      tab_activity_symbol = "󰗖 ";
       active_tab_font_style = "bold";
       inactive_tab_font_style = "italics";
       input_delay = 1;
@@ -30,7 +30,7 @@
       term = "kitty";
       placement_strategy ="center";
 
-      hide_window_decorations = false;
+      hide_window_decorations = true;
       background_opacity = "0";
       sync_to_monitor = true;
       mouse_hide_wait = 20;
@@ -62,12 +62,12 @@
     launch nvtop
   '';
   home.file.".config/kitty/git.conf".text = ''
-    new_tab GitUI
+    new_tab SnowyUI
     title GitUI
     cd ~/snowflake
     launch gitui
 
-    new_tab GitFiles
+    new_tab Snowfiles
     title Ranger
     cd ~/snowflake
     launch ranger

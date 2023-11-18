@@ -8,8 +8,8 @@
       { event = "lock"; command = "lock"; }
     ];
     timeouts = [
-      { timeout = 400; command = "${config.programs.swaylock.package}/bin/swaylock -fF";}
-      { timeout = 1200; command = "systemctl suspend"; }
+      { timeout = 800; command = "${config.programs.swaylock.package}/bin/swaylock -fF";}
+      { timeout = 1500; command = "systemctl suspend"; }
     ];
     systemdTarget = "xdg-desktop-portal-hyprland.service";
   };
