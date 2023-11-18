@@ -2,15 +2,15 @@
 My flake-based NixOS configuration featuring Hyprland, Sway and many more
 
 ## Big thanks to 
-* ![Misterio77's nix-starter-configs](https://github.com/Misterio77/nix-starter-configs "nix-starter-configs")
-* ![misterio's dotfiles](https://git.sr.ht/~misterio/nix-config "dots")
-* ![D3Ext's aesthetic wallpaper repo](https://github.com/D3Ext/aesthetic-wallpapers "walls")
-* ![NixOS Manual](https://nixos.org/manual/nixos/unstable/ "nix")
-* ![Erase your darlings](https://grahamc.com/blog/erase-your-darlings/ "persist")
+* [Misterio77's nix-starter-configs](https://github.com/Misterio77/nix-starter-configs "nix-starter-configs")
+* [misterio's dotfiles](https://git.sr.ht/~misterio/nix-config "dots")
+* [D3Ext's aesthetic wallpaper repo](https://github.com/D3Ext/aesthetic-wallpapers "walls")
+* [NixOS Manual](https://nixos.org/manual/nixos/unstable/ "nix")
+* [Erase your darlings](https://grahamc.com/blog/erase-your-darlings/ "persist")
 
 # Overview
 These are my personal NixOS dotfiles, written completely in nix.
-This repo is a _'semi fork'_ of an older repo ![Nix-Dots](https://github.com/Daru-san/Nix-Dots "Nix-Dots") that aims to improve on everything it did and go way further with a new structure.
+This repo is a _'semi fork'_ of an older repo [Nix-Dots](https://github.com/Daru-san/Nix-Dots "Nix-Dots") that aims to improve on everything it did and go way further with a new structure.
 With these I aim to manage _everything_ decleratively from the system configuration down to every single script. They're still in early development but as of now are pretty usable for anyone who's brave enough to dabble in constant error checking and scanning files for syntax errors. I won't stop you though!
 
 ## My environment 
