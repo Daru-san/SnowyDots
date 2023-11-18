@@ -74,7 +74,7 @@ button:hover {
 
 
 #workspaces {
-    border-radius: 2rem 2rem 2rem 2rem;
+    border-radius: 1rem 0rem 1rem 0rem;
     margin-top: 4px;
     margin-bottom: 4px;
     margin-left: 3px;
@@ -124,7 +124,7 @@ button:hover {
 }
 
 #custom-notification {
-    border-radius: 1rem 0rem 1rem 1rem;
+    border-radius: 0rem 0rem 1rem 0rem;
 }
 
 #pulseaudio,
@@ -184,7 +184,7 @@ button:hover {
 }
 
 #tray{
-	border-radius: 1rem 1rem 1rem 1rem;
+	border-radius: 1rem 0rem 0rem 1rem;
 }
 label:focus {
     background-color: #000000;

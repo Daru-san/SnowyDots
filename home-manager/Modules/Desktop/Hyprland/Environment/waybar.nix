@@ -56,51 +56,13 @@ in {
               on-scroll-up = "hyprctl dispatch workspace e+1";
               on-scroll-down = "hyprctl dispatch workspace e-1";
           };
-          "sway/workspaces" = {
-             disable-scroll = true;
-             all-outputs = true;
-             format = " {icon} ";
-             persistent_workspaces = {
-              "1" = [];
-              "2" = [];
-              "3" = [];
-              "4" = [];
-              "5" = [];
-              "6" = [];
-             };
-            format-icons = {
-             "1" = "󰲠";
-             "2" = "󰲢";
-             "3" = "󰲤";
-             "4" = "󰲦";
-             "5" = "󰲨";
-             "6" = "󰲪";
-            };
-          };
-          "sway/window" = {
-             max_length = 30;
-          };
+
           "disk" = {
              path = "/";
              format = " {percentage_free}%";
              on-click = "kitty -T 'Disk Usage' --hold ncdu /";
              interval = 300;
              tooltip = false;
-          };
-          "keyboard-state" = {
-             capslock = true;
-             format = "{name}";
-             tooltip = false;
-          };
-          "sway/mode" = {
-             format = "<span style=\"italic\">{}</span>";
-          };
-          "sway/scratchpad" = {
-             format = "{icon} {count}";
-             show-empty = false;
-             format-icons = ["" ""];
-             tooltip = false;
-             tooltip-format = "{app}: {title}";
           };
           "tray" = {
              spacing = 10;
@@ -168,7 +130,6 @@ in {
              format-muted = "󰝟 {format_source}";
              format-icons = {
                 headphone = "󰋋";
-
                 phone = "";
                 portable = "";
                 car = "";
@@ -194,7 +155,7 @@ in {
             format-connected = "󰂱";
             tooltip-format = "{status}: {num_connections} devices connected";
             tooltip = true;
-            on-click = "$(rofi-bluetooth)";
+            on-click = "blueman-manager";
           };
         "custom/notification" = {
           tooltip = true;
