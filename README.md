@@ -1,4 +1,6 @@
-# Snowflake-dots❄️ 
+Snowflake-dots❄️ 
+===============
+
 My flake-based NixOS configuration featuring Hyprland, Sway and many more
 
 ## Big thanks to 
@@ -20,39 +22,108 @@ With these I aim to manage _everything_ decleratively from the system configurat
 * Editor: Neovim nighly using NvChad
 * Kernel: lqx-latest
 
-### Hyprland
-* Bar: waybar
-* Launcher: fuzzel
-* Terminal: kitty
-* Monitor management: kanshi
-* Media control: playerctl
-* Idle and lock: swaylock and swayidle
-* Volume control: swayosd
-* Clipboard: copyq
-* Wallpapers: wpaperd/swww
+ <details>
+  <summary>Hyprland</summary>
+    <ul>
+        <li>Bar: waybar</li>
+        <li>Launcher: fuzzel</li>
+        <li>Terminal: kitty</li>
+        <li>Monitor management: kanshi</li>
+        <li>Media control: playerctl</li>
+        <li>Idle: swayidle</li>
+        <li>Lockscreen: swaylock</li>
+        <li>Volume & brighness control: swayosd</li>
+        <li>Clipboard: copyq/wl-clipboard</li>
+        <li>Wallpapers: wpaperd</li>
+    </ul>
+</details>
 
-### Others
-* Audio effects: easyeffects
-* File manager(s): nautilus/ranger
-* Music: Spotify(Spicetify)
-* Minecraft: Prism-Launcher(cracked)
-* Video player: mpv with scripts
-* System monitoring: Btop and Nvtop
-* IO Scheduler: System76-scheduler
-* Miscellaneous:
-    - sysz: systemd module manager
-    - swaync: notifications
-    - freetube: youtube client
-    - pqiv: image viewer
-    - glow: markdown editor 
-    - ani-cli: anime streamer and downloader
+ <details>
+  <summary>Others</summary>
+    <ul>
+        <li>Audio effects: easyeffects</li>
+        <li>Files: ranger/nautilus</li>
+        <li>Music: Spotify with spicetify</li>
+        <li>Minecraft: Prism-Launcher - <i>cracked</i></li>
+        <li>Video: mpv with scripts</li>
+        <li>Monitoring: Btop/Nvtop</li>
+        <li>IO Scheduler: none/system76</li>
+        <li>Systemd control: sysz</li>
+        <li>Youtube: freetube</li>
+        <li>Images: pqiv</li>
+        <li>Markdown editing: glow</li>
+        <li>Anime stream/download: ani-cli</li>
+    </ul>
+</details>
 
 ## Screenshots
-On the way!
+![Preview 1](https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev1.png)
+![Preview 2](https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev2.png)
+![Preview 3](https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev3.png)
+![Preview 4](https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev1.png)
+![Preview 5](https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev1.png)
 
+## Structure:
+```
+├── home-manager
+│   └── Modules
+│       ├── Desktop
+│       │   ├── Hyprland
+│       │   ├── Wallpapers
+│       │   └── Wayfire
+│       ├── Programs
+│       │   ├── Browser
+│       │   ├── cli
+│       │   ├── Games
+│       │   ├── Images
+│       │   ├── Music
+│       │   └── Video
+│       ├── Settings
+│       │   ├── Audio
+│       │   ├── Development
+│       │   ├── Directories
+│       │   ├── Editor
+│       │   └── Shell
+│       └── Sync
+│           ├── ssh
+│           └── Syncthing
+├── flake.lock
+├── flake.nix
+├── modules
+│   ├── home-manager
+│   └── nixos
+├── nixos
+│   └── Modules
+├── overlays
+└── pkgs
+```
 ## Note on persistence
-When using persistence it's a good idea to make sure to persist /etc /home /var and /tmp. You should also persist /etc/passwd and /etc/shadow do prevent password issues.Make sure both /tmp and /var/tmp are persisted, if not your configurations will be built in memory which will slow down your system while running 'nixos-rebuild'. 
+My implementation of persistence is still very incomplete and there are still a few issues that need to be ironed out, namely issues with passwd and very high memory usage on nixos-rebuild, so I wouldn't recommend using that for the time being. Also you should probably set it up yourself and copy your hardware-configuration.nix and replace mine, here's a good starting point: [Erase your darlings](https://grahamc.com/blog/erase-your-darlings/ "persist").
 
+## Installation _for those brave ones_
+Note: Prepare for plenty of errors
+Also note: My configurations are very catered to intel systems with integrated graphics so you might have to edit boot.nix, hardware.nix and Performance.nix
+
+```console
+    #Clone the repo   
+    git clone github.com/Daru-san/Snowflake-dots ~/snowflake 
+    cd ~/snowflake
+
+    #Copy your hardware configuration.nix 
+    cd nixos
+    mv hardware-configuration.nix hc.nix
+    cp /etc/nixos/hardware-configuration.nix hardware-configuration.nix
+
+    #Make necessary changes to these files to ensure it build for your specific system
+    cd Modules
+    vi boot.nix
+    vi hardware.nix
+    vi performance.nix
+
+    #Build the configuration
+    cd ~/snowflake
+    sudo nixos-rebuild {switch/boot} --flake .#AspireNix
+```
 ## TODO:
 
 ### Todo:
@@ -64,6 +135,7 @@ When using persistence it's a good idea to make sure to persist /etc /home /var 
 ### In Progress:
 - [ ] Fix rofi
 - [ ] Document everything
+- [ ] Fix persistence issues
 
 ### Completed
 - [x] Finish flake
