@@ -104,25 +104,34 @@ My implementation of persistence is still very incomplete and there are still a 
 Note: Prepare for plenty of errors
 Also note: My configurations are very catered to intel systems with integrated graphics so you might have to edit boot.nix, hardware.nix and Performance.nix
 
-```console
+Cloning the repo
+```bash
     #Clone the repo   
     git clone github.com/Daru-san/Snowflake-dots ~/snowflake 
-    cd ~/snowflake
+    cd ~/snowflake/ 
+```
 
+Copying your hardware configuration
+```bash
     #Copy your hardware configuration.nix 
     cd nixos
     mv hardware-configuration.nix hc.nix
-    cp /etc/nixos/hardware-configuration.nix hardware-configuration.nix
+    cp /etc/nixos/hardware-configuration.nix hardware-configuration.nix 
+```
 
+Important: ensuring compatibility
+```bash
     #Make necessary changes to these files to ensure it build for your specific system
     cd Modules
     vi boot.nix
     vi hardware.nix
     vi performance.nix
-
+```
+Building the system
+```bash
     #Build the configuration
     cd ~/snowflake
-    sudo nixos-rebuild {switch/boot} --flake .#AspireNix
+    sudo nixos-rebuild {switch/boot} --flake .#AspireNix #Replace with hostname if you changed it
 ```
 ## TODO:
 
