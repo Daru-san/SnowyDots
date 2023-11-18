@@ -60,8 +60,8 @@ With these I aim to manage _everything_ decleratively from the system configurat
 ![Preview 1](https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev1.png)
 ![Preview 2](https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev2.png)
 ![Preview 3](https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev3.png)
-![Preview 4](https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev1.png)
-![Preview 5](https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev1.png)
+![Preview 4](https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev4.png)
+![Preview 5](https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev5.png)
 
 ## Structure:
 ```
