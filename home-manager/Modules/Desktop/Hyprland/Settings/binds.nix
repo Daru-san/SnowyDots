@@ -23,7 +23,7 @@
       fuzzel = "${config.programs.fuzzel.package}/bin/fuzzel";
     in [
       #Basic binds
-      "SUPER,space,exec, ${fuzzel}"
+      "SUPER,space,exec, ${fuzzel} -D no"
       "SUPER, Return, exec, ${terminal}"
       "SUPER, e, exec, ${hdrop} '${file-manager}'"
       "SUPER, b, exec, ${rofi-bluetooth}"
