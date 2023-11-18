@@ -1,9 +1,24 @@
 {pkgs, ...}:{
   #Enable zsh
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+
+    #Colors in ls
+    enableLsColors = true;
+
+    #Syntax highlighting
+    syntaxHighlighting = {
+      enable = true;
+    };
+
+    #Autosuggestions
+    autosuggestions = {
+      enable = true;
+    };
+  };
   environment = {
     #Installed shells
-
+    pathsToLink = [ "/share/zsh" ];
     #GLobal shell aliases
     shellAliases = let     
       ranger = "${pkgs.ranger}/bin/ranger";
