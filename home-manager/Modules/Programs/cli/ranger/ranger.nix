@@ -1,10 +1,11 @@
 {config, pkgs, lib, ...}:{
+  imports = [
+    ./config.nix
+  ];
 
   home.packages = with pkgs; [
     ranger
   ];
-  #Symlinking the ranger config
-  home.file.".config/ranger/rc.conf".source = config.lib.file.mkOutOfStoreSymlink ./config/rc.conf;
   
   #Ranger commands script
   home.file.".config/ranger/commands.py".text = ''
