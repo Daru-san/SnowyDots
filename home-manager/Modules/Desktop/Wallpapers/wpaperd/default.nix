@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       HDMI-A-1 = {
-        path = "/home/${config.home.username}/Wallpapers/personal/leaves.jpg";
+        path = "${config.home.homeDirectory}/Wallpapers/personal/leaves.jpg";
         apply-shadow = true;
       };
     };
