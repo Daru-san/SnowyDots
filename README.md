@@ -145,6 +145,7 @@ Building the system
 - [ ] Fix rofi
 - [ ] Document everything
 - [ ] Fix persistence issues
+- [ ] Completely revamp Neovim configurations
 - [ ] Convert all non-nix configs to nix
     - [x] ranger
     - [ ] neofetch
