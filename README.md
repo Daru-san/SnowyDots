@@ -1,7 +1,7 @@
-nowflake-dots❄️ 
+Snowflake-dots❄️ 
 ===============
 
-My flake-based NixOS configuration featuring Hyprland, Sway and many more
+My flake-based NixOS configuration featuring Hyprland and flakes
 
 ## Big thanks to 
 * [Misterio77's nix-starter-configs](https://github.com/Misterio77/nix-starter-configs "nix-starter-configs")
@@ -146,7 +146,7 @@ Building the system
 - [ ] Document everything
 - [ ] Fix persistence issues
 - [ ] Convert all non-nix configs to nix
-    - [ ] ranger
+    - [x] ranger
     - [ ] neofetch
 
 ### Completed
