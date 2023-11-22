@@ -1,7 +1,7 @@
 #Git config
 {config,pkgs,...}:{
   imports = [
-    ./gitui/default.nix
+    ./gitui.nix
   ];
   programs.git = {
     enable = true;
