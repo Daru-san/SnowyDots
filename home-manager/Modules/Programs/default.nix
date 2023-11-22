@@ -26,6 +26,7 @@
     gparted
     gnome.gnome-software
     pavucontrol
+    keepassxc
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
