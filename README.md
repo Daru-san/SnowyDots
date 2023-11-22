@@ -1,4 +1,4 @@
-Snowflake-dots❄️ 
+nowflake-dots❄️ 
 ===============
 
 My flake-based NixOS configuration featuring Hyprland, Sway and many more
@@ -145,6 +145,9 @@ Building the system
 - [ ] Fix rofi
 - [ ] Document everything
 - [ ] Fix persistence issues
+- [ ] Convert all non-nix configs to nix
+    - [ ] ranger
+    - [ ] neofetch
 
 ### Completed
 - [x] Finish flake
