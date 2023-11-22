@@ -13,7 +13,7 @@ My flake-based NixOS configuration featuring Hyprland, Sway and many more
 # Overview
 These are my personal NixOS dotfiles, written completely in nix.
 This repo is a _'semi fork'_ of an older repo [Nix-Dots](https://github.com/Daru-san/Nix-Dots "Nix-Dots") that aims to improve on everything it did and go way further with a new structure.
-With these I aim to manage _everything_ decleratively from the system configuration down to every single script. They're still in early development but as of now are pretty usable for anyone who's brave enough to dabble in constant error checking and scanning files for syntax errors. I won't stop you though!
+With these I aim to manage _everything_ decleratively from the system configuration down to every single script and make the total folder size as small as possible while making these configs as extensive possible. They're still in early development but as of now are pretty usable for anyone who's brave enough to dabble in constant error checking and scanning files for syntax errors. I won't stop you though!
 
 ## My environment 
 * Desktop: Hyprland(unstable)
