@@ -1,5 +1,5 @@
 {...}:{
-  home.file.".config/ranger/rc.config".text = ''
+  home.file.".config/ranger/rc.conf".text = ''
   set viewmode multipane
 
   set column_ratios 1,3,4
