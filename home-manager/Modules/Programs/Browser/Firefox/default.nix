@@ -1,5 +1,5 @@
 {pkgs, lib, config, inputs, ...}: let
-    #Import custom css themes from github
+    #Import custom css themes from Godiesc/firefox-one on github
   firefoxOne = pkgs.fetchgit {
     url = "https://github.com/Godiesc/firefox-one";
     rev = "974fee10ce0ebc9b4025b90bb18d05d74c46230f";
