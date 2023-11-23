@@ -142,7 +142,6 @@ Building the system
 - [ ] Add full installation instructions
 
 ### In Progress:
-- [ ] Fix rofi
 - [ ] Document everything
 - [ ] Fix persistence issues
 - [ ] Completely revamp Neovim configurations
