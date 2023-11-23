@@ -17,7 +17,7 @@
           "workspace name:8,^(pqiv)$"
           #Productivity workspaces
           "workspace name:F1,^(firefox-nightly)$"
-          "workspace name:F2,^(logseq)$"
+          "workspace name:F2,^(Logseq)$"
           "workspace name:F3,^(libreoffice)$"
           "workspace name:F4,^(org.gnome.Nautilus)$"
 
