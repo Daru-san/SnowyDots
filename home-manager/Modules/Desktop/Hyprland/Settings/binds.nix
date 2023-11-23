@@ -21,7 +21,7 @@
       copyq = "${config.services.copyq.package}/bin/copyq";
       fuzzel = "${config.programs.fuzzel.package}/bin/fuzzel";
       wlogout = "${config.programs.wlogout.package}/bin/wlogout";
-      hyprpicker = "${programs.hyprpicker}/bin/hyprpicker";
+      hyprpicker = "${pkgs.hyprpicker}/bin/hyprpicker";
       wl-copy = "${pkgs.wl-clipboard}/bin/wl-copy";
       wl-paste = "${pkgs.wl-clipboard}/bin/wl-paste";
     in [
