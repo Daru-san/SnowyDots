@@ -22,7 +22,7 @@
         background = "1E2127FF";
         border = "2F343FFF";
         selection = "7FBBB3FF";
-	text = "FFFFFF";
+	text = "FFFFFFFF";
       };
     };
   };

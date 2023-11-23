@@ -3,7 +3,7 @@
     enable = true;
 
     #Make qt applications follow gtk theme 
-    platformTheme = "gnome";
+    platformTheme = "gtk";
 
     #Set qt style to adwaita for a gtk feel
     style = {
