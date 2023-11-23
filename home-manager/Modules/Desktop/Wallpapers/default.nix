@@ -13,18 +13,12 @@
   };
 in {
 
-  imports = [
-    ./wpaperd/default.nix
-  ];
   home.packages = with pkgs; [
-    swww #Wallpaper support for wayland, not used as of now
-
-    #Custom script to start wpaperd
-    (pkgs.writeShellScriptBin "start-wpaperd" ''
-      pkill wpaperd
-      sleep 1
-      wpaperd
-    '')
+  #Wallpaper programs
+    swww
+    swaybg
+    waypaper
+    wallutils
   ];
 
   #Source wallpapers from 'github.com/D3Ext/aesthetic-wallpapers'
