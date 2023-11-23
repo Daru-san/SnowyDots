@@ -10,7 +10,7 @@
   ];
   home.packages = with pkgs; [
     libreoffice-fresh
-    obsidian
+    logseq
     pinta
     newsflash
     evince
@@ -27,9 +27,5 @@
     gnome.gnome-software
     pavucontrol
     keepassxc
-  ];
-
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "obsidian"
   ];
 }
