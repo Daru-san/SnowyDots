@@ -1,6 +1,5 @@
 {pkgs, ...}:{
   imports = [
-    ./rofi/rofi.nix
     ./kitty.nix
     ./swayosd.nix
     ./swaylock.nix
