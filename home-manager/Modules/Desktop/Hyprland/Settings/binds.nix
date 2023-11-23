@@ -51,7 +51,7 @@
       "SUPERSHIFT, v, exec, ${copyq} menu"
 
       #Color picker
-      "SUPERSHIFT,c,exec,notify-send "Color copied to clipboard" `${hyprpicker} | ${wl-copy}` `${wl-paste}"
+      "SUPERSHIFT,c,exec,notify-send 'Color copied to clipboard' `${hyprpicker} | ${wl-copy}` `${wl-paste}"
 
       #'Task manager'
       "SUPERSHIFT,P,exec,${terminal} -T SystemMonitor --session SystemMonitor.conf"
