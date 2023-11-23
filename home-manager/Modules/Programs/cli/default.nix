@@ -36,5 +36,6 @@
       yafetch
       most #pager
       pulsemixer
+      cmatrix
     ];
  }
