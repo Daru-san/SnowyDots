@@ -6,17 +6,10 @@
           #Task manager-like window for system monitoring 
           "workspace special:usage,class:(kitty),title:(SystemMonitor)"
           "center 1,class:(kitty),title:(SystemMonitor)"
-          "workspace special:taskmgr,class:(mission-center)"
-          "workspace name:1,class:(kitty),title(Terminal)" 
-          "workspace name:2,class:(kitty),title:(Git)"
 
           #Special rules for firefox
           "workspace special:PrivFox,class:(firefox-nightly),title:(Firefox Nightly Private Browsing)"
           "float,class:(firefox-nightly),title:(Library)"
-
-          "workspace name:F11,class:(kitty),title:(Files)"
-          "workspace name:F12 silent,class:(kitty),title:(Clock)"
-          "fullscreen,class:(kitty),title:(Clock)" 
         ];
         windowrule = [
           #Window specific worspaces

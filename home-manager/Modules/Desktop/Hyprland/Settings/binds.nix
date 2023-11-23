@@ -15,12 +15,15 @@
       shotman = "${pkgs.shotman}/bin/shotman";
       editor = "${config.programs.neovim.package}/bin/nvim";
       ranger = "${pkgs.ranger}/bin/ranger";
-      power-menu = "rofi-power-menu";
       image-editor = "${pkgs.pinta}/bin/pinta";
       hdrop = "${inputs.hyprland-contrib.packages.${pkgs.system}.hdrop}/bin/hdrop";
       swaylock = "${config.programs.swaylock.package}/bin/swaylock";
       copyq = "${config.services.copyq.package}/bin/copyq";
       fuzzel = "${config.programs.fuzzel.package}/bin/fuzzel";
+      wlogout = "${config.programs.wlogout.package}/bin/wlogout";
+      hyprpicker = "${programs.hyprpicker}/bin/hyprpicker";
+      wl-copy = "${pkgs.wl-clipboard}/bin/wl-copy";
+      wl-paste = "${pkgs.wl-clipboard}/bin/wl-paste";
     in [
       #Basic binds
       "SUPER,space,exec, ${fuzzel} -D no"
@@ -28,7 +31,7 @@
       "SUPER, e, exec, ${hdrop} '${file-manager}'"
       "SUPER, b, exec, ${rofi-bluetooth}"
       "SUPERALT, b, exec, ${hdrop} '${browser}'"
-      "SUPER, x, exec, ${power-menu}"
+      "SUPER, x, exec, ${wlogout}"
       "SUPER, r, exec, ${terminal} --hold ranger"
       "SUPER, z, exec, ${terminal} --hold vi"
       "SUPER, i, exec, ${hdrop} '${image-editor}'"
@@ -40,8 +43,6 @@
       "SUPER,f,fullscreen"
       "SUPER,v,togglefloating"
 
-      #Show power menu
-      # "SUPER ,x,exec, rofi-power-menu"
 
       #Lock screen
       "SUPER, l ,exec , ${swaylock} -Ff"
@@ -49,10 +50,8 @@
       #Clipboard menu
       "SUPERSHIFT, v, exec, ${copyq} menu"
 
-      #Show rofi top
-      # "SUPER, p, exec, rofi -show top"
-      #Show rofi window
-      # "SUPER,tab, exec, ${rofi} -show window"
+      #Color picker
+      "SUPERSHIFT,c,exec,notify-send "Color copied to clipboard" `${hyprpicker} | ${wl-copy}` `${wl-paste}"
 
       #'Task manager'
       "SUPERSHIFT,P,exec,${terminal} -T SystemMonitor --session SystemMonitor.conf"
