@@ -10,11 +10,11 @@
     ./copyq.nix
     ./swayidle.nix
     ./fuzzel.nix
+    ./wlogout.nix
   ];
   home.packages = with pkgs; [
     wl-clipboard
     swaynotificationcenter
-    hyprpicker #I need to get this to work with notifications
     wtype 
   ];
 }
