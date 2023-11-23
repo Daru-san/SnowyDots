@@ -30,5 +30,7 @@
     nix-melt
     gparted
     ncdu
+    busybox
+    usbutils
   ];
 }
