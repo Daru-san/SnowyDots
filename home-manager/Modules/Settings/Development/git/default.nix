@@ -8,6 +8,9 @@
     userName = "Daru-san";
     userEmail = "mica.tui@proton.me";
 
+    #Git highlighting
+    difftastic.enable = true;
+
     #Git aliases
     aliases = {
       ci = "commit";
