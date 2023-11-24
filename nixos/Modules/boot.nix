@@ -29,6 +29,9 @@
       verbose = false;
       availableKernelModules = [ "ahci" "xhci_pci" "usb_storage" "usbhid" "sd_mod" "rtsx_pci_sdmmc" ];
       kernelModules = [ ];
+      systemd = {
+      	enable = true;
+      };
     };
     #Kernel modules
     kernelModules = [ "kvm-intel" ];
@@ -37,7 +40,7 @@
 
   console = {
     earlySetup = true;
-    font = "${pkgs.terminus_font}/share/consolefonts/ter-132n.psf.gz";
+    font = "${pkgs.terminus_font}/share/consolefonts/ter-124n.psf.gz";
     packages = with pkgs; [ terminus_font ];
     keyMap = "us";
   }; 
