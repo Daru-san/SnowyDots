@@ -7,17 +7,17 @@
         border_size = 2.4;
         cursor_inactive_timeout = 30;
         layout = "master";
-        "col.active_border" = "${config.colorScheme.colors.base02}";
-        "col.inactive_border" = "${config.colorScheme.colors.base00}";            
+        "col.active_border" = "0xff${config.colorScheme.colors.base02}";
+        "col.inactive_border" = "0xff${config.colorScheme.colors.base00}";            
       };
       group = {
-      	"col.border_active" = "98ADA1";
-	"col.border_inactive" = "010B13";
+      	"col.border_active" = "0xff98ADA1";
+	"col.border_inactive" = "0xff010B13";
 	groupbar = {
 	 font_family = "Jetbrain Mono Nerd Font";
-	 font_size = 11;
-	 "col.active" = "98ADA1";
-	 "col.inactive" = "010B13";
+	 font_size = 13;
+	 "col.active" = "0xff98ADA1";
+	 "col.inactive" = "0xff010B13";
 	};
       };
       master = {
