@@ -37,5 +37,6 @@
       most #pager
       pulsemixer
       cmatrix
+      pokeshell
     ];
  }
