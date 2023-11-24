@@ -1,7 +1,4 @@
-{pkgs, ...}:
-let
-  rofi-bluetooth = "${pkgs.rofi-bluetooth}/bin/rofi-bluetooth";
-in {
+{pkgs, ...}:{
     imports = [
       ./waybar-style.nix
     ];
