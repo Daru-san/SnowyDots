@@ -11,13 +11,13 @@
         "col.inactive_border" = "${config.colorScheme.colors.base00}";            
       };
       group = {
-      	"col.border_active" = "#98ADA1";
-	"col.border_inactive" = "#010B13";
+      	"col.border_active" = "98ADA1";
+	"col.border_inactive" = "010B13";
 	groupbar = {
 	 font_family = "Jetbrain Mono Nerd Font";
 	 font_size = 11;
-	 "col.active" = "#98ADA1";
-	 "col.inactive" = "#010B13";
+	 "col.active" = "98ADA1";
+	 "col.inactive" = "010B13";
 	};
       };
       master = {
