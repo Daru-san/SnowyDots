@@ -21,6 +21,7 @@
     ./Modules/hardware.nix
     ./Modules/systemPackages.nix
     ./Modules/Sync.nix
+    ./Modules/scripts.nix
 
     # Hardware configuration
     ./hardware-configuration.nix
@@ -40,18 +41,10 @@
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.stable-packages
-
-      # Or define it inline, for example:
-      # (final: prev: {
-      #   hi = final.hello.overrideAttrs (oldAttrs: {
-      #     patches = [ ./change-hello-to-hi.patch ];
-      #   });
-      # })
     ];
 
     # Allow unfree packages
     config = {
-      # Disable if you don't want unfree packages
       allowUnfree = true;
     };
   };

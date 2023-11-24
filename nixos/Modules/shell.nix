@@ -35,11 +35,7 @@
 
       #Userful rsync aliases
       rsync-copy = "${rsync} -avzhe --progress";
-      rsync-move = "${rsync} --remove-source-files -zvh --progress";
-
-      #Nix aliases
-      nix-upgrade = "j snow && sudo nixos-rebuild switch --flake .#AspireNix --upgrade-all --impure";
-      nix-rebuild = "j snow && sudo nixos-rebuild switch --flake .#AspireNix --impure"; 
+      rsync-move = "${rsync} --remove-source-files -zvh --progress"; 
     
       #Program specific aliases
       r = "${ranger}";

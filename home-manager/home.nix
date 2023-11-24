@@ -52,6 +52,9 @@
   home = {
     username = "daru";
     homeDirectory = "/home/daru";
+    sessionVariables = {
+        repo = "~/snowflake/";
+      };
   };
 
 
