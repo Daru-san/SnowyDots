@@ -1,10 +1,5 @@
-{pkgs, networking, ...}: let
-   nix-rebuild = pkgs.writeScriptBin "nix-rebuild" (import ./Scripts/nix-rebuild.nix { inherit networking; });
-in {
+{pkgs, config, ...}:{
   imports = [
-    ./Scripts/nv-clone.nix
-  ];
-  environment.systemPackages = [
-    nix-rebuild
+    ./Scripts/auto-clone.nix
   ];
 }
