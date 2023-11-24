@@ -17,6 +17,11 @@
     
     enable = true;
 
+    systemd = {
+      enable = true;
+      target = "hyprland-session.target";
+    };
+
     settings = [
       {
         layer = "top";
