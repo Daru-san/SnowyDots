@@ -8,4 +8,4 @@
     done   
 cd $repo 
 sudo nixos-rebuild $mode .#${networking.hostname} --impure
-'';
+''

@@ -4,7 +4,7 @@ in {
   imports = [
     ./Scripts/nv-clone.nix
   ];
-  environment.sytemPackages = [
+  environment.systemPackages = [
     nix-rebuild
   ];
 }
