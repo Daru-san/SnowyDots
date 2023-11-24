@@ -32,5 +32,6 @@
     ncdu
     busybox
     usbutils
+    nix-rebuild
   ];
 }
