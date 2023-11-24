@@ -5,7 +5,7 @@
     rev = "974fee10ce0ebc9b4025b90bb18d05d74c46230f";
     sha256 = "0q4n013iinli1x9s2jwi091wi5qmmqxhljg7sk6sk5fsd6kzvn5p";
   };
-in  
+in
 {
   #Theme symlinks 
   home.file.".mozilla/firefox/daru/chrome" = {
@@ -23,6 +23,9 @@ in
       daru = {
         #Name
         name = "daruFox";
+        id = 14;
+
+        preferencesStatus = "default";
 
         #Extensions(from NUR)
         extensions = with config.nur.repos.rycee.firefox-addons; [
@@ -58,30 +61,124 @@ in
           web-archives
           widegithub
           tabcenter-reborn
-          ];
+        ];
 
         #Make this profile the default
         isDefault = true;
 
+        #Containers
+        constainers = {
+          general = {
+            color = "blue";
+            id = 1;
+            icon = "fruit";
+          };
+          shopping = {
+            color = "pink";
+            id = 2;
+            icon = "cart";
+          };
+          coding = {
+            color = "green";
+            id = 3;
+            icon = "chill";
+          };
+          space = {
+            color = "purple";
+            id = "77";
+            icon = "vacaction";
+          };
+          social = {
+            color = "red";
+            id = 4;
+            icon = "pet";
+          };
+          misc = {
+            color = "yellow";
+            id = 69;
+            icon = "circle";
+          };
+        };
         #Search engines
         search = {
+          #Make Brave and StartPage defaults
           default = "Brave Search";
+          privateDefault = "StartPage";
+
+          #The order they're in
+          order = [
+            "Brave Search"
+            "StartPage"
+            "DuckDuckGo"
+            "My NixOS"
+            "Nix Packages"
+            "Nix Options"
+            "Home Manager"
+            "Google"
+          ];
+
+          #Force apply configs
           force = true;
+
+          #Add custom search engines and modify existing ones
           engines = {
+            
+            #Brave search
+            "Brave Search" = {
+              urls = [
+              {template = "https://search.brave.com/search?q={searchTerms}";}
+              ];
+              iconUpdateURL = "https://brave.com/static-assets/images/brave-logo-sans-text.svg";
+              updateInterval = 24 * 60 * 60 * 1000;
+              definedAliases = ["@br"];
+            };
+              
+            #StartPage
+            "StartPage" = {
+              urls = [
+                {template = "https://www.startpage.com/sp/search?query={searchTerms}";}
+              ];
+              icon = "https://www.startpage.com/sp/cdn/favicons/favicon--default.ico";
+              definedAliases = ["@sp"];
+            };
+
+            #Give google an alias
+            "Google" = {
+              metaData = {
+                alias = "@g";
+              };
+            };
+
+            #Give DuckDuckGo an alias
+            "DuckDuckGo" = {
+              metaData = {
+                alias = "@dg"
+              };
+            };
+
+            #Disable Bing
+            "Bing" = {
+              metaData = {
+                hidden = true;
+              };
+            };
+
+            #Disable Amazon
+            "Amazon.com" {
+              metaData = {
+                hidden = true;
+              };
+            };
+
+            #Add the NixOS wiki
             "NixOS Wiki" = {
               urls = [{ template = "https://nixos.wiki/index.php?search={searchTerms}"; }];
               iconUpdateURL = "https://nixos.wiki/favicon.png";
               updateInterval = 24 * 60 * 60 * 1000; # every day
               definedAliases = [ "@nw" ];
             };
-            "Brave Search" = {
-              urls = [
-              {template = "https://search.brave.com/search?q={searchTerms}";}
-              ];
-              iconUpdateURL = "https://cdn.search.brave.com/serp/v2/_app/immutable/assets/brave-logo-dark.62301cdf.svg";
-              updateInterval = 24 * 60 * 60 * 1000;
-              definedAliases = ["@br"];
-            };
+
+            #Nix packages and options from search.nixos.org
             "Nix Packages" = {
               urls = [{
                 template = "https://search.nixos.org/packages";
@@ -104,19 +201,23 @@ in
               icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
               definedAliases = [ "@no" ];
             };
+
+            #Similiar to search.nixos.org but with more info
+            "My NixOS" = {
+                urls = [
+                {template = "https://mynixos.com/search?q={searchTerms}";}
+                ];
+                icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/white.svg";;
+                definedAliases = ["mn" "@nx"];
+              };
+
+            #Home manager search
             "Home Manager" = {
               urls = [
-                {template = "https://mipmip.github.io/home-manager-option-search/?query={searchTerms}";}                
+                {template = "https://mipmip.github.io/home-manager-option-search/?query={searchTerms}";}
               ];
               icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
               definedAliases = [ "@hm"];
-            };
-            "StartPage" = {
-              urls = [
-                {template = "https://www.startpage.com/sp/search?query={searchTerms}";}
-              ];
-              icon = "https://www.startpage.com/sp/cdn/favicons/favicon--default.ico";
-              definedAliases = ["@sp"];
             };
           };
         };
