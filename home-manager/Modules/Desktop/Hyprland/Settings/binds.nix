@@ -24,6 +24,7 @@
       hyprpicker = "${pkgs.hyprpicker}/bin/hyprpicker";
       wl-copy = "${pkgs.wl-clipboard}/bin/wl-copy";
       wl-paste = "${pkgs.wl-clipboard}/bin/wl-paste";
+      notify-send = "${pkgs.libnotify}/bin/notify-send";
     in [
       #Basic binds
       "SUPER,space,exec, ${fuzzel} -D no"
@@ -32,8 +33,8 @@
       "SUPER, b, exec, ${rofi-bluetooth}"
       "SUPERALT, b, exec, ${hdrop} '${browser}'"
       "SUPER, x, exec, ${wlogout}"
-      "SUPER, r, exec, ${terminal} --hold ranger"
-      "SUPER, z, exec, ${terminal} --hold vi"
+      "SUPER, r, exec, ${terminal} --hold ${ranger}"
+      "SUPER, z, exec, ${terminal} --hold ${editor}"
       "SUPER, i, exec, ${hdrop} '${image-editor}'"
 
       #Window bings
@@ -51,7 +52,7 @@
       "SUPERSHIFT, v, exec, ${copyq} menu"
 
       #Color picker
-      "SUPERSHIFT,c,exec,notify-send 'Color copied to clipboard' `${hyprpicker} | ${wl-copy}` `${wl-paste}"
+      "SUPERSHIFT,c,exec,${notify-send} 'Color copied to clipboard' `${hyprpicker} | ${wl-copy}` `${wl-paste}`"
 
       #'Task manager'
       "SUPERSHIFT,P,exec,${terminal} -T SystemMonitor --session SystemMonitor.conf"
