@@ -19,7 +19,7 @@ With these I aim to manage _everything_ decleratively from the system configurat
 * Desktop: Hyprland(unstable)
 * Browser: Firefox nightly
 * Shell: zsh
-* Editor: Neovim nighly using NvChad
+* Editor: Neovim nighly using Lazy.vim
 * Kernel: lqx-latest
 
  <details>
@@ -55,6 +55,14 @@ With these I aim to manage _everything_ decleratively from the system configurat
         <li>Anime stream/download: ani-cli</li>
     </ul>
 </details>
+
+<details>
+   <Summary>Program specific guides</summary>
+      <h3>Neovim</h3>
+      <p>
+        My Neovim config uses a user activation script which clones my personal configs from my repo 'Daru-san/NeoLaze' if there isn't any ~/.config/nvim folder, if you don't want them just make sure the 'nvim' folder exists and it won't clone the repo
+      </p>
+ </details>
 
 ## Screenshots
 ![Preview 1](https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev1.png)
@@ -133,7 +141,7 @@ Building the system
     cd ~/snowflake
     sudo nixos-rebuild {switch/boot} --flake .#AspireNix #Replace with hostname if you changed it
 ```
-## TODO:
+## Monthly TODO: November
 
 ### Todo:
 - [ ] Implement multi-device configs
@@ -144,7 +152,6 @@ Building the system
 ### In Progress:
 - [ ] Document everything
 - [ ] Fix persistence issues
-- [ ] Completely revamp Neovim configurations
 - [ ] Convert all non-nix configs to nix
     - [x] ranger
     - [ ] neofetch
@@ -153,3 +160,4 @@ Building the system
 - [x] Finish flake
 - [x] Build system
 - [x] Set up persistence and disk encryption
+- [x] Revamp Neovim configs
