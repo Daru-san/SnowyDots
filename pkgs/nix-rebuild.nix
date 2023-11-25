@@ -15,8 +15,8 @@
       # https://github.com/Daru-san/Nix-Scripts
       owner = "Daru-san";
       repo = "Nix-Scripts";
-      rev = "2cbd7128f92fed801b4b78fa8ba3a0d32e501170";
-      sha256 = "MRWu4Kw3bCE7+fSGaPs1BntWuw2WhsfMBk28BVg3Cx4=";
+      rev = "f5b8dbfb2c114da250e348e86d7a31b5f4291675";
+      sha256 = "eKzk5iIcDCGqF4uvUGC9biQRs6JfWp7bXgq6vrZvklQ=";
     };
     buildInputs = [ bash subversion ];
     nativeBuildInputs = [ makeWrapper ];
