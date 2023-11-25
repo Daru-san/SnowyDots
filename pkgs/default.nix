@@ -1,5 +1,7 @@
 # Custom packages
-pkgs: {
+pkgs: let
+  pkgs = import <nixpkgs> {};
+in {
   #Custom nix-rebuild script
   nix-rebuild = pkgs.callPackage ./nix-rebuild.nix { };
 

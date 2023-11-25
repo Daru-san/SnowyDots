@@ -22,12 +22,12 @@
     buildInputs = [ bash subversion jq chafa imagemagick];
     nativeBuildInputs = [ makeWrapper ];
     installPhase = ''
-      mkdir -pv $out/local/bin
+      mkdir -pv $out/bin
 
-      cp -rv $src/bin $out/local
-      cp -rv $src/share $out/local
+      cp -rv $src/bin/pokeshell $out/bin/pokeshell
+      cp -rv $src/share $out
       
-      wrapProgram $out/local/bin/pokeshell \
+      wrapProgram $out/bin/pokeshell \
         --prefix PATH : ${lib.makeBinPath [ bash subversion jq chafa imagemagick ]}
     '';
   }
