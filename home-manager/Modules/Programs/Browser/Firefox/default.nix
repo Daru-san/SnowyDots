@@ -23,9 +23,6 @@ in
       daru = {
         #Name
         name = "daruFox";
-        id = 14;
-
-        preferencesStatus = "default";
 
         #Extensions(from NUR)
         extensions = with config.nur.repos.rycee.firefox-addons; [
@@ -67,7 +64,7 @@ in
         isDefault = true;
 
         #Containers
-        constainers = {
+        containers = {
           general = {
             color = "blue";
             id = 1;
@@ -85,8 +82,8 @@ in
           };
           space = {
             color = "purple";
-            id = "77";
-            icon = "vacaction";
+            id = 77;
+            icon = "vacation";
           };
           social = {
             color = "red";
@@ -99,6 +96,7 @@ in
             icon = "circle";
           };
         };
+        
         #Search engines
         search = {
           #Make Brave and StartPage defaults
@@ -152,7 +150,7 @@ in
             #Give DuckDuckGo an alias
             "DuckDuckGo" = {
               metaData = {
-                alias = "@dg"
+                alias = "@dg";
               };
             };
 
@@ -164,7 +162,7 @@ in
             };
 
             #Disable Amazon
-            "Amazon.com" {
+            "Amazon.com" = {
               metaData = {
                 hidden = true;
               };
@@ -204,12 +202,12 @@ in
 
             #Similiar to search.nixos.org but with more info
             "My NixOS" = {
-                urls = [
-                {template = "https://mynixos.com/search?q={searchTerms}";}
-                ];
-                icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/white.svg";;
-                definedAliases = ["mn" "@nx"];
-              };
+              urls = [
+              {template = "https://mynixos.com/search?q={searchTerms}";}
+              ];
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/white.svg";
+              definedAliases = ["@mn" "@nx"];
+            };
 
             #Home manager search
             "Home Manager" = {
