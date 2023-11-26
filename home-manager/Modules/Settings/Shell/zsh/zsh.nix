@@ -54,8 +54,6 @@
           "copypath"
           "copyfile"
           ];
-        #Theme
-        theme = "muse";
         };
       plugins = [
       
