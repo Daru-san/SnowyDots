@@ -1,6 +1,13 @@
 ##Configuration for ZSH shell##
 
 {config, pkgs, ...}: {
+    
+    #Enable command-not-found
+    programs.command-not-found = {
+      enable = true;
+    };
+
+    #Zsh configs
     programs.zsh = {
       enable = true;
       #Aliases for zsh
