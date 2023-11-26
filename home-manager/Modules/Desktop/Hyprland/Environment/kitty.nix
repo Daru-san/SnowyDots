@@ -71,5 +71,9 @@
     title Ranger
     cd ~/snowflake
     launch ranger
+
+    new_tab Snowcli
+    title zsh
+    cd ~/snowflake
   '';
 }
