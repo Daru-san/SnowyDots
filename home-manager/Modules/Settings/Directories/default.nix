@@ -20,6 +20,7 @@
       screenshots = "${config.home.homeDirectory}/screenshots";
       Projects = "${config.home.homeDirectory}/Projects";
       mango = "${config.home.homeDirectory}/.mango";
+      Scripts = "${config.home.homeDirectory}/Scripts";
     };
   };
 }
