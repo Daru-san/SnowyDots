@@ -12,13 +12,13 @@
       };
       group = {
       	"col.border_active" = "0xff98ADA1";
-	"col.border_inactive" = "0xff010B13";
-	groupbar = {
-	 font_family = "Jetbrain Mono Nerd Font";
-	 font_size = 13;
-	 "col.active" = "0xff98ADA1";
-	 "col.inactive" = "0xff010B13";
-	};
+	      "col.border_inactive" = "0xff010B13";
+	      groupbar = {
+	        font_family = "Jetbrain Mono Nerd Font";
+	        font_size = 13;
+	        "col.active" = "0xff98ADA1";
+	        "col.inactive" = "0xff010B13";
+	      };
       };
       master = {
         new_is_master = false;
