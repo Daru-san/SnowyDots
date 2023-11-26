@@ -1,14 +1,14 @@
 ##Configuration for ZSH shell##
 
 {config, pkgs, ...}: {
-    
-    #Enable command-not-found
-    programs.command-not-found = {
-      enable = true;
-    };
 
-    #Zsh configs
-    programs.zsh = {
+  #Enable command-not-found
+  programs.command-not-found = {
+    enable = true;
+  };
+
+  programs = { #Zsh configs
+    zsh = {
       enable = true;
       #Aliases for zsh
       shellAliases = let
@@ -25,6 +25,7 @@
         j = "jump";
        };
 
+      #History file
       history = {
         size = 10000;
         path = "${config.xdg.dataHome}/zsh/history";
@@ -38,7 +39,7 @@
       #Enable autosuggestions
       enableAutosuggestions = true;
       
-      #Oh-my-zsh for themes and plugins
+      #Oh-my-zsh for plugins, themes are set by oh-my-posh
       oh-my-zsh = {
         enable = true;
         #Plugins
@@ -53,11 +54,9 @@
           "colored-man-pages"
           "copypath"
           "copyfile"
-          ];
-        };
-      plugins = [
-      
-    ];
+        ];
+      };
+    };
   };
 
   #Directory marks for jump plugin
