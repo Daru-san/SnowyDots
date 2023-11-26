@@ -11,6 +11,14 @@
     #Enable firewall
     firewall = {
       enable = true;
+
+      #Configure TCP and UDP ports to fix KDE connect
+      allowedUDPPortRanges = [
+        { from = 1714; to = 1764; }
+      ];
+      allowedTCPPortRanges = [
+        { from = 1714; to = 1764; }
+      ];
     };
   };
   #Enable dhcp
