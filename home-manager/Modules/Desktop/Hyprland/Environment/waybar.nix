@@ -161,7 +161,7 @@
           };
         "custom/notification" = {
           tooltip = true;
-          tooltip-format = "{}";
+          tooltip-format = "";
           format = "{icon}";
           format-icons = {
             notification = "<span foreground='red'><sup></sup></span>";
