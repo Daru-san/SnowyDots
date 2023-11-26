@@ -3,7 +3,7 @@
   firefoxOne = pkgs.fetchgit {
     url = "https://github.com/Godiesc/firefox-one";
     rev = "974fee10ce0ebc9b4025b90bb18d05d74c46230f";
-    sha256 = "0q4n013iinli1x9s2jwi091wi5qmmqxhljg7sk6sk5fsd6kzvn5p";
+    sha256 = "t9j9p2nalanN1OdJCjuuFZfIQwKRS6FTD5HaGEcAlmA=";
   };
 in
 {
