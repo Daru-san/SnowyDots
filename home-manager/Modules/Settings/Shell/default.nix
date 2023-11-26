@@ -4,5 +4,6 @@
   #Import tmux and zsh configs
   ./zsh/zsh.nix
   ./tmux/default.nix
+  ./omp/default.nix
   ];
 }
