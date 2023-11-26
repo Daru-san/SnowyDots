@@ -13,7 +13,6 @@
   ];
   home.packages = with pkgs; [
     wl-clipboard
-    swaynotificationcenter
     wtype 
   ];
 }
