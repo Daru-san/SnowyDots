@@ -50,6 +50,9 @@
 
       #Clipboard menu
       "SUPERSHIFT, v, exec, ${copyq} menu"
+      
+      #Suspend
+      "SUPERALT, F12, exec, systemctl suspend"
 
       #Color picker
       "SUPERSHIFT,c,exec,${notify-send} 'Color copied to clipboard' `${hyprpicker} | ${wl-copy}` `${wl-paste}`"
