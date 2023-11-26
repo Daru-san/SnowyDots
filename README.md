@@ -18,7 +18,7 @@ With these I aim to manage _everything_ decleratively from the system configurat
 ## My environment 
 * Desktop: Hyprland(unstable)
 * Browser: Firefox nightly
-* Shell: zsh
+* Shell: zsh using oh-my-zsh and oh-my-posh
 * Editor: Neovim nighly using Lazy.vim
 * Kernel: lqx-latest
 
