@@ -9,6 +9,7 @@
     "${pkgs.easyeffects}/bin/easyeffects"
     "${pkgs.networkmanagerapplet}/bin/nm-applet"
     "${config.services.copyq.package}/bin/copyq"
+    "${config.programs.waybar.package}/bin/waybar"
     ];
   };
 }

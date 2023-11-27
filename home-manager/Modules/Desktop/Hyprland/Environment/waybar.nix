@@ -16,9 +16,10 @@
      });
     
     enable = true;
-
+  
+  #THis option seems to break notifications so I'll keep it disabled for now
     systemd = {
-      enable = true;
+      enable = false;
       target = "hyprland-session.target";
     };
 
@@ -160,8 +161,6 @@
             on-click = "blueman-manager";
           };
         "custom/notification" = {
-          tooltip = true;
-          tooltip-format = "{swaync-client -c}";
           format = "{icon}";
           format-icons = {
             notification = "<span foreground='red'><sup></sup></span>";
@@ -174,7 +173,7 @@
             dnd-inhibited-none = "";
           };
           return-type = "json";
-          exec-if = "which swaync-client";
+  #        exec-if = "which swaync-client";
           exec = "swaync-client -swb";
           on-click = "swaync-client -t -sw";
           on-click-right = "swaync-client -d -sw";
