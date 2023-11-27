@@ -9,32 +9,30 @@
     ./Images/default.nix
   ];
 
-  #overlays to enable wayland support for freetube and logseq
-  nixpkgs.overlays = [ 
-    (final: prev: {
-      freetube = prev.freetube.override {
-        commandLineArgs =
-         "--enable-features=UseOzonePlatform --ozone-platform=wayland";
-      };
-    };)
-    (final: prev: {
-      logseq = prev.logseq.override {
-        commandLineArgs =
-         "--enable-features=UseOzonePlatform --ozone-platform=wayland";
-      };
-    };)
-  ]; 
 
-  home.packages = with pkgs; [
+  home.packages = with pkgs; 
+  let
+    #Package overides to allow electron apps to run in wayland natively
+    logseq-wayland = pkgs.logseq.overrideAttrs (old: rec {
+      commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
+    }); 
+    freetube-wayland = pkgs.freetube.overrideAttrs (old: rec {
+      commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
+    });
+    github-desktop-wayland = pkgs.github-desktop.overrideAttrs (old: rec {
+      commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
+    });
+  in
+    [
     libreoffice-fresh
-    logseq
+    logseq-wayland
     pinta
     newsflash
     evince
     gnome3.nautilus
     nautilus-open-any-terminal
     gnome.nautilus-python
-    freetube
+    freetube-wayland
     komikku
     gthumb
     scrcpy
@@ -44,5 +42,6 @@
     gnome.gnome-software
     pavucontrol
     keepassxc
+    github-desktop-wayland
   ];
 }
