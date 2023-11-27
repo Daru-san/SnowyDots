@@ -3,19 +3,10 @@ let
   spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default;
 in
 {
+
   # allow spotify to be installed if you don't have unfree enabled already
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "spotify"
-  ];
-
-  #Overlay to enable wayland support
-  nixpkgs.overlays = [ 
-    (final: prev: {
-      spotify = prev.spotify.override {
-        commandLineArgs =
-         "--enable-features=UseOzonePlatform --ozone-platform=wayland";
-      };
-    };)
   ]; 
 
   # configure spicetify :)
@@ -24,11 +15,15 @@ in
     #Enable spicetify
     enable = true;
 
-    #Package 
-    spotifyPackage = spotify;
-    
+    # Package, using an overide to enable wayland support  
+    spotifyPackage = let
+      spotify-wayland = pkgs.spotify.overrideAttrs (old: rec {
+        commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
+      });
+    in spotify-wayland;
+
     #Spicetify theme
-    theme = "Comfy";
+    theme = spicePkgs.themes.Comfy;
     colorScheme = "Forest"; 
 
     #Spicetify extensions
