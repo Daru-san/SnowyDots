@@ -33,5 +33,7 @@
     busybox
     usbutils
     nix-rebuild
+    playerctl
+    playerctld
   ];
 }
