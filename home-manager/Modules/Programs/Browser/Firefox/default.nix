@@ -34,8 +34,6 @@ in
           don-t-fuck-with-paste
           disconnect
           enhanced-github
-          enhancer-for-youtube
-          firefox-color
           violentmonkey
           github-file-icons
           gitako-github-file-tree
@@ -57,7 +55,14 @@ in
           unpaywall
           web-archives
           widegithub
-          tabcenter-reborn
+          auto-tab-discard
+          behind-the-overlay-revival
+          dark-mode-website-switcher
+          offline-qr-code-generator
+          mal-sync
+          overview
+          lovely-forks
+          nighttab
         ];
 
         #Make this profile the default
