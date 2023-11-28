@@ -58,8 +58,8 @@ in
           auto-tab-discard
           behind-the-overlay-revival
           dark-mode-website-switcher
+          dark-mode-webextension
           offline-qr-code-generator
-          mal-sync
           overview
           lovely-forks
           nighttab
