@@ -16,7 +16,7 @@ My personal NixOS dotfiles written completely in Nix.
 ## Goal
 - My goal with these is to write everything in Nix with no exceptions.
   > Why?
-  Because I can and I want to keep the total file size as small as humanly possible, and because *_declerativity rocks_*.
+  >> Because I can and I want to keep the total file size as small as humanly possible, and because *_declerativity rocks_*.
 - This is supposed to be a continuation of my older repo [Nix-Dots](https://github.com/Daru-san/Nix-Dots "Old dots"), with an entirely new spin to it,redoing everything.
 
 ## My environment 
