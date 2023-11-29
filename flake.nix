@@ -1,11 +1,11 @@
 {
-  description = "My NixOS configuration rebuilt ft. Hyprland and flakes";
+  description = "My chilly flake for my snowy NixOS configurations";
 
   inputs = {
 
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    
+
     #Add unstable packages
     nixpkgs-stable.url = "github:nixos/nixpkgs/release-23.05";
 
@@ -15,9 +15,6 @@
 
     #Nix-hardware
     hardware.url = "github:nixos/nixos-hardware";
-
-    #GRUB theme
-    grub-themes.url = "github:vinceliuice/grub2-themes";
 
     # Colors
     nix-colors.url = "github:misterio77/nix-colors";
@@ -29,11 +26,6 @@
     spicetify-nix.url = "github:the-argus/spicetify-nix/master";
 
     ##Hyprland##
-    hyprland = {
-      #Add Hyprland to home config
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     hyprland-contrib = {
       #Hyprland-contrib for hyprland specific packages
       url = "github:hyprwm/contrib";
@@ -43,7 +35,7 @@
     #Neovim nightly
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
-    #Prism launcher
+    #Prism launcher(Modded)
     prismlauncher.url = "github:Diegiwg/PrismLauncher-Cracked";
 
     #Firefox nightly
@@ -54,9 +46,7 @@
     self,
     nixpkgs,
     home-manager,
-    hyprland,
     spicetify-nix,
-    grub-themes,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -90,16 +80,27 @@
 
     # NixOS configuration
     nixosConfigurations = {
+      
+      #Configuration on my Acer laptop
       #'nixos-rebuild --flake .#AspireNix'
       AspireNix = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs grub-themes hyprland spicetify-nix;};
+        specialArgs = {inherit inputs outputs;};
         modules = [
-          # > Our main nixos configuration file <
-          ./nixos/configuration.nix
-          hyprland.nixosModules.default
-          grub-themes.nixosModules.default
+          # > My main nixos configuration file <
+          ./nixos-configs/AspireLaptop/configuration.nix
         ];
       };
     };
+    homeConfigurations = {
+
+      #My home configuration
+      #'home-manager switch --flake .#daru@AspireNix'
+      "daru@AspireNix" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {inherit inputs outputs;};
+        # > My home configuration file <
+        modules = [./home/daru/home.nix];
+      };
+    }
   };
 }
