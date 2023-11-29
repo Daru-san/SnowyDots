@@ -12,7 +12,7 @@
         gnome = {
           enable = true;
         };
-      }
+      };
     };
   };
 }

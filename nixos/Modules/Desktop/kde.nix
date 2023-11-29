@@ -9,10 +9,10 @@
         };
       };
       desktopManager = {
-        plasma = {
+        plasma5 = {
           enable = true;
         };
-      }
+      };
     };
   };
 }

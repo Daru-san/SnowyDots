@@ -34,6 +34,5 @@
     usbutils
     nix-rebuild
     playerctl
-    playerctld
   ];
 }
