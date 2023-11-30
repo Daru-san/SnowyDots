@@ -19,6 +19,9 @@
     systemdTarget = "hyprland-session.target";
   };
 
+  #Enable dconf
+  programs.dconf.enable = true;
+
   #Enable greetd using tuigreet
   services.greetd = {
     package = pkgs.greetd;
