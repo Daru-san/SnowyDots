@@ -101,6 +101,6 @@
         # > My home configuration file <
         modules = [./home/daru/home.nix];
       };
-    }
+    };
   };
 }
