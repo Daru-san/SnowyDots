@@ -14,8 +14,8 @@
     # Import spicetify module
     inputs.spicetify-nix.homeManagerModules.default
 
-    # Import my custom easyeffects module
-    outputs.homeManagerModules.easyeffects
+    # Import nur
+    inputs.nur.nixosModules.nur
 
     # Import home configs
     ./Modules/default.nix
