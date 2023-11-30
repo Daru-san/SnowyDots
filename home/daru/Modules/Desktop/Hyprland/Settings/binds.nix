@@ -23,6 +23,7 @@
       wl-copy = "${pkgs.wl-clipboard}/bin/wl-copy";
       wl-paste = "${pkgs.wl-clipboard}/bin/wl-paste";
       notify-send = "${pkgs.libnotify}/bin/notify-send";
+      easyeffects = "${config.services.easyeffects.package}/bin/easyeffects";
     in [
       #Basic binds
       "SUPER,space,exec, ${fuzzel} -D no"
@@ -33,6 +34,7 @@
       "SUPER, r, exec, ${terminal} --hold ${ranger}"
       "SUPER, z, exec, ${terminal} --hold ${editor}"
       "SUPER, i, exec, ${hdrop} '${image-editor}'"
+      "SUPER, a, exec, $hdrop '${easyeffects}'"
 
       #Window bings
       "alt,q,killactive"

@@ -8,10 +8,10 @@
 in
 {
   #Theme symlinks 
-  home.file.".mozilla/firefox/daru/chrome" = {
-    source = "${firefoxOne}/chrome";
-    recursive = true;
-  };
+  # home.file.".mozilla/firefox/daru/chrome" = {
+  #   source = "${firefoxOne}/chrome";
+  #   recursive = true;
+  # };
 
   programs.firefox = {
     enable = true;
