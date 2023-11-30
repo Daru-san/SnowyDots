@@ -28,7 +28,6 @@
       "SUPER,space,exec, ${fuzzel} -D no"
       "SUPER, Return, exec, ${terminal}"
       "SUPER, e, exec, ${hdrop} '${file-manager}'"
-      "SUPER, b, exec, ${rofi-bluetooth}"
       "SUPERALT, b, exec, ${hdrop} '${browser}'"
       "SUPER, x, exec, ${wlogout}"
       "SUPER, r, exec, ${terminal} --hold ${ranger}"
