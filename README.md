@@ -3,12 +3,16 @@ Snowflake-dots❄️
 
 My flake-based NixOS configuration featuring Hyprland, flakes and a tad of KDE
 
-## Big thanks to 
+## Big thanks to
 * [Misterio77's nix-starter-configs](https://github.com/Misterio77/nix-starter-configs "nix-starter-configs")
 * [misterio's dotfiles](https://git.sr.ht/~misterio/nix-config "dots")
 * [D3Ext's aesthetic wallpaper repo](https://github.com/D3Ext/aesthetic-wallpapers "walls")
 * [NixOS Manual](https://nixos.org/manual/nixos/unstable/ "nix")
 * [Erase your darlings](https://grahamc.com/blog/erase-your-darlings/ "persist")
+* [NixOS wiki](https://nixos.wiki "nix-wiki")
+* [MyNixOS](https://mynixos.com "Best nix resource")
+
+---
 
 # Overview
 My personal NixOS dotfiles written completely in Nix.
@@ -45,8 +49,8 @@ My personal NixOS dotfiles written completely in Nix.
  <details>
   <summary>Others</summary>
     <ul>
-        <li>Audio effects: jamesdsp</li>
-        <li>Files: ranger/nautilus</li>
+        <li>Audio effects: easyeffects</li>
+        <li>Files: ranger/dolphin</li>
         <li>Music: Spotify with spicetify</li>
         <li>Minecraft: Prism-Launcher - <i>cracked</i></li>
         <li>Video: mpv with scripts</li>
@@ -66,6 +70,8 @@ My personal NixOS dotfiles written completely in Nix.
 ![Preview 3](https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev3.png)
 ![Preview 4](https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev4.png)
 ![Preview 5](https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev5.png)
+
+---
 
 ## Configuration Structure:
 ```
@@ -100,7 +106,9 @@ Building the system
     sudo nixos-rebuild {switch/boot} --flake .#AspireNix #Laptop configuration 
     home-manager switch --flake .#daru@AspireNix #my user(daru) found in /home/daru
 ```
-## Monthly TODO: December
+---
+
+## December TODO list:
 
 ### Todo:
 - [ ] Set up shell environments for developing in different languages
@@ -109,6 +117,7 @@ Building the system
 ### In Progress:
 - [ ] Document everything
 - [ ] Set up custom eww widgets
+
 
 ### Completed
 none

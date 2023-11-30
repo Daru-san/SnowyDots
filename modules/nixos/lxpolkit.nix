@@ -42,7 +42,7 @@
          Type = "simple";
          ExecStart = "${pkgs.lxde.lxsession}/bin/lxpolkit";
          Restart = "on-failure";
-         RestartSec = 1;
+         RestartSec = 10;
          TimeoutStopSec = 10;
         };
       };
