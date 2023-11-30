@@ -15,6 +15,7 @@
       extraCommands = [
         "systemctl --user start kanshi.service"
         "systemctl --user start easyeffects.service"
+        "systemctl --user start syncthing-tray.service"
       ];
     };
     settings = {
