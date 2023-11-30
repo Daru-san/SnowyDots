@@ -17,20 +17,25 @@
          '';
        };
  
-       systemdTarget = mkOption {
-         default = "graphical-session.target";
-         type = with types; uniq string;
-         description = ''
-           The systemd target the service wait for
-         '';
-       };
+      systemdTarget = lib.mkOption {
+        type = lib.types.str;
+        default = "graphical-session.target";
+        example = "sway-session.target";
+        description = ''
+          The systemd target that will automatically start the lxpolkit service.
+
+          When setting this value to `"sway-session.target"`,
+          make sure to also enable {option}`wayland.windowManager.sway.systemd.enable`,
+          otherwise the service may never be started.
+        '';
+      };
      };
    };
  
    config = mkIf cfg.enable {
      systemd.services.lxpolkit = {
-       wantedBy = [ "graphical-session.target" ];
-       wants = [ "graphical-session.target" ];
+       wantedBy = [ "${cfg.systemdTarget}" ];
+       wants = [ "${cfg.systemdTarget}" ];
        after = [ "${cfg.systemdTarget}" ];
        description = "Start the lxpolkit service.";
        serviceConfig = {
