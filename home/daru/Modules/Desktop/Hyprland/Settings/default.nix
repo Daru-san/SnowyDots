@@ -14,8 +14,7 @@
       enable = true;
       extraCommands = [
         "systemctl --user start kanshi.service"
-        "systemctl --user start waybar.service"
-        "systemctl --user start copyq.service"
+        "systemctl --user start easyeffects.service"
       ];
     };
     settings = {

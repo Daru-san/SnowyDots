@@ -33,12 +33,6 @@ in {
       "SUPERSHIFT,u,movetoworkspace,special"
 
       "SUPERALT,P,togglespecialworkspace,usage"
-      # "SUPERCTRL,P,movetoworkspace,usage"
-      
-      "SUPERALT,caps_lock,togglespecialworkspace,mink"
-      "SUPER,a,togglespecialworkspace,audio"
-
-      "SUPERSHIFT,b,togglespecialworkspace,PrivFox"
 
       #Super+tab to move to next workspace and back
       "ALT,TAB,workspace,m+1"

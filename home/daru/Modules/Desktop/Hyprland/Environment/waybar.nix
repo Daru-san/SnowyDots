@@ -19,7 +19,7 @@
   
   #THis option seems to break notifications so I'll keep it disabled for now
     systemd = {
-      enable = true;
+      enable = false;
       target = "hyprland-session.target";
     };
 

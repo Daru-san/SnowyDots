@@ -8,7 +8,6 @@
           "center 1,class:(kitty),title:(SystemMonitor)"
 
           #Special rules for firefox
-          "workspace special:PrivFox,class:(firefox-nightly),title:(Firefox Nightly Private Browsing)"
           "float,class:(firefox-nightly),title:(Library)"
         ];
         windowrule = [
@@ -32,15 +31,13 @@
           "workspace name:F9,^(io.github.martinrotter.rssguard)$"
           "workspace name:F10,^(org.kde.okular)$"
           "workspace name:F11,^(mpv)$"
-
-          #Special workspaces
-          "workspace special:audio silent,^(com.github.wwmm.easyeffects)$"
             
             #Floating windows 
            "float,^(nm-applet)$"
            "float,^(pavucontrol)$"
            "float,^(.blueman-manager-wrapped)$"
            "float,^(com.github.hluk.copyq)$"
+           "float,^(com.github.wwmm.easyeffects)$"
         ];
         workspace = [
           "name:1, persistent:true"
