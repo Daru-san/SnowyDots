@@ -9,7 +9,6 @@
 }: {
   imports = [
     
-    outputs.nixosModules.audioeffects
     outputs.nixosModules.lxpolkit
 
     #NixOS System Modules
