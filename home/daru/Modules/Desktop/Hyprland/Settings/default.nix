@@ -12,6 +12,11 @@
     enable = true;
     systemd = {
       enable = true;
+      extraCommands = [
+        "systemctl --user start kanshi.service"
+        "systemctl --user start waybar.service"
+        "systemctl --user start copyq.service"
+      ];
     };
     settings = {
       source = [
