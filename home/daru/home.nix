@@ -25,7 +25,7 @@
     overlays = [
       # Add overlays your own flake exports (from overlays and pkgs dir):
       outputs.overlays.additions
-      outputs.overlays.modifications
+#      outputs.overlays.modifications
       outputs.overlays.stable-packages
 
       # You can also add overlays exported from other flakes:
@@ -65,5 +65,5 @@
   systemd.user.startServices = "sd-switch";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "23.11";
+  home.stateVersion = "24.05";
 }

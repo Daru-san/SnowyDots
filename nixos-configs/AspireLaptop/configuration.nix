@@ -39,7 +39,7 @@
     overlays = [
       # Add overlays your own flake exports (from overlays and pkgs dir):
       outputs.overlays.additions
-      outputs.overlays.modifications
+#      outputs.overlays.modifications
       outputs.overlays.stable-packages
     ];
 
@@ -79,5 +79,5 @@
   networking.hostName = "AspireNix";
 
   # Pin to NixOS 23.05
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 }
