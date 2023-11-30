@@ -1,7 +1,10 @@
-{...}:{
+{audioeffects, ...}:{
   #Enable sound
   sound.enable = true;
 
+  services.audioeffects = {
+    enable = true;
+  };
   # hardware.pulseaudio.enable = true;
   
   security.rtkit.enable = true;

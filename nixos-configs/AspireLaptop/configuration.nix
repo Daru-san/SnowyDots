@@ -8,6 +8,10 @@
   ...
 }: {
   imports = [
+    
+    outputs.nixosModules.audioeffects
+    outputs.nixosModules.lxpolkit
+
     #NixOS System Modules
     ./Modules/boot.nix
     ./Modules/audio.nix
@@ -16,7 +20,6 @@
     ./Modules/android.nix
     ./Modules/desktop.nix
     ./Modules/network.nix
-    ./Modules/systemd.nix
     ./Modules/performance.nix
     ./Modules/hardware.nix
     ./Modules/systemPackages.nix
@@ -78,6 +81,6 @@
   # Hostname
   networking.hostName = "AspireNix";
 
-  # Pin to NixOS 23.05
+  # Pin to NixOS 24.05
   system.stateVersion = "24.05";
 }

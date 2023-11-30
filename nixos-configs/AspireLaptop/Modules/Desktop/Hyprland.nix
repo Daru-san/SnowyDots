@@ -1,5 +1,5 @@
 #This file is specifically for my Hyprland configurations and can be toggled in the 'desktop.nix' file
-{pkgs, ...}:{
+{pkgs,lxpolkit, ...}:{
 
   #Enable Hyprland
   programs.hyprland = {
@@ -12,6 +12,12 @@
   security.pam.services.swaylock.text = ''
     auth include login
    '';
+  
+  #Enable the lxpolkit service from my module
+  services.lxpolkit = {
+    enable = true;
+    systemdTarget = "hyprland-session.target";
+  };
 
   #Enable greetd using tuigreet
   services.greetd = {
