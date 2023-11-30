@@ -1,5 +1,4 @@
-# This is your home-manager configuration file
-# Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
+## My home configuration file ##
 {
   inputs,
   outputs,
@@ -8,53 +7,49 @@
   pkgs,
   ...
 }: {
-  # You can import other home-manager modules here
   imports = [
+    # Import nix-colors module
     inputs.nix-colors.homeManagerModules.default
 
+    # Import spicetify module
     inputs.spicetify-nix.homeManagerModules.default
-    #Add nur
-    inputs.nur.nixosModules.nur
 
-      #Import home configs
-     ./Modules/default.nix
+    # Import my custom audioeffects module
+    outputs.homeManagerModules.audioeffects
+
+    # Import home configs
+    ./Modules/default.nix
   ];
 
   nixpkgs = {
-    # You can add overlays here
     overlays = [
-      # Add overlays your own flake exports (from overlays and pkgs dir):
+
+      # 
       outputs.overlays.additions
-#      outputs.overlays.modifications
+
+      # Package modifications
+      # outputs.overlays.modifications
+
+      # Overlay for stable packages (23.05)
       outputs.overlays.stable-packages
 
-      # You can also add overlays exported from other flakes:
+      # Neovim nightly overlay
       inputs.neovim-nightly-overlay.overlays.default
 
     ];
 
 
-    # Configure your nixpkgs instance
     config = {
-      # Disable if you don't want unfree packages
+      # Allowing unfree packages
       allowUnfree = true;
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = _: true;
-
-      # packageOverrides = pkgs: {
-      #   nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-      #     inherit pkgs;
-      #   };
-      # };
     };
   };
 
   home = {
     username = "daru";
     homeDirectory = "/home/daru";
-    sessionVariables = {
-        repo = "~/snowflake/";
-      };
   };
 
 
