@@ -13,13 +13,13 @@
         ];
         windowrule = [
           #Window specific worspaces
-          "workspace name:7,^(pinta)$"
+          "workspace name:7,^(krita)$"
           "workspace name:8,^(pqiv)$"
           #Productivity workspaces
           "workspace name:F1,^(firefox-nightly)$"
           "workspace name:F2,^(Logseq)$"
           "workspace name:F3,^(libreoffice)$"
-          "workspace name:F4,^(org.gnome.Nautilus)$"
+          "workspace name:F4,^(org.kde.dolphin)$"
 
           #Entertainment workspaces
           "workspace name:F5,^(info.febvre.Komikku)$"
@@ -29,19 +29,18 @@
           "workspace name:F7,^(FreeTube)$"
           
           #Others
-          "workspace name:F9,^(io.gitlab.news_flash.NewsFlash)$"
-          "workspace name:F10,^(evince)$"
+          "workspace name:F9,^(io.github.martinrotter.rssguard)$"
+          "workspace name:F10,^(org.kde.okular)$"
+          "workspace name:F11,^(mpv)$"
 
           #Special workspaces
           "workspace special:audio silent,^(com.github.wwmm.easyeffects)$"
-          "workspace special:mink silent,^(cr.fr.bionus.Grabber)$"
             
             #Floating windows 
            "float,^(nm-applet)$"
            "float,^(pavucontrol)$"
            "float,^(.blueman-manager-wrapped)$"
            "float,^(com.github.hluk.copyq)$"
-           "fullscreen,^(vlc)$"
         ];
         workspace = [
           "name:1, persistent:true"
