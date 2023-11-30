@@ -71,5 +71,6 @@ in
     };
   home.packages = with pkgs; [
     spotify-tui #Spotify-tui for terminal usage
+    spotdl # Download music
   ];
 }
