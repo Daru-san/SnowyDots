@@ -14,6 +14,7 @@
     ranger
     htop
     wget
+    git
     nix-prefetch-git
     nix-prefetch-github
     gcc

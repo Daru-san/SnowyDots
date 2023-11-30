@@ -6,7 +6,6 @@
       daru = {
         isNormalUser = true;
         shell = pkgs.zsh;
-        initialPassword = "Zakoru";
         description = "Daru";
         extraGroups = [ "networkmanager" "wheel" "video" "adbusers" "input"];
       };
