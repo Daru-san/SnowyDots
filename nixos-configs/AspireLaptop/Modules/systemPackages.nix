@@ -6,7 +6,7 @@
   programs = {
 
     #Enable gnome-disks
-    gnome-disks.enable = true;
+    gnome-disks.enable = false;
   };
 
   #System packages
@@ -29,7 +29,6 @@
     exfatprogs
     nurl
     nix-melt
-    gparted
     ncdu
     busybox
     usbutils

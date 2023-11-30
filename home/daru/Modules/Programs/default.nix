@@ -28,6 +28,8 @@
     rssguard
     libsForQt5.okular
     libsForQt5.dolphin
+    libsForQt5.plasma-disks
+    partition-manager
     freetube-wayland
     komikku
     scrcpy
