@@ -1,5 +1,5 @@
-{audioeffects, ...}:{
-  services.audioeffects = {
+{easyeffects, ...}:{
+  services.easyeffects = {
     enable = true;
   };
 }

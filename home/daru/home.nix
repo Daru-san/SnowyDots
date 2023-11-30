@@ -14,8 +14,8 @@
     # Import spicetify module
     inputs.spicetify-nix.homeManagerModules.default
 
-    # Import my custom audioeffects module
-    outputs.homeManagerModules.audioeffects
+    # Import my custom easyeffects module
+    outputs.homeManagerModules.easyeffects
 
     # Import home configs
     ./Modules/default.nix

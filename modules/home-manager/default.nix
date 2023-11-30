@@ -1,4 +1,4 @@
 #Shared home modules
 {
-  audioeffects = import ./audioeffects.nix;
+  easyeffects = import ./easyeffects.nix;
 }
