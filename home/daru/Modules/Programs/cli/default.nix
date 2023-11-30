@@ -1,12 +1,10 @@
 #Configuration and declaring of most of the cli programs
 {config, pkgs, ...}:{
     imports = [
-      #Programs that have specialized modules
+      #Programs that have specialized modules and configurations
       ./ranger/ranger.nix
       ./btop/btop.nix 
-      ./neofetch/neofetch.nix
       ./yt-dlp/yt-dlp.nix
-      ./ani-cli/ani-cli.nix
       ./translate-shell/default.nix
     ];
     home.packages = with pkgs; [
@@ -14,7 +12,6 @@
       tree #tree
       figlet #
       bc #Calculator
-      transmission #Cli torrent client
       tty-clock #In-terminal clock 
       libnotify #Notifications
       cbonsai #Trees ;)
@@ -25,8 +22,7 @@
       glow #Markdown editor
       gping #Ping with graphics
       nvtop-intel #Gpu top
-      sysz #Systemd service search
-     # wtf
+      sysz #Systemd service management
       nap #Code snippets
       jrnl #Journal 
       chafa 

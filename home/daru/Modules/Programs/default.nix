@@ -6,7 +6,6 @@
     ./Video/default.nix
     ./Games/default.nix
     ./Browser/default.nix
-    ./Images/default.nix
   ];
 
 
