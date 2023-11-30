@@ -1,8 +1,4 @@
 {pkgs, ...}: {
-  imports = [
-    #Import custom tab bar
-    ./kitty-tab-bar.nix 
-  ];
   programs.kitty = {
     enable = true;
 
@@ -18,8 +14,8 @@
     #Settings
     settings = {
       tab_bar_edge = "top";
-      tab_bar_style = "custom";
-      #tab_powerline_style = "round";
+      tab_bar_style = "powerline";
+      tab_powerline_style = "round";
       tab_activity_symbol = "󰗖 ";
       active_tab_font_style = "bold";
       inactive_tab_font_style = "italics";
