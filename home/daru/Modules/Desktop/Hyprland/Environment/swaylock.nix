@@ -51,12 +51,4 @@
       text-caps-lock-color = "009ddc";
     };
   };
-  home.packages = with pkgs;
-  let
-    wallpaper = "~/Wallpapers/plant.png";
-  in [
-    (pkgs.writeShellScriptBin "lock-screen" ''
-      swaylock -fF
-    '')
-  ];
 }
