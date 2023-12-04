@@ -80,6 +80,20 @@
   # Hostname
   networking.hostName = "AspireNix";
 
-  # Pin to NixOS 24.05
-  system.stateVersion = "24.05";
+  system = {
+    #Set to nixos-24.05
+    stateVersion = "24.05";
+    
+    #Allow auto-upgrades to happen every day
+    autoUpgrade = {
+      enable = true;
+      flake = "github:Daru-san/Snowflake-dots";
+      flags = [
+        "--update-input" "nixpkgs" "--commit-lock-file" "--impure"
+      ];
+      operation = "boot";
+      dates = "00:00";
+      randomizedDelaySec = "180min";
+    };
+  };
 }
