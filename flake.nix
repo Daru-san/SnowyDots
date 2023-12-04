@@ -7,7 +7,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     #Add unstable packages
-    nixpkgs-stable.url = "github:nixos/nixpkgs/release-23.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/release-23.11";
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager/master";
