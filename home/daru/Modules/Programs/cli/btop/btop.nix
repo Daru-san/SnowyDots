@@ -10,7 +10,7 @@
         truecolor = True
         force_tty = False
         presets = "cpu:1:default,proc:0:default cpu:0:default,mem:0:default,net:0:default cpu:0:block,net:0:tty"
-        vim_keys = Falserounded_corners
+        vim_keys = True
         rounded_corners = true
         graph_symbol = "braille"
         graph_symbol_cpu = "default"
@@ -46,7 +46,7 @@
         clock_format = "/user %X" 
         background_update = True 
         custom_cpu_name = "" 
-        disks_filter = "exclude=/boot" 
+        disks_filter = "exclude=/boot,exclude=/nix,exclude=/log,exclude=/store,exclude=/etc,exclude=/var,exclude=/tmp" 
         mem_graphs = True 
         mem_below_net = False 
         fs_arc_cached = True 
