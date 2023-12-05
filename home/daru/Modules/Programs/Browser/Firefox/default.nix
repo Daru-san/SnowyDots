@@ -114,6 +114,7 @@ in
             "StartPage"
             "DuckDuckGo"
             "My NixOS"
+            "NixOS Wiki"
             "Nix Packages"
             "Nix Options"
             "Home Manager"
@@ -141,7 +142,7 @@ in
               urls = [
                 {template = "https://www.startpage.com/sp/search?query={searchTerms}";}
               ];
-              icon = "https://www.startpage.com/sp/cdn/favicons/favicon--default.ico";
+              icon = "https://addons.mozilla.org/user-media/addon_icons/899/899962-64.png";
               definedAliases = ["@sp"];
             };
 
@@ -210,7 +211,7 @@ in
               urls = [
               {template = "https://mynixos.com/search?q={searchTerms}";}
               ];
-              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/white.svg";
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake-white.svg";
               definedAliases = ["@mn" "@nx"];
             };
 
