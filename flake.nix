@@ -40,6 +40,9 @@
 
     #Firefox nightly
     firefox.url = "github:nix-community/flake-firefox-nightly";
+
+    #Ags bar for hyprland
+    ags.url = "github:Aylur/ags";
   };
 
   outputs = {
