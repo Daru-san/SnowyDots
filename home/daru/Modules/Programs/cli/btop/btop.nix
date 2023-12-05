@@ -46,7 +46,7 @@
         clock_format = "/user %X" 
         background_update = True 
         custom_cpu_name = "" 
-        disks_filter = "exclude=/boot,exclude=/nix,exclude=/log,exclude=/store,exclude=/etc,exclude=/var,exclude=/tmp" 
+        disks_filter = "exclude=/boot /nix /var/log /nix/store /etc /var /tmp /root" 
         mem_graphs = True 
         mem_below_net = False 
         fs_arc_cached = True 
