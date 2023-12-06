@@ -36,7 +36,7 @@ in {
     };
     ".mozilla/firefox/daru/chrome/old" = {
       source = "${ffModBlur}/old";
-    }
+    };
     ".mozilla/firefox/daru/chrome/extras" = {
       source = "${ffModBlur}/EXTRA MODS";
     };
