@@ -1,17 +1,8 @@
-{pkgs, lib, config, inputs, ...}: let
-    #Import custom css themes from Godiesc/firefox-one on github
-  firefoxOne = pkgs.fetchgit {
-    url = "https://github.com/Godiesc/firefox-one";
-    rev = "974fee10ce0ebc9b4025b90bb18d05d74c46230f";
-    sha256 = "t9j9p2nalanN1OdJCjuuFZfIQwKRS6FTD5HaGEcAlmA=";
-  };
-in
-{
-  #Theme symlinks 
-  # home.file.".mozilla/firefox/daru/chrome" = {
-  #   source = "${firefoxOne}/chrome";
-  #   recursive = true;
-  # };
+{pkgs, lib, config, inputs, ...}:{
+
+  imports = [
+    ./theme.nix
+  ];
 
   programs.firefox = {
     enable = true;
@@ -282,7 +273,6 @@ in
           "firefoxone.tree_tabs_style" = false;
           "firefoxone.without-default-colors" = true;
           "firefoxone.main-image" = false;
-          
         };
       };
     };
