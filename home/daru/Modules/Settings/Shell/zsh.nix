@@ -10,20 +10,6 @@
   programs = { #Zsh configs
     zsh = {
       enable = true;
-      #Aliases for zsh
-      shellAliases = let
-        git = "${config.programs.git.package}/bin/git";
-        neofetch = "${pkgs.neofetch}/bin/neofetch";
-        tty-clock = "${pkgs.tty-clock}/bin/tty-clock";
-        kitty = "${config.programs.kitty.package}/bin/kitty";
-        ani-cli = "${pkgs.ani-cli}/bin/ani-cli";
-      in {
-        g = "${git}";
-        nofetch = "${neofetch} --config none"; 
-        clock = "${tty-clock} -bscBrnS";
-        anifetch = "${neofetch} --config ~/.config/neofetch/anifetch.conf";
-        j = "jump";
-       };
 
       #History file
       history = {
@@ -46,19 +32,21 @@
         plugins = [ 
           "git" 
           "sudo" 
-          "colorize" 
+          "colorize"
+          "per-directory-history"
           "catimg" 
-          "jump" 
           "extract"
           "web-search"
           "colored-man-pages"
           "copypath"
           "copyfile"
+          "zsh-interactive-cd"
+          "copybuffer"
+          "fzf"
+          "adb"
+          "rsync"
         ];
       };
     };
   };
-
-  #Directory marks for jump plugin
-  home.file.".marks".source = config.lib.file.mkOutOfStoreSymlink ./marks;
 }
