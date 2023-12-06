@@ -116,8 +116,6 @@ Building the system
 
 ### In Progress:
 - [ ] Document everything
-- [ ] Set up custom eww widgets
-
 
 ### Completed
 none
