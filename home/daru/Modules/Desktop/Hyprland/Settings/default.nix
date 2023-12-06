@@ -1,7 +1,6 @@
 {...}:{
   imports = [
     ./binds.nix
-    ./fonts.nix
     ./rules.nix
     ./devices.nix
     ./style.nix

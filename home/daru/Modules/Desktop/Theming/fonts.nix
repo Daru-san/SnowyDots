@@ -1,4 +1,4 @@
-#Fonts for Hyprland
+# System fonts
 {pkgs, ...}:{
   home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" "RobotoMono" ]; })

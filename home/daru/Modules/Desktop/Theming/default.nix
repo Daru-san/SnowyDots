@@ -1,7 +1,8 @@
 {...}:{
   imports = [
-    ./gtk/gtk.nix
-    ./qt/default.nix
+    ./gtk.nix
+    ./qt.nix
+    ./fonts.nix
   ];
 
   #Set colorscheme
