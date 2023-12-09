@@ -13,7 +13,7 @@
     };
     font = {
       name = "Jetbrains Mono Nerd Font";
-      size = "14";
+      size = 14;
     };
 
     #gtk cursor theme
