@@ -17,8 +17,8 @@
     # Import nur
     inputs.nur.nixosModules.nur
 
-    # Import ags, a bar for Hyprland
-    inputs.ags.homeManagerModules.default
+    # Import anyrun, a launcher for Hyprland
+    inputs.anyrun.homeManagerModules.default
 
     # Import home configs
     ./Modules/default.nix

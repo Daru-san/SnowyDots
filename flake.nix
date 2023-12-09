@@ -41,8 +41,11 @@
     #Firefox nightly
     firefox.url = "github:nix-community/flake-firefox-nightly";
 
-    #Ags bar for hyprland
-    ags.url = "github:Aylur/ags";
+    # anyrun, hyprland launcher
+    anyrun = {
+      url = "github:Kirottu/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {

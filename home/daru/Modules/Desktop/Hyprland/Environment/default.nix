@@ -10,7 +10,7 @@
     ./swayidle.nix
     ./fuzzel.nix
     ./wlogout.nix
-    ./ags.nix
+    ./anyrun.nix
   ];
   home.packages = with pkgs; [
     wl-clipboard
