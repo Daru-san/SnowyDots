@@ -34,7 +34,7 @@
         cpu_graph_lower = "user"
         cpu_invert_lower = True 
         cpu_single_graph = False 
-        cpu_bottom = False 
+        cpu_bottom = True 
         show_uptime = True 
         check_temp = True 
         cpu_sensor = "Auto" 
@@ -43,18 +43,18 @@
         temp_scale = "celsius" 
         base_10_sizes = False 
         show_cpu_freq = True 
-        clock_format = "/user %X" 
+        clock_format = "%d %b %R" 
         background_update = True 
         custom_cpu_name = "" 
         disks_filter = "exclude=/boot /nix /var/log /nix/store /etc /var /tmp /root" 
         mem_graphs = True 
-        mem_below_net = False 
+        mem_below_net = True 
         fs_arc_cached = True 
         show_swap = True 
         swap_disk = True 
         show_disks = True 
         only_physical = True 
-        use_fstab = False 
+        use_fstab = True 
         zfs_hide_datasets = False 
         disk_free_priv = False 
         show_io_stat = True 
