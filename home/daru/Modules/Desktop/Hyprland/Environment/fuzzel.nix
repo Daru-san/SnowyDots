@@ -9,7 +9,7 @@
         font = "Jetbrains Mono Nerd Font";
         width = 60;
         lines = 8;
-	line-height = 24;
+      	line-height = 24;
         icon-theme = "Papirus-Dark";
         tabs = 10;
 
@@ -22,7 +22,7 @@
         background = "1E2127FF";
         border = "2F343FFF";
         selection = "7FBBB3FF";
-	text = "FFFFFFFF";
+      	text = "FFFFFFFF";
       };
     };
   };
