@@ -1,4 +1,4 @@
-{pkgs, ...}:{
+{pkgs, config, ...}:{
     imports = [
       ./waybar-style.nix
     ];
@@ -27,12 +27,15 @@
       {
         layer = "top";
         position = "bottom";
-        height = 30;
+        height = 24;
         output = "HDMI-A-1";
 
         #Enabled modules
         modules-left = [
+          "custom/launcher"
           "clock"
+          "custom/playerctl"
+          "cava"
           ];
         modules-center = [
           "hyprland/workspaces"
@@ -49,31 +52,29 @@
         ];
 
           #Module configs
+          "custom/launcher"= {
+            format = "";
+            tooltip = "false";
+            };
           "hyprland/workspaces" = {
               format = "{icon}";
               format-icons = {
-                active = "";
-                default = "";
-                urgent = "";
+                active = "";
+                default = "";
+                urgent = "";
+                sort = "name";
               };
               on-scroll-up = "hyprctl dispatch workspace e+1";
               on-scroll-down = "hyprctl dispatch workspace e-1";
           };
 
-          "disk" = {
-             path = "/";
-             format = " {percentage_free}%";
-             on-click = "kitty -T 'Disk Usage' --hold ncdu /";
-             interval = 300;
-             tooltip = false;
-          };
           "tray" = {
              spacing = 10;
              icon-size = 21;
           };
           "clock" = {
              format-alt = " {:%R}";
-             format = " {:%A %d %B %T}";
+             format = " {:%e, %d %b, %R}";
              interval = 1;
              tooltip-format = "<tt><small>{calendar}</small></tt>";
              calendar = {
@@ -103,11 +104,6 @@
              format-alt = "{used:0.1f}G/{total:0.1f}G";
              interval = 2;
              tooltip = false;
-          };
-          "temperature" = {
-             critical-threshold = 2;
-             format = "{temperatureC}°C {icon}";
-             format-icons = ["" "" ""];
           };
           "backlight" = {
              format = "{percent}% {icon}";
@@ -160,6 +156,38 @@
             tooltip = true;
             on-click = "blueman-manager";
           };
+          "cava" = {
+            framerate = 60;
+            autosens = 1;
+            bars = 18;
+            lower_cutoff_freq = 50;
+            higher_cutoff_freq = 10000;
+            method = "pipewire";
+            source = "auto";
+            stereo = true;
+            reverse = false;
+            bar_delimiter = 0;
+            monstercat = false;
+            waves = false;
+            input_delay = 1;
+            format-icons = [ 
+            "<span foreground='#${custom.primary_accent}'>▁</span>" 
+            "<span foreground='#${custom.primary_accent}'>▂</span>" 
+            "<span foreground='#${custom.primary_accent}'>▃</span>" 
+            "<span foreground='#${custom.primary_accent}'>▄</span>" 
+            "<span foreground='#${custom.secondary_accent}'>▅</span>" 
+            "<span foreground='#${custom.secondary_accent}'>▆</span>"
+            "<span foreground='#${custom.secondary_accent}'>▇</span>" 
+            "<span foreground='#${custom.secondary_accent}'>█</span>" 
+            ];
+          };
+          "custom/playerctl"= {
+            format = "<span>󰎈 {} 󰎈</span>";
+            return-type = "json";
+            max-length = 40;
+            exec = "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F";
+            on-click = "${config.services.playerctld.package}/bin/playerctl play-pause";
+            };
         "custom/notification" = {
           format = "{icon}";
           format-icons = {

@@ -1,199 +1,113 @@
 {config, ...}:{
 #Waybar styling
   programs.waybar.style = ''
+
 * {
-   
-    font-family: JetBrainsMono Nerd Font;
-    font-size: 18px;
+    border: none;
+    border-radius: 0px;
+    font-family: Jetbrains Mono Nerd Font;
+    font-size: 16px;
+    min-height: 0;
 }
 
 window#waybar {
-    background-color: #${config.colorScheme.colors.base00};
-
-    transition-property: background-color;
-    transition-duration: .5s;
-
+    background: rgba(17,27,27,1);
 }
 
-window#waybar.hidden {
-    opacity: 0.2;
+#cava{
+    background: #25353a;
+    margin: 5px; 
+    padding: 8px 16px;
+    color: #cbb6a7;
+    border-radius: 24px 10px 24px 10px;
 }
-
-
-window#waybar.termite {
-    background-color: #e5e9f0;
+#workspaces {
+    background: #25353a;
+    margin: 5px 5px;
+    padding: 8px 5px;
+    border-radius: 16px;
+    color: #cba6f7
 }
-
-button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 0px transparent;
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 0;
-}
-
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover {
-    background: inherit;
-    /*replace this; sway workspaces button*/
-}
-
 #workspaces button {
-    background-color: transparent;
-    color: #${config.colorScheme.colors.base05};
-    padding-left: 4px;
-    padding-right: 7px;
+    padding: 0px 5px;
+    margin: 0px 3px;
+    border-radius: 16px;
+    color: transparent;
+    background: rgba(17,24,24,1);
+    transition: all 0.3s ease-in-out;
+}
 
-
-    
+#workspaces button.active {
+    background-color: #89f4fa;
+    color: #11111B;
+    border-radius: 16px;
+    min-width: 50px;
+    background-size: 400% 400%;
+    transition: all 0.3s ease-in-out;
 }
 
 #workspaces button:hover {
-    background: @light1;
-    border-radius: 2rem 2rem 2rem 2rem;    
-    color: @dark1;
-    text-shadow: none;
-
-
+    background-color: #f5f5f5;
+    color: #11111B;
+    border-radius: 16px;
+    min-width: 50px;
+    background-size: 400% 400%;
 }
 
-#workspaces button.focused {
-    background-color: @light2;
-    border-radius: 2rem 2rem 2rem 2rem;
-    color: @dark1;
-    
-
-
+#tray, #pulseaudio, #network, #battery, #cpu, #memory, #bluetooth, #custom-notification {
+    background: #25353a;
+    font-weight: bold;
+    margin: 5px 0px;
+}
+#tray, #pulseaudio, #network, #battery, #cpu, #memory, #bluetooth, #custom-notification{
+    color: #f5f5f5;
+    border-radius: 10px 24px 10px 24px;
+    padding: 0 20px;
+    margin-left: 7px;
+}
+#cpu,#network { 
+   padding: 0 0 0 20px;
+   border-radius: 10px 0px 0px 24px;
+}
+#memory, #bluetooth {
+  border-radius: 0 24px 10px 0;
+  margin-left: 0
+}
+#clock {
+    color: #f5f5f5;
+    background: #25353a;
+    border-radius: 7px 16px 7px 16px;
+    padding: 10px 10px 15px 25px;
+    margin-left: 7px;
+    font-weight: bold;
+   /* font-size: 16px; */
+}
+#custom-launcher {
+    color: #89b4fa;
+    background: #25353a;
+    border-radius: 0px 0px 40px 0px;
+    margin: 0px;
+    padding: 0px 35px 0px 15px;
+    font-size: 2px;
 }
 
-#workspaces button.urgent {
-    background-color: @red;
-
+#custom-playerctl {
+    background: #25353a;
+    color: #f5f5f5;
+    padding: 0 20px;
+    border-radius: 24px 10px 24px 10px;
+    margin: 5px 0;
+    font-weight: bold;
 }
-
-
-
-#workspaces {
-    border-radius: 1rem 0rem 1rem 0rem;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    margin-left: 3px;
-    margin-right: 3px;
-    background-color: #${config.colorScheme.colors.base06};
-
-}
-
-#mode {
-    background-color: @dark1;
-}
-#window {
-    background-color: @dark1 ;
-    color: @text2;
-    font-size: 20px;
-
-
-}
-
-
-#custom-notification,
-#battery,
-#custom-updates,
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#bluetooth,
-#pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#scratchpad,
-#mpd {
-    padding: 0 11px;
-    margin-top: 4px;
-    color: #f23131;
-    margin-bottom: 4px;
-    background-color: #${config.colorScheme.colors.base04};
-    /*border-radius: 2rem 2rem 2rem 2rem;*/
-}
-
-#custom-notification {
-    border-radius: 0rem 0rem 1rem 0rem;
-}
-
-#pulseaudio,
-#clock{
-    color: #1a1f1a;
-    border-radius: 1rem 0rem 1rem 0rem;
-    margin-right:3px;
-    margin-left:3px;
-/*    background-color: @light2;*/
-}
- #cpu {
-    margin-left:0px;
-  /*  color: @text2;*/
-    border-radius: 0 0 0 0;
-} 
-
-#bluetooth,
-#memory {
-   /* color: @text2;*/
-    margin-right:3px;
-    border-radius: 0rem 0rem 1rem 0rem;
-}
-
-#disk {
-    color: @dark4;
-    margin-right:3px;
-    border-radius: 0 2rem 2rem 0;
-    background-color: @light2;
-}
-
-#network,
-#battery {
- /*   color: @text2;*/
-    border-radius: 1rem 0 0 1rem;
-    margin-left:3px;
-    margin-right:0px;
-}
-#network,
-#tray,
-#custom-notification,
-#bluetooth {
-  background-color: #${config.colorScheme.colors.base07};
-  color: #${config.colorScheme.colors.base08};
-}
-#memory,
-#cpu,
-#battery {
-/* background-color: @dark-blue;*/
- color: #${config.colorScheme.colors.base03};
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
-}
-
-#tray{
-	border-radius: 1rem 0rem 0rem 1rem;
-}
-label:focus {
-    background-color: #000000;
-}
-
-
-#pulseaudio.muted {
-    
-    color: @red;
+#window{
+    background: #25353a;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: normal;
+    font-style: normal;
 }
     '';
 }
