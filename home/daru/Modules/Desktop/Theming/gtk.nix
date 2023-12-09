@@ -4,12 +4,16 @@
 
     #Set gtk theme
      theme = {
-        name = "Orchis-Dark";
-        package = pkgs.orchis-theme;
+      name = "Orchis-Green-Dark";
+      package = pkgs.orchis-theme;
     };
     iconTheme = {
-          name = "ePapirus-Dark";
-          package = pkgs.papirus-icon-theme;
+      name = "Papirus-Dark-Maia";
+      package = pkgs.papirus-maia-icon-theme;
+    };
+    font = {
+      name = "Jetbrains Mono Nerd Font";
+      size = "14";
     };
 
     #gtk cursor theme
