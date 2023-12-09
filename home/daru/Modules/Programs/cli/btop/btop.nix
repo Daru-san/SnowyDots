@@ -3,7 +3,7 @@
     programs.btop = {
       enable = true;
       settings = {
-        color_theme = "adapta";
+        color_theme = "matcha-dark-sea";
         theme_background = true;
       };
        extraConfig = ''
