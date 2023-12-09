@@ -171,14 +171,14 @@
             waves = false;
             input_delay = 1;
             format-icons = [ 
-            "<span foreground='#${custom.primary_accent}'>▁</span>" 
-            "<span foreground='#${custom.primary_accent}'>▂</span>" 
-            "<span foreground='#${custom.primary_accent}'>▃</span>" 
-            "<span foreground='#${custom.primary_accent}'>▄</span>" 
-            "<span foreground='#${custom.secondary_accent}'>▅</span>" 
-            "<span foreground='#${custom.secondary_accent}'>▆</span>"
-            "<span foreground='#${custom.secondary_accent}'>▇</span>" 
-            "<span foreground='#${custom.secondary_accent}'>█</span>" 
+            "<span foreground='#${config.colorScheme.colors.base0A}'>▁</span>'"
+            "<span foreground='#${config.colorScheme.colors.base0A}'>▂</span>" 
+            "<span foreground='#${config.colorScheme.colors.base0A}'>▃</span>" 
+            "<span foreground='#${config.colorScheme.colors.base0A}'>▄</span>" 
+            "<span foreground='#${config.colorScheme.colors.base0A}'>▅</span>" 
+            "<span foreground='#${config.colorScheme.colors.base0A}'>▆</span>"
+            "<span foreground='#${config.colorScheme.colors.base0A}'>▇</span>" 
+            "<span foreground='#${config.colorScheme.colors.base0A}'>█</span>" 
             ];
           };
           "custom/playerctl"= {

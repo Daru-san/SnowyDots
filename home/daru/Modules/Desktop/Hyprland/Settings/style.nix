@@ -2,21 +2,21 @@
   wayland.windowManager.hyprland = {
     settings = {
       general =  {
-        gaps_in = 1.7;
-        gaps_out = 6;
-        border_size = 2.4;
+        gaps_in = 6;
+        gaps_out = 9;
+        border_size = 2.7;
         cursor_inactive_timeout = 30;
         layout = "master";
-        "col.active_border" = "0xff${config.colorScheme.colors.base02}";
+        "col.active_border" = "0xff${config.colorScheme.colors.base0A} 0xff${config.colorScheme.colors.base01}";
         "col.inactive_border" = "0xff${config.colorScheme.colors.base00}";            
       };
       group = {
-      	"col.border_active" = "0xff98ADA1";
+      	"col.border_active" = "0xff${config.colorScheme.colors.base0E}";
 	      "col.border_inactive" = "0xff010B13";
 	      groupbar = {
 	        font_family = "Jetbrain Mono Nerd Font";
 	        font_size = 13;
-	        "col.active" = "0xff98ADA1";
+	        "col.active" = "0xff${config.colorScheme.colors.base0F}";
 	        "col.inactive" = "0xff010B13";
 	      };
       };
@@ -27,7 +27,7 @@
         no_gaps_when_only = true;
       };
       decoration = {
-        rounding = 5;
+        rounding = 14;
         blur = {
           enabled = true;
           size = 3;
