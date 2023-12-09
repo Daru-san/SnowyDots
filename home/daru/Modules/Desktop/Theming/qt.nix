@@ -3,7 +3,9 @@
     enable = true;
 
     #Allow qt applications to follow KDE theme 
-    platformTheme = "qtct";
-
+    platformTheme = "gtk";
+    style = {
+      name = "gtk2";
+    };
   };
 }
