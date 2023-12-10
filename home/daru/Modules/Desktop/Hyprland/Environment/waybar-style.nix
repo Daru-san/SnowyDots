@@ -18,7 +18,6 @@ background: #25353a;
 margin: 5px 5px;
 padding: 5px 5px;
 border-radius: 16px;
-color: #cba6f7
 }
 #workspaces button {
 padding: 0px 5px;
