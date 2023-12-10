@@ -8,13 +8,11 @@
         rink
         shell
         translate
-        randr
-        symbols
       ];
 
       width.fraction = 0.3;
-      y.absolute = 15;
-      hidePluginInfo = true;
+      y.absolute = 50;
+      hidePluginInfo = false;
       closeOnClick = true;
     };
 
