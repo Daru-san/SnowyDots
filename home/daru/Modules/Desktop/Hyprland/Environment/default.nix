@@ -1,10 +1,8 @@
 {pkgs, ...}:{
   imports = [
     ./kitty.nix
-    ./swayosd.nix
     ./swaylock.nix
     ./waybar.nix
-    ./playerctl.nix
     ./kanshi.nix
     ./copyq.nix
     ./swayidle.nix
