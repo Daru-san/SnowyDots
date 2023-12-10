@@ -1,7 +1,6 @@
-{pkgs, ...}:{
+{pkgs, outputs, ...}:{
   imports = [
-    ./Java/default.nix
-    ./python/default.nix
-    ./git/default.nix
+    ./git.nix
+    outputs.homeManagerModules.neovim-nightly;
   ];
 }

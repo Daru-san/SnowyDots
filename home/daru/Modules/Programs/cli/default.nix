@@ -4,7 +4,6 @@
       #Programs that have specialized modules and configurations
       ./ranger/ranger.nix
       ./btop/btop.nix 
-      ./yt-dlp/yt-dlp.nix
       ./translate-shell/default.nix
     ];
     home.packages = with pkgs; [

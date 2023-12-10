@@ -1,5 +1,5 @@
 {pkgs, ...}:{
   imports = [
-    ./mpv/default.nix
+    ./mpv.nix
   ];
 }

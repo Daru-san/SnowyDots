@@ -1,7 +1,9 @@
-{...}:{
+{outputs, ...}:{
   imports = [
-    ./Minecraft/default.nix
-    ./Mangohud/default.nix
-    ./Emulation/default.nix
+    ./lutris.nix
+  ];
+  imports = with outputs.homeManagerModules; [
+    prism-launcher
+    mangohud
   ];
 }

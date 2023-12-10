@@ -1,7 +1,7 @@
-#Git config
-{config,pkgs,...}:{
+# Git config
+{pkgs, outputs,...}:{
   imports = [
-    ./gitui.nix
+    outputs.homeManagerModules.gitui
   ];
   programs.git = {
     enable = true;

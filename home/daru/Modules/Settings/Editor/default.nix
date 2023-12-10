@@ -1,5 +1,0 @@
-{...}:{
-  imports = [
-    ./Neovim/default.nix
-  ];
-}

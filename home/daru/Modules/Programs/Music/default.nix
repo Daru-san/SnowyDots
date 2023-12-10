@@ -1,9 +1,14 @@
-#Music configuration
-{...}:{
+# Music configuration
+{outputs, pkgs, ...}:{
   imports = [
-    ./Spotify/spotify.nix
-    ./cmus/cmus.nix
-    ./cava/default.nix
-    ./ncmpcpp/default.nix
+    ./spotify.nix
+
+    outputs.homeManagerModules.cava
+
+    outputs.homeManagerModules.easyeffects
+  ];
+  home.packages = with pkgs; [
+    cmus
+    cmusfm
   ];
 }
