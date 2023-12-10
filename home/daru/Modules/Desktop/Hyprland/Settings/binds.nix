@@ -1,6 +1,8 @@
-{config, pkgs, inputs,...}:{
+{config, pkgs, inputs,outputs, ...}:{
   imports = [
     ./extra-binds.nix
+    outputs.homeManagerModules.swayosd
+    outputs.homeManagerModules.playerctl
   ];
   wayland.windowManager.hyprland.settings = {
     bind = let
@@ -24,9 +26,10 @@
       wl-paste = "${pkgs.wl-clipboard}/bin/wl-paste";
       notify-send = "${pkgs.libnotify}/bin/notify-send";
       easyeffects = "${config.services.easyeffects.package}/bin/easyeffects";
+      anyrun = "${config.programs.anyrun.package}/bin/anyrun"
     in [
       #Basic binds
-      "SUPER,space,exec, ${fuzzel} -D no"
+      "SUPER,space,exec, ${anyrun}"
       "SUPER, Return, exec, ${terminal}"
       "SUPER, e, exec, ${hdrop} '${file-manager}'"
       "SUPERALT, b, exec, ${hdrop} '${browser}'"
@@ -34,7 +37,7 @@
       "SUPER, r, exec, ${terminal} --hold ${ranger}"
       "SUPER, z, exec, ${terminal} --hold ${editor}"
       "SUPER, i, exec, ${hdrop} '${image-editor}'"
-      "SUPER, a, exec, $hdrop '${easyeffects}'"
+      "SUPER, a, exec, ${hdrop} '${easyeffects}'"
 
       #Window bings
       "alt,q,killactive"
