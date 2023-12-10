@@ -1,6 +1,10 @@
-{pkgs, outputs, ...}:{
-  imports = [
+{outputs, ...}:{
+  imports = with outputs.homeManagerModules; [
+    neovim-nightly
+    java
+    python
+    gitui
+  ] ++ [
     ./git.nix
-    outputs.homeManagerModules.neovim-nightly;
   ];
 }

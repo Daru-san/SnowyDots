@@ -1,11 +1,16 @@
 ##Global shell configuration##
-{config, pkgs, ...}:{
-  imports = [
-  #Import shell configs
-  ./zsh.nix
-  ./tmux.nix
-  ./oh-my-posh.nix
+{config, pkgs, outputs, ...}:{
+  imports = with outputs.homeManagerModules; [
+    # Modules specific imports
+    bash
+    autojump
+  ] ++ [
+    # Import shell configs
+    ./zsh.nix
+    ./tmux.nix
+    ./oh-my-posh.nix
   ];
+  
 
   # Global shell aliases
   home.shellAliases = let
