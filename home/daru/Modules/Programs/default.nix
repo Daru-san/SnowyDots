@@ -1,6 +1,10 @@
 #Home programs
-{config, pkgs, lib, ...}:{
-  imports = [
+{config, pkgs, lib, outputs, ...}:{
+  imports = with outputs.homeManagerModules; [
+    # KDE connect and syncthing
+    kdeconnect
+    syncthing
+  ]++[
     ./cli/default.nix
     ./Music/default.nix
     ./Video/default.nix

@@ -14,4 +14,6 @@
   swayosd = ./swayosd.nix;
   playerctl = ./playerctl.nix;
   gitui = ./gitui.nix;
+  kdeconnect = ./kdeconnect.nix;
+  syncthing = ./syncthing.nix;
 }
