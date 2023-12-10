@@ -6,7 +6,6 @@
     ./kanshi.nix
     ./copyq.nix
     ./swayidle.nix
-    ./fuzzel.nix
     ./wlogout.nix
     ./anyrun.nix
   ];
