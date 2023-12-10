@@ -158,7 +158,7 @@
           "custom/playerctl"= {
             format = "<span>󰎈 {} 󰎈</span>";
             return-type = "json";
-            max-length = 20;
+            max-length = 40;
             exec = "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F";
             on-click = "${config.services.playerctld.package}/bin/playerctl play-pause";
             };
@@ -175,7 +175,6 @@
             dnd-inhibited-none = "";
           };
           return-type = "json";
-  #        exec-if = "which swaync-client";
           exec = "swaync-client -swb";
           on-click = "swaync-client -t -sw";
           on-click-right = "swaync-client -d -sw";

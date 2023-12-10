@@ -1,5 +1,5 @@
 {config, ...}:{
-#Waybar styling
+# Waybar styling
   programs.waybar.style = ''
 * {
 border: none;
@@ -71,8 +71,8 @@ background: #25353a;
 border-radius: 24px 10px 24px 10px;
 padding: 0 20px;
 margin-left: 7px;
-margin: 5px 0;
-/* font-size: 16px; */
+margin: 5px 7px;
+font-weight: bold;
 }
 #custom-launcher {
 color: #89b4fa;
@@ -98,5 +98,5 @@ border-radius: 24px 10px 24px 10px;
 margin: 5px 0;
 font-weight: bold;
 }
-    '';
+'';
 }
