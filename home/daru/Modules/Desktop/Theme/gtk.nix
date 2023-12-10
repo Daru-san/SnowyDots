@@ -13,7 +13,7 @@
     };
     font = {
       name = "Jetbrains Mono Nerd Font";
-      size = 14;
+      size = 12;
     };
 
     #gtk cursor theme
@@ -26,11 +26,13 @@
     gtk3.extraConfig = {
       settings = ''
         gtk-application-prefer-dark-theme=1
+        gtk-decoration-layout=menu
       '';
     };
     gtk4.extraConfig = {
       settings = ''
         gtk-application-prefer-dark-theme=1
+        gtk-decoration-layout=menu
       '';
     };
    };
@@ -38,11 +40,13 @@
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
     };
+    #Remove buttons in gtk apps
+    # "/org/gnome/desktop/wm/preferences/button-layout" = 0;
   };
 
   #Set gtk env variable
   home.sessionVariables = {
-    GTK_THEME = "Orchis-Dark";
+    GTK_THEME = "Orchis-Green-Dark";
   };
 
   #Set cursor theme 'home wide'

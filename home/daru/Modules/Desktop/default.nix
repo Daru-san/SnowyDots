@@ -2,6 +2,6 @@
   imports = [
     ./Hyprland/default.nix
     ./Wallpapers/default.nix
-    ./Theming/default.nix
+    ./Theme/default.nix
   ];
 }
