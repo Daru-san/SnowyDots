@@ -17,7 +17,7 @@
     
     enable = true;
   
-  #THis option seems to break notifications so I'll keep it disabled for now
+  #This option seems to break notifications so I'll keep it disabled for now
     systemd = {
       enable = false;
       target = "hyprland-session.target";
@@ -35,7 +35,6 @@
           "custom/launcher"
           "clock"
           "custom/playerctl"
-          "cava"
           ];
         modules-center = [
           "hyprland/workspaces"
@@ -54,7 +53,8 @@
           #Module configs
           "custom/launcher"= {
             format = "";
-            tooltip = "false";
+            tooltip = "true";
+            tooltip-format = "NixOS";
             };
           "hyprland/workspaces" = {
               format = "{icon}";
@@ -74,7 +74,7 @@
           };
           "clock" = {
              format-alt = " {:%R}";
-             format = " {:%e, %d %b, %R}";
+             format = " {:%a, %e %b, %R}";
              interval = 1;
              tooltip-format = "<tt><small>{calendar}</small></tt>";
              calendar = {
@@ -135,6 +135,7 @@
                 default = ["" "" ""];
               };
              on-click = "pavucontrol";
+             on-click-right = "${config.services.swayosd.package}/bin/swayosd --output-volume=mute-toggle"
              tooltip = false;
           };
           "network" = {
@@ -144,8 +145,6 @@
              tooltip-format = "{essid}({signalStrength}%)";
              format-linked = "{ifname} (No IP)";
              format-disconnected = "󰖪";
-             # on-click = "~/Projects/rofi-wifi-menu/rofi-wifi-menu.sh";
-             # format-alt = "{ifname}: {ipaddr}/{cidr}";
           };
           "bluetooth" = {
             format-on = "󰂯";
@@ -156,35 +155,10 @@
             tooltip = true;
             on-click = "blueman-manager";
           };
-          "cava" = {
-            framerate = 60;
-            autosens = 1;
-            bars = 18;
-            lower_cutoff_freq = 50;
-            higher_cutoff_freq = 10000;
-            method = "pipewire";
-            source = "auto";
-            stereo = true;
-            reverse = false;
-            bar_delimiter = 0;
-            monstercat = false;
-            waves = false;
-            input_delay = 1;
-            format-icons = [ 
-            "<span foreground='#${config.colorScheme.colors.base0A}'>▁</span>'"
-            "<span foreground='#${config.colorScheme.colors.base0A}'>▂</span>" 
-            "<span foreground='#${config.colorScheme.colors.base0A}'>▃</span>" 
-            "<span foreground='#${config.colorScheme.colors.base0A}'>▄</span>" 
-            "<span foreground='#${config.colorScheme.colors.base0A}'>▅</span>" 
-            "<span foreground='#${config.colorScheme.colors.base0A}'>▆</span>"
-            "<span foreground='#${config.colorScheme.colors.base0A}'>▇</span>" 
-            "<span foreground='#${config.colorScheme.colors.base0A}'>█</span>" 
-            ];
-          };
           "custom/playerctl"= {
             format = "<span>󰎈 {} 󰎈</span>";
             return-type = "json";
-            max-length = 40;
+            max-length = 20;
             exec = "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F";
             on-click = "${config.services.playerctld.package}/bin/playerctl play-pause";
             };
