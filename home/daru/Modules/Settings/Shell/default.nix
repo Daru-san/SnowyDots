@@ -3,9 +3,7 @@
   imports = [
   #Import shell configs
   ./zsh.nix
-  ./bash.nix
   ./tmux.nix
-  ./autojump.nix
   ./oh-my-posh.nix
   ];
 
