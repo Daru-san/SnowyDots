@@ -135,7 +135,7 @@
                 default = ["" "" ""];
               };
              on-click = "pavucontrol";
-             on-click-right = "${config.services.swayosd.package}/bin/swayosd --output-volume=mute-toggle"
+             on-click-right = "${config.services.swayosd.package}/bin/swayosd --output-volume=mute-toggle";
              tooltip = false;
           };
           "network" = {

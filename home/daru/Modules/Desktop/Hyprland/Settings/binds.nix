@@ -26,7 +26,7 @@
       wl-paste = "${pkgs.wl-clipboard}/bin/wl-paste";
       notify-send = "${pkgs.libnotify}/bin/notify-send";
       easyeffects = "${config.services.easyeffects.package}/bin/easyeffects";
-      anyrun = "${config.programs.anyrun.package}/bin/anyrun"
+      anyrun = "${config.programs.anyrun.package}/bin/anyrun";
     in [
       #Basic binds
       "SUPER,space,exec, ${anyrun}"
