@@ -1,9 +1,9 @@
-{pkgs, ...}:{
+{pkgs, config, ...}:{
   programs.tmux = {
     enable = true;
     clock24 = true;
     mouse = true;
-    history-limit = 2000;
+    historyLimit = 2000;
     plugins = with pkgs.tmuxPlugins; [
       cpu
       battery
@@ -17,5 +17,8 @@
       yank
       jump
     ];
+    keyMode = "vi";
+    shell = "${config.programs.zsh.package}/bin/zsh";
+    newSession = true;
   };
 }
