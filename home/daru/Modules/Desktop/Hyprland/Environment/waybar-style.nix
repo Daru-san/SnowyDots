@@ -66,7 +66,7 @@ window#waybar {
     margin-left: 7px;
 }
 #cpu,#network { 
-   padding: 0 0 0 20px;
+   padding: 0 5px 0 20px;
    border-radius: 10px 0px 0px 24px;
 }
 #memory, #bluetooth {
