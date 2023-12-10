@@ -1,7 +1,7 @@
 Snowflake-dots❄️ 
 ===============
 
-My flake-based NixOS configuration featuring Hyprland, flakes and a tad of KDE
+My flake-based NixOS configuration featuring Hyprland and flakes
 
 ## Big thanks to
 * [Misterio77's nix-starter-configs](https://github.com/Misterio77/nix-starter-configs "nix-starter-configs")
@@ -11,20 +11,14 @@ My flake-based NixOS configuration featuring Hyprland, flakes and a tad of KDE
 * [Erase your darlings](https://grahamc.com/blog/erase-your-darlings/ "persist")
 * [NixOS wiki](https://nixos.wiki "nix-wiki")
 * [MyNixOS](https://mynixos.com "Best nix resource")
-
+* [justinlime's waybar configuration](https://github.com/justinlime/dotfiles)
 ---
 
 # Overview
 My personal NixOS dotfiles written completely in Nix.
 
-## Goal
-- My goal with these is to write everything in Nix with no exceptions.
-  > Why?
-  >> Because I can and I want to keep the total file size as small as humanly possible, and because *_declerativity rocks_*.
-- This is supposed to be a continuation of my older repo [Nix-Dots](https://github.com/Daru-san/Nix-Dots "Old dots"), with an entirely new spin to it,redoing everything.
-
-## My environment 
-* Desktop: Hyprland(unstable)/Occasionally KDE
+## Environment 
+* Desktop: Hyprland
 * Browser: Firefox nightly
 * Shell: zsh using oh-my-zsh and oh-my-posh
 * Editor: Neovim nightly using Lazy.vim
@@ -34,7 +28,7 @@ My personal NixOS dotfiles written completely in Nix.
   <summary>Hyprland</summary>
     <ul>
         <li>Bar: waybar</li>
-        <li>Launcher: fuzzel</li>
+        <li>Launcher: anyrun</li>
         <li>Terminal: kitty</li>
         <li>Monitor management: kanshi</li>
         <li>Media control: playerctl</li>
@@ -69,7 +63,6 @@ My personal NixOS dotfiles written completely in Nix.
 ![Preview 2](https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev2.png)
 ![Preview 3](https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev3.png)
 ![Preview 4](https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev4.png)
-![Preview 5](https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev5.png)
 
 ---
 
@@ -90,7 +83,7 @@ My personal NixOS dotfiles written completely in Nix.
 ├── flake.nix
 └── flake.lock
 ```
-## Installation _for those brave ones_
+## Installation
 Note: This may not work for every use case and I'd rather you copied individual config files than built the whole thing, since there are *many* device specific configurations here.
 
 Cloning the repo
@@ -111,11 +104,10 @@ Building the system
 ## December TODO list:
 
 ### Todo:
+- [x] Change theme
 - [ ] Set up shell environments for developing in different languages
-- [ ] Redo build instructions
-
-### In Progress:
+- [ ] Redo installation instructions
 - [ ] Document everything
-
-### Completed
-none
+- [ ] Make modules for everything
+- [ ] Fix config inconsistensies
+- [ ] Fix persistence issues
