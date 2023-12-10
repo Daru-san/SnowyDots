@@ -11,11 +11,15 @@
     zsh = {
       enable = true;
 
+      autocd = true;
+
       #History file
       history = {
         size = 10000;
         path = "${config.xdg.dataHome}/zsh/history";
       };
+
+      initExtra = "${config.programs.tmux.package}/bin/tmux";
 
       #Syntax highlighting
       syntaxHighlighting = {
