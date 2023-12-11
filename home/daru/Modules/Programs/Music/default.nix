@@ -1,11 +1,10 @@
 # Music configuration
 {outputs, pkgs, ...}:{
-  imports = [
+  imports = with outputs.homeManagerModules; [
+    cava
+    easyeffects
+  ] ++ [
     ./spotify.nix
-
-    outputs.homeManagerModules.cava
-
-    outputs.homeManagerModules.easyeffects
   ];
   home.packages = with pkgs; [
     cmus
