@@ -109,5 +109,6 @@ Building the system
 - [ ] Redo installation instructions
 - [ ] Document everything
 - [ ] Make modules for everything
+  - [ ] Make device specifc modules e.g intel-gpu for intel iGpus
 - [ ] Fix config inconsistensies
 - [ ] Fix persistence issues
