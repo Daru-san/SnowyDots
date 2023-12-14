@@ -8,6 +8,7 @@
     ./swayidle.nix
     ./wlogout.nix
     ./anyrun.nix
+    ./ags.nix
   ];
   home.packages = with pkgs; [
     wl-clipboard

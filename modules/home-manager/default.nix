@@ -16,4 +16,5 @@
   gitui = ./gitui.nix;
   kdeconnect = ./kdeconnect.nix;
   syncthing = ./syncthing.nix;
+  ags = ./ags.nix;
 }

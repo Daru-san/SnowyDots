@@ -6,7 +6,7 @@
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    #Add unstable packages
+    #Add stable packages
     nixpkgs-stable.url = "github:nixos/nixpkgs/release-23.11";
 
     # Home manager
@@ -46,6 +46,9 @@
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # add ags
+    ags.url = "github:Aylur/ags";
   };
 
   outputs = {
