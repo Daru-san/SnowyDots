@@ -1,8 +1,9 @@
-{config, pkgs, inputs,outputs, ...}:{
-  imports = [
+{config, pkgs, inputs, outputs, ...}:{
+  imports = with outputs.homeManagerModules; [
+    swayosd
+    playerctl
+  ] ++ [
     ./extra-binds.nix
-    outputs.homeManagerModules.swayosd
-    outputs.homeManagerModules.playerctl
   ];
   wayland.windowManager.hyprland.settings = {
     bind = let
