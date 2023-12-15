@@ -6,8 +6,8 @@
 
       plymouth = {
         enable = true;
-        theme = "Spinner Alt";
-        themePackages = [(pkgs.adi1090x-plymouth-themes.override {selected_themes = ["Spinner Alt"];})];
+        theme = "spinner_alt";
+        themePackages = [(pkgs.adi1090x-plymouth-themes.override {selected_themes = ["spinner_alt"];})];
       };
       kernelParams = [ "quiet" "udev.log_level=3" ];
 

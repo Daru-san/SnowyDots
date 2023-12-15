@@ -4,7 +4,7 @@ pkgs: let
 in 
 {
   #Custom nix scripts
-  nix-scripts = pkgs.callPackage ./nix-rebuild.nix { };
+  nix-scripts = pkgs.callPackage ./nix-scripts.nix { };
 
   #Pokeshell from acxz/pokeshell 
   pokeshell = pkgs.callPackage ./pokeshell.nix { }; 
