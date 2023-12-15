@@ -108,7 +108,7 @@ Building the system
 - [ ] Set up shell environments for developing in different languages
 - [ ] Redo installation instructions
 - [ ] Document everything
-- [ ] Make modules for everything
-  - [ ] Make device specifc modules e.g intel-gpu for intel iGpus
+- [x] Make modules for everything
+  - [x] Make device specifc modules e.g intel-gpu for intel iGpus
 - [ ] Fix config inconsistensies
 - [ ] Fix persistence issues
