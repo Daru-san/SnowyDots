@@ -16,7 +16,9 @@ in {
       "SUPER,mouse:272,movewindow"
       "SUPER,mouse:273,resizewindow"
     ];
-    bind = [
+    bind = let
+      hyprnome = "${pkgs.hyprnome}/bin/hyprnome";
+    in [
       #Changing split ratio
       "SUPER,minus,splitratio,-0.25"
       "SUPERSHIFT,minus,splitratio,-0.3333333"
@@ -35,8 +37,8 @@ in {
       "SUPERALT,P,togglespecialworkspace,usage"
 
       #Super+tab to move to next workspace and back
-      "ALT,TAB,workspace,m+1"
-      "ALTSHIFT,TAB,workspace,m-1"
+      "ALT,TAB,exec, ${hyprnome}"
+      "ALTSHIFT,TAB,exec, ${hyprnome} -p"
     ] ++
     # Change workspace
     (map (n:

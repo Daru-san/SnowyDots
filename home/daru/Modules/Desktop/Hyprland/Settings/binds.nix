@@ -1,4 +1,4 @@
-{config, pkgs, inputs, outputs, ...}:{
+{config, pkgs, outputs, ...}:{
   imports = with outputs.homeManagerModules; [
     swayosd
     playerctl
@@ -13,14 +13,13 @@
       terminal = "${config.programs.kitty.package}/bin/kitty";
       browser = "${config.programs.firefox.package}/bin/firefox-nightly";
       file-manager = "${pkgs.libsForQt5.dolphin}/bin/dolphin";
-      shotman = "${pkgs.shotman}/bin/shotman";
+      hyprshot = "${pkgs.hyprshot}/bin/hyprshot";
       editor = "${config.programs.neovim.package}/bin/nvim";
       ranger = "${pkgs.ranger}/bin/ranger";
       image-editor = "${pkgs.krita}/bin/krita";
-      hdrop = "${inputs.hyprland-contrib.packages.${pkgs.system}.hdrop}/bin/hdrop";
+      hdrop = "${pkgs.hdrop}/bin/hdrop";
       swaylock = "${config.programs.swaylock.package}/bin/swaylock";
       copyq = "${config.services.copyq.package}/bin/copyq";
-      fuzzel = "${config.programs.fuzzel.package}/bin/fuzzel";
       wlogout = "${config.programs.wlogout.package}/bin/wlogout";
       hyprpicker = "${pkgs.hyprpicker}/bin/hyprpicker";
       wl-copy = "${pkgs.wl-clipboard}/bin/wl-copy";
@@ -88,8 +87,9 @@
       ",caps_lock,exec,${swayosd} --caps-lock"
 
       # Screenshotting
-      ",Print,exec, ${shotman} --capture region"
-      "SHIFT, print,exec, ${shotman} --capture output"
+      ", print, exec, ${hyprshot} -m region -o ~/Pictures/Screenshots"
+      "shift, print, exec, ${hyprshot} -m output -c -o ~/Pictures/Screenshots"
+      "alt, print, exec, ${hyprshot} -m output -o ~/Pictures/Screenshots"
 
       # Media control
       ",XF86AudioNext,exec,${playerctl} next"
