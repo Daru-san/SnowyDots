@@ -4,13 +4,15 @@
     # Modules specific imports
     bash
     autojump
+    oh-my-posh
   ] ++ [
     # Import shell configs
     ./zsh.nix
     ./tmux.nix
-    ./oh-my-posh.nix
   ];
   
+  # Global shell theme
+  programs.oh-my-posh.useTheme = "bubblesline"; 
 
   # Global shell aliases
   home.shellAliases = let

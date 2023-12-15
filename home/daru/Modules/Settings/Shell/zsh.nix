@@ -7,7 +7,8 @@
     enable = true;
   };
 
-  programs = { #Zsh configs
+  programs = { 
+    # Zsh configs
     zsh = {
       enable = true;
 
@@ -40,7 +41,6 @@
           "per-directory-history"
           "catimg" 
           "extract"
-          "web-search"
           "colored-man-pages"
           "copypath"
           "copyfile"
