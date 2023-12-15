@@ -1,53 +1,48 @@
 {
-  description = "My chilly flake for my snowy NixOS configurations";
+  description = "❄ My chilly NixOS flake for snowy nights and chilly afternoons ❆";
 
   inputs = {
 
-    # Nixpkgs
+    # Unstable packages from 24.05
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    #Add stable packages
+    # Stable packages, from 23.11
     nixpkgs-stable.url = "github:nixos/nixpkgs/release-23.11";
 
     # Home manager
-    home-manager.url = "github:nix-community/home-manager/master";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    #Nix-hardware
+    # Nix-hardware
     hardware.url = "github:nixos/nixos-hardware";
 
     # Colors
     nix-colors.url = "github:misterio77/nix-colors";
 
-    #NUR Packages
+    # NUR Packages
     nur.url = "github:nix-community/NUR";
 
-    #Spicetify
+    # Spicetify
     spicetify-nix.url = "github:the-argus/spicetify-nix/master";
 
-    ##Hyprland##
-    hyprland-contrib = {
-      #Hyprland-contrib for hyprland specific packages
-      url = "github:hyprwm/contrib";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    #Neovim nightly
+    # Neovim nightly
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
-    #Prism launcher(Modded)
+    # Prism launcher(Modded)
     prismlauncher.url = "github:Diegiwg/PrismLauncher-Cracked";
 
-    #Firefox nightly
+    # Firefox nightly
     firefox.url = "github:nix-community/flake-firefox-nightly";
 
-    # anyrun, hyprland launcher
+    # Anyrun, a launcher for hyprland
     anyrun = {
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # add ags
+    # ags, a gtk shell for hyprland
     ags.url = "github:Aylur/ags";
   };
 
@@ -55,7 +50,6 @@
     self,
     nixpkgs,
     home-manager,
-    spicetify-nix,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -91,7 +85,7 @@
     nixosConfigurations = {
       
       #Configuration on my Acer laptop
-      #'nixos-rebuild --flake .#AspireNix'
+      #'nixos-rebuild switch --flake .#AspireNix'
       AspireNix = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
