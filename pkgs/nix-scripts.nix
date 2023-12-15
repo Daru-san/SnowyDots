@@ -9,21 +9,25 @@
 , makeWrapper ? pkgs.makeWrapper
 }:
   stdenv.mkDerivation {
-    pname = "nix-rebuild";
-    version = "1.3";
+    pname = "nix-scripts";
+    version = "6d4d4464177e591b6a98cc376e57a482a2d89f7b";
     src = fetchFromGitHub {
       # https://github.com/Daru-san/Nix-Scripts
       owner = "Daru-san";
       repo = "Nix-Scripts";
-      rev = "9946ce52af751a0eb3242b0d5c66d9eec7749d25";
-      sha256 = "dq1ug1wX6f8d/KDMnsDqF8I+i1dWLnYLfHrR31F+7us=";
+      rev = "${version}";
+      sha256 = "njXFWWNy171OspRPpiPtszLhRyx1FvLO9Gu5WjrDhM4=";
     };
     buildInputs = [ bash subversion ];
     nativeBuildInputs = [ makeWrapper ];
     installPhase = ''
       mkdir -p $out/bin
       cp $src/scripts/nix-rebuild.sh $out/bin/nix-rebuild
+      cp $src/scripts/hm-build.sh $out/bin/hm-build
       wrapProgram $out/bin/nix-rebuild \
         --prefix PATH : ${lib.makeBinPath [ bash subversion ]}
+      wrapProgram $out/bin/hm-build \
+        --prefix PATH : ${lib.makeBinPath [ bash subversion ]}
+   
     '';
   }
