@@ -1,19 +1,15 @@
 {...}:{
-  #Enable sound
+  # Enable sound
   sound.enable = true;
-  
-  # hardware.pulseaudio.enable = true;
-  
+ 
+  # Enable rtkit
   security.rtkit.enable = true;
 
-  #Enable pipewire over pulseaduio
+  # Enable pipewire 
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    #jack.enable = true;
-
-    #media-session.enable = true;
   };
 }

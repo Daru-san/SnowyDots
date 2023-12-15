@@ -1,30 +1,35 @@
+# Shell configurations 
 {pkgs, ...}:{
-  #Enable zsh
+  # Enable zsh
   programs.zsh = {
     enable = true;
 
-    #Colors in ls
+    # Colors in ls
     enableLsColors = true;
 
-    #Syntax highlighting
+    # Syntax highlighting
     syntaxHighlighting = {
       enable = true;
     };
 
-    #Autosuggestions
+    # Autosuggestions
     autosuggestions = {
       enable = true;
     };
   };
+
+  # Enable fish 
+  programs.fish.enable = true;
+
   environment = {
-    #Installed shells
-    pathsToLink = [ "/share/zsh" ];
-    #GLobal shell aliases
+    # Installed shells
+    pathsToLink = [ "/share/zsh" "/share/fish" ];
+    # GLobal shell aliases
     shellAliases = let
       ranger = "${pkgs.ranger}/bin/ranger";
       rsync = "${pkgs.rsync}/bin/rsync";
     in {
-     #Useful shell aliases
+     # Useful shell aliases
       ll = "ls -l";
       ex = "exit";   
       rs = "reset";
@@ -32,11 +37,11 @@
       rebootF = "sudo systemctl reboot -f";
       logout = "loginctl terminate-user $USER";
 
-      #Userful rsync aliases
+      # Userful rsync aliases
       rsync-copy = "${rsync} -avzhe --progress";
       rsync-move = "${rsync} --remove-source-files -zvh --progress"; 
     
-      #Program specific aliases
+      # Program specific aliases
       r = "${ranger}";
 
       # cd aliases
@@ -48,27 +53,6 @@
       "......." = "cd ../../../../../..";
       "........" =  "cd ../../../../../../..";
       "~" = "cd ~";
-    };
-  };
-
-  #Enable neovim and set as main editor
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-
-    #Enable aliases for vi and vim
-    viAlias = true;
-    vimAlias = true;
-    configure = {
-
-      #Default neovim plugins
-      packages.myVimPackage = with pkgs.vimPlugins; {
-        start = [ 
-          vim-nix
-          vim-clap
-          barbecue-nvim
-        ];
-      };
     };
   };
 }

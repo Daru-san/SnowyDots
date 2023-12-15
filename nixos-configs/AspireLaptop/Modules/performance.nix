@@ -2,8 +2,6 @@
   #Enable throttled service
   services.throttled.enable = true;
 
-  #System76 power daemon
-  hardware.system76.power-daemon.enable = true;
   #Enable tlp for power management
   services.tlp.enable = true;
   #

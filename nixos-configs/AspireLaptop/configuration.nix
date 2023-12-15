@@ -7,22 +7,25 @@
   pkgs,
   ...
 }: {
-  imports = [
-    
-    outputs.nixosModules.lxpolkit
+  # NixOS modules
+  imports = with outputs.nixosModules; [
+    audio
+    android-tools
+    intel-gpu
+    hyprland
+    shells
+    plymouth
+    tty-fonts
+    neovim
+  ] ++ [
 
-    #NixOS System Modules
+    # System configurations
     ./Modules/boot.nix
-    ./Modules/audio.nix
-    ./Modules/shell.nix
-    ./Modules/users.nix
-    ./Modules/android.nix
-    ./Modules/desktop.nix
+    ./Modules/user.nix
     ./Modules/network.nix
     ./Modules/performance.nix
-    ./Modules/hardware.nix
-    ./Modules/systemPackages.nix
-    ./Modules/Sync.nix
+    ./Modules/programs.nix
+    ./Modules/syncthing.nix
     ./Modules/scripts.nix
 
     # Hardware configuration
@@ -30,7 +33,6 @@
   ];
 
   nixpkgs = {
-    # You can add overlays here
 
     #Import nur pkgs
     config.packageOverrides = pkgs: {
@@ -81,10 +83,10 @@
   networking.hostName = "AspireNix";
 
   system = {
-    #Set to nixos-24.05
+    # Set to nixos-24.05
     stateVersion = "24.05";
     
-    #Allow auto-upgrades to happen every day
+    # Allow auto-upgrades to happen every day
     autoUpgrade = {
       enable = true;
       flake = "github:Daru-san/Snowflake-dots";

@@ -1,16 +1,16 @@
-#This file is specifically for KDE and sddm
+# Enable KDE and sddm
 {...}:{
   services = {
     xserver = {
-      enable = false;
+      enable = true;
       displayManager = {
         sddm = {
-          enable = false;
+          enable = true;
         };
       };
       desktopManager = {
         plasma5 = {
-          enable = false;
+          enable = true;
         };
       };
     };

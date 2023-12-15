@@ -1,15 +1,19 @@
 {pkgs, ...}:{
 
-  #Enable flatpack
+  # Enable flatpack
   services.flatpak.enable = true;
 
   programs = {
+    # Enable gnome-disks
+    gnome-disks.enable = true;
 
-    #Enable gnome-disks
-    gnome-disks.enable = false;
+    # Enable KDE Connect 
+    kdeconnect = {
+      enable = true;
+    };
   };
 
-  #System packages
+  # System packages
   environment.systemPackages = with pkgs; [
     ranger
     htop
