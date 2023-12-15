@@ -39,7 +39,7 @@
            "float,^(com.github.hluk.copyq)$"
            "float,^(com.github.wwmm.easyeffects)$"
            "center,^(com.github.wwmm.easyeffects)$"
-           "size 140%,^(com.github.wwmm.easyeffects)$"
+           "size 46%,^(com.github.wwmm.easyeffects)$"
         ];
         workspace = [
           "name:1, persistent:true"
