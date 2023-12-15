@@ -17,4 +17,5 @@
   kdeconnect = ./kdeconnect.nix;
   syncthing = ./syncthing.nix;
   ags = ./ags.nix;
+  oh-my-posh = ./oh-my-posh.nix;
 }

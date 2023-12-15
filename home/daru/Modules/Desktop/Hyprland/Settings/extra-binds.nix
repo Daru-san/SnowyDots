@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 let
   workspaces =
     (map toString (lib.range 0 9)) ++

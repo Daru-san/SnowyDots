@@ -71,5 +71,6 @@
     new_tab Snowcli
     title zsh
     cd ~/snowflake
+    launch tmux
   '';
 }
