@@ -20,7 +20,7 @@
     settings = rec {
      initial_session = {
         command = "${pkgs.greetd.tuigreet}/bin/tuigreet -t --window-padding 1 -g 'Welcome to ${config.networking.hostName}' -c Hyprland";
-        user = "user";
+        user = "daru";
      };
      default_session = initial_session;
     };
