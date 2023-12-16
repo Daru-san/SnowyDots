@@ -9,11 +9,14 @@
         theme = "spinner_alt";
         themePackages = [(pkgs.adi1090x-plymouth-themes.override {selected_themes = ["spinner_alt"];})];
       };
-      kernelParams = [ "quiet" "udev.log_level=3" ];
+      kernelParams = [ "quiet" ];
 
       initrd = {
         systemd = {
           enable = true;
+          dbus = {
+            enable = true;
+          };
         };
       };
     };
