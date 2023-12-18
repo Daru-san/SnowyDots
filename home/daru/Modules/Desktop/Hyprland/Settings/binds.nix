@@ -119,7 +119,7 @@
       "super, space, ${e}, ${pk} ${any} || ${any}"
 
       # Launch easyeffects
-      "super, a, ${h} '${easy}'"
+      "super, a, ${e}, ${h} '${easy}'"
 
       # Show when caps lock is pressed
       ",caps_lock,${e},${s} --caps-lock"
