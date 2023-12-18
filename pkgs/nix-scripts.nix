@@ -5,10 +5,13 @@
 , bash
 , subversion
 , makeWrapper
+, hyprpicker
+, libnotify
+, wl-clipboard
 }:
   stdenv.mkDerivation {
     pname = "nix-scripts";
-    version = "4c5847";
+    version = "4c58474";
     src = fetchFromGitHub {
       # https://github.com/Daru-san/Nix-Scripts
       owner = "Daru-san";
@@ -29,6 +32,6 @@
       wrapProgram $out/bin/hm-build \
         --prefix PATH : ${lib.makeBinPath [ bash subversion ]}
        wrapProgram $out/bin/color-picker \
-        --prefix PATH : ${lib.makeBinPath [ bash subversion ]}     
+        --prefix PATH : ${lib.makeBinPath [ bash subversion hyprpicker libnotify wl-clipboard ]}     
     '';
   }

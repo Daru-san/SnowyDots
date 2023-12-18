@@ -103,13 +103,14 @@
 
     bindr = let
       any = "${config.programs.anyrun.package}/bin/anyrun";
-      easy = "${config.programs.easyeffects.package}/bin/easyeffects";
+      easy = "${config.services.easyeffects.package}/bin/easyeffects";
+      ez = "systemctl --user start easyeffects.service";
       cl = "${pkgs.nix-scripts}/bin/color-picker";
       s = "${config.services.swayosd.package}/bin/swayosd";
       pk = "pkill";
 
       # Screenshots 
-      hs = "pkill hyprshot && ${pkgs.hyprshot}/bin/hyprshot";
+      hs = "${pkgs.hyprshot}/bin/hyprshot";
       scr-dir = "~/Pictures/Screenshots";
       r = "region";
       o = "output";
@@ -118,7 +119,7 @@
       "super, space, ${e}, ${pk} ${any} || ${any}"
 
       # Launch easyeffects
-      "super, a, ${e}, ${pk} ${easy} || ${h} '${easy}'"
+      "super, a, ${e}, ${pk} ${easy} && ${ez} || ${h} '${easy}'"
 
       # Show when caps lock is pressed
       ",caps_lock,${e},${s} --caps-lock"
@@ -127,9 +128,9 @@
       "supershift, c, ${e}, ${pk} ${cl} || ${h} '${cl}'"
 
       # Screenshotting
-      ", print, ${e}, ${hs} -m ${r} -o ${scr-dir}"
-      "shift, print, ${e}, ${hs} -m ${o} -c -o ${scr-dir}"
-      "alt, print, ${e}, ${hs} -m ${o} -o ${scr-dir}"     
+      ", print, ${e}, ${pk} ${hs} || ${hs} -m ${r} -o ${scr-dir}"
+      "shift, print, ${e}, ${pk} ${hs} || ${hs} -m ${o} -c -o ${scr-dir}"
+      "alt, print, ${e}, ${pk} ${hs} || ${hs} -m ${o} -o ${scr-dir}"     
     ];
   };
 }
