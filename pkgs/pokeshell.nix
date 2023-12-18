@@ -1,14 +1,13 @@
 {
-  pkgs ? import <nixpkgs> { system = builtins.currentSystem; }
-, stdenv ? pkgs.stdenv
-, lib ? pkgs.lib
-, fetchFromGitHub ? pkgs.fetchFromGitHub
-, bash ? pkgs.bash
-, jq ? pkgs.jq
-, imagemagick ? pkgs.imagemagick
-, chafa ? pkgs.chafa
-, subversion ? pkgs.subversion
-, makeWrapper ? pkgs.makeWrapper
+  stdenv
+, lib
+, fetchFromGitHub
+, bash
+, jq
+, imagemagick
+, chafa
+, subversion
+, makeWrapper
 }:
   stdenv.mkDerivation {
     pname = "pokeshell";
