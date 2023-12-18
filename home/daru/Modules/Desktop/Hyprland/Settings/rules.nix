@@ -10,7 +10,22 @@
           #Special rules for firefox
           "float,class:(firefox-nightly),title:(Library)"
         ];
-        windowrule = [
+        windowrule = let
+          f = regex: "float, ^(${regex})$";
+          c = regex: "center, ^(${regex})";
+        in [
+          # Floating windows
+          (f "pavucontrol")
+          (f ".blueman-manager-wrapped")
+          (f "com.github.hluk.copyq")
+          (f "com.github.wwmm.easyeffects")
+
+          # Center them
+          (c "pavucontrol")
+          (c ".blueman-manager-wrapped")
+          (c "com.github.hluk.copyq")
+          (c "com.github.wwmm.easyeffects") 
+        ] ++ [
           #Window specific worspaces
           "workspace name:7,^(krita)$"
           "workspace name:8,^(pqiv)$"
@@ -33,12 +48,6 @@
           "workspace name:F11,^(mpv)$"
             
             #Floating windows 
-           "float,^(nm-applet)$"
-           "float,^(pavucontrol)$"
-           "float,^(.blueman-manager-wrapped)$"
-           "float,^(com.github.hluk.copyq)$"
-           "float,^(com.github.wwmm.easyeffects)$"
-           "center,^(com.github.wwmm.easyeffects)$"
            "size 56%,^(com.github.wwmm.easyeffects)$"
         ];
         workspace = [
