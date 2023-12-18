@@ -76,7 +76,7 @@
 
       #Same but for keyboards without media keys
       "ALT,F8, ${e}, ${s} ${volup} 5"
-      "ALT,F6, ${e}, ${s} ${volup} 5"
+      "ALT,F6, ${e}, ${s} ${voldown} 5"
       "ALT,F7, ${e}, ${s} ${volmute}"
     ];
 
@@ -119,7 +119,7 @@
       "super, space, ${e}, ${pk} ${any} || ${any}"
 
       # Launch easyeffects
-      "super, a, ${e}, ${pk} ${easy} && ${ez} || ${h} '${easy}'"
+      "super, a, ${h} '${easy}'"
 
       # Show when caps lock is pressed
       ",caps_lock,${e},${s} --caps-lock"
@@ -128,9 +128,9 @@
       "supershift, c, ${e}, ${pk} ${cl} || ${h} '${cl}'"
 
       # Screenshotting
-      ", print, ${e}, ${pk} ${hs} || ${hs} -m ${r} -o ${scr-dir}"
-      "shift, print, ${e}, ${pk} ${hs} || ${hs} -m ${o} -c -o ${scr-dir}"
-      "alt, print, ${e}, ${pk} ${hs} || ${hs} -m ${o} -o ${scr-dir}"     
+      ", print, ${e}, ${pk} ${hs} || ${h} '${hs} -m ${r} -o ${scr-dir}'"
+      "shift, print, ${e}, ${pk} ${hs} || ${h} '${hs} -m ${o} -c -o ${scr-dir}'"
+      "alt, print, ${e}, ${pk} ${hs} || ${h} '${hs} -m ${o} -o ${scr-dir}'"     
     ];
   };
 }
