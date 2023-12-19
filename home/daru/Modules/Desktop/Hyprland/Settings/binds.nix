@@ -18,12 +18,10 @@
       image-editor = "${pkgs.krita}/bin/krita";
       swaylock = "${config.programs.swaylock.package}/bin/swaylock";
       copyq = "${config.services.copyq.package}/bin/copyq";
-      wlogout = "${config.programs.wlogout.package}/bin/wlogout";
     in [
       # Launching programs
       "SUPER, e, ${e}, ${h} '${file-manager}'"
       "SUPERALT, b, ${e}, ${h} '${browser}'"
-      "SUPER, x, ${e}, ${h} '${wlogout}'"
       "SUPER, i, ${e}, ${h} '${image-editor}'"
 
       # Terminal stuff
@@ -107,6 +105,7 @@
       ez = "systemctl --user start easyeffects.service";
       cl = "${pkgs.nix-scripts}/bin/color-picker";
       s = "${config.services.swayosd.package}/bin/swayosd";
+      wl = "${config.programs.wlogout.package}/bin/wlogout";
       pk = "pkill";
 
       # Screenshots 
@@ -126,6 +125,9 @@
 
       # Color picker
       "supershift, c, ${e}, ${pk} ${cl} || ${h} '${cl}'"
+
+      # wlogout
+      "SUPER, x, ${e}, ${pk} ${wl} || ${h} '${wl}'"
 
       # Screenshotting
       ", print, ${e}, ${pk} ${hs} || ${h} '${hs} -m ${r} -o ${scr-dir}'"

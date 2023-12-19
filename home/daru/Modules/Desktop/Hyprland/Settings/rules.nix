@@ -39,7 +39,6 @@
           "workspace name:F5,^(info.febvre.Komikku)$"
           "workspace name:F6,^(vlc)$"
           "workspace name:F8,^(Spotify)$"
-          "fullscreen,^(Spotify)$"
           "workspace name:F7,^(FreeTube)$"
           
           #Others
@@ -47,8 +46,13 @@
           "workspace name:F10,^(org.kde.okular)$"
           "workspace name:F11,^(mpv)$"
             
-            #Floating windows 
+          #Floating windows 
            "size 56%,^(com.github.wwmm.easyeffects)$"
+
+          # wlogout
+          "fullscreen,^(wlogout)$"
+          "noanim,^(wlogout)$"
+          "stayfocused,^(wlogout)$"
         ];
         workspace = [
           "name:1, persistent:true"
