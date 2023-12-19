@@ -102,7 +102,6 @@
     bindr = let
       any = "${config.programs.anyrun.package}/bin/anyrun";
       easy = "${config.services.easyeffects.package}/bin/easyeffects";
-      ez = "systemctl --user start easyeffects.service";
       cl = "${pkgs.nix-scripts}/bin/color-picker";
       s = "${config.services.swayosd.package}/bin/swayosd";
       wl = "${config.programs.wlogout.package}/bin/wlogout";
@@ -110,7 +109,7 @@
 
       # Screenshots 
       hs = "${pkgs.hyprshot}/bin/hyprshot";
-      scr-dir = "~/Pictures/Screenshots";
+      scr-dir = "${config.home.homeDirectory}/Pictures/Screenshots";
       r = "region";
       o = "output";
     in [
@@ -124,10 +123,10 @@
       ",caps_lock,${e},${s} --caps-lock"
 
       # Color picker
-      "supershift, c, ${e}, ${pk} ${cl} || ${h} '${cl}'"
+      "supershift, c, ${e}, ${pk} ${cl} || ${cl}"
 
       # wlogout
-      "SUPER, x, ${e}, ${pk} ${wl} || ${h} '${wl}'"
+      "super, x, ${e}, ${pk} ${wl} || ${wl}"
 
       # Screenshotting
       ", print, ${e}, ${pk} ${hs} || ${h} '${hs} -m ${r} -o ${scr-dir}'"
