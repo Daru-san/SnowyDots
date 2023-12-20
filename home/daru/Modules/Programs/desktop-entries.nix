@@ -3,19 +3,53 @@
     spotify = {
       name = "Spotify";
       genericName = "Music Player";
-      exec = "${config.programs.spicetify.spotifyPackage}/bin/spotify %U --enable-features=UseOzonePlatform --ozone-platform=wayland";
-      icon = "${pkgs.spotify}/icons/spotify_icon.ico";
+      comment = "Customized music player, stream all your favourite music, for free and wayland native!";
+      exec = "spotify %U --enable-features=UseOzonePlatform --ozone-platform=wayland";
+      icon = "spotify";
       type = "Application";
-      catagories = [ "Music" ];
+      settings = {
+        Keywords = "music";
+      };
     };
-
     waypaper = {
       name = "Waypaper";
-      genericName = "Wallpapers";
+      genericName = "Wallpaper Browser";
+      comment = "Browse wallpapers and apply them whenever you want!";
       exec = "${pkgs.waypaper}/bin/waypaper %U";
-      icon = "${pkgs.papirus-icon-theme}/Papirus/16x16/apps/livewallpaper.svg";
+      icon = "livewallpaper";
       type = "Application";
-      catagories = [ "Wallpapers" ];
+      settings = {
+        Keywords = "wallpaper";
+      };
+    };
+    logseq = {
+      name = "Logseq";
+      exec = "${pkgs.logseq}/bin/logseq %U --enable-features=UseOzonePlatform --ozone-platform=wayland";
+      icon = "logseq";
+      type = "Application";
+    };
+    freetube = {
+      name = "FreeTube";
+      genericName = "YouTube";
+      comment = "Feature rich YouTube client, now running on wayland!";
+      exec = "${pkgs.freetube}/bin/freetube %U --enable-features=UseOzonePlatform --ozone-platform=wayland";
+      icon = "freetube";
+      type = "Application";
+      settings = {
+        Keywords = "video;youtube";
+      };
+    };
+    cmus = {
+      name = "Console Music";
+      genericName = "Music Player";
+      comment = "Play music in your terminal";
+      exec = "cmus %U";
+      terminal = true;
+      icon = "rhythmbox";
+      type = "Application";
+      settings = {
+        Keywords = "music";
+      };
     };
   };
 }
