@@ -24,19 +24,28 @@
         new_is_master = false;
         mfact = 0.55;
         allow_small_split = true;
-        no_gaps_when_only = true;
+        no_gaps_when_only = false;
       };
       decoration = {
         rounding = 14;
         blur = {
           enabled = true;
-          size = 3;
+          size = 7;
           passes = 1;
           ignore_opacity = true;
+          new_optimizations = true;
         };       
         drop_shadow = true;
         shadow_range = 7;
         shadow_render_power = 6;
+        active_opacity = 0.97;
+        inactive_opacity = 0.9;
+        dim_inactive = true;
+        dim_strength = 0.14;
+      };
+      misc = {
+        vrr = 1;
+        force_hypr_chan = true;
       };
       animations = {
         enabled = true;
