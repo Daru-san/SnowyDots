@@ -7,6 +7,9 @@
           "workspace special:usage,class:(kitty),title:(SystemMonitor)"
           "center 1,class:(kitty),title:(SystemMonitor)"
 
+          # Music in terminal using cmus
+          "workspace name:F6,class:(kitty),title:(cmus)"
+
           #Special rules for firefox
           "float,class:(firefox-nightly),title:(Library)"
         ];
@@ -29,6 +32,7 @@
           #Window specific worspaces
           "workspace name:7,^(krita)$"
           "workspace name:8,^(pqiv)$"
+          "workspace name:8,^(waypaper)$"
           #Productivity workspaces
           "workspace name:F1,^(firefox-nightly)$"
           "workspace name:F2,^(Logseq)$"
@@ -37,14 +41,14 @@
 
           #Entertainment workspaces
           "workspace name:F5,^(info.febvre.Komikku)$"
-          "workspace name:F6,^(vlc)$"
-          "workspace name:F8,^(Spotify)$"
+          "workspace name:F6,^(mpv)$"
           "workspace name:F7,^(FreeTube)$"
+          "workspace name:F8,^(Spotify)$"
+          "workspace name:F8,^(Comfify)"
           
           #Others
           "workspace name:F9,^(io.github.martinrotter.rssguard)$"
           "workspace name:F10,^(org.kde.okular)$"
-          "workspace name:F11,^(mpv)$"
             
           #Floating windows 
            "size 56%,^(com.github.wwmm.easyeffects)$"
