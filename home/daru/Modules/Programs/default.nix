@@ -28,6 +28,7 @@
     libsForQt5.discover
     keepassxc
     pqiv
+    losslesscut-bin
     transmission-qt
   ];
 }

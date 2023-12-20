@@ -13,7 +13,6 @@
       libnotify # Notifications
       cbonsai # Trees ;)
       ddgr # Searching in the terminal
-      losslesscut-bin # Editing videos
       speedtest-cli # Internet speed test
       chroma # For cat coloring
       glow # Markdown editor
@@ -22,7 +21,6 @@
       sysz # Systemd service management
       nap # Code snippets
       jrnl # Journal 
-      chafa 
       calcure # 
       krabby # Pokemon
       yafetch # Neofetch
