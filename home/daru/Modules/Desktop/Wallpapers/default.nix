@@ -11,6 +11,11 @@
     rev = "0a6dbb8e252819972d01cc4d2f23c7e15d704089";
     sha256 = "csXI5ufzyXfPEzFPohAfElvQhyzKEx9GSumXstg4XIA=";
   };
+  walls = pkgs.fetchgit {
+    url = "https://github.com/dharmx/walls";
+    rev = "b4c6dceceeea44091e6b794623abd797a9ec50dd";
+    sha256 = "EJar3MOneahxst8op/eMxd4jdxcCIDgPO3ptpdaWVj4=";
+  };
 in {
 
   home.packages = with pkgs; [
@@ -29,6 +34,10 @@ in {
   #Source my own personal wallpapers from my HighQ-Wallpapers repo
   home.file."Wallpapers/personal" = {
     source = "${HQ-Walls}/wallpapers";
+    recursive = true;
+  };
+  home.file."Wallpapers/walls" = {
+    source = "${walls}";
     recursive = true;
   };
 }
