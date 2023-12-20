@@ -23,10 +23,18 @@
     };
 
     #Make gtk applications prefer dark mode
-    gtk3.extraConfig = {
-      settings = ''
-        gtk-application-prefer-dark-theme=1
-        gtk-decoration-layout=menu
+    gtk3 = {
+      extraConfig = {
+        settings = ''
+          gtk-application-prefer-dark-theme=1
+          gtk-decoration-layout=menu
+        '';
+      };
+      extraCss = ''
+        headerbar, .titlebar,
+        .csd:not(.popup):not(tooltip):not(messagedialog) decoration{
+          border-radius: 0;
+        }
       '';
     };
     gtk4.extraConfig = {
