@@ -36,7 +36,6 @@
           #Productivity workspaces
           "workspace name:F1,^(firefox-nightly)$"
           "workspace name:F2,^(Logseq)$"
-          "workspace name:F3,^(libreoffice)$"
           "workspace name:F4,^(org.kde.dolphin)$"
 
           #Entertainment workspaces
