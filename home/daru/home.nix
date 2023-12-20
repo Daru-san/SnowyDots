@@ -47,6 +47,11 @@
       allowUnfree = true;
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = _: true;
+
+      # Fix electron packages
+      permittedInsecurePackages = [
+        "electron-25.9.0"
+      ];
     };
   };
 
