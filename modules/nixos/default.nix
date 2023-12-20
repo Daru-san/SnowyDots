@@ -10,5 +10,5 @@
   shells = import ./shells.nix;
   plymouth = import ./plymouth.nix;
   system76 = import ./system76.nix;
-  tty-fonts = import ./tty-fonts.nix;
+  fonts = import ./fonts.nix;
 }

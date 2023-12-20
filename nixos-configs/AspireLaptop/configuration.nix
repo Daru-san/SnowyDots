@@ -15,7 +15,7 @@
     hyprland
     shells
     plymouth
-    tty-fonts
+    fonts
     neovim
   ] ++ [
 

@@ -1,6 +1,6 @@
 # System fonts
 {pkgs, ...}:{
   home.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" "RobotoMono" ]; })
+    (nerdfonts.override { fonts = [ "JetBrainsMono" "UbuntuMono" ]; })
   ];
 }
