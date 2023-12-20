@@ -43,7 +43,7 @@
       name = "Console Music";
       genericName = "Music Player";
       comment = "Play music in your terminal";
-      exec = "cmus %U";
+      exec = "bash -c cmus";
       terminal = true;
       icon = "rhythmbox";
       type = "Application";
