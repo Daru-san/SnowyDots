@@ -36,7 +36,7 @@
           #Productivity workspaces
           "workspace name:F1,^(firefox-nightly)$"
           "workspace name:F2,^(Anytype)$"
-          "workspace name:F4,^(org.gnome.nautilus)$"
+          "workspace name:F4,^(org.gnome.Nautilus)$"
 
           #Entertainment workspaces
           "workspace name:F5,^(info.febvre.Komikku)$"
