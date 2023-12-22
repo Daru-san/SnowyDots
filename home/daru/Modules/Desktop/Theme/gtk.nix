@@ -1,12 +1,13 @@
 {pkgs, ...}:{
   gtk = {
-     enable = true;
+    enable = true;
 
-    #Set gtk theme
-     theme = {
-      name = "Orchis-Green-Dark";
-      package = pkgs.orchis-theme;
+    # Set gtk theme
+    theme = {
+      name = "Gruvbox-Dark-BL-LB";
+      package = pkgs.gruvbox-gtk-theme;
     };
+
     iconTheme = {
       name = "Papirus-Dark-Maia";
       package = pkgs.papirus-maia-icon-theme;
@@ -16,47 +17,42 @@
       size = 12;
     };
 
-    #gtk cursor theme
+    # gtk cursor theme
     cursorTheme = {
       name = "Bibata-Modern-Classic";
       package = pkgs.bibata-cursors;
     };
 
-    #Make gtk applications prefer dark mode
+    # Make gtk applications prefer dark mode
     gtk3 = {
       extraConfig = {
         settings = ''
           gtk-application-prefer-dark-theme=1
-          gtk-decoration-layout=menu
         '';
       };
-      extraCss = ''
-        headerbar, .titlebar,
-        .csd:not(.popup):not(tooltip):not(messagedialog) decoration{
-          border-radius: 0;
-        }
-      '';
     };
     gtk4.extraConfig = {
       settings = ''
         gtk-application-prefer-dark-theme=1
-        gtk-decoration-layout=menu
       '';
     };
    };
   dconf.settings = {
+    # Make gtk apps follow a dark theme
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
     };
-    #Remove buttons in gtk apps
-    # "/org/gnome/desktop/wm/preferences/button-layout" = 0;
+    # Remove buttons in gtk apps
+    "org/gnome/desktop/wm/preferences" = {
+      button-layout = "appmenu";
+    };
   };
 
-  #Set gtk env variable
+  # Set gtk theme session variable for nautilus
   home.sessionVariables = {
-    GTK_THEME = "Orchis-Green-Dark";
+    GTK_THEME = "Gruvbox-Dark-BL-LB";
   };
 
-  #Set cursor theme 'home wide'
+  # Set cursor themes
   home.file.".icons/default".source = "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Classic";
 }

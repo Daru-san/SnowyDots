@@ -12,7 +12,7 @@
     bind = let
       terminal = "${config.programs.kitty.package}/bin/kitty";
       browser = "${config.programs.firefox.package}/bin/firefox-nightly";
-      file-manager = "${pkgs.libsForQt5.dolphin}/bin/dolphin";
+      file-manager = "${pkgs.gnome.nautilus}/bin/nautilus";
       editor = "${config.programs.neovim.package}/bin/nvim";
       ranger = "${pkgs.ranger}/bin/ranger";
       image-editor = "${pkgs.krita}/bin/krita";

@@ -12,6 +12,15 @@
       enable = true;
     };
   };
+  services = {
+    gnome = {
+      gnome-settings-daemon.enable = true;
+      gnome-keyring.enable = true;
+      sushi.enable = true;
+      tracker.enable = true;
+      tracker-miners.enable = true;
+    };
+  };
 
   # System packages
   environment.systemPackages = with pkgs; [

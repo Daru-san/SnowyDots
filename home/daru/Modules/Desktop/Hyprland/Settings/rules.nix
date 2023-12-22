@@ -35,8 +35,8 @@
           "workspace name:8,^(waypaper)$"
           #Productivity workspaces
           "workspace name:F1,^(firefox-nightly)$"
-          "workspace name:F2,^(Logseq)$"
-          "workspace name:F4,^(org.kde.dolphin)$"
+          "workspace name:F2,^(Anytype)$"
+          "workspace name:F4,^(org.gnome.nautilus)$"
 
           #Entertainment workspaces
           "workspace name:F5,^(info.febvre.Komikku)$"
@@ -46,8 +46,8 @@
           "workspace name:F8,^(Comfify)"
           
           #Others
-          "workspace name:F9,^(io.github.martinrotter.rssguard)$"
-          "workspace name:F10,^(org.kde.okular)$"
+          "workspace name:F9,^(io.gitlab.news_flash.NewsFlash)$"
+          "workspace name:F10,^(evince)$"
             
           #Floating windows 
            "size 56%,^(com.github.wwmm.easyeffects)$"

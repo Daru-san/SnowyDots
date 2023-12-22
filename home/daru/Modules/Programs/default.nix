@@ -16,19 +16,19 @@
 
   home.packages = with pkgs; 
     [
-    logseq
+    anytype
     krita
-    rssguard
-    libsForQt5.okular
-    libsForQt5.dolphin
+    newsflash
+    gnome.nautilus
+    gnome.dconf-editor
     freetube
     komikku
     scrcpy
     localsend
-    libsForQt5.discover
+    gnome.gnome-software
     keepassxc
     pqiv
     losslesscut-bin
-    transmission-qt
+    fragments
   ];
 }
