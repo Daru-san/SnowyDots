@@ -3,7 +3,7 @@
     enable = true;
 
     #Kitty theme
-    theme = "Hybrid";
+    theme = "Gruvbox Material Dark Hard";
 
     #Kitty font
     font = {
