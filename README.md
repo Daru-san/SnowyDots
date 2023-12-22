@@ -110,5 +110,6 @@ Building the system
 - [ ] Document everything
 - [x] Make modules for everything
   - [x] Make device specifc modules e.g intel-gpu for intel iGpus
-- [ ] Fix config inconsistensies
+- [x] Fix config inconsistensies
 - [ ] Fix persistence issues
+- [ ] Set up ags
