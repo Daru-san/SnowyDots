@@ -1,4 +1,6 @@
-{pkgs, lib, config, inputs, ...}:{
+{pkgs, lib, config, inputs, ...}:let
+  user = "${config.home.username}";
+in {
 
   imports = [
     ./theme.nix
@@ -11,7 +13,7 @@
     package = inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin;
 
     profiles = {
-      daru = {
+      ${user} = {
         #Name
         name = "daruFox";
 
@@ -277,4 +279,19 @@
       };
     };
   };
+  home.packages = with pkgs; [
+    # Remove the containers.json backup file every time, very useful when using custom-containers 
+    (pkgs.writeShellScriptBin "rm-containersjson" ''
+      if [[ -f ${config.home.homeDirectory}/.mozilla/firefox/${user}/containers.json.backup ]]; then
+        echo "Checking for file conflicts..."
+        echo "[###                ]"
+        echo "[#########          ]"
+        echo "[###################]"
+        rm -rf ${config.home.homeDirectory}/.mozilla/firefox/${user}/containers.json.backup
+        echo "Successfully removed all conficts"
+      fi
+      Sleep 1
+      echo "Completed confict checks"
+    '')
+  ];
 }

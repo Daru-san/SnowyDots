@@ -23,5 +23,6 @@
     g = "${git}";
     nofetch = "${neofetch} --config none"; 
     clock = "${tty-clock} -bscBrnS";
+    hm-build-ex = "rm-containersjson && ${pkgs.hm-build}/bin/hm-build"
   };
 }
