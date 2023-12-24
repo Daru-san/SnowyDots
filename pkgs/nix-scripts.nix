@@ -11,13 +11,13 @@
 }:
   stdenv.mkDerivation {
     pname = "nix-scripts";
-    version = "4c58474";
+    version = "1ef56b";
     src = fetchFromGitHub {
       # https://github.com/Daru-san/Nix-Scripts
       owner = "Daru-san";
       repo = "Nix-Scripts";
-      rev = "f62af1c0aee344b2d6461626f9865b416a1d8cec";
-      sha256 = "dszy20B3W0c1EQH8FK+xKq1UbgkQ/BwlCg2eBAjyDO8=";
+      rev = "1ef56b4f1397f366793aec5aed0808d56d9e751d";
+      sha256 = "d1ETmMifinle6/V61fev11Kwr45rxv4yNKR8I4TiK5Q=";
     };
     buildInputs = [ bash subversion ];
     nativeBuildInputs = [ makeWrapper ];
