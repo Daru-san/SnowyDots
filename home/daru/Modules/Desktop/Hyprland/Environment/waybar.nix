@@ -27,7 +27,7 @@
       {
         layer = "top";
         position = "bottom";
-        height = 24;
+        height = 16;
         output = "HDMI-A-1";
 
         #Enabled modules
@@ -53,34 +53,11 @@
           #Module configs
           "custom/launcher"= {
             format = "";
-            tooltip = "true";
-            tooltip-format = "NixOS";
             };
           "hyprland/workspaces" = {
               format = "{icon}";
               format-icons = {
-                "0" = "";
-		            "1" = "";
-                "2" = "󰜗";
-                "3" = "";
-                "4" = "";
-                "5" = "";
-                "6" = "";
-                "7" = "󱇣";
-                "8" = "";
-                "9" = "";
-		            "F1" = "󰈹";
-                "F2" = "";
-                "F3" = "";
-                "F4" = "";
-                "F5" = "󰝚";
-                "F6" = "";
-                "F7" = "󰗃";
-		            "F8" = "";
-                "F9" = "";
-                "F10" = "󰈙";
-                "F11" = "";
-                "F12" = "";
+                "active" = "";
 	              "default" = "";
                 "urgent" = "󰗖";
 	              };
