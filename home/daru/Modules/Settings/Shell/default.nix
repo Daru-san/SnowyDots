@@ -19,7 +19,7 @@
     git = "${config.programs.git.package}/bin/git";
     neofetch = "${pkgs.neofetch}/bin/neofetch";
     tty-clock = "${pkgs.tty-clock}/bin/tty-clock";
-    waybar - "${config.programs.waybar.package}/bin/waybar"
+    waybar = "${config.programs.waybar.package}/bin/waybar";
 in {
     g = "${git}";
     nofetch = "${neofetch} --config none"; 
