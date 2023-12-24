@@ -23,7 +23,7 @@
       jrnl # Journal 
       calcure # 
       krabby # Pokemon
-      yafetch # Neofetch
+      nitch # Neofetch, but better
       pulsemixer # Audio mixer
       ani-cli # Anime
       pokeshell # Pokemon-neofetch

@@ -19,6 +19,7 @@
     anytype
     krita
     newsflash
+    evince
     gnome.nautilus
     gnome.dconf-editor
     freetube
