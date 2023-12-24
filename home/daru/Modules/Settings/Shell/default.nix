@@ -19,10 +19,12 @@
     git = "${config.programs.git.package}/bin/git";
     neofetch = "${pkgs.neofetch}/bin/neofetch";
     tty-clock = "${pkgs.tty-clock}/bin/tty-clock";
-  in {
+    waybar - "${config.programs.waybar.package}/bin/waybar"
+in {
     g = "${git}";
     nofetch = "${neofetch} --config none"; 
     clock = "${tty-clock} -bscBrnS";
     hm-build-ex = "rm-containersjson && ${pkgs.nix-scripts}/bin/hm-build";
+    wayconfig = "env GTK_DEBUG=interactive ${waybar}";
   };
 }
