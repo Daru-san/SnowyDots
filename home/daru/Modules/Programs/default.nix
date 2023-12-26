@@ -25,7 +25,7 @@
     freetube
     komikku
     scrcpy
-    localsend
+    # localsend
     gnome.gnome-software
     keepassxc
     pqiv
