@@ -45,7 +45,7 @@
       "SUPERSHIFT, v, ${e}, ${copyq} menu"
 
       #'Task manager'
-      "SUPER,b,${e},${terminal} -T btop --hold ${btop}"
+      "SUPERALT,b,${e},${terminal} -T btop --hold ${btop}"
     ];
 
     bindle = let
