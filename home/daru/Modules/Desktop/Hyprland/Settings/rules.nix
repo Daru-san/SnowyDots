@@ -2,13 +2,15 @@
 {...}:{
     wayland.windowManager.hyprland = {
       settings = {
-        windowrulev2 = [
-          #Task manager-like window for system monitoring 
-          "workspace special:usage,class:(kitty),title:(SystemMonitor)"
-          "center 1,class:(kitty),title:(SystemMonitor)"
-
-          # Music in terminal using cmus
-          "workspace name:F6,class:(kitty),title:(cmus)"
+        windowrulev2 = let
+          b = regex: "${regex},class:(kitty),title:(btop)";
+        in  [
+          # Special btop window for system monitoring
+          (b "workspace special:btop")
+          (b "center")
+          (b "float")
+          (b "size 69%")
+          ] ++ [
 
           #Special rules for firefox
           "float,class:(firefox-nightly),title:(Library)"

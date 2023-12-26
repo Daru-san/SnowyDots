@@ -18,10 +18,11 @@
       image-editor = "${pkgs.krita}/bin/krita";
       swaylock = "${config.programs.swaylock.package}/bin/swaylock";
       copyq = "${config.services.copyq.package}/bin/copyq";
+      btop = "${config.programs.btop.package}/bin/btop";
     in [
       # Launching programs
       "SUPER, e, ${e}, ${h} '${file-manager}'"
-      "SUPERALT, b, ${e}, ${h} '${browser}'"
+      "SUPERSHIFT, f, ${e}, ${h} '${browser}'"
       "SUPER, i, ${e}, ${h} '${image-editor}'"
 
       # Terminal stuff
@@ -44,7 +45,7 @@
       "SUPERSHIFT, v, ${e}, ${copyq} menu"
 
       #'Task manager'
-      "SUPERSHIFT,P,${e},${terminal} -T SystemMonitor --session SystemMonitor.conf"
+      "SUPER,b,${e},${terminal} -T btop --hold ${btop}"
     ];
 
     bindle = let

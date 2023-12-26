@@ -32,7 +32,7 @@ in {
       "SUPER,u,togglespecialworkspace"
       "SUPERSHIFT,u,movetoworkspace,special"
 
-      "SUPERALT,P,togglespecialworkspace,usage"
+      "SUPERALT,b,togglespecialworkspace,btop"
 
       #Super+tab to move to next workspace and back
       "SUPER,TAB,workspace, m+1"
