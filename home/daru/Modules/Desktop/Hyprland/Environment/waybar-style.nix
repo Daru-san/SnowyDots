@@ -1,7 +1,7 @@
 {config, ...}:{
 # Waybar styling
   programs.waybar.style = ''
-* {
+ * {
 border: none;
 border-radius: 0px;
 font-family: Jetbrains Mono Nerd Font;
@@ -10,11 +10,11 @@ min-height: 0;
 }
 
 window#waybar {
-background: rgba(17,27,27,1);
+background: rgba(30,33,34,1);
 }
 
 #workspaces {
-background: #25353a;
+background: #2F3332;
 margin: 5px 5px;
 padding: 5px 5px;
 border-radius: 16px;
@@ -24,12 +24,12 @@ padding: 0px 5px;
 margin: 0px 3px;
 border-radius: 16px;
 color: transparent;
-background: rgba(17,24,24,1);
+background: rgba(21,24,24,1);
 transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-background-color: #89f4fa;
+background: #2D2324;
 color: #11111B;
 border-radius: 16px;
 min-width: 50px;
@@ -38,7 +38,7 @@ transition: all 0.3s ease-in-out;
 }
 
 #workspaces button:hover {
-background-color: #f5f5f5;
+background-color: #CFBA95;
 color: #11111B;
 border-radius: 16px;
 min-width: 50px;
@@ -46,15 +46,18 @@ background-size: 400% 400%;
 }
 
 #tray, #pulseaudio, #network, #battery, #cpu, #memory, #bluetooth{
-background: #25353a;
+background: #292828;
 font-weight: bold;
 margin: 5px 0px;
 }
 #tray, #pulseaudio, #network, #battery, #cpu, #memory, #bluetooth{
-color: #f5f5f5;
+color: #A5B263;
 border-radius: 10px 24px 10px 24px;
 padding: 0 20px;
 margin-left: 7px;
+}
+#tray {
+background: #2D3532;
 }
 #cpu,#network { 
 padding: 0 5px 0 20px;
@@ -65,8 +68,8 @@ border-radius: 0 24px 10px 0;
 margin-left: 0
 }
 #clock {
-color: #f5f5f5;
-background: #25353a;
+color: #A5B263;
+background: #292828;
 border-radius: 24px 10px 24px 10px;
 padding: 0 20px;
 margin-left: 7px;
@@ -74,28 +77,27 @@ margin: 5px 7px;
 font-weight: bold;
 }
 #custom-launcher {
-color: #89b4fa;
-background: #25353a;
+background: none;
 border-radius: 0px 20px 20px 0px;
-margin: 5px 7px 5px 0px;
-padding: 0px 35px 0px 15px;
+margin: 2px 7px 2px 0px;
+padding: 0px 15px 0px 15px;
 font-size: 30px;
 }
 #custom-notification {
-color: #89b4fa;
-background: #25353a;
+color: #A5B263;
+background: #292828;
 border-radius: 40px 0px 0px 40px;
 margin: 5px 0px 5px 7px;
 padding: 0px 15px 0px 15px;
 }
 
 #custom-playerctl {
-background: #25353a;
-color: #f5f5f5;
+background: #2D3532;
+color: #A5B263;
 padding: 0 20px;
 border-radius: 24px 10px 24px 10px;
 margin: 5px 0;
 font-weight: bold;
-}
+} 
 '';
 }
