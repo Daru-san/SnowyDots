@@ -9,7 +9,7 @@
           (b "workspace special:btop")
           (b "center")
           (b "float")
-          (b "size 69%")
+          (b "size 78%")
           ] ++ [
 
           #Special rules for firefox
@@ -72,6 +72,6 @@
   }
 ##workspace guidelines
 #1-9 anything(mostly terminals)
-#F1-F4 Productivity i.e obisidian, libreoffice, firefox
+#F1-F4 Productivity i.e firefox, nautilus
 #F5-F8 Media i.e ani-cli, freetube, cmus, spotify
 #F9-F12 Anything else i.e clock screensaver, newsflash, evince

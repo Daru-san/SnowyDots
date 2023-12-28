@@ -27,7 +27,7 @@
       placement_strategy ="center";
 
       hide_window_decorations = true;
-      background_opacity = "0.1";
+      background_opacity = "0.56";
       sync_to_monitor = true;
       mouse_hide_wait = 20;
       cursor_shape = "beam";
