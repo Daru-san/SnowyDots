@@ -25,7 +25,7 @@
       krabby # Pokemon
       nitch # Neofetch, but better
       pulsemixer # Audio mixer
-      ani-cli # Anime
+      animdl # Anime
       pokeshell # Pokemon-neofetch
       du-dust # Better du
       figlet # Art

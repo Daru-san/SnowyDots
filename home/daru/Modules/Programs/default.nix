@@ -31,5 +31,6 @@
     pqiv
     losslesscut-bin
     fragments
+    anime4k
   ];
 }
