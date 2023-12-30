@@ -17,7 +17,8 @@
         ];
         windowrule = let
           f = regex: "float, ^(${regex})$";
-          c = regex: "center, ^(${regex})";
+          c = regex: "center, ^(${regex})$";
+          w = regex: "workspace audio, ^(${regex})$";
         in [
           # Floating windows
           (f "pavucontrol")
@@ -30,6 +31,7 @@
           (c ".blueman-manager-wrapped")
           (c "com.github.hluk.copyq")
           (c "com.github.wwmm.easyeffects") 
+          (w "com.github.wwmm.easyeffects")
         ] ++ [
           #Window specific worspaces
           "workspace name:7,^(krita)$"
