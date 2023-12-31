@@ -4,9 +4,11 @@
   services.flatpak.enable = true;
 
   programs = {
+    
     # Enable gnome-disks
-    gnome-disks.enable = true;
-
+    gnome-disks = {
+      enable = true;
+    };
     # Enable KDE Connect 
     kdeconnect = {
       enable = true;
