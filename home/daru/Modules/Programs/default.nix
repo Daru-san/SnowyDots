@@ -32,6 +32,6 @@
     losslesscut-bin
     fragments
     anime4k
-    gnome-clocks
+    gnome.gnome-clocks
   ];
 }
