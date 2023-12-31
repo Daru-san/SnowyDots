@@ -101,15 +101,10 @@ Building the system
 ```
 ---
 
-## December TODO list:
+## January TODO list:
 
 ### Todo:
-- [x] Change theme
-- [ ] Set up shell environments for developing in different languages
-- [ ] Redo installation instructions
-- [ ] Document everything
-- [x] Make modules for everything
-  - [x] Make device specifc modules e.g intel-gpu for intel iGpus
-- [x] Fix config inconsistensies
-- [ ] Fix persistence issues
+- [ ] Update documentation
+- [ ] Redo persistance implementation
 - [ ] Set up ags
+- [ ] Customized themes
