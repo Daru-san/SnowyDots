@@ -19,7 +19,7 @@
   };
 
   # Enable fish 
-  programs.fish.enable = true;
+  programs.fish.enable = false;
 
   environment = {
     # Installed shells
@@ -31,10 +31,12 @@
     in {
      # Useful shell aliases
       ll = "ls -l";
-      ex = "exit";   
-      rs = "reset";
-      cl = "clear";
-      rebootF = "sudo systemctl reboot -f";
+      ext = "exit";   
+      rst = "reset";
+      clr = "clear";
+      shd = "shutdown now";
+      rebt = "reboot now";
+      rebf = "sudo systemctl reboot -f";
       logout = "loginctl terminate-user $USER";
 
       # Userful rsync aliases
