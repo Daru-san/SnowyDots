@@ -31,12 +31,12 @@
     in {
      # Useful shell aliases
       ll = "ls -l";
-      ext = "exit";   
+      xt = "exit";   
       rst = "reset";
       clr = "clear";
       shd = "shutdown now";
-      rebt = "reboot now";
-      rebf = "sudo systemctl reboot -f";
+      rbt = "reboot now";
+      rbf = "sudo systemctl reboot -f";
       logout = "loginctl terminate-user $USER";
 
       # Userful rsync aliases
