@@ -56,17 +56,6 @@ border-radius: 10px 24px 10px 24px;
 padding: 0 20px;
 margin-left: 7px;
 }
-#tray {
-background: #2D3532;
-}
-#cpu,#network { 
-padding: 0 5px 0 20px;
-border-radius: 10px 0px 0px 24px;
-}
-#memory, #bluetooth {
-border-radius: 0 24px 10px 0;
-margin-left: 0
-}
 #clock {
 color: #A5B263;
 background: #292828;
@@ -77,27 +66,56 @@ margin: 5px 7px;
 font-weight: bold;
 }
 #custom-launcher {
-background: none;
+background: #292828;
 border-radius: 0px 20px 20px 0px;
 margin: 2px 7px 2px 0px;
 padding: 0px 15px 0px 15px;
-font-size: 30px;
+font-size: 24px;
 }
 #custom-notification {
 color: #A5B263;
 background: #292828;
-border-radius: 40px 0px 0px 40px;
+border-radius: 10px 24px 10px 24px;
 margin: 5px 0px 5px 7px;
-padding: 0px 15px 0px 15px;
+padding: 0px 20px 0px 20px;
 }
 
 #custom-playerctl {
-background: #2D3532;
+background: #2F3332;
 color: #A5B263;
 padding: 0 20px;
 border-radius: 24px 10px 24px 10px;
 margin: 5px 0;
 font-weight: bold;
 } 
+#pulseaudio {
+border-radius: 10px 0px 0px 24px;
+}
+#pulseaudio-slider {
+background-color: #292828;
+border-radius: 0px 24px 10px 0px;
+margin: 5px 0 5px 0;
+padding: 0 20px 0 0px;
+}
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    border-radius: 5px;
+    box-shadow: none;
+}
+#pulseaudio-slider trough {
+    min-height: 10px;
+    min-width: 90px;
+    border-radius: 5px;
+    background-color: #151818;
+}
+#pulseaudio-slider highlight {
+    min-width: 10px;
+    border-radius: 5px;
+    background-color: green;
+}
 '';
 }
