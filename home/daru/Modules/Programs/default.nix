@@ -34,5 +34,6 @@
     anime4k
     gnome.gnome-clocks
     bridge-core
+    archiver
   ];
 }
