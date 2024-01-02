@@ -29,7 +29,7 @@ transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-background: #2D2324;
+background: #757253;
 color: #11111B;
 border-radius: 16px;
 min-width: 50px;
@@ -116,6 +116,5 @@ padding: 0 20px 0 0px;
     min-width: 10px;
     border-radius: 5px;
     background-color: green;
-}
-'';
+}'';
 }
