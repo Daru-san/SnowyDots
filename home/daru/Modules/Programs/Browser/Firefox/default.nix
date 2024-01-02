@@ -279,19 +279,4 @@ in {
       };
     };
   };
-  home.packages = with pkgs; [
-    # Remove the containers.json backup file every time, very useful when using custom-containers 
-    (pkgs.writeShellScriptBin "rm-containersjson" ''
-      if [[ -f ${config.home.homeDirectory}/.mozilla/firefox/${user}/containers.json.backup ]]; then
-        echo "Checking for file conflicts..."
-        echo "[###                ]"
-        echo "[#########          ]"
-        echo "[###################]"
-        rm -rf ${config.home.homeDirectory}/.mozilla/firefox/${user}/containers.json.backup
-        echo "Successfully removed all conficts"
-      fi
-      Sleep 1
-      echo "Completed confict checks"
-    '')
-  ];
 }
