@@ -165,7 +165,7 @@
           orientation = "horizontal";
         };
         "network" = {
-          format-wifi = "󰖩 ";
+          format-wifi = "󰖩";
           format-ethernet = "󰈀";
           tooltip-format = "{essid}({signalStrength}%)";
           format-linked = "{ifname} (No IP)";
