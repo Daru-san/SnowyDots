@@ -233,12 +233,12 @@ in {
           "browser.download.panel.shown" = false;
           "browser.download.useDownloadDir" = false;
           "browser.newtabpage.activity-stream.feeds.section.highlights" = true;
-          "browser.newtabpage.activity-stream.feeds.topsites" =false;
+          "browser.newtabpage.activity-stream.feeds.topsites" = false;
           "browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar" = false;
           "browser.newtabpage.activity-stream.section.highlights.includePocket" = false;
           "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
           "browser.search.suggest.enabled" = false;
-          "browser.toolbars.bookmarks.visibility" = "always";
+          "browser.toolbars.bookmarks.visibility" = "never";
           "browser.tabs.warnOnClose" = true;
           "browser.startup.page" = 3;
           "browser.translations.panelShown" = true;
@@ -252,8 +252,8 @@ in {
 
           "privacy.clearOnShutdown.cache" = true;
           "privacy.clearOnShutdown.cookies" = false;
-          "privacy.clearOnShutdown.downloads" = false;
-          "privacy.clearOnShutdown.history" = true;
+          "privacy.clearOnShutdown.downloads" = true;
+          "privacy.clearOnShutdown.history" = false;
           "privacy.clearOnShutdown.sessions" = false;
 
           "privacy.donottrackheader.enabled" = true;

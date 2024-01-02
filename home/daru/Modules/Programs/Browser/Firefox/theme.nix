@@ -36,6 +36,13 @@
     sha256 = "BzoXCxpG88wgHLxskqQUO08QT7mB2VOLWQz8eW1w5LA=";
   };
 
+  # Fetch css from bjesus/fireside on github
+  fireside = pkgs.fetchgit {
+    url = "https://github.com/bjesus/fireside";
+    rev = "ae26321db68d2cefe44fd74a8678aa13b83d36f5";
+    sha256 = "mwlw8PNurozOBvfG6D809fxQmqiutakWq89h4UGbcXo=";
+  };
+
 in {
 
   # FirefoxOne symlinks
@@ -75,10 +82,20 @@ in {
   # };
   
   # SimpleFox-Feather
+  # home.file = {
+  #   ".mozilla/firefox/daru/chrome" = {
+  #     source = "${simplefox}/chrome";
+  #     recursive = true;
+  #   };
+  # };
+
+  # fireside
   home.file = {
-    ".mozilla/firefox/daru/chrome" = {
-      source = "${simplefox}/chrome";
-      recursive = true;
+    ".mozilla/firefox/daru/chrome/userChrome.css" = {
+      source = "${fireside}/userChrome.css";
+    };
+    ".mozilla/firefox/daru/tab-center-reborn.css" = {
+      source = "${fireside}/tab-center-reborn.css";
     };
   };
 }
