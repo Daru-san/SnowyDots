@@ -113,7 +113,7 @@ padding: 0 20px 0 0px;
     background-color: #151818;
 }
 #pulseaudio-slider highlight {
-    min-width: 10px;
+    min-width: 0px;
     border-radius: 5px;
     background-color: green;
 }'';
