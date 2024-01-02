@@ -14,4 +14,8 @@
     };
     mutableUsers = true;
   };
+  fonts.packages = with pkgs; [
+    monocraft
+    minecraftia
+  ];
 }
