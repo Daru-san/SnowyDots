@@ -25,6 +25,6 @@ in {
     nofetch = "${neofetch} --config none"; 
     clock = "${tty-clock} -bscBrnS";
     hm-build-ex = "rm-containersjson && ${pkgs.nix-scripts}/bin/hm-build";
-    wayconfig = "env GTK_DEBUG=interactive ${waybar}";
+    wayconfig = "pkill waybar && env GTK_DEBUG=interactive ${waybar}";
   };
 }

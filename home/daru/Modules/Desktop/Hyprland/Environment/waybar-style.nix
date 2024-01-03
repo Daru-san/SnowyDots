@@ -56,6 +56,17 @@ border-radius: 10px 24px 10px 24px;
 padding: 0 20px;
 margin-left: 7px;
 }
+#bluetooth {
+border-radius: 0px;
+margin: 5px 0;
+}
+#network {
+border-radius: 10px 0px 0px 24px;
+}
+#battery {
+border-radius: 0px 24px 10px 0px;
+margin: 5px 0;
+}
 #clock {
 color: #A5B263;
 background: #292828;

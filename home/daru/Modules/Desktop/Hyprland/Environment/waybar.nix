@@ -43,7 +43,7 @@
           "pulseaudio"
           "pulseaudio/slider"
           "network" 
-          # "bluetooth" 
+          "bluetooth"
           "battery"
           # "cpu" 
           # "memory"
