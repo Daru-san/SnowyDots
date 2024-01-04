@@ -114,10 +114,10 @@ in {
             "Google"
           ];
 
-          #Force apply configs
+          # Force apply configs
           force = true;
 
-          #Add custom search engines and modify existing ones
+          # Add custom search engines and modify existing ones
           engines = {
             
             #Brave search
@@ -135,7 +135,7 @@ in {
               urls = [
                 {template = "https://www.startpage.com/sp/search?query={searchTerms}";}
               ];
-              icon = "https://addons.mozilla.org/user-media/addon_icons/899/899962-64.png";
+              icon = "https://www.startpage.com/sp/cdn/favicons/favicon-gradient.ico";
               definedAliases = ["@sp"];
             };
 
