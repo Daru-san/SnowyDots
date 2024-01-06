@@ -6,7 +6,7 @@
     dataDir = "${home}/.music/mpd";
     musicDirectory = "${home}/Music";
     playlistDirectory = "${home}/.music/mpd";
-    dbFile = "${dataDir}/mpd.db";
+    dbFile = "\${dataDir}/mpd.db";
     extraConfig = ''
     db_file      "~/.music/mpd/mpd.db"  
     log_file      "~/.music/mpd/mpd.log"
