@@ -1,4 +1,4 @@
-{config, pkgs, outputs, ...}:{
+{config, pkgs, outputs, inputs, ...}:{
   imports = with outputs.homeManagerModules; [
     swayosd
     playerctl
