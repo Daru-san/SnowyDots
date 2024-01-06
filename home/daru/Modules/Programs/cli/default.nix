@@ -32,5 +32,8 @@
       lolcat # Colors
       page # Pager using Neovim
       fzf # Finding it fuzzy
-    ];
+    ] ++ (with pkgs.scripts; [
+      nix-rebuild
+      hm-build
+    ]);
  }

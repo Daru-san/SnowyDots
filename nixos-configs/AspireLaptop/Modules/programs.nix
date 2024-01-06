@@ -47,7 +47,7 @@
     ncdu
     busybox
     usbutils
-  ] ++ (with inputs.useful-scripts.packages.${pkgs.system}; [
+  ] ++ (with pkgs.scripts; [
     nix-rebuild
     hm-build
   ]);

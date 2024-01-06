@@ -36,6 +36,9 @@
       # Overlay for stable packages (23.05)
       outputs.overlays.stable-packages
 
+      # Overlay with my custom scripts
+      outputs.overlays.useful-scripts
+
       # Neovim nightly overlay
       inputs.neovim-nightly-overlay.overlays.default
 
