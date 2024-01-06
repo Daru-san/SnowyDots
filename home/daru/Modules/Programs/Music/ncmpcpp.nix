@@ -2,7 +2,7 @@
   imports = [ ./mpd.nix ];
   programs.ncmpcpp = {
     enable = true;
-    mpdMusicDir = "~/Music/";
+    mpdMusicDir = "~/Music";
     settings = {
       ncmpcpp_directory = "~/.music/ncmpcpp";
       lyrics_directory = "~/.music/ncmpcpp/lyrics";

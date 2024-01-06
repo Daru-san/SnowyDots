@@ -1,9 +1,12 @@
-{...}:{
-  services.mpd = {
+{config, ...}:{
+  services.mpd = let
+    home = "${config.home.homeDirectory}";
+  in {
     enable = true;
-    dataDir = .music/mpd;
-    musicDirectory = "~/Music";
-    playlistDirectory = .music/mpd/playlists;
+    dataDir = "${home}/.music/mpd";
+    musicDirectory = "${home}/Music";
+    playlistDirectory = "${home}/.music/mpd";
+    dbFile = "${dataDir}/mpd.db";
     extraConfig = ''
     db_file      "~/.music/mpd/mpd.db"  
     log_file      "~/.music/mpd/mpd.log"
@@ -11,7 +14,7 @@
     state_file     "~/.music/mpd/mpdstate"   
 
     audio_output {
-      type            "pulse"
+      type            "pipewire"
       name            "Music"
     }
     audio_output {
