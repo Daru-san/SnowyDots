@@ -1,4 +1,4 @@
-{pkgs, inputs }:{
+{pkgs, inputs, ... }:{
 
   # Enable flatpack
   services.flatpak.enable = true;
