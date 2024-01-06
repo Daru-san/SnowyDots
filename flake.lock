@@ -727,7 +727,8 @@
         "nixpkgs-stable": "nixpkgs-stable",
         "nur": "nur",
         "prismlauncher": "prismlauncher",
-        "spicetify-nix": "spicetify-nix"
+        "spicetify-nix": "spicetify-nix",
+        "useful-scripts": "useful-scripts"
       }
     },
     "spicetify-nix": {
@@ -792,6 +793,26 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "useful-scripts": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1704554361,
+        "narHash": "sha256-cEBZeXccmKHWEpLe9XY5rPOvbpeypwsRXxkwDzmRZEQ=",
+        "owner": "Daru-san",
+        "repo": "useful-scripts",
+        "rev": "b5d3e418540553707e54dced6cee4c4aa93f5722",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Daru-san",
+        "repo": "useful-scripts",
         "type": "github"
       }
     }
