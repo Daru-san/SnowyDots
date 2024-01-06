@@ -803,11 +803,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1704554361,
-        "narHash": "sha256-cEBZeXccmKHWEpLe9XY5rPOvbpeypwsRXxkwDzmRZEQ=",
+        "lastModified": 1704555116,
+        "narHash": "sha256-2+1vMosmYQ5fC2DvoQuJNrYvGqvn/bETlbjDeVOZ0NQ=",
         "owner": "Daru-san",
         "repo": "useful-scripts",
-        "rev": "b5d3e418540553707e54dced6cee4c4aa93f5722",
+        "rev": "d8cc3058d105fcde4c611dd8e0d79124488e359f",
         "type": "github"
       },
       "original": {
