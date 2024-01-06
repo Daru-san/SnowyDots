@@ -1,4 +1,4 @@
-{pkgs, ...}:{
+{pkgs, inputs }:{
 
   # Enable flatpack
   services.flatpak.enable = true;
@@ -47,6 +47,8 @@
     ncdu
     busybox
     usbutils
-    nix-scripts
-  ];
+  ] ++ (with inputs.useful-scripts.packages.${pkgs.system}; [
+    nix-rebuild
+    hm-build
+  ]);
 }
