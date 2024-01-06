@@ -1,9 +1,9 @@
 {...}:{
   services.mpd = {
     enable = true;
-    dataDir = "~/.music/mpd";
-    musicDirectory = "~/Music/";
-    playlistDirectory = "~/.music/mpd/playlists";
+    dataDir = .music/mpd;
+    musicDirectory = "~/Music";
+    playlistDirectory = .music/mpd/playlists;
     extraConfig = ''
     db_file      "~/.music/mpd/mpd.db"  
     log_file      "~/.music/mpd/mpd.log"
