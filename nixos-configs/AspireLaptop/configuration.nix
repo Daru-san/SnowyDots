@@ -45,8 +45,6 @@
       outputs.overlays.additions
       # outputs.overlays.modifications
       outputs.overlays.stable-packages
-      # My custom script overlay
-      outputs.overlays.useful-scripts
     ];
 
     # Allow unfree packages

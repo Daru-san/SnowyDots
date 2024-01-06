@@ -11,9 +11,4 @@
       config.allowUnfree = true;
     };
   };
-  useful-scripts = final: _prev: {
-    scripts = import inputs.useful-scripts {
-      system = final.system;
-    };
-  };
 }
