@@ -8,7 +8,7 @@
     ./cli/default.nix
     ./Music/default.nix
     ./Video/default.nix
-    ./Games/default.nix
+    # ./Games/default.nix
     ./Browser/default.nix
     ./desktop-entries.nix
   ];
@@ -16,7 +16,7 @@
 
   home.packages = with pkgs; 
     [
-    anytype
+    # anytype
     krita
     newsflash
     evince
