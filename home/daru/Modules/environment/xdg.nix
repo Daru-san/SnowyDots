@@ -3,7 +3,7 @@
   xdg.userDirs = {
     enable = true;
 
-    # Make it auto create generate the directories if they don't exist
+    # Make it auto createnerate the directories if they don't exist
     createDirectories = true;
 
     # Default directories
@@ -22,5 +22,11 @@
       Scripts = "${config.home.homeDirectory}/Scripts";
       Wallpapers = "${config.home.homeDirectory}/Wallpapers";
     };
+  };
+  xdg.portal = {
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+    ];
+    xdgOpenUsePortal = true;
   };
 }
