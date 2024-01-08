@@ -1,5 +1,5 @@
 # Settings folders that will be present everytime the config is built
-{config, ...}:{
+{config,pkgs, ...}:{
   xdg.userDirs = {
     enable = true;
 
