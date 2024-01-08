@@ -1,4 +1,4 @@
-{...}:{
+{pkgs, ...}:{
  imports = [
   ./ags.nix
   ./copyq.nix
@@ -8,5 +8,10 @@
   ./wlogout.nix
   ./swayidle.nix
   ./swaylock.nix
+ ];
+ home.packages = with pkgs; [
+  swaynotificationcenter
+  wclipboard
+  pavucontrol
  ];
 }

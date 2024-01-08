@@ -7,7 +7,7 @@
       command = "${config.services.copyq.package}/bin/copyq";
     };
     waybar = {
-      command = "${config.programs.waybar.package}/bin/waybar"
+      command = "${config.programs.waybar.package}/bin/waybar";
     };
-  }
+  };
 }

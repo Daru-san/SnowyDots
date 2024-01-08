@@ -8,6 +8,7 @@
   ];
 #Configuring Hyprland 
   wayland.windowManager.hyprland = {
+    enable = false;
     systemd = {
       enable = true;
       extraCommands = [

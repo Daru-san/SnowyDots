@@ -1,5 +1,5 @@
 {...}:{
   wayland.windowManager.sway.assigns = {
-    "1" = [{class = "^Firefox-nighly$"}];
+    "1" = [{class = "^Firefox-nighly$";}];
   };
 }

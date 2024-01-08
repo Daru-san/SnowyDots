@@ -37,7 +37,7 @@
           "custom/playerctl"
         ];
         modules-center = [
-          "hyprland/workspaces"
+          "sway/workspaces"
         ];
         modules-right = [
           "tray"
@@ -58,7 +58,9 @@
         "custom/launcher"= {
           format = "";
         };
-        "sway/workspaces" 
+        "sway/workspaces" = {
+          format = "{name}";
+        };
         "hyprland/workspaces" = {
           format = "{icon}";
           format-icons = {

@@ -1,7 +1,4 @@
-{config, pkgs,...}:{
-  imports = [
-    ./extra-binds.nix
-  ];
+{config, pkgs, inputs,lib, ...}:{
   wayland.windowManager.sway.config = 
   {
     modifier = "mod4";
@@ -27,6 +24,7 @@
       wl-paste = "${pkgs.wl-clipboard}/bin/wl-paste";
       notify-send = "${pkgs.libnotify}/bin/notify-send";
       easyeffects = "${config.services.easyeffects.package}/bin/easyeffects";
+      color-picker = "${inputs.useful-scripts.packages.${pkgs.system}.color-picker}/bin/color-picker";
     in lib.mkOptionDefault {
       #Basic binds
       "${mod} + space" = "exec ${launcher}";
@@ -36,7 +34,7 @@
       "${mod} + x" = "exec ${hdrop} '${wlogout}'";
       "${mod} + r" = "exec ${terminal} --hold ${ranger}";
       "${mod} + z" = "exec ${terminal} --hold ${editor}";
-      "${mod} + a" = "exec ${hdrop} '${easyeffects}"';
+      "${mod} + a" = "exec ${hdrop} '${easyeffects}'";
 
       #Window bings
       "alt + q" = "killactive";
@@ -52,13 +50,13 @@
       "${mod} + shift + v" = "exec ${copyq} menu";
       
       #Suspend
-      "${mod} + alt + F12" = "exec systemctl suspend"
+      "${mod} + alt + F12" = "exec systemctl suspend";
 
       #Color picker
-      "${mod} + shift + c" = "exec ${notify-send} 'Color copied to clipboard' `${hyprpicker} | ${wl-copy}` `${wl-paste}`";
+      "${mod} + shift + c" = "exec ${color-picker}";
 
       #'Task manager'
-      "${mod} + P" = "exec ${terminal} -T SystemMonitor --session SystemMonitor.conf"
+      "${mod} + P" = "exec ${terminal} -T SystemMonitor --session SystemMonitor.conf";
 
       ##Controls##
       ############
@@ -82,7 +80,7 @@
 
 
       #Show when caps lock is pressed
-      ",caps_lock,exec,${swayosd} --caps-lock";
+      "caps_lock" = "exec,${swayosd} --caps-lock";
 
       # Screenshotting
       "Print" = "exec ${shotman} --capture region";
