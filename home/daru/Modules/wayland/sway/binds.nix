@@ -29,6 +29,7 @@
     in {
       #Basic binds
       "${mod}+space" = "exec ${launcher}";
+      "${mod}+return" = "exec ${terminal}";
       "${mod}+e" = "exec ${hdrop} '${file-manager}'}";
       "${mod}+b" = "exec ${hdrop} '${browser}'";
       "${mod}+x" = "exec ${hdrop} '${wlogout}'";
