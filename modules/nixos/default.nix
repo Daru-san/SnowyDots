@@ -3,7 +3,8 @@
   lxpolkit = import ./lxpolkit.nix;
   android-tools = import ./android-tools.nix;
   audio = import ./audio.nix;
-  hyprland = import ./hyprland.nix;
+  wayland = import ./wayland.nix;
+  greetd = import ./greetd.nix;
   kde = import ./kde.nix;
   intel-gpu = import ./intel-gpu.nix;
   neovim = import ./neovim.nix;

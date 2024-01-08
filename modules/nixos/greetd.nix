@@ -1,4 +1,4 @@
-{...}:{
+{pkgs,config, ...}:{
   # Enable greetd using tuigreet
   services.greetd = {
     package = pkgs.greetd;
