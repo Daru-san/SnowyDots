@@ -2,10 +2,14 @@
   gtk = {
     enable = true;
 
-    # Set gtk theme
     theme = {
-      name = "Gruvbox-Dark-BL-LB";
-      package = pkgs.gruvbox-gtk-theme;
+      name = "Colloid-Green-Dark-Nord";
+      package = pkgs.colloid-gtk-theme.override {
+        themeVariants = [ "default" "green" ];
+        colorVariants = [ "dark" ];
+        sizeVariants = [ "standard" ];
+        tweaks = [ "nord" "float"];
+      };
     };
 
     iconTheme = {
@@ -50,7 +54,7 @@
 
   # Set gtk theme session variable for nautilus
   home.sessionVariables = {
-    GTK_THEME = "Gruvbox-Dark-BL-LB";
+    GTK_THEME = "Colloid-Green-Dark-Nord";
   };
 
   # Set cursor themes

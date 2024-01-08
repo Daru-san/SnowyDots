@@ -4,7 +4,7 @@
       fonts = {
         names = [ "JetbrainsMono Nerd Font" "UbuntuMono Nerd Font" ];
         style = "Semi-Bold";
-        size = "13.4";
+        size = 13.4;
       };
       # colors = {
       #   background = ;

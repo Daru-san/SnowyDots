@@ -1,7 +1,7 @@
 {config, pkgs, inputs,lib, ...}:{
   wayland.windowManager.sway.config = 
   {
-    modifier = "mod4";
+    modifier = "Mod4";
     keybindings = let
       mod = "${config.wayland.windowManager.sway.config.modifier}";
       swayosd = "${config.services.swayosd.package}/bin/swayosd";
@@ -10,12 +10,12 @@
       browser = "${config.programs.firefox.package}/bin/firefox-nightly";
       terminal = "${config.wayland.windowManager.sway.config.terminal}";
       launcher = "${config.wayland.windowManager.sway.config.menu}";
-      file-manager = "${pkgs.libsForQt5.dolphin}/bin/dolphin";
+      file-manager = "${pkgs.gnome.nautilus}/bin/nautilus";
       shotman = "${pkgs.shotman}/bin/shotman";
       editor = "${config.programs.neovim.package}/bin/nvim";
       ranger = "${pkgs.ranger}/bin/ranger";
       image-editor = "${pkgs.krita}/bin/krita";
-      hdrop = "${inputs.hyprland-contrib.packages.${pkgs.system}.hdrop}/bin/hdrop";
+      hdrop = "${pkgs.hdrop}/bin/hdrop";
       swaylock = "${config.programs.swaylock.package}/bin/swaylock";
       copyq = "${config.services.copyq.package}/bin/copyq";
       wlogout = "${config.programs.wlogout.package}/bin/wlogout";

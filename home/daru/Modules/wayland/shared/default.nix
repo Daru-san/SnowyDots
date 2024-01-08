@@ -11,7 +11,7 @@
  ];
  home.packages = with pkgs; [
   swaynotificationcenter
-  wclipboard
+  wl-clipboard
   pavucontrol
  ];
 }
