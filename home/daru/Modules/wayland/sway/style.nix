@@ -40,13 +40,21 @@
         newWindow = "smart";
       };
       gaps = {
-        outer = 11;
-        inner = 7;
+        outer = 6;
+        inner = 4;
       };
       window = {
         titlebar = false;
         border = 3;
       };
+      output = {
+        HDMI-A-1 = {
+          bg = "~/Pictures/walls/39679.jpg fill";
+        };
+      };
+      bars = [
+        {command = "${config.programs.waybar.package}/bin/waybar";}
+      ];
     };
 
     # Swayfx configuration

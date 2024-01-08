@@ -28,7 +28,7 @@ background: rgba(21,24,24,1);
 transition: all 0.3s ease-in-out;
 }
 
-#workspaces button.active {
+#workspaces button.focused {
 background: #757253;
 color: #11111B;
 border-radius: 16px;
@@ -52,7 +52,7 @@ margin: 5px 0px;
 }
 #tray, #pulseaudio, #network, #battery, #cpu, #memory, #bluetooth{
 color: #A5B263;
-border-radius: 10px 24px 10px 24px;
+border-radius: 24px 24px 24px 24px;
 padding: 0 20px;
 margin-left: 7px;
 }
@@ -61,16 +61,16 @@ border-radius: 0px;
 margin: 5px 0;
 }
 #network {
-border-radius: 10px 0px 0px 24px;
+border-radius: 24px 0px 0px 24px;
 }
 #battery {
-border-radius: 0px 24px 10px 0px;
+border-radius: 0px 24px 24px 0px;
 margin: 5px 0;
 }
 #clock {
 color: #A5B263;
 background: #292828;
-border-radius: 24px 10px 24px 10px;
+border-radius: 24px 24px 24px 24px;
 padding: 0 20px;
 margin-left: 7px;
 margin: 5px 7px;
@@ -86,7 +86,7 @@ font-size: 24px;
 #custom-notification {
 color: #A5B263;
 background: #292828;
-border-radius: 10px 24px 10px 24px;
+border-radius: 24px 24px 24px 24px;
 margin: 5px 0px 5px 7px;
 padding: 0px 20px 0px 20px;
 }
@@ -95,16 +95,16 @@ padding: 0px 20px 0px 20px;
 background: #2F3332;
 color: #A5B263;
 padding: 0 20px;
-border-radius: 24px 10px 24px 10px;
+border-radius: 24px 24px 24px 24px;
 margin: 5px 0;
 font-weight: bold;
 } 
 #pulseaudio {
-border-radius: 10px 0px 0px 24px;
+border-radius: 24px 0px 0px 24px;
 }
 #pulseaudio-slider {
 background-color: #292828;
-border-radius: 0px 24px 10px 0px;
+border-radius: 0px 24px 24px 0px;
 margin: 5px 0 5px 0;
 padding: 0 20px 0 0px;
 }
