@@ -1,3 +1,4 @@
+## To be replaced with ags
 {pkgs, config, ...}:{
     imports = [
       ./waybar-style.nix
@@ -57,6 +58,7 @@
         "custom/launcher"= {
           format = "";
         };
+        "sway/workspaces" 
         "hyprland/workspaces" = {
           format = "{icon}";
           format-icons = {

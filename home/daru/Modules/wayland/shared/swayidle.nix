@@ -11,6 +11,5 @@
       { timeout = 800; command = "${config.programs.swaylock.package}/bin/swaylock -fF";}
       { timeout = 1500; command = "systemctl suspend"; }
     ];
-    systemdTarget = "xdg-desktop-portal-hyprland.service";
   };
 }

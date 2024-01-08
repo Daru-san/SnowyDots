@@ -2,11 +2,14 @@
   imports = [
     ./binds.nix
     ./input.nix
+    ./autostart.nix
+    ./programs.nix
+    ./style.nix
+    ./systemd.nix
+    ./assign.nix
   ];
 #Configuring Hyprland 
   wayland.windowManager.sway = {
-    enable = true;
-    package = pkgs.swayfx;
     systemd = {
       enable = true;
     };
@@ -15,7 +18,7 @@
     };
     config = {
       terminal = "${config.programs.kitty.package}/bin/kitty";
-      menu = "${config.programs.fuzzel.package}/bin/fuzzel";
+      menu = "${config.programs.anyrun.package}/bin/anyrun";
     };
     extraConfig = ''
       # Applies all generated settings

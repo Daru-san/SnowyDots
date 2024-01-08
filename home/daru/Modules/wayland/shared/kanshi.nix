@@ -1,7 +1,6 @@
 {...}:{
   services.kanshi = {
     enable = true;
-    systemdTarget = "hyprland-session.target";
     profiles = {
 
       #Profile for when laptop is not connected to monitor
