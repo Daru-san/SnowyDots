@@ -44,6 +44,12 @@
 
     # ags, a gtk shell for hyprland
     ags.url = "github:Aylur/ags";
+
+    # Custom scripts of mine that I use normally
+    useful-scripts = {
+      url = "github:Daru-san/useful-scripts";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {

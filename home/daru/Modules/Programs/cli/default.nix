@@ -32,5 +32,6 @@
       lolcat # Colors
       page # Pager using Neovim
       fzf # Finding it fuzzy
+      unrar
     ];
  }

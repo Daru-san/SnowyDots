@@ -1,4 +1,4 @@
-{config, pkgs, outputs, ...}:{
+{config, pkgs, outputs, inputs, ...}:{
   imports = with outputs.homeManagerModules; [
     swayosd
     playerctl
@@ -103,7 +103,7 @@
     bindr = let
       any = "${config.programs.anyrun.package}/bin/anyrun";
       easy = "${config.services.easyeffects.package}/bin/easyeffects";
-      cl = "${pkgs.nix-scripts}/bin/color-picker";
+      cl = "${inputs.useful-scripts.packages.${pkgs.system}.color-picker}/bin/color-picker";
       s = "${config.services.swayosd.package}/bin/swayosd";
       wl = "${config.programs.wlogout.package}/bin/wlogout";
       pk = "pkill";

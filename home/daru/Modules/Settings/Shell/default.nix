@@ -24,7 +24,8 @@ in {
     g = "${git}";
     nofetch = "${neofetch} --config none"; 
     clock = "${tty-clock} -bscBrnS";
-    hm-build-ex = "rm-containersjson && ${pkgs.nix-scripts}/bin/hm-build";
-    wayconfig = "pkill waybar && env GTK_DEBUG=interactive ${waybar}";
+    wayconfig = "bash -c pkill waybar && env GTK_DEBUG=interactive ${waybar}";
+    nb = "nix-rebuild";
+    hb = "hm-build";
   };
 }
