@@ -5,9 +5,9 @@
     easyeffects
   ] ++ [
     ./spotify.nix
+    ./ncmpcpp.nix
   ];
   home.packages = with pkgs; [
-    cmus
-    cmusfm
+    musikcube
   ];
 }

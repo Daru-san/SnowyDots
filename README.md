@@ -88,16 +88,16 @@ Note: This may not work for every use case and I'd rather you copied individual 
 
 Cloning the repo
 ```bash
-    #Clone the repo   
-    git clone github.com/Daru-san/Snowflake-dots ~/snowflake 
-    cd ~/snowflake/ 
+#Clone the repo   
+git clone github.com/Daru-san/Snowflake-dots ~/snowflake 
+cd ~/snowflake/ 
 ```
 Building the system
 ```bash
-    #Build the configuration
-    cd ~/snowflake
-    sudo nixos-rebuild {switch/boot} --flake .#AspireNix #Laptop configuration 
-    home-manager switch --flake .#daru@AspireNix #my user(daru) found in /home/daru
+#Build the configuration
+cd ~/snowflake
+sudo nixos-rebuild {switch/boot} --flake .#AspireNix #Laptop configuration 
+home-manager switch --flake .#daru@AspireNix #my user(daru) found in /home/daru
 ```
 ---
 
