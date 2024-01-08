@@ -1,4 +1,5 @@
 {config, pkgs, inputs,lib, ...}:{
+  imports = [./workspaces.nix];
   wayland.windowManager.sway.config = 
   {
     modifier = "Mod4";

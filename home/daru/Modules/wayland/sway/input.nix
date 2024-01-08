@@ -4,8 +4,8 @@
       input = {
         keyboard = {
           xkb_variant = "us";
-          repeat_delay = "300";
-          repeat_rate = "50";
+          repeat_delay = "50";
+          repeat_rate = "300";
         };
         touchpad = {
           natural_scroll = "enabled";
