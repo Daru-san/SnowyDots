@@ -31,13 +31,12 @@
       #Basic binds
       "${mod} + space" = "exec ${launcher}";
       "${mod} + Return" = "exec ${terminal}";
-      "${mod} + e" = "exec ${file-manager}";
-      "${mod} + b" = "exec ${browser}";
-      "${mod} + x" = "exec ${wlogout}";
+      "${mod} + e" = "exec ${hdrop} '${file-manager}'";
+      "${mod} + b" = "exec ${hdrop} '${browser}'";
+      "${mod} + x" = "exec ${hdrop} '${wlogout}'";
       "${mod} + r" = "exec ${terminal} --hold ${ranger}";
       "${mod} + z" = "exec ${terminal} --hold ${editor}";
-      "${mod} + i" = "exec ${image-editor}";
-      "${mod} + a" = "exec ${easyeffects}";
+      "${mod} + a" = "exec ${hdrop} '${easyeffects}"';
 
       #Window bings
       "alt + q" = "killactive";
