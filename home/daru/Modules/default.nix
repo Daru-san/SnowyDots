@@ -1,7 +1,8 @@
 {...}:{
   imports = [
-    ./Desktop/default.nix
-    ./Programs/default.nix
-    ./Settings/default.nix
+    ./themes/default.nix
+    ./wayland/default.nix
+    ./programs/default.nix
+    ./environment/default.nix
   ];
 }
