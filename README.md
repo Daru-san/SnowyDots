@@ -62,8 +62,8 @@ My personal NixOS dotfiles written completely in Nix.
 <p float="left">
   <img src="https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev1.png" width="32%" />
   <img src="https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev2.png" width="32%" />
-  <img src="https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev3.png" />
-  <img src="https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev4.png" />
+  <img src="https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev3.png" width="32%" />
+  <img src="https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev4.png" width="32%" />
 </p>---
 
 ## Configuration Structure:
