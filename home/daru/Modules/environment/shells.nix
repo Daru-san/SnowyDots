@@ -12,7 +12,7 @@
   ];
   
   # Global shell theme
-  programs.oh-my-posh.useTheme = "bubblesline"; 
+  programs.oh-my-posh.useTheme = "pararussel"; 
 
   # Global shell aliases
   home.shellAliases = let

@@ -11,6 +11,7 @@
 #Configuring Hyprland 
   wayland.windowManager.sway = {
     enable = true;
+    package = pkgs.swayfx;
     systemd = {
       enable = true;
     };
