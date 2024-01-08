@@ -25,38 +25,33 @@
       notify-send = "${pkgs.libnotify}/bin/notify-send";
       easyeffects = "${config.services.easyeffects.package}/bin/easyeffects";
       color-picker = "${inputs.useful-scripts.packages.${pkgs.system}.color-picker}/bin/color-picker";
-    in lib.mkOptionDefault {
+    in {
       #Basic binds
-      "${mod} + space" = "exec ${launcher}";
-      "${mod} + Return" = "exec ${terminal}";
-      "${mod} + e" = "exec ${hdrop} '${file-manager}'";
-      "${mod} + b" = "exec ${hdrop} '${browser}'";
-      "${mod} + x" = "exec ${hdrop} '${wlogout}'";
-      "${mod} + r" = "exec ${terminal} --hold ${ranger}";
-      "${mod} + z" = "exec ${terminal} --hold ${editor}";
-      "${mod} + a" = "exec ${hdrop} '${easyeffects}'";
+      "${mod}+space" = "exec ${launcher}";
+      "${mod}+e" = "exec ${hdrop} '${file-manager}'}";
+      "${mod}+b" = "exec ${hdrop} '${browser}'";
+      "${mod}+x" = "exec ${hdrop} '${wlogout}'";
+      "${mod}+r" = "exec ${terminal} --hold ${ranger}";
+      "${mod}+z" = "exec ${terminal} --hold ${editor}";
+      "${mod}+a" = "exec ${hdrop} '${easyeffects}'";
 
       #Window bings
-      "alt + q" = "killactive";
-      "${mod} + shift + e" = "exit";
-      "${mod} + f" = "fullscreen";
-      "${mod} + v" = "togglefloating";
+      "alt+q" = "kill";
+      "${mod}+shift+e" = "exit";
+      "${mod}+v" = "floating toggle";
 
 
       #Lock screen
-      "${mod} + l" = "exec ${swaylock} -Ff";
+      "${mod}+l" = "exec ${swaylock} -Ff";
 
       #Clipboard menu
-      "${mod} + shift + v" = "exec ${copyq} menu";
+      "${mod}+shift+v" = "exec ${copyq} menu";
       
       #Suspend
-      "${mod} + alt + F12" = "exec systemctl suspend";
+      "${mod}+alt+F12" = "exec systemctl suspend";
 
       #Color picker
-      "${mod} + shift + c" = "exec ${color-picker}";
-
-      #'Task manager'
-      "${mod} + P" = "exec ${terminal} -T SystemMonitor --session SystemMonitor.conf";
+      "${mod}+shift+c" = "exec ${color-picker}";
 
       ##Controls##
       ############
@@ -74,9 +69,9 @@
       "XF86AudioMute" = "exec ${swayosd} --output-volume=mute-toggle";
 
       #Same but for keyboards without media keys
-      "alt + F8" = "exec ${swayosd} --output-volume=raise 5";
-      "alt + F6" = "exec ${swayosd} --output-volume=lower 5";
-      "alt + F7" = "exec ${swayosd} --output-volume=mute-toggle";
+      "alt+F8" = "exec ${swayosd} --output-volume=raise 5";
+      "alt+F6" = "exec ${swayosd} --output-volume=lower 5";
+      "alt+F7" = "exec ${swayosd} --output-volume=mute-toggle";
 
 
       #Show when caps lock is pressed
@@ -84,7 +79,7 @@
 
       # Screenshotting
       "Print" = "exec ${shotman} --capture region";
-      "shift + print" = "exec, ${shotman} --capture output";
+      "shift+print" = "exec, ${shotman} --capture output";
 
       # Media control
       "XF86AudioNext" = "exec,${playerctl} next";
@@ -93,10 +88,10 @@
       "XF86AudioStop" = "exec,${playerctl} stop";
 
       #Same but for keyboards without media keys
-      "alt + F12" = "exec,${playerctl} next";
-      "alt + F9" = "exec,${playerctl} previous";
-      "alt + F10" = "exec,${playerctl} play-pause";
-      "alt + F11" = "exec,${playerctl} stop";
+      "alt+F12" = "exec,${playerctl} next";
+      "alt+F9" = "exec,${playerctl} previous";
+      "alt+F10" = "exec,${playerctl} play-pause";
+      "alt+F11" = "exec,${playerctl} stop";
     };
   };
 }
