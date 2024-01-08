@@ -17,7 +17,7 @@
   programs.sway = {
     enable = true;
     package = pkgs.swayfx;
-    extraPackages = [
+    extraPackages = with pkgs; [
       autotiling-rs
     ];
   };
