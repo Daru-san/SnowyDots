@@ -5,15 +5,7 @@
     kdeconnect
     syncthing
   ]++[
-<<<<<<< HEAD:home/daru/Modules/Programs/default.nix
-    ./cli/default.nix
-    ./Music/default.nix
-    ./Video/default.nix
-    # ./Games/default.nix
-    ./Browser/default.nix
-=======
     ./btop/btop.nix
->>>>>>> add-sway:home/daru/Modules/programs/default.nix
     ./desktop-entries.nix
     ./mpv/default.nix
     ./music/default.nix
@@ -24,13 +16,8 @@
 
   # GUI
   home.packages = with pkgs; 
-<<<<<<< HEAD:home/daru/Modules/Programs/default.nix
     [
-    # anytype
-=======
-  [
     obsidian
->>>>>>> add-sway:home/daru/Modules/programs/default.nix
     krita
     newsflash
     evince
