@@ -6,34 +6,19 @@
         style = "Semi-Bold";
         size = 13.4;
       };
-      # colors = {
-      #   background = ;
-      #   focused = ;
-      #   focusedInactive = ;
-      #   placeholder = ;
-      #   unfocused = ;
-      #   urgent = ;
-      # };
-      floating = {
-        border = 6;
-        criteria = [
-          { 
-            title = "firefox-nightly - Library";
-          }
-          {
-            class = "com.github.wwmm.easyeffects";
-          }
-          {
-            class = ".blueman-manager-wrapped";
-          }
-          {
-            class = "com.github.hluk.copyq";
-          }
-          {
-            class = "Pavucontrol";
-          }
-        ];
-        titlebar = false;
+     colors = {
+        focused = {
+          border = "#64E8F5"
+        };
+        focusedInactive = {
+          border = "#1A325B"
+        };
+        unfocused = {
+          border = "#212121";
+        };
+        urgent = {
+          border = "#BE3DDE";
+        };
       };
       focus = {
         followMouse = true;
@@ -48,9 +33,9 @@
         border = 3;
       };
       output = {
-        HDMI-A-1 = {
-          bg = "~/Pictures/walls/39679.jpg fill";
-        };
+        # HDMI-A-1 = {
+        #   bg = "~/Pictures/walls/39679.jpg fill";
+        # };
       };
       bars = [
         {command = "${config.programs.waybar.package}/bin/waybar";}

@@ -2,10 +2,10 @@
   wayland.windowManager.sway = {
     config = {
       input = {
-        keyboard = {
+        "*" = {
           xkb_variant = "us";
-          repeat_delay = "50";
-          repeat_rate = "300";
+          repeat_delay = "440";
+          repeat_rate = "50";
         };
         touchpad = {
           natural_scroll = "enabled";

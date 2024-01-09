@@ -3,6 +3,7 @@
   wayland.windowManager.sway.config = 
   {
     modifier = "Mod4";
+    bindkeysToCode = true;
     keybindings = let
       mod = "${config.wayland.windowManager.sway.config.modifier}";
       swayosd = "${config.services.swayosd.package}/bin/swayosd";
