@@ -5,4 +5,5 @@
     copyq.systemdTarget = "sway-session.target";
     swayidle.systemdTarget = "sway-session.target";
   };
+  # programs.waybar.systemdTarget = "sway-session.target";
 }

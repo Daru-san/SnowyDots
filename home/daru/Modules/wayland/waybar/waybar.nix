@@ -21,7 +21,6 @@
   #This option seems to break notifications so I'll keep it disabled for now
     systemd = {
       enable = false;
-      target = "hyprland-session.target";
     };
 
     settings = [
