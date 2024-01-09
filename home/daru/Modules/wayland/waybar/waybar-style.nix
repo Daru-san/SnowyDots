@@ -10,7 +10,7 @@ min-height: 0;
 }
 
 window#waybar {
-background: rgba(40,40,40,0.4);
+background: rgba(40,40,40,0);
 }
 
 #workspaces {
@@ -22,6 +22,7 @@ border-radius: 16px;
 #workspaces button {
 padding: 0px 5px;
 margin: 0px 3px;
+min-width: 20px;
 border-radius: 16px;
 color: transparent;
 background: rgba(21,24,24,1);
@@ -29,19 +30,19 @@ transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.focused {
-background: #5FAFFF;
-color: #BDC3C7;
+background: #5CA9A9;
+color: #000000;
 border-radius: 16px;
-min-width: 50px;
+min-width: 40px;
 background-size: 400% 400%;
 transition: all 0.3s ease-in-out;
 }
 
 #workspaces button:hover {
-background-color: #242229;
-color: #BDC3C7;
+background-color: #5CA9A9;
+color: #000000;
 border-radius: 16px;
-min-width: 50px;
+min-width: 40px;
 background-size: 400% 400%;
 }
 

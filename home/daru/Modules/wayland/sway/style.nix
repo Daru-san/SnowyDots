@@ -61,13 +61,13 @@
     # Swayfx configuration
     extraConfig = ''
       blur enable
-      blur_passes 3
+      blur_passes 4
       blur_radius 4
       blur_ignore_transparent enable
       corner_radius 7
       shadows enable
       default_dim_inactive 0.9
-      layer_effects "waybar" blur enable; shadows enable; corner_radius 6
+      layer_effects "waybar" blur enable; shadows enable; corner_radius 40
     '';
   };
 }
