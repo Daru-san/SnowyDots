@@ -6,10 +6,10 @@
     rev = "f1a4270055bdb7856e127553db3f420";
     sha256 = "09cc87qywwvx44ajbnjg2v0jzp05ymgnmfm0b45qqdxqlamx5034";
   };
-  HQ-Walls = pkgs.fetchgit {
-    url = "https://github.com/Daru-san/HighQ-Wallpapers";
-    rev = "0a6dbb8e252819972d01cc4d2f23c7e15d704089";
-    sha256 = "csXI5ufzyXfPEzFPohAfElvQhyzKEx9GSumXstg4XIA=";
+  ps-walls = pkgs.fetchgit {
+    url = "https://github.com/Daru-san/wallpapers";
+    rev = "2080c988cea252b0e444480e59d6d2039d5c8c4f";
+    sha256 = "bXzmwTbgLIpGr3ff7Eh07XU0HxFOOgIuD0ukm9ngRmA=";
   };
   walls = pkgs.fetchgit {
     url = "https://github.com/dharmx/walls";
@@ -19,7 +19,6 @@
 in {
 
   home.packages = with pkgs; [
-  #Wallpaper programs
     swww
     swaybg
     waypaper
@@ -31,9 +30,9 @@ in {
     source = "${aesthetic-wallpapers}/images";
     recursive = true;
   };
-  #Source my own personal wallpapers from my HighQ-Wallpapers repo
+  #Source my own personal wallpapers from my wallpapers repo
   home.file."Wallpapers/personal" = {
-    source = "${HQ-Walls}/wallpapers";
+    source = "${ps-walls}/wallpapers";
     recursive = true;
   };
   home.file."Wallpapers/walls" = {

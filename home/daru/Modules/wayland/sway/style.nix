@@ -51,6 +51,11 @@
       bars = [
         {command = "${config.programs.waybar.package}/bin/waybar";}
       ];
+      output = {
+        HDMI-A-1 = {
+          bg = "~/Wallpapers/personal/horizon fill";
+        };
+      };
     };
 
     # Swayfx configuration
