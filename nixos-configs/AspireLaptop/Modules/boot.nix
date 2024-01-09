@@ -15,7 +15,7 @@
       };
     };
     # Set the kernel to lqx unstable(Latest version)
-    kernelPackages = pkgs.linuxPackages_lqx;
+    kernelPackages = pkgs.linuxPackages_zen;
 
     initrd = {
       verbose = false;

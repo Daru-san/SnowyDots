@@ -12,7 +12,8 @@
     audio
     android-tools
     intel-gpu
-    hyprland
+    wayland
+    greetd
     shells
     plymouth
     fonts
