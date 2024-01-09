@@ -1,4 +1,4 @@
-❄️ Snowflake-dots ❄️ 
+❄️Snowflake-dots❄️ 
 ===============
 My beautiful, functional NixOS Sway configurations, written completely in Nix
 <p align="center">
@@ -26,12 +26,12 @@ My beautiful, functional NixOS Sway configurations, written completely in Nix
    
 ## Previews
 <p float="left">
-  <img src="https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev1.png" width="70%" />
-  <img src="https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev2.png" width="70%" />
-  <img src="https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev3.png" width="32%" />
-  <img src="https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev4.png" width="32%" />
-  <img src="https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev5.png" width="32%" />
-</p>---
+  <img src="https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev1.png" width="100%" />
+  <img src="https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev2.png" width="100%" />
+  <img src="https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev3.png" width="40%" />
+  <img src="https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev4.png" width="40%" />
+  <img src="https://github.com/Daru-san/Snowflake-dots/blob/master/assets/prev5.png" width="42%" />
+</p>
 
 ## Directory Structure:
 ```
