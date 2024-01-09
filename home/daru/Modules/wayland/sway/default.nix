@@ -6,7 +6,8 @@
     ./programs.nix
     ./style.nix
     ./systemd.nix
-    ./assign.nix
+    ./windows.nix
+    ./workspaces.nix
   ];
 #Configuring Hyprland 
   wayland.windowManager.sway = {

@@ -2,7 +2,7 @@
   home.packages = with pkgs; [
     swayws
     swayr
-    swaysome
+    swaytools
     swaysettings
   ];
 }

@@ -8,17 +8,33 @@
       };
      colors = {
         focused = {
-          border = "#64E8F5"
-        };
-        focusedInactive = {
-          border = "#1A325B"
+          background = "#5ACBCC";
+          border = "#285577";
+          childBorder = "#5ACBCC";
+          indicator = "#2e9ef4";
+          text = "#ffffff";
         };
         unfocused = {
-          border = "#212121";
+          background = "#34495E";
+          border = "#2C3E50";
+          childBorder = "#34495e";
+          indicator = "#7F8C8D";
+          text = "#BDC3C7";
         };
-        urgent = {
-          border = "#BE3DDE";
+        focusedInactive = {
+          background = "#16A085";
+          border = "#1ABC9C";
+          childBorder = "#16A085";
+          indicator = "#285577";
+          text = "#BDC3C7";
         };
+         urgent = {
+          background = "#C00030";
+          border = "#E06070";
+          childBorder = "#E0A0C0";
+          indicator = "#e06030";
+          text = "#f0f0f0";
+        }; 
       };
       focus = {
         followMouse = true;
@@ -30,12 +46,7 @@
       };
       window = {
         titlebar = false;
-        border = 3;
-      };
-      output = {
-        # HDMI-A-1 = {
-        #   bg = "~/Pictures/walls/39679.jpg fill";
-        # };
+        border = 2;
       };
       bars = [
         {command = "${config.programs.waybar.package}/bin/waybar";}
@@ -50,7 +61,8 @@
       blur_ignore_transparent enable
       corner_radius 7
       shadows enable
-      default_dim_inactive 0.7
+      default_dim_inactive 0.9
+      layer_effects "waybar" blur enable; shadows enable; corner_radius 6
     '';
   };
 }

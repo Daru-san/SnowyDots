@@ -42,6 +42,7 @@
       "alt+q" = "kill";
       "${mod}+shift+e" = "exit";
       "${mod}+v" = "floating toggle";
+      "${mod}+f" = "fullscreen";
 
 
       #Lock screen

@@ -17,13 +17,13 @@
       criteria = [
         { 
           title = "Library";
-          class = "firefox-nightly";
+          class = "^firefox-nightly$";
         }
         {
           title = "Easy Effects";
         }
         {
-          class = ".blueman-manager-wrapped";
+          title = "Bluetooth Devices";
         }
         {
           class = "com.github.hluk.copyq";
@@ -35,10 +35,10 @@
           class = "copyq";
         }
         {
-          class = "pavucontrol";
+          class = "^pavucontrol$";
         }
         {
-          class = "org.kde.kdeconnect-indicator";
+          class = "^org.kde.kdeconnect-indicator$";
         }
       ];
       titlebar = false;
