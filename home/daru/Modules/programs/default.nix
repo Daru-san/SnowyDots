@@ -16,7 +16,7 @@
 
   # GUI
   home.packages = with pkgs; 
-    [
+  [
     obsidian
     krita
     newsflash
