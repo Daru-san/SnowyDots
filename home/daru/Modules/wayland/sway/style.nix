@@ -40,7 +40,7 @@
         followMouse = true;
         newWindow = "smart";
       };
-      gaps = {
+      gaps = { 
         outer = 6;
         inner = 4;
       };
@@ -64,10 +64,15 @@
       blur_passes 4
       blur_radius 4
       blur_ignore_transparent enable
+
       corner_radius 7
+
       shadows enable
-      default_dim_inactive 0.9
-      layer_effects "waybar" blur enable; shadows enable; corner_radius 40
+      shadow_blur_radius 70
+      shadow_color #202020
+
+      default_dim_inactive 0.96
+      layer_effects "waybar" blur enable; shadows enable; corner_radius 20
     '';
   };
 }

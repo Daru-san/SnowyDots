@@ -4,6 +4,6 @@
     { command = "${config.services.copyq.package}/bin/copyq"; }
     { command = "${pkgs.autotiling-rs}/bin/autotiling-rs"; }
     { command = "systemctl --user restart kanshi"; always = true; }
-    { command = "${pkgs.waypaper} --restore"; always = true; }
+    { command = "${pkgs.waypaper}/bin/waypaper --restore"; always = true; }
   ];
 }
