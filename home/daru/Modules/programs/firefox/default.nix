@@ -95,17 +95,17 @@ in {
           };
         };
         
-        #Search engines
+        # Search engines
         search = {
-          #Make Brave and StartPage defaults
+          # Make Brave and StartPage defaults
           default = "Brave Search";
           privateDefault = "StartPage";
 
-          #The order they're in
           order = [
             "Brave Search"
             "StartPage"
-            "DuckDuckGo"
+            "Github"
+            "Reddit"
             "My NixOS"
             "NixOS Wiki"
             "Nix Packages"
@@ -127,7 +127,7 @@ in {
               ];
               iconUpdateURL = "https://brave.com/static-assets/images/brave-logo-sans-text.svg";
               updateInterval = 24 * 60 * 60 * 1000;
-              definedAliases = ["@br"];
+              definedAliases = ["@br" "@b" ];
             };
               
             #StartPage
@@ -135,8 +135,9 @@ in {
               urls = [
                 {template = "https://www.startpage.com/sp/search?query={searchTerms}";}
               ];
-              icon = "https://www.startpage.com/sp/cdn/favicons/favicon-gradient.ico";
-              definedAliases = ["@sp"];
+              iconUpdateURL = "https://www.startpage.com/sp/cdn/favicons/favicon-gradient.ico";
+              updateInterval = 24 * 60 * 60 * 1000;
+              definedAliases = ["@sp" "@s" ];
             };
 
             #Give google an alias
@@ -146,10 +147,10 @@ in {
               };
             };
 
-            #Give DuckDuckGo an alias
             "DuckDuckGo" = {
               metaData = {
                 alias = "@dg";
+                hidden = true;
               };
             };
 
@@ -167,15 +168,44 @@ in {
               };
             };
 
-            #Add the NixOS wiki
+            # Disable wikipedia
+            "Wikipedia (en)" = {
+              metaData = {
+                hidden = true;
+              };
+            };
+
+            # Reddit 
+            "Reddit" = {
+              urls = [
+                { template = "https://www.reddit.com/search/?q={searchTerms}"; }
+              ];
+              iconUpdateURL = "https://www.redditstatic.com/shreddit/assets/favicon/favicon.ico";
+              updateInterval = 24 * 60 * 60 * 1000;
+              definedAliases = [ "@r" ];
+            };
+
+            # Github
+            "Github" = {
+              urls = [
+                { template = "https://github.com/search?q={searchTerms}";}
+              ];
+              iconUpdateURL = "https://github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg";
+              updateInterval = 24 * 60 * 60 * 1000;
+              definedAliases = [ "@gh" "@g" ];
+            };
+
+            # Add the NixOS wiki
             "NixOS Wiki" = {
-              urls = [{ template = "https://nixos.wiki/index.php?search={searchTerms}"; }];
+              urls = [
+                { template = "https://nixos.wiki/index.php?search={searchTerms}"; }
+              ];
               iconUpdateURL = "https://nixos.wiki/favicon.png";
               updateInterval = 24 * 60 * 60 * 1000; # every day
               definedAliases = [ "@nw" ];
             };
 
-            #Nix packages and options from search.nixos.org
+            # Nix packages and options from search.nixos.org
             "Nix Packages" = {
               urls = [{
                 template = "https://search.nixos.org/packages";
@@ -199,7 +229,7 @@ in {
               definedAliases = [ "@no" ];
             };
 
-            #Similiar to search.nixos.org but with more info
+            # Similiar to search.nixos.org but with more info
             "My NixOS" = {
               urls = [
               {template = "https://mynixos.com/search?q={searchTerms}";}
