@@ -15,8 +15,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Nix-hardware
-    hardware.url = "github:nixos/nixos-hardware";
+    # auto-cpufreq
+    auto-cpufreq = {
+      url = "github:AdnanHodzic/auto-cpufreq";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Colors
     nix-colors.url = "github:misterio77/nix-colors";
@@ -61,11 +64,7 @@
     inherit (self) outputs;
     # Supported systems for your flake packages, shell, etc.
     systems = [
-      "aarch64-linux"
-      "i686-linux"
       "x86_64-linux"
-      "aarch64-darwin"
-      "x86_64-darwin"
     ];
     # This is a function that generates an attribute by calling a function you
     # pass to it, with each system as an argument
@@ -91,24 +90,24 @@
     nixosConfigurations = {
       
       #Configuration on my Acer laptop
-      #'nixos-rebuild switch --flake .#AspireNix'
-      AspireNix = nixpkgs.lib.nixosSystem {
+      #'nixos-rebuild switch --flake .#AspireLaptop'
+      AspireLaptop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > My main nixos configuration file <
-          ./nixos-configs/AspireLaptop/configuration.nix
+          ./systems/AspireLaptop/default.nix
         ];
       };
     };
     homeConfigurations = {
 
       #My home configuration
-      #'home-manager switch --flake .#daru@AspireNix'
+      #'home-manager switch --flake .#daru@AspireLaptop'
       "daru@AspireNix" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         # > My home configuration file <
-        modules = [./home/daru/home.nix];
+        modules = [./home/daru/default.nix];
       };
     };
   };
