@@ -103,7 +103,7 @@
 
       #My home configuration
       #'home-manager switch --flake .#daru@AspireLaptop'
-      "daru@AspireNix" = home-manager.lib.homeManagerConfiguration {
+      "daru@AspireLaptop" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         # > My home configuration file <
