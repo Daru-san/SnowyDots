@@ -1,12 +1,10 @@
 ## My home configuration file ##
 {
-  inputs,
-  outputs,
-  lib,
   config,
   pkgs,
   ...
 }: {
+
   imports = [
     # Import nix-colors module
     inputs.nix-colors.homeManagerModules.default
@@ -19,20 +17,10 @@
 
     # Import anyrun, a launcher for Hyprland
     inputs.anyrun.homeManagerModules.default
-
-    # Import home configs
-    ./Modules/default.nix
   ];
 
   nixpkgs = {
     overlays = [
-
-      # 
-      outputs.overlays.additions
-
-      # Package modifications
-      # outputs.overlays.modifications
-
       # Overlay for stable packages (23.05)
       outputs.overlays.stable-packages
 
