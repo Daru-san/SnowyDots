@@ -4,21 +4,6 @@
   pkgs,
   ...
 }: {
-
-  imports = [
-    # Import nix-colors module
-    inputs.nix-colors.homeManagerModules.default
-
-    # Import spicetify module
-    inputs.spicetify-nix.homeManagerModules.default
-
-    # Import nur
-    inputs.nur.nixosModules.nur
-
-    # Import anyrun, a launcher for Hyprland
-    inputs.anyrun.homeManagerModules.default
-  ];
-
   nixpkgs = {
     overlays = [
       # Overlay for stable packages (23.05)
@@ -28,8 +13,6 @@
       inputs.neovim-nightly-overlay.overlays.default
 
     ];
-
-
     config = {
       # Allowing unfree packages
       allowUnfree = true;
@@ -47,7 +30,6 @@
     username = "daru";
     homeDirectory = "/home/daru";
   };
-
 
   # Enable home-manager
   programs.home-manager.enable = true;

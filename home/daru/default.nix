@@ -15,6 +15,10 @@
     git
     neovim
     tmux
+  ]) ++ (with inputs; [
+    nix-colors.homeManagerModules.default
+    nur.nixosModules.nur
+    spicetify-nix.homeManagerModules.default 
   ]);
   wayland.ags.enable = false; 
   audio = {
