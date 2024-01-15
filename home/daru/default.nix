@@ -1,4 +1,9 @@
-{...}:{
+{
+  outputs,
+  inputs,
+  ...
+}:
+{
   imports = [./home.nix] ++ [
     ./themes/default.nix
     ./wayland/default.nix
@@ -20,13 +25,26 @@
     nur.nixosModules.nur
     spicetify-nix.homeManagerModules.default 
   ]);
-  wayland.ags.enable = false; 
-  audio = {
-    easyeffects.enable = true;
-    playerctl.enable = true;
-  };
-  connect = {
-    syncthing.enable = true;
-    kdeconnect.enable = true;
+
+  nixpkgs = {
+    overlays = [
+      # Overlay for stable packages (23.05)
+      outputs.overlays.stable-packages
+
+      # Neovim nightly overlay
+      inputs.neovim-nightly-overlay.overlays.default
+
+    ];
+    config = {
+      # Allowing unfree packages
+      allowUnfree = true;
+      # Workaround for https://github.com/nix-community/home-manager/issues/2942
+      allowUnfreePredicate = _: true;
+
+      # Fix electron packages
+      permittedInsecurePackages = [
+        "electron-25.9.0"
+      ];
+    };
   };
 }

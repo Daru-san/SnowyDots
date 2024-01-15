@@ -1,6 +1,6 @@
 # Music configuration
 {pkgs, ...}:{
-  imports = [
+ imports = [
     ./spotify.nix
   ];
   home.packages = with pkgs; [

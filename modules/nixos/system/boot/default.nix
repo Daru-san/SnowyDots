@@ -6,18 +6,18 @@
 }:
 let
   cfg = config.os.boot;
-in 
+in
 with lib;
 {
   options = {
     os.boot = {
       enableSystemd-boot = mkOption {
         type = with types; bool;
-        default = false;
+        default = true;
       };
       kernelPackage = mkOption {
-        type = with types; package;
-        default = "pkgs.linuxPackages_zen";
+        type = with types; raw;
+        default = pkgs.linuxPackages_zen;
       };
       quiet = mkOption {
         type = with types; bool;

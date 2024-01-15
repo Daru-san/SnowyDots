@@ -1,6 +1,8 @@
-{inputs, ...}:let
-  nix-colors = inputs.nix-colors;
-in {
+{
+  inputs,
+  ...
+}:
+{
   imports = [
     ./gtk.nix
     ./qt.nix
@@ -8,5 +10,5 @@ in {
   ];
 
   #Set colorscheme
-  colorScheme = nix-colors.colorSchemes.onedark; 
+  colorScheme = inputs.nix-colors.colorSchemes.onedark;
 }

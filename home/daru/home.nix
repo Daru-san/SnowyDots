@@ -1,30 +1,22 @@
 ## My home configuration file ##
 {
-  config,
-  pkgs,
   ...
-}: {
-  nixpkgs = {
-    overlays = [
-      # Overlay for stable packages (23.05)
-      outputs.overlays.stable-packages
+}:
+{
+  # Enable ags
+  wayland.ags.enable = false;
 
-      # Neovim nightly overlay
-      inputs.neovim-nightly-overlay.overlays.default
-
-    ];
-    config = {
-      # Allowing unfree packages
-      allowUnfree = true;
-      # Workaround for https://github.com/nix-community/home-manager/issues/2942
-      allowUnfreePredicate = _: true;
-
-      # Fix electron packages
-      permittedInsecurePackages = [
-        "electron-25.9.0"
-      ];
-    };
+  # Playerctl and easyeffects
+  audio = {
+    easyeffects.enable = true;
+    playerctl.enable = true;
   };
+  # kdeconnect and syncthing
+  connect = {
+    syncthing.enable = true;
+    kdeconnect.enable = true;
+  };
+
 
   home = {
     username = "daru";

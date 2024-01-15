@@ -1,10 +1,15 @@
-{ pkgs, inputs, system,...}:{
+{ 
+  pkgs, 
+  inputs,
+  ...
+}:
+{
   imports = [ inputs.anyrun.homeManagerModules.default ];
   programs.anyrun = {
     enable = true;
 
     config = {
-      plugins = with inputs.anyrun.packages.${system}; [
+      plugins = with inputs.anyrun.packages.${pkgs.system}; [
         applications
         rink
         shell

@@ -16,7 +16,6 @@
     gnome.nautilus
     gnome.dconf-editor
     freetube
-    komikku
     scrcpy
     keepassxc
     pqiv
@@ -25,7 +24,10 @@
     # bridge-core
     archiver
     floorp
-  ] ++ (with pkgs;  #TUI
+  ] ++ (with pkgs.stable; [
+    komikku
+    calcure
+  ]) ++ (with pkgs;  #TUI
   [
       tree
       bc
@@ -40,7 +42,6 @@
       sysz
       nap
       jrnl 
-      # calcure
       nitch
       pulsemixer
       ani-cli

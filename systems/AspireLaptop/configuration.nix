@@ -1,8 +1,5 @@
 {
-  lib,
-  config,
   pkgs,
-  inputs,
   ...
 }: {
   imports =[
@@ -10,48 +7,140 @@
     ./hardware-configuration.nix
   ];
 
-  nixpkgs = {
+    # User configurations
+  users = {
+    users = {
+      #My main user
+      daru = {
+        isNormalUser = true;
+        shell = pkgs.zsh;
+        description = "Daru";
+        extraGroups = [ "networkmanager" "wheel" "video" "adbusers" "input"];
+      };
+      #Disables root user
+    root.hashedPassword = "!";
+    };
+  mutableUsers = true;
+  };
 
-    #Import nur pkgs
-    config.packageOverrides = pkgs: {
-      nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-        inherit pkgs;
+  # Extra fonts I use on this system 
+  fonts.packages = with pkgs; [
+    monocraft
+    minecraftia
+  ];
+
+  # Enable android tools 
+  android = {
+    adb.enable = true;
+    mtp = {
+      gvfs.enable = true;
+      jmtpfs.enable = true;
+    };
+    waydroid.enable = false;
+  };
+
+  programs = { 
+    # Enable gnome-disks
+    gnome-disks = {
+      enable = true;
+    };
+    # Enable KDE Connect 
+    kdeconnect = {
+      enable = true;
+    };
+  };
+  
+  # Enable syncthing
+  services = {
+    syncthing = {
+      enable = true;
+      dataDir = "/home/daru";
+      user = "daru";
+      configDir = "/home/daru/.sync";
+      settings = {
+        gui = {
+          theme = "black";
+        };
       };
     };
-    overlays = [
-      # Add overlays your own flake exports (from overlays and pkgs dir):
-      outputs.overlays.additions
-      # outputs.overlays.modifications
-      outputs.overlays.stable-packages
-    ];
+  };
 
-    # Allow unfree packages
-    config = {
-      allowUnfree = true;
+  # System packages
+  environment.systemPackages = with pkgs; [
+    ranger
+    htop
+    wget
+    git
+    nix-prefetch-git
+    nix-prefetch-github
+    gcc
+    glib
+    nodejs_20
+    unzip
+    clang
+    zig
+    iw
+    clinfo
+    glxinfo
+    exfatprogs
+    nurl
+    nix-melt
+    ncdu
+    busybox
+    usbutils
+    gparted
+  ] ++ (with inputs.useful-scripts.packages.${pkgs.system}; [
+    nix-rebuild
+    hm-build
+  ]);
+
+  # wayland configuration
+  wayland = {
+    enable = true;
+    sway = {
+      enable = false;
+      swayfx.enable = true;
+    };
+    hyprland.enable = true;
+    greetd = {
+      enable = true;
+      command = "Hyprland";
+      user = "daru";
+    };
+    gnome-extra.enable = true;
+    lxpolkit.enable = true;
+    kde.enable = false;
+  };
+  os.security.polkit.enable = true;
+
+  # System configurations
+  os = {
+    boot = {
+      enableSystemd-boot = true;
+      kernelPackage = pkgs.linuxPackages_zen;
+      quiet = true;
+      plymouth.enable = true;
+    };
+    networking = {
+      enable = true;
+      wifi.enable = true;
+      bluetooth.enable = true;
+    };
+    drivers = {
+      intel.enable = true;
+    };
+  };
+  os.system = {
+    laptop.optimizations = {
+      tlp.enable = true;
+      powerTweaks.enable = true;
+    };
+    general = {
+      ssd.enable = true;
+      throttled.enable = true;
     };
   };
 
-  # This will add each flake input as a registry
-  # To make nix3 commands consistent with your flake
-  nix.registry = (lib.mapAttrs (_: flake: {inherit flake;})) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
-
-  # This will additionally add your inputs to the system's legacy channels
-  # Making legacy nix commands consistent as well, awesome!
-  nix.nixPath = ["/etc/nix/path"];
-  environment.etc =
-    lib.mapAttrs'
-    (name: value: {
-      name = "nix/path/${name}";
-      value.source = value.flake;
-    })
-    config.nix.registry;
-
-  nix.settings = {
-    # Enable flakes and new 'nix' command
-    experimental-features = "nix-command flakes";
-    # Deduplicate and optimize nix store
-    auto-optimise-store = true;
-  };
   # Set your time zone.
   time.timeZone = "Africa/Johannesburg";
 
@@ -59,21 +148,4 @@
   i18n.defaultLocale = "en_ZA.UTF-8";
   # Hostname
   networking.hostName = "AspireLaptop";
-
-  system = {
-    # Set to nixos-24.05
-    stateVersion = "24.05";
-    
-    # Allow auto-upgrades to happen every day
-    autoUpgrade = {
-      enable = true;
-      flake = "github:Daru-san/Snowflake-dots";
-      flags = [
-        "--update-input" "nixpkgs" "--commit-lock-file" "--impure"
-      ];
-      operation = "boot";
-      dates = "00:00";
-      randomizedDelaySec = "180min";
-    };
-  };
 }

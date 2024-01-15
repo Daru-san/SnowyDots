@@ -1,36 +1,13 @@
-{ config, lib, pkgs, modulesPath, ... }:
-
+{ 
+  config, 
+  lib, 
+  pkgs, 
+  modulesPath,
+  ...
+}:
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
-
-  os = {
-    boot = {
-      enableSystemd-boot = true;
-      kernelPackage = pkgs.linuxPackages_zen;
-      quiet = true;
-      plymouth.enable = true;
-    };
-    networking = {
-      enable = true;
-      wifi.enable = true;
-      bluetooth.enable = true;
-    };
-    drivers = {
-      intel.enable = true;
-    };
-  };
-  os.system = {
-    laptop.optimizations = {
-      tlp.enable = true;
-      powerTweaks.enable = true;
-    };
-    general = {
-      ssd.enable = true;
-      throttled.enable = true;
-    };
-  };
+    [ (modulesPath + "/installer/scan/not-detected.nix")];
 
   fileSystems."/" =
     { device = "none";
