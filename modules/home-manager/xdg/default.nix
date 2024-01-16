@@ -18,8 +18,8 @@
       Emulation = "${config.home.homeDirectory}/Emulation";
       Anime = "${config.home.homeDirectory}/Anime";
       Projects = "${config.home.homeDirectory}/Projects";
-      mango = "${config.home.homeDirectory}/.mango";
       Scripts = "${config.home.homeDirectory}/Scripts";
+      Notes = "${config.home.homeDirectory}/Notes";
       Wallpapers = "${config.home.homeDirectory}/Wallpapers";
     };
   };

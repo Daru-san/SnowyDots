@@ -20,7 +20,7 @@
         path = "${config.xdg.dataHome}/zsh/history";
       };
 
-      initExtra = "${config.programs.tmux.package}/bin/tmux";
+    #  initExtra = "${config.programs.tmux.package}/bin/tmux";
 
       #Syntax highlighting
       syntaxHighlighting = {

@@ -12,8 +12,6 @@
       plugins = with inputs.anyrun.packages.${pkgs.system}; [
         applications
         rink
-        shell
-        translate
       ];
 
       width.fraction = 0.3;

@@ -15,10 +15,10 @@ with lib;
         type = with types; bool;
         default = true;
       };
-      kernelPackage = mkOption {
-        type = with types; raw;
-        default = pkgs.linuxPackages_zen;
-      };
+#      kernelPackage = mkOption {
+ #       type = with types; raw;
+ #       default = pkgs.linuxPackages_zen;
+ #     };
       quiet = mkOption {
         type = with types; bool;
         default = true;
@@ -41,7 +41,7 @@ with lib;
         };
         efi.canTouchEfiVariables = true;
       };
-      kernelPackages = cfg.kernelPackage;
+      kernelPackages = pkgs.linuxPackages_zen;
 
       initrd = mkDefault {
         verbose = false;

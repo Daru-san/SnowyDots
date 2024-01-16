@@ -8,10 +8,10 @@ let
 in 
 with lib;
 {
-  options.os.security = {
-    polkit = mkOption {
+  options = {
+    os.security.polkit.enable = mkOption {
       default = false;
-      type = with types; lib;
+      type = with types; bool;
     };
   };
   config =  mkIf cfg.enable {

@@ -29,7 +29,7 @@ with lib;
     networking = mkIf cfg.wifi.enable {
       networkmanager = {
         enable = true;
-        dns = "none";
+        #dns = "none";
       };
 
       firewall = {

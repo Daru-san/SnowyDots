@@ -3,8 +3,8 @@
   #Set wallpapers from https://github.com/D3Ext/aesthetic-wallpapers
   aesthetic-wallpapers = pkgs.fetchgit {
     url = "https://github.com/D3Ext/aesthetic-wallpapers";
-    rev = "f1a4270055bdb7856e127553db3f420";
-    sha256 = "09cc87qywwvx44ajbnjg2v0jzp05ymgnmfm0b45qqdxqlamx5034";
+    rev = "060c580dcc11afea2f77f9073bd8710920e176d8";
+    sha256 = "5MnW630EwjKOeOCIAJdSFW0fcSSY4xmfuW/w7WyIovI=";
   };
   ps-walls = pkgs.fetchgit {
     url = "https://github.com/Daru-san/wallpapers";

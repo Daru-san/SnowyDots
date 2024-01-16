@@ -28,7 +28,6 @@ in
         autoVolume
         historyShortcut
         copyToClipboard
-        genre
         volumePercentage
         playNext
         savePlaylists

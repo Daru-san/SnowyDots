@@ -34,9 +34,9 @@ with lib;
   config = {
     programs.adb.enable = mkIf cfg.adb.enable true;
 
-    services.gvfs.enable = mkIf cfg.mtp.gvfs true;
+    services.gvfs.enable = mkIf cfg.mtp.gvfs.enable true;
 
-    environment.systemPackages = with pkgs; mkIf cfg.mtp.jmptfs.enable [
+    environment.systemPackages = with pkgs; mkIf cfg.mtp.jmtpfs.enable [
       jmtpfs
     ];
     virtualisation.waydroid.enable = mkIf cfg.waydroid.enable true;
