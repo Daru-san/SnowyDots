@@ -16,12 +16,12 @@
 </p>
 
  ## Environment
-* Desktop: [Swayfx](https://github.com/WillPower3309/swayfx "swayfx")/[Hyprland](https://github.com/hyprwm/Hyprland "hyprland")
+* Compositor: [Hyprland](https://github.com/hyprwm/Hyprland "hyprland")
 * Launcher: [anyrun](https://github.com/Kirottu/anyrun "anyrun")
 * bar: [waybar](https://github.com/Alexays/Waybar "waybar")
-* Browser: [Firefox nightly](https://github.com/nix-community/flake-firefox-nightly "ff nightly")
-* Shell: [zsh](http://zsh.sourceforge.net/ "zsh") using [oh-my-zsh](https://ohmyz.sh/ "omz") and [oh-my-posh](https://ohmyposh.dev/ "omp")
-* Editor: [Neovim nightly](https://github.com/nix-community/neovim-nightly-overlay "nvn") using [NvChad](https://nvchad.com/ "chads")
+* Browser: [Floorp](https://github.com/Floorp-Projects/Floorp "ff fork")
+* Shell: [zsh](http://zsh.sourceforge.net/ "zsh") using [oh-my-zsh](https://ohmyz.sh/ "omz")
+* Editor: [Neovim nightly](https://github.com/nix-community/neovim-nightly-overlay "nvn") with my own config
 * Kernel: [Linux-zen](https://archlinux.org/packages/extra/x86_64/linux-zen/ "zen")
 
 ## Previews
