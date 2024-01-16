@@ -1,5 +1,6 @@
 {
   pkgs,
+  inputs,
   ...
 }: {
   imports =[
@@ -112,12 +113,11 @@
     kde.enable = false;
   };
   os.security.polkit.enable = true;
-
+  #
   # System configurations
   os = {
     boot = {
       enableSystemd-boot = true;
-      kernelPackage = pkgs.linuxPackages_zen;
       quiet = true;
       plymouth.enable = true;
     };
@@ -148,4 +148,6 @@
   i18n.defaultLocale = "en_ZA.UTF-8";
   # Hostname
   networking.hostName = "AspireLaptop";
+
+  system.stateVersion = "24.05";
 }
