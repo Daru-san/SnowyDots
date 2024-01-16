@@ -1,6 +1,6 @@
 ❄️Snowflake-dots❄️ 
 ===============
-<b>My beautiful, functional NixOS Sway configurations, written completely in Nix, managed by Snowfall</b>
+<b>My beautiful, functional NixOS Sway configurations, written completely in Nix</b>
 <p align="center">
  <img src="https://github.com/Daru-san/Snowflake-dots/assets/135046711/ca25eab0-08da-4bbd-b336-21c43fdc4bab">
 </p>
