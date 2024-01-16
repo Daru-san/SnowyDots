@@ -6,4 +6,5 @@
   system = import ./system/default.nix;
   wayland = import ./wayland/default.nix;
   neovim = import ./neovim/default.nix;
+  ssh = import ./ssh/default.nix;
 }

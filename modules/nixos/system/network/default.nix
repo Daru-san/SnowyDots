@@ -49,12 +49,5 @@ with lib;
       powerOnBoot = false;
       network.general.DisableSecurity = true;
     };
-
-
-    services.openssh = mkDefault {
-      enable = true;
-      settings.PasswordAuthentication = false;
-      settings.KbdInteractiveAuthentication = false;
-    };
   };
 }
