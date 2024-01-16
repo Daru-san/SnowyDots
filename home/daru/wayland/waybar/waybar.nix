@@ -212,8 +212,8 @@
           on-click = "blueman-manager";
         };
         "custom/playerctl"= {
-          format = "󰎈 Music playing 󰎈";
-          format-alt = "<span>󰎈 {} 󰎈</span>";
+          format-alt = "󰎈 Music playing 󰎈";
+          format = "<span>󰎈 {} 󰎈</span>";
           return-type = "json";
           max-length = 40;
           exec = "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F";
