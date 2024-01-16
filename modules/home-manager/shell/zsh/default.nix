@@ -33,6 +33,9 @@
       #Oh-my-zsh for plugins, themes are set by oh-my-posh
       oh-my-zsh = {
         enable = true;
+
+        theme = "minimal";
+
         #Plugins
         plugins = [ 
           "git" 
