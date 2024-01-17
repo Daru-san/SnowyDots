@@ -3,18 +3,18 @@
     enable = true;
 
     theme = {
-      name = "Colloid-Green-Dark-Nord";
+      name = "Colloid-Grey-Dark";
       package = pkgs.colloid-gtk-theme.override {
-        themeVariants = [ "default" "green" ];
+        themeVariants = [ "default" "grey" ];
         colorVariants = [ "dark" ];
         sizeVariants = [ "standard" ];
-        tweaks = [ "nord" "float"];
+        tweaks = [ "float"];
       };
     };
 
     iconTheme = {
-      name = "Papirus-Dark-Maia";
-      package = pkgs.papirus-maia-icon-theme;
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
     };
     font = {
       name = "Jetbrains Mono Nerd Font";
@@ -54,7 +54,7 @@
 
   # Set gtk theme session variable for nautilus
   home.sessionVariables = {
-    GTK_THEME = "Colloid-Green-Dark-Nord";
+    GTK_THEME = "Colloid-Grey-Dark";
   };
 
   # Set cursor themes
