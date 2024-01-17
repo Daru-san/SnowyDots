@@ -69,6 +69,13 @@
           "fade, 1, 7, myBezier"
         ];
       };
+      layerrule = let
+        b = regex: "blur,${regex}";
+        z = regex: "ignorezero,${regex}";
+      in [
+        (z "waybar")
+        (b "waybar")
+      ];
     };
   };
 }

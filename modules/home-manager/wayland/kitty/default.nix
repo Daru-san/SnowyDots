@@ -3,12 +3,12 @@
     enable = true;
 
     #Kitty theme
-    theme = "Gruvbox Material Dark Hard";
+    theme = "Rosé Pine";
 
     #Kitty font
     font = {
       name = "Jetbrains Mono Nerd Font";
-      size = 12;
+      size = 14;
     };
     shellIntegration = {
       enableZshIntegration = true;
@@ -32,7 +32,7 @@
 
       hide_window_decorations = true;
 
-      background_opacity = "0.56";
+      background_opacity = "0.79";
       dynamic_background_opacity = true;
 
       sync_to_monitor = true;
@@ -76,17 +76,17 @@
   home.file.".config/kitty/git.conf".text = ''
     new_tab SnowyUI
     title GitUI
-    cd ~/snowflake
+    cd ~/snow
     launch gitui
 
     new_tab Snowfiles
     title Ranger
-    cd ~/snowflake
+    cd ~/snow
     launch ranger
 
     new_tab Snowcli
     title zsh
-    cd ~/snowflake
+    cd ~/snow
     launch zsh
   '';
 }
