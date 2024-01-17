@@ -46,6 +46,8 @@
       # Program specific aliases
       r = "${ranger}";
 
+      v = "vi";
+
       # cd aliases
       ".." = "cd ..";
       "..." = "cd ../..";
