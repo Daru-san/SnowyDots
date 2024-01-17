@@ -3,7 +3,7 @@
     enable = true;
 
     #Kitty theme
-    theme = "Rosé Pine";
+    theme = "Wryan";
 
     #Kitty font
     font = {
@@ -32,7 +32,7 @@
 
       hide_window_decorations = true;
 
-      background_opacity = "0.79";
+      background_opacity = "0.44";
       dynamic_background_opacity = true;
 
       sync_to_monitor = true;
