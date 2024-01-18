@@ -26,18 +26,15 @@ My beautiful, functional, focused NixOS Hyprland and Sway configurations, writte
 
 # Previews
 ## Hyprland
-<p float="left">
-  <img src="https://i.ibb.co/gT4h7qp/2024-01-17-203149-hyprshot.png" width="100%" />
-  <img src="https://i.ibb.co/tb1H75m/2024-01-17-205440-hyprshot.png" width="100%" />
-  <img src="https://i.ibb.co/20910r8/2024-01-17-205556-hyprshot.png" width="100%" />
-  <img src="https://i.ibb.co/f00vfSF/2024-01-17-205959-hyprshot.png" width="100%" />
-</p>
+![2024-01-17-205556_hyprshot](https://github.com/Daru-san/Snowflake-dots/assets/135046711/ce95b670-10af-46d1-baa0-d71dbdc07da6)
+![2024-01-17-203149_hyprshot](https://github.com/Daru-san/Snowflake-dots/assets/135046711/6f567b3a-21b6-41e5-a739-028696698004)
+![2024-01-17-205440_hyprshot](https://github.com/Daru-san/Snowflake-dots/assets/135046711/5ecd5b46-2373-4744-b3dc-3984ea9a417c)
+![2024-01-17-205959_hyprshot](https://github.com/Daru-san/Snowflake-dots/assets/135046711/40c4515e-8d42-4469-b03e-bcdcc6fbcb06)
 
 ## Sway (Swayfx)
-<p>
-<img src = "https://i.ibb.co/b3xysYr/prev1.png">
-<img src="https://i.ibb.co/5xFrLnz/prev5.png">
-</p>
+![prev1](https://github.com/Daru-san/Snowflake-dots/assets/135046711/f1aed042-1882-4bf1-a217-f247f4641453)
+![prev5](https://github.com/Daru-san/Snowflake-dots/assets/135046711/4f4313cd-9e49-4762-9dd2-575931044cc7)
+
 
 ## How to switch desktops
 In configuration.nix
@@ -57,7 +54,7 @@ In configuration.nix
 
 In home.nix
 ```nix
-# Enable hyprland or sway, it will not work if you enable both at once, unlike in configuration.nix, I will consider adding more compositors in the future
+# Enable hyprland or sway, it will not work if you enable both at once, unlike in configuration.nix
 {
   wayland.compositor = "hyprland"; # Here you can put hyprland or sway
 }
