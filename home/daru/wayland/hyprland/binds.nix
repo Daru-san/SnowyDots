@@ -112,6 +112,8 @@ with lib;
       scr-dir = "${config.home.homeDirectory}/Pictures/Screenshots";
       r = "region";
       o = "output";
+
+      sc = "${pkgs.swaync}/bin/swaync-client";
     in [
       # Launch the launcher - anyrun
       "super, space, ${e}, ${pk} ${any} || ${any}"
@@ -131,7 +133,9 @@ with lib;
       # Screenshotting
       ", print, ${e}, ${pk} ${hs} || ${h} '${hs} -m ${r} -o ${scr-dir}'"
       "shift, print, ${e}, ${pk} ${hs} || ${h} '${hs} -m ${o} -c -o ${scr-dir}'"
-      "alt, print, ${e}, ${pk} ${hs} || ${h} '${hs} -m ${o} -o ${scr-dir}'"     
+      "alt, print, ${e}, ${pk} ${hs} || ${h} '${hs} -m ${o} -o ${scr-dir}'"
+
+      "super,n, ${e}, ${sc} -cp || ${sc} -op"
     ];
   };
 }
