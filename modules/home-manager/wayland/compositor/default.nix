@@ -5,22 +5,19 @@
   ...
 }:
 let
-  cfg = config.wayland;
+  cfg = config.wayland.compositor;
 in
 with lib;
 {
   options = {
-    wayland = {
-      enable = mkEnableOption "wayland configuration";
-      compositor = mkOption {
-        type = with types; nullOr (enum [ "hyprland" "sway" ]);
-        default = "hyprland";
-        example = "sway";
-      };
+    wayland.compositor = mkOption {
+      type = with types; nullOr (enum [ "hyprland" "sway" ]);
+      default = "hyprland";
+      example = "sway";
     };
   };
-  config = mkIf cfg.enable {
-    wayland.windowManager.hyprland.enable = mkIf (cfg.wayland.compositor == "hyprland") true;
-    wayland.windowManager.sway.enable = mkIf (cfg.wayland.compositor == "sway") true;
+  config = {
+    wayland.windowManager.hyprland.enable = mkIf (cfg == "hyprland") true;
+    wayland.windowManager.sway.enable = mkIf (cfg == "sway") true;
   };
 }
