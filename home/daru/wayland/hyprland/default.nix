@@ -7,7 +7,7 @@
     ./autostart.nix
   ];
 #Configuring Hyprland 
-  {
+  wayland.windowManager.hyprland = {
     systemd = {
       enable = true;
       extraCommands = [
