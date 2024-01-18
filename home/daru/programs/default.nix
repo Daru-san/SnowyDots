@@ -24,10 +24,14 @@
     # bridge-core
     archiver
     floorp
-  ] ++ (with pkgs.stable; [
+  ] 
+  # These are pinned to 23.11 since they're broken on unstable
+  ++ (with pkgs.stable; [
     komikku
     calcure
-  ]) ++ (with pkgs;  #TUI
+  ])
+  # Cli/Tui based packages
+  ++ (with pkgs;
   [
       tree
       bc
@@ -50,5 +54,8 @@
       fzf
       unrar
       onefetch
+      asciinema
+      asciinema-agg
+      asciinema-scenario
   ]);
 }
