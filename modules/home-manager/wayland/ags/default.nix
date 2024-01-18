@@ -17,7 +17,7 @@ with lib;
       example = true;
     };
   };
-  config = {
+  config = mkIf cfg.enable {
     programs.ags = {
       # Enable ags
       enable = true;
