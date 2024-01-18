@@ -1,11 +1,13 @@
-{config, pkgs, inputs, ...}:{
+{config, pkgs, inputs, lib, ...}:
+with lib; 
+{
   imports = [
     ./extra-binds.nix
   ];
   wayland.windowManager.hyprland.settings = let
     h = "${pkgs.hdrop}/bin/hdrop";
     e = "exec";
-  in {
+  in mkIf config.wayland.windowManager.hyprland.enable {
     bind = let
       terminal = "${config.programs.kitty.package}/bin/kitty";
       browser = "${config.programs.firefox.package}/bin/firefox-nightly";

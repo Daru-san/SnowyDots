@@ -5,5 +5,6 @@
     { command = "${pkgs.autotiling-rs}/bin/autotiling-rs"; }
     { command = "systemctl --user restart kanshi"; always = true; }
     { command = "${pkgs.waypaper}/bin/waypaper --restore"; always = true; }
+    { command = "systemctl --user start swayidle"}
   ];
 }

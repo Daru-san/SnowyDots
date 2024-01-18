@@ -1,4 +1,6 @@
-{pkgs, config, ...}:{
+{pkgs, config, lib,...}:
+with lib;
+mkIf (wayland.compostor == sway) {
   home.packages = with pkgs; [
     swayws
     swayr
