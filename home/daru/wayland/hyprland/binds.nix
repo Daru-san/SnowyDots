@@ -113,7 +113,7 @@ with lib;
       r = "region";
       o = "output";
 
-      sc = "${pkgs.swaync}/bin/swaync-client";
+      sc = "${pkgs.swaynotificationcenter}/bin/swaync-client";
     in [
       # Launch the launcher - anyrun
       "super, space, ${e}, ${pk} ${any} || ${any}"
