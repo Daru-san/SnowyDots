@@ -10,5 +10,6 @@
     ./swaylock/default.nix
     ./wlogout/default.nix
     ./environment/default.nix
+    ./desktop/default.nix
   ];
 }
