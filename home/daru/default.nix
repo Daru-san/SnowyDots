@@ -31,6 +31,9 @@
       # Overlay for stable packages (23.05)
       outputs.overlays.stable-packages
 
+      # Import custom packages
+      outputs.overlays.additions
+
       # Neovim nightly overlay
       inputs.neovim-nightly-overlay.overlays.default
 
