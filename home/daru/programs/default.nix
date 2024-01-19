@@ -1,4 +1,4 @@
-#Home programs
+# Home packages
 {pkgs, ...}:{
   imports = [
     ./desktop-entries.nix
@@ -21,11 +21,11 @@
     pqiv
     fragments
     gnome.gnome-clocks
-    # bridge-core
+    bridge-core
     archiver
     floorp
   ] 
-  # These are pinned to 23.11 since they're broken on unstable
+  # These are pinned to 23.11(stable branch) since they're broken on unstable
   ++ (with pkgs.stable; [
     komikku
     calcure
@@ -49,7 +49,7 @@
       nitch
       pulsemixer
       ani-cli
-      # pokeshell
+      pokeshell
       du-dust
       fzf
       unrar
