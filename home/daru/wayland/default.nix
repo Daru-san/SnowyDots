@@ -10,5 +10,9 @@ with lib;
     ./sway/default.nix
     ./hyprland/default.nix
   ];
-  wayland.compositor = "hyprland";
+
+  wayland = {
+    compositor = "hyprland";
+    ags.enable = true;
+  };
 }

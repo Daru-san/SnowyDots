@@ -3,9 +3,6 @@
   ...
 }:
 {
-  # Enable ags
-  wayland.ags.enable = false;
-
   # Playerctl and easyeffects
   audio = {
     easyeffects.enable = true;
