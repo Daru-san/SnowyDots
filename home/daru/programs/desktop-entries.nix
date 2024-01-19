@@ -51,15 +51,15 @@
         Keywords = "music";
       };
     };
-    # bridge-core = {
-    #   name = "Bridge";
-    #   comment = "Make your own Minecraft mods with ease";
-    #   exec = "${pkgs.bridge-core}/bin/bridge-core";
-    #   type = "Application";
-    #   icon = "minecraft";
-    #   settings = {
-    #     Keywords = "minecraft";
-    #   };
-    # };
+    bridge-core = {
+      name = "Bridge";
+      comment = "Make your own Minecraft mods with ease";
+      exec = "${pkgs.bridge-core}/bin/bridge-core";
+      type = "Application";
+      icon = "minecraft";
+      settings = {
+        Keywords = "minecraft";
+      };
+    };
   };
 }
