@@ -1,4 +1,5 @@
 {config, pkgs,lib, ...}:
+with lib;
 {
   wayland.windowManager.hyprland.settings = {
     exec-once = [
@@ -14,4 +15,5 @@
       "systemctl --user restart kanshi.service"
     ];
   };
+  services.kanshi.systemdTarget = mkIf config.wayland.windowManager.hyprland.enable "hyprland-session.target";
 }
