@@ -43,11 +43,18 @@ In configuration.nix
 {
   wayland = {
     enable = true;
+
+    # Enabling sway and optionally, swayfx
     sway = {
-      enable = false; # Change this to true to enable sway
-      swayfx.enable = false; # To enable swayfx, enable sway first
+      enable = false;
+      swayfx.enable = false;
     };
-    hyprland.enable = true; # Enable hyprland
+   
+    # Enable hyprland
+    hyprland.enable = true;
+
+    # You can also enable kde if you want a full desktop environment
+    kde.enable = false;
   };
 }
 ```
@@ -55,8 +62,10 @@ In configuration.nix
 In home.nix
 ```nix
 # Enable hyprland or sway, it will not work if you enable both at once, unlike in configuration.nix
+# They will work whether kde is enabled or not
 {
-  wayland.compositor = "hyprland"; # Here you can put hyprland or sway
+ # Here you can put hyprland or swa
+  wayland.compositor = "hyprland";
 }
 ```
 
