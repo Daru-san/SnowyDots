@@ -135,7 +135,7 @@ with lib;
       "shift, print, ${e}, ${pk} ${hs} || ${h} '${hs} -m ${o} -c -o ${scr-dir}'"
       "alt, print, ${e}, ${pk} ${hs} || ${h} '${hs} -m ${o} -o ${scr-dir}'"
 
-      "super,n, ${e}, ${sc} -cp || ${sc} -op"
+      "super,n, ${e}, ${sc} -t"
     ];
   };
 }
