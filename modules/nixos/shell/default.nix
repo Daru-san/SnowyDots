@@ -16,6 +16,9 @@
     autosuggestions = {
       enable = true;
     };
+
+    # Add bash completion compatibility
+    enableBashCompletion = true;
   };
 
   # Enable fish 
