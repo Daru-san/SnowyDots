@@ -11,6 +11,7 @@
 }:
 let
   cfg = config.services.swaync;
+  settingsFormat = pkgs.formats.json {};
 in 
 with lib;
 {
@@ -26,6 +27,17 @@ with lib;
       example = "hyprland-session.target";
       description = ''
         Systemd target to bind swaync to
+      '';
+    };
+    
+    settings = mkOption {
+      type = with types; submodule;
+      freeformType = settingsFormat.type;
+      default = {};
+      description = ''
+        Configuration for swaync, see
+        <link xlink:href=""/>
+        for supported values.
       '';
     };
   };
@@ -48,10 +60,14 @@ with lib;
       Service = {
         Type = "simple";
         Restart = "always";
-        ExecStart = "${cfg.package}/bin/swaync;
+        ExecStart = "${cfg.package}/bin/swaync";
       };
 
       Install = { wantedBy = [ cfg.systemdTarget ]; };
     };
+    services.foo.settings = {
+    };
+
+    xdg.configFile."swaync/config.json".source = settingsFormat.generate "swaync-config.json" cfg.settings;
   };
 }
