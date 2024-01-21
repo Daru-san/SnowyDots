@@ -11,5 +11,6 @@
     ./wlogout/default.nix
     ./environment/default.nix
     ./compositor/default.nix
+    ./swaync/default.nix
   ];
 }
