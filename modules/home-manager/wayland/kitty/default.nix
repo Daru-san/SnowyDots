@@ -89,4 +89,9 @@
     cd ~/snow
     launch zsh
   '';
+  xdg.configFile."kitty/musikcube.conf".text = ''
+    new_tab musikcube
+    title musikcube
+    launch musikcube
+  '';
 }

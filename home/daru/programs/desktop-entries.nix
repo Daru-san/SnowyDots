@@ -39,26 +39,24 @@
         Keywords = "video;youtube";
       };
     };
-    cmus = {
-      name = "Console Music";
-      genericName = "Music Player";
-      comment = "Play music in your terminal";
-      exec = "bash -c cmus";
-      terminal = true;
-      icon = "rhythmbox";
-      type = "Application";
-      settings = {
-        Keywords = "music";
-      };
-    };
     bridge-core = {
       name = "Bridge";
       comment = "Make your own Minecraft mods with ease";
-      exec = "${pkgs.bridge-core}/bin/bridge-core";
+      exec = "${pkgs.bridge-core}/bin/bridge-core %U";
       type = "Application";
       icon = "minecraft";
       settings = {
         Keywords = "minecraft";
+      };
+    };
+    musikcube = {
+      name = "musikcube";
+      comment = "Terminal music player";
+      exec = "kitty --session musikcube.conf";
+      type = "Application";
+      icon = "musikcube";
+      settings = {
+        Keywords = "music";
       };
     };
   };
