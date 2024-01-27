@@ -36,10 +36,18 @@ with lib;
       default = {};
       description = ''
         Configuration for swaync, see
-        <link xlink:href=""/>
+        <link xlink:href="https://github.com/ErikReider/SwayNotificationCenter#configuring"/>
         for supported values.
       '';
     };
+
+    style = mkOption {
+      type = nullOr (either path lines);
+      default = null;
+      description = ''
+        Style for swaync in css
+      '';
+    }
   };
 
   config = mkIf cfg.enable {
@@ -65,9 +73,22 @@ with lib;
 
       Install = { wantedBy = [ cfg.systemdTarget ]; };
     };
-    services.foo.settings = {
+
+    xdg.configFile."swaync/config.son" = mkIf (settings != [ ]) {
+      source = settingsFormat.generate "swaync-config.json" cfg.settings;
+      onChange = ''
+        ${cfg.package}/bin/swaync-client --reload-config
+      '';
     };
 
-    xdg.configFile."swaync/config.json".source = settingsFormat.generate "swaync-config.json" cfg.settings;
+    xdg.configFile."swaync/style.css" = mkIf (cfg.style != null) {
+      source = if builtins.isPath cfg.style || isStorePath cfg.style then
+        cfg.style
+      else
+        pkgs.writeText "swaync/style.css" cfg.style;
+      onChange = ''
+        ${cfg.package}/bin/swaync-client --reload-css
+      '';
+    };
   };
 }
