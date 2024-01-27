@@ -1,8 +1,3 @@
-## TODO:
-# - Create configuration options
-# - Finalize module
-# - Make a PR at upstream
-# - Profit
 {
   pkgs,
   lib,
@@ -11,15 +6,16 @@
 }:
 let
   cfg = config.services.swaync;
-  settingsFormat = pkgs.formats.json {};
-in 
+
+  jsonFormat = pkgs.formats.json {};
+in
 with lib;
 {
   meta.maintainers = [ maintainers.daru-san ];
   options.services.swaync = {
     enable = mkEnableOption "Simple GTK notification daemon for wayland";
 
-    package = lib.mkPackageOption pkgs "swaynotificationcenter" { };
+    package = mkPackageOption pkgs "swaynotificationcenter" { };
 
     systemdTarget = mkOption {
       type = with types; str;
@@ -29,10 +25,9 @@ with lib;
         Systemd target to bind swaync to
       '';
     };
-    
+
     settings = mkOption {
       type = with types; submodule;
-      freeformType = settingsFormat.type;
       default = {};
       description = ''
         Configuration for swaync, see
@@ -47,7 +42,7 @@ with lib;
       description = ''
         Style for swaync in css
       '';
-    }
+    };
   };
 
   config = mkIf cfg.enable {
@@ -74,8 +69,8 @@ with lib;
       Install = { wantedBy = [ cfg.systemdTarget ]; };
     };
 
-    xdg.configFile."swaync/config.son" = mkIf (settings != [ ]) {
-      source = settingsFormat.generate "swaync-config.json" cfg.settings;
+    xdg.configFile."swaync/config.json" = mkIf (cfg.settings != { }) {
+      source = jsonFormat.generate "swaync-config.json" cfg.settings;
       onChange = ''
         ${cfg.package}/bin/swaync-client --reload-config
       '';
@@ -85,7 +80,7 @@ with lib;
       source = if builtins.isPath cfg.style || isStorePath cfg.style then
         cfg.style
       else
-        pkgs.writeText "swaync/style.css" cfg.style;
+        pkgs.writeText "style.css" cfg.style;
       onChange = ''
         ${cfg.package}/bin/swaync-client --reload-css
       '';
