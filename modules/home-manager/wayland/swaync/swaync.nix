@@ -80,7 +80,7 @@ with lib;
       source = if builtins.isPath cfg.style || isStorePath cfg.style then
         cfg.style
       else
-        pkgs.writeText "style.css" cfg.style;
+        pkgs.writeText "tyle.css" cfg.style;
       onChange = ''
         ${cfg.package}/bin/swaync-client --reload-css
       '';
