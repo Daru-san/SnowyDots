@@ -10,7 +10,7 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")];
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/D04A-9AA9";
+    { device = "/dev/disk/by-uuid/7CAE-4CC9";
       fsType = "vfat";
     };
 
