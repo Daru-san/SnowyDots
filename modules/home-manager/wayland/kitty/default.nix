@@ -3,7 +3,7 @@
     enable = true;
 
     #Kitty theme
-    theme = "Flexoki";
+    theme = "Wryan";
 
     #Kitty font
     font = {

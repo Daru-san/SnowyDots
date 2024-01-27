@@ -1,8 +1,6 @@
 {config, ...}:{  
   imports = [./colors.nix];
-  wayland.windowManager.hyprland = let
-    colors = [./colors.nix];
-  in {
+  wayland.windowManager.hyprland = {
     settings = {
       general =  {
         gaps_in = 6;
@@ -10,17 +8,17 @@
         border_size = 2.7;
         cursor_inactive_timeout = 30;
         layout = "master";
-        "col.active_border" = "${colors.active}";
-        "col.inactive_border" = "${colors.inactive}";
+        "col.active_border" = "${config.colors.active}";
+        "col.inactive_border" = "${config.colors.inactive}";
       };
       group = {
-      	"col.border_active" = "${colors.groupActive}";
-	      "col.border_inactive" = "${colors.groupInactive}";
+      	"col.border_active" = "${config.colors.activeGroup}";
+	      "col.border_inactive" = "${config.colors.inactiveGroup}";
 	      groupbar = {
 	        font_family = "Jetbrain Mono Nerd Font";
 	        font_size = 13;
-	        "col.active" = "${colors.groupActive}";
-	        "col.inactive" = "${colors.groupInactive}";
+	        "col.active" = "${config.colors.activeGroup}";
+	        "col.inactive" = "${config.colors.inactiveGroup}";
 	      };
       };
       master = {
