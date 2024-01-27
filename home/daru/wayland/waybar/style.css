@@ -56,7 +56,8 @@ window#waybar {
 #memory, 
 #bluetooth, 
 #pulseaudio-slider slider, 
-#pulseaudio-slider trough, 
+#pulseaudio-slider trough,
+#pulseaudio-slider,
 #custom-notification, 
 #clock, 
 #custom-playerctl
