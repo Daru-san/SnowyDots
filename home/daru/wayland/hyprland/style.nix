@@ -1,6 +1,8 @@
 {config, ...}:{  
   imports = [./colors.nix];
-  wayland.windowManager.hyprland = {
+  wayland.windowManager.hyprland = let
+    colors = [./colors.nix];
+  in {
     settings = {
       general =  {
         gaps_in = 6;

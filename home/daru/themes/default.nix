@@ -10,7 +10,7 @@
   ];
 
   #Set colorscheme
-  colorScheme = inputs.nix-colors.colorSchemes.oxocarbon-dark;
+  colorScheme = inputs.nix-colors.colorSchemes.onedark;
 
   xdg.configFile."colorscheme.css".text = (builtins.readFile ./oxocarbon-dark.css);
 }
