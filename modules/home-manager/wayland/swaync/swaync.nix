@@ -7,7 +7,7 @@
 let
   cfg = config.services.swaync;
 
-  jsonFormat = pkgs.formats.json {};
+  jsonFormat = pkgs.formats.json { };
 in
 with lib;
 {
@@ -51,7 +51,7 @@ with lib;
         lib.platforms.linux)
     ];
 
-    home.packages = with pkgs; [cfg.package];
+    home.packages = [cfg.package];
 
     systemd.user.services.swaync = {
       Unit = {
