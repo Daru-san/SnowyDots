@@ -15,6 +15,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    stylix.url = "github:danth/stylix";
+
     # auto-cpufreq
     auto-cpufreq = {
       url = "github:AdnanHodzic/auto-cpufreq";

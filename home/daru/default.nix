@@ -24,6 +24,7 @@
     nix-colors.homeManagerModules.default
     nur.nixosModules.nur
     spicetify-nix.homeManagerModules.default 
+    stylix.homeManagerModules.default
   ]);
 
   nixpkgs = {

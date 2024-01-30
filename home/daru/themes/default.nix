@@ -8,6 +8,10 @@
     ./qt.nix
     ./fonts.nix
   ];
+  stylix = {
+    polarity = "dark";
+    base16Scheme = "${pkgs.base16Schemes}/share/themes/oxocarbon-dark.yaml";
+  };
 
   #Set colorscheme
   colorScheme = {
