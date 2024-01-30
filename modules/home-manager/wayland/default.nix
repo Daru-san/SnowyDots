@@ -1,4 +1,4 @@
-{...}:{
+{pkgs,...}:{
   imports = [
     ./ags/default.nix
     ./copyq/default.nix
@@ -9,8 +9,8 @@
     ./swayidle/default.nix
     ./swaylock/default.nix
     ./wlogout/default.nix
-    ./environment/default.nix
     ./compositor/default.nix
     ./swaync/default.nix
   ];
+  home.packages = with pkgs; [ wl-clipboard pavucontrol ];
 }
