@@ -9,7 +9,6 @@
   
   services.swaync = {
     enable = true;
-    systemdTarget = "hyprland-session.target";
     settings = {
       positionX = "right";
       positionY = "top";
