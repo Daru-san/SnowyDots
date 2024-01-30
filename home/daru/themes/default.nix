@@ -30,7 +30,7 @@
     name = "Bibata-Modern-Classic";
     size = 32;
   };
-  stylix.targets.kitty.variant256Colors
+  stylix.targets.kitty.variant256Colors = true;
 
   xdg.configFile."colorScheme.css".text = (builtins.readFile ./oxocarbon.css);
 }
