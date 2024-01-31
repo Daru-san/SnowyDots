@@ -6,7 +6,6 @@
 }:
 {
   imports = [
-    # ./gtk.nix
     ./qt.nix
     ./fonts.nix
   ];
@@ -14,7 +13,7 @@
   # Set colorscheme
   stylix = {
     polarity = "dark";
-    base16Scheme = "${inputs.base16-schemes}/gruvbox-dark-hard.yaml";
+    base16Scheme = "${inputs.base16-schemes}/atelier-cave.yaml";
   };
 
 
@@ -36,14 +35,16 @@
   stylix.targets = {
     vim.enable = false;
     waybar.enable = false;
-    # gtk.enable = false;
-    kitty.enable = false;
+    kitty.enable = true;
+    kitty.variant256Colors = true;
   };
 
   # Colorscheme file
   xdg.configFile."colorScheme.css".text = (builtins.readFile ./oxocarbon.css);
 
-  gtk.theme = lib.mkDefault {
+  # gtk configurations
+  gtk.enable = true;
+  gtk.theme = lib.mkForce {
     name = "Colloid-Grey-Dark";
     package = pkgs.colloid-gtk-theme.override {
       themeVariants = [ "default" "grey" ];
@@ -65,5 +66,8 @@
     "org/gnome/desktop/wm/preferences" = {
       button-layout = "appmenu";
     };
+  };
+  home.sessionVariables = {
+    GTK_THEME = "Colloid-Grey-Dark";
   };
 }

@@ -9,6 +9,14 @@
       timestr = "%R";
       datestr= "%a, %d of %B";
       screenshots =  true;
+      fade-in = 0.7;
+
+      effect-blur = "20x2";
+      effect-scale = 0.5;
+      indicator = true;
+      indicator-radius = 230;
+      indicator-thickness = 14;
+      indicator-caps-lock =  true;
     };
   };
 }
