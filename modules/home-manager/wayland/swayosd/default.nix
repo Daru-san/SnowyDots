@@ -1,7 +1,8 @@
 {...}:{
-  imports = [./swayosd.nix];
+  imports = [inputs.swayosd.homeManagerModules.swayosd];
   services.swayosd = {
     enable = true;
-    maxVolume = 100;
+    display = "HDMI-A-1";
+    topMargin = 1.0;
   };
 }

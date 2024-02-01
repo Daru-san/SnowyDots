@@ -2,11 +2,10 @@
   pkgs,
   config,
   lib,
+  inputs,
   ...
 }:{
-  
-  imports = [./swaync.nix];
-  
+  imports = [inputs.swaync.homeManagerModules.swaync];
   services.swaync = {
     enable = true;
     settings = {
