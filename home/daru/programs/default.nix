@@ -4,6 +4,7 @@
     ./desktop-entries.nix
     ./music/default.nix
     ./firefox/default.nix
+    ./bat.nix
   ];
 
   # GUI
@@ -13,24 +14,21 @@
     krita
     newsflash
     evince
-    gnome.dconf-editor
     freetube
     scrcpy
     keepassxc
     pqiv
     fragments
-    gnome.gnome-clocks
     bridge-core
     archiver
     floorp
   ]
 
-  # Thunar and it's plugins
-  ++ (with pkgs.xfce;[
-    thunar
-    thunar-volman
-    thunar-archive-plugin
-    thunar-media-tags-plugin
+  # GNOME specific packages
+  ++ (with gnome;[
+    nautilus
+    dconf-editor
+    gnome-clocks
   ])
 
   # These are pinned to 23.11(stable branch) since they're broken on unstable

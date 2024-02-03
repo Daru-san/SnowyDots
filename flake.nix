@@ -15,9 +15,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Stuff for theming
-    stylix.url = "github:danth/stylix";
-
     base16.url = "github:SenchoPens/base16.nix";
     base16-schemes = {
       url = "github:base16-project/base16-schemes";

@@ -1,14 +1,20 @@
-{pkgs, lib, ...}: {
+{pkgs, lib, config, ...}: {
   programs.kitty = {
     enable = true;
 
     #Kitty theme
     theme = "Wryan";
 
-    #Kitty font
+    # Shell integration
     shellIntegration = {
       enableZshIntegration = true;
       enableBashIntegration = true;
+    };
+
+    # Kitty font
+    font = {
+      inherit (config.fonts.monospace) package name;
+      size = config.fonts.sizes.terminal;
     };
 
     #Settings

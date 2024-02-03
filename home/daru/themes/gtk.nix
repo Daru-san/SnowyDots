@@ -7,14 +7,19 @@
   gtk = {
     enable = true;
 
-    theme = with lib; mkForce {
-      name = mkForce "Colloid-Grey-Dark";
+    theme = {
+      name = "Colloid-Grey-Dark";
       package = pkgs.colloid-gtk-theme.override {
         themeVariants = [ "default" "grey" ];
         colorVariants = [ "dark" ];
         sizeVariants = [ "standard" ];
         tweaks = [ "float"];
       };
+    };
+
+    font = {
+      inherit (config.fonts.sansSerif) package name;
+      size = config.fonts.sizes.applications;
     };
 
     iconTheme = {

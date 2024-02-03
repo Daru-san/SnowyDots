@@ -15,38 +15,29 @@ in
 
     spotifyPackage = pkgs.spotify;
     #Spicetify theme
-    theme = spicePkgs.themes.Comfy;
-    colorScheme = "Forest"; 
+    theme = spicePkgs.themes.Dribbblish; # Or Ziro
+    colorScheme = "Lunar";  #Grey dark
 
     #Spicetify extensions
     enabledExtensions = with spicePkgs.extensions; [
         fullAppDisplayMod
         loopyLoop
         powerBar
-        seekSong
         bookmark
         autoVolume
         historyShortcut
         copyToClipboard
         volumePercentage
-        playNext
-        savePlaylists
         adblock
         shuffle
-        lastfm
         playlistIcons
-        goToSong
-        listPlaylistsWithSong
         featureShuffle
-        playlistIntersection
-        skipOrPlayLikedSongs
       ];
 
       #Custom apps
     enabledCustomApps = with spicePkgs.apps; [
       new-releases
       marketplace
-      localFiles
       lyrics-plus
     ];
   };

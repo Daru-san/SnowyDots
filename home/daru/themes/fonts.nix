@@ -1,9 +1,8 @@
 {pkgs,config,...}:{
-  # Stylix specific options
-  stylix.fonts = {
+  fonts = {
     serif = {
       package = pkgs.noto-fonts;
-      name = "Noto Sans";
+      name = "Noto Sans SemiBold";
     };
     sansSerif = config.stylix.fonts.serif;
     monospace = {
@@ -16,9 +15,9 @@
     };
     sizes = {
       desktop = 15;
-      applications = 13;
-      popups = 13;
-      terminal = 15;
+      applications = 14;
+      popups = 14;
+      terminal = 15.7;
     };
   };
 }
