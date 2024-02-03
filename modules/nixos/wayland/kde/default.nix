@@ -5,11 +5,7 @@ in
 with lib;
 {
   options.wayland.kde = {
-    enable = mkOption {
-      default = false;
-      example = true;
-      type = with types; bool;
-    };
+    enable = mkEnableOption "Enable KDE";
   };
   config = mkIf cfg.enable {
     services.xserver = {

@@ -9,10 +9,7 @@ in
 with lib;
 {
   options = {
-    os.security.polkit.enable = mkOption {
-      default = false;
-      type = with types; bool;
-    };
+    os.security.polkit.enable = mkEnableOption "Polkit";
   };
   config =  mkIf cfg.enable {
     security.polkit.enable = true;

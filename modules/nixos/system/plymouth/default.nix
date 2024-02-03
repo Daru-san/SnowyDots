@@ -8,18 +8,7 @@
 in 
 with lib;
 {
-  options = {
-    os.boot.plymouth = {
-      enable = mkOption {
-        type = with types; bool;
-        default = false;
-        example = true;
-        description = ''
-          Enable plymouth with custom themes
-        '';
-      };
-    };
-  };
+  options.os.boot.plymouth.enable = mkEnableOption "Enable plymouth with custom themes";
   config = mkIf cfg.enable {
     boot = {
       plymouth = {
@@ -30,9 +19,6 @@ with lib;
       initrd = {
         systemd = {
           enable = true;
-          dbus = {
-            enable = true;
-          };
         };
       };
     };

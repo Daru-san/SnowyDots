@@ -11,18 +11,8 @@ with lib;
 {
   options = {
     os.boot = {
-      enableSystemd-boot = mkOption {
-        type = with types; bool;
-        default = true;
-      };
-#      kernelPackage = mkOption {
- #       type = with types; raw;
- #       default = pkgs.linuxPackages_zen;
- #     };
-      quiet = mkOption {
-        type = with types; bool;
-        default = true;
-      };
+      enableSystemd-boot = mkEnableOption "Enable systemd boot";
+      quiet = mkEnableOption "Enable quiet booting";
     };
   };
   config = {

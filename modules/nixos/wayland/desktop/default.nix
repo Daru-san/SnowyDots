@@ -11,28 +11,13 @@
   {
   options = {
     wayland = {
-      enable = mkOption {
-        default = false;
-        type = with types; bool;
-      };
+      enable = mkEnableOption "Enable wayland";
       sway = {
-        enable = mkOption {
-          default = false;
-          type = with types; bool;
-        };
-        swayfx.enable = mkOption {
-          default = false;
-          type = with types; bool;
-        };
+        enable = mkEnableOption "Enable swaywm";
+        swayfx.enable = mkEnableOption "Enable swayfx";
       };
-      hyprland.enable = mkOption {
-        default = false;
-        type = with types; bool;
-      };
-      gnome-extra.enable = mkOption {
-        default = false;
-        type = with types; bool;
-      };
+      hyprland.enable = mkEnableOption "Enable hyprland";
+      gnome-extra.enable = mkEnableOption "Enable gnome stuff";
     };
   };
   config = mkIf cfg.enable {

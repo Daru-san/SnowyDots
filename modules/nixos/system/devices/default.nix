@@ -14,25 +14,13 @@ with lib;
     os.system = {
       laptop = {
         optimizations = {
-          tlp.enable = mkOption {
-            default = false;
-            type = with types; bool;
-          };
-          powerTweaks.enable = mkOption {
-            default = false;
-            type = with types; bool;
-          };
+          tlp.enable = mkEnableOption "Enable TLP";
+          powerTweaks.enable = mkEnableOption "Enable custom power tweaks";
         };
       };
       general = {
-        ssd.enable = mkOption {
-          default = false;
-          type = with types; bool;
-        };
-        throttled.enable = mkOption {
-          default = false;
-          type = with types; bool;
-        };
+        ssd.enable = mkEnableOption "Enable ssd optimizations";
+        throttled.enable = mkEnableOption "Enable the throttled service";
       };
     };
   };

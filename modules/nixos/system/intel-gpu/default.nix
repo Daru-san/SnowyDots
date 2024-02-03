@@ -11,13 +11,10 @@ with lib;
 {
   options = {
     os.drivers = {
-      intel.enable = mkOption {
-        default = false;
-        type = with types; bool;
-        example = true;
-      };
+      intel.enable = mkEnableOption "Enable drivers for Intel graphics";
     };
   };
+
   config = (mkIf cfg.intel.enable {
     hardware.opengl = {
       enable = true;

@@ -11,24 +11,12 @@ with lib;
 {
   options = {
     android = {
-      adb.enable = mkOption {
-        default = false;
-        type = with types; bool;
-      };
+      adb.enable = mkEnableOption "Enable adb";
       mtp = {
-        gvfs.enable = mkOption {
-          default = false;
-          type = with types; bool;
-        };
-        jmtpfs.enable = mkOption {
-          default = false;
-          type = with types; bool;
-        };
+        gvfs.enable = mkEnableOption "Enable gvfs for automounting android devices using mtp";
+        jmtpfs.enable = mkEnableOption "Enable jmtpfs for manual mounting android devices using mtp";
       };
-      waydroid.enable = mkOption {
-        default = false;
-        type = with types; bool;
-      };
+      waydroid.enable = mkEnableOption "Enable waydroid";
     };
   };
   config = {

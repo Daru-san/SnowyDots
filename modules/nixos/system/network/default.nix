@@ -8,22 +8,12 @@ cfg = config.os.networking;
 in 
 with lib;
 {
-  options = {
-    os.networking = {
-      enable = mkOption {
-        default = false;
-        type = with types; bool;
-      };
-      wifi.enable = mkOption {
-        default = false;
-        type = with types; bool;
-      };
-      bluetooth.enable = mkOption {
-        default = false;
-        type = with types; bool;
-      };
-    };
+  options.os.networking = {
+    enable = mkEnableOption "Enable networking";
+    wifi.enable = mkEnableOption "Enable wifi connection";
+    bluetooth.enable = mkEnableOption "Enable bluetooth connection";
   };
+
   config = mkIf cfg.enable {
 
     networking = mkIf cfg.wifi.enable {
