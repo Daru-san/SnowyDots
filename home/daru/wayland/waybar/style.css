@@ -9,7 +9,7 @@
 }
 
 window#waybar {
-  background: alpha(@base01,0.1);
+  background: alpha(@base01,0.6);
 }
 
 /* Workspaces */
