@@ -1,6 +1,7 @@
 {...}:{
 
-  # Import the module from https://github.com/rhoriguchi/home-manager since https://github.com/nix-community/home-manager/pull/4249 has not been merged,
+  # Import the module from https://github.com/rhoriguchi/home-manager
+  # since https://github.com/nix-community/home-manager/pull/4249 has not been merged,
   # and doesn't seem like it will be anytime soon
   imports = [(import (builtins.fetchurl {
     url = "https://raw.githubusercontent.com/rhoriguchi/home-manager/swaync/modules/services/swaync.nix";

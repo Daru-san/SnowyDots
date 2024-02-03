@@ -1,10 +1,10 @@
 {
-  android = import ./android/default.nix;
-  audio = import ./audio/default.nix;
-  fonts = import ./fonts/default.nix;
-  shell = import ./shell/default.nix;
-  system = import ./system/default.nix;
-  wayland = import ./wayland/default.nix;
-  neovim = import ./neovim/default.nix;
-  ssh = import ./ssh/default.nix;
+  android = import ./android;
+  audio = import ./audio;
+  fonts = import ./fonts;
+  shell = import ./shell;
+  system = import ./system;
+  wayland = import ./wayland;
+  neovim = import ./neovim;
+  ssh = import ./ssh;
 }

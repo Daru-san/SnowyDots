@@ -1,14 +1,15 @@
 #Shared home modules
 {
-  git = import ./git/default.nix;
-  tmux = import ./tmux/default.nix;
-  mpv = import ./mpv/default.nix;
-  btop = import ./btop/default.nix;
-  xdg = import ./xdg/default.nix;
-  audio = import ./audio/default.nix;
-  neovim = import ./neovim/default.nix;
-  shell = import ./shell/default.nix;
-  ranger = import ./ranger/default.nix;
-  wayland = import ./wayland/default.nix;
-  connect = import ./connect/default.nix;
+  git = import ./git;
+  tmux = import ./tmux;
+  mpv = import ./mpv;
+  btop = import ./btop;
+  xdg = import ./xdg;
+  audio = import ./audio;
+  neovim = import ./neovim;
+  shell = import ./shell;
+  ranger = import ./ranger;
+  wayland = import ./wayland;
+  connect = import ./connect;
+  themes = import ./themes;
 }
