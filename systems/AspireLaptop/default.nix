@@ -17,8 +17,6 @@
     system
     wayland
     ssh
-  ]) ++ (with inputs; [
-    stylix.nixosModules.default
   ]);
 
   nixpkgs = {

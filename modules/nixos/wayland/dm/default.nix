@@ -1,2 +1,1 @@
-import ./sddm.nix {inherit config lib pkgs}
-import ./greetd.nix {inherit config lib pkgs}
+{...}:{ imports = [ ./sddm.nix ./greetd.nix ]; }
