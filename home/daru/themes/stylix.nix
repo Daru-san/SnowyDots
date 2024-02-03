@@ -14,12 +14,6 @@
     terminal = 0.4;
   };
 
-  # Cursor
-  stylix.cursor = {
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
-  };
-
   # Enable custom configurations
   stylix.targets = {
     vim.enable = false;
