@@ -15,12 +15,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    base16.url = "github:SenchoPens/base16.nix";
-    base16-schemes = {
-      url = "github:base16-project/base16-schemes";
-      flake = false;
-    };
-
     # auto-cpufreq
     auto-cpufreq = {
       url = "github:AdnanHodzic/auto-cpufreq";
@@ -92,8 +86,8 @@
     # NixOS configuration
     nixosConfigurations = {
       
-      #Configuration on my Acer laptop
-      #'nixos-rebuild switch --flake .#AspireLaptop'
+      # Configuration on my Acer laptop
+      # 'nixos-rebuild switch --flake .#AspireLaptop'
       AspireLaptop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
@@ -104,8 +98,8 @@
     };
     homeConfigurations = {
 
-      #My home configuration
-      #'home-manager switch --flake .#daru@AspireLaptop'
+      # My home configuration
+      # 'home-manager switch --flake .#daru@AspireLaptop'
       "daru@AspireLaptop" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
