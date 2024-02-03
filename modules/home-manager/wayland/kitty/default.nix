@@ -3,7 +3,7 @@
     enable = true;
 
     #Kitty theme
-    # theme = "Wryan";
+    theme = "Wryan";
 
     #Kitty font
     shellIntegration = {
@@ -28,7 +28,6 @@
 
       hide_window_decorations = true;
 
-      # background_opacity = "0.44";
       dynamic_background_opacity = true;
 
       sync_to_monitor = true;

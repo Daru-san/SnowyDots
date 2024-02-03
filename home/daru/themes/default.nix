@@ -13,7 +13,6 @@
   # Set colorscheme
   stylix = {
     polarity = "dark";
-    base16Scheme = "${inputs.base16-schemes}/atelier-cave.yaml";
   };
 
 
@@ -34,7 +33,7 @@
   # Enable custom configurations
   stylix.targets = {
     vim.enable = false;
-    waybar.enable = false;
+    waybar.enable = true;
     kitty.enable = true;
     kitty.variant256Colors = true;
   };
