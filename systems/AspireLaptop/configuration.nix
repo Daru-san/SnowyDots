@@ -105,12 +105,12 @@
     };
     hyprland.enable = true;
     greetd = {
-      enable = true;
+      enable = false;
       command = "Hyprland";
       user = "daru";
     };
+    sddm.enable = true;
     gnome-extra.enable = true;
-    lxpolkit.enable = true;
     kde.enable = false;
   };
   os.security.polkit.enable = true;
