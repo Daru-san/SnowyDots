@@ -15,16 +15,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Fetch flake from https://rhoriguchi/home-manager for swaync module
-    swaync = {
-      url = "github:rhoriguchi/home-manager/095b525475e0ef0d5d5767014dc7755ce34963d9";
-    };
-
-    # Fetch flake from https://pltanton/home-manager for updated swayosd module
-    swayosd = {
-      url = "github:pltanton/home-manager/79f916da79752e6911cb56ba0866773a56e9c201";
-    };
-
     # Stuff for theming
     stylix.url = "github:danth/stylix";
 

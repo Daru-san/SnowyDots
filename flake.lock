@@ -919,38 +919,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_8": {
-      "locked": {
-        "lastModified": 1693003285,
-        "narHash": "sha256-5nm4yrEHKupjn62MibENtfqlP6pWcRTuSKrMiH9bLkc=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "5690c4271f2998c304a45c91a0aeb8fb69feaea7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_9": {
-      "locked": {
-        "lastModified": 1703961334,
-        "narHash": "sha256-M1mV/Cq+pgjk0rt6VxoyyD+O8cOUiai8t9Q6Yyq4noY=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "b0d36bd0a420ecee3bc916c91886caca87c894e9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nur": {
       "locked": {
         "lastModified": 1706803130,
@@ -1035,8 +1003,6 @@
         "prismlauncher": "prismlauncher",
         "spicetify-nix": "spicetify-nix",
         "stylix": "stylix",
-        "swaync": "swaync",
-        "swayosd": "swayosd",
         "useful-scripts": "useful-scripts"
       }
     },
@@ -1109,44 +1075,6 @@
       "original": {
         "owner": "danth",
         "repo": "stylix",
-        "type": "github"
-      }
-    },
-    "swaync": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_8"
-      },
-      "locked": {
-        "lastModified": 1693438012,
-        "narHash": "sha256-lna00DqThxBf8tPHK9MTvDpA1wMNwKzSKkZ2dWHEu+c=",
-        "owner": "rhoriguchi",
-        "repo": "home-manager",
-        "rev": "095b525475e0ef0d5d5767014dc7755ce34963d9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "rhoriguchi",
-        "repo": "home-manager",
-        "rev": "095b525475e0ef0d5d5767014dc7755ce34963d9",
-        "type": "github"
-      }
-    },
-    "swayosd": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_9"
-      },
-      "locked": {
-        "lastModified": 1705058597,
-        "narHash": "sha256-QonbW+71T2LGLpBLihqRb0mgUMwB5VPXBxctphlxSrg=",
-        "owner": "pltanton",
-        "repo": "home-manager",
-        "rev": "79f916da79752e6911cb56ba0866773a56e9c201",
-        "type": "github"
-      },
-      "original": {
-        "owner": "pltanton",
-        "repo": "home-manager",
-        "rev": "79f916da79752e6911cb56ba0866773a56e9c201",
         "type": "github"
       }
     },
