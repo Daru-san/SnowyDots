@@ -1,6 +1,4 @@
-# System fonts
-{pkgs,config, ...}:{
-
+{pkgs,...}:{
   # Stylix specific options
   stylix.fonts = {
     serif = {
