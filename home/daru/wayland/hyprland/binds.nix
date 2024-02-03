@@ -11,7 +11,8 @@ with lib;
     bind = let
       terminal = "${config.programs.kitty.package}/bin/kitty";
       browser = "${config.programs.firefox.package}/bin/firefox-nightly";
-      file-manager = "${pkgs.gnome.nautilus}/bin/nautilus";
+      # file-manager = "${pkgs.gnome.nautilus}/bin/nautilus";
+      file-manager = "${pkgs.xfce.thunar}/bin/thunar";
       editor = "${config.programs.neovim.package}/bin/nvim";
       ranger = "${pkgs.ranger}/bin/ranger";
       image-editor = "${pkgs.krita}/bin/krita";
