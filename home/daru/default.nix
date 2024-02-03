@@ -20,10 +20,10 @@
     git
     neovim
     tmux
+    themes
   ]) ++ (with inputs; [
     nur.nixosModules.nur
     spicetify-nix.homeManagerModules.default 
-    stylix.homeManagerModules.stylix
   ]);
 
   nixpkgs = {

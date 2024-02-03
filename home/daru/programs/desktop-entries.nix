@@ -1,16 +1,16 @@
 {pkgs, config, ...}:{
   xdg.desktopEntries = {
-    spotify = {
-      name = "Spotify";
-      genericName = "Music Player";
-      comment = "Customized music player, stream all your favourite music, for free and wayland native!";
-      exec = "spotify %U --enable-features=UseOzonePlatform --ozone-platform=wayland";
-      icon = "spotify";
-      type = "Application";
-      settings = {
-        Keywords = "music";
-      };
-    };
+    # spotify = {
+    #   name = "Spotify";
+    #   genericName = "Music Player";
+    #   comment = "Customized music player, stream all your favourite music, for free and wayland native!";
+    #   exec = "spotify %U --enable-features=UseOzonePlatform --ozone-platform=wayland";
+    #   icon = "spotify";
+    #   type = "Application";
+    #   settings = {
+    #     Keywords = "music";
+    #   };
+    # };
     waypaper = {
       name = "Waypaper";
       genericName = "Wallpaper Browser";

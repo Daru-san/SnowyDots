@@ -1,7 +1,8 @@
 {
   pkgs
-  ,lib
-  ,...
+, lib
+, config
+, ...
 }:
 {
   gtk = {

@@ -64,5 +64,6 @@
       asciinema
       asciinema-agg
       asciinema-scenario
+      trashy
   ]);
 }
