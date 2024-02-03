@@ -3,7 +3,7 @@
     enable = true;
 
     #Allow qt applications to follow custom theme controlled by qtct 
-    platformTheme = "gtk";
+    platformTheme = "kde";
     style = {
       name = "adwaita-dark";
     };

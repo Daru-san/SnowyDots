@@ -21,9 +21,9 @@
     neovim
     tmux
   ]) ++ (with inputs; [
-    nix-colors.homeManagerModules.default
     nur.nixosModules.nur
     spicetify-nix.homeManagerModules.default 
+    stylix.homeManagerModules.stylix
   ]);
 
   nixpkgs = {

@@ -19,5 +19,4 @@
       indicator-caps-lock =  true;
     };
   };
-  xdg.configFile."swaylock/config".text = pkgs.lib.mkDefault(pkgs.lib.mkAfter (builtins.readFile ./colors));
 }

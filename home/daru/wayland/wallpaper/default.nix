@@ -25,6 +25,8 @@ in {
     wallutils
   ];
 
+  stylix.image = "${aesthetic-wallpapers}/images/minimal_c.png";
+
   #Source wallpapers from 'github.com/D3Ext/aesthetic-wallpapers'
   home.file."Wallpapers/aesthetic" = {
     source = "${aesthetic-wallpapers}/images";

@@ -11,7 +11,8 @@ with lib;
     bind = let
       terminal = "${config.programs.kitty.package}/bin/kitty";
       browser = "${config.programs.firefox.package}/bin/firefox-nightly";
-      file-manager = "${pkgs.gnome.nautilus}/bin/nautilus";
+      # file-manager = "${pkgs.gnome.nautilus}/bin/nautilus";
+      file-manager = "${pkgs.xfce.thunar}/bin/thunar";
       editor = "${config.programs.neovim.package}/bin/nvim";
       ranger = "${pkgs.ranger}/bin/ranger";
       image-editor = "${pkgs.krita}/bin/krita";
@@ -48,12 +49,12 @@ with lib;
     ];
 
     bindle = let
-      s = "${config.services.swayosd.package}/bin/swayosd";
-      volup = "--output-volume=raise";
-      voldown = "--output-volume=lower";
-      volmute = "--output-volume=mute-toggle";
-      brightup = "--brightness=raise";
-      brightdown = "--brightness=lower";
+      s = "${config.services.swayosd.package}/bin/swayosd-client";
+      volup = "--output-volume raise";
+      voldown = "--output-volume lower";
+      volmute = "--output-volume mute-toggle";
+      brightup = "--brightness raise";
+      brightdown = "--brightness lower";
     in [
      ### Controls using swayosd ###
 
@@ -62,19 +63,19 @@ with lib;
       ## Brightness control##
 
       # Brightness control using swayosd
-      ",XF86MonBrightnessUp, ${e},${s} ${brightup} 5"
-      ",XF86MonBrightnessDown, ${e},${s} ${brightdown} 5"
+      ",XF86MonBrightnessUp, ${e},${s} ${brightup}"
+      ",XF86MonBrightnessDown, ${e},${s} ${brightdown}"
 
       ##Volume Control##
 
       # Volume using swayosd
-      ",XF86AudioRaiseVolume, ${e}, ${s} ${volup} 5"
-      ",XF86AudioLowerVolume, ${e}, ${s} ${voldown} 5"
+      ",XF86AudioRaiseVolume, ${e}, ${s} ${volup}"
+      ",XF86AudioLowerVolume, ${e}, ${s} ${voldown}"
       ",XF86AudioMute, ${e}, ${s} ${volmute}"
 
       #Same but for keyboards without media keys
-      "ALT,F8, ${e}, ${s} ${volup} 5"
-      "ALT,F6, ${e}, ${s} ${voldown} 5"
+      "ALT,F8, ${e}, ${s} ${volup}"
+      "ALT,F6, ${e}, ${s} ${voldown}"
       "ALT,F7, ${e}, ${s} ${volmute}"
     ];
 

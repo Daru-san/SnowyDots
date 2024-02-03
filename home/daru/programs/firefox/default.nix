@@ -50,7 +50,6 @@ in {
           dark-mode-webextension
           overview
           lovely-forks
-          nighttab
           vimium
         ];
 
@@ -107,7 +106,6 @@ in {
             "Nix Packages"
             "Nix Options"
             "Home Manager"
-            "Google"
           ];
 
           # Force apply configs
@@ -115,7 +113,7 @@ in {
 
           # Add custom search engines and modify existing ones
           engines = {
-            
+
             #Brave search
             "Brave Search" = {
               urls = [
@@ -125,7 +123,7 @@ in {
               updateInterval = 24 * 60 * 60 * 1000;
               definedAliases = ["@br" "@b" ];
             };
-              
+
             #StartPage
             "StartPage" = {
               urls = [
@@ -140,6 +138,7 @@ in {
             "Google" = {
               metaData = {
                 alias = "@g";
+                hidden = true;
               };
             };
 
@@ -251,14 +250,14 @@ in {
           "browser.shell.checkDefaultBrowser" = false;
           "browser.shell.defaultBrowserCheckCount" = 1;
           "dom.security.https_only_mode" = true;
-          "identity.fxaccounts.enabled" = true;
+          "identity.fxaccounts.enabled" = false;
           "privacy.trackingprotection.enabled" = true;
-          "signon.rememberSignons" = true;
+          "signon.rememberSignons" = false;
           "browser.backspace_action" = 0;
           "browser.bookmarks.showMobileBookmarks" = false;
           "browser.download.panel.shown" = false;
           "browser.download.useDownloadDir" = false;
-          "browser.newtabpage.activity-stream.feeds.section.highlights" = true;
+          "browser.newtabpage.activity-stream.feeds.section.highlights" = false;
           "browser.newtabpage.activity-stream.feeds.topsites" = false;
           "browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar" = false;
           "browser.newtabpage.activity-stream.section.highlights.includePocket" = false;
@@ -293,14 +292,6 @@ in {
           "privacy.userContext.enabled" = true;
           "privacy.userContext.ui.enabled" = true;
           "privacy.userContext.longPressBehavior" = 2;
-
-          #Firefox-one configs
-          "firefoxone.rhythm_sound_tab" = true;
-          "firefoxone.selected_tab_gradient_border" = true;
-          "firefoxone.style_without_leftsidebar" = false;
-          "firefoxone.tree_tabs_style" = false;
-          "firefoxone.without-default-colors" = true;
-          "firefoxone.main-image" = false;
         };
       };
     };

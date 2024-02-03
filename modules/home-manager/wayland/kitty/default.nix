@@ -6,10 +6,6 @@
     theme = "Wryan";
 
     #Kitty font
-    font = {
-      name = "Jetbrains Mono Nerd Font";
-      size = 14;
-    };
     shellIntegration = {
       enableZshIntegration = true;
       enableBashIntegration = true;
@@ -32,7 +28,6 @@
 
       hide_window_decorations = true;
 
-      background_opacity = "0.44";
       dynamic_background_opacity = true;
 
       sync_to_monitor = true;

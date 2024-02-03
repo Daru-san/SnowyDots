@@ -58,7 +58,6 @@
      window {
           font-family: ${config.gtk.font.name};
           font-size: 0px;
-          color: #${config.colorScheme.colors.base02};
           background-color: rgba(0, 0, 0, 0.5);
       }
       button {
@@ -72,13 +71,10 @@
           transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
       }
       button:hover {
-          background-color: #${config.colorScheme.colors.base03};
       }
       button:focus {
-          background-color: #${config.colorScheme.colors.base05};
-          border: ${toString config.wayland.windowManager.hyprland.settings.general.border_size}px solid #${config.colorScheme.colors.base08};
+          border: ${toString config.wayland.windowManager.hyprland.settings.general.border_size}px;
           border-radius: ${toString config.wayland.windowManager.hyprland.settings.decoration.rounding}px;
-          color: #${config.colorScheme.colors.base01};
       }
       /** ********** Icons ********** **/
       #lock {

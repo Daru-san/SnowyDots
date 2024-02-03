@@ -15,14 +15,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Stuff for theming
+    stylix.url = "github:danth/stylix";
+
+    base16.url = "github:SenchoPens/base16.nix";
+    base16-schemes = {
+      url = "github:base16-project/base16-schemes";
+      flake = false;
+    };
+
     # auto-cpufreq
     auto-cpufreq = {
       url = "github:AdnanHodzic/auto-cpufreq";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # Colors
-    nix-colors.url = "github:misterio77/nix-colors";
 
     # NUR Packages
     nur.url = "github:nix-community/NUR";

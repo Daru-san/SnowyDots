@@ -1,5 +1,4 @@
 {config, ...}:{  
-  imports = [./colors.nix];
   wayland.windowManager.hyprland = {
     settings = {
       general =  {
@@ -8,18 +7,6 @@
         border_size = 2.7;
         cursor_inactive_timeout = 30;
         layout = "master";
-        "col.active_border" = "${config.colors.active}";
-        "col.inactive_border" = "${config.colors.inactive}";
-      };
-      group = {
-      	"col.border_active" = "${config.colors.activeGroup}";
-	      "col.border_inactive" = "${config.colors.inactiveGroup}";
-	      groupbar = {
-	        font_family = "Jetbrain Mono Nerd Font";
-	        font_size = 13;
-	        "col.active" = "${config.colors.activeGroup}";
-	        "col.inactive" = "${config.colors.inactiveGroup}";
-	      };
       };
       master = {
         new_is_master = false;
@@ -39,8 +26,8 @@
         drop_shadow = true;
         shadow_range = 7;
         shadow_render_power = 6;
-        active_opacity = 0.97;
-        inactive_opacity = 0.9;
+        # active_opacity = 0.97;
+        # inactive_opacity = 0.9;
         dim_inactive = true;
         dim_strength = 0.14;
       };

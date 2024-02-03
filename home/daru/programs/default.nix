@@ -13,7 +13,6 @@
     krita
     newsflash
     evince
-    gnome.nautilus
     gnome.dconf-editor
     freetube
     scrcpy
@@ -24,12 +23,22 @@
     bridge-core
     archiver
     floorp
-  ] 
+  ]
+
+  # Thunar and it's plugins
+  ++ (with pkgs.xfce;[
+    thunar
+    thunar-volman
+    thunar-archive-plugin
+    thunar-media-tags-plugin
+  ])
+
   # These are pinned to 23.11(stable branch) since they're broken on unstable
   ++ (with pkgs.stable; [
     komikku
     calcure
   ])
+
   # Cli/Tui based packages
   ++ (with pkgs;
   [

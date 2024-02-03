@@ -1,9 +1,14 @@
-{pkgs, ...}:{
+{
+  pkgs
+  ,lib
+  ,...
+}:
+{
   gtk = {
     enable = true;
 
-    theme = {
-      name = "Colloid-Grey-Dark";
+    theme = with lib; mkForce {
+      name = mkForce "Colloid-Grey-Dark";
       package = pkgs.colloid-gtk-theme.override {
         themeVariants = [ "default" "grey" ];
         colorVariants = [ "dark" ];
@@ -16,31 +21,13 @@
       name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme;
     };
-    font = {
-      name = "Jetbrains Mono Nerd Font";
-      size = 12;
-    };
 
     # gtk cursor theme
     cursorTheme = {
       name = "Bibata-Modern-Classic";
       package = pkgs.bibata-cursors;
     };
-
-    # Make gtk applications prefer dark mode
-    gtk3 = {
-      extraConfig = {
-        settings = ''
-          gtk-application-prefer-dark-theme=1
-        '';
-      };
-    };
-    gtk4.extraConfig = {
-      settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
-   };
+  };
   dconf.settings = {
     # Make gtk apps follow a dark theme
     "org/gnome/desktop/interface" = {
