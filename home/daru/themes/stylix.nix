@@ -17,7 +17,7 @@
   # Enable custom configurations
   stylix.targets = {
     vim.enable = false;
-    waybar.enable = true;
+    waybar.enable = false;
     kitty.enable = true;
     kitty.variant256Colors = true;
   };
