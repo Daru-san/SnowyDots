@@ -48,7 +48,7 @@ with lib;
       "SUPERALT,b,${e},${terminal} -T btop --hold ${btop}"
       
       # Show when caps lock is pressed
-      ",caps_lock,${e},${s} --caps-lock"
+      ",caps_lock,${e},${swayosd} --caps-lock"
     ];
 
     bindle = let
