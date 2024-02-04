@@ -65,28 +65,58 @@ in {
             id = 2;
             icon = "cart";
           };
-          coding = {
+          dev = {
             color = "green";
             id = 3;
             icon = "chill";
-          };
-          space = {
-            color = "purple";
-            id = 77;
-            icon = "vacation";
           };
           social = {
             color = "red";
             id = 4;
             icon = "pet";
           };
+          mail = {
+            color = "orange";
+            id = 5;
+            icon = "fingerprint";
+          };
+          nix = {
+            color = "blue";
+            id = 6;
+            icon = "circle";
+          };
+          privacy = {
+            color = "green";
+            id = 7;
+            icon = "briefcase";
+          };
+          reading = {
+            color = "turquoise";
+            id = 8;
+            icon = "tree";
+          };
+          account = {
+            color = "red";
+            id = 9;
+            icon = "fingerprint";
+          };
+          money = {
+            color = "yellow";
+            id = 10;
+            icon = "dollar";
+          };
           misc = {
             color = "yellow";
             id = 69;
             icon = "circle";
           };
+          space = {
+            color = "purple";
+            id = 77;
+            icon = "vacation";
+          };
         };
-        
+
         # Search engines
         search = {
           # Make Brave and StartPage defaults
@@ -118,7 +148,7 @@ in {
               ];
               iconUpdateURL = "https://brave.com/static-assets/images/brave-logo-sans-text.svg";
               updateInterval = 24 * 60 * 60 * 1000;
-              definedAliases = ["@br" "@b" ];
+              definedAliases = ["@br" "@b" "@brave" ];
             };
 
             #StartPage
@@ -128,7 +158,7 @@ in {
               ];
               iconUpdateURL = "https://www.startpage.com/sp/cdn/favicons/favicon-gradient.ico";
               updateInterval = 24 * 60 * 60 * 1000;
-              definedAliases = ["@sp" "@s" ];
+              definedAliases = ["@sp" "@s" "@start" ];
             };
 
             #Give google an alias
@@ -174,7 +204,7 @@ in {
               ];
               iconUpdateURL = "https://www.redditstatic.com/shreddit/assets/favicon/favicon.ico";
               updateInterval = 24 * 60 * 60 * 1000;
-              definedAliases = [ "@r" ];
+              definedAliases = [ "@r" "@reddit" ];
             };
 
             # Github
@@ -184,7 +214,7 @@ in {
               ];
               iconUpdateURL = "https://github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg";
               updateInterval = 24 * 60 * 60 * 1000;
-              definedAliases = [ "@gh" "@g" ];
+              definedAliases = [ "@gh" "@g" "@git" ];
             };
 
             # Add the NixOS wiki
@@ -194,7 +224,7 @@ in {
               ];
               iconUpdateURL = "https://nixos.wiki/favicon.png";
               updateInterval = 24 * 60 * 60 * 1000; # every day
-              definedAliases = [ "@nw" ];
+              definedAliases = [ "@nw" "@nixwiki" ];
             };
 
             # Nix packages and options from search.nixos.org
@@ -207,7 +237,7 @@ in {
                   ];
                }];
               icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-              definedAliases = [ "@np" ];
+              definedAliases = [ "@np" "@nixpkgs" ];
             };
             "Nix Options" = {
               urls = [{
@@ -218,7 +248,7 @@ in {
                   ];
                }];
               icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-              definedAliases = [ "@no" ];
+              definedAliases = [ "@no" "@nixopts" ];
             };
 
             # Similiar to search.nixos.org but with more info
@@ -227,7 +257,7 @@ in {
               {template = "https://mynixos.com/search?q={searchTerms}";}
               ];
               icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake-white.svg";
-              definedAliases = ["@mn" "@nx"];
+              definedAliases = ["@mn" "@nx" "@mynixos" ];
             };
 
             #Home manager search
@@ -236,7 +266,7 @@ in {
                 {template = "https://mipmip.github.io/home-manager-option-search/?query={searchTerms}";}
               ];
               icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-              definedAliases = [ "@hm"];
+              definedAliases = [ "@hm" "@home" "@homeman" ];
             };
           };
         };
