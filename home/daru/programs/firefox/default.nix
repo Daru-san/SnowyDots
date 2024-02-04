@@ -96,7 +96,7 @@ in {
             icon = "tree";
           };
           account = {
-            color = "red";
+            color = "white";
             id = 9;
             icon = "fingerprint";
           };
