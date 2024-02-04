@@ -18,6 +18,7 @@ with lib;
       swaylock = "${config.programs.swaylock.package}/bin/swaylock";
       copyq = "${config.services.copyq.package}/bin/copyq";
       btop = "${config.programs.btop.package}/bin/btop";
+      swayosd = "${config.services.swayosd.package}/bin/swayosd-client";
     in [
       # Launching programs
       "SUPER, e, ${e}, ${h} '${file-manager}'"
@@ -45,6 +46,9 @@ with lib;
 
       #'Task manager'
       "SUPERALT,b,${e},${terminal} -T btop --hold ${btop}"
+      
+      # Show when caps lock is pressed
+      ",caps_lock,${e},${s} --caps-lock"
     ];
 
     bindle = let
@@ -103,7 +107,6 @@ with lib;
       any = "${config.programs.anyrun.package}/bin/anyrun";
       easy = "${config.services.easyeffects.package}/bin/easyeffects";
       cl = "${inputs.useful-scripts.packages.${pkgs.system}.color-picker}/bin/color-picker";
-      s = "${config.services.swayosd.package}/bin/swayosd";
       wl = "${config.programs.wlogout.package}/bin/wlogout";
       pk = "pkill";
 
@@ -120,9 +123,6 @@ with lib;
 
       # Launch easyeffects
       "super, a, ${e}, ${h} '${easy}'"
-
-      # Show when caps lock is pressed
-      ",caps_lock,${e},${s} --caps-lock"
 
       # Color picker
       "supershift, c, ${e}, ${pk} ${cl} || ${cl}"
