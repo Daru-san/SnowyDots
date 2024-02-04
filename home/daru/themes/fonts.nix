@@ -14,5 +14,9 @@
       applications = 14;
       terminal = 16;
     };
+    extraFonts = with pkgs; [
+      monocraft
+      noto-fonts
+    ];
   };
 }

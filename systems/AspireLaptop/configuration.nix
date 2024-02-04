@@ -24,12 +24,6 @@
   mutableUsers = true;
   };
 
-  # Extra fonts I use on this system 
-  fonts.packages = with pkgs; [
-    monocraft
-    minecraftia
-  ];
-
   # Enable android tools 
   android = {
     adb.enable = true;

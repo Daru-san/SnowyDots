@@ -49,13 +49,11 @@ in {
       };
     };
 
-    emoji = mkOption {
-      description = mdDoc "Emoji font.";
-      type = fontType;
-      default = {
-        package = pkgs.noto-fonts-emoji;
-        name = "Noto Color Emoji";
-      };
+    extraFonts = mkOption {
+      description = mdDoc "Extra font packages to install";
+      type = with types; listOf package;
+      default = [ ];
+      defaultText = lib.literalExpression "[ ]";
     };
 
     sizes = {

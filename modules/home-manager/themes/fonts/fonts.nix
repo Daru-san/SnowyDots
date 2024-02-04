@@ -10,7 +10,7 @@ in {
       cfg.monospace.package
       cfg.serif.package
       cfg.sansSerif.package
-      cfg.emoji.package
+      cfg.extraFonts
     ];
   };
 }

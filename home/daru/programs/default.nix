@@ -65,5 +65,6 @@
       asciinema-agg
       asciinema-scenario
       trashy
+      fontpreview
   ]);
 }
