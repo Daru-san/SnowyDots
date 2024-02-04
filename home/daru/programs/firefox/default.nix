@@ -1,4 +1,10 @@
-{pkgs, lib, config, inputs, ...}:let
+{
+  pkgs
+, config
+, inputs
+, ...
+}:
+let
   user = "${config.home.username}";
 in {
 
@@ -18,18 +24,14 @@ in {
         name = "daruFox";
 
         #Extensions(from NUR)
-        extensions = with config.nur.repos.rycee.firefox-addons; [
-          behave
+        extensions = (with config.nur.repos.rycee.firefox-addons; [
           boring-rss
-          cliget
-          decentraleyes
           disable-javascript
           don-t-fuck-with-paste
           enhanced-github
           violentmonkey
           github-file-icons
           gitako-github-file-tree
-          i-dont-care-about-cookies
           hover-zoom-plus
           image-search-options
           keepassxc-browser
@@ -38,25 +40,20 @@ in {
           re-enable-right-click
           simplelogin
           skip-redirect
-          terms-of-service-didnt-read
           temporary-containers
           ublock-origin
-          unpaywall
-          web-archives
           widegithub
           auto-tab-discard
-          behind-the-overlay-revival
-          dark-mode-website-switcher
           dark-mode-webextension
-          overview
           lovely-forks
-          vimium
-        ];
+          tabliss
+          vimium-c
+        ]);
 
-        #Make this profile the default
+        # Make this profile the default
         isDefault = true;
 
-        #Containers
+        # Containers
         containers = {
           general = {
             color = "blue";
@@ -117,7 +114,7 @@ in {
             #Brave search
             "Brave Search" = {
               urls = [
-              {template = "https://search.brave.com/search?q={searchTerms}";}
+                {template = "https://search.brave.com/search?q={searchTerms}";}
               ];
               iconUpdateURL = "https://brave.com/static-assets/images/brave-logo-sans-text.svg";
               updateInterval = 24 * 60 * 60 * 1000;
@@ -293,7 +290,7 @@ in {
           "privacy.userContext.ui.enabled" = true;
           "privacy.userContext.longPressBehavior" = 2;
 
-          # Fonts 
+          # Fonts
           "font.name.monospace.x-western" = config.fonts.monospace.name;
           "font.name.sans-serif.x-western" = config.fonts.sansSerif.name;
           "font.name.serif.x-western" = config.fonts.serif.name;
