@@ -137,6 +137,7 @@ with lib;
 
       "super,n, ${e}, ${sc} -t"
       "supershift,n, ${e}, ${sc} -d"
+      "superalt,n, ${e}, ${sc} -C"
     ];
   };
 }
