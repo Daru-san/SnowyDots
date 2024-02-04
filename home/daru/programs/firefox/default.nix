@@ -30,6 +30,7 @@ in {
           don-t-fuck-with-paste
           enhanced-github
           violentmonkey
+          foxytab
           github-file-icons
           gitako-github-file-tree
           hover-zoom-plus
