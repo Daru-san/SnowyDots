@@ -136,6 +136,7 @@ with lib;
       "alt, print, ${e}, ${pk} ${hs} || ${h} '${hs} -m ${o} -o ${scr-dir}'"
 
       "super,n, ${e}, ${sc} -t"
+      "supershift,n, ${e}, ${sc} -d"
     ];
   };
 }
