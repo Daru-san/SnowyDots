@@ -12,4 +12,5 @@
   wayland = import ./wayland;
   connect = import ./connect;
   themes = import ./themes;
+  translate = import ./translate-shell;
 }

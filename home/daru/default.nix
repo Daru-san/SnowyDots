@@ -20,6 +20,7 @@
     git
     neovim
     tmux
+    translate
     themes
   ]) ++ (with inputs; [
     nur.nixosModules.nur
