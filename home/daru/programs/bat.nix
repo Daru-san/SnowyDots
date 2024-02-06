@@ -3,7 +3,7 @@
     enable = true;
     config = {
       theme = "ansi";
-      pager = "less -FR";
+      pager = "nvim -R";
     };
     extraPackages = with pkgs.bat-extras; [batman batdiff batgrep batwatch prettybat batpipe];
   };
