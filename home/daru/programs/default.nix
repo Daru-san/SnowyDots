@@ -22,6 +22,7 @@
     bridge-core
     archiver
     floorp
+    audacity
   ]
 
   # GNOME specific packages
