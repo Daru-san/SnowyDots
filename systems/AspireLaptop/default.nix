@@ -59,7 +59,7 @@
     enable = true;
     flake = "github:Daru-san/Snowflake-dots";
     flags = [
-      "--update-input" "nixpkgs" "--commit-lock-file" "--impure"
+      "--update-input" "nixpkgs" "--impure"
     ];
     operation = "boot";
     dates = "00:00";
