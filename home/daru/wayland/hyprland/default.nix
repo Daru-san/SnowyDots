@@ -5,6 +5,7 @@
     ./devices.nix
     ./style.nix
     ./autostart.nix
+    ./plugins.nix
   ];
 #Configuring Hyprland 
   wayland.windowManager.hyprland = {
