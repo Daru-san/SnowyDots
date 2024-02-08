@@ -10,6 +10,7 @@ with lib;
       "${config.services.copyq.package}/bin/copyq"
       "${config.programs.waybar.package}/bin/waybar"
       "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
+      "hyprpm reload -n"
     ];
     exec = [
       "systemctl --user restart kanshi.service"

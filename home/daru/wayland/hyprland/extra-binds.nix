@@ -38,6 +38,13 @@ in {
       #Super+tab to move to next workspace and back
       "SUPER,TAB,workspace, m+1"
       "SUPERSHIFT,TAB,workspace, m-1"
+
+      # Hycov binds
+      "ALT,tab,hycov:toggleoverview"
+      "bind=ALT,left,hycov:movefocus,l"
+      "bind=ALT,right,hycov:movefocus,r"
+      "bind=ALT,up,hycov:movefocus,u"
+      "bind=ALT,down,hycov:movefocus,d"
     ] ++
     # Change workspace
     (map (n:
