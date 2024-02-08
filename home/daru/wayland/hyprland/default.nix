@@ -1,4 +1,9 @@
-{...}:{
+{
+  inputs
+, pkgs
+, ...
+}:
+{
   imports = [
     ./binds.nix
     ./rules.nix
@@ -7,8 +12,10 @@
     ./autostart.nix
     ./plugins.nix
   ];
-#Configuring Hyprland 
+# Configuring Hyprland 
   wayland.windowManager.hyprland = {
+    # Use the upstream package from the flake
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     systemd = {
       enable = true;
       extraCommands = [

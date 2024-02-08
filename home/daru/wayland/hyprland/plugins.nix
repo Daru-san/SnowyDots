@@ -6,7 +6,7 @@
 {
   wayland.windowManager.hyprland = {
     plugins = [
-      inputs.hycov.${pkgs.system}.packages.hycov
+      inputs.hycov.packages.${pkgs.system}.hycov
       inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
       inputs.hyprfocus.packages.${pkgs.system}.hyprfocus
     ];

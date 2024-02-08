@@ -33,7 +33,6 @@
       };
       misc = {
         vrr = 1;
-        force_hypr_chan = true;
       };
       animations = {
         enabled = true;
