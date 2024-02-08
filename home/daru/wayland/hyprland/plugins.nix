@@ -7,7 +7,6 @@
   wayland.windowManager.hyprland = {
     plugins = [
       inputs.hycov.packages.${pkgs.system}.hycov
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
       inputs.hyprfocus.packages.${pkgs.system}.hyprfocus
     ];
     extraConfig = ''
@@ -18,17 +17,10 @@
           hotarea_size = 10 #hotarea size in bottom left,10x10
           enable_hotarea = 1 # enable mouse cursor hotarea
         }
-        hyprbars {
-          bar_height = 20
-
-          # hyprbars-button = color, size, on-click
-          hyprbars-button = rgb(EE5396), 10, 󰖭, hyprctl dispatch killactive
-          hyprbars-button = rgb(3DDBD9), 10, , hyprctl dispatch fullscreen 1
-        }
         hyprfocus {
           enabled = yes
 
-          keyboard_focus_animation = shrink
+          keyboard_focus_animation = flash
           mouse_focus_animation = flash
 
           bezier = bezIn, 0.5,0.0,1.0,0.5
