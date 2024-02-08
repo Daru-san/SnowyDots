@@ -33,7 +33,8 @@
       placement_strategy ="center";
 
       hide_window_decorations = true;
-
+      
+      background_opacity = "0.7";
       dynamic_background_opacity = true;
 
       sync_to_monitor = true;

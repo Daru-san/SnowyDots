@@ -4,10 +4,10 @@
 , ...
 }: 
 let
-  hyprland = pkgs.fetchgit {
-    url = "https://github.com/hyprwm/Hyprland";
-    rev = "a6ccd36147109d5cb2981122595f06ae93999b55";
-    sha256 = "+Z/JjrAfy0raiStSRzE3JfW20uDOs4GMt+4TrDz2S9A=";
+  walls = pkgs.fetchgit {
+    url = "https://github.com/D3Ext/aesthetic-wallpapers";
+    rev = "060c580dcc11afea2f77f9073bd8710920e176d8";
+    sha256 = "5MnW630EwjKOeOCIAJdSFW0fcSSY4xmfuW/w7WyIovI=";
   };
 in
 {
@@ -16,16 +16,15 @@ in
     swww
   ];
 
-  theme.wallpaper.image = "${hyprland}/assets/wall0.png";
+  theme.wallpaper.image = "${walls}/images/minimal_c.png";
 
   # Shuffle throught the hyprland wallpapers from the repo
   programs.wpaperd = {
     enable = true;
     settings = {
       HDMI-A-1 = {
-        path = "${hyprland}/assets/";
-        sorting = "ascending";
-        duration = "30m";
+        path = "${config.theme.wallpaper.image}";
+        apply-shadow = true;
       };
     };
   };
