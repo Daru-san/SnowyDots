@@ -2,5 +2,6 @@
 {...}:{
   imports = [
     ./fonts/default.nix
+    ./wallpaper/default.nix
   ];
 }
