@@ -7,7 +7,7 @@ let
   hyprland = pkgs.fetchgit {
     url = "https://github.com/hyprwm/Hyprland";
     rev = "a6ccd36147109d5cb2981122595f06ae93999b55";
-    sha256 = "0xksvshxc48ymp5xzqav35p9kxlfdwbpb92ciq3vlcn3qfflhw3s";
+    sha256 = "+Z/JjrAfy0raiStSRzE3JfW20uDOs4GMt+4TrDz2S9A=";
   };
 in
 {
@@ -16,7 +16,7 @@ in
     swww
   ];
 
-  # themes.wallpaper.image = "${hyprland}/assets/wall2.png";
+  theme.wallpaper.image = "${hyprland}/assets/wall2.png";
 
   # Shuffle throught the hyprland wallpapers from the repo
   programs.wpaperd = {
