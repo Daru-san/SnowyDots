@@ -16,6 +16,7 @@ with lib;
       ranger = "${pkgs.ranger}/bin/ranger";
       image-editor = "${pkgs.krita}/bin/krita";
       swaylock = "${config.programs.swaylock.package}/bin/swaylock";
+      gtklock = "${pkgs.gtklock}/bin/gtklock";
       copyq = "${config.services.copyq.package}/bin/copyq";
       btop = "${config.programs.btop.package}/bin/btop";
       swayosd = "${config.services.swayosd.package}/bin/swayosd-client";
@@ -39,7 +40,7 @@ with lib;
 
 
       #Lock screen
-      "SUPER, l ,${e} , ${swaylock} -Ff"
+      "SUPER, l ,${e} , ${gtklock} -id"
 
       #Clipboard menu
       "SUPERSHIFT, v, ${e}, ${copyq} menu"

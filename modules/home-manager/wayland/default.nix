@@ -11,6 +11,7 @@
     ./wlogout/default.nix
     ./compositor/default.nix
     ./swaync/default.nix
+    ./gtklock/default.nix
   ];
   home.packages = with pkgs; [ wl-clipboard pavucontrol ];
 }

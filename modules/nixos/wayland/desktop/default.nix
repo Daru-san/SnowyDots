@@ -25,6 +25,9 @@
     security.pam.services.swaylock.text = ''
       auth include login
     '';
+    security.pam.services.gtklock.text = ''
+      auth include login
+    '';
     programs.dconf.enable = true;
     programs.hyprland = mkIf cfg.hyprland.enable {
       enable = true;
