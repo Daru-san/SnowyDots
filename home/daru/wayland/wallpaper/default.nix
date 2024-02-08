@@ -16,7 +16,7 @@ in
     swww
   ];
 
-  theme.wallpaper.image = "${hyprland}/assets/wall2.png";
+  theme.wallpaper.image = "${hyprland}/assets/wall0.png";
 
   # Shuffle throught the hyprland wallpapers from the repo
   programs.wpaperd = {
