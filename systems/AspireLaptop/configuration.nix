@@ -24,7 +24,7 @@
   mutableUsers = true;
   };
 
-  # Enable android tools 
+  # Enable android tools
   android = {
     adb.enable = true;
     mtp = {
@@ -44,18 +44,16 @@
       enable = true;
     };
   };
-  
+
   # Enable syncthing
-  services = {
-    syncthing = {
-      enable = true;
-      dataDir = "/home/daru";
-      user = "daru";
-      configDir = "/home/daru/.sync";
-      settings = {
-        gui = {
-          theme = "black";
-        };
+  services.syncthing = {
+    enable = true;
+    dataDir = "/home/daru";
+    user = "daru";
+    configDir = "/home/daru/.sync";
+    settings = {
+      gui = {
+        theme = "black";
       };
     };
   };
@@ -91,24 +89,15 @@
   ]);
 
   # wayland configuration
+  # other options include sway, greetd and kde
   wayland = {
     enable = true;
-    sway = {
-      enable = false;
-      swayfx.enable = true;
-    };
     hyprland.enable = true;
-    greetd = {
-      enable = false;
-      command = "Hyprland";
-      user = "daru";
-    };
     sddm.enable = true;
     gnome-extra.enable = true;
-    kde.enable = false;
   };
   os.security.polkit.enable = true;
-  #
+
   # System configurations
   os = {
     boot = {
@@ -116,15 +105,12 @@
       quiet = true;
       plymouth.enable = true;
     };
-    networking = {
-      enable = true;
-      wifi.enable = true;
-      bluetooth.enable = true;
-    };
     drivers = {
       intel.enable = true;
     };
   };
+
+  # System tweaks for performance and maintainance
   os.system = {
     laptop.optimizations = {
       tlp.enable = true;
@@ -134,6 +120,16 @@
       ssd.enable = true;
       throttled.enable = true;
     };
+  };
+
+  # Enable audio using pipewire
+  os.audio.enable = true;
+
+  # Enable wifi and bluetooth
+  os.networking = {
+    enable = true;
+    wifi.enable = true;
+    bluetooth.enable = true;
   };
 
   # Set your time zone.
