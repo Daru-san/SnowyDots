@@ -44,17 +44,24 @@ In configuration.nix
   wayland = {
     enable = true;
 
-    # Enabling sway and optionally, swayfx
+    # Enabling sway and optionaly, swayfx
     sway = {
       enable = false;
       swayfx.enable = false;
     };
-   
+
     # Enable hyprland
     hyprland.enable = true;
 
     # You can also enable kde if you want a full desktop environment
     kde.enable = false;
+
+	  # You can also use sddm or greetd as greeters
+	  sddm.enable = true;
+	  greetd = {
+	    enable = true;
+	    command - "Hyprland";
+	  };
   };
 }
 ```
@@ -64,14 +71,22 @@ In home.nix
 # Enable hyprland or sway, it will not work if you enable both at once, unlike in configuration.nix
 # They will work whether kde is enabled or not
 {
- # Here you can put hyprland or swa
+ # Here you can put hyprland or sway
   wayland.compositor = "hyprland";
 }
 ```
 
 # Other
+<!--
+## Custom options
+```nix
+os.system
+```
+-->
+
 ## Structure
 ```
+
 .
 ├── home
 │   └── daru
@@ -82,22 +97,15 @@ In home.nix
 ├── modules
 │   ├── home-manager
 │   │   ├── audio
-│   │   ├── btop
-│   │   ├── connect
+│   │   ├── editor
 │   │   ├── games
-│   │   ├── git
-│   │   ├── mpv
-│   │   ├── neovim
-│   │   ├── ranger
+│   │   ├── programs
 │   │   ├── shell
 │   │   ├── themes
-│   │   ├── tmux
-│   │   ├── translate-shell
 │   │   ├── wayland
 │   │   └── xdg
 │   └── nixos
 │       ├── android
-│       ├── audio
 │       ├── fonts
 │       ├── neovim
 │       ├── shell
@@ -179,27 +187,25 @@ nix-shell -p home-manager
 home-manager switch --flake .#daru@AspireLaptop
 ```
 
-Once you're done set your wallpaper using waypaper
-```bash
-waypaper
-# and use this to restore your set wallpaper, it will be run whenever hyprland starts
-waypaper --restore
-```
-
-## Helpful links
-* [Misterio77's nix-starter-configs](https://github.com/Misterio77/nix-starter-configs "nix-starter-configs")
-* [misterio's dotfiles](https://git.sr.ht/~misterio/nix-config "dots")
+## Resources that I've found as useful
 * [NixOS Manual](https://nixos.org/manual/nixos/unstable/ "nix")
 * [Erase your darlings](https://grahamc.com/blog/erase-your-darlings/ "persist")
 * [NixOS wiki](https://nixos.wiki "nix-wiki")
 * [MyNixOS](https://mynixos.com "Best nix resource")
 * [NixOS install guide](https://nixos.wiki/wiki/NixOS_Installation_Guide)
-## Thanks to
+## Thanks to, these are configurations and repos I've taken a lot of inspiration from
 * [justinlime's waybar configuration](https://github.com/justinlime/dotfiles)
 * [D3Ext's aesthetic wallpaper repo](https://github.com/D3Ext/aesthetic-wallpapers "walls")
+* [fufexan/dotfiles](https://github.com/fufexan/dotfiles/ "fufexan dots")
+* [misterio's dotfiles](https://git.sr.ht/~misterio/nix-config "dots")
+* [Misterio77's nix-starter-configs](https://github.com/Misterio77/nix-starter-configs "nix-starter-configs")
 
 <!---
 TODO:
 * Update Minecraft config
 * Learn javascript and configure ags, replace waybar
+* Docs, redo docs
+* Finish documenting the options
+* Update theme modules
+
 --->
