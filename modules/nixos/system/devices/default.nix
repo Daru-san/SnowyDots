@@ -6,7 +6,7 @@
   ...
 }:let
   cfg = config.os.system;
-in 
+in
 with lib;
 {
   imports = [inputs.auto-cpufreq.nixosModules.default];
@@ -35,7 +35,7 @@ with lib;
     services.fstrim = mkIf cfg.general.ssd.enable {
       enable = true;
 	  };
-    
+
     programs.auto-cpufreq = mkIf cfg.laptop.optimizations.powerTweaks.enable {
       enable = true;
       settings = {

@@ -17,9 +17,27 @@ with lib;
   config = mkIf cfg.enable {
 
     networking = mkIf cfg.wifi.enable {
+
+      nameservers = ["1.1.1.1" "1.0.0.1"];
+      dhcpcd.extraConfig = "nohook resolv.conf";
+
       networkmanager = {
         enable = true;
-        #dns = "none";
+        wifi.backend = "iwd";
+        dns = "none";
+      };
+
+      iwd = {
+        enable = true;
+        settings = {
+          Network = {
+            EnableIPv6 = true;
+            RoutePriorityOffset = 300;
+          };
+          Settings = {
+            AutoConnect = true;
+          };
+        };
       };
 
       firewall = {
@@ -33,6 +51,7 @@ with lib;
         ];
       };
     };
+
     services.blueman.enable =  mkIf cfg.bluetooth.enable true;
     hardware.bluetooth = mkIf cfg.bluetooth.enable {
       enable = true;

@@ -5,8 +5,8 @@
   ...
 }:
 let
-cfg = config.android;  
-in 
+cfg = config.android;
+in
 with lib;
 {
   options = {
