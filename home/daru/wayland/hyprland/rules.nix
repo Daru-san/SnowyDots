@@ -35,6 +35,7 @@
         "workspace name:7,^(krita)$"
         "workspace name:8,^(pqiv)$"
         "workspace name:8,^(waypaper)$"
+        "workspace name:0,^(io.github.kaii_lb.Overskride)"
         #Productivity workspaces
         "workspace name:F1,^(firefox-nightly)$"
         "workspace name:F2,^(osidian)$"

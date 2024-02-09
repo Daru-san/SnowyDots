@@ -16,10 +16,10 @@
     enable = true;
 
     style = (builtins.readFile ./style.css);
-  
-  #This option seems to break notifications so I'll keep it disabled for now
+
     systemd = {
-      enable = false;
+      enable = true;
+      target = "hyprland-session.target";
     };
 
     settings = [
@@ -209,7 +209,7 @@
           format-connected = "󰂱";
           tooltip-format = "{status}: {num_connections} devices connected";
           tooltip = true;
-          on-click = "blueman-manager";
+          on-click = "overskride";
         };
         "custom/playerctl"= {
           format-alt = "󰎈 Music playing 󰎈";

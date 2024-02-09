@@ -24,7 +24,7 @@ in
     settings = {
       HDMI-A-1 = {
         path = "${config.theme.wallpaper.image}";
-        apply-shadow = true;
+        apply-shadow = false;
       };
     };
   };

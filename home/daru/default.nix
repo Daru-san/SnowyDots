@@ -10,17 +10,11 @@
     ./programs/default.nix
   ] ++ (with outputs.homeManagerModules; [
     audio
-    connect
-    mpv
-    ranger
+    editor
+    programs
     xdg
     wayland
     shell
-    btop
-    git
-    neovim
-    tmux
-    translate
     themes
   ]) ++ (with inputs; [
     nur.nixosModules.nur

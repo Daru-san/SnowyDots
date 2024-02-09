@@ -23,6 +23,7 @@
     archiver
     floorp
     audacity
+    overskride
   ]
 
   # GNOME specific packages
@@ -43,9 +44,8 @@
   [
       tree
       bc
-      tty-clock 
+      tty-clock
       libnotify
-      ddgr
       speedtest-cli
       chroma
       glow
@@ -53,7 +53,6 @@
       nvtop-intel
       sysz
       nap
-      jrnl 
       nitch
       pulsemixer
       ani-cli
