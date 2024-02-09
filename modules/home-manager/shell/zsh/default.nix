@@ -34,7 +34,7 @@
       oh-my-zsh = {
         enable = true;
 
-        theme = "minimal";
+        # theme = "minimal";
 
         #Plugins
         plugins = [ 

@@ -1,6 +1,6 @@
 {...}:{
   programs.oh-my-posh = {
-    enable = false;
+    enable = true;
     enableBashIntegration = true;
     enableZshIntegration = true;
   };
