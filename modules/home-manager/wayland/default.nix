@@ -14,4 +14,5 @@
     ./gtklock/default.nix
   ];
   home.packages = with pkgs; [ wl-clipboard pavucontrol ];
+  environment.variables.NIXOS_OZONE_WL = "1";
 }
