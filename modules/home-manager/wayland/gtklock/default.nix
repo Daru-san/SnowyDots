@@ -15,6 +15,6 @@
         background = "${config.theme.wallpaper.image}";
       };
     };
-    "gtklock/style.css".text = (builtins.readFile ./style.css);
+    "gtklock/style.css".text = (with builtins; readFile ./style.css);
   };
 }
