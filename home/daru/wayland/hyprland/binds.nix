@@ -8,17 +8,19 @@ with lib;
     h = "${pkgs.hdrop}/bin/hdrop";
     e = "exec";
   in mkIf config.wayland.windowManager.hyprland.enable {
-    bind = let
-      terminal = "${config.programs.kitty.package}/bin/kitty";
-      browser = "${config.programs.firefox.package}/bin/firefox-nightly";
-      file-manager = "${pkgs.gnome.nautilus}/bin/nautilus";
-      editor = "${config.programs.neovim.package}/bin/nvim";
-      ranger = "${pkgs.ranger}/bin/ranger";
-      image-editor = "${pkgs.krita}/bin/krita";
-      swaylock = "${config.programs.swaylock.package}/bin/swaylock";
-      gtklock = "${pkgs.gtklock}/bin/gtklock";
-      copyq = "${config.services.copyq.package}/bin/copyq";
-      btop = "${config.programs.btop.package}/bin/btop";
+    bind =
+    with lib;
+    let
+      terminal = "${getExe config.programs.kitty.package}";
+      browser = "${getExe config.programs.firefox.package}";
+      file-manager = "${getExe pkgs.gnome.nautilus}";
+      editor = "${getExe config.programs.neovim.package}";
+      ranger = "${getExe pkgs.ranger}";
+      image-editor = "${getExe pkgs.krita}";
+      swaylock = "${getExe config.programs.swaylock.package}";
+      gtklock = "${getExe pkgs.gtklock}";
+      copyq = "${getExe config.services.copyq.package}";
+      btop = "${getExe config.programs.btop.package}";
       swayosd = "${config.services.swayosd.package}/bin/swayosd-client";
     in [
       # Launching programs
