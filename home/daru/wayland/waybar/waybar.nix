@@ -12,15 +12,10 @@
         })
       ];
      });
-    
+
     enable = true;
 
     style = (builtins.readFile ./style.css);
-
-    systemd = {
-      enable = true;
-      target = "hyprland-session.target";
-    };
 
     settings = [
       {

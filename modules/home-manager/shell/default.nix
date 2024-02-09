@@ -7,7 +7,7 @@
     # ./tmux/default.nix
   ];
   # Global shell theme
-  programs.oh-my-posh.useTheme = "material"; #avit bubblesline nordtron pararussel robbyrussell space spaceship tokyonight_storm zash
+  programs.oh-my-posh.useTheme = "zash";
 
   # Global shell aliases
   home.shellAliases = let

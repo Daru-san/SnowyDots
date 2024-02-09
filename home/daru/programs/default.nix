@@ -4,7 +4,6 @@
     ./desktop-entries.nix
     ./music/default.nix
     ./firefox/default.nix
-    ./bat.nix
   ];
 
   # GUI
