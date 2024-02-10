@@ -1,12 +1,17 @@
-❄️Snowy Dots❄️ 
+*Snowy Dots*
 ===============
-My beautiful, functional, focused NixOS Hyprland and Sway configurations, written completely in Nix, with desktop switching
+My beautiful, functional, focused nix flake with Hyprland and Sway, written completely in Nix, with desktop switching, variables and advanced system configuration
 
 _Now hosted on [codeberg](https://codeberg.org)_
 
 <p align="center">
  <img src="https://github.com/Daru-san/Snowflake-dots/assets/135046711/ca25eab0-08da-4bbd-b336-21c43fdc4bab">
 </p>
+
+<!--
+TODO:
+* Update screenshot host
+-->
 
 ## Environment
 * Compositor: [Hyprland](https://github.com/hyprwm/Hyprland "hyprland")/[Swayfx](https://github.com/willpower3309/swayfx)
@@ -37,7 +42,7 @@ In configuration.nix
   wayland = {
     enable = true;
 
-    # Enabling sway and optionaly, swayfx
+    # Enabling sway and optionally, swayfx
     sway = {
       enable = false;
       swayfx.enable = false;
@@ -73,7 +78,9 @@ In home.nix
 <!--
 ## Custom options
 ```nix
-os.system
+os.system = {
+  
+}
 ```
 -->
 
@@ -112,13 +119,13 @@ os.system
 ```
 
 ## Install
-I use my own custom nixos iso to install NixOS on my systems, [Snow-Installer](https://www.github.com/Daru-san/Snow-Installer). It has plenty of useful tools and has sway as a desktop for graphical installs. 
+I use my own custom nixos iso to install NixOS on my systems, the flake is at [SnowyISO](https://codeberg.org/Daru-san/SnowyISO). It has plenty of useful tools and has sway as a desktop for graphical installs. 
 
 Installation
 ```bash
 # Boot into the installer
-# Connect to wifi, instructions on the wiki, link in the helpful links section. 
-# My installer has network manager so I use that instead of wpa utility
+# Connect to wifi, instructions on the wiki, link in the helpful links section.
+# My installer has network manager installed so I use that instead of wpa utility
 
 # Enter root shell
 sudo -i
