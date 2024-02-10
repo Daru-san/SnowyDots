@@ -83,7 +83,7 @@
     usbutils
     gparted
     home-manager
-  ] ++ (with inputs.useful-scripts.packages.${pkgs.system}; [
+  ] ++ (with inputs.scripts.packages.${pkgs.system}; [
     nix-rebuild
     hm-build
   ]);

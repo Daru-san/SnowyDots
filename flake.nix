@@ -46,8 +46,8 @@
     ags.url = "github:Aylur/ags";
 
     # Custom scripts of mine that I use normally
-    useful-scripts = {
-      url = "github:Daru-san/useful-scripts";
+    scripts = {
+      url = "sourcehut:~darumaka/Nix-Scripts";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

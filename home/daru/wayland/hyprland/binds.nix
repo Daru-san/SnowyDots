@@ -111,7 +111,7 @@ with lib;
     bindr = let
       any = "${getExe' config.programs.anyrun.package "anyrun"}";
       easy = "${getExe config.services.easyeffects.package}";
-      cl = "${getExe' inputs.useful-scripts.packages.${pkgs.system}.color-picker "color-picker"}";
+      cl = "${getExe' inputs.scripts.packages.${pkgs.system}.color-picker "color-picker"}";
       wl = "${getExe config.programs.wlogout.package}";
       pk = "pkill";
 
