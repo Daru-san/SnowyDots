@@ -5,7 +5,7 @@ with lib;
     ./extra-binds.nix
   ];
   wayland.windowManager.hyprland.settings = let
-    h = "${pkgs.hdrop}/bin/hdrop";
+    h = "${getExe pkgs.hdrop}";
     e = "exec";
   in mkIf config.wayland.windowManager.hyprland.enable {
     bind =
@@ -16,12 +16,12 @@ with lib;
       file-manager = "${getExe pkgs.gnome.nautilus}";
       editor = "${getExe config.programs.neovim.package}";
       ranger = "${getExe pkgs.ranger}";
-      image-editor = "${getExe pkgs.krita}";
+      image-editor = "${getExe' pkgs.krita "krita"}";
       swaylock = "${getExe config.programs.swaylock.package}";
       gtklock = "${getExe pkgs.gtklock}";
       copyq = "${getExe config.services.copyq.package}";
       btop = "${getExe config.programs.btop.package}";
-      swayosd = "${config.services.swayosd.package}/bin/swayosd-client";
+      swayosd = "${getExe' config.services.swayosd.package "swayosd-client"}";
     in [
       # Launching programs
       "SUPER, e, ${e}, ${h} '${file-manager}'"
@@ -54,8 +54,10 @@ with lib;
       ",caps_lock,${e},${swayosd} --caps-lock"
     ];
 
-    bindle = let
-      s = "${config.services.swayosd.package}/bin/swayosd-client";
+    bindle = 
+    with lib;
+    let
+      s = "${getExe' config.services.swayosd.package "swayosd-client"}";
       volup = "--output-volume raise";
       voldown = "--output-volume lower";
       volmute = "--output-volume mute-toggle";
@@ -86,7 +88,7 @@ with lib;
     ];
 
     bindl = let 
-      p = "${config.services.playerctld.package}/bin/playerctl";
+      p = "${getExe config.services.playerctld.package}";
       nx = "next";
       pv = "previous";
       pl = "play-pause";
@@ -107,19 +109,19 @@ with lib;
     ];
 
     bindr = let
-      any = "${config.programs.anyrun.package}/bin/anyrun";
-      easy = "${config.services.easyeffects.package}/bin/easyeffects";
-      cl = "${inputs.useful-scripts.packages.${pkgs.system}.color-picker}/bin/color-picker";
-      wl = "${config.programs.wlogout.package}/bin/wlogout";
+      any = "${getExe' config.programs.anyrun.package "anyrun"}";
+      easy = "${getExe config.services.easyeffects.package}";
+      cl = "${getExe' inputs.useful-scripts.packages.${pkgs.system}.color-picker "color-picker"}";
+      wl = "${getExe config.programs.wlogout.package}";
       pk = "pkill";
 
       # Screenshots 
-      hs = "${pkgs.hyprshot}/bin/hyprshot";
+      hs = "${getExe pkgs.hyprshot}";
       scr-dir = "${config.home.homeDirectory}/Pictures/Screenshots";
       r = "region";
       o = "output";
 
-      sc = "${pkgs.swaynotificationcenter}/bin/swaync-client";
+      sc = "${getExe' pkgs.swaynotificationcenter "swaync-client"}";
     in [
       # Launch the launcher - anyrun
       "super, space, ${e}, ${pk} ${any} || ${any}"
