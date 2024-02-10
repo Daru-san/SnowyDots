@@ -7,12 +7,11 @@
     ./kanshi/default.nix
     ./swayosd/default.nix
     ./swayidle/default.nix
-    ./swaylock/default.nix
     ./wlogout/default.nix
     ./compositor/default.nix
     ./swaync/default.nix
     ./gtklock/default.nix
   ];
   home.packages = with pkgs; [ wl-clipboard pavucontrol ];
-  environment.variables.NIXOS_OZONE_WL = "1";
+  home.sessionVariables.NIXOS_OZONE_WL = "1";
 }
