@@ -57,10 +57,10 @@ In configuration.nix
     kde.enable = false;
 
 	  # You can also use sddm or greetd as greeters
-	  sddm.enable = true;
-	  greetd = {
+    sddm.enable = true;
+    greetd = {
 	    enable = true;
-	    command - "Hyprland";
+	    command = "Hyprland";
 	  };
   };
 }
