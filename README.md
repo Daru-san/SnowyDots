@@ -1,4 +1,4 @@
-❄️Snowflake-dots❄️ 
+❄️Snowy Dots❄️ 
 ===============
 My beautiful, functional, focused NixOS Hyprland and Sway configurations, written completely in Nix, with desktop switching
 <p align="center">
