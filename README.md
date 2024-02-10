@@ -1,7 +1,8 @@
 *Snowy Dots*
 ===============
-My beautiful, functional, focused nix flake with Hyprland and Sway, written completely in Nix, with desktop switching, variables and advanced system configuration.
-*This repo is a mirror of [SnowyDots](https://git.sr.ht/~darumaka/SnowyDots)* on [sourcehut](https://sr.ht "sourcehut"), all of my other 'config' repos are hosted solely on [sr.ht](https://sr.ht) from now on
+My beautiful, functional, focused nix flake with Hyprland and Sway, written completely in nix.
+
+_**This repo is a mirror of [SnowyDots](https://git.sr.ht/~darumaka/SnowyDots) on [sourcehut](https://sr.ht "sourcehut"), all of my other 'config' repos are hosted solely on [sr.ht](https://sr.ht) from now on**_
 
 <p align="center">
  <img src="https://github.com/Daru-san/Snowflake-dots/assets/135046711/ca25eab0-08da-4bbd-b336-21c43fdc4bab">
