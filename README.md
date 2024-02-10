@@ -34,7 +34,7 @@ TODO:
 ![prev5](https://github.com/Daru-san/Snowflake-dots/assets/135046711/4f4313cd-9e49-4762-9dd2-575931044cc7)
 
 
-## How to switch desktops
+## How to switch desktops 
 In configuration.nix
 ```nix
 # Enable hyprland or sway in configuration.nix, enable one at a time, not both, since that messes some things
