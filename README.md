@@ -1,12 +1,19 @@
 *Snowy Dots*
 ===============
-My beautiful, functional, focused nix flake with Hyprland and Sway, written completely in Nix, with desktop switching, variables and advanced system configuration
-
-_Now hosted on [sourcehut](git.sr.ht/~darumaka/SnowyDots)_
+My beautiful, functional, focused nix flake with Hyprland and Sway, written completely in Nix, with desktop switching, variables and advanced system configuration.
+*This repo is a mirror of [SnowyDots](https://git.sr.ht/~darumaka/SnowyDots)* on [sourcehut](https://sr.ht "sourcehut"), all of my other 'config' repos are hosted solely on [sr.ht](https://sr.ht) from now on
 
 <p align="center">
  <img src="https://github.com/Daru-san/Snowflake-dots/assets/135046711/ca25eab0-08da-4bbd-b336-21c43fdc4bab">
 </p>
+<p align="center">
+  <img src="https://img.shields.io/static/v1?label=Nix Flake&message=Check&style=flat&logo=nixos&colorA=24273A&colorB=7EBAE4&logoColor=CAD3F5">
+  <img src="https://img.shields.io/static/v1?label=Nixpkgs&message=Unstable&style=flat&logo=nixos&colorA=24273A&colorB=9173ff&logoColor=CAD3F5">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/static/v1?label=Desktop&message=Hyprland&style=flat&logo=hyprland&colorA=24273A&colorB=5ACBCC&logoColor=CAD3F5">
+  <img src="https://img.shields.io/static/v1?label=Desktop&message=Sway&style=flat&logo=Sway&colorA=24273A&colorB=5ACBCC&logoColor=CAD3F5">
 
 <!--
 TODO:
@@ -34,7 +41,7 @@ TODO:
 ![prev5](https://github.com/Daru-san/Snowflake-dots/assets/135046711/4f4313cd-9e49-4762-9dd2-575931044cc7)
 
 
-## How to switch desktops 
+## How to switch desktops
 In configuration.nix
 ```nix
 # Enable hyprland or sway in configuration.nix, enable one at a time, not both, since that messes some things
