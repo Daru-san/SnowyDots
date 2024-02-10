@@ -1,21 +1,14 @@
 ❄️Snowy Dots❄️ 
 ===============
 My beautiful, functional, focused NixOS Hyprland and Sway configurations, written completely in Nix, with desktop switching
+
+_Now hosted on [codeberg](https://codeberg.org)_
+
 <p align="center">
  <img src="https://github.com/Daru-san/Snowflake-dots/assets/135046711/ca25eab0-08da-4bbd-b336-21c43fdc4bab">
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/static/v1?label=Nix Flake&message=Check&style=flat&logo=nixos&colorA=24273A&colorB=7EBAE4&logoColor=CAD3F5">
-  <img src="https://img.shields.io/static/v1?label=Nixpkgs&message=Unstable&style=flat&logo=nixos&colorA=24273A&colorB=9173ff&logoColor=CAD3F5">
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/static/v1?label=Desktop&message=Hyprland&style=flat&logo=hyprland&colorA=24273A&colorB=5ACBCC&logoColor=CAD3F5">
-  <img src="https://img.shields.io/static/v1?label=Desktop&message=Sway&style=flat&logo=Sway&colorA=24273A&colorB=5ACBCC&logoColor=CAD3F5">
-</p>
-
- ## Environment
+## Environment
 * Compositor: [Hyprland](https://github.com/hyprwm/Hyprland "hyprland")/[Swayfx](https://github.com/willpower3309/swayfx)
 * Launcher: [anyrun](https://github.com/Kirottu/anyrun "anyrun")
 * bar: [waybar](https://github.com/Alexays/Waybar "waybar")
