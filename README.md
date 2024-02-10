@@ -2,7 +2,7 @@
 ===============
 My beautiful, functional, focused nix flake with Hyprland and Sway, written completely in Nix, with desktop switching, variables and advanced system configuration
 
-_Now hosted on [codeberg](https://codeberg.org)_
+_Now hosted on [sourcehut](git.sr.ht/~darumaka/SnowyDots)_
 
 <p align="center">
  <img src="https://github.com/Daru-san/Snowflake-dots/assets/135046711/ca25eab0-08da-4bbd-b336-21c43fdc4bab">
@@ -57,9 +57,9 @@ In configuration.nix
 	  # You can also use sddm or greetd as greeters
     sddm.enable = true;
     greetd = {
-	    enable = true;
-	    command = "Hyprland";
-	  };
+      enable = true;
+      command = "Hyprland";
+    };
   };
 }
 ```
