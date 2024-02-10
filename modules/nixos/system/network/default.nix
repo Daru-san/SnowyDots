@@ -25,6 +25,10 @@ with lib;
         enable = true;
         wifi.backend = "iwd";
         dns = "none";
+        extraConfig = ''
+          [device]
+          wifi.iwd.autoconnect=false
+        '';
       };
 
       firewall = {
