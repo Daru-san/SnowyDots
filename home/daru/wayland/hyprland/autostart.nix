@@ -16,10 +16,7 @@ with lib;
     exec = [
       "systemctl --user restart kanshi.service"
 
-      # "swww img ${config.theme.wallpaper.image}"
-
-      # Temporary fix for swayosd while https://github.com/nix-community/home-manager/pull/4881 has not been merged yet
-      "${config.services.swayosd.package}/bin/swayosd-server"
+      "swww init"
     ];
   };
   services.kanshi.systemdTarget = mkIf config.wayland.windowManager.hyprland.enable "hyprland-session.target";
