@@ -22,6 +22,7 @@ with lib;
       copyq = "${getExe config.services.copyq.package}";
       btop = "${getExe config.programs.btop.package}";
       swayosd = "${getExe' config.services.swayosd.package "swayosd-client"}";
+      swww = "${getExe pkgs.swww}";
     in [
       # Launching programs
       "SUPER, e, ${e}, ${h} '${file-manager}'"
@@ -52,6 +53,9 @@ with lib;
       
       # Show when caps lock is pressed
       ",caps_lock,${e},${swayosd} --caps-lock"
+
+      # Switch the wallpaper from a list of wallpapers in a repo
+      # "CTRLSHIFT,F12,${e},swww-switch"
     ];
 
     bindle = 

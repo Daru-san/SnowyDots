@@ -10,8 +10,12 @@ with lib;
 {
   options.theme.wallpaper = {
     image = mkOption {
-      type = with types; path;
-      default = "./base-wall.png";
+      type = with types; nullOr path;
+      default = null;
+    };
+    path = mkOption {
+      type = with types; nullOr path;
+      default = null;
     };
   };
 }
