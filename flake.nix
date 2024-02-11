@@ -1,6 +1,13 @@
 {
   description = "❄ My chilly NixOS flake for snowy nights and chilly afternoons ❆";
-
+  nixConfig = {
+    extra-substituters = [
+      "https://anyrun.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
+    ];
+  };
   inputs = {
 
     # Unstable packages from 24.05
@@ -41,6 +48,11 @@
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    anyrun-plugins = {
+      url = "github:wuliuqii/anyrun-plugins";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    anyrun-nixos-options.url = "github:n3oney/anyrun-nixos-options";
 
     # ags, a gtk shell for hyprland
     ags.url = "github:Aylur/ags";
