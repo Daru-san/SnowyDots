@@ -18,7 +18,8 @@
     themes
   ]) ++ (with inputs; [
     nur.nixosModules.nur
-    spicetify-nix.homeManagerModules.default 
+    spicetify-nix.homeManagerModules.default
+    hyprland.homeManagerModules.default
   ]);
 
   nixpkgs = {

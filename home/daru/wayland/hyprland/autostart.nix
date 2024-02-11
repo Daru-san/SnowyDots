@@ -10,13 +10,11 @@ with lib;
       "${config.programs.waybar.package}/bin/waybar"
       "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
       "hyprpm reload -n"
-      # "swww init"
-      "${config.programs.wpaperd.package}/bin/wpaperd"
+      "swww init"
     ];
     exec = [
       "systemctl --user restart kanshi.service"
 
-      "swww init"
       "swww img ${config.theme.wallpaper.image}"
     ];
   };
