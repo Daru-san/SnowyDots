@@ -12,6 +12,5 @@
     ./swaync/default.nix
     ./gtklock/default.nix
   ];
-  home.packages = with pkgs; [ wl-clipboard pavucontrol ];
   home.sessionVariables.NIXOS_OZONE_WL = "1";
 }

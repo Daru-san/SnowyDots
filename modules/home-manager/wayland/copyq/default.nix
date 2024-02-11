@@ -1,5 +1,5 @@
 {...}:{
   services.copyq = {
-    enable = true;
+    enable = false;
   };
 }
