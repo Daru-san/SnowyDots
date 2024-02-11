@@ -17,6 +17,7 @@ with lib;
       "systemctl --user restart kanshi.service"
 
       "swww init"
+      "swww img ${config.theme.wallpaper.image}"
     ];
   };
   services.kanshi.systemdTarget = mkIf config.wayland.windowManager.hyprland.enable "hyprland-session.target";
