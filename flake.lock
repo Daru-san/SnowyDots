@@ -910,11 +910,11 @@
         "snowfall-lib": "snowfall-lib"
       },
       "locked": {
-        "lastModified": 1707665873,
-        "narHash": "sha256-cm8FaPjgeCtg0i/3aw3JMVnDC+bynWyOjzpreGb5m8w=",
+        "lastModified": 1707666177,
+        "narHash": "sha256-lSk3h0TuAZUu5tEKZ4xM+3e5+mHun9BlJsxi42/pc3Y=",
         "owner": "~darumaka",
         "repo": "Nix-Scripts",
-        "rev": "645115a64d1ae4f16c3a403e21ada9112fe65fc3",
+        "rev": "0cd74dc83ffe8f566db6f8fe77a1f423ba2c11ce",
         "type": "sourcehut"
       },
       "original": {
