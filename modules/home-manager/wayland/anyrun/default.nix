@@ -14,7 +14,9 @@
       ++
       (with inputs.anyrun-nixos-options.packages.${pkgs.system};[ default ])
       ++
-      (with inputs.anyrun-plugins.packages.${pkgs.system}; [ cliphist applications hyprwin ]);
+      (with inputs.anyrun-plugins.packages.${pkgs.system}; [ applications hyprwin ])
+      ++
+      (with inputs.anyrun-cliphist.packages.${pkgs.system}; [ default ]);
 
       width.fraction = 0.3;
       y.absolute = 50;
@@ -26,12 +28,12 @@
 
     extraConfigFiles = {
       "nixos-options.ron".text = let
-        nixos-options = osConfig.system.build.manual.optionsJSON + "/share/doc/nixos/options.json";
+        # nixos-options = osConfig.system.build.manual.optionsJSON + "/share/doc/nixos/options.json";
         hm-options = inputs.home-manager.packages.${pkgs.system}.docs-json + "/share/doc/home-manager/options.json";
 
         # merge your options
         options = builtins.toJSON {
-          ":nix" = [nixos-options];
+          # ":nix" = [nixos-options];
           ":hm" = [hm-options];
         };
 

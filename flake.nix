@@ -53,6 +53,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     anyrun-nixos-options.url = "github:n3oney/anyrun-nixos-options";
+    anyrun-cliphist = {
+      url = "github:benoitlouy/anyrun-cliphist";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # ags, a gtk shell for hyprland
     ags.url = "github:Aylur/ags";
