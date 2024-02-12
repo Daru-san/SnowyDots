@@ -2,7 +2,7 @@
   programs.neovim = {
     package = pkgs.neovim-nightly;
     enable = true;
-    defaultEditor = false;
+    defaultEditor = true;
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
