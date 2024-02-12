@@ -10,13 +10,13 @@ with lib;
 
     Service = {
       Type = "simple";
-      ExecStart = "${pkgs.wl-paste} --watch ${pkgs.cliphist} store";
+      ExecStart = "${pkgs.wl-clipboard} --watch ${pkgs.cliphist} store";
       Restart = "on-failure";
     };
 
-    Install.WantedBy = [
-      (mkIf (config.wayland.compositor == "hyprland") "hyprland-session.target" )
-      (mkIf (config.wayland.compositor == "sway") "sway-session.target")
-    ];
+    # Install.WantedBy = [
+    #   (mkIf (config.wayland.compositor == "hyprland") "hyprland-session.target" )
+    #   (mkIf (config.wayland.compositor == "sway") "sway-session.target")
+    # ];
   };
 }

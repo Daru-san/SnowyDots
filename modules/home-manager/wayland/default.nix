@@ -11,6 +11,7 @@
     ./compositor/default.nix
     ./swaync/default.nix
     ./gtklock/default.nix
+    ./cliphist/default.nix
   ];
   home.sessionVariables.NIXOS_OZONE_WL = "1";
 }

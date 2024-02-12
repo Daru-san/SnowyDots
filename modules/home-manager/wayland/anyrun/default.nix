@@ -10,13 +10,11 @@
 
     config = {
       plugins =
-      (with inputs.anyrun.packages.${pkgs.system}; [ rink shell ])
+      (with inputs.anyrun.packages.${pkgs.system}; [ rink shell applications ])
       ++
       (with inputs.anyrun-nixos-options.packages.${pkgs.system};[ default ])
       ++
-      (with inputs.anyrun-plugins.packages.${pkgs.system}; [ applications hyprwin ])
-      ++
-      (with inputs.anyrun-cliphist.packages.${pkgs.system}; [ default ]);
+      (with inputs.anyrun-plugins.packages.${pkgs.system}; [ hyprwin cliphist ]);
 
       width.fraction = 0.3;
       y.absolute = 50;
@@ -55,13 +53,6 @@
           shell: None,
         )
       '';
-      "cliphist.ron".text = ''
-        Config(
-          cliphist_path: "cliphist",
-          max_entries: 14,
-          prefix: ":v",
-        )
-      '';
       "hyprwin.ron".text = ''
         Config(
           max_entries: 5,
@@ -70,9 +61,8 @@
       '';
       "applications.ron".text = ''
         Config(
-          desktop_actions: true,
+          desktop_actions: false,
           max_entries: 5,
-          terminal: Some("kitty"),
         )
       '';
     };
