@@ -1,5 +1,7 @@
 {...}:{
   imports = [
-    ./neovim/default.nix
+  ./kakoune.nix
+  ./neovim.nix
+  ./helix.nix
   ];
 }
