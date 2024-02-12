@@ -67,7 +67,12 @@
       "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
     ];
-};
+  };
+  nix.gc = {
+    automatic = true;
+    options = "--delete-older-than 7d";
+  };
+  
   # Allow auto-upgrades to happen every day
   system.autoUpgrade = {
     enable = true;
