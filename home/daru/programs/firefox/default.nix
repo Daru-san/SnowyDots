@@ -20,32 +20,34 @@ in {
         name = "daruFox";
 
         #Extensions(from NUR)
-        extensions = with config.nur.repos.rycee.firefox-addons; [
-          boring-rss
-          disable-javascript
-          don-t-fuck-with-paste
-          enhanced-github
-          violentmonkey
-          foxytab
-          github-file-icons
-          gitako-github-file-tree
-          hover-zoom-plus
-          image-search-options
-          keepassxc-browser
-          multi-account-containers
-          no-pdf-download
-          re-enable-right-click
-          simplelogin
-          skip-redirect
-          temporary-containers
-          ublock-origin
-          widegithub
-          auto-tab-discard
-          dark-mode-webextension
-          lovely-forks
-          tabliss
-          vimium-c
-        ];
+        extensions = with config.nur.repos.rycee.firefox-addons;
+          [
+            boring-rss
+            disable-javascript
+            don-t-fuck-with-paste
+            enhanced-github
+            violentmonkey
+            foxytab
+            github-file-icons
+            gitako-github-file-tree
+            hover-zoom-plus
+            image-search-options
+            keepassxc-browser
+            multi-account-containers
+            no-pdf-download
+            re-enable-right-click
+            simplelogin
+            skip-redirect
+            temporary-containers
+            ublock-origin
+            widegithub
+            auto-tab-discard
+            dark-mode-webextension
+            lovely-forks
+            tabliss
+            vimium-c
+          ]
+          ++ (with config.nur.repos.bandithedoge.firefoxAddons; [sidebery]);
 
         # Make this profile the default
         isDefault = true;
