@@ -1,8 +1,12 @@
-{ pkgs, config, inputs, ... }:
-let user = "${config.home.username}";
+{
+  pkgs,
+  config,
+  inputs,
+  ...
+}: let
+  user = "${config.home.username}";
 in {
-
-  imports = [ ./theme.nix ];
+  imports = [./theme.nix];
 
   programs.firefox = {
     enable = true;
@@ -16,7 +20,7 @@ in {
         name = "daruFox";
 
         #Extensions(from NUR)
-        extensions = (with config.nur.repos.rycee.firefox-addons; [
+        extensions = with config.nur.repos.rycee.firefox-addons; [
           boring-rss
           disable-javascript
           don-t-fuck-with-paste
@@ -41,7 +45,7 @@ in {
           lovely-forks
           tabliss
           vimium-c
-        ]);
+        ];
 
         # Make this profile the default
         isDefault = true;
@@ -133,28 +137,28 @@ in {
 
           # Add custom search engines and modify existing ones
           engines = {
-
             #Brave search
             "Brave Search" = {
-              urls = [{
-                template = "https://search.brave.com/search?q={searchTerms}";
-              }];
-              iconUpdateURL =
-                "https://brave.com/static-assets/images/brave-logo-sans-text.svg";
+              urls = [
+                {
+                  template = "https://search.brave.com/search?q={searchTerms}";
+                }
+              ];
+              iconUpdateURL = "https://brave.com/static-assets/images/brave-logo-sans-text.svg";
               updateInterval = 24 * 60 * 60 * 1000;
-              definedAliases = [ "@br" "@b" "@brave" ];
+              definedAliases = ["@br" "@b" "@brave"];
             };
 
             #StartPage
             "StartPage" = {
-              urls = [{
-                template =
-                  "https://www.startpage.com/sp/search?query={searchTerms}";
-              }];
-              iconUpdateURL =
-                "https://www.startpage.com/sp/cdn/favicons/favicon-gradient.ico";
+              urls = [
+                {
+                  template = "https://www.startpage.com/sp/search?query={searchTerms}";
+                }
+              ];
+              iconUpdateURL = "https://www.startpage.com/sp/cdn/favicons/favicon-gradient.ico";
               updateInterval = 24 * 60 * 60 * 1000;
-              definedAliases = [ "@sp" "@s" "@start" ];
+              definedAliases = ["@sp" "@s" "@start"];
             };
 
             #Give google an alias
@@ -173,101 +177,102 @@ in {
             };
 
             #Disable Bing
-            "Bing" = { metaData = { hidden = true; }; };
+            "Bing" = {metaData = {hidden = true;};};
 
             #Disable Amazon
-            "Amazon.com" = { metaData = { hidden = true; }; };
+            "Amazon.com" = {metaData = {hidden = true;};};
 
             # Disable wikipedia
-            "Wikipedia (en)" = { metaData = { hidden = true; }; };
+            "Wikipedia (en)" = {metaData = {hidden = true;};};
 
-            # Reddit 
+            # Reddit
             "Reddit" = {
-              urls = [{
-                template = "https://www.reddit.com/search/?q={searchTerms}";
-              }];
-              iconUpdateURL =
-                "https://www.redditstatic.com/shreddit/assets/favicon/favicon.ico";
+              urls = [
+                {
+                  template = "https://www.reddit.com/search/?q={searchTerms}";
+                }
+              ];
+              iconUpdateURL = "https://www.redditstatic.com/shreddit/assets/favicon/favicon.ico";
               updateInterval = 24 * 60 * 60 * 1000;
-              definedAliases = [ "@r" "@reddit" ];
+              definedAliases = ["@r" "@reddit"];
             };
 
             # Github
             "Github" = {
-              urls =
-                [{ template = "https://github.com/search?q={searchTerms}"; }];
-              iconUpdateURL =
-                "https://github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg";
+              urls = [{template = "https://github.com/search?q={searchTerms}";}];
+              iconUpdateURL = "https://github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg";
               updateInterval = 24 * 60 * 60 * 1000;
-              definedAliases = [ "@gh" "@g" "@git" ];
+              definedAliases = ["@gh" "@g" "@git"];
             };
 
             # Add the NixOS wiki
             "NixOS Wiki" = {
-              urls = [{
-                template = "https://nixos.wiki/index.php?search={searchTerms}";
-              }];
+              urls = [
+                {
+                  template = "https://nixos.wiki/index.php?search={searchTerms}";
+                }
+              ];
               iconUpdateURL = "https://nixos.wiki/favicon.png";
               updateInterval = 24 * 60 * 60 * 1000; # every day
-              definedAliases = [ "@nw" "@nixwiki" ];
+              definedAliases = ["@nw" "@nixwiki"];
             };
 
             # Nix packages and options from search.nixos.org
             "Nix Packages" = {
-              urls = [{
-                template = "https://search.nixos.org/packages";
-                params = [
-                  {
-                    name = "type";
-                    value = "packages";
-                  }
-                  {
-                    name = "query";
-                    value = "{searchTerms}";
-                  }
-                ];
-              }];
-              icon =
-                "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-              definedAliases = [ "@np" "@nixpkgs" ];
+              urls = [
+                {
+                  template = "https://search.nixos.org/packages";
+                  params = [
+                    {
+                      name = "type";
+                      value = "packages";
+                    }
+                    {
+                      name = "query";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+              definedAliases = ["@np" "@nixpkgs"];
             };
             "Nix Options" = {
-              urls = [{
-                template = "https://search.nixos.org/options";
-                params = [
-                  {
-                    name = "type";
-                    value = "options";
-                  }
-                  {
-                    name = "query";
-                    value = "{searchTerms}";
-                  }
-                ];
-              }];
-              icon =
-                "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-              definedAliases = [ "@no" "@nixopts" ];
+              urls = [
+                {
+                  template = "https://search.nixos.org/options";
+                  params = [
+                    {
+                      name = "type";
+                      value = "options";
+                    }
+                    {
+                      name = "query";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+              definedAliases = ["@no" "@nixopts"];
             };
 
             # Similiar to search.nixos.org but with more info
             "My NixOS" = {
-              urls =
-                [{ template = "https://mynixos.com/search?q={searchTerms}"; }];
-              icon =
-                "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake-white.svg";
-              definedAliases = [ "@mn" "@nx" "@mynixos" ];
+              urls = [{template = "https://mynixos.com/search?q={searchTerms}";}];
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake-white.svg";
+              definedAliases = ["@mn" "@nx" "@mynixos"];
             };
 
             #Home manager search
             "Home Manager" = {
-              urls = [{
-                template =
-                  "https://mipmip.github.io/home-manager-option-search/?query={searchTerms}";
-              }];
-              icon =
-                "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-              definedAliases = [ "@hm" "@home" "@homeman" ];
+              urls = [
+                {
+                  template = "https://mipmip.github.io/home-manager-option-search/?query={searchTerms}";
+                }
+              ];
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+              definedAliases = ["@hm" "@home" "@homeman"];
             };
           };
         };

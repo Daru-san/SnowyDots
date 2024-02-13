@@ -1,21 +1,28 @@
-{ pkgs, config, lib, inputs, ... }:
-let cfg = config.wayland.ags;
-in with lib; {
-  imports = [ inputs.ags.homeManagerModules.default ];
-  options = {
-    wayland.ags.enable = mkOption {
-      default = false;
-      type = with types; bool;
-      example = true;
+{
+  pkgs,
+  config,
+  lib,
+  inputs,
+  ...
+}: let
+  cfg = config.wayland.ags;
+in
+  with lib; {
+    imports = [inputs.ags.homeManagerModules.default];
+    options = {
+      wayland.ags.enable = mkOption {
+        default = false;
+        type = with types; bool;
+        example = true;
+      };
     };
-  };
-  config = mkIf cfg.enable {
-    programs.ags = {
-      # Enable ags
-      enable = true;
+    config = mkIf cfg.enable {
+      programs.ags = {
+        # Enable ags
+        enable = true;
 
-      # packages to add to gjs's runtime
-      extraPackages = [ pkgs.libsoup_3 ];
+        # packages to add to gjs's runtime
+        extraPackages = [pkgs.libsoup_3];
+      };
     };
-  };
-}
+  }

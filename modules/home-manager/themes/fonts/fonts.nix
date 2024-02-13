@@ -1,8 +1,7 @@
-{ config, ... }:
-
-let cfg = config.fonts;
+{config, ...}: let
+  cfg = config.fonts;
 in {
-  imports = [ ./default.nix ];
+  imports = [./default.nix];
   config = {
     fonts.fontconfig.enable = true;
     home.packages = [

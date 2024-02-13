@@ -1,15 +1,21 @@
-{ pkgs, inputs, ... }: {
-  imports = [ inputs.anyrun.homeManagerModules.default ];
+{
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [inputs.anyrun.homeManagerModules.default];
   programs.anyrun = {
     enable = true;
 
     config = {
-      plugins = (with inputs.anyrun.packages.${pkgs.system}; [
-        rink
-        shell
-        applications
-      ]) ++ (with inputs.anyrun-nixos-options.packages.${pkgs.system};
-        [ default ]) ++ (with inputs.anyrun-plugins.packages.${pkgs.system}; [
+      plugins =
+        (with inputs.anyrun.packages.${pkgs.system}; [
+          rink
+          shell
+          applications
+        ])
+        ++ (with inputs.anyrun-nixos-options.packages.${pkgs.system}; [default])
+        ++ (with inputs.anyrun-plugins.packages.${pkgs.system}; [
           hyprwin
           cliphist
         ]);
@@ -20,20 +26,20 @@
       closeOnClick = true;
     };
 
-    extraCss = (builtins.readFile ./style.css);
+    extraCss = builtins.readFile ./style.css;
 
     extraConfigFiles = {
       "nixos-options.ron".text = let
         # nixos-options = osConfig.system.build.manual.optionsJSON + "/share/doc/nixos/options.json";
-        hm-options = inputs.home-manager.packages.${pkgs.system}.docs-json
+        hm-options =
+          inputs.home-manager.packages.${pkgs.system}.docs-json
           + "/share/doc/home-manager/options.json";
 
         # merge your options
         options = builtins.toJSON {
           # ":nix" = [nixos-options];
-          ":hm" = [ hm-options ];
+          ":hm" = [hm-options];
         };
-
       in ''
         Config(
             // add your option paths

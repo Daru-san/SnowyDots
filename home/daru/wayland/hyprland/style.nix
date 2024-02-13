@@ -1,4 +1,4 @@
-{ config, ... }: {
+{config, ...}: {
   wayland.windowManager.hyprland = {
     settings = {
       general = {
@@ -31,7 +31,7 @@
         dim_inactive = true;
         dim_strength = 0.14;
       };
-      misc = { vrr = 1; };
+      misc = {vrr = 1;};
       animations = {
         enabled = true;
         bezier = [
@@ -57,7 +57,7 @@
       layerrule = let
         b = regex: "blur,${regex}";
         z = regex: "ignorezero,${regex}";
-      in [ (z "waybar") (b "waybar") ];
+      in [(z "waybar") (b "waybar")];
     };
   };
 }

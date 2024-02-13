@@ -1,5 +1,5 @@
 # # My home configuration file ##
-{ ... }: {
+{...}: {
   # Playerctl and easyeffects
   audio = {
     easyeffects.enable = true;
@@ -27,7 +27,7 @@
 
   # Home option pages
   manual = {
-    json = { enable = true; };
-    html = { enable = true; };
+    json = {enable = true;};
+    html = {enable = true;};
   };
 }

@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   home.file.".config/ranger/rc.conf".text = ''
       set viewmode multipane
 

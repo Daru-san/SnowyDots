@@ -1,6 +1,6 @@
 # Home packages
-{ pkgs, ... }: {
-  imports = [ ./desktop-entries.nix ./music/default.nix ./firefox/default.nix ];
+{pkgs, ...}: {
+  imports = [./desktop-entries.nix ./music/default.nix ./firefox/default.nix];
 
   # GUI
   home.packages = with pkgs;
@@ -21,13 +21,10 @@
       overskride
       pavucontrol
     ]
-
     # GNOME specific packages
-    ++ (with gnome; [ nautilus dconf-editor gnome-clocks ])
-
+    ++ (with gnome; [nautilus dconf-editor gnome-clocks])
     # These are pinned to 23.11(stable branch) since they're broken on unstable
-    ++ (with pkgs.stable; [ komikku calcure ])
-
+    ++ (with pkgs.stable; [komikku calcure])
     # Cli/Tui based packages
     ++ (with pkgs; [
       tree

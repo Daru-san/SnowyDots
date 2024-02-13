@@ -1,12 +1,15 @@
 # mpv configuration
-{ config, pkgs, ... }: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   programs.mpv = {
     enable = true;
-    bindings = { };
+    bindings = {};
 
     #mpv configs
     config = {
-
       #Enable hardware-acceleration
       hwdec = "auto-safe";
     };

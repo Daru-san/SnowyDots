@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   wayland.windowManager.hyprland = {
     settings = {
       input = {
@@ -12,7 +12,7 @@
           drag_lock = true;
         };
       };
-      gestures = { workspace_swipe = true; };
+      gestures = {workspace_swipe = true;};
       device = {
         "2.4g-mouse" = {
           scroll_method = "on_button_down";

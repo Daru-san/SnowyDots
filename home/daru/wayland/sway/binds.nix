@@ -1,5 +1,11 @@
-{ config, pkgs, inputs, lib, ... }: {
-  imports = [ ./workspaces.nix ];
+{
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}: {
+  imports = [./workspaces.nix];
   wayland.windowManager.sway.config = {
     modifier = "Mod4";
     bindkeysToCode = true;
@@ -26,8 +32,8 @@
       notify-send = "${pkgs.libnotify}/bin/notify-send";
       easyeffects = "${config.services.easyeffects.package}/bin/easyeffects";
       color-picker = "${
-          inputs.useful-scripts.packages.${pkgs.system}.color-picker
-        }/bin/color-picker";
+        inputs.useful-scripts.packages.${pkgs.system}.color-picker
+      }/bin/color-picker";
     in {
       #Basic binds
       "${mod}+space" = "exec ${launcher}";

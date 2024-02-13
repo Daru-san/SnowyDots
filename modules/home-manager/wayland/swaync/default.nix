@@ -1,12 +1,10 @@
-{ ... }: {
-
+{...}: {
   # Import the module from https://github.com/rhoriguchi/home-manager
   # since https://github.com/nix-community/home-manager/pull/4249 has not been merged,
   # and doesn't seem like it will be anytime soon
   imports = [
     (import (builtins.fetchurl {
-      url =
-        "https://raw.githubusercontent.com/rhoriguchi/home-manager/swaync/modules/services/swaync.nix";
+      url = "https://raw.githubusercontent.com/rhoriguchi/home-manager/swaync/modules/services/swaync.nix";
     }))
   ];
 
@@ -54,7 +52,7 @@
           clear-all-button = true;
           button-text = "󰆴 Clear All";
         };
-        dnd = { text = "Do Not Disturb"; };
+        dnd = {text = "Do Not Disturb";};
         label = {
           max-lines = 1;
           text = "Notification Center";
@@ -63,8 +61,8 @@
           image-size = 96;
           image-radius = 7;
         };
-        volume = { label = "󰕾"; };
-        backlight = { label = "󰃟"; };
+        volume = {label = "󰕾";};
+        backlight = {label = "󰃟";};
         buttons-grid = {
           actions = [
             {
@@ -99,6 +97,6 @@
         };
       };
     };
-    style = (builtins.readFile ./style.css);
+    style = builtins.readFile ./style.css;
   };
 }

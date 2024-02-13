@@ -1,6 +1,11 @@
-{ outputs, inputs, ... }: {
-  imports = [ ./home.nix ]
-    ++ [ ./themes/default.nix ./wayland/default.nix ./programs/default.nix ]
+{
+  outputs,
+  inputs,
+  ...
+}: {
+  imports =
+    [./home.nix]
+    ++ [./themes/default.nix ./wayland/default.nix ./programs/default.nix]
     ++ (with outputs.homeManagerModules; [
       audio
       editor
@@ -9,7 +14,8 @@
       wayland
       shell
       themes
-    ]) ++ (with inputs; [
+    ])
+    ++ (with inputs; [
       nur.nixosModules.nur
       spicetify-nix.homeManagerModules.default
       hyprland.homeManagerModules.default
@@ -25,7 +31,6 @@
 
       # Neovim nightly overlay
       inputs.neovim-nightly-overlay.overlays.default
-
     ];
     config = {
       # Allowing unfree packages
@@ -34,7 +39,7 @@
       allowUnfreePredicate = _: true;
 
       # Fix electron packages
-      permittedInsecurePackages = [ "electron-25.9.0" ];
+      permittedInsecurePackages = ["electron-25.9.0"];
     };
   };
 }

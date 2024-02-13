@@ -1,8 +1,8 @@
-{ config, ... }: {
+{config, ...}: {
   wayland.windowManager.sway = {
     config = {
       fonts = {
-        names = [ "JetbrainsMono Nerd Font" "UbuntuMono Nerd Font" ];
+        names = ["JetbrainsMono Nerd Font" "UbuntuMono Nerd Font"];
         style = "Semi-Bold";
         size = 13.4;
       };
@@ -48,8 +48,8 @@
         titlebar = false;
         border = 2;
       };
-      bars = [{ command = "${config.programs.waybar.package}/bin/waybar"; }];
-      output = { HDMI-A-1 = { bg = "~/Wallpapers/personal/horizon fill"; }; };
+      bars = [{command = "${config.programs.waybar.package}/bin/waybar";}];
+      output = {HDMI-A-1 = {bg = "~/Wallpapers/personal/horizon fill";};};
     };
 
     # Swayfx configuration

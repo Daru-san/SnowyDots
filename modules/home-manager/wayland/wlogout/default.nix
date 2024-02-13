@@ -1,5 +1,8 @@
-{ config, pkgs, ... }: {
-
+{
+  config,
+  pkgs,
+  ...
+}: {
   xdg.configFile."wlogout/icons" = let
     repo = pkgs.fetchFromGitHub {
       owner = "ArtsyMacaw";
@@ -52,7 +55,8 @@
         keybind = "h";
       }
     ];
-    style = let dir = "/usr/share/wlogout/icons";
+    style = let
+      dir = "/usr/share/wlogout/icons";
     in ''
       window {
            font-family: ${config.gtk.font.name};
@@ -73,17 +77,17 @@
        }
        button:focus {
            border: ${
-             toString
-             config.wayland.windowManager.hyprland.settings.general.border_size
-           }px;
+        toString
+        config.wayland.windowManager.hyprland.settings.general.border_size
+      }px;
            border-radius: ${
-             toString
-             config.wayland.windowManager.hyprland.settings.decoration.rounding
-           }px;
+        toString
+        config.wayland.windowManager.hyprland.settings.decoration.rounding
+      }px;
        }
        /** ********** Icons ********** **/
        #lock {
-           background-image: image(url("icons/lock.png"), url("${dir}/lock.png"));        
+           background-image: image(url("icons/lock.png"), url("${dir}/lock.png"));
        }
 
        #logout {

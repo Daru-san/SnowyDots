@@ -1,4 +1,8 @@
-{ pkgs, config, ... }: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   imports = [
     ./binds.nix
     ./input.nix
@@ -8,11 +12,11 @@
     ./windows.nix
     ./workspaces.nix
   ];
-  #Configuring Hyprland 
+  #Configuring Hyprland
   wayland.windowManager.sway = {
     package = pkgs.swayfx;
-    systemd = { enable = true; };
-    wrapperFeatures = { gtk = true; };
+    systemd = {enable = true;};
+    wrapperFeatures = {gtk = true;};
     config = {
       terminal = "${config.programs.kitty.package}/bin/kitty";
       menu = "${config.programs.anyrun.package}/bin/anyrun";
@@ -34,4 +38,3 @@
     '';
   };
 }
-

@@ -1,5 +1,5 @@
 # Shell configurations
-{ pkgs, ... }: {
+{pkgs, ...}: {
   # Enable zsh
   programs.zsh = {
     enable = true;
@@ -8,21 +8,21 @@
     enableLsColors = true;
 
     # Syntax highlighting
-    syntaxHighlighting = { enable = true; };
+    syntaxHighlighting = {enable = true;};
 
     # Autosuggestions
-    autosuggestions = { enable = true; };
+    autosuggestions = {enable = true;};
 
     # Add bash completion compatibility
     enableBashCompletion = true;
   };
 
-  # Enable fish 
+  # Enable fish
   programs.fish.enable = false;
 
   environment = {
     # Installed shells
-    pathsToLink = [ "/share/zsh" "/share/fish" ];
+    pathsToLink = ["/share/zsh" "/share/fish"];
     # GLobal shell aliases
     shellAliases = let
       ranger = "${pkgs.ranger}/bin/ranger";

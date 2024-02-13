@@ -1,4 +1,8 @@
-{ inputs, pkgs, ... }: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   wayland.windowManager.hyprland = {
     plugins = [
       inputs.hycov.packages.${pkgs.system}.hycov

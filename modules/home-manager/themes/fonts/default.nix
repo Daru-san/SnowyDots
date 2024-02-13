@@ -1,9 +1,11 @@
 # Module from https://github.com/danth/stylix/
-{ pkgs, config, lib, ... }:
-
-with lib;
-
-let
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
+with lib; let
   cfg = config.fonts;
 
   fontType = types.submodule {
@@ -19,7 +21,6 @@ let
       };
     };
   };
-
 in {
   options.fonts = {
     serif = mkOption {
@@ -52,7 +53,7 @@ in {
     extraFonts = mkOption {
       description = mdDoc "Extra font packages to install";
       type = with types; listOf package;
-      default = [ ];
+      default = [];
       defaultText = lib.literalExpression "[ ]";
     };
 

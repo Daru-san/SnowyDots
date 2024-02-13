@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   imports = [
     ./git/default.nix
     ./mpv/default.nix

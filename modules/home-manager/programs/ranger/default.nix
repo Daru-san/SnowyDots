@@ -1,7 +1,12 @@
-{ config, pkgs, lib, ... }: {
-  imports = [ ./config.nix ];
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
+  imports = [./config.nix];
 
-  home.packages = with pkgs; [ ranger ];
+  home.packages = with pkgs; [ranger];
 
   #Ranger commands script
   home.file.".config/ranger/commands.py".text = ''

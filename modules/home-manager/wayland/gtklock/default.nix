@@ -1,8 +1,13 @@
-{ pkgs, lib, config, ... }: {
-  home.packages = with pkgs; [ gtklock ];
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
+  home.packages = with pkgs; [gtklock];
   xdg.configFile = {
     "gtklock/config.ini".text = with lib;
-      generators.toINI { } {
+      generators.toINI {} {
         main = {
           start-hidden = true;
           idle-hide = true;
@@ -14,6 +19,6 @@
           background = "${config.theme.wallpaper.image}";
         };
       };
-    "gtklock/style.css".text = (with builtins; readFile ./style.css);
+    "gtklock/style.css".text = with builtins; readFile ./style.css;
   };
 }

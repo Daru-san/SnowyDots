@@ -1,12 +1,18 @@
-{ config, pkgs, inputs, lib, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
 with lib; {
-  imports = [ ./extra-binds.nix ];
+  imports = [./extra-binds.nix];
   wayland.windowManager.hyprland.settings = let
     h = "${getExe pkgs.hdrop}";
     e = "exec";
-  in mkIf config.wayland.windowManager.hyprland.enable {
-    bind = with lib;
-      let
+  in
+    mkIf config.wayland.windowManager.hyprland.enable {
+      bind = with lib; let
         terminal = "${getExe config.programs.kitty.package}";
         browser = "${getExe config.programs.firefox.package}";
         file-manager = "${getExe pkgs.gnome.nautilus}";
@@ -53,8 +59,7 @@ with lib; {
         # "CTRLSHIFT,F12,${e},swww-switch"
       ];
 
-    bindle = with lib;
-      let
+      bindle = with lib; let
         s = "${getExe' config.services.swayosd.package "swayosd-client"}";
         volup = "--output-volume raise";
         voldown = "--output-volume lower";
@@ -85,62 +90,62 @@ with lib; {
         "ALT,F7, ${e}, ${s} ${volmute}"
       ];
 
-    bindl = let
-      p = "${getExe config.services.playerctld.package}";
-      nx = "next";
-      pv = "previous";
-      pl = "play-pause";
-      st = "stop";
-    in [
-      ### Media Control using playerctl ###
+      bindl = let
+        p = "${getExe config.services.playerctld.package}";
+        nx = "next";
+        pv = "previous";
+        pl = "play-pause";
+        st = "stop";
+      in [
+        ### Media Control using playerctl ###
 
-      ",XF86AudioNext,${e},${p} ${nx}"
-      ",XF86AudioPrev,${e},${p} ${pv}"
-      ",XF86AudioPlay,${e},${p} ${pl}"
-      ",XF86AudioStop,${e},${p} ${st}"
+        ",XF86AudioNext,${e},${p} ${nx}"
+        ",XF86AudioPrev,${e},${p} ${pv}"
+        ",XF86AudioPlay,${e},${p} ${pl}"
+        ",XF86AudioStop,${e},${p} ${st}"
 
-      #Same but for keyboards without media keys
-      "ALT,F12,${e},${p} ${nx}"
-      "ALT,F9,${e},${p} ${pv}"
-      "ALT,F10,${e},${p} ${pl}"
-      "ALT,F11,${e},${p} ${st}"
-    ];
+        #Same but for keyboards without media keys
+        "ALT,F12,${e},${p} ${nx}"
+        "ALT,F9,${e},${p} ${pv}"
+        "ALT,F10,${e},${p} ${pl}"
+        "ALT,F11,${e},${p} ${st}"
+      ];
 
-    bindr = let
-      any = "${getExe' config.programs.anyrun.package "anyrun"}";
-      easy = "${getExe config.services.easyeffects.package}";
-      cl = "${getExe inputs.scripts.packages.${pkgs.system}.color-picker}";
-      wl = "${getExe config.programs.wlogout.package}";
-      pk = "pkill";
+      bindr = let
+        any = "${getExe' config.programs.anyrun.package "anyrun"}";
+        easy = "${getExe config.services.easyeffects.package}";
+        cl = "${getExe inputs.scripts.packages.${pkgs.system}.color-picker}";
+        wl = "${getExe config.programs.wlogout.package}";
+        pk = "pkill";
 
-      # Screenshots 
-      hs = "${getExe pkgs.hyprshot}";
-      scr-dir = "${config.home.homeDirectory}/Pictures/Screenshots";
-      r = "region";
-      o = "output";
+        # Screenshots
+        hs = "${getExe pkgs.hyprshot}";
+        scr-dir = "${config.home.homeDirectory}/Pictures/Screenshots";
+        r = "region";
+        o = "output";
 
-      sc = "${getExe' pkgs.swaynotificationcenter "swaync-client"}";
-    in [
-      # Launch the launcher - anyrun
-      "super, space, ${e}, ${pk} ${any} || ${any}"
+        sc = "${getExe' pkgs.swaynotificationcenter "swaync-client"}";
+      in [
+        # Launch the launcher - anyrun
+        "super, space, ${e}, ${pk} ${any} || ${any}"
 
-      # Launch easyeffects
-      "super, a, ${e}, ${h} '${easy}'"
+        # Launch easyeffects
+        "super, a, ${e}, ${h} '${easy}'"
 
-      # Color picker
-      "supershift, c, ${e}, ${pk} ${cl} || ${cl}"
+        # Color picker
+        "supershift, c, ${e}, ${pk} ${cl} || ${cl}"
 
-      # wlogout
-      "super, x, ${e}, ${pk} ${wl} || ${wl}"
+        # wlogout
+        "super, x, ${e}, ${pk} ${wl} || ${wl}"
 
-      # Screenshotting
-      ", print, ${e}, ${pk} ${hs} || ${h} '${hs} -m ${r} -o ${scr-dir}'"
-      "shift, print, ${e}, ${pk} ${hs} || ${h} '${hs} -m ${o} -c -o ${scr-dir}'"
-      "alt, print, ${e}, ${pk} ${hs} || ${h} '${hs} -m ${o} -o ${scr-dir}'"
+        # Screenshotting
+        ", print, ${e}, ${pk} ${hs} || ${h} '${hs} -m ${r} -o ${scr-dir}'"
+        "shift, print, ${e}, ${pk} ${hs} || ${h} '${hs} -m ${o} -c -o ${scr-dir}'"
+        "alt, print, ${e}, ${pk} ${hs} || ${h} '${hs} -m ${o} -o ${scr-dir}'"
 
-      "super,n, ${e}, ${sc} -t"
-      "supershift,n, ${e}, ${sc} -d"
-      "superalt,n, ${e}, ${sc} -C"
-    ];
-  };
+        "super,n, ${e}, ${sc} -t"
+        "supershift,n, ${e}, ${sc} -d"
+        "superalt,n, ${e}, ${sc} -C"
+      ];
+    };
 }

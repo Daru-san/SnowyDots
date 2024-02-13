@@ -1,4 +1,8 @@
-{ config, pkgs, ... }: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   #Enable mangohud for viewing performance mertric
   programs.mangohud = {
     enable = true;

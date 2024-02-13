@@ -1,4 +1,8 @@
-{ pkgs, inputs, ... }: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     # Hardware configuration
     ./hardware-configuration.nix
@@ -12,7 +16,7 @@
         isNormalUser = true;
         shell = pkgs.zsh;
         description = "Daru";
-        extraGroups = [ "networkmanager" "wheel" "video" "adbusers" "input" ];
+        extraGroups = ["networkmanager" "wheel" "video" "adbusers" "input"];
       };
       #Disables root user
       root.hashedPassword = "!";
@@ -32,9 +36,9 @@
 
   programs = {
     # Enable gnome-disks
-    gnome-disks = { enable = true; };
-    # Enable KDE Connect 
-    kdeconnect = { enable = true; };
+    gnome-disks = {enable = true;};
+    # Enable KDE Connect
+    kdeconnect = {enable = true;};
   };
 
   # Enable syncthing
@@ -43,7 +47,7 @@
     dataDir = "/home/daru";
     user = "daru";
     configDir = "/home/daru/.sync";
-    settings = { gui = { theme = "black"; }; };
+    settings = {gui = {theme = "black";};};
   };
 
   # System packages
@@ -74,7 +78,7 @@
       home-manager
       nixfmt
     ]
-    ++ (with inputs.scripts.packages.${pkgs.system}; [ nix-rebuild hm-build ]);
+    ++ (with inputs.scripts.packages.${pkgs.system}; [nix-rebuild hm-build]);
 
   # wayland configuration
   # other options include sway, greetd and kde
@@ -93,7 +97,7 @@
       quiet = true;
       plymouth.enable = true;
     };
-    drivers = { intel.enable = true; };
+    drivers = {intel.enable = true;};
   };
 
   # System tweaks for performance and maintainance

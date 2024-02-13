@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib; {
   wayland.windowManager.hyprland.settings = {
     exec-once = [

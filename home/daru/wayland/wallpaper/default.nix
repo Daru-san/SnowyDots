@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
-let
+{
+  config,
+  pkgs,
+  ...
+}: let
   walls = pkgs.fetchgit {
     url = "https://github.com/D3Ext/aesthetic-wallpapers";
     rev = "060c580dcc11afea2f77f9073bd8710920e176d8";
@@ -7,7 +10,6 @@ let
   };
   cfg = config.theme.wallpaper;
 in {
-
   home.packages = with pkgs; [
     swww
     (writeShellScriptBin "swww-switch" ''

@@ -1,4 +1,8 @@
-{ pkgs, config, ... }: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   fonts = {
     serif = {
       package = pkgs.noto-fonts;
@@ -6,7 +10,7 @@
     };
     sansSerif = config.fonts.serif;
     monospace = {
-      package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
+      package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
       name = "JetbrainsMono Nerd Font";
     };
     sizes = {
@@ -14,6 +18,6 @@
       applications = 14;
       terminal = 16;
     };
-    extraFonts = with pkgs; [ monocraft noto-fonts ];
+    extraFonts = with pkgs; [monocraft noto-fonts];
   };
 }

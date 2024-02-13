@@ -1,1 +1,1 @@
-{ ... }: { imports = [ ./sddm.nix ./greetd.nix ]; }
+{...}: {imports = [./sddm.nix ./greetd.nix];}

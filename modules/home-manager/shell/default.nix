@@ -1,5 +1,9 @@
 # #Global shell configuration##
-{ config, pkgs, ... }: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./omp/default.nix
     ./zsh/default.nix
