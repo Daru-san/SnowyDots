@@ -72,6 +72,7 @@
       usbutils
       gparted
       home-manager
+      nixfmt
     ]
     ++ (with inputs.scripts.packages.${pkgs.system}; [ nix-rebuild hm-build ]);
 
