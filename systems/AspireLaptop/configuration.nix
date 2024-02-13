@@ -76,7 +76,7 @@
       usbutils
       gparted
       home-manager
-      nixfmt
+      alejandra
     ]
     ++ (with inputs.scripts.packages.${pkgs.system}; [nix-rebuild hm-build]);
 
