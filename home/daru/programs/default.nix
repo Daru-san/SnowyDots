@@ -23,6 +23,7 @@
     floorp
     audacity
     overskride
+    pavucontrol
   ]
 
   # GNOME specific packages
@@ -65,5 +66,6 @@
       asciinema-scenario
       trashy
       fontpreview
+      rnix-lsp
   ]);
 }
