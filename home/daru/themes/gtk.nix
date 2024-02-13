@@ -13,7 +13,6 @@
         themeVariants = ["default" "grey"];
         colorVariants = ["dark"];
         sizeVariants = ["standard"];
-        tweaks = ["float"];
       };
     };
 
