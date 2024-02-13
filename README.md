@@ -27,7 +27,7 @@ TODO:
 * bar: [waybar](https://github.com/Alexays/Waybar "waybar")
 * Browser: [Firefox nightly](https://github.com/nix-community/flake-firefox-nightly "ff nightly")
 * Shell: [zsh](http://zsh.sourceforge.net/ "zsh") using [oh-my-zsh](https://ohmyz.sh/ "omz")
-* Editor: [Neovim nightly](https://github.com/nix-community/neovim-nightly-overlay "nvn") using my [custom Neovim configuration](https://github.com/Daru-san/LazyVi)
+* Editor: [Neovim nightly](https://github.com/nix-community/neovim-nightly-overlay "nvn") using my [custom Neovim configuration](https://git.sr.ht/~darumaka/LazyViM)
 * Kernel: [Linux-zen](https://archlinux.org/packages/extra/x86_64/linux-zen/ "zen")
 
 # Previews
@@ -127,7 +127,7 @@ os.system = {
 ```
 
 ## Install
-I use my own custom nixos iso to install NixOS on my systems, the flake is at [SnowyISO](https://codeberg.org/Daru-san/SnowyISO). It has plenty of useful tools and has sway as a desktop for graphical installs. 
+I use my own custom nixos iso to install NixOS on my systems, the flake is at [SnowISO](https://git.sr.ht/~darumaka/SnowISO) on sr.ht. It has plenty of useful tools and has sway as a desktop for graphical installs. 
 
 Installation
 ```bash
@@ -174,6 +174,9 @@ Deploy my config
 ```bash
 # Clone the github repo
 git clone https://github.com/Daru-san/Snowflake-dots
+
+# or the sourcehut repo, which is more up-to-date
+git clone https://git.sr.ht/~darumaka/SnowyDots
 
 # You should probably make your own system configurations for compatibility 
 # Feel free to edit any files in the repo to suit your needs, otherwise
