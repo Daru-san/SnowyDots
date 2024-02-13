@@ -59,7 +59,16 @@ in {
       command = "rnix-lsp"
 
       require-module powerline
-      set-option global powerline_format 'git bufname filetype mode_info lsp'
+			source "${pkgs.powerline-kak}/plugins/powerline.kak/rc/modules/bufname.kak"
+			source "${pkgs.powerline-kak}/plugins/powerline.kak/rc/modules/client.kak"
+			source "${pkgs.powerline-kak}/plugins/powerline.kak/rc/modules/filetype.kak"
+			source "${pkgs.powerline-kak}plugins/powerline.kak/rc/modules/git.kak"  
+			source "${pkgs.powerline-kak}/plugins/powerline.kak/rc/modules/line_column.kak"
+			source "${pkgs.powerline-kak}/plugins/powerline.kak/rc/modules/mode_info.kak"
+			source "${pkgs.powerline-kak}/plugins/powerline.kak/rc/modules/position.kak"
+			source "${pkgs.powerline-kak}/plugins/powerline.kak/rc/modules/session.kak"  
+			source "${pkgs.powerline-kak}/plugins/powerline.kak/rc/modules/lsp.kak"
+      set-option global powerline_format 'git bufname filetype mode_info session client lsp line_column'
       set-option global powerline_shorten_bufname name
       powerline-start
       
@@ -76,16 +85,6 @@ in {
 			require-module auto-pairs	
 			set-option global auto_pairs ( ) { } [ ] '"' '"' "'" "'" ` ` “ ” ‘ ’ « » ‹ ›
 			enable-auto-pairs
-
-			source "%val{config}/plugins/powerline.kak/rc/modules/bufname.kak"
-			source "%val{config}/plugins/powerline.kak/rc/modules/client.kak"
-			source "%val{config}/plugins/powerline.kak/rc/modules/filetype.kak"
-			source "%val{config}/plugins/powerline.kak/rc/modules/git.kak"  
-			source "%val{config}/plugins/powerline.kak/rc/modules/line_column.kak"
-			source "%val{config}/plugins/powerline.kak/rc/modules/mode_info.kak"
-			source "%val{config}/plugins/powerline.kak/rc/modules/position.kak"
-			source "%val{config}/plugins/powerline.kak/rc/modules/session.kak"  
-			source "%val{config}/plugins/powerline.kak/rc/modules/lsp.kak"
     '';
 
     plugins = with pkgs.kakounePlugins; [
