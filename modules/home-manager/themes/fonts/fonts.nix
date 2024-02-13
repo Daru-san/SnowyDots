@@ -1,7 +1,6 @@
 { config, ... }:
 
-let
-  cfg = config.fonts;
+let cfg = config.fonts;
 in {
   imports = [ ./default.nix ];
   config = {

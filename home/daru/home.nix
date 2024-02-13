@@ -1,8 +1,5 @@
-## My home configuration file ##
-{
-  ...
-}:
-{
+# # My home configuration file ##
+{ ... }: {
   # Playerctl and easyeffects
   audio = {
     easyeffects.enable = true;
@@ -13,7 +10,6 @@
     syncthing.enable = true;
     kdeconnect.enable = true;
   };
-
 
   home = {
     username = "daru";
@@ -31,11 +27,7 @@
 
   # Home option pages
   manual = {
-    json = {
-      enable = true;
-    };
-    html = {
-      enable = true;
-    };
+    json = { enable = true; };
+    html = { enable = true; };
   };
 }

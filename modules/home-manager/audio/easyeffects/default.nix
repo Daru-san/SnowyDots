@@ -1,14 +1,6 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
-let
-  cfg = config.audio.easyeffects;
-in 
-with lib;
-{
+{ pkgs, lib, config, ... }:
+let cfg = config.audio.easyeffects;
+in with lib; {
   options = {
     audio.easyeffects.enable = mkOption {
       default = false;
@@ -16,9 +8,5 @@ with lib;
       type = with types; bool;
     };
   };
-  config = mkIf cfg.enable {
-    services.easyeffects = {
-      enable = true;
-    };
-  };
+  config = mkIf cfg.enable { services.easyeffects = { enable = true; }; };
 }

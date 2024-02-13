@@ -1,8 +1,7 @@
 # Custom packages
-pkgs: let
-  pkgs = import <nixpkgs> {};
-in 
-{
+pkgs:
+let pkgs = import <nixpkgs> { };
+in {
   # Pokeshell from acxz/pokeshell 
   pokeshell = pkgs.callPackage ./pokeshell.nix { };
 

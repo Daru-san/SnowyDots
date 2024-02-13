@@ -1,6 +1,1 @@
-{...}:{
-  imports = [
-    ./playerctl/default.nix
-    ./easyeffects/default.nix
-  ];
-}
+{ ... }: { imports = [ ./playerctl/default.nix ./easyeffects/default.nix ]; }

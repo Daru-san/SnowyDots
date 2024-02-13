@@ -1,14 +1,6 @@
-{ 
-  pkgs,
-  config,
-  lib,
-  inputs,
-  ...
-}: let
-  cfg = config.wayland.ags;
-in 
-with lib;
-{
+{ pkgs, config, lib, inputs, ... }:
+let cfg = config.wayland.ags;
+in with lib; {
   imports = [ inputs.ags.homeManagerModules.default ];
   options = {
     wayland.ags.enable = mkOption {

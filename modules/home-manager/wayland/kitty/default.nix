@@ -1,4 +1,4 @@
-{pkgs, lib, config, ...}: {
+{ pkgs, lib, config, ... }: {
   programs.kitty = {
     enable = true;
 
@@ -30,10 +30,10 @@
       window_margin_width = 8;
       window_margin_height = 6;
       term = "kitty";
-      placement_strategy ="center";
+      placement_strategy = "center";
 
       hide_window_decorations = true;
-      
+
       background_opacity = "0.7";
       dynamic_background_opacity = true;
 
@@ -48,10 +48,10 @@
       scrollback_pager = "kitty-scroll";
     };
     keybindings = let
-       c = "ctrl";
-       a = "alt";
-       g = "goto_tab";
-    in { 
+      c = "ctrl";
+      a = "alt";
+      g = "goto_tab";
+    in {
       "${c}+c" = "copy_or_interrupt";
       "${c}+${a}+1" = "${g} 1";
       "${c}+${a}+2" = "${g} 2";
@@ -67,12 +67,13 @@
     };
   };
 
-#Script for scrollback pager
-  home.packages = with pkgs; [
-    (pkgs.writeShellScriptBin "kitty-scroll" ''
-      nvim --noplugin -c "set signcolumn=no showtabline=0" -c "silent! write! /tmp/kitty_scrollback_buffer | te cat /tmp/kitty_scrollback_buffer - "
-    '')
-  ];
+  #Script for scrollback pager
+  home.packages = with pkgs;
+    [
+      (pkgs.writeShellScriptBin "kitty-scroll" ''
+        nvim --noplugin -c "set signcolumn=no showtabline=0" -c "silent! write! /tmp/kitty_scrollback_buffer | te cat /tmp/kitty_scrollback_buffer - "
+      '')
+    ];
 
   #Autostart session files
   home.file.".config/kitty/git.conf".text = ''

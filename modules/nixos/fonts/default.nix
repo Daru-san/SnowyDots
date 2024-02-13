@@ -1,4 +1,4 @@
-{pkgs, ...}:{
+{ pkgs, ... }: {
   # Custom console fonts for tty
   console = {
     earlySetup = true;
@@ -11,14 +11,11 @@
   fonts = {
     enableDefaultPackages = true;
     fontDir.enable = true;
-    packages = with pkgs; [
-      (nerdfonts.override {
-        fonts = [
-          "JetBrainsMono"
-          "RobotoMono"
-          "Noto"
-        ];
-      })
-    ];
+    packages = with pkgs;
+      [
+        (nerdfonts.override {
+          fonts = [ "JetBrainsMono" "RobotoMono" "Noto" ];
+        })
+      ];
   };
 }

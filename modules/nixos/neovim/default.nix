@@ -1,4 +1,4 @@
-{pkgs, ...}:{
+{ pkgs, ... }: {
 
   # Enable neovim and set as main editor
   programs.neovim = {
@@ -12,11 +12,7 @@
 
       # Default neovim plugins
       packages.myVimPackage = with pkgs.vimPlugins; {
-        start = [ 
-          vim-nix
-          vim-clap
-          barbecue-nvim
-        ];
+        start = [ vim-nix vim-clap barbecue-nvim ];
       };
     };
   };

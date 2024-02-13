@@ -1,58 +1,50 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
+{ pkgs, lib, config, ... }:
 let
   cfg = config.services.gtklock;
 
   iniFormat = pkgs.formats.ini { };
 
-  gtklockConfig = with types; submodule; {
-    freeformType = iniFormat.type;
-    main = {
-      gtk-theme = {
-        name = mkOption {
+  gtklockConfig = with types;
+    submodule {
+      freeformType = iniFormat.type;
+      main = {
+        gtk-theme = {
+          name = mkOption {
+            type = with types; str;
+            default = null;
+          };
+          package = mkPackageOption "Gtk theme package";
+        };
+        modules = mkOption {
           type = with types; str;
+          default = "";
+          example = literalExpression "";
+        };
+        background = mkOption {
+          type = with types; path;
           default = null;
         };
-        package = mkPackageOption "Gtk theme package";
+        idle-hide = mkEnableOption "Hide form when idle";
+        time-format = mkOption { type = with types; nullOr str; };
+        idle-timeout = mkOption {
+          type = with types; nullOr ints.unsigned;
+          default = null;
+          example = 50;
+        };
+        lock-command = mkOption {
+          type = with types; listOf str;
+          example = "";
+          default = null;
+        };
+        unlock-command = {
+          type = with types; listOf str;
+          example = "";
+          default = null;
+        };
+        start-hidden = mkEnableOption "Start with hidden form";
       };
-      modules = mkOption {
-        type = with types; str;
-        default = "";
-        example = literalExpression "";
-      };
-      background = mkOption {
-        type = with types; path;
-        default = null;
-      };
-      idle-hide = mkEnableOption "Hide form when idle";
-      time-format = mkOption {
-        type = with types; nullOr str;
-      };
-      idle-timeout = mkOption {
-        type = with types; nullOr ints.unsigned;
-        default = null;
-        example = 50;
-      };
-      lock-command = mkOption {
-        type = with types; listOf str;
-        example = "";
-        default = null;
-      };
-      unlock-command = {
-        type = with types; listOf str;
-        example = "";
-        default = null;
-      };
-      start-hidden = mkEnableOption "Start with hidden form";
     };
-  };
-in
-with lib;
-{
+in with lib; {
   meta.maintainers = [ hm.maintainers.daru-san ];
 
   options.services.swaync = {
@@ -60,7 +52,7 @@ with lib;
 
     package = mkPackageOption pkgs "gtklock" { };
 
-    settings =  {
+    settings = {
       type = either (attrsOf gtklockConfig);
       default = { };
       example = literalExpression ''
@@ -96,11 +88,10 @@ with lib;
         lib.platforms.linux)
     ];
 
-    home.packages = [cfg.package];
+    home.packages = [ cfg.package ];
 
-    xdg.configFile."gtklock/config.ini" = mkIf (cfg.settings != { }) {
-      source = gtklockConfig;
-    };
+    xdg.configFile."gtklock/config.ini" =
+      mkIf (cfg.settings != { }) { source = gtklockConfig; };
 
     xdg.configFile."gtklock/style.css" = mkIf (cfg.style != null) {
       source = pkgs.writeText "style.css" cfg.style;

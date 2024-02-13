@@ -1,97 +1,91 @@
-{config, pkgs, inputs, lib, ...}:
-with lib; 
-{
-  imports = [
-    ./extra-binds.nix
-  ];
+{ config, pkgs, inputs, lib, ... }:
+with lib; {
+  imports = [ ./extra-binds.nix ];
   wayland.windowManager.hyprland.settings = let
     h = "${getExe pkgs.hdrop}";
     e = "exec";
   in mkIf config.wayland.windowManager.hyprland.enable {
-    bind =
-    with lib;
-    let
-      terminal = "${getExe config.programs.kitty.package}";
-      browser = "${getExe config.programs.firefox.package}";
-      file-manager = "${getExe pkgs.gnome.nautilus}";
-      editor = "${getExe config.programs.neovim.package}";
-      ranger = "${getExe pkgs.ranger}";
-      image-editor = "${getExe' pkgs.krita "krita"}";
-      swaylock = "${getExe config.programs.swaylock.package}";
-      gtklock = "${getExe pkgs.gtklock}";
-      copyq = "${getExe config.services.copyq.package}";
-      btop = "${getExe config.programs.btop.package}";
-      swayosd = "${getExe' config.services.swayosd.package "swayosd-client"}";
-      swww = "${getExe pkgs.swww}";
-    in [
-      # Launching programs
-      "SUPER, e, ${e}, ${h} '${file-manager}'"
-      "SUPERSHIFT, f, ${e}, ${h} '${browser}'"
-      "SUPER, i, ${e}, ${h} '${image-editor}'"
+    bind = with lib;
+      let
+        terminal = "${getExe config.programs.kitty.package}";
+        browser = "${getExe config.programs.firefox.package}";
+        file-manager = "${getExe pkgs.gnome.nautilus}";
+        editor = "${getExe config.programs.neovim.package}";
+        ranger = "${getExe pkgs.ranger}";
+        image-editor = "${getExe' pkgs.krita "krita"}";
+        swaylock = "${getExe config.programs.swaylock.package}";
+        gtklock = "${getExe pkgs.gtklock}";
+        copyq = "${getExe config.services.copyq.package}";
+        btop = "${getExe config.programs.btop.package}";
+        swayosd = "${getExe' config.services.swayosd.package "swayosd-client"}";
+        swww = "${getExe pkgs.swww}";
+      in [
+        # Launching programs
+        "SUPER, e, ${e}, ${h} '${file-manager}'"
+        "SUPERSHIFT, f, ${e}, ${h} '${browser}'"
+        "SUPER, i, ${e}, ${h} '${image-editor}'"
 
-      # Terminal stuff
-      "SUPER, Return, ${e}, ${terminal}"
-      "SUPER, r, ${e}, ${terminal} --hold ${ranger}"
-      "SUPER, z, ${e}, ${terminal} --hold ${editor}"
+        # Terminal stuff
+        "SUPER, Return, ${e}, ${terminal}"
+        "SUPER, r, ${e}, ${terminal} --hold ${ranger}"
+        "SUPER, z, ${e}, ${terminal} --hold ${editor}"
 
-      #Window bings
-      "alt,q,killactive"
-      "SUPERSHIFT,e,exit"
-      "SUPER,s,togglesplit"
-      "SUPER,f,fullscreen"
-      "SUPER,v,togglefloating"
+        #Window bings
+        "alt,q,killactive"
+        "SUPERSHIFT,e,exit"
+        "SUPER,s,togglesplit"
+        "SUPER,f,fullscreen"
+        "SUPER,v,togglefloating"
 
+        #Lock screen
+        "SUPER, l ,${e} , ${gtklock} -id"
 
-      #Lock screen
-      "SUPER, l ,${e} , ${gtklock} -id"
+        #Clipboard menu
+        "SUPERSHIFT, v, ${e}, ${copyq} menu"
 
-      #Clipboard menu
-      "SUPERSHIFT, v, ${e}, ${copyq} menu"
+        #'Task manager'
+        "SUPERALT,b,${e},${terminal} -T btop --hold ${btop}"
 
-      #'Task manager'
-      "SUPERALT,b,${e},${terminal} -T btop --hold ${btop}"
-      
-      # Show when caps lock is pressed
-      ",caps_lock,${e},${swayosd} --caps-lock"
+        # Show when caps lock is pressed
+        ",caps_lock,${e},${swayosd} --caps-lock"
 
-      # Switch the wallpaper from a list of wallpapers in a repo
-      # "CTRLSHIFT,F12,${e},swww-switch"
-    ];
+        # Switch the wallpaper from a list of wallpapers in a repo
+        # "CTRLSHIFT,F12,${e},swww-switch"
+      ];
 
-    bindle = 
-    with lib;
-    let
-      s = "${getExe' config.services.swayosd.package "swayosd-client"}";
-      volup = "--output-volume raise";
-      voldown = "--output-volume lower";
-      volmute = "--output-volume mute-toggle";
-      brightup = "--brightness raise";
-      brightdown = "--brightness lower";
-    in [
-     ### Controls using swayosd ###
+    bindle = with lib;
+      let
+        s = "${getExe' config.services.swayosd.package "swayosd-client"}";
+        volup = "--output-volume raise";
+        voldown = "--output-volume lower";
+        volmute = "--output-volume mute-toggle";
+        brightup = "--brightness raise";
+        brightdown = "--brightness lower";
+      in [
+        ### Controls using swayosd ###
 
-      #// Might switch to ags //#
+        #// Might switch to ags //#
 
-      ## Brightness control##
+        ## Brightness control##
 
-      # Brightness control using swayosd
-      ",XF86MonBrightnessUp, ${e},${s} ${brightup}"
-      ",XF86MonBrightnessDown, ${e},${s} ${brightdown}"
+        # Brightness control using swayosd
+        ",XF86MonBrightnessUp, ${e},${s} ${brightup}"
+        ",XF86MonBrightnessDown, ${e},${s} ${brightdown}"
 
-      ##Volume Control##
+        ##Volume Control##
 
-      # Volume using swayosd
-      ",XF86AudioRaiseVolume, ${e}, ${s} ${volup}"
-      ",XF86AudioLowerVolume, ${e}, ${s} ${voldown}"
-      ",XF86AudioMute, ${e}, ${s} ${volmute}"
+        # Volume using swayosd
+        ",XF86AudioRaiseVolume, ${e}, ${s} ${volup}"
+        ",XF86AudioLowerVolume, ${e}, ${s} ${voldown}"
+        ",XF86AudioMute, ${e}, ${s} ${volmute}"
 
-      #Same but for keyboards without media keys
-      "ALT,F8, ${e}, ${s} ${volup}"
-      "ALT,F6, ${e}, ${s} ${voldown}"
-      "ALT,F7, ${e}, ${s} ${volmute}"
-    ];
+        #Same but for keyboards without media keys
+        "ALT,F8, ${e}, ${s} ${volup}"
+        "ALT,F6, ${e}, ${s} ${voldown}"
+        "ALT,F7, ${e}, ${s} ${volmute}"
+      ];
 
-    bindl = let 
+    bindl = let
       p = "${getExe config.services.playerctld.package}";
       nx = "next";
       pv = "previous";

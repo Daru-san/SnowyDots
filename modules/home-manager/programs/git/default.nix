@@ -1,6 +1,4 @@
-{...}:{
-  imports = [./git.nix];
-  programs.gitui = {
-    enable = true;
-  };
+{ ... }: {
+  imports = [ ./git.nix ];
+  programs.gitui = { enable = true; };
 }

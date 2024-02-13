@@ -1,8 +1,4 @@
-{
-  config
-, pkgs
-, ...
-}: 
+{ config, pkgs, ... }:
 let
   walls = pkgs.fetchgit {
     url = "https://github.com/D3Ext/aesthetic-wallpapers";
@@ -10,8 +6,7 @@ let
     sha256 = "5MnW630EwjKOeOCIAJdSFW0fcSSY4xmfuW/w7WyIovI=";
   };
   cfg = config.theme.wallpaper;
-in
-{
+in {
 
   home.packages = with pkgs; [
     swww

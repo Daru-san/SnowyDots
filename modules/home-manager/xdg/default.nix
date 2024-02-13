@@ -1,5 +1,5 @@
 # Settings folders that will be present everytime the config is built
-{config,pkgs, ...}:{
+{ config, pkgs, ... }: {
   xdg.userDirs = {
     enable = true;
 
@@ -24,9 +24,7 @@
     };
   };
   xdg.portal = {
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-hyprland
-    ];
+    extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
     xdgOpenUsePortal = true;
   };
 }

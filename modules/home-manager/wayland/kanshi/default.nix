@@ -1,17 +1,15 @@
-{...}:{
+{ ... }: {
   services.kanshi = {
     enable = true;
     profiles = {
 
       # Laptop profile
       laptop = {
-        outputs = [
-          {
-            criteria = "eDP-1";
-            scale = 1.0;
-            status = "enable";
-          }
-        ];
+        outputs = [{
+          criteria = "eDP-1";
+          scale = 1.0;
+          status = "enable";
+        }];
       };
 
       # DP monitor profile

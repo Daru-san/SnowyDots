@@ -1,4 +1,4 @@
-{config, ...}:{
+{ config, ... }: {
   wayland.windowManager.sway = {
     config = {
       fonts = {
@@ -6,7 +6,7 @@
         style = "Semi-Bold";
         size = 13.4;
       };
-     colors = {
+      colors = {
         focused = {
           background = "#5ACBCC";
           border = "#285577";
@@ -28,19 +28,19 @@
           indicator = "#285577";
           text = "#BDC3C7";
         };
-         urgent = {
+        urgent = {
           background = "#C00030";
           border = "#E06070";
           childBorder = "#E0A0C0";
           indicator = "#e06030";
           text = "#f0f0f0";
-        }; 
+        };
       };
       focus = {
         followMouse = true;
         newWindow = "smart";
       };
-      gaps = { 
+      gaps = {
         outer = 6;
         inner = 4;
       };
@@ -48,14 +48,8 @@
         titlebar = false;
         border = 2;
       };
-      bars = [
-        {command = "${config.programs.waybar.package}/bin/waybar";}
-      ];
-      output = {
-        HDMI-A-1 = {
-          bg = "~/Wallpapers/personal/horizon fill";
-        };
-      };
+      bars = [{ command = "${config.programs.waybar.package}/bin/waybar"; }];
+      output = { HDMI-A-1 = { bg = "~/Wallpapers/personal/horizon fill"; }; };
     };
 
     # Swayfx configuration

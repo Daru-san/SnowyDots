@@ -1,6 +1,5 @@
-{pkgs, lib,config, ...}:
-with lib;
-{
+{ pkgs, lib, config, ... }:
+with lib; {
   home.packages = with pkgs; [ cliphist wl-clipboard ];
   systemd.user.services.cliphist = {
     Unit = {

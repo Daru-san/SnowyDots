@@ -1,14 +1,6 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-  }:
-  let
-    cfg = config.connect;
-  in
-  with lib;
-{
+{ pkgs, lib, config, ... }:
+let cfg = config.connect;
+in with lib; {
   options = {
     connect = {
       kdeconnect.enable = mkOption {

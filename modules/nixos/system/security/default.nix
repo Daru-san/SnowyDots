@@ -1,17 +1,8 @@
-{
-  config,
-  lib,
-  ...
-}: 
-let
-  cfg = config.os.security.polkit;
-in 
-with lib;
-{
-  options = {
-    os.security.polkit.enable = mkEnableOption "Polkit";
-  };
-  config =  mkIf cfg.enable {
+{ config, lib, ... }:
+let cfg = config.os.security.polkit;
+in with lib; {
+  options = { os.security.polkit.enable = mkEnableOption "Polkit"; };
+  config = mkIf cfg.enable {
     security.polkit.enable = true;
     security.polkit.extraConfig = ''
       polkit.addRule(function(action, subject) {
@@ -28,6 +19,6 @@ with lib;
           return polkit.Result.YES;
         }
       })
-  '';
+    '';
   };
 }

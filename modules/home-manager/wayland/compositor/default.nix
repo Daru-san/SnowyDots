@@ -1,14 +1,6 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
-let
-  cfg = config.wayland.compositor;
-in
-with lib;
-{
+{ pkgs, lib, config, ... }:
+let cfg = config.wayland.compositor;
+in with lib; {
   options = {
     wayland.compositor = mkOption {
       type = with types; nullOr (enum [ "hyprland" "sway" ]);

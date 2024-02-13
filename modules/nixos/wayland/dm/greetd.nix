@@ -1,14 +1,6 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
-let
-  cfg = config.wayland.greetd;
-in  
-with lib;
-{
+{ pkgs, lib, config, ... }:
+let cfg = config.wayland.greetd;
+in with lib; {
   options = {
     wayland.greetd = {
       enable = mkEnableOption "A greeter for wayland";
@@ -35,7 +27,8 @@ with lib;
       enable = true;
       settings = rec {
         initial_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet -t --window-padding 1 -g 'Welcome to ${config.networking.hostName}' -c ${cfg.command}";
+          command =
+            "${pkgs.greetd.tuigreet}/bin/tuigreet -t --window-padding 1 -g 'Welcome to ${config.networking.hostName}' -c ${cfg.command}";
           user = "${cfg.user}";
         };
         default_session = initial_session;

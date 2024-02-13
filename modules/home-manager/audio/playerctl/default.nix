@@ -1,14 +1,6 @@
-{ 
-  pkgs,
-  lib,
-  config,
-  ... 
-}:
-let
-  cfg = config.audio.playerctl;
-in 
-with lib;
-{
+{ pkgs, lib, config, ... }:
+let cfg = config.audio.playerctl;
+in with lib; {
   options = {
     audio.playerctl.enable = mkOption {
       default = false;
@@ -18,8 +10,6 @@ with lib;
   };
   config = mkIf cfg.enable {
     home.packages = with pkgs; [ playerctl ];
-    services.playerctld = {
-      enable = true;
-    };
+    services.playerctld = { enable = true; };
   };
 }

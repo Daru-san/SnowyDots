@@ -1,5 +1,5 @@
-# Shell configurations 
-{pkgs, ...}:{
+# Shell configurations
+{ pkgs, ... }: {
   # Enable zsh
   programs.zsh = {
     enable = true;
@@ -8,14 +8,10 @@
     enableLsColors = true;
 
     # Syntax highlighting
-    syntaxHighlighting = {
-      enable = true;
-    };
+    syntaxHighlighting = { enable = true; };
 
     # Autosuggestions
-    autosuggestions = {
-      enable = true;
-    };
+    autosuggestions = { enable = true; };
 
     # Add bash completion compatibility
     enableBashCompletion = true;
@@ -32,9 +28,9 @@
       ranger = "${pkgs.ranger}/bin/ranger";
       rsync = "${pkgs.rsync}/bin/rsync";
     in {
-     # Useful shell aliases
+      # Useful shell aliases
       ll = "ls -l";
-      xt = "exit";   
+      xt = "exit";
       rst = "reset";
       clr = "clear";
       shd = "shutdown now";
@@ -44,8 +40,8 @@
 
       # Userful rsync aliases
       rsync-copy = "${rsync} -avzhe --progress";
-      rsync-move = "${rsync} --remove-source-files -zvh --progress"; 
-    
+      rsync-move = "${rsync} --remove-source-files -zvh --progress";
+
       # Program specific aliases
       r = "${ranger}";
 
@@ -58,7 +54,7 @@
       "....." = "cd ../../../..";
       "......" = "cd ../../../../..";
       "......." = "cd ../../../../../..";
-      "........" =  "cd ../../../../../../..";
+      "........" = "cd ../../../../../../..";
       "~" = "cd ~";
     };
   };

@@ -1,15 +1,7 @@
-{
-  pkgs,
-  lib,
-  config,
-  inputs,
-  ...
-}:let
-  cfg = config.os.system;
-in
-with lib;
-{
-  imports = [inputs.auto-cpufreq.nixosModules.default];
+{ pkgs, lib, config, inputs, ... }:
+let cfg = config.os.system;
+in with lib; {
+  imports = [ inputs.auto-cpufreq.nixosModules.default ];
   options = {
     os.system = {
       laptop = {
@@ -32,9 +24,7 @@ with lib;
     services.udev.extraRules = mkIf cfg.general.ssd.enable ''
       ACTION=="add|change", KERNEL=="[sv]d[a-z]", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="none"
     '';
-    services.fstrim = mkIf cfg.general.ssd.enable {
-      enable = true;
-	  };
+    services.fstrim = mkIf cfg.general.ssd.enable { enable = true; };
 
     programs.auto-cpufreq = mkIf cfg.laptop.optimizations.powerTweaks.enable {
       enable = true;
@@ -48,6 +38,6 @@ with lib;
           turbo = "auto";
         };
       };
-	  };
+    };
   };
 }

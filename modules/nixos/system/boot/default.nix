@@ -1,14 +1,6 @@
-{
-  pkgs,
-  config,
-  lib,
-  ...
-}:
-let
-  cfg = config.os.boot;
-in
-with lib;
-{
+{ pkgs, config, lib, ... }:
+let cfg = config.os.boot;
+in with lib; {
   options = {
     os.boot = {
       enableSystemd-boot = mkEnableOption "Enable systemd boot";
@@ -35,7 +27,14 @@ with lib;
 
       initrd = mkDefault {
         verbose = false;
-        availableKernelModules = [ "ahci" "xhci_pci" "usb_storage" "usbhid" "sd_mod" "rtsx_pci_sdmmc" ];
+        availableKernelModules = [
+          "ahci"
+          "xhci_pci"
+          "usb_storage"
+          "usbhid"
+          "sd_mod"
+          "rtsx_pci_sdmmc"
+        ];
         kernelModules = [ ];
       };
       # Kernel modules

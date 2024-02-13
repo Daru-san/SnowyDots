@@ -1,7 +1,7 @@
-{config, ...}:{  
+{ config, ... }: {
   wayland.windowManager.hyprland = {
     settings = {
-      general =  {
+      general = {
         gaps_in = 6;
         gaps_out = 9;
         border_size = 2.7;
@@ -22,7 +22,7 @@
           passes = 1;
           ignore_opacity = true;
           new_optimizations = true;
-        };       
+        };
         drop_shadow = true;
         shadow_range = 7;
         shadow_render_power = 6;
@@ -31,9 +31,7 @@
         dim_inactive = true;
         dim_strength = 0.14;
       };
-      misc = {
-        vrr = 1;
-      };
+      misc = { vrr = 1; };
       animations = {
         enabled = true;
         bezier = [
@@ -59,10 +57,7 @@
       layerrule = let
         b = regex: "blur,${regex}";
         z = regex: "ignorezero,${regex}";
-      in [
-        (z "waybar")
-        (b "waybar")
-      ];
+      in [ (z "waybar") (b "waybar") ];
     };
   };
 }

@@ -1,9 +1,8 @@
-#mpv configuration
-{config, pkgs, ...}:{
+# mpv configuration
+{ config, pkgs, ... }: {
   programs.mpv = {
     enable = true;
-    bindings = {
-    };
+    bindings = { };
 
     #mpv configs
     config = {

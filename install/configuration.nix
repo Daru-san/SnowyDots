@@ -5,22 +5,22 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-   networking.hostName = "AspireLaptop"; # Define your hostname.
+  networking.hostName = "AspireLaptop"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable =
+    true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
-   time.timeZone = "Africa/Johannesburg";
+  time.timeZone = "Africa/Johannesburg";
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -53,7 +53,6 @@
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
   };
-  
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -70,19 +69,11 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-   users.users.daru = {
-     isNormalUser = true;
-     extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
-     packages = with pkgs; [
-       firefox
-       tree
-       htop
-       btop
-       neofetch
-       ranger
-     ];
-   };
-
+  users.users.daru = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    packages = with pkgs; [ firefox tree htop btop neofetch ranger ];
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

@@ -1,47 +1,35 @@
 # Home packages
-{pkgs, ...}:{
-  imports = [
-    ./desktop-entries.nix
-    ./music/default.nix
-    ./firefox/default.nix
-  ];
+{ pkgs, ... }: {
+  imports = [ ./desktop-entries.nix ./music/default.nix ./firefox/default.nix ];
 
   # GUI
-  home.packages = with pkgs; 
-  [
-    obsidian
-    krita
-    newsflash
-    evince
-    freetube
-    scrcpy
-    keepassxc
-    pqiv
-    fragments
-    bridge-core
-    archiver
-    floorp
-    audacity
-    overskride
-    pavucontrol
-  ]
+  home.packages = with pkgs;
+    [
+      obsidian
+      krita
+      newsflash
+      evince
+      freetube
+      scrcpy
+      keepassxc
+      pqiv
+      fragments
+      bridge-core
+      archiver
+      floorp
+      audacity
+      overskride
+      pavucontrol
+    ]
 
-  # GNOME specific packages
-  ++ (with gnome;[
-    nautilus
-    dconf-editor
-    gnome-clocks
-  ])
+    # GNOME specific packages
+    ++ (with gnome; [ nautilus dconf-editor gnome-clocks ])
 
-  # These are pinned to 23.11(stable branch) since they're broken on unstable
-  ++ (with pkgs.stable; [
-    komikku
-    calcure
-  ])
+    # These are pinned to 23.11(stable branch) since they're broken on unstable
+    ++ (with pkgs.stable; [ komikku calcure ])
 
-  # Cli/Tui based packages
-  ++ (with pkgs;
-  [
+    # Cli/Tui based packages
+    ++ (with pkgs; [
       tree
       bc
       tty-clock
@@ -67,5 +55,5 @@
       trashy
       fontpreview
       rnix-lsp
-  ]);
+    ]);
 }

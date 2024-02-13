@@ -1,14 +1,6 @@
-{
-  pkgs, 
-  config, 
-  lib, 
-  ...
-}:
-let
- cfg = config.os.drivers; 
-in 
-with lib;
-{
+{ pkgs, config, lib, ... }:
+let cfg = config.os.drivers;
+in with lib; {
   options = {
     os.drivers = {
       intel.enable = mkEnableOption "Enable drivers for Intel graphics";

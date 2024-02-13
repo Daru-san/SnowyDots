@@ -1,6 +1,5 @@
-{config, pkgs,lib, ...}:
-with lib;
-{
+{ config, pkgs, lib, ... }:
+with lib; {
   wayland.windowManager.hyprland.settings = {
     exec-once = [
       "[workspace name:1] ${config.programs.kitty.package}/bin/kitty -T Terminal"
@@ -18,5 +17,6 @@ with lib;
       "swww img ${config.theme.wallpaper.image}"
     ];
   };
-  services.kanshi.systemdTarget = mkIf config.wayland.windowManager.hyprland.enable "hyprland-session.target";
+  services.kanshi.systemdTarget =
+    mkIf config.wayland.windowManager.hyprland.enable "hyprland-session.target";
 }

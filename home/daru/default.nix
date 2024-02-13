@@ -1,26 +1,19 @@
-{
-  outputs,
-  inputs,
-  ...
-}:
-{
-  imports = [./home.nix] ++ [
-    ./themes/default.nix
-    ./wayland/default.nix
-    ./programs/default.nix
-  ] ++ (with outputs.homeManagerModules; [
-    audio
-    editor
-    programs
-    xdg
-    wayland
-    shell
-    themes
-  ]) ++ (with inputs; [
-    nur.nixosModules.nur
-    spicetify-nix.homeManagerModules.default
-    hyprland.homeManagerModules.default
-  ]);
+{ outputs, inputs, ... }: {
+  imports = [ ./home.nix ]
+    ++ [ ./themes/default.nix ./wayland/default.nix ./programs/default.nix ]
+    ++ (with outputs.homeManagerModules; [
+      audio
+      editor
+      programs
+      xdg
+      wayland
+      shell
+      themes
+    ]) ++ (with inputs; [
+      nur.nixosModules.nur
+      spicetify-nix.homeManagerModules.default
+      hyprland.homeManagerModules.default
+    ]);
 
   nixpkgs = {
     overlays = [
@@ -41,9 +34,7 @@
       allowUnfreePredicate = _: true;
 
       # Fix electron packages
-      permittedInsecurePackages = [
-        "electron-25.9.0"
-      ];
+      permittedInsecurePackages = [ "electron-25.9.0" ];
     };
   };
 }

@@ -1,5 +1,5 @@
-##Global shell configuration##
-{config, pkgs, ...}:{
+# #Global shell configuration##
+{ config, pkgs, ... }: {
   imports = [
     ./omp/default.nix
     ./zsh/default.nix
@@ -14,9 +14,9 @@
     git = "${config.programs.git.package}/bin/git";
     neofetch = "${pkgs.neofetch}/bin/neofetch";
     tty-clock = "${pkgs.tty-clock}/bin/tty-clock";
-in {
+  in {
     g = "${git}";
-    nofetch = "${neofetch} --config none"; 
+    nofetch = "${neofetch} --config none";
     clock = "${tty-clock} -bscBrnS";
     nb = "nix-rebuild";
     hb = "hm-build";

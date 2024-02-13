@@ -1,14 +1,6 @@
-{
-  pkgs,
-  config,
-  lib,
-  ...
-  }:
-  let
-    cfg = config.wayland;
-  in 
-  with lib;
-  {
+{ pkgs, config, lib, ... }:
+let cfg = config.wayland;
+in with lib; {
   options = {
     wayland = {
       enable = mkEnableOption "Enable wayland";
@@ -21,7 +13,7 @@
     };
   };
   config = mkIf cfg.enable {
-    
+
     security.pam.services.swaylock.text = ''
       auth include login
     '';
@@ -29,9 +21,7 @@
       auth include login
     '';
     programs.dconf.enable = true;
-    programs.hyprland = mkIf cfg.hyprland.enable {
-      enable = true;
-    };
+    programs.hyprland = mkIf cfg.hyprland.enable { enable = true; };
     programs.sway = mkIf cfg.sway.enable {
       enable = true;
       package = mkIf cfg.sway.swayfx.enable pkgs.swayfx;

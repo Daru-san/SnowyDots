@@ -1,20 +1,18 @@
-{ 
-  pkgs, 
-  inputs,
-  ...
-}:
-{
+{ pkgs, inputs, ... }: {
   imports = [ inputs.anyrun.homeManagerModules.default ];
   programs.anyrun = {
     enable = true;
 
     config = {
-      plugins =
-      (with inputs.anyrun.packages.${pkgs.system}; [ rink shell applications ])
-      ++
-      (with inputs.anyrun-nixos-options.packages.${pkgs.system};[ default ])
-      ++
-      (with inputs.anyrun-plugins.packages.${pkgs.system}; [ hyprwin cliphist ]);
+      plugins = (with inputs.anyrun.packages.${pkgs.system}; [
+        rink
+        shell
+        applications
+      ]) ++ (with inputs.anyrun-nixos-options.packages.${pkgs.system};
+        [ default ]) ++ (with inputs.anyrun-plugins.packages.${pkgs.system}; [
+          hyprwin
+          cliphist
+        ]);
 
       width.fraction = 0.3;
       y.absolute = 50;
@@ -27,12 +25,13 @@
     extraConfigFiles = {
       "nixos-options.ron".text = let
         # nixos-options = osConfig.system.build.manual.optionsJSON + "/share/doc/nixos/options.json";
-        hm-options = inputs.home-manager.packages.${pkgs.system}.docs-json + "/share/doc/home-manager/options.json";
+        hm-options = inputs.home-manager.packages.${pkgs.system}.docs-json
+          + "/share/doc/home-manager/options.json";
 
         # merge your options
         options = builtins.toJSON {
           # ":nix" = [nixos-options];
-          ":hm" = [hm-options];
+          ":hm" = [ hm-options ];
         };
 
       in ''

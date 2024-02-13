@@ -1,14 +1,10 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
-  imports =[
+{ pkgs, inputs, ... }: {
+  imports = [
     # Hardware configuration
     ./hardware-configuration.nix
   ];
 
-    # User configurations
+  # User configurations
   users = {
     users = {
       #My main user
@@ -16,12 +12,12 @@
         isNormalUser = true;
         shell = pkgs.zsh;
         description = "Daru";
-        extraGroups = [ "networkmanager" "wheel" "video" "adbusers" "input"];
+        extraGroups = [ "networkmanager" "wheel" "video" "adbusers" "input" ];
       };
       #Disables root user
-    root.hashedPassword = "!";
+      root.hashedPassword = "!";
     };
-  mutableUsers = true;
+    mutableUsers = true;
   };
 
   # Enable android tools
@@ -34,15 +30,11 @@
     waydroid.enable = false;
   };
 
-  programs = { 
+  programs = {
     # Enable gnome-disks
-    gnome-disks = {
-      enable = true;
-    };
+    gnome-disks = { enable = true; };
     # Enable KDE Connect 
-    kdeconnect = {
-      enable = true;
-    };
+    kdeconnect = { enable = true; };
   };
 
   # Enable syncthing
@@ -51,42 +43,37 @@
     dataDir = "/home/daru";
     user = "daru";
     configDir = "/home/daru/.sync";
-    settings = {
-      gui = {
-        theme = "black";
-      };
-    };
+    settings = { gui = { theme = "black"; }; };
   };
 
   # System packages
-  environment.systemPackages = with pkgs; [
-    ranger
-    htop
-    wget
-    git
-    nix-prefetch-git
-    nix-prefetch-github
-    gcc
-    glib
-    nodejs_20
-    unzip
-    clang
-    zig
-    iw
-    clinfo
-    glxinfo
-    exfatprogs
-    nurl
-    nix-melt
-    ncdu
-    busybox
-    usbutils
-    gparted
-    home-manager
-  ] ++ (with inputs.scripts.packages.${pkgs.system}; [
-    nix-rebuild
-    hm-build
-  ]);
+  environment.systemPackages = with pkgs;
+    [
+      ranger
+      htop
+      wget
+      git
+      nix-prefetch-git
+      nix-prefetch-github
+      gcc
+      glib
+      nodejs_20
+      unzip
+      clang
+      zig
+      iw
+      clinfo
+      glxinfo
+      exfatprogs
+      nurl
+      nix-melt
+      ncdu
+      busybox
+      usbutils
+      gparted
+      home-manager
+    ]
+    ++ (with inputs.scripts.packages.${pkgs.system}; [ nix-rebuild hm-build ]);
 
   # wayland configuration
   # other options include sway, greetd and kde
@@ -105,9 +92,7 @@
       quiet = true;
       plymouth.enable = true;
     };
-    drivers = {
-      intel.enable = true;
-    };
+    drivers = { intel.enable = true; };
   };
 
   # System tweaks for performance and maintainance

@@ -1,13 +1,6 @@
-{
-  config
-, lib
-, ...
-}:
-let
-  cfg = config.theme.wallpaper;
-in 
-with lib;
-{
+{ config, lib, ... }:
+let cfg = config.theme.wallpaper;
+in with lib; {
   options.theme.wallpaper = {
     image = mkOption {
       type = with types; nullOr path;

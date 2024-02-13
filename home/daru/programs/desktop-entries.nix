@@ -1,4 +1,4 @@
-{pkgs, config, ...}:{
+{ pkgs, config, ... }: {
   xdg.desktopEntries = {
     # spotify = {
     #   name = "Spotify";
@@ -18,13 +18,12 @@
       exec = "${pkgs.waypaper}/bin/waypaper %U";
       icon = "livewallpaper";
       type = "Application";
-      settings = {
-        Keywords = "wallpaper";
-      };
+      settings = { Keywords = "wallpaper"; };
     };
     logseq = {
       name = "Logseq";
-      exec = "${pkgs.logseq}/bin/logseq %U --enable-features=UseOzonePlatform --ozone-platform=wayland";
+      exec =
+        "${pkgs.logseq}/bin/logseq %U --enable-features=UseOzonePlatform --ozone-platform=wayland";
       icon = "logseq";
       type = "Application";
     };
@@ -32,12 +31,11 @@
       name = "FreeTube";
       genericName = "YouTube";
       comment = "Feature rich YouTube client, now running on wayland!";
-      exec = "${pkgs.freetube}/bin/freetube %U --enable-features=UseOzonePlatform --ozone-platform=wayland";
+      exec =
+        "${pkgs.freetube}/bin/freetube %U --enable-features=UseOzonePlatform --ozone-platform=wayland";
       icon = "freetube";
       type = "Application";
-      settings = {
-        Keywords = "video;youtube";
-      };
+      settings = { Keywords = "video;youtube"; };
     };
     bridge-core = {
       name = "Bridge";
@@ -45,9 +43,7 @@
       exec = "${pkgs.bridge-core}/bin/bridge-core %U";
       type = "Application";
       icon = "minecraft";
-      settings = {
-        Keywords = "minecraft";
-      };
+      settings = { Keywords = "minecraft"; };
     };
     musikcube = {
       name = "musikcube";
@@ -55,9 +51,7 @@
       exec = "kitty --session musikcube.conf";
       type = "Application";
       icon = "musikcube";
-      settings = {
-        Keywords = "music";
-      };
+      settings = { Keywords = "music"; };
     };
   };
 }

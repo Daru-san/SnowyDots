@@ -1,10 +1,9 @@
-#Window and workspace rules
-{...}:{
+# Window and workspace rules
+{ ... }: {
   wayland.windowManager.hyprland = {
     settings = {
-      windowrulev2 = let
-        b = regex: "${regex},class:(kitty),title:(btop)";
-      in  [
+      windowrulev2 = let b = regex: "${regex},class:(kitty),title:(btop)";
+      in [
         # Special btop window for system monitoring
         (b "workspace special:btop")
         (b "center")
@@ -28,7 +27,7 @@
         (c "pavucontrol")
         (c ".blueman-manager-wrapped")
         (c "com.github.hluk.copyq")
-        (c "com.github.wwmm.easyeffects") 
+        (c "com.github.wwmm.easyeffects")
         (w "com.github.wwmm.easyeffects")
       ] ++ [
         #Window specific worspaces

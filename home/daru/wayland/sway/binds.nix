@@ -1,7 +1,6 @@
-{config, pkgs, inputs,lib, ...}:{
-  imports = [./workspaces.nix];
-  wayland.windowManager.sway.config = 
-  {
+{ config, pkgs, inputs, lib, ... }: {
+  imports = [ ./workspaces.nix ];
+  wayland.windowManager.sway.config = {
     modifier = "Mod4";
     bindkeysToCode = true;
     keybindings = let
@@ -26,7 +25,9 @@
       wl-paste = "${pkgs.wl-clipboard}/bin/wl-paste";
       notify-send = "${pkgs.libnotify}/bin/notify-send";
       easyeffects = "${config.services.easyeffects.package}/bin/easyeffects";
-      color-picker = "${inputs.useful-scripts.packages.${pkgs.system}.color-picker}/bin/color-picker";
+      color-picker = "${
+          inputs.useful-scripts.packages.${pkgs.system}.color-picker
+        }/bin/color-picker";
     in {
       #Basic binds
       "${mod}+space" = "exec ${launcher}";
@@ -44,13 +45,12 @@
       "${mod}+v" = "floating toggle";
       "${mod}+f" = "fullscreen";
 
-
       #Lock screen
       "${mod}+l" = "exec ${swaylock} -Ff";
 
       #Clipboard menu
       "${mod}+shift+v" = "exec ${copyq} menu";
-      
+
       #Suspend
       "${mod}+alt+F12" = "exec systemctl suspend";
 
@@ -76,7 +76,6 @@
       "alt+F8" = "exec ${swayosd} --output-volume=raise 5";
       "alt+F6" = "exec ${swayosd} --output-volume=lower 5";
       "alt+F7" = "exec ${swayosd} --output-volume=mute-toggle";
-
 
       #Show when caps lock is pressed
       "caps_lock" = "exec,${swayosd} --caps-lock";

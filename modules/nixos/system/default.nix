@@ -1,4 +1,4 @@
-{...}:{
+{ ... }: {
   imports = [
     ./boot/default.nix
     ./devices/default.nix

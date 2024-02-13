@@ -1,4 +1,5 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   # Fetch css from bjesus/fireside on github
   src = pkgs.fetchgit {
     url = "https://github.com/bjesus/fireside";
