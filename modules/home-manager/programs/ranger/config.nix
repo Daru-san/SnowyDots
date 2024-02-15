@@ -10,14 +10,9 @@
 
       set confirm_on_delete multiple
 
-      set preview_script ~/.config/ranger/scope.sh
-
-      set use_preview_script true
-
       set automatically_count_files true
 
       set open_all_images true
-
 
       set vcs_aware true
 
@@ -28,7 +23,7 @@
       set iterm2_font_width 8
       set iterm2_font_height 11
 
-      set unicode_ellipsis trye
+      set unicode_ellipsis true
 
       set show_hidden_bookmarks true
 
