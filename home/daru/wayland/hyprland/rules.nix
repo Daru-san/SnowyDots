@@ -55,10 +55,11 @@
           "workspace name:F9,^(io.gitlab.news_flash.NewsFlash)$"
           "workspace name:F10,^(evince)$"
 
-          # wlogout
-          "fullscreen,^(wlogout)$"
-          "noanim,^(wlogout)$"
-          "stayfocused,^(wlogout)$"
+          # tschuss
+          "fullscreen,^(tschuss)$"
+          "noanim,^(tschuss)$"
+          "stayfocused,^(tschuss)$"
+          "pin,^(tschuss)$"
         ];
       workspace = [
         "name:1, persistent:true"
