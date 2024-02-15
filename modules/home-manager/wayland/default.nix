@@ -7,11 +7,11 @@
     ./kanshi/default.nix
     ./swayosd/default.nix
     ./swayidle/default.nix
-    ./wlogout/default.nix
     ./compositor/default.nix
     ./swaync/default.nix
     ./gtklock/default.nix
     ./cliphist/default.nix
+    ./tschuss/default.nix
   ];
   home.sessionVariables.NIXOS_OZONE_WL = "1";
 }

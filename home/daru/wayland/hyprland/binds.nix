@@ -118,7 +118,7 @@ with lib; {
         easy = "${getExe config.services.easyeffects.package}";
         cl = "${getExe inputs.scripts.packages.${pkgs.system}.color-picker}";
         wl = "${getExe config.programs.wlogout.package}";
-        tsc = "${getExe' pkgs.tschuss "tschuss}";
+        tsc = "${getExe' pkgs.tschuss "tschuss"}";
         pk = "pkill";
 
         # Screenshots
