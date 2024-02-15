@@ -24,8 +24,8 @@ in
         driSupport = true;
         driSupport32Bit = true;
       };
-      # Fix an issue with audio on intel laptops
-      boot.kernelParams = ["snd-intel-dspcfg.dsp_driver=1"]; #boot.kernelParams = [ "snd_hda_intel.dmic_detect=0" ];
+      # Fix an issue with audio on intel laptops(my laptop specifically)
+      boot.kernelParams = ["snd-intel-dspcfg.dsp_driver=1"];
 
       nixpkgs.config.packageOverrides = pkgs: {
         vaapiIntel = pkgs.vaapiIntel.override {enableHybridCodec = true;};
