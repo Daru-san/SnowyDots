@@ -30,7 +30,7 @@
           height = 64;
       };
       description = "Reboot";
-      action = "reboot";
+      action = "shutdown -r now";
       bind = 114;     // 'r'
     };
 
