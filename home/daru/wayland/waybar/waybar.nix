@@ -21,7 +21,10 @@
 
     enable = true;
 
-    style = builtins.readFile ./style.css;
+    style = ''
+      ${with builtins; readFile config.theme.colorScheme.css}
+      ${with builtins; readFile ./style.css}
+    '';
 
     settings = [
       {
