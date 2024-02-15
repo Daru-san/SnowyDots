@@ -20,6 +20,7 @@
       audacity
       overskride
       pavucontrol
+      tschuss
     ]
     # GNOME specific packages
     ++ (with gnome; [nautilus dconf-editor gnome-clocks])
