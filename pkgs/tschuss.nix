@@ -1,16 +1,15 @@
 {
-  lib
-, stdenv
-, fetchFromGitHub
-, pkg-config
-, gtk3
-, meson
-, ninja
-, libconfig
-, gtk-layer-shell
-, gobject-introspection
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  pkg-config,
+  gtk3,
+  meson,
+  ninja,
+  libconfig,
+  gtk-layer-shell,
+  gobject-introspection,
 }:
-
 stdenv.mkDerivation rec {
   pname = "tschuss";
   version = "6ee14d8";
@@ -22,19 +21,19 @@ stdenv.mkDerivation rec {
     hash = "sha256-jfl8JcWq6dvKwGR19vXNwzUGB/GAnftqGVDECBRIjvE=";
   };
 
-  nativeBuildInputs = [ pkg-config ninja meson ];
+  nativeBuildInputs = [pkg-config ninja meson];
 
-  buildInputs = [ gtk3 gtk-layer-shell libconfig gobject-introspection ];
+  buildInputs = [gtk3 gtk-layer-shell libconfig gobject-introspection];
 
-  hardeningDisable = [ "format" ];
+  hardeningDisable = ["format"];
 
-  makeFlags = [ "PREFIX=$(out)" ];
+  makeFlags = ["PREFIX=$(out)"];
 
   meta = with lib; {
     description = "Simple and fast highly customisable dropdown power menu for Linux systems.";
     homepage = "https://github.com/Lucad44/tschuss";
     license = licenses.mit;
-    maintainers = with maintainers; [ daru ];
+    maintainers = with maintainers; [daru];
     platforms = platforms.linux;
   };
 }
