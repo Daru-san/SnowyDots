@@ -57,6 +57,8 @@ with lib; {
 
         # Switch the wallpaper from a list of wallpapers in a repo
         # "CTRLSHIFT,F12,${e},swww-switch"
+
+        "SUPER, w, exec, hyprctl notify -1 2000 0 "$(hyprctl activeworkspace | head -n 1)"
       ];
 
       bindle = with lib; let
