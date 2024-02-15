@@ -54,13 +54,18 @@
           #Others
           "workspace name:F9,^(io.gitlab.news_flash.NewsFlash)$"
           "workspace name:F10,^(evince)$"
-
-          # tschuss
-          "fullscreen,^(tschuss)$"
-          "noanim,^(tschuss)$"
-          "stayfocused,^(tschuss)$"
-          "pin,^(tschuss)$"
-        ];
+        ]
+        ++
+        # tschuss
+        (let
+          t = regex: "${regex},^(tschuss)$";
+        in [
+          (t "fullscreen")
+          (t "noanim")
+          (t "stayfocused")
+          (t "pin")
+          (t "dimaround")
+        ]);
       workspace = [
         "name:1, persistent:true"
         "name:F1, default:true, persistent:true"
