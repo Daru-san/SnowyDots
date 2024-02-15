@@ -8,7 +8,7 @@ in
   with lib; {
     options.theme.colorScheme = {
       css = mkOption {
-        type = with types; nullOr path;
+        type = with types; (either path str);
         default = null;
       };
     };

@@ -2,5 +2,5 @@
   imports = [./qt.nix ./fonts.nix ./gtk.nix];
 
   # Colorscheme file
-  xdg.configFile."colorScheme.css".text = builtins.readFile ./oxocarbon.css;
+  theme.colorScheme.css = builtins.readFile ./oxocarbon.css;
 }

@@ -22,7 +22,7 @@
     enable = true;
 
     style = ''
-      ${with builtins; readFile config.theme.colorScheme.css}
+      ${config.theme.colorScheme.css}
       ${with builtins; readFile ./style.css}
     '';
 
