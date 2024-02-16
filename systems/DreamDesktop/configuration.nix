@@ -104,7 +104,6 @@
   os.system = {
     general = {
       ssd.enable = true;
-      throttled.enable = true;
     };
   };
 
