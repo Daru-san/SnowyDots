@@ -50,7 +50,7 @@
 
       #Scrollback pager
       scrollback_lines = 100000;
-      scrollback_pager = "kitty-scroll";
+      scrollback_pager = "${with lib; getExe pkgs.bat}";
     };
     keybindings = let
       c = "ctrl";
