@@ -107,7 +107,6 @@
 
     # NixOS configuration
     nixosConfigurations = {
-
       # Configuration on my Acer laptop
       # 'nixos-rebuild switch --flake .#AspireLaptop'
       AspireLaptop = nixpkgs.lib.nixosSystem {
@@ -131,7 +130,6 @@
 
     # Home configurations
     homeConfigurations = {
-
       # 'home-manager switch --flake .#daru@AspireLaptop'
       "daru@AspireLaptop" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
