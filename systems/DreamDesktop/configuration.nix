@@ -97,7 +97,7 @@
       quiet = true;
       plymouth.enable = true;
     };
-    drivers = {amd.enable = true;};
+    drivers = {amdgpu.enable = true;};
   };
 
   # System tweaks for performance and maintainance
