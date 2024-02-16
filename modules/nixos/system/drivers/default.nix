@@ -29,7 +29,7 @@ in
             driversi686Linux.amdvlk
           ];
         };
-        services.xserver.videoDrivers = mkIf services.xserver.enable ["amdgpu"];
+        services.xserver.videoDrivers = mkIf config.services.xserver.enable ["amdgpu"];
         boot.initrd.kernelModules = ["amdgpu"];
       })
       (mkIf cfg.intel.enable {
