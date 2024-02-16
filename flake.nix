@@ -107,6 +107,7 @@
 
     # NixOS configuration
     nixosConfigurations = {
+
       # Configuration on my Acer laptop
       # 'nixos-rebuild switch --flake .#AspireLaptop'
       AspireLaptop = nixpkgs.lib.nixosSystem {
@@ -116,11 +117,31 @@
           ./systems/AspireLaptop/default.nix
         ];
       };
+
+      # Configuration on my pc
+      # 'nixos-rebuild switch --flake .#DreamDesktop'
+      DreamDesktop = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          # > Configuration file for this system <
+          ./systems/DreamDesktop/default.nix
+        ];
+      };
     };
+
+    # Home configurations
     homeConfigurations = {
-      # My home configuration
+
       # 'home-manager switch --flake .#daru@AspireLaptop'
       "daru@AspireLaptop" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {inherit inputs outputs;};
+        # > My home configuration file <
+        modules = [./home/daru/default.nix];
+      };
+
+      # 'home-manager switch --flake .#daru@DreamDesktop'
+      "daru@DreamDesktop" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         # > My home configuration file <
