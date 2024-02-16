@@ -36,6 +36,7 @@
       glow
       gping
       nvtop-intel
+      nvtop-amd
       sysz
       nap
       nitch
