@@ -13,7 +13,7 @@ in
       };
     };
 
-    config = mkIf cfg.intel.enable {
+    config = mkIf cfg.intel.enable (mkIf (cfg.amdgpu.enable != true) {
       hardware.opengl = {
         enable = true;
         extraPackages = with pkgs; [
@@ -30,5 +30,5 @@ in
       nixpkgs.config.packageOverrides = pkgs: {
         vaapiIntel = pkgs.vaapiIntel.override {enableHybridCodec = true;};
       };
-    };
+    });
   }
