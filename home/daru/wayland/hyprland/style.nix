@@ -29,9 +29,13 @@
         # active_opacity = 0.97;
         # inactive_opacity = 0.9;
         dim_inactive = true;
-        dim_strength = 0.14;
+        dim_strength = 0.34;
       };
-      misc = {vrr = 1;};
+      misc = {
+        vrr = 1;
+        animate_mouse_windowdragging = true;
+        enable_swallow = true;
+      };
       animations = {
         enabled = true;
         bezier = [
