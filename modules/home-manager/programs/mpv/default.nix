@@ -1,20 +1,14 @@
-# mpv configuration
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   programs.mpv = {
     enable = true;
-    bindings = {};
 
-    #mpv configs
     config = {
       #Enable hardware-acceleration
       hwdec = "auto-safe";
+
+      force-window = true;
     };
 
-    #mpv scripts
     scripts = with pkgs.mpvScripts; [
       sponsorblock
       convert
