@@ -13,6 +13,11 @@
   # Global shell theme
   programs.oh-my-posh.useTheme = "zash";
 
+  programs.lsd = {
+    enable = true;
+    enableAliases = true;
+  };
+
   # Global shell aliases
   home.shellAliases = let
     git = "${config.programs.git.package}/bin/git";
