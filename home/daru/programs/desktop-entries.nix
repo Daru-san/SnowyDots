@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   xdg.desktopEntries = {
     freetube = {
       name = "FreeTube";
