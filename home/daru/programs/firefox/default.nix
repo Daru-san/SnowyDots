@@ -11,15 +11,15 @@ in {
   programs.firefox = {
     enable = true;
 
-    #Package, firefox-nightly
+    # Package, firefox-nightly
     package = inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin;
 
     profiles = {
       ${user} = {
-        #Name
+        # Name
         name = "daruFox";
 
-        #Extensions(from NUR)
+        # Extensions(from NUR)
         extensions = with config.nur.repos.rycee.firefox-addons;
           [
             boring-rss
@@ -141,11 +141,7 @@ in {
           engines = {
             #Brave search
             "Brave Search" = {
-              urls = [
-                {
-                  template = "https://search.brave.com/search?q={searchTerms}";
-                }
-              ];
+              urls = [{template = "https://search.brave.com/search?q={searchTerms}";}];
               iconUpdateURL = "https://brave.com/static-assets/images/brave-logo-sans-text.svg";
               updateInterval = 24 * 60 * 60 * 1000;
               definedAliases = ["@br" "@b" "@brave"];
@@ -153,47 +149,22 @@ in {
 
             #StartPage
             "StartPage" = {
-              urls = [
-                {
-                  template = "https://www.startpage.com/sp/search?query={searchTerms}";
-                }
-              ];
+              urls = [{template = "https://www.startpage.com/sp/search?query={searchTerms}";}];
               iconUpdateURL = "https://www.startpage.com/sp/cdn/favicons/favicon-gradient.ico";
               updateInterval = 24 * 60 * 60 * 1000;
               definedAliases = ["@sp" "@s" "@start"];
             };
 
-            #Give google an alias
-            "Google" = {
-              metaData = {
-                alias = "@g";
-                hidden = true;
-              };
-            };
-
-            "DuckDuckGo" = {
-              metaData = {
-                alias = "@dg";
-                hidden = true;
-              };
-            };
-
-            #Disable Bing
+            # Disable a bunch of search engines
+            "Google" = {metaData = {hidden = true;};};
+            "DuckDuckGo" = {metaData = {hidden = true;};};
             "Bing" = {metaData = {hidden = true;};};
-
-            #Disable Amazon
             "Amazon.com" = {metaData = {hidden = true;};};
-
-            # Disable wikipedia
             "Wikipedia (en)" = {metaData = {hidden = true;};};
 
             # Reddit
             "Reddit" = {
-              urls = [
-                {
-                  template = "https://www.reddit.com/search/?q={searchTerms}";
-                }
-              ];
+              urls = [{template = "https://www.reddit.com/search/?q={searchTerms}";}];
               iconUpdateURL = "https://www.redditstatic.com/shreddit/assets/favicon/favicon.ico";
               updateInterval = 24 * 60 * 60 * 1000;
               definedAliases = ["@r" "@reddit"];
@@ -209,11 +180,7 @@ in {
 
             # Add the NixOS wiki
             "NixOS Wiki" = {
-              urls = [
-                {
-                  template = "https://nixos.wiki/index.php?search={searchTerms}";
-                }
-              ];
+              urls = [{template = "https://nixos.wiki/index.php?search={searchTerms}";}];
               iconUpdateURL = "https://nixos.wiki/favicon.png";
               updateInterval = 24 * 60 * 60 * 1000; # every day
               definedAliases = ["@nw" "@nixwiki"];
@@ -268,39 +235,54 @@ in {
 
             #Home manager search
             "Home Manager" = {
-              urls = [
-                {
-                  template = "https://mipmip.github.io/home-manager-option-search/?query={searchTerms}";
-                }
-              ];
+              urls = [{template = "https://mipmip.github.io/home-manager-option-search/?query={searchTerms}";}];
               icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
               definedAliases = ["@hm" "@home" "@homeman"];
             };
           };
         };
 
-        #Settings(in user.js)
+        policies = {
+          DefaultDownloadDirectory = "${config.xdg.userDirs.download}";
+          DisableAppUpdate = true;
+          DisableFirefoxAccounts = true;
+          DisableFirefoxStudies = true;
+          DisablePocket = true;
+          DisableProfileImport = true;
+          DisableSetDesktopBackground = true;
+          DisableTelemetry = true;
+          DisplayBookmarksToolbar = "never";
+          DNSOverHTTPS = {
+            Enabled = true;
+            Locked = true;
+          };
+          DontCheckDefaultBrowser = true;
+          ExtensionUpdate = true;
+          OfferToSaveLogins = false;
+          PasswordManagerEnabled = false;
+          EnableTrackingProtection = {
+            Value = true;
+            Locked = true;
+            Cryptomining = true;
+            Fingerprinting = true;
+            EmailTracking = true;
+          };
+          HardwareAcceleration = true;
+          NoDefaultBookmarks = true;
+          OverrideFirstRunPage = "";
+          PopupBlocking = {Default = true;};
+          Preferences = {
+            browser.backspace_action = 0;
+          };
+        };
+
         settings = {
           "browser.disableResetPrompt" = true;
-          "browser.shell.checkDefaultBrowser" = false;
-          "browser.shell.defaultBrowserCheckCount" = 1;
-          "dom.security.https_only_mode" = true;
-          "identity.fxaccounts.enabled" = false;
-          "privacy.trackingprotection.enabled" = true;
-          "signon.rememberSignons" = false;
-          "browser.backspace_action" = 0;
           "browser.bookmarks.showMobileBookmarks" = false;
           "browser.download.panel.shown" = false;
           "browser.download.useDownloadDir" = false;
-          "browser.newtabpage.activity-stream.feeds.section.highlights" = false;
-          "browser.newtabpage.activity-stream.feeds.topsites" = false;
-          "browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar" =
-            false;
-          "browser.newtabpage.activity-stream.section.highlights.includePocket" =
-            false;
           "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
           "browser.search.suggest.enabled" = false;
-          "browser.toolbars.bookmarks.visibility" = "never";
           "browser.tabs.warnOnClose" = true;
           "browser.startup.page" = 3;
           "browser.translations.panelShown" = true;
