@@ -1,78 +1,75 @@
-# Btop config
-{
-  config,
-  pkgs,
-  ...
-}: {
+{...}: {
   programs.btop = {
     enable = true;
     settings = {
-      color_theme = "matcha-dark-sea";
-      theme_background = true;
+      # Colorscheming
+      color_theme = "flat-remix";
+      theme_background = false;
+      truecolor = true;
+
+      # General
+      vim_keys = true;
+      rounded_corners = true;
+      graph_symbol = "braille";
+      shown_boxes = "cpu mem net proc gpu0";
+      update_ms = 400;
+      base_10_sizes = false;
+      background_update = true;
+      clock_format = "%d %b %R";
+      log_level = ''"WARNING"%'';
+
+      # Processes
+      proc_sorting = "memory";
+      proc_tree = true;
+      proc_colors = true;
+      proc_gradient = true;
+      proc_per_core = true;
+      proc_mem_bytes = true;
+      proc_cpu_graphs = true;
+      proc_info_smaps = false;
+      proc_left = false;
+      proc_aggregate = true;
+      proc_filter_kernel = true;
+
+      # CPU
+      cpu_graph_upper = "system";
+      cpu_graph_lower = "user";
+      cpu_invert_lower = true;
+      cpu_single_graph = false;
+      cpu_bottom = true;
+      show_uptime = true;
+      check_temp = true;
+      cpu_sensor = "Auto";
+      show_coretemp = true;
+      temp_scale = "celsius";
+      show_cpu_freq = true;
+
+      # Disks and memeory
+      disks_filter = "exclude=/boot /nix /var/log /nix/store /etc /var /tmp /root";
+      mem_graphs = true;
+      mem_below_net = true;
+      fs_arc_cached = true;
+      show_swap = true;
+      swap_disk = true;
+      show_disks = true;
+      only_physical = true;
+      use_fstab = true;
+      zfs_hide_datasets = false;
+      disk_free_priv = false;
+      show_io_stat = false;
+      io_mode = false;
+      io_graph_combined = false;
+      io_graph_speeds = "/:480";
+
+      # Network
+      net_download = 100;
+      net_upload = 100;
+      net_auto = true;
+      net_sync = true;
+
+      # Battery
+      show_battery = true;
+      selected_battery = "Auto";
     };
-    extraConfig = ''
-      truecolor = True
-      force_tty = False
-      presets = "cpu:1:default,proc:0:default cpu:0:default,mem:0:default,net:0:default cpu:0:block,net:0:tty"
-      vim_keys = True
-      rounded_corners = true
-      graph_symbol = "braille"
-      graph_symbol_cpu = "default"
-      graph_symbol_mem = "default"
-      graph_symbol_net = "default"
-      graph_symbol_proc = "default"
-      shown_boxes = "cpu mem net proc"
-      update_ms = 400
-      proc_sorting = "memory"
-      proc_reversed = False
-      proc_tree = True
-      proc_colors = True
-      proc_gradient = True
-      proc_per_core = True
-      proc_mem_bytes = True
-      proc_cpu_graphs = True
-      proc_info_smaps = False
-      proc_left = False
-      proc_filter_kernel = True
-      cpu_graph_upper = "system"
-      cpu_graph_lower = "user"
-      cpu_invert_lower = True
-      cpu_single_graph = False
-      cpu_bottom = True
-      show_uptime = True
-      check_temp = True
-      cpu_sensor = "Auto"
-      show_coretemp = True
-      cpu_core_map = ""
-      temp_scale = "celsius"
-      base_10_sizes = False
-      show_cpu_freq = True
-      clock_format = "%d %b %R"
-      background_update = True
-      custom_cpu_name = ""
-      disks_filter = "exclude=/boot /nix /var/log /nix/store /etc /var /tmp /root"
-      mem_graphs = True
-      mem_below_net = True
-      fs_arc_cached = True
-      show_swap = True
-      swap_disk = True
-      show_disks = True
-      only_physical = True
-      use_fstab = True
-      zfs_hide_datasets = False
-      disk_free_priv = False
-      show_io_stat = True
-      io_mode = False
-      io_graph_combined = False
-      io_graph_speeds = "/:480"
-      net_download = 100
-      net_upload = 100
-      net_auto = True
-      net_sync = True
-      net_iface = ""
-      show_battery = True
-      selected_battery = "Auto"
-      log_level = "WARNING"%
-    '';
   };
 }
