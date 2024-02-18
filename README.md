@@ -2,7 +2,10 @@
 ===============
 My beautiful, functional, focused nix flake with Hyprland and Sway, written completely in nix.
 
-_**This repo is a mirror of [SnowyDots](https://git.sr.ht/~darumaka/SnowyDots) on [sourcehut](https://sr.ht "sourcehut"), all of my other 'config' repos are hosted solely on [sr.ht](https://sr.ht) from now on**_
+_**Origin(up-to-date): [SnowyDots](https://git.sr.ht/~darumaka/SnowyDots) on [sourcehut](https://sr.ht "sourcehut")**_
+
+_**Mirror(slightly outdated): [Snowflake-dots](https://github.com/Daru-san/Snowflake-dots) on [github](https://github.com)**_
+
 
 <p align="center">
  <img src="https://github.com/Daru-san/Snowflake-dots/assets/135046711/ca25eab0-08da-4bbd-b336-21c43fdc4bab">
