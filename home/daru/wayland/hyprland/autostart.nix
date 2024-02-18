@@ -22,6 +22,6 @@ with lib; {
       "swww img ${config.theme.wallpaper.image}"
     ];
   };
-  services.kanshi.systemdTarget =
-    mkIf config.wayland.windowManager.hyprland.enable "hyprland-session.target";
+  services.kanshi.systemdTarget = mkIf config.wayland.windowManager.hyprland.enable "hyprland-session.target";
+  services.wlsunset.systemdTarget = mkIf config.wayland.windowManager.hyprland.enable "hyprland-session.target";
 }

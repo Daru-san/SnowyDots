@@ -12,6 +12,7 @@
     ./gtklock/default.nix
     ./cliphist/default.nix
     ./tschuss/default.nix
+    ./wlsunset/default.nix
   ];
   home.sessionVariables.NIXOS_OZONE_WL = "1";
 }
