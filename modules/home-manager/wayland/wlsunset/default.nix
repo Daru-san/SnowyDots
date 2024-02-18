@@ -1,10 +1,12 @@
+#TODO: expand configuration if/when https://github.com/nix-community/home-manager/pull/5035 gets merged
 {...}: {
-  imports = [
-    (builtins.fetchurl {
-      url = "https://raw.githubusercontent.com/nix-community/home-manager/ee7db2c6bc257486c37c38dba17ec2f3719de3ac/modules/services/wlsunset.nix";
-    })
-  ];
-  programs.wlsunset = {
+  services.wlsunset = {
     enable = true;
+    # time = {
+    #   sunrise = "05:50";
+    #   sunset = "18:50";
+    # };
+    latitude = "25.99";
+    longitude = "28.13";
   };
 }
