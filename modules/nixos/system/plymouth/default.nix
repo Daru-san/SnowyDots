@@ -12,10 +12,10 @@ in
     config.boot = mkIf cfg.enable {
       plymouth = {
         enable = true;
-        theme = "spinner_alt";
+        theme = "loader";
         themePackages = [
           (pkgs.adi1090x-plymouth-themes.override {
-            selected_themes = ["spinner_alt"];
+            selected_themes = ["loader"];
           })
         ];
       };
