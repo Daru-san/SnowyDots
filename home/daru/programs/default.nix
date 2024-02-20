@@ -1,5 +1,10 @@
 # Home packages
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  lib,
+  ...
+}: {
   imports = [./desktop-entries.nix ./music/default.nix ./firefox/default.nix];
 
   # Overlay for standardnotes from https://github.com/NixOS/nixpkgs/issues/278191#issuecomment-1910865477
@@ -31,56 +36,58 @@
     })
   ];
 
-  # GUI
-  home.packages = with pkgs;
-    [
-      obsidian
-      krita
-      newsflash
-      evince
-      freetube
-      scrcpy
-      keepassxc
-      pqiv
-      fragments
-      bridge-core
-      archiver
-      floorp
-      audacity
-      overskride
-      pavucontrol
-      standardnotes-patch
-    ]
-    # GNOME specific packages
-    ++ (with gnome; [nautilus dconf-editor gnome-clocks])
-    # These are pinned to 23.11(stable branch) since they're broken on unstable
-    ++ (with pkgs.stable; [komikku calcure])
-    # Cli/Tui based packages
-    ++ (with pkgs; [
-      tree
-      bc
-      tty-clock
-      libnotify
-      speedtest-cli
-      chroma
-      glow
-      gping
-      nvtop-intel
-      sysz
-      nap
-      nitch
-      pulsemixer
-      ani-cli
-      pokeshell
-      du-dust
-      fzf
-      unrar
-      onefetch
-      asciinema
-      asciinema-agg
-      asciinema-scenario
-      fontpreview
-      rnix-lsp
-    # Trash, a tool for trashing files in the terminal
-    ]) ++ (with inputs.trash.packages.${pkgs.system}; [default]);
+  home.packages = with lib;
+    mkMerge [
+      (with pkgs; [
+        # GUI
+        obsidian
+        krita
+        newsflash
+        evince
+        freetube
+        scrcpy
+        keepassxc
+        pqiv
+        fragments
+        bridge-core
+        archiver
+        floorp
+        audacity
+        overskride
+        pavucontrol
+        standardnotes-patch
+
+        # CLI
+        tree
+        bc
+        tty-clock
+        libnotify
+        speedtest-cli
+        chroma
+        glow
+        gping
+        nvtop-intel
+        sysz
+        nap
+        nitch
+        pulsemixer
+        ani-cli
+        pokeshell
+        du-dust
+        fzf
+        unrar
+        onefetch
+        asciinema
+        asciinema-agg
+        asciinema-scenario
+        fontpreview
+        rnix-lsp
+      ])
+      # GNOME related packages
+      (with pkgs.gnome; [nautilus dconf-editor gnome-clocks])
+      # These are pinned to 23.11(stable branch) since they're broken on unstable
+      (with pkgs.stable; [komikku calcure])
+      # Trash, a tool for trashing files in the terminal
+      (with inputs.trash; [defaultPackage])
+    ];
 }
