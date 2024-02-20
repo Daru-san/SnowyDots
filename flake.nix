@@ -72,6 +72,11 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+
+    trash = {
+      url = "github:oberblastmeister/trashy";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {

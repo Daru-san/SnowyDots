@@ -79,8 +79,8 @@
       asciinema
       asciinema-agg
       asciinema-scenario
-      trashy
       fontpreview
       rnix-lsp
-    ]);
+    # Trash, a tool for trashing files in the terminal
+    ]) ++ (with inputs.trash.packages.${pkgs.system}; [default]);
 }
