@@ -44,7 +44,7 @@
   programs.sway.enable = true;
 
   programs.git.enable = true;
-
+  programs.lsd.enable = true;
   programs.neovim = {
     enable = true;
     vimAlias = true;
