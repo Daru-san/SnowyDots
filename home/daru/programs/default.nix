@@ -82,12 +82,11 @@
         asciinema-scenario
         fontpreview
         rnix-lsp
+        trashy
       ])
       # GNOME related packages
       (with pkgs.gnome; [nautilus dconf-editor gnome-clocks])
       # These are pinned to 23.11(stable branch) since they're broken on unstable
       (with pkgs.stable; [komikku calcure])
-      # Trash, a tool for trashing files in the terminal
-      (with inputs.trash; [defaultPackage])
     ];
 }
