@@ -12,7 +12,7 @@
     ./windows.nix
     ./workspaces.nix
   ];
-  #Configuring Hyprland
+  # Configuring sway
   wayland.windowManager.sway = {
     package = pkgs.swayfx;
     systemd = {enable = true;};
