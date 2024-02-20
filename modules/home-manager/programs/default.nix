@@ -7,5 +7,6 @@
     ./connect/default.nix
     ./translate-shell/default.nix
     ./bat/default.nix
+    ./lf/default.nix
   ];
 }

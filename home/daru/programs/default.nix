@@ -81,6 +81,7 @@
         asciinema-agg
         asciinema-scenario
         fontpreview
+        xdragon
         rnix-lsp
         trashy
       ])
