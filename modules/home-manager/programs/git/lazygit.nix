@@ -23,8 +23,10 @@
         paging = {
           colorArg = "always";
           pager = "diff-so-fancy";
+        };
       };
       os = {
+        editPreset = "vi";
       };
       refresher = {
         refreshInterval = 7;
