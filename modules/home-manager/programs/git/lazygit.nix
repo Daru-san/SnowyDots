@@ -20,7 +20,9 @@
         autoRefresh = true;
         fetchAll = false;
         mainBranches = ["master" "main"];
-        paging.pager = "diff-so-fancy";
+        paging = {
+          colorArg = "always";
+          pager = "diff-so-fancy";
       };
       os = {
       };
