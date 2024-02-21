@@ -81,6 +81,8 @@
 
   #Autostart session files
   home.file.".config/kitty/git.conf".text = ''
+    title SnowyDots
+
     new_tab LazyFlake
     cd ~/snow
     launch lazygit
