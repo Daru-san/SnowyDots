@@ -1,12 +1,14 @@
 #TODO: expand configuration if/when https://github.com/nix-community/home-manager/pull/5035 gets merged
 {...}: {
+  imports = [./wlsunset.nix];
   services.wlsunset = {
     enable = true;
-    # time = {
-    #   sunrise = "05:50";
-    #   sunset = "18:50";
-    # };
-    latitude = "25.99";
-    longitude = "28.13";
+    time = {
+      sunrise = "05:50";
+      sunset = "18:50";
+    };
+    output = "HDMI-A-1";
+    # latitude = "25.99";
+    # longitude = "28.13";
   };
 }
