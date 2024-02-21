@@ -50,7 +50,7 @@
 
       #Scrollback pager
       scrollback_lines = 100000;
-      scrollback_pager = "${with lib; getExe pkgs.bat}";
+      scrollback_pager = "${with lib; getExe pkgs.bat} --pager=always";
     };
     keybindings = let
       c = "ctrl";
@@ -81,20 +81,13 @@
 
   #Autostart session files
   home.file.".config/kitty/git.conf".text = ''
-    new_tab SnowyUI
-    title GitUI
+    new_tab LazyFlake
     cd ~/snow
-    launch gitui
+    launch lazygit
 
-    new_tab Snowfiles
-    title Ranger
+    new_tab ChilledEditor
     cd ~/snow
-    launch ranger
-
-    new_tab Snowcli
-    title zsh
-    cd ~/snow
-    launch zsh
+    launch vi
   '';
   xdg.configFile."kitty/musikcube.conf".text = ''
     new_tab musikcube
