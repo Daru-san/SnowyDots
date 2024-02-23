@@ -21,6 +21,7 @@ in {
 
     latitude = mkOption {
       type = with types; nullOr str;
+      default = null;
       example = "-74.3";
       description = ''
         Your current latitude, between `-90.0` and
@@ -30,6 +31,7 @@ in {
 
     longitude = mkOption {
       type = with types; nullOr str;
+      default = null;
       example = "12.5";
       description = ''
         Your current longitude, between `-180.0` and
@@ -67,6 +69,7 @@ in {
 
     output = mkOption {
       type = with types; nullOr str;
+      default = null;
       description = ''
         Name of output to use, by default all outputs are used.
       '';
@@ -75,6 +78,7 @@ in {
     time = {
       duration = mkOption {
         type = with types; nullOr int;
+        default = null;
         example = 1800;
         description = ''
           The duration in seconds.
@@ -83,6 +87,7 @@ in {
 
       sunrise = mkOption {
         type = with types; nullOr str;
+        default = null;
         example = "06:30";
         description = ''
           The time when the sun rises (in 24 hour format).
@@ -91,6 +96,7 @@ in {
 
       sunset = mkOption {
         type = with types; nullOr str;
+        default = null;
         example = "18:00";
         description = ''
           The time when the sun sets (in 24 hour format).
@@ -122,15 +128,15 @@ in {
       Service = {
         ExecStart = let
           args = [
-            "-l ${cfg.latitude}"
-            "-L ${cfg.longitude}"
             "-t ${toString cfg.temperature.night}"
             "-T ${toString cfg.temperature.day}"
-            "-S ${cfg.time.sunrise}"
-            "-s ${cfg.time.sunset}"
-            "-d ${toString cfg.time.duration}"
             "-g ${cfg.gamma}"
-            "-o ${cfg.output}"
+            ((mkIf cfg.latitude != null) "-l ${cfg.latitude}")
+            ((mkIf cfg.longitude != null) "-L ${cfg.longitude}")
+            ((mkIf cfg.time.sunrise != null) "-S ${cfg.time.sunrise}")
+            ((mkIf cfg.time.sunset != null) "-s ${cfg.time.sunset}")
+            ((mkIf cfg.time.duration != null) "-d ${toString cfg.time.duration}")
+            ((mkIf cfg.output != null) "-o ${cfg.output}")
           ];
         in "${cfg.package}/bin/wlsunset ${concatStringsSep " " args}";
       };
