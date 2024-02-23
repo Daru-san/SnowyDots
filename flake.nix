@@ -59,7 +59,7 @@
     };
 
     # Hyprland plugins
-    hyprland.url = "github:hyprwm/Hyprland/v0.35.0";
+    hyprland.url = "github:hyprwm/Hyprland";
     hycov = {
       url = "github:DreamMaoMao/hycov";
       inputs.hyprland.follows = "hyprland";
