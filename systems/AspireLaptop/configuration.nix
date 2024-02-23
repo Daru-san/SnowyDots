@@ -103,12 +103,12 @@
   # System tweaks for performance and maintainance
   os.system = {
     laptop.optimizations = {
-      tlp.enable = true;
-      powerTweaks.enable = true;
+      tlp.enable = false;
+      auto-cpufreq.enable = true;
     };
     general = {
       ssd.enable = true;
-      throttled.enable = true;
+      intel.enable = true;
     };
   };
 

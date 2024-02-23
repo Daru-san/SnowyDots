@@ -14,17 +14,19 @@ in
         laptop = {
           optimizations = {
             tlp.enable = mkEnableOption "Enable TLP";
-            powerTweaks.enable = mkEnableOption "Enable custom power tweaks";
+            auto-cpufreq.enable = mkEnableOption "Enable auto-cpufreq custom tweaks";
           };
         };
         general = {
           ssd.enable = mkEnableOption "Enable ssd optimizations";
-          throttled.enable = mkEnableOption "Enable the throttled service";
+          intel.enable = mkEnableOption "Enable the throttled service";
         };
       };
     };
     config = {
-      services.throttled.enable = mkIf cfg.general.throttled.enable true;
+      services.throttled.enable = mkIf cfg.general.intel.enable true;
+      services.thermald.enable = mkIf cfg.general.intel.enable true;
+      hardware.cpu.intel.updateMicrocode = mkIf cfg.general.intel.enable true;
 
       services.tlp.enable = mkIf cfg.laptop.optimizations.tlp.enable true;
 
@@ -33,7 +35,7 @@ in
       '';
       services.fstrim = mkIf cfg.general.ssd.enable {enable = true;};
 
-      programs.auto-cpufreq = mkIf cfg.laptop.optimizations.powerTweaks.enable {
+      programs.auto-cpufreq = mkIf cfg.laptop.optimizations.auto-cpufreq.enable {
         enable = true;
         settings = {
           charger = {
