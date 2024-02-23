@@ -56,6 +56,7 @@
         overskride
         pavucontrol
         standardnotes-patch
+        valent
 
         # CLI
         tree
