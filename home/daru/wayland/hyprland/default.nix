@@ -22,6 +22,7 @@
         "systemctl --user start app-org.keepassxc.KeePassXC@autostart.service"
         "systemctl --user start swayidle.service"
         "systemctl --user start swayosd.service"
+        "systemctl --user start wlsunset.service"
       ];
     };
     settings = {source = ["extra.conf"];};

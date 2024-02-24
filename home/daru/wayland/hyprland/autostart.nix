@@ -21,6 +21,8 @@ with lib; {
       "systemctl --user restart kanshi.service"
 
       "swww img ${config.theme.wallpaper.image}"
+
+      "${pkgs.pyprland}/bin/pypr reload"
     ];
   };
   services.kanshi.systemdTarget = mkIf config.wayland.windowManager.hyprland.enable "hyprland-session.target";
