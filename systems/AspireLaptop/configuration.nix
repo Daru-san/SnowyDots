@@ -38,7 +38,7 @@
     # Enable gnome-disks
     gnome-disks = {enable = true;};
     # Enable KDE Connect
-    kdeconnect = {enable = true;};
+    kdeconnect = {enable = false;};
   };
 
   # Enable syncthing
