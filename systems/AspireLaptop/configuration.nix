@@ -97,16 +97,13 @@
       quiet = true;
       plymouth.enable = true;
     };
-    drivers = {intel.enable = true;};
   };
 
-  # System tweaks for performance and maintainance
+  # System options for drivers and optimizations
   os.system = {
-    laptop.optimizations = {
-      tlp.enable = false;
-      auto-cpufreq.enable = true;
-    };
-    general = {
+    drivers.intel.enable = true;
+    optimizations = {
+      laptop.enable = true;
       ssd.enable = true;
       intel.enable = true;
     };
