@@ -5,7 +5,7 @@
 }: {
   home.packages = with pkgs; [pyprland];
   xdg.configFile."hypr/pyprland.toml".source = with pkgs;
-    (formats.toml { }).generate "pyprland.toml" {
+    (formats.toml {}).generate "pyprland.toml" {
       pyprland = {
         plugins = ["scratchpads" "toggle_special"];
       };
@@ -26,19 +26,12 @@
           unfocus = "hide";
           hysteresis = 0.7;
         };
-        easyeffects = {
-          animation = "fromRight";
-          command = "easyeffects";
-          class = "com.github.wwmm.easyeffects";
-          size = "40% 90%";
-        };
         valent = {
           animation = "fromRight";
           command = "valent";
           class = "valent";
           size = "60% 80%";
           unfocus = "hide";
-          lazy = true;
         };
         bluetooth = {
           animation = "fromRight";
@@ -46,14 +39,6 @@
           class = "io.github.kaii_lb.Overskride";
           size = "70% 70%";
           lazy = true;
-        };
-        passwords = {
-          animation = "fromBottom";
-          command = "keepassxc";
-          class = "KeePassXC";
-          size = "80% 80%";
-          lazy = true;
-          excludes = ["*"];
         };
         btop = {
           animation = "fromBottom";
@@ -66,6 +51,15 @@
           command = "blueman-manager";
           class = ".blueman-manager-wrapped";
           size = "40% 40%";
+          unfocus = "hide";
+          lazy = true;
+        };
+        wifi = {
+          animation = "fromRight";
+          command = "iwgtk";
+          class = "org.twosheds.iwgtk";
+          size = "40% 60%";
+          lazy = true;
         };
       };
     };

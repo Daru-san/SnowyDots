@@ -56,10 +56,16 @@ with lib; {
         # Switch the wallpaper from a list of wallpapers in a repo
         # "CTRLSHIFT,F12,${e},swww-switch"
 
-        "SUPER, w, exec, hyprctl notify -1 2000 0 `hyprctl activeworkspace | head -n 1`"
+        "SUPER, w, ${e}, hyprctl notify -1 2000 0 `hyprctl activeworkspace | head -n 1`"
 
-        "CTRLSHIFT,escape,exec, pypr toggle btop"
-        "supershift,return,exec, pypr toggle term"
+        "shiftalt,a,${e}, ${pypr} toggle btop"
+        "supershift,return,${e}, ${pypr} toggle term"
+
+        "superalt,1,${e},${pypr} toggle volume"
+        "superalt,3,${e},${pypr} toggle valent"
+        "superalt,4,${e},${pypr} toggle bluetooth"
+        "superalt,2,${e},${pypr} toggle wifi"
+        "superalt,5,${e},${pypr} toggle blueman"
       ];
 
       bindle = with lib; let

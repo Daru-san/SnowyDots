@@ -184,7 +184,7 @@
             car = "";
             default = ["" "" ""];
           };
-          on-click = "pavucontrol";
+          on-click = "pypr show volume";
           on-click-right = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
           tooltip = false;
         };
@@ -200,6 +200,7 @@
           tooltip-format = "{essid}({signalStrength}%)";
           format-linked = "{ifname} (No IP)";
           format-disconnected = "󰖪";
+          on-click = "pypr show wifi";
         };
         "bluetooth" = {
           format-on = "󰂯";
@@ -208,7 +209,7 @@
           format-connected = "󰂱";
           tooltip-format = "{status}: {num_connections} devices connected";
           tooltip = true;
-          on-click = "overskride";
+          on-click = "pypr show bluetooth";
         };
         "custom/playerctl" = {
           format-alt = "󰎈 Music playing 󰎈";
