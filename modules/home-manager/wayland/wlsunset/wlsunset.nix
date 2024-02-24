@@ -1,11 +1,13 @@
-{ config, lib, pkgs, ... }:
-
-with lib;
-
-let cfg = config.services.wlsunset-test;
-
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+with lib; let
+  cfg = config.services.wlsunset-test;
 in {
-  meta.maintainers = [ hm.maintainers.matrss ];
+  meta.maintainers = [hm.maintainers.matrss];
 
   options.services.wlsunset-test = {
     enable = mkEnableOption "wlsunset";
@@ -122,7 +124,7 @@ in {
     systemd.user.services.wlsunset = {
       Unit = {
         Description = "Day/night gamma adjustments for Wayland compositors.";
-        PartOf = [ "graphical-session.target" ];
+        PartOf = ["graphical-session.target"];
       };
 
       Service = {
@@ -141,7 +143,7 @@ in {
         in "${cfg.package}/bin/wlsunset ${concatStringsSep " " args}";
       };
 
-      Install = { WantedBy = [ cfg.systemdTarget ]; };
+      Install = {WantedBy = [cfg.systemdTarget];};
     };
   };
 }
