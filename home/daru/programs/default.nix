@@ -51,7 +51,6 @@
         fragments
         bridge-core
         archiver
-        floorp
         audacity
         overskride
         pavucontrol
