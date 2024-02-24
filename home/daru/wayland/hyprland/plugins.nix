@@ -31,7 +31,6 @@
           command = "valent";
           class = "valent";
           size = "60% 80%";
-          unfocus = "hide";
         };
         bluetooth = {
           animation = "fromRight";
