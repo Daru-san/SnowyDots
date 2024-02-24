@@ -58,8 +58,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Hyprland plugins
+    # Hyprland and plugins
     hyprland.url = "github:hyprwm/Hyprland";
+    pyprland = {
+      url = "github:hyprland-community/pyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hycov = {
       url = "github:DreamMaoMao/hycov";
       inputs.hyprland.follows = "hyprland";

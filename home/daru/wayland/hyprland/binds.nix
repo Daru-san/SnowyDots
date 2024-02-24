@@ -25,6 +25,7 @@ with lib; {
         btop = "${getExe config.programs.btop.package}";
         swayosd = "${getExe' config.services.swayosd.package "swayosd-client"}";
         swww = "${getExe pkgs.swww}";
+        pypr = "${getExe pkgs.pyprland}";
       in [
         # Launching programs
         "SUPER, e, ${e}, ${h} '${file-manager}'"
@@ -59,6 +60,9 @@ with lib; {
         # "CTRLSHIFT,F12,${e},swww-switch"
 
         "SUPER, w, exec, hyprctl notify -1 2000 0 `hyprctl activeworkspace | head -n 1`"
+
+        "CTRLSHIFT,escape,exec, pypr toggle btop"
+        "supershift,return,exec, pypr toggle term"
       ];
 
       bindle = with lib; let
