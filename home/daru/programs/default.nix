@@ -56,6 +56,7 @@
         pavucontrol
         standardnotes-patch
         valent
+        iwgtk
 
         # CLI
         tree
