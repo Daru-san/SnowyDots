@@ -50,9 +50,6 @@ with lib; {
         #Clipboard menu
         "SUPERSHIFT, v, ${e}, ${copyq} menu"
 
-        #'Task manager'
-        "SUPERALT,b,${e},${terminal} -T btop --hold ${btop}"
-
         # Show when caps lock is pressed
         ",caps_lock,${e},${swayosd} --caps-lock"
 

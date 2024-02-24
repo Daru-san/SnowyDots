@@ -25,22 +25,20 @@
           size = "40% 90%";
           unfocus = "hide";
           hysteresis = 0.7;
-          excludes = ["*"];
         };
         easyeffects = {
           animation = "fromRight";
           command = "easyeffects";
           class = "com.github.wwmm.easyeffects";
           size = "40% 90%";
-          excludes = ["*"];
         };
         valent = {
           animation = "fromRight";
           command = "valent";
-          class = "Valent";
+          class = "valent";
           size = "60% 80%";
           unfocus = "hide";
-          excludes = ["*"];
+          lazy = true;
         };
         bluetooth = {
           animation = "fromRight";
@@ -48,7 +46,6 @@
           class = "io.github.kaii_lb.Overskride";
           size = "70% 70%";
           lazy = true;
-          excludes = ["*"];
         };
         passwords = {
           animation = "fromBottom";
@@ -69,7 +66,6 @@
           command = "blueman-manager";
           class = ".blueman-manager-wrapped";
           size = "40% 40%";
-          excludes = ["*"];
         };
       };
     };
