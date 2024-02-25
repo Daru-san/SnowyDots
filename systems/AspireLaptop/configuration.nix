@@ -31,14 +31,18 @@
       gvfs.enable = true;
       jmtpfs.enable = true;
     };
-    waydroid.enable = false;
+    waydroid.enable = true;
   };
 
   programs = {
+    nix-ld.enable = true;
+    nix-ld.libraries = [
+
+    ];
     # Enable gnome-disks
     gnome-disks = {enable = true;};
     # Enable KDE Connect
-    kdeconnect = {enable = true;};
+    kdeconnect = {enable = false;};
   };
 
   # Enable syncthing
@@ -97,18 +101,15 @@
       quiet = true;
       plymouth.enable = true;
     };
-    drivers = {intel.enable = true;};
   };
 
-  # System tweaks for performance and maintainance
+  # System options for drivers and optimizations
   os.system = {
-    laptop.optimizations = {
-      tlp.enable = true;
-      powerTweaks.enable = true;
-    };
-    general = {
+    drivers.intel.enable = true;
+    optimizations = {
+      laptop.enable = true;
       ssd.enable = true;
-      throttled.enable = true;
+      intel.enable = true;
     };
   };
 

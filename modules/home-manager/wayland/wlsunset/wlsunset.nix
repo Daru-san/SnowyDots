@@ -1,11 +1,13 @@
-{ config, lib, pkgs, ... }:
-
-with lib;
-
-let cfg = config.services.wlsunset-test;
-
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+with lib; let
+  cfg = config.services.wlsunset-test;
 in {
-  meta.maintainers = [ hm.maintainers.matrss ];
+  meta.maintainers = [hm.maintainers.matrss];
 
   options.services.wlsunset-test = {
     enable = mkEnableOption "wlsunset";
@@ -77,8 +79,8 @@ in {
 
     time = {
       duration = mkOption {
-        type = with types; int;
-        default = 0;
+        type = with types; nullOr int;
+        default = null;
         example = 1800;
         description = ''
           The duration in seconds.
@@ -122,26 +124,26 @@ in {
     systemd.user.services.wlsunset = {
       Unit = {
         Description = "Day/night gamma adjustments for Wayland compositors.";
-        PartOf = [ "graphical-session.target" ];
+        PartOf = ["graphical-session.target"];
       };
 
       Service = {
         ExecStart = let
           args = [
-            (mkIf cfg.latitude "-l ${cfg.latitude}")
-            (mkIf cfg.longitude "-L ${cfg.longitude}")
             "-t ${toString cfg.temperature.night}"
             "-T ${toString cfg.temperature.day}"
-            (mkIf cfg.time.sunrise "-S ${cfg.time.sunrise}")
-            (mkIf cfg.time.sunset "-s ${cfg.time.sunset}")
-            "-d ${toString cfg.time.duration}"
             "-g ${cfg.gamma}"
-            "-o ${cfg.output}"
+            ((mkIf cfg.latitude != null) "-l ${cfg.latitude}")
+            ((mkIf cfg.longitude != null) "-L ${cfg.longitude}")
+            ((mkIf cfg.time.sunrise != null) "-S ${cfg.time.sunrise}")
+            ((mkIf cfg.time.sunset != null) "-s ${cfg.time.sunset}")
+            ((mkIf cfg.time.duration != null) "-d ${toString cfg.time.duration}")
+            ((mkIf cfg.output != null) "-o ${cfg.output}")
           ];
         in "${cfg.package}/bin/wlsunset ${concatStringsSep " " args}";
       };
 
-      Install = { WantedBy = [ cfg.systemdTarget ]; };
+      Install = {WantedBy = [cfg.systemdTarget];};
     };
   };
 }

@@ -39,11 +39,8 @@ in {
         "SUPER,apostrophe,changegroupactive,f"
         "SUPERSHIFT,apostrophe,changegroupactive,b"
 
-        "SUPER,u,togglespecialworkspace"
-        "SUPERSHIFT,u,movetoworkspace,special"
-
-        "SUPER,b,togglespecialworkspace,btop"
-        "SUPER,a,togglespecialworkspace,audio"
+        "SUPER,u,togglespecialworkspace,stash"
+        "SUPERSHIFT,u,exec,pypr toggle_special stash"
 
         #Super+tab to move to next workspace and back
         "SUPER,TAB,workspace, m+1"

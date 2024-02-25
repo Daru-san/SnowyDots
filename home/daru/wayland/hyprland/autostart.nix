@@ -15,11 +15,14 @@ with lib; {
       "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
       "hyprpm reload -n"
       "swww init"
+      "${pkgs.pyprland}/bin/pypr"
     ];
     exec = [
       "systemctl --user restart kanshi.service"
 
       "swww img ${config.theme.wallpaper.image}"
+
+      "${pkgs.pyprland}/bin/pypr reload"
     ];
   };
   services.kanshi.systemdTarget = mkIf config.wayland.windowManager.hyprland.enable "hyprland-session.target";

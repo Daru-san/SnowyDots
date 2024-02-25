@@ -25,6 +25,7 @@ with lib; {
         btop = "${getExe config.programs.btop.package}";
         swayosd = "${getExe' config.services.swayosd.package "swayosd-client"}";
         swww = "${getExe pkgs.swww}";
+        pypr = "${getExe pkgs.pyprland}";
       in [
         # Launching programs
         "SUPER, e, ${e}, ${h} '${file-manager}'"
@@ -49,16 +50,22 @@ with lib; {
         #Clipboard menu
         "SUPERSHIFT, v, ${e}, ${copyq} menu"
 
-        #'Task manager'
-        "SUPERALT,b,${e},${terminal} -T btop --hold ${btop}"
-
         # Show when caps lock is pressed
         ",caps_lock,${e},${swayosd} --caps-lock"
 
         # Switch the wallpaper from a list of wallpapers in a repo
         # "CTRLSHIFT,F12,${e},swww-switch"
 
-        "SUPER, w, exec, hyprctl notify -1 2000 0 `hyprctl activeworkspace | head -n 1`"
+        "SUPER, w, ${e}, hyprctl notify -1 2000 0 `hyprctl activeworkspace | head -n 1`"
+
+        "shiftalt,a,${e}, ${pypr} toggle btop"
+        "supershift,return,${e}, ${pypr} toggle term"
+
+        "superalt,1,${e},${pypr} toggle volume"
+        "superalt,3,${e},${pypr} toggle valent"
+        "superalt,4,${e},${pypr} toggle bluetooth"
+        "superalt,2,${e},${pypr} toggle wifi"
+        "superalt,5,${e},${pypr} toggle blueman"
       ];
 
       bindle = with lib; let

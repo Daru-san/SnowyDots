@@ -7,7 +7,7 @@
   imports = [
     ./omp/default.nix
     ./zsh/default.nix
-    ./autojump/default.nix
+    ./zoxide/default.nix
     # ./tmux/default.nix
   ];
   # Global shell theme

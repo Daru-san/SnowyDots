@@ -4,7 +4,7 @@
       general = {
         gaps_in = 6;
         gaps_out = 9;
-        border_size = 2.7;
+        border_size = 3;
         cursor_inactive_timeout = 30;
         layout = "master";
       };

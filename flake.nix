@@ -1,9 +1,5 @@
 {
   description = "❄ My chilly NixOS flake for snowy nights and chilly afternoons ❆";
-  nixConfig = {
-    extra-substituters = ["https://anyrun.cachix.org"];
-    extra-trusted-public-keys = ["anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="];
-  };
   inputs = {
     # Unstable packages from 24.05
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -18,10 +14,7 @@
     };
 
     # auto-cpufreq
-    auto-cpufreq = {
-      url = "github:AdnanHodzic/auto-cpufreq";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    auto-cpufreq.url = "github:AdnanHodzic/auto-cpufreq";
 
     # NUR Packages
     nur.url = "github:nix-community/NUR";
@@ -58,7 +51,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Hyprland plugins
+    # Hyprland and plugins
     hyprland.url = "github:hyprwm/Hyprland";
     hycov = {
       url = "github:DreamMaoMao/hycov";

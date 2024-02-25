@@ -3,12 +3,11 @@
   imports = [./wlsunset.nix];
   services.wlsunset-test = {
     enable = true;
-    time = {
-      sunrise = "05:50";
-      sunset = "18:50";
-    };
-    output = "HDMI-A-1";
-    # latitude = "25.99";
-    # longitude = "28.13";
+    # time = {
+    #   sunrise = "05:50";
+    #   sunset = "18:50";
+    # };
+    latitude = "25.99";
+    longitude = "28.13";
   };
 }

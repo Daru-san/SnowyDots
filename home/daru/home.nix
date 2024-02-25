@@ -8,7 +8,7 @@
   # kdeconnect and syncthing
   connect = {
     syncthing.enable = true;
-    kdeconnect.enable = true;
+    kdeconnect.enable = false;
   };
 
   home = {
