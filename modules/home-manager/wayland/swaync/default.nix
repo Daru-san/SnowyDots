@@ -17,81 +17,78 @@
     settings = {
       positionX = "right";
       positionY = "top";
-      control-center-margin-top = 10;
-      control-center-margin-bottom = 10;
-      control-center-margin-right = 10;
-      control-center-margin-left = 10;
-      notification-icon-size = 64;
+      layer = "overlay";
+      control-center-layer = "overlay";
+      layer-shell = true;
+      cssPriority = "application";
+      control-center-positionX = "right";
+      control-center-positionY = "bottom";
+      control-center-margin-top = 20;
+      control-center-margin-bottom = 0;
+      control-center-margin-right = 0;
+      control-center-margin-left = 0;
+      notification-2fa-action = true;
+      notification-inline-replies = false;
+      notification-icon-size = 48;
       notification-body-image-height = 100;
       notification-body-image-width = 200;
-      timeout = 10;
-      timeout-low = 5;
-      timeout-critical = 0;
+      timeout = 5;
+      timeout-low = 10;
+      timeout-critical = 10;
       fit-to-screen = false;
-      control-center-width = 500;
-      control-center-height = 1025;
-      notification-window-width = 500;
+      control-center-width = 400;
+      control-center-height = 650;
+      notification-window-width = 400;
       keyboard-shortcuts = true;
       image-visibility = "when-available";
       transition-time = 200;
-      hide-on-clear = false;
+      hide-on-clear = true;
       hide-on-action = true;
       script-fail-notify = true;
+      notification-visibility = {
+        spotify = {
+          state = "muted";
+          urgency = "Low";
+          app-name = "Spotify";
+        };
+      };
       widgets = [
+        "inhibitors"
         "title"
-        "buttons-grid"
         "mpris"
-        "volume"
-        "backlight"
-        "dnd"
         "notifications"
+        "dnd"
       ];
       widget-config = {
-        title = {
-          text = "Notification Center";
+        inhibitors = {
+          text = "Inhibitors";
+          button-text = "Clear All";
           clear-all-button = true;
-          button-text = "󰆴 Clear All";
         };
-        dnd = {text = "Do Not Disturb";};
+        title = {
+          text = "Notifications";
+          clear-all-button = true;
+          button-text = "Clear All";
+        };
+        dnd = {
+          text = "Do Not Disturb";
+        };
         label = {
-          max-lines = 1;
-          text = "Notification Center";
+          max-lines = 5;
+          text = "Label Text";
         };
         mpris = {
-          image-size = 96;
-          image-radius = 7;
+          image-size = 64;
+          image-radius = 50;
         };
-        volume = {label = "󰕾";};
-        backlight = {label = "󰃟";};
         buttons-grid = {
           actions = [
             {
-              label = "󰐥";
-              command = "systemctl poweroff";
-            }
-            {
-              label = "󰜉";
-              command = "systemctl reboot";
-            }
-            {
-              label = "";
-              command = "nautilus";
-            }
-            {
-              label = "";
-              command = "pavucontrol";
-            }
-            {
-              label = "";
-              command = "spotify";
-            }
-            {
-              label = "󰕾";
-              command = "wpctl set-mute @DEFAULT_SINK@ toggle";
-            }
-            {
-              label = "󰍬";
-              command = "pactl set-source-mute @DEFAULT_SOURCE@ toggle";
+              label = "Wi-Fi";
+              type = "toggle";
+              active = true;
+              command = "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'";
+              update-command = "sh -c '[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'|";
             }
           ];
         };
