@@ -35,6 +35,10 @@
   };
 
   programs = {
+    nix-ld.enable = true;
+    nix-ld.libraries = [
+
+    ];
     # Enable gnome-disks
     gnome-disks = {enable = true;};
     # Enable KDE Connect
