@@ -31,7 +31,7 @@
       gvfs.enable = true;
       jmtpfs.enable = true;
     };
-    waydroid.enable = false;
+    waydroid.enable = true;
   };
 
   programs = {
