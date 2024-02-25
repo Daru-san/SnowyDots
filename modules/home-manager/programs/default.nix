@@ -9,5 +9,6 @@
     ./bat/default.nix
     ./lf/default.nix
     ./zathura/default.nix
+    ./yazi/default.nix
   ];
 }

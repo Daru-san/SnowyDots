@@ -16,16 +16,5 @@
     mappings = {
       m = "set recolor true";
     };
-    extraConfig = let
-      base16-zathura = with pkgs;
-        fetchFromGitHub {
-          owner = "HaoZeke";
-          repo = "base16-zathura";
-          rev = "9f148b4001dc67d399e645919225943d47e50125";
-          hash = "sha256-nVJoygnytYN40VHXpAFwO7ruVbaSydeR547MU45VSuY=";
-        };
-      theme = "material-darker";
-    in
-      with builtins; readFile "${base16-zathura}/build_schemes/colors/base16-${theme}.config";
   };
 }
