@@ -8,8 +8,8 @@
     Service = {
       ExecStart = "${pkgs.pyprland}/bin/pypr";
       # ExecReload = "${pkgs.pyprland}/bin/pypr reload";
-      Install = {WantedBy = ["hyprland-session.target"];};
     };
+    Install = {WantedBy = ["hyprland-session.target"];};
   };
   xdg.configFile."hypr/pyprland.toml".source = with pkgs;
     (formats.toml {}).generate "pyprland.toml" {
