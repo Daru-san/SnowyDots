@@ -1,7 +1,7 @@
 #TODO: expand configuration if/when https://github.com/nix-community/home-manager/pull/5035 gets merged
 {...}: {
   imports = [./wlsunset.nix];
-  services.wlsunset = {
+  services.wlsunset-test = {
     enable = true;
     time = {
       sunrise = "05:50";
