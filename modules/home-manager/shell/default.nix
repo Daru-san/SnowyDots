@@ -24,6 +24,7 @@
     neofetch = "${pkgs.neofetch}/bin/neofetch";
     tty-clock = "${pkgs.tty-clock}/bin/tty-clock";
     trash = "${pkgs.trashy}/bin/trash";
+    yazi = "${config.programs.yazi.package}/bin/yazi";
   in {
     g = "${git}";
     nofetch = "${neofetch} --config none";
@@ -34,5 +35,6 @@
     te = "${trash} empty";
     tls = "${trash} list";
     trs = "${trash} restore";
+    y = "${yazi}";
   };
 }
