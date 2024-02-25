@@ -8,5 +8,6 @@
     ./translate-shell/default.nix
     ./bat/default.nix
     ./lf/default.nix
+    ./zathura/default.nix
   ];
 }
