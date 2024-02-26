@@ -1,9 +1,9 @@
 {pkgs, ...}: let
   theme = pkgs.fetchFromGitHub {
-    owner = "Msouza91";
-    repo = "rose-pine.yazi";
-    rev = "4101d0d9c475f23d94b7262e7fd945930378807e";
-    hash = "sha256-Ygx3tyefGcq3Qqk/72RSJbT5K8G7wVqIk2rCI0vKkNQ=";
+    owner = "Reledia";
+    repo = "flexoki.yazi";
+    rev = "2987ef67b15683d041d708275ff4625a478ff18d";
+    hash = "sha256-qAg0BUO8jh0R1LIg4UwFLKFr247ZLi5mmwrSzEQDf1Q=";
   };
 in {
   xdg.configFile."yazi/theme.toml".source = "${theme}/theme.toml";
