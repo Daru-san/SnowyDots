@@ -22,24 +22,20 @@
       in
         [
           # Floating windows
-          (f "pavucontrol")
-          (f ".blueman-manager-wrapped")
           (f "com.github.hluk.copyq")
           (f "com.github.wwmm.easyeffects")
+          (f "file-roller")
 
           # Center them
-          (c "pavucontrol")
-          (c ".blueman-manager-wrapped")
+          (c "file-roller")
           (c "com.github.hluk.copyq")
           (c "com.github.wwmm.easyeffects")
-          (w "com.github.wwmm.easyeffects")
         ]
         ++ [
           #Window specific worspaces
           "workspace name:7,^(krita)$"
           "workspace name:8,^(pqiv)$"
           "workspace name:8,^(waypaper)$"
-          "workspace name:0,^(io.github.kaii_lb.Overskride)"
           #Productivity workspaces
           "workspace name:F1,^(firefox-nightly)$"
           "workspace name:F2,^(osidian)$"
@@ -53,7 +49,7 @@
 
           #Others
           "workspace name:F9,^(io.gitlab.news_flash.NewsFlash)$"
-          "workspace name:F10,^(evince)$"
+          "workspace name:F10,^(org.pwmt.zathura)$"
         ]
         ++
         # tschuss
