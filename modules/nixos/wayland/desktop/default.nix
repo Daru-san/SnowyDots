@@ -42,7 +42,6 @@ in
         sushi.enable = true;
         tracker.enable = true;
         tracker-miners.enable = true;
-        core-utilities.enable = true;
       };
       programs.file-roller.enable = mkIf cfg.gnome-extra.enable true;
     };
