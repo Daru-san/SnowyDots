@@ -1,4 +1,12 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  theme = pkgs.fetchFromGitHub {
+    owner = "Msouza91";
+    repo = "rose-pine.yazi";
+    rev = "4101d0d9c475f23d94b7262e7fd945930378807e";
+    hash = "sha256-Ygx3tyefGcq3Qqk/72RSJbT5K8G7wVqIk2rCI0vKkNQ=";
+  };
+in {
+  xdg.configFile."yazi/theme.toml".source = "${theme}/theme.toml";
   programs.yazi = {
     enable = true;
     settings = {
