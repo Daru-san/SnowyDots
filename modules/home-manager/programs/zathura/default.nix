@@ -7,8 +7,10 @@
     enable = true;
     options = {
       recolor = true;
-      recolor-lightcolor = "rgba(36, 40, 59, 0.6)";
-      recolor-darkcolor = "rgba(0, 0, 0, 0.3)";
+      recolor-keephue = true;
+      default-bg = "rgba(255,255,255,0.7)";
+      recolor-lightcolor = "rgba(255,255,255,0)";
+      recolor-darkcolor = "black";
       font = config.fonts.serif.name;
       page-padding = 3;
       window-title-basename = true;
