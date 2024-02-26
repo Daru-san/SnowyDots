@@ -8,5 +8,6 @@
     ./bat/default.nix
     ./zathura/default.nix
     ./yazi/default.nix
+    ./pqiv/default.nix
   ];
 }

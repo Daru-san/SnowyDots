@@ -17,7 +17,6 @@
         freetube
         scrcpy
         keepassxc
-        pqiv
         fragments
         bridge-core
         archiver
