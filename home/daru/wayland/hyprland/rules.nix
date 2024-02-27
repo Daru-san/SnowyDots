@@ -2,19 +2,10 @@
 {...}: {
   wayland.windowManager.hyprland = {
     settings = {
-      windowrulev2 = let
-        b = regex: "${regex},class:(kitty),title:(btop)";
-      in
-        [
-          # Special btop window for system monitoring
-          (b "workspace special:btop")
-          (b "center")
-          (b "float")
-        ]
-        ++ [
-          #Special rules for firefox
-          "float,class:(firefox-nightly),title:(Library)"
-        ];
+      windowrulev2 = [
+        #Special rules for firefox
+        "float,class:(firefox-nightly),title:(Library)"
+      ];
       windowrule = let
         f = regex: "float, ^(${regex})$";
         c = regex: "center, ^(${regex})$";
