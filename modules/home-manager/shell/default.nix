@@ -9,7 +9,7 @@
     ./zsh/default.nix
     ./zoxide/default.nix
     ./atuin/default.nix
-    # ./tmux/default.nix
+    ./zellij/default.nix
   ];
   # Global shell theme
   programs.oh-my-posh.useTheme = "zash";

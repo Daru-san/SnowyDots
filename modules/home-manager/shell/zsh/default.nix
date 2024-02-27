@@ -14,10 +14,6 @@
       enableCompletion = true;
       autocd = true;
 
-      completionInit = ''
-        ${with builtins; readFile ./trashcomp}
-      '';
-
       # History file
       history = {
         size = 10000;
