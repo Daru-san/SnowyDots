@@ -8,6 +8,7 @@
     ./omp/default.nix
     ./zsh/default.nix
     ./zoxide/default.nix
+    ./atuin/default.nix
     # ./tmux/default.nix
   ];
   # Global shell theme

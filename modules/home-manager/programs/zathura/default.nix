@@ -6,6 +6,7 @@
   programs.zathura = {
     enable = true;
     package = pkgs.zathura.overrideAttrs (oa: {
+      mesonFlags = (oa.mesonFlags or []) ++ ["-Dexperimental=true"];
       patches =
         (oa.patches or [])
         ++ [
