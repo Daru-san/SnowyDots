@@ -11,7 +11,7 @@
       default-bg = "rgba(255,255,255,0)";
       recolor-lightcolor = "rgba(255,255,255,0)";
       recolor-darkcolor = "black";
-      font = "${config.fonts.monospace.name} ${config.fonts.monospace.size}";
+      font = "${config.fonts.monospace.name} ${toString config.fonts.sizes.terminal}";
       page-padding = 3;
       selection-notification = true;
       selection-clipboard = "clipboard";
