@@ -4,22 +4,10 @@
   pkgs,
   ...
 }: {
-  imports = [
-    ./omp/default.nix
-    ./zsh/default.nix
-    ./zoxide/default.nix
-    ./zellij/default.nix
-  ];
+  imports = [./zsh.nix ./extras.nix];
   # Global shell theme
   programs.oh-my-posh.useTheme = "zash";
-
-  programs.eza = {
-    enable = true;
-    git = true;
-    icons = true;
-    extraOptions = ["--group-directories-first" "--header"];
-    enableAliases = true;
-  };
+  programs.bash.enable = true;
 
   # Global shell aliases
   home.shellAliases = let

@@ -4,9 +4,6 @@
   pkgs,
   ...
 }: {
-  # Enable command-not-found
-  programs.command-not-found = {enable = true;};
-
   programs = {
     # Zsh configs
     zsh = {
