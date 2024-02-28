@@ -8,7 +8,6 @@
     ./omp/default.nix
     ./zsh/default.nix
     ./zoxide/default.nix
-    ./atuin/default.nix
     ./zellij/default.nix
   ];
   # Global shell theme
@@ -18,7 +17,7 @@
     enable = true;
     git = true;
     icons = true;
-    extraOptions = ["--group-directories-first"];
+    extraOptions = ["--group-directories-first" "--header"];
     enableAliases = true;
   };
 
