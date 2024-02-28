@@ -50,4 +50,11 @@
     enableZshIntegration = true;
     enableBashIntegration = true;
   };
+
+  # Find files fuzzily
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+    enableBashIntegration = true;
+  };
 }
