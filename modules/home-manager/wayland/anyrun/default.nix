@@ -13,6 +13,8 @@
           rink
           shell
           applications
+          dictionary
+          websearch
         ])
         ++ (with inputs.anyrun-nixos-options.packages.${pkgs.system}; [default])
         ++ (with inputs.anyrun-plugins.packages.${pkgs.system}; [
@@ -21,8 +23,8 @@
         ]);
 
       width.fraction = 0.3;
-      y.absolute = 50;
-      hidePluginInfo = false;
+      y.absolute = 70;
+      hidePluginInfo = true;
       closeOnClick = true;
     };
 
@@ -68,6 +70,16 @@
         Config(
           desktop_actions: false,
           max_entries: 5,
+        )
+      '';
+      "websearch.ron".text = ''
+        Config(
+          prefix: "?",
+          Custom(
+            name: "Brave",
+            url: "search.brave.com/search?q={}",
+          )
+          engines = [Brave]
         )
       '';
     };
