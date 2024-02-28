@@ -14,8 +14,11 @@
   # Global shell theme
   programs.oh-my-posh.useTheme = "zash";
 
-  programs.lsd = {
+  programs.eza = {
     enable = true;
+    git = true;
+    icons = true;
+    extraOptions = ["--group-directories-first"];
     enableAliases = true;
   };
 
