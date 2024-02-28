@@ -1,4 +1,2 @@
-# Very incomplete, much inspiration (and 'module collecting') from https://github.com/danth/stylix
-{...}: {
-  imports = [./fonts/default.nix ./wallpaper/default.nix ./colors/default.nix];
-}
+# Inspired by from https://github.com/danth/stylix
+{...}: {imports = [./font.nix ./colors.nix ./wallpaper.nix];}
