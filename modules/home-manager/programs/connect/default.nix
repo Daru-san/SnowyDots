@@ -24,6 +24,7 @@ in
     config = {
       services.kdeconnect = mkIf cfg.kdeconnect.enable {
         enable = true;
+        package = with pkgs; kdePackages.kdeconnect-kde;
         indicator = true;
       };
       services.syncthing = mkIf cfg.syncthing.enable {
