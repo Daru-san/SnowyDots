@@ -1,20 +1,20 @@
-{pkgs, ...}: {
+{config, ...}: {
   services.swayidle = {
     enable = true;
     events = [
       {
         event = "before-sleep";
-        command = "${pkgs.gtklock}/bin/gtklock -id";
+        command = "${config.programs.hyprlock.package}/bin/hyprlock";
       }
       {
         event = "lock";
-        command = "lock";
+        command = "${config.programs.hyprlock.package}/bin/hyprlock";
       }
     ];
     timeouts = [
       {
         timeout = 800;
-        command = "${pkgs.gtklock}/bin/gtklock id";
+        command = "${config.programs.hyprlock.package}/bin/hyprlock";
       }
       {
         timeout = 1500;
