@@ -41,7 +41,10 @@
     # Enable gnome-disks
     gnome-disks = {enable = true;};
     # Enable KDE Connect
-    kdeconnect = {enable = false;};
+    kdeconnect = {
+      enable = true;
+      package = with pkgs; kdePackages.kdeconnect-kde;
+    };
   };
 
   # Enable syncthing
@@ -89,6 +92,11 @@
     enable = true;
     hyprland.enable = true;
     sddm.enable = true;
+    greetd = {
+      enable = false;
+      user = "daru";
+      command = "Hyprland";
+    };
     gnome-extra.enable = true;
   };
   os.security.polkit.enable = true;
