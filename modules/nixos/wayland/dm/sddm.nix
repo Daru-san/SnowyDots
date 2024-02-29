@@ -18,11 +18,11 @@ in
       environment.systemPackages = with pkgs; [
         catppuccin-sddm-corners
         (where-is-my-sddm-theme.override {
-          themeConfig.general = {
-            background = "${wallpapers}/nix.png";
-            backgroundMode = "none";
-          };
+          themeConfig.general.backgroundMode = "none";
         })
+        (elegant-sddm.override {
+          themeConfig.general.background = "${wallpapers}/images/wallpaper3-dark.png";
+         })
       ];
       services.xserver = {
         enable = true;
@@ -31,8 +31,9 @@ in
         displayManager = {
           sddm = {
             enable = true;
-            theme = "where_is_my_sddm_theme";
-            wayland.enable = false;
+            package = with pkgs; kdePackages.sddm;
+            theme = "Elegant";
+            wayland.enable = true;
           };
         };
       };
