@@ -36,7 +36,6 @@
     enableBashIntegration = true;
   };
 
-
   # Tmux for lazy people, like me
   programs.zellij = {
     enable = true;
