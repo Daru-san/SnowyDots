@@ -10,7 +10,7 @@
       grace = 5;
       hide_cursor = true;
     };
-    background = [
+    backgrounds = [
       {
         path = "${config.theme.wallpaper.image}";
         blur_size = 9;
@@ -52,6 +52,7 @@
         halign = "center";
         valign = "center";
       }
+
       {
         text = ''Hey <span text_transform="capitalize" size="larger">$USER</span>'';
         font_size = 20;

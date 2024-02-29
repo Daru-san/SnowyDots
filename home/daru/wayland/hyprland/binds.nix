@@ -21,6 +21,7 @@ with lib; {
         image-editor = "${getExe' pkgs.krita "krita"}";
         swaylock = "${getExe config.programs.swaylock.package}";
         gtklock = "${getExe pkgs.gtklock}";
+        hyprlock = "${getExe config.programs.hyprlock.package}";
         copyq = "${getExe config.services.copyq.package}";
         btop = "${getExe config.programs.btop.package}";
         swayosd = "${getExe' config.services.swayosd.package "swayosd-client"}";
@@ -45,7 +46,7 @@ with lib; {
         "SUPER,v,togglefloating"
 
         #Lock screen
-        "SUPER, l ,${e} , ${gtklock} -id"
+        "SUPER, l ,${e} , ${hyprlock}"
 
         #Clipboard menu
         "SUPERSHIFT, v, ${e}, ${copyq} menu"
