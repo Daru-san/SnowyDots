@@ -7,6 +7,7 @@
   cfg = config.connect;
 in
   with lib; {
+    imports = [./kdeconnect-qt6.nix];
     options = {
       connect = {
         kdeconnect.enable = mkOption {
@@ -22,9 +23,9 @@ in
       };
     };
     config = {
-      services.kdeconnect = mkIf cfg.kdeconnect.enable {
+      services.kdeconnect-qt6 = mkIf cfg.kdeconnect.enable {
         enable = true;
-        package = with pkgs; kdePackages.kdeconnect-kde;
+        # package = with pkgs; kdePackages.kdeconnect-kde;
         indicator = true;
       };
       services.syncthing = mkIf cfg.syncthing.enable {
