@@ -42,7 +42,7 @@
         ani-cli
         manga-cli
         pokeshell
-        transmission-cli
+        transmission
         du-dust
         fzf
         unrar
