@@ -17,7 +17,6 @@
         freetube
         scrcpy
         keepassxc
-        fragments
         bridge-core
         archiver
         audacity
@@ -43,6 +42,7 @@
         ani-cli
         manga-cli
         pokeshell
+        transmission-cli
         du-dust
         fzf
         unrar
