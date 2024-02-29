@@ -91,9 +91,9 @@
   wayland = {
     enable = true;
     hyprland.enable = true;
-    sddm.enable = true;
+    sddm.enable = false;
     greetd = {
-      enable = false;
+      enable = true;
       user = "daru";
       command = "Hyprland";
     };
