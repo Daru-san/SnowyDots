@@ -14,7 +14,7 @@ in {
   home.packages = with pkgs; [swww];
 
   theme.wallpaper = {
-    image = "${walls}/minimal_c.png";
+    image = "${walls}/wallpaper3-dark.png";
     path = "${walls}";
   };
   home.file."Wallpapers/aesthetic".source = "${walls}";
