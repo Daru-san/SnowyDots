@@ -108,17 +108,38 @@
         modules = [
           # > My main nixos configuration file <
           ./systems/AspireLaptop/default.nix
+          # > Specialisations for custom boot entries <
+          ./specialisations/default.nix
         ];
       };
     };
     homeConfigurations = {
-      # My home configuration
+      # My home configuration for Hyprland
       # 'home-manager switch --flake .#daru@AspireLaptop'
       "daru@AspireLaptop" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
-        # > My home configuration file <
-        modules = [./home/daru/default.nix];
+        modules = [
+          # > Main home configuration file <
+          ./home/daru/default.nix
+
+          # > Shared home options <
+          ./home/shared/default.nix
+        ];
+      };
+
+      # Home configuration for KDE Plasma
+      # 'home-manager switch --flake .#zan@AspireLaptop'
+      "zan@AspireLaptop" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          # > Main home configuration file <
+          ./home/zan/default.nix
+
+          # > Shared home options <
+          ./home/shared/default.nix
+        ];
       };
     };
   };

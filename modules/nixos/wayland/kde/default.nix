@@ -10,7 +10,7 @@ in
     config = mkIf cfg.enable {
       services.xserver = {
         enable = true;
-        displayManager.sddm.enable = true;
+        displayManager.sddm.enable = mkDefault true;
         desktopManager.plasma6.enable = true;
       };
     };
