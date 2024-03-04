@@ -126,19 +126,6 @@
           ./home/shared
         ];
       };
-
-      # Home configuration for KDE Plasma
-      # 'home-manager switch --flake .#zan@AspireLaptop'
-      "zan@AspireLaptop" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          # > Main home configuration file <
-          ./home/zan
-          # > Shared home options <
-          ./home/shared
-        ];
-      };
     };
   };
 }
