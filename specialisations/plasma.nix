@@ -4,10 +4,7 @@
   ...
 }: {
   system.nixos.tags = ["kde-plasma"];
-  wayland = {
-    kde.enable = true;
-    sddm.enable = true;
-  };
+  wayland.kde.enable = true;
   users.users.zaru = {
     isNormalUser = true;
     shell = pkgs.zsh;

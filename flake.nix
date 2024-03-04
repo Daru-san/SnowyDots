@@ -107,9 +107,9 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > My main nixos configuration file <
-          ./systems/AspireLaptop/default.nix
+          ./systems/AspireLaptop
           # > Specialisations for custom boot entries <
-          ./specialisations/default.nix
+          ./specialisations
         ];
       };
     };
@@ -121,10 +121,9 @@
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           # > Main home configuration file <
-          ./home/daru/default.nix
-
+          ./home/daru
           # > Shared home options <
-          ./home/shared/default.nix
+          ./home/shared
         ];
       };
 
@@ -135,10 +134,9 @@
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           # > Main home configuration file <
-          ./home/zan/default.nix
-
+          ./home/zan
           # > Shared home options <
-          ./home/shared/default.nix
+          ./home/shared
         ];
       };
     };

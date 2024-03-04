@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  lib,
   ...
 }: {
   imports = [
@@ -43,7 +44,7 @@
     # Enable KDE Connect
     kdeconnect = {
       enable = true;
-      package = with pkgs; kdePackages.kdeconnect-kde;
+      package = lib.mkDefault pkgs.kdePackages.kdeconnect-kde;
     };
   };
 
@@ -86,19 +87,6 @@
     ]
     ++ (with inputs.scripts.packages.${pkgs.system}; [nix-rebuild hm-build]);
 
-  # wayland configuration
-  # other options include sway, greetd and kde
-  wayland = {
-    enable = true;
-    hyprland.enable = true;
-    sddm.enable = false;
-    greetd = {
-      enable = true;
-      user = "daru";
-      command = "Hyprland";
-    };
-    gnome-extra.enable = true;
-  };
   os.security.polkit.enable = true;
 
   # System configurations

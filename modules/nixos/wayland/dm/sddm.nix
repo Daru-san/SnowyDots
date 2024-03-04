@@ -14,7 +14,7 @@
 in
   with lib; {
     options.wayland.sddm = {enable = mkEnableOption "A greeter for KDE";};
-    config = (mkIf cfg.enable) (mkIf (config.specialisation.plasma != {})) {
+    config = (mkIf cfg.enable) {
       environment.systemPackages = with pkgs; [
         catppuccin-sddm-corners
         (where-is-my-sddm-theme.override {
@@ -31,7 +31,7 @@ in
         displayManager = {
           sddm = {
             enable = true;
-            package = with pkgs; kdePackages.sddm;
+            package = mkDefault (with pkgs; kdePackages.sddm);
             theme = "Elegant";
             wayland.enable = false;
           };

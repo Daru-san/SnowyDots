@@ -27,19 +27,17 @@ in
         };
       };
     };
-    config =
-      mkIf (config.specialisation.plasma != {})
-      (mkIf cfg.enable {
-        services.greetd = {
-          package = pkgs.greetd;
-          enable = true;
-          settings = rec {
-            initial_session = {
-              command = "${pkgs.greetd.tuigreet}/bin/tuigreet -t --window-padding 1 -g 'Welcome to ${config.networking.hostName}' -c ${cfg.command}";
-              user = "${cfg.user}";
-            };
-            default_session = initial_session;
+    config = mkIf cfg.enable {
+      services.greetd = {
+        package = pkgs.greetd;
+        enable = true;
+        settings = rec {
+          initial_session = {
+            command = "${pkgs.greetd.tuigreet}/bin/tuigreet -t --window-padding 1 -g 'Welcome to ${config.networking.hostName}' -c ${cfg.command}";
+            user = "${cfg.user}";
           };
+          default_session = initial_session;
         };
-      });
+      };
+    };
   }
