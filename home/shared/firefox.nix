@@ -270,11 +270,6 @@
         "privacy.userContext.enabled" = true;
         "privacy.userContext.ui.enabled" = true;
         "privacy.userContext.longPressBehavior" = 2;
-
-        # Fonts
-        "font.name.monospace.x-western" = config.fonts.monospace.name;
-        "font.name.sans-serif.x-western" = config.fonts.sansSerif.name;
-        "font.name.serif.x-western" = config.fonts.serif.name;
       };
     };
     policies = {

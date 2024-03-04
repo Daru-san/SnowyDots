@@ -48,5 +48,6 @@
         rnix-lsp
         trashy
       ])
+      (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild])
     ];
 }
