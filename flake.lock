@@ -504,6 +504,7 @@
       },
       "original": {
         "owner": "DreamMaoMao",
+        "ref": "0.36.0.1",
         "repo": "hycov",
         "type": "github"
       }
