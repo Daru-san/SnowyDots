@@ -39,6 +39,7 @@
         transmission
         du-dust
         fzf
+        musikcube
         unrar
         onefetch
         asciinema
