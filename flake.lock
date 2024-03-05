@@ -493,17 +493,17 @@
         "hyprland": "hyprland"
       },
       "locked": {
-        "lastModified": 1709043503,
-        "narHash": "sha256-GHrgunfo+UARnf3OgNhdXoNFALRAmQEGhlZ8x5TBvkQ=",
+        "lastModified": 1709002706,
+        "narHash": "sha256-6AxI2gB9ks/y6MRzo9VmD0afpcRDjxng0MZ0jVrSTpg=",
         "owner": "DreamMaoMao",
         "repo": "hycov",
-        "rev": "7d48cff8364a7b6ae52a3472ad1dfe01b9f728ae",
+        "rev": "d2aacdfaf685412e7f3867d2ab305f869e951150",
         "type": "github"
       },
       "original": {
         "owner": "DreamMaoMao",
-        "ref": "0.36.0.1",
         "repo": "hycov",
+        "rev": "d2aacdfaf685412e7f3867d2ab305f869e951150",
         "type": "github"
       }
     },
