@@ -52,11 +52,11 @@
     };
 
     # Hyprland and plugins
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "github:hyprwm/Hyprland/v0.36.0";
     hyprlock.url = "github:hyprwm/hyprlock";
     hycov = {
-      url = "github:DreamMaoMao/hycov/0.36.0.1";
-      inputs.hyprland.url = "github:hyprwm/hyprland/v0.36.0";
+      url = "github:DreamMaoMao/hycov";
+      inputs.hyprland.follows = "hyprland";
     };
     hyprfocus = {
       url = "github:VortexCoyote/hyprfocus";
