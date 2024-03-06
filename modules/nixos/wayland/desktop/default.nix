@@ -35,7 +35,6 @@ in
           base = true;
         };
       };
-
       services.gnome = mkIf cfg.gnome-extra.enable {
         gnome-settings-daemon.enable = true;
         gnome-keyring.enable = true;
@@ -44,5 +43,20 @@ in
         tracker-miners.enable = true;
       };
       programs.file-roller.enable = mkIf cfg.gnome-extra.enable true;
+      systemd = mkIf config.os.security.polkit.enable {
+        user.services.lxpolkit = {
+          description = "lxpolkit";
+          wantedBy = ["graphical-session.target"];
+          wants = ["graphical-session.target"];
+          after = ["graphical-session.target"];
+          serviceConfig = {
+            Type = "simple";
+            ExecStart = "${getExe' pkgs.lxde.lxsession "lxpolkit"}";
+            Restart = "on-failure";
+            RestartSec = 1;
+            TimeoutStopSec = 10;
+          };
+        };
+      };
     };
   }
