@@ -3,8 +3,8 @@
     plasma.configuration = {
       imports = [./plasma.nix];
     };
-    external-display.configuration = {
-      imports = [./no-laptop-display.nix];
+    plasma-ext-display.configuration = {
+      imports = [./plasma.nix ./no-laptop-display.nix];
     };
     hyprland-ext-display.configuration = {
       imports = [./no-laptop-display.nix ./hyprland.nix];
