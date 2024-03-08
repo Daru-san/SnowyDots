@@ -22,6 +22,7 @@
         # CLI
         tree
         bc
+        tgpt
         tty-clock
         libnotify
         speedtest-cli
