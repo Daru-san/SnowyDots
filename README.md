@@ -88,7 +88,6 @@ In home.nix
 
 # Other
 ## Custom options
-!> [!NOTE]
 > These options are a way of abstracting normal nix options and compressing them into small, easy to remember options. They're useful for managing multiple systems since you can declare your own customized versions of each option that are optimized for your use cases. It also makes declaring configurations much easier across multiple differing systems with different specs and capabilities.
 ```nix
 {
