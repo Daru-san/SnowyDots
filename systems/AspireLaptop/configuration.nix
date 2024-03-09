@@ -62,7 +62,7 @@
     [
       ranger
       htop
-      wget
+      wget2
       git
       nix-prefetch-git
       nix-prefetch-github
