@@ -101,6 +101,7 @@
   # System options for drivers and optimizations
   os.system = {
     drivers.intel.enable = true;
+    zram.enable = true;
     optimizations = {
       laptop.enable = true;
       ssd.enable = true;

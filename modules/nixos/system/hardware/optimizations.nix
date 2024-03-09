@@ -11,6 +11,7 @@ in
     imports = [inputs.auto-cpufreq.nixosModules.default];
     options = {
       os.system = {
+        zram.enable = mkEnableOption "Enable zram swapping";
         optimizations = {
           laptop.enable = mkEnableOption "Tweaks for laptops to improve performance and battery life";
           ssd.enable = mkEnableOption "Enable ssd optimizations";
@@ -19,6 +20,7 @@ in
       };
     };
     config = mkMerge [
+      (mkIf cfg.zram.enable {zramSwap.enable = true;})
       (mkIf cfg.optimizations.intel.enable {
         services.throttled.enable = true;
         services.thermald.enable = true;
