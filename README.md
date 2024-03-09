@@ -1,10 +1,8 @@
 *Snowy Dots*
 ===============
-My beautiful, functional, focused nix flake with Hyprland and Sway, written completely in nix.
+My beautiful, functional, focused nix flake with Hyprland, Sway and KDE plasma 6, written completely in nix.
 
-_**Origin(up-to-date): [SnowyDots](https://git.sr.ht/~darumaka/SnowyDots) on [sourcehut](https://sr.ht "sourcehut")**_
-
-_**Mirror(slightly outdated): [Snowflake-dots](https://github.com/Daru-san/Snowflake-dots) on [github](https://github.com)**_
+_**Hosted [sourcehut](https://sr.ht "sourcehut") at [SnowyDots](https://git.sr.ht/~darumaka/SnowyDots)**_
 
 
 <p align="center">
@@ -22,6 +20,8 @@ _**Mirror(slightly outdated): [Snowflake-dots](https://github.com/Daru-san/Snowf
 <!--
 TODO:
 * Update screenshot host
+* Update screenshots
+* Restyle readme
 -->
 
 ## Environment
@@ -55,7 +55,7 @@ In configuration.nix
 
     # Enabling sway and optionally, swayfx
     sway = {
-      enable = false;
+      enable = true;
       swayfx.enable = false;
     };
 
@@ -63,7 +63,8 @@ In configuration.nix
     hyprland.enable = true;
 
     # You can also enable kde if you want a full desktop environment
-    kde.enable = false;
+    # Particularly kde plasma 6
+    kde.enable = true;
 
 	  # You can also use sddm or greetd as greeters
     sddm.enable = true;
@@ -86,24 +87,64 @@ In home.nix
 ```
 
 # Other
-<!--
 ## Custom options
+!> [!NOTE]
+> These options are a way of abstracting normal nix options and compressing them into small, easy to remember options. They're useful for managing multiple systems since you can declare your own customized versions of each option that are optimized for your use cases. It also makes declaring configurations much easier across multiple differing systems with different specs and capabilities.
 ```nix
-os.system = {
-  
+{
+  # System stuff
+  os.system = {
+    # enable zram
+    zram.enable = true;
+
+    optimization = {
+      # Laptop optimizations
+      laptop.enable = true;
+
+      # ssd optimizations like fstrim and none
+      ssd.enable = true;
+
+      drivers = {
+        # Intel drivers
+        intel.enable = true;
+
+        # amd drivers
+        amd.enable = true;
+      };
+    };
+  };
+
+  # Enable audio using pipewire
+  os.audio.enable = true;
+
+  # Enable and configure networking
+  os.networking = {
+    enable = true;
+    # Enable wifi using networkmanager and iwd
+    wifi.enable = true;
+
+    # Enable bluetooth and blueman
+    bluetooth.enable = true;
+  };
+
+  android = {
+    # Enable adb
+    adb.enable = true;
+    # Enable and install waydroid
+    waydroid.enable = true;
+  };
 }
 ```
--->
 
-## Structure
+## Repository file tree
 ```
-
 .
 ├── home
-│   └── daru
-│       ├── programs
-│       ├── themes
-│       └── wayland
+│   ├── daru
+│   │   ├── programs
+│   │   ├── themes
+│   │   └── wayland
+│   └── shared
 ├── install
 ├── modules
 │   ├── home-manager
@@ -125,6 +166,7 @@ os.system = {
 │       └── wayland
 ├── overlays
 ├── pkgs
+├── specialisations
 └── systems
     └── AspireLaptop
 ```
@@ -150,6 +192,8 @@ mkfs.ext4 -L root /dev/root-partition # your partition name here
 # It isn't necessary to separate home and root but I do it anyway
 mkfs.ext4 -L home /dev/home-partition
 
+# This may not be useful if you use zram but in my case I use both zram and swap partitions
+# I'll work on using zram on it's own
 # I primarily use swap partitions instead of swap files, set up one like this
 mkswap -L swap /dev/swap-partition # replace with your partition
 swapon /dev/by-label/swap
