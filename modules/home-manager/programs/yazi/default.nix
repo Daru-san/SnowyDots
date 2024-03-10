@@ -65,14 +65,6 @@ in {
           }
         ];
       };
-      open = {
-        rules = [
-          {
-            mime = "*.pdf";
-            use = "application/pdf";
-          }
-        ];
-      };
     };
   };
 }

@@ -987,7 +987,7 @@
       }
     ];
 
-    completion.eymap = [
+    completion.keymap = [
       {
         on = ["<C-q>"];
         run = "close";
