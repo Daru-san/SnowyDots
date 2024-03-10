@@ -1,6 +1,8 @@
 {
   pkgs,
   lib,
+  config,
+  inputs,
   ...
 }: let
   theme = with pkgs;
@@ -10,20 +12,11 @@
       rev = "0846aed69b2a62d29c98e100af0cf55ca729723d";
       hash = "sha256-2T41qWMe++3Qxl9veRNHMeRI3eU4+LAueKTss02gYNk=";
     }
-    + "themes/mocha.toml";
-  keymaps = with pkgs;
-    fetchFromGitHub {
-      owner = "sxyazi";
-      repo = "yazi";
-      rev = "78b98a98c356b2846d902aa349b8474d8fa60cd6";
-      hash = "sha256-LhGaQi2VbH6yZ2ujLeD66BeB2E7oO1/KnLnkZ9YKKKc=";
-    }
-    + "yazi-config/preset/keymap.toml";
+    + "/themes/mocha.toml";
 in {
   imports = [./lua.nix];
   xdg.configFile = {
     "yazi/theme.toml".source = theme;
-    "yazi/keymap.toml".text = with lib; mkDefault (mkBefore "${with builtins; readFile keymaps}");
     "yazi/plugins/exifaudio.yazi".source = with pkgs;
       fetchFromGitHub {
         owner = "Sonico98";
@@ -48,45 +41,27 @@ in {
   };
   programs.yazi = {
     enable = true;
+    package = inputs.yazi.packages.${pkgs.system}.yazi;
     enableZshIntegration = true;
     settings = {
-      ratio = [0 4 4];
-      sort_by = "natural";
-      sort_dir_first = true;
-      show_hidden = false;
-      show_symlink = false;
-      keymap = {
-        input.keymap = [
-          {
-            on = ["l"];
-            run = "plugin --sync smart-enter";
-            desc = "Enter the child directory, or open the file";
-          }
-          {
-            on = ["<C-s>"];
-            run = ''shell "$SHELL" --block --confirm'';
-            desc = "Open shell here";
-          }
-          {
-            on = ["<Esc>"];
-            run = "close";
-            desc = "Cancel input";
-          }
-        ];
+      manager = {
+        ratio = [1 3 4];
+        sort_by = "natural";
+        sort_dir_first = true;
+        show_hidden = false;
+        show_symlink = false;
+        linemode = "size";
       };
+      log = {enabled = false;};
       plugin = with lib; {
         prepend_previewers = [
           {
             mime = "audio/*";
-            exec = "${getExe pkgs.exiftool}";
+            exec = "exifaudio";
           }
           {
             mime = "*.md";
-            exec = "${getExe pkgs.glow}";
-          }
-          {
-            mime = "text/*";
-            exec = "${getExe pkgs.bat}";
+            exec = "glow";
           }
         ];
       };
@@ -109,11 +84,80 @@ in {
       open = {
         rules = [
           {
-            name = "*.pdf";
+            mime = "*.pdf";
             use = "document";
           }
         ];
       };
+    };
+    keymap = {
+      input.keymap = [
+        {
+          exec = "close";
+          on = ["<c-q>"];
+        }
+        {
+          exec = "close --submit";
+          on = ["<enter>"];
+        }
+        {
+          exec = "escape";
+          on = ["<esc>"];
+        }
+        {
+          exec = "backspace";
+          on = ["<backspace>"];
+        }
+      ];
+      manager.keymap = [
+        {
+          exec = "escape";
+          on = ["<esc>"];
+        }
+        {
+          exec = "quit";
+          on = ["q"];
+        }
+        {
+          exec = "close";
+          on = ["<c-q>"];
+        }
+        {
+          on = ["o"];
+          run = "open";
+          desc = "Open the selected files";
+        }
+        {
+          on = ["O"];
+          run = "open --interactive";
+          desc = "Open the selected files interactively";
+        }
+        {
+          on = ["<Enter>"];
+          run = "open";
+          desc = "Open the selected files";
+        }
+        {
+          on = ["<C-Enter>"];
+          run = "open --interactive";
+          desc = "Open the selected files interactively";
+        }
+        {
+          on = ["l"];
+          run = "plugin --sync smart-enter";
+          desc = "Enter the child directory, or open the file";
+        }
+        {
+          on = ["<C-s>"];
+          run = ''shell "$SHELL" --block --confirm'';
+          desc = "Open shell here";
+        }
+        {
+          on = ["<Esc>"];
+          run = "close";
+          desc = "Cancel input";
+        }
+      ];
     };
   };
 }
