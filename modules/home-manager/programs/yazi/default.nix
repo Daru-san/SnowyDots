@@ -5,6 +5,9 @@
   inputs,
   ...
 }: let
+  tomlFormat = pkgs.formats.toml {};
+  cfg = config.programs.yazi;
+
   theme = with pkgs;
     fetchFromGitHub {
       owner = "catppuccin";
@@ -25,7 +28,7 @@ in {
   imports = [./lua.nix];
   xdg.configFile = {
     "yazi/theme.toml".source = theme;
-    "yazi/keymap.toml".text = with lib; mkDefault (mkBefore "${with builtins; readFile keymap}");
+    "yazi/keymap.toml".source = keymap;
     "yazi/plugins/exifaudio.yazi".source = with pkgs;
       fetchFromGitHub {
         owner = "Sonico98";
@@ -92,25 +95,6 @@ in {
           }
         ];
       };
-    };
-    keymap = {
-      manager.keymap = [
-        {
-          on = ["l"];
-          run = "plugin --sync smart-enter";
-          desc = "Enter the child directory, or open the file";
-        }
-        {
-          on = ["<C-s>"];
-          run = ''shell "$SHELL" --block --confirm'';
-          desc = "Open shell here";
-        }
-        {
-          on = ["<Esc>"];
-          run = "close";
-          desc = "Cancel input";
-        }
-      ];
     };
   };
 }
