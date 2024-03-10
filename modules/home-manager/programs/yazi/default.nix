@@ -14,7 +14,7 @@
     }
     + "/themes/mocha.toml";
 in {
-  imports = [./lua.nix];
+  imports = [./lua.nix ./keymap.nix];
   xdg.configFile = {
     "yazi/theme.toml".source = theme;
     "yazi/plugins/exifaudio.yazi".source = with pkgs;
