@@ -5,9 +5,6 @@
   inputs,
   ...
 }: let
-  tomlFormat = pkgs.formats.toml {};
-  cfg = config.programs.yazi;
-
   theme = with pkgs;
     fetchFromGitHub {
       owner = "catppuccin";
