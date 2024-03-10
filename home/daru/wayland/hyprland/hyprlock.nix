@@ -10,17 +10,17 @@
       h=`date +%H`
 
       if [ $h -lt 12 ]; then
-        echo Good morning $USER
+        echo Ohayō, $USER
       elif [ $h -lt 18 ]; then
-        echo Good afternoon $USER
+        echo Konichiwa, $USER
       else
-        echo Good evening $USER
+        echo Konbanwa, $USER
       fi
     '';
   now-playing = with pkgs;
     writeShellScriptBin "now-playing" ''
-      now-playing=$(playerctl metadata --format '󰎈{{title}} - {{artist}}󰎈')
-      echo "$now-playing"
+      songstats=$(playerctl metadata --format '󰎈{{title}} - {{artist}}󰎈')
+      echo "$songstats"
     '';
 in {
   imports = [inputs.hyprlock.homeManagerModules.default];
@@ -39,8 +39,8 @@ in {
     input-fields = [
       {
         size = {
-          width = 270;
-          height = 70;
+          width = 240;
+          height = 60;
         };
         outline_thickness = 3;
         dots_size = 0.33;
@@ -50,11 +50,11 @@ in {
         inner_color = "rgba(0, 0, 0, 0.5)";
         font_color = "rgb(200, 200, 200)";
         fade_on_empty = false;
-        placeholder_text = "<i>Input Password...</i>";
+        placeholder_text = "<i>Enter your Password...</i>";
         hide_input = false;
         position = {
           x = 0;
-          y = -120;
+          y = -110;
         };
         halign = "center";
         valign = "center";
@@ -63,22 +63,33 @@ in {
     labels = [
       {
         text = ''cmd[update:1000] date +"%X"'';
-        font_size = 64;
+        font_size = 72;
         font_family = "JetBrains Mono Nerd Font 10";
         position = {
           x = 0;
-          y = -300;
+          y = 80;
+        };
+        halign = "center";
+        valign = "center";
+      }
+      {
+        text = ''cmd[update 1000] date +"%A %d %B %Y"'';
+        font_size = 20;
+        font_family = "JetBrains Mono Nerd Font 10";
+        position = {
+          x = 0;
+          y = 60;
         };
         halign = "center";
         valign = "center";
       }
       {
         text = ''cmd[update:1000] ${lib.getExe greeter}'';
-        font_size = 20;
+        font_size = 21;
         font_family = "JetBrains Mono Nerd Font 10";
         position = {
           x = 0;
-          y = 0;
+          y = -80;
         };
         halign = "center";
         valign = "center";
@@ -89,7 +100,7 @@ in {
         font_family = "JetBrains Mono Nerd Font 10";
         position = {
           x = 0;
-          y = 30;
+          y = -30;
         };
         halign = "center";
         valign = "bottom";
