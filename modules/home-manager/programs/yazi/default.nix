@@ -13,10 +13,19 @@
       hash = "sha256-2T41qWMe++3Qxl9veRNHMeRI3eU4+LAueKTss02gYNk=";
     }
     + "/themes/mocha.toml";
+  keymap = with pkgs;
+    fetchFromGitHub {
+      owner = "sxyazi";
+      repo = "yazi";
+      rev = "78b98a98c356b2846d902aa349b8474d8fa60cd6";
+      hash = "sha256-LhGaQi2VbH6yZ2ujLeD66BeB2E7oO1/KnLnkZ9YKKKc=";
+    }
+    + "/yazi-config/preset/keymap.toml";
 in {
   imports = [./lua.nix];
   xdg.configFile = {
     "yazi/theme.toml".source = theme;
+    "yazi/keymap.toml".text = with lib; mkDefault (mkBefore "${with builtins; readFile keymap}");
     "yazi/plugins/exifaudio.yazi".source = with pkgs;
       fetchFromGitHub {
         owner = "Sonico98";
@@ -57,29 +66,23 @@ in {
         prepend_previewers = [
           {
             mime = "audio/*";
-            exec = "exifaudio";
+            run = "exifaudio";
           }
           {
             mime = "*.md";
-            exec = "glow";
+            run = "glow";
           }
         ];
       };
       opener = {
         archive = [
           {
-            exec = ''extract "$1"'';
+            run = ''extract "$1"'';
             desc = "Extract here";
           }
         ];
-        text = [
-          {
-            exec = ''${with lib; getExe config.programs.neovim.package} "$@"'';
-            block = true;
-          }
-        ];
-        document = [{exec = ''${with lib; getExe config.programs.zathura.package}"$@"'';}];
-        image = [{exec = ''${with lib; getExe config.programs.pqiv.package} "@"'';}];
+        document = [{run = ''${with lib; getExe config.programs.zathura.package}"$@"'';}];
+        image = [{run = ''${with lib; getExe config.programs.pqiv.package} "@"'';}];
       };
       open = {
         rules = [
@@ -91,57 +94,7 @@ in {
       };
     };
     keymap = {
-      input.keymap = [
-        {
-          exec = "close";
-          on = ["<c-q>"];
-        }
-        {
-          exec = "close --submit";
-          on = ["<enter>"];
-        }
-        {
-          exec = "escape";
-          on = ["<esc>"];
-        }
-        {
-          exec = "backspace";
-          on = ["<backspace>"];
-        }
-      ];
       manager.keymap = [
-        {
-          exec = "escape";
-          on = ["<esc>"];
-        }
-        {
-          exec = "quit";
-          on = ["q"];
-        }
-        {
-          exec = "close";
-          on = ["<c-q>"];
-        }
-        {
-          on = ["o"];
-          run = "open";
-          desc = "Open the selected files";
-        }
-        {
-          on = ["O"];
-          run = "open --interactive";
-          desc = "Open the selected files interactively";
-        }
-        {
-          on = ["<Enter>"];
-          run = "open";
-          desc = "Open the selected files";
-        }
-        {
-          on = ["<C-Enter>"];
-          run = "open --interactive";
-          desc = "Open the selected files interactively";
-        }
         {
           on = ["l"];
           run = "plugin --sync smart-enter";

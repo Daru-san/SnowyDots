@@ -31,6 +31,7 @@
         gping
         nvtop-intel
         sysz
+        exiftool
         nap
         nitch
         pulsemixer
