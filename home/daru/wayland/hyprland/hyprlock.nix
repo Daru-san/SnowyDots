@@ -1,8 +1,28 @@
 {
   inputs,
   config,
+  pkgs,
+  lib,
   ...
-}: {
+}: let
+  greeter = with pkgs;
+    writeShellScriptBin "cli-greeter" ''
+      h=`date +%H`
+
+      if [ $h -lt 12 ]; then
+        echo Good morning $USER
+      elif [ $h -lt 18 ]; then
+        echo Good afternoon $USER
+      else
+        echo Good evening $USER
+      fi
+    '';
+  now-playing = with pkgs;
+    writeShellScriptBin "now-playing" ''
+      now-playing=$(playerctl metadata --format '󰎈{{title}} - {{artist}}󰎈')
+      echo "$now-playing"
+    '';
+in {
   imports = [inputs.hyprlock.homeManagerModules.default];
   programs.hyprlock = {
     enable = true;
@@ -19,22 +39,22 @@
     input-fields = [
       {
         size = {
-          width = 200;
-          height = 50;
+          width = 270;
+          height = 70;
         };
         outline_thickness = 3;
         dots_size = 0.33;
         dots_spacing = 0.15;
-        dots_center = false;
-        outer_color = "rgb(151515)";
-        inner_color = "rgb(200, 200, 200)";
-        font_color = "rgb(10, 10, 10)";
-        fade_on_empty = true;
+        dots_center = true;
+        outer_color = "rgba(0, 0, 0, 0)";
+        inner_color = "rgba(0, 0, 0, 0.5)";
+        font_color = "rgb(200, 200, 200)";
+        fade_on_empty = false;
         placeholder_text = "<i>Input Password...</i>";
-        hide_input = true;
+        hide_input = false;
         position = {
           x = 0;
-          y = -20;
+          y = -120;
         };
         halign = "center";
         valign = "center";
@@ -42,19 +62,18 @@
     ];
     labels = [
       {
-        text = ''cmd[update:1000] echo "<b><big> $(date +"%H:%M:%S") </big></b>"'';
+        text = ''cmd[update:1000] date +"%X"'';
         font_size = 64;
         font_family = "JetBrains Mono Nerd Font 10";
         position = {
           x = 0;
-          y = 16;
+          y = -300;
         };
         halign = "center";
         valign = "center";
       }
-
       {
-        text = ''Hey <span text_transform="capitalize" size="larger">$USER</span>'';
+        text = ''cmd[update:1000] ${lib.getExe greeter}'';
         font_size = 20;
         font_family = "JetBrains Mono Nerd Font 10";
         position = {
@@ -65,7 +84,7 @@
         valign = "center";
       }
       {
-        text = "Type to unlock!";
+        text = ''cmd[update 1000] ${lib.getExe now-playing}'';
         font_size = 16;
         font_family = "JetBrains Mono Nerd Font 10";
         position = {
