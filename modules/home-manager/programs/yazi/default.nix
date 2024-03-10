@@ -13,19 +13,10 @@
       hash = "sha256-2T41qWMe++3Qxl9veRNHMeRI3eU4+LAueKTss02gYNk=";
     }
     + "/themes/mocha.toml";
-  keymap = with pkgs;
-    fetchFromGitHub {
-      owner = "sxyazi";
-      repo = "yazi";
-      rev = "78b98a98c356b2846d902aa349b8474d8fa60cd6";
-      hash = "sha256-LhGaQi2VbH6yZ2ujLeD66BeB2E7oO1/KnLnkZ9YKKKc=";
-    }
-    + "/yazi-config/preset/keymap.toml";
 in {
   imports = [./lua.nix];
   xdg.configFile = {
     "yazi/theme.toml".source = theme;
-    "yazi/keymap.toml".source = keymap;
     "yazi/plugins/exifaudio.yazi".source = with pkgs;
       fetchFromGitHub {
         owner = "Sonico98";
