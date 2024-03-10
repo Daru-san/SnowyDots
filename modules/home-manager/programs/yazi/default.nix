@@ -41,7 +41,7 @@ in {
   };
   programs.yazi = {
     enable = true;
-    package = inputs.yazi.packages.${pkgs.system}.yazi;
+    package = pkgs.yazi;
     enableZshIntegration = true;
     settings = {
       manager = {
