@@ -32,6 +32,7 @@
         nvtop-intel
         sysz
         exiftool
+        xdg-utils
         nap
         nitch
         pulsemixer
