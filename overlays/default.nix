@@ -11,4 +11,9 @@
       config.allowUnfree = true;
     };
   };
+  yazi = final: _prev: {
+    yazi = import inputs.yazi.overlays.default {
+      system = final.system;
+    };
+  };
 }

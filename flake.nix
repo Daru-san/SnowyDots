@@ -51,6 +51,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Yazi
+    yazi.url = "github:sxyazi/yazi";
+
     # Hyprland and plugins
     hyprland.url = "github:hyprwm/Hyprland/v0.36.0";
     hyprlock.url = "github:hyprwm/hyprlock";
