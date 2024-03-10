@@ -65,21 +65,11 @@ in {
           }
         ];
       };
-      opener = {
-        archive = [
-          {
-            run = ''extract "$1"'';
-            desc = "Extract here";
-          }
-        ];
-        document = [{run = ''${with lib; getExe config.programs.zathura.package}"$@"'';}];
-        image = [{run = ''${with lib; getExe config.programs.pqiv.package} "@"'';}];
-      };
       open = {
         rules = [
           {
             mime = "*.pdf";
-            use = "document";
+            use = "application/pdf";
           }
         ];
       };

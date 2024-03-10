@@ -32,6 +32,23 @@
         desc = "Suspend the process";
       }
 
+      # Custom binds
+      {
+        on = ["l"];
+        run = "plugin --sync smart-enter";
+        desc = "Enter the child directory, or open the file";
+      }
+      {
+        on = ["<C-s>"];
+        run = ''shell "$SHELL" --block --confirm'';
+        desc = "Open shell here";
+      }
+      {
+        on = ["<Esc>"];
+        run = "close";
+        desc = "Cancel input";
+      }
+
       # Navigation
       {
         on = ["k"];
