@@ -57,10 +57,27 @@
     settings = {gui = {theme = "black";};};
   };
 
+  # Install and configure yazi
+  programs.yazi = {
+    enable = true;
+    settings = {
+      yazi = {
+        manager = {
+          ratio = [1 3 4];
+          sort_by = "natural";
+          sort_dir_first = true;
+          show_hidden = false;
+          show_symlink = false;
+          linemode = "size";
+        };
+        log = {enabled = false;};
+      };
+    };
+  };
+
   # System packages
   environment.systemPackages = with pkgs;
     [
-      ranger
       htop
       wget2
       git
