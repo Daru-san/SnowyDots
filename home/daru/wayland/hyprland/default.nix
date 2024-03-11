@@ -25,7 +25,6 @@
         "systemctl --user start hypridle.service"
         "systemctl --user start swayosd.service"
         "systemctl --user start wlsunset.service"
-        "systemctl --user start pyprland.service"
       ];
     };
     settings = {source = ["extra.conf"];};

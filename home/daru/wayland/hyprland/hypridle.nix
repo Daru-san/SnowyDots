@@ -6,7 +6,7 @@
   ...
 }:
 with lib; let
-  hyprlock = "${getExe config.programs.hyprlock.package}";
+  hyprlock = "hyprlock";
   beforeSleep = with pkgs; writeShellScriptBin "sleep" ''
     ${getExe' config.services.playerctld.package "playerctl"} pause
     ${hyprlock}
