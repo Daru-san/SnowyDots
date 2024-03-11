@@ -13,7 +13,7 @@ with lib; let
   '';
 in {
   imports = [inputs.hypridle.homeManagerModules.default];
-  programs.hypridle = {
+  services.hypridle = {
     enable = true;
     listeners = [
       {
