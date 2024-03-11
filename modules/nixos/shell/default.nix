@@ -25,7 +25,7 @@
     pathsToLink = ["/share/zsh" "/share/fish"];
     # GLobal shell aliases
     shellAliases = let
-      ranger = "${pkgs.ranger}/bin/ranger";
+      yazi = "${config.programs.yazi.package}/bin/yazi";
       rsync = "${pkgs.rsync}/bin/rsync";
     in {
       # Useful shell aliases
@@ -43,7 +43,7 @@
       rsync-move = "${rsync} --remove-source-files -zvh --progress";
 
       # Program specific aliases
-      r = "${ranger}";
+      y = "${yazi}";
 
       v = "vi";
 
