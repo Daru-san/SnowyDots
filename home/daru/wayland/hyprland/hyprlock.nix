@@ -19,7 +19,7 @@
     '';
   now-playing = with pkgs;
     writeShellScriptBin "now-playing" ''
-      songstats=$(playerctl metadata --format '󰎈{{title}} - {{artist}}󰎈')
+      songstats=$(playerctl metadata --format '󰎈 {{title}} - {{artist}} 󰎈')
       echo "$songstats"
     '';
 in {
@@ -50,8 +50,8 @@ in {
         inner_color = "rgba(0, 0, 0, 0.5)";
         font_color = "rgb(200, 200, 200)";
         fade_on_empty = false;
-        placeholder_text = "<i>Enter your Password...</i>";
-        hide_input = false;
+        placeholder_text = "<i>Input Password...</i>";
+        hide_input = true;
         position = {
           x = 0;
           y = -110;
@@ -83,17 +83,17 @@ in {
         halign = "center";
         valign = "center";
       }
-      {
-        text = ''cmd[update:1000] ${lib.getExe greeter}'';
-        font_size = 21;
-        font_family = "JetBrains Mono Nerd Font 10";
-        position = {
-          x = 0;
-          y = -80;
-        };
-        halign = "center";
-        valign = "center";
-      }
+      # {
+      #   text = ''cmd[update:1000] ${lib.getExe greeter}'';
+      #   font_size = 21;
+      #   font_family = "JetBrains Mono Nerd Font 10";
+      #   position = {
+      #     x = 0;
+      #     y = -80;
+      #   };
+      #   halign = "center";
+      #   valign = "center";
+      # }
       {
         text = ''cmd[update 1000] ${lib.getExe now-playing}'';
         font_size = 16;
