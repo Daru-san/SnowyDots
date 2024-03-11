@@ -23,7 +23,7 @@
       cssPriority = "application";
       control-center-positionX = "right";
       control-center-positionY = "bottom";
-      control-center-margin-top = 20;
+      control-center-margin-top = 0;
       control-center-margin-bottom = 0;
       control-center-margin-right = 0;
       control-center-margin-left = 0;
@@ -66,7 +66,7 @@
           clear-all-button = true;
         };
         title = {
-          text = "Notifications";
+          text = "Notification Center";
           clear-all-button = true;
           button-text = "Clear All";
         };
@@ -80,17 +80,6 @@
         mpris = {
           image-size = 64;
           image-radius = 50;
-        };
-        buttons-grid = {
-          actions = [
-            {
-              label = "Wi-Fi";
-              type = "toggle";
-              active = true;
-              command = "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'";
-              update-command = "sh -c '[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'|";
-            }
-          ];
         };
       };
     };
