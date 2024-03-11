@@ -66,7 +66,7 @@
           clear-all-button = true;
         };
         title = {
-          text = "Notification Center";
+          text = "Notifications";
           clear-all-button = true;
           button-text = "Clear All";
         };
