@@ -1,3 +1,4 @@
+
 * {
   border: none;
   border-radius: 40px;
@@ -20,7 +21,7 @@ window#waybar {
 #workspaces button {
   padding: 0px 5px;
   margin: 0px 3px;
-  min-width: 20px;
+  min-width: 27px;
   border-radius: 16px;
   color: transparent;
   background: rgba(21,24,24,1);
@@ -28,10 +29,10 @@ window#waybar {
 }
 
 #workspaces button.active {
-  background: alpha(@base08,1);
-  color: #000000;
+  background: shade(@base0B,0.6);
+  color: alpha(@base00,1);
   border-radius: 16px;
-  min-width: 40px;
+  min-width: 37px;
   background-size: 400% 400%;
   transition: all 0.3s ease-in-out;
 }
@@ -60,7 +61,7 @@ window#waybar {
 #clock, 
 #custom-playerctl
 {
-  color: alpha(@base08,1);
+  color: alpha(@base0B,1);
   background-color: rgba(24, 28, 28, 1);
 }
 /**/
@@ -101,7 +102,7 @@ window#waybar {
 
 
 #custom-playerctl {
-  color: alpha(@base0A,1);
+  color: alpha(@base0E,1);
   padding: 0 20px;
   border-radius: 24px 24px 24px 24px;
   margin: 5px 0;
@@ -121,7 +122,6 @@ window#waybar {
 }
 #pulseaudio-slider slider {
   min-height: 0px;
-  color: @base08;
   min-width: 0px;
   opacity: 1;
   border: none;
@@ -138,7 +138,7 @@ window#waybar {
 #pulseaudio-slider highlight {
   min-width: 0px;
   border-radius: 5px;
-  background-color: @base08;
-  color: @base08;
+  background-color: @base0A;
+  color: @base00;
 }
 /* EOF */
