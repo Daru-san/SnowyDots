@@ -62,14 +62,6 @@
       url = "github:DreamMaoMao/hycov";
       inputs.hyprland.follows = "hyprland";
     };
-    hyprfocus = {
-      url = "github:VortexCoyote/hyprfocus";
-      inputs.hyprland.follows = "hyprland";
-    };
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
   };
 
   outputs = {
