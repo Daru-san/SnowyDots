@@ -43,6 +43,8 @@
         du-dust
         fzf
         musikcube
+        music-player
+        mediainfo
         unrar
         onefetch
         asciinema
