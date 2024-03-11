@@ -7,10 +7,11 @@
 }:
 with lib; let
   hyprlock = "hyprlock";
-  beforeSleep = with pkgs; writeShellScriptBin "sleep" ''
-    ${getExe' config.services.playerctld.package "playerctl"} pause
-    ${hyprlock}
-  '';
+  beforeSleep = with pkgs;
+    writeShellScriptBin "sleep" ''
+      ${getExe' config.services.playerctld.package "playerctl"} pause
+      ${hyprlock}
+    '';
 in {
   imports = [inputs.hypridle.homeManagerModules.default];
   services.hypridle = {
