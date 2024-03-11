@@ -59,7 +59,7 @@
 
   # Install and configure yazi
   programs.yazi = {
-    enable = true;
+    enable = false;
     settings = {
       yazi = {
         manager = {
