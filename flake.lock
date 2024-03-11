@@ -526,27 +526,6 @@
         "type": "github"
       }
     },
-    "hyprfocus": {
-      "inputs": {
-        "hyprland": [
-          "hyprland"
-        ],
-        "nix-filter": "nix-filter"
-      },
-      "locked": {
-        "lastModified": 1698854678,
-        "narHash": "sha256-JuUNQXUetKIUGGwzEA5dQmKtpFvYSZzG/IV373aKd6U=",
-        "owner": "VortexCoyote",
-        "repo": "hyprfocus",
-        "rev": "ec3b45482f651c2b1f0e4df90a41d24a1afa5a74",
-        "type": "github"
-      },
-      "original": {
-        "owner": "VortexCoyote",
-        "repo": "hyprfocus",
-        "type": "github"
-      }
-    },
     "hypridle": {
       "inputs": {
         "hyprlang": "hyprlang",
@@ -588,26 +567,6 @@
         "owner": "hyprwm",
         "ref": "v0.36.0",
         "repo": "Hyprland",
-        "type": "github"
-      }
-    },
-    "hyprland-plugins": {
-      "inputs": {
-        "hyprland": [
-          "hyprland"
-        ]
-      },
-      "locked": {
-        "lastModified": 1709512528,
-        "narHash": "sha256-4haLTurWZgPkzASTIWPqyb7zJhFprBjXPUkdqXAgg4s=",
-        "owner": "hyprwm",
-        "repo": "hyprland-plugins",
-        "rev": "8d3a0701a26d51c9931b3583f93e7fb3fbcd5110",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hyprwm",
-        "repo": "hyprland-plugins",
         "type": "github"
       }
     },
@@ -817,21 +776,6 @@
       "original": {
         "owner": "nix-community",
         "repo": "neovim-nightly-overlay",
-        "type": "github"
-      }
-    },
-    "nix-filter": {
-      "locked": {
-        "lastModified": 1694857738,
-        "narHash": "sha256-bxxNyLHjhu0N8T3REINXQ2ZkJco0ABFPn6PIe2QUfqo=",
-        "owner": "numtide",
-        "repo": "nix-filter",
-        "rev": "41fd48e00c22b4ced525af521ead8792402de0ea",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "nix-filter",
         "type": "github"
       }
     },
@@ -1169,10 +1113,8 @@
         "firefox": "firefox",
         "home-manager": "home-manager",
         "hycov": "hycov",
-        "hyprfocus": "hyprfocus",
         "hypridle": "hypridle",
         "hyprland": "hyprland",
-        "hyprland-plugins": "hyprland-plugins",
         "hyprlock": "hyprlock",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixpkgs": "nixpkgs_9",
