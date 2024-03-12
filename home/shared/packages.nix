@@ -42,6 +42,7 @@
         transmission
         du-dust
         fzf
+        nil
         musikcube
         music-player
         mediainfo
@@ -53,7 +54,6 @@
         xdragon
         trashy
       ])
-      (with pkgs.stable; [rnix-lsp])
       (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild])
     ];
 }
