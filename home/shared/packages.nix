@@ -51,9 +51,9 @@
         asciinema-agg
         asciinema-scenario
         xdragon
-        rnix-lsp
         trashy
       ])
+      (with pkgs.stable; [rnix-lsp])
       (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild])
     ];
 }
