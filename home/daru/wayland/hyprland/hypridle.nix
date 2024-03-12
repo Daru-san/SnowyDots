@@ -19,7 +19,7 @@ in {
     listeners = [
       {
         timeout = 1200;
-        onTimeout = "lock";
+        onTimeout = hyprlock;
       }
       {
         timeout = 1800;
