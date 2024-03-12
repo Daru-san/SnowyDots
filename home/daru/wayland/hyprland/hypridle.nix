@@ -6,7 +6,7 @@
   ...
 }:
 with lib; let
-  hyprlock = "${getExe config.programs.bash.package} -c ${getExe config.prograsm.hyprlock.package}";
+  hyprlock = "${getExe pkgs.bash} -c ${getExe config.programs.hyprlock.package}";
   beforeSleep = with pkgs;
     writeShellScriptBin "sleep" ''
       ${getExe' config.services.playerctld.package "playerctl"} pause
@@ -19,7 +19,7 @@ in {
     listeners = [
       {
         timeout = 1200;
-        onTimeout = lock;
+        onTimeout = "lock";
       }
       {
         timeout = 1800;
