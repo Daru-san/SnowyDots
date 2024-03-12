@@ -14,6 +14,7 @@
       wayland
       shell
       themes
+      languages
     ])
     ++ (with inputs; [
       hyprland.homeManagerModules.default
