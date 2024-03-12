@@ -30,7 +30,7 @@ with lib; {
       allowUnfreePredicate = _: true;
 
       # Fix electron packages
-      permittedInsecurePackages = ["electron-25.9.0"];
+      permittedInsecurePackages = ["electron-25.9.0" "nix-2.15.3"];
     };
   };
   nix.gc = {
