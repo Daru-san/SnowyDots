@@ -4,9 +4,12 @@
   pkgs,
   ...
 }: {
-  imports = [./zsh.nix ./extras.nix];
+  imports = [./zsh.nix ./extras.nix ./tmux.nix];
+
   # Global shell theme
   programs.oh-my-posh.useTheme = "zash";
+
+  # Enable bash for oh-my-posh support
   programs.bash.enable = true;
 
   # Global shell aliases
@@ -18,7 +21,7 @@
     yazi = "${config.programs.yazi.package}/bin/yazi";
   in {
     g = "${git}";
-    nofetch = "${neofetch} --config none";
+    neofetch = "${neofetch} --config none";
     clock = "${tty-clock} -bscBrnS";
     nb = "nix-rebuild";
     hb = "hm-build";

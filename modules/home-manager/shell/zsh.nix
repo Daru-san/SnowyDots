@@ -15,6 +15,8 @@
       history = {
         size = 10000;
         path = "${config.xdg.dataHome}/zsh/history";
+        expireDuplicatesFirst = true;
+        ignoreSpace = true;
       };
 
       # Syntax highlighting
@@ -22,7 +24,8 @@
 
       # Enable autosuggestions
       enableAutosuggestions = true;
-
+  
+      # Run nix shell in zsh, instead of defaulting to bash
       plugins = [
         {
           name = "zsh-nix-shell";
@@ -35,26 +38,32 @@
           };
         }
       ];
-      # Oh-my-zsh for plugins, themes are set by oh-my-posh
-      oh-my-zsh = {
-        enable = true;
 
-        # Plugins
-        plugins = [
-          "git"
-          "sudo"
-          "colorize"
-          "per-directory-history"
-          "catimg"
-          "extract"
-          "colored-man-pages"
-          "copypath"
-          "copyfile"
-          "zsh-interactive-cd"
-          "copybuffer"
-          "fzf"
-          "adb"
+      zsh-abbr.enable = true;
+
+      # Prezto for custom configurations, themes are set by oh-my-posh
+      prezto = {
+        enable = true;
+        editor = {
+          promptContext = true;
+          dotExpansion = true;
+          keymap = "vi";
+        };
+        terminal = {
+          autoTitle = true;
+          tabTitleFormat = "%m: %s"
+        };
+        tmux.autoStartLocal = true;
+        caseSensitive = true;
+        pmodules = [
+          "environment"
+          "tmux"
           "rsync"
+          "archive"
+          "command-not-found"
+          "directory"
+          "git"
+          "utility"
         ];
       };
     };

@@ -36,13 +36,6 @@
     enableBashIntegration = true;
   };
 
-  # Tmux for lazy people, like me
-  programs.zellij = {
-    enable = true;
-    enableBashIntegration = false;
-    enableZshIntegration = false;
-  };
-
   # Searching through directories with ease
   programs.broot = {
     enable = true;
