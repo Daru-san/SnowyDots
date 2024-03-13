@@ -1,25 +1,30 @@
-{config, ...}: {
+{config, ...}: let
+  hm = "${hm}";
+in {
   xdg.userDirs = {
     enable = true;
 
-    # Make it auto createnerate the directories if they don't exist
+    # Automatically create directories
     createDirectories = true;
 
     # Default directories
-    desktop = "${config.home.homeDirectory}/Desktop";
-    music = "${config.home.homeDirectory}/Music";
-    pictures = "${config.home.homeDirectory}/Pictures";
-    videos = "${config.home.homeDirectory}/Videos";
-    download = "${config.home.homeDirectory}/Downloads";
-    templates = "${config.home.homeDirectory}/Templates";
+    desktop = "${hm}/Desktop";
+    music = "${hm}/Music";
+    pictures = "${hm}/Pictures";
+    videos = "${hm}/Videos";
+    download = "${hm}/Downloads";
+
     # Special directories
     extraConfig = {
-      Emulation = "${config.home.homeDirectory}/Emulation";
-      Anime = "${config.home.homeDirectory}/Anime";
-      Projects = "${config.home.homeDirectory}/Projects";
-      Scripts = "${config.home.homeDirectory}/Scripts";
-      Notes = "${config.home.homeDirectory}/Notes";
-      Wallpapers = "${config.home.homeDirectory}/Wallpapers";
+      emu = "${hm}/Emulation";
+      anime = "${hm}/Anime";
+      projects = "${hm}/Projects";
+      scripts = "${hm}/Scripts";
+      notes = "${hm}/Notes";
+      walls = "${hm}/Wallpapers";
+      dev = "${hm}/Development";
+      secret = "${hm}/Secret";
+      repos = "${hm}/Repos";
     };
   };
 }
