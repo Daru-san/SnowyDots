@@ -30,11 +30,11 @@
     in {
       # Useful shell aliases
       ll = "ls -l";
-      xt = "exit";
-      rst = "reset";
-      clr = "clear";
-      shd = "shutdown now";
-      rbt = "reboot now";
+      ex = "exit";
+      r = "reset";
+      c = "clear";
+      sd = "shutdown now";
+      rb = "reboot now";
       rbf = "sudo systemctl reboot -f";
       logout = "loginctl terminate-user $USER";
 
