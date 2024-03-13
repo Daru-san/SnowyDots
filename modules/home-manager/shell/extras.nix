@@ -27,6 +27,7 @@
     enable = true;
     enableZshIntegration = true;
     enableBashIntegration = true;
+    settings.modal = true;
   };
 
   # Find files fuzzily

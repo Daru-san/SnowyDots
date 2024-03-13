@@ -44,7 +44,7 @@
           "zpm-zsh/clipboard"
           "tom-auger/cmdtime"
           "Atlas34/fzf-plugin"
-          "jeffreyste/zsh-vi-mode"
+          # "jeffreytse/zsh-vi-mode"
         ]
         # Plugins from oh-my-zsh
         ++ (let
