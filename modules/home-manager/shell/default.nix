@@ -42,5 +42,6 @@
     y = "${yazi}";
     man = "batman";
     grep = "batgrep";
+    cat = "${pkgs.bat}/bin/bat";
   };
 }
