@@ -5,21 +5,21 @@
   ...
 }: {
   programs = {
-    # Zsh configs
     zsh = {
       enable = true;
       enableCompletion = true;
       autocd = true;
       zsh-abbr.enable = true;
-      command-not-found.enable = true;
 
       # Put zsh configs in .config/zsh
-      dotDir = config.xdg.configHome ++ "/zsh";
+      dotDir = ".config/zsh";
 
       # History file
       history = {
         size = 10000;
         path = "${config.xdg.dataHome}/zsh/history";
+        ignoreSpace = true;
+        expireDuplicatesFirst = true;
       };
 
       # Syntax highlighting
@@ -45,42 +45,38 @@
             "mollifier/cd-gitroot"
             "zpm-zsh/clipboard"
             "tom-auger/cmdtime"
-            "magidc/fzf-copyq-clipboard-zsh-plugin"
+            "Aloxaf/fzf-tab"
+            # "jeffreytse/zsh-vi-mode"
           ]
           # Plugins from oh-my-zsh
           ++ (let
             o = regex: "ohmyzsh/ohmyzsh path:plugins/${regex}";
           in [
             (o "sudo")
-            (o "vi-mode")
-            (o "fd")
-            (o "fancy-ctrl-z")
             (o "extract")
             (o "cp")
-            (o "fzf")
           ]);
       };
 
       # Prezto for custom configurations, themes are set by oh-my-posh, plugins by antidote
       prezto = {
         enable = true;
-        editor = {
-          promptContext = true;
-          dotExpansion = true;
-          keymap = "vi";
-        };
-        terminal = {
-          autoTitle = true;
-          tabTitleFormat = "%m: %s";
-        };
+        syntaxHighlighting.highlighters = [
+          "main"
+          "brackets"
+          "pattern"
+          "line"
+          "root"
+        ];
         prompt.theme = "off";
         caseSensitive = true;
         pmodules = [
-          "environment"
           "rsync"
           "archive"
           "command-not-found"
+          "completion"
           "directory"
+          "syntax-highlighting"
           "git"
           "utility"
         ];

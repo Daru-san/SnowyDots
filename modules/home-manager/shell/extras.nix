@@ -11,7 +11,7 @@
     enable = true;
     git = true;
     icons = true;
-    extraOptions = ["--group-directories-first" "--header"];
+    extraOptions = ["--group-directories-first"];
     enableAliases = true;
   };
 

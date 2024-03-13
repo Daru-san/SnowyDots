@@ -10,7 +10,15 @@
   programs.oh-my-posh.useTheme = "zash";
 
   # Enable bash for oh-my-posh support
-  programs.bash.enable = true;
+  programs.bash = {
+    enable = true;
+    historyFile = "${config.xdg.dataHome}/bash/history";
+    historySize = 10000;
+    historyControl = ["erasedups" "ignorespace"];
+  };
+
+  # Enable command-not-found
+  programs.command-not-found.enable = true;
 
   # Global shell aliases
   home.shellAliases = let
@@ -32,5 +40,7 @@
     tls = "${trash} list";
     trs = "${trash} restore";
     y = "${yazi}";
+    man = "batman";
+    grep = "batgrep";
   };
 }
