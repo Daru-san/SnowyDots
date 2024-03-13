@@ -1,13 +1,11 @@
 {
   pkgs,
-  lib,
+  config,
   ...
 }: {
   # Tmux
   programs.tmux = {
     enable = true;
-    enableBashIntegration = true;
-    enableZshIntegration = true;
     clock24 = true;
     keyMode = "vi";
     mouse = true;
@@ -16,11 +14,11 @@
     plugins = with pkgs.tmuxPlugins; [
       better-mouse-mode
       cpu
+      battery
       extrakto
       fuzzback
       onedark-theme
       sidebar
-      tilish
       yank
       urlview
       jump
