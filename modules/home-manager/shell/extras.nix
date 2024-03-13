@@ -15,18 +15,12 @@
     enableAliases = true;
   };
 
-  # Query nix store paths easily
-  programs.nix-index = {
+  # The fuck?
+  programs.thefuck = {
     enable = true;
-    enableZshIntegration = true;
     enableBashIntegration = true;
-  };
-
-  # Manage shell history
-  programs.hstr = {
-    enable = true;
     enableZshIntegration = true;
-    enableBashIntegration = true;
+    enableInstantMode = true;
   };
 
   # cd on steriods
