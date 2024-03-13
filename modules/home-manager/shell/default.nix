@@ -4,10 +4,10 @@
   pkgs,
   ...
 }: {
-  imports = [./zsh.nix ./extras.nix ./tmux.nix];
+  imports = [./zsh.nix ./extras.nix ./tmux.nix ./starship.nix];
 
   # Global shell theme
-  programs.oh-my-posh.useTheme = "zash";
+  # programs.oh-my-posh.useTheme = "zash";
 
   # Enable bash for oh-my-posh support
   programs.bash.enable = true;
