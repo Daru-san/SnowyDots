@@ -22,8 +22,8 @@ in
     };
     config = mkMerge [
       (mkIf cfg.zram.enable {zramSwap.enable = true;})
-      (mkIf cfg.cpu.enable {
-        boot.kernelModules = with pkgs; [linuxKernel.packages.linux_zen.cpupower];
+      (mkIf cfg.optimizations.cpu.enable {
+        boot.kernelModules = ["cpupower"];
         services.cpupower-gui.enable = true;
       })
       (mkIf cfg.optimizations.intel.enable {
