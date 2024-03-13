@@ -228,7 +228,7 @@
 
           #Home manager search
           "Home Manager" = {
-            urls = [{template = "https://mipmip.github.io/home-manager-option-search/?query={searchTerms}";}];
+            urls = [{template = "https://home-manager-options.extranix.com/?query={searchTerms}";}];
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = ["@hm" "@home" "@homeman"];
           };
