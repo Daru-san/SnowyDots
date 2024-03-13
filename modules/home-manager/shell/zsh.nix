@@ -24,7 +24,7 @@
 
       # Enable autosuggestions
       enableAutosuggestions = true;
-  
+
       # Run nix shell in zsh, instead of defaulting to bash
       plugins = [
         {
@@ -51,7 +51,7 @@
         };
         terminal = {
           autoTitle = true;
-          tabTitleFormat = "%m: %s"
+          tabTitleFormat = "%m: %s";
         };
         tmux.autoStartLocal = true;
         caseSensitive = true;
