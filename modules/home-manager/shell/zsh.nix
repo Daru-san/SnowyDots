@@ -10,13 +10,16 @@
       enable = true;
       enableCompletion = true;
       autocd = true;
+      zsh-abbr.enable = true;
+      command-not-found.enable = true;
+
+      # Put zsh configs in .config/zsh
+      dotDir = config.xdg.configHome ++ "/zsh";
 
       # History file
       history = {
         size = 10000;
         path = "${config.xdg.dataHome}/zsh/history";
-        expireDuplicatesFirst = true;
-        ignoreSpace = true;
       };
 
       # Syntax highlighting
@@ -25,23 +28,40 @@
       # Enable autosuggestions
       enableAutosuggestions = true;
 
-      # Run nix shell in zsh, instead of defaulting to bash
-      plugins = [
-        {
-          name = "zsh-nix-shell";
-          file = "nix-shell.plugin.zsh";
-          src = pkgs.fetchFromGitHub {
-            owner = "chisui";
-            repo = "zsh-nix-shell";
-            rev = "v0.8.0";
-            sha256 = "1lzrn0n4fxfcgg65v0qhnj7wnybybqzs4adz7xsrkgmcsr0ii8b7";
-          };
-        }
-      ];
+      # Configuring antidote, a very fast zsh plugin manager
+      antidote = {
+        enable = true;
+        useFriendlyNames = true;
 
-      zsh-abbr.enable = true;
+        # Custom plugins
+        plugins =
+          [
+            "joknarf/redo"
+            "jimhester/per-directory-history"
+            "mrjohannchang/zsh-interactive-cd"
+            "chisui/zsh-nix-shell"
+            "hlissner/zsh-autopair"
+            "fdellwing/zsh-bat"
+            "mollifier/cd-gitroot"
+            "zpm-zsh/clipboard"
+            "tom-auger/cmdtime"
+            "magidc/fzf-copyq-clipboard-zsh-plugin"
+          ]
+          # Plugins from oh-my-zsh
+          ++ (let
+            o = regex: "ohmyzsh/ohmyzsh path:plugins/${regex}";
+          in [
+            (o "sudo")
+            (o "vi-mode")
+            (o "fd")
+            (o "fancy-ctrl-z")
+            (o "extract")
+            (o "cp")
+            (o "fzf")
+          ]);
+      };
 
-      # Prezto for custom configurations, themes are set by oh-my-posh
+      # Prezto for custom configurations, themes are set by oh-my-posh, plugins by antidote
       prezto = {
         enable = true;
         editor = {
@@ -53,11 +73,10 @@
           autoTitle = true;
           tabTitleFormat = "%m: %s";
         };
-        tmux.autoStartLocal = true;
+        prompt.theme = "off";
         caseSensitive = true;
         pmodules = [
           "environment"
-          "tmux"
           "rsync"
           "archive"
           "command-not-found"
