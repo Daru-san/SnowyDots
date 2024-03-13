@@ -16,11 +16,16 @@ in
           laptop.enable = mkEnableOption "Tweaks for laptops to improve performance and battery life";
           ssd.enable = mkEnableOption "Enable ssd optimizations";
           intel.enable = mkEnableOption "Enable intel tweaks";
+          cpu.enable = mkEnableOption "Enable cpu tweaks";
         };
       };
     };
     config = mkMerge [
       (mkIf cfg.zram.enable {zramSwap.enable = true;})
+      (mkIf cfg.cpu.enable {
+        boot.kernelModules = with pkgs; [linuxKernel.packages.linux_zen.cpupower];
+        services.cpupower-gui.enable = true;
+      })
       (mkIf cfg.optimizations.intel.enable {
         services.throttled.enable = true;
         services.thermald.enable = true;

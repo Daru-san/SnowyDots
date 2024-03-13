@@ -123,6 +123,7 @@
       laptop.enable = true;
       ssd.enable = true;
       intel.enable = true;
+      cpu.enable = true;
     };
   };
 
