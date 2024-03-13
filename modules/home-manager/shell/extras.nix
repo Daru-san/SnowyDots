@@ -15,14 +15,6 @@
     enableAliases = true;
   };
 
-  # The fuck?
-  programs.thefuck = {
-    enable = true;
-    enableBashIntegration = true;
-    enableZshIntegration = true;
-    enableInstantMode = true;
-  };
-
   # cd on steriods
   programs.zoxide = {
     enable = true;

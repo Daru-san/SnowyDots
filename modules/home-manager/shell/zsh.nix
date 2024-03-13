@@ -46,7 +46,6 @@
             "zpm-zsh/clipboard"
             "tom-auger/cmdtime"
             "Aloxaf/fzf-tab"
-            # "jeffreytse/zsh-vi-mode"
           ]
           # Plugins from oh-my-zsh
           ++ (let
@@ -68,7 +67,6 @@
           "line"
           "root"
         ];
-        prompt.theme = "off";
         caseSensitive = true;
         pmodules = [
           "rsync"
