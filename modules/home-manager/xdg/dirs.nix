@@ -1,5 +1,5 @@
 {config, ...}: let
-  hm = "${hm}";
+  hm = "${config.home.homeDirectory}";
 in {
   xdg.userDirs = {
     enable = true;
