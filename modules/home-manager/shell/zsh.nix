@@ -1,4 +1,4 @@
-{config, ...}: {
+{config,pkgs, ...}: {
   # Enable and configure zsh
   programs.zsh = {
     enable = true;
@@ -18,14 +18,15 @@
       size = 10000;
       path = "${config.xdg.dataHome}/zsh/history";
       ignoreSpace = true;
+      ignoreAllDups = true;
       expireDuplicatesFirst = true;
     };
 
-    # Syntax highlighting
-    syntaxHighlighting = {enable = true;};
-
     # Enable autosuggestions
     enableAutosuggestions = true;
+
+    # History substring searching
+    historySubstringSearch.enable = true;
 
     # Plugins managed by antidote
     antidote = {
@@ -35,19 +36,19 @@
       # Custom plugins
       plugins =
         [
-          "joknarf/redo"
+          # Plugins fetched from github
           "jimhester/per-directory-history"
           "chisui/zsh-nix-shell"
           "hlissner/zsh-autopair"
           "fdellwing/zsh-bat"
           "mollifier/cd-gitroot"
-          "zpm-zsh/clipboard"
           "tom-auger/cmdtime"
           "Atlas34/fzf-plugin"
           "jeffreytse/zsh-vi-mode"
+          "z-shell/F-Sy-H"
         ]
-        # Plugins from oh-my-zsh
         ++ (let
+          # Plugins from the oh-my-zsh repo
           o = regex: "ohmyzsh/ohmyzsh path:plugins/${regex}";
         in [(o "sudo") (o "extract") (o "cp")]);
     };
@@ -55,13 +56,6 @@
     # Configuration and custom modules from Prezto
     prezto = {
       enable = true;
-      syntaxHighlighting.highlighters = [
-        "main"
-        "brackets"
-        "pattern"
-        "line"
-        "root"
-      ];
       caseSensitive = true;
       pmodules = [
         "rsync"
@@ -69,9 +63,11 @@
         "command-not-found"
         "completion"
         "directory"
-        "syntax-highlighting"
         "git"
         "utility"
+      ];
+      extraFunctions = [
+        "zcalc"
       ];
     };
   };
