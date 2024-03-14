@@ -1,4 +1,8 @@
-{config,pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   # Enable and configure zsh
   programs.zsh = {
     enable = true;
@@ -40,7 +44,6 @@
           "jimhester/per-directory-history"
           "chisui/zsh-nix-shell"
           "hlissner/zsh-autopair"
-          "fdellwing/zsh-bat"
           "mollifier/cd-gitroot"
           "tom-auger/cmdtime"
           "Atlas34/fzf-plugin"
