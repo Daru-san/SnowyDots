@@ -19,8 +19,8 @@ in
         consoleLogLevel = mkIf cfg.quiet 0;
         kernelParams = mkIf cfg.quiet ["quiet"];
 
-        loader = mkIf cfg.enableSystemd-boot {
-          systemd-boot = {
+        loader = {
+          systemd-boot = mkIf cfg.systemd.enable {
             # Enable systemd-boot
             enable = true;
             # Disable editor
@@ -30,7 +30,7 @@ in
           };
           grub = mkIf cfg.grub.enable {
             enable = true;
-            configurationLimit = 5;
+            configurationLimit = 3;
             configurationName = "NixOS";
             default = "saved";
             efiSupport = true;
@@ -45,20 +45,9 @@ in
         };
         kernelPackages = pkgs.linuxPackages_zen;
 
-        initrd = mkDefault {
-          verbose = false;
-          availableKernelModules = [
-            "ahci"
-            "xhci_pci"
-            "usb_storage"
-            "usbhid"
-            "sd_mod"
-            "rtsx_pci_sdmmc"
-          ];
-          kernelModules = [];
-        };
+        initrd.verbose = false;
         # Kernel modules
-        kernelModules = mkDefault ["kvm-intel"];
+        kernelModules = ["kvm-intel"];
       };
     };
   }
