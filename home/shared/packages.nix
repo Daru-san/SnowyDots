@@ -21,7 +21,6 @@
 
         # CLI
         tree
-        bc
         tgpt
         tty-clock
         libnotify
@@ -33,7 +32,6 @@
         sysz
         exiftool
         xdg-utils
-        nap
         nitch
         pulsemixer
         ani-cli
