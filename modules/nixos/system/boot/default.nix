@@ -9,8 +9,9 @@ in
   with lib; {
     options = {
       os.boot = {
-        enableSystemd-boot = mkEnableOption "Enable systemd boot";
         quiet = mkEnableOption "Enable quiet booting";
+        systemd.enable = mkEnableOption "Enable systemd-boot";
+        grub.enable = mkEnableOption "Enable grub";
       };
     };
     config = {
@@ -26,6 +27,19 @@ in
             editor = false;
             # Limit configurations to 10 max
             configurationLimit = 10;
+          };
+          grub = mkIf cfg.grub.enable {
+            enable = true;
+            configurationLimit = 5;
+            configurationName = "NixOS";
+            default = "saved";
+            efiSupport = true;
+            useOSProber = true;
+            timeoutStyle = "menu";
+            theme = pkgs.sleek-grub-theme.override {
+              withStyle = "dark";
+              withBanner = "Hello, Daru";
+            };
           };
           efi.canTouchEfiVariables = true;
         };

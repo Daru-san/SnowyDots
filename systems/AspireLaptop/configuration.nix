@@ -109,7 +109,8 @@
   # System configurations
   os = {
     boot = {
-      enableSystemd-boot = true;
+      grub.enable = true;
+      systemd.enable = false;
       quiet = true;
       plymouth.enable = true;
     };

@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
   ...
 }: {
@@ -11,6 +10,7 @@
     device = "/dev/disk/by-uuid/7CAE-4CC9";
     fsType = "vfat";
   };
+  boot.loader.grub.device = "/dev/disk/by-uuid/7CAE-4CC9";
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/3bad4adb-b55b-4913-907f-fe78cd309314";
