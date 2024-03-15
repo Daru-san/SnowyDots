@@ -31,8 +31,8 @@ in
           grub = mkIf cfg.grub.enable {
             enable = true;
             configurationLimit = 3;
-            configurationName = "NixOS";
             default = "saved";
+            device = "nodev";
             efiSupport = true;
             useOSProber = true;
             timeoutStyle = "menu";
