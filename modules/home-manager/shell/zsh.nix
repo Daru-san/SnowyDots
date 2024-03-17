@@ -23,7 +23,7 @@
     };
 
     # Enable autosuggestions
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
 
     # History substring searching
     historySubstringSearch.enable = true;

@@ -1,4 +1,4 @@
-{...}: {
+{
   # Unified theming for bash and zsh
   programs.oh-my-posh = {
     enable = true;
@@ -12,7 +12,8 @@
     git = true;
     icons = true;
     extraOptions = ["--group-directories-first"];
-    enableAliases = true;
+    enableZshIntegration = true;
+    enableBashIntegration = true;
   };
 
   # cd on steriods
