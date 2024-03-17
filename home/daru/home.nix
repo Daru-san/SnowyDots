@@ -5,11 +5,6 @@
     easyeffects.enable = true;
     playerctl.enable = true;
   };
-  # kdeconnect and syncthing
-  connect = {
-    syncthing.enable = true;
-    kdeconnect.enable = true;
-  };
 
   home = {
     username = "daru";
