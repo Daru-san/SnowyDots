@@ -2,6 +2,7 @@
 {
   config,
   pkgs,
+  # inputs,
   lib,
   ...
 }: {
@@ -23,6 +24,7 @@
 
   # Global shell aliases
   home.shellAliases = let
+    bat = "${pkgs.bat}/bin/bat";
     git = "${config.programs.git.package}/bin/git";
     firefox = "${lib.getExe config.programs.firefox.package}";
     lazygit = "${config.programs.lazygit.package}/bin/lazygit";
@@ -31,8 +33,8 @@
     trash = "${pkgs.trashy}/bin/trash";
     yazi = "${config.programs.yazi.package}/bin/yazi";
   in {
-    g = "${git}";
-    lg = "${lazygit}";
+    g = git;
+    lg = lazygit;
     neofetch = "${neofetch} --config none";
     clock = "${tty-clock} -bscBrnS";
     nb = "nix-rebuild";
@@ -41,10 +43,10 @@
     te = "${trash} empty";
     tls = "${trash} list";
     trs = "${trash} restore";
-    y = "${yazi}";
+    y = yazi;
     man = "batman";
     grep = "batgrep";
-    cat = "${pkgs.bat}/bin/bat";
-    firefox = "${firefox}";
+    cat = bat;
+    firefox = firefox;
   };
 }
