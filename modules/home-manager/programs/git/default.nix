@@ -1,4 +1,4 @@
-{...}: {
+{
   imports = [./lazygit.nix];
   programs.git-cliff = {enable = true;};
   programs.git = {

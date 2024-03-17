@@ -1,10 +1,4 @@
-{
-  pkgs,
-  lib,
-  config,
-  inputs,
-  ...
-}: let
+{pkgs, ...}: let
   theme = with pkgs;
     fetchFromGitHub {
       owner = "catppuccin";
@@ -14,7 +8,7 @@
     }
     + "/themes/mocha.toml";
 in {
-  imports = [./lua.nix ./keymap.nix];
+  imports = [./lua.nix];
   xdg.configFile = {
     "yazi/theme.toml".source = theme;
     "yazi/plugins/exifaudio.yazi".source = with pkgs;
@@ -43,6 +37,7 @@ in {
     enable = true;
     package = pkgs.yazi;
     enableZshIntegration = true;
+    keymap = import ./keymap.nix;
     settings = {
       manager = {
         ratio = [1 3 4];
@@ -53,7 +48,7 @@ in {
         linemode = "size";
       };
       log = {enabled = false;};
-      plugin = with lib; {
+      plugin = {
         prepend_previewers = [
           {
             mime = "audio/*";
