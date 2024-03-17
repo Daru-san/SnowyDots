@@ -22,8 +22,11 @@
     # Spicetify
     spicetify-nix.url = "github:the-argus/spicetify-nix/master";
 
-    # Neovim nightly
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    # My custom neovim configuration for nix
+    snowyvim = {
+      url = "sourcehut:~darumaka/SnowyVim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Prism launcher(Modded)
     prismlauncher.url = "github:Diegiwg/PrismLauncher-Cracked";

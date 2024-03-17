@@ -2,6 +2,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   imports = [./zsh.nix ./extras.nix ./tmux.nix];
@@ -23,6 +24,7 @@
   # Global shell aliases
   home.shellAliases = let
     git = "${config.programs.git.package}/bin/git";
+    firefox = "${lib.getExe config.programs.firefox.package}";
     lazygit = "${config.programs.lazygit.package}/bin/lazygit";
     neofetch = "${pkgs.neofetch}/bin/neofetch";
     tty-clock = "${pkgs.tty-clock}/bin/tty-clock";
@@ -43,5 +45,6 @@
     man = "batman";
     grep = "batgrep";
     cat = "${pkgs.bat}/bin/bat";
+    firefox = "${firefox}";
   };
 }

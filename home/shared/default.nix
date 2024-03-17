@@ -7,7 +7,7 @@
 with lib; {
   imports =
     [./firefox.nix ./spotify.nix ./packages.nix]
-    ++ (with inputs; [spicetify-nix.homeManagerModules.default nur.nixosModules.nur]);
+    ++ (with inputs; [spicetify-nix.homeManagerModules.default nur.nixosModules.nur nixvim.homeManagerModules.default]);
 
   nixpkgs = {
     overlays = [
@@ -19,9 +19,6 @@ with lib; {
 
       # Import custom packages
       outputs.overlays.additions
-
-      # Neovim nightly overlay
-      inputs.neovim-nightly-overlay.overlays.default
     ];
     config = {
       # Allowing unfree packages
