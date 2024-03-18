@@ -1282,11 +1282,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1710776883,
-        "narHash": "sha256-MxWyPuBW16k4xgAX2ZFZp7SfJqk72+faaWa9bgiPq9g=",
+        "lastModified": 1710776979,
+        "narHash": "sha256-jBh10i+6dIfDYalaBgHx/aKUyuL4npn3Fj+mhmgfbxg=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "cad243bdc8487a49d52fc061174d03c9ffec10ce",
+        "rev": "9d563dc7285aa49b9b16244bf2b4bb3602bbf9ca",
         "type": "sourcehut"
       },
       "original": {
