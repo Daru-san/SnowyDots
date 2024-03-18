@@ -5,17 +5,15 @@
   lib,
   ...
 }: let
-  greeter = with pkgs;
-    writeShellScriptBin "cli-greeter" ''
-      h=`date +%H`
-
-      if [ $h -lt 12 ]; then
-        echo Ohayō, $USER
-      elif [ $h -lt 18 ]; then
-        echo Konichiwa, $USER
-      else
-        echo Konbanwa, $USER
-      fi
+  date = with pkgs;
+    writeShellScriptBin "time" ''
+      time=$(date +"%A %d %B %Y")
+      echo "$date"
+    '';
+  time = with pkgs;
+    writeShellScriptBin "date" ''
+      date=$(date +"%X")
+      echo "$time"
     '';
   now-playing = with pkgs;
     writeShellScriptBin "now-playing" ''
@@ -62,7 +60,7 @@ in {
     ];
     labels = [
       {
-        text = ''cmd[update:1000] date +"%X"'';
+        text = ''cmd[update:1000] ${with lib; getExe time}'';
         font_size = 72;
         font_family = "JetBrains Mono Nerd Font 10";
         position = {
@@ -73,7 +71,7 @@ in {
         valign = "center";
       }
       {
-        text = ''cmd[update 1000] date +"%A %d %B %Y"'';
+        text = ''cmd[update 1000] ${with lib; getExe date}'';
         font_size = 20;
         font_family = "JetBrains Mono Nerd Font 10";
         position = {
