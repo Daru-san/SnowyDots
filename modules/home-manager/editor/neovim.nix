@@ -3,8 +3,8 @@
   inputs,
   ...
 }: {
-  programs.nixvim = {
-    package = inputs.snowyvim.packages.${pkgs.system}.default;
+  programs.neovim = {
+    package = inputs.snowyvim.packages.${pkgs.system}.nvim;
     enable = true;
     defaultEditor = true;
     viAlias = true;
