@@ -14,9 +14,6 @@ with lib; {
       # Overlay for stable packages (23.05)
       outputs.overlays.stable-packages
 
-      # Yazi overlay
-      inputs.yazi.overlays.default
-
       # Import custom packages
       outputs.overlays.additions
     ];

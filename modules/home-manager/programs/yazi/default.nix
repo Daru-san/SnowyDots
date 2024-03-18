@@ -35,7 +35,6 @@ in {
   };
   programs.yazi = {
     enable = true;
-    package = pkgs.yazi;
     enableZshIntegration = true;
     keymap = import ./keymap.nix;
     settings = {

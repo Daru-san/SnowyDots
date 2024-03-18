@@ -23,10 +23,7 @@
     spicetify-nix.url = "github:the-argus/spicetify-nix/master";
 
     # My custom neovim configuration for nix
-    snowyvim = {
-      url = "sourcehut:~darumaka/SnowyVim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    snowyvim.url = "sourcehut:~darumaka/SnowyVim";
 
     # Prism launcher(Modded)
     prismlauncher.url = "github:Diegiwg/PrismLauncher-Cracked";
@@ -53,9 +50,6 @@
       url = "sourcehut:~darumaka/Nix-Scripts";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # Yazi
-    yazi.url = "github:sxyazi/yazi";
 
     # Hyprland and plugins
     hyprland.url = "github:hyprwm/Hyprland/v0.36.0";
