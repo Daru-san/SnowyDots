@@ -1,16 +1,12 @@
 # # To be replaced with ags
-{
-  pkgs,
-  config,
-  ...
-}: {
+{config, ...}: {
   programs.waybar = {
     enable = true;
 
-    style = ''
-      ${config.theme.colorScheme.css}
-      ${with builtins; readFile ./style.css}
-    '';
+    style = builtins.concatLines [
+      config.theme.colorScheme.css
+      (with builtins; readFile ./style.css)
+    ];
 
     settings = [
       {
