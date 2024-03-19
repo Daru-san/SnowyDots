@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  # sysConfig ? (import <nixpkgs/nixos> {}).config,
   ...
 }: {
   imports = [inputs.anyrun.homeManagerModules.default];
@@ -16,11 +17,7 @@
           dictionary
           websearch
         ])
-        ++ (with inputs.anyrun-nixos-options.packages.${pkgs.system}; [default])
-        ++ (with inputs.anyrun-plugins.packages.${pkgs.system}; [
-          hyprwin
-          cliphist
-        ]);
+        ++ (with inputs.anyrun-nixos-options.packages.${pkgs.system}; [default]);
 
       width.fraction = 0.3;
       y.absolute = 70;
@@ -32,7 +29,9 @@
 
     extraConfigFiles = {
       "nixos-options.ron".text = let
-        # nixos-options = osConfig.system.build.manual.optionsJSON + "/share/doc/nixos/options.json";
+        # nixos-options =
+        # sysConfig.system.build.manual.optionsJSON
+        # + "/share/doc/nixos/options.json";
         hm-options =
           inputs.home-manager.packages.${pkgs.system}.docs-json
           + "/share/doc/home-manager/options.json";
@@ -58,12 +57,6 @@
         Config(
           prefix: ":sh",
           shell: None,
-        )
-      '';
-      "hyprwin.ron".text = ''
-        Config(
-          max_entries: 5,
-          prefix: ":w",
         )
       '';
       "applications.ron".text = ''
