@@ -122,7 +122,7 @@ with lib; {
         any = "${getExe' config.programs.anyrun.package "anyrun"}";
         easy = "${getExe config.services.easyeffects.package}";
         cl = "${getExe inputs.scripts.packages.${pkgs.system}.color-picker}";
-        tsc = "${getExe' pkgs.tschuss "tschuss"}";
+        wl = "${getExe config.programs.wlogout.package}";
         pk = "pkill";
 
         # Screenshots
@@ -143,7 +143,7 @@ with lib; {
         "supershift, c, ${e}, ${pk} ${cl} || ${cl}"
 
         # wlogout
-        "super, x, ${e}, ${pk} ${tsc} || ${tsc}"
+        "super, x, ${e}, ${pk} ${wl} || ${wl}"
 
         # Screenshotting
         ", print, ${e}, ${pk} ${hs} || ${h} '${hs} -m ${r} -o ${scr-dir}'"

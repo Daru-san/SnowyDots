@@ -53,7 +53,7 @@
         }
         + "/icons";
     in
-      builtins.concatLines "\n" [
+      builtins.concatStringsSep "\n" [
         ''
           root: {
             --shutdown: url(${icons}/shutdown.png)
@@ -64,7 +64,7 @@
             --hibernate: url(${icons}/hibernate.png)
           }
         ''
-        (builtins.readFile config.colorScheme.css)
+        config.theme.colorScheme.css
         (builtins.readFile ./style.css)
       ];
   };

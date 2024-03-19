@@ -3,7 +3,7 @@
   programs.waybar = {
     enable = true;
 
-    style = builtins.concatLines [
+    style = builtins.concatStringsSep "\n" [
       config.theme.colorScheme.css
       (with builtins; readFile ./style.css)
     ];

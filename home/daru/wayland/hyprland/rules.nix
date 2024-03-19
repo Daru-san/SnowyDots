@@ -42,7 +42,7 @@
         ++
         # tschuss
         (let
-          t = regex: "${regex},^(tschuss)$";
+          t = regex: "${regex},^(wlogout)$";
         in [
           (t "fullscreen")
           (t "noanim")

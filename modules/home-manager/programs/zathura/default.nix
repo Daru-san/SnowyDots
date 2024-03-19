@@ -21,13 +21,12 @@
       statusbar-home-tilde = true;
       window-title-basename = true;
     };
-    extraConfig =
-      builtins.readFile pkgs.fetchFromGitHub {
+    extraConfig = builtins.readFile (pkgs.fetchFromGitHub {
         owner = "catppuccin";
         repo = "zathura";
         rev = "1bda9d8274dd327b7931886ef0c5c1eb33903814";
         hash = "sha256-HWOc5tnVgU/HUcVcIXACeuu3RDH1pHO/8DQRsWqumIA=";
       }
-      + "/src/catpuccin-mocha";
+      + "/src/catpuccin-mocha");
   };
 }
