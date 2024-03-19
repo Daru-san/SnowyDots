@@ -6,13 +6,13 @@
   ...
 }: let
   date = with pkgs;
-    writeShellScriptBin "time" ''
-      time=$(date +"%A %d %B %Y")
+    writeShellScriptBin "date" ''
+      date=$(date +"%A %d %B %Y")
       echo "$date"
     '';
   time = with pkgs;
-    writeShellScriptBin "date" ''
-      date=$(date +"%X")
+    writeShellScriptBin "time" ''
+      time=$(date +"%X")
       echo "$time"
     '';
   now-playing = with pkgs;
