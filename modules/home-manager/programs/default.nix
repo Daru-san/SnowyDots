@@ -1,12 +1,13 @@
 {...}: {
   imports = [
-    ./git/default.nix
-    ./mpv/default.nix
-    ./btop/default.nix
-    ./translate-shell/default.nix
-    ./bat/default.nix
-    ./zathura/default.nix
-    ./yazi/default.nix
-    ./pqiv/default.nix
+    ./git
+    ./mpv
+    ./btop
+    ./translate-shell
+    ./bat
+    ./zathura
+    ./yazi
+    ./pqiv
+    ./yt-dlp
   ];
 }
