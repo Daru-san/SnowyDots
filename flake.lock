@@ -58,27 +58,6 @@
         "type": "github"
       }
     },
-    "anyrun-plugins": {
-      "inputs": {
-        "flake-parts": "flake-parts_3",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1703433698,
-        "narHash": "sha256-kfiVVPdx9DSvzY1WAhtsD/fVE/pCfDFEKEZdnPLDrZ8=",
-        "owner": "wuliuqii",
-        "repo": "anyrun-plugins",
-        "rev": "333e7f74082418a968cbba3de0ea1ecf7cc06738",
-        "type": "github"
-      },
-      "original": {
-        "owner": "wuliuqii",
-        "repo": "anyrun-plugins",
-        "type": "github"
-      }
-    },
     "auto-cpufreq": {
       "inputs": {
         "nixpkgs": "nixpkgs_3"
@@ -276,27 +255,6 @@
     },
     "flake-parts_3": {
       "inputs": {
-        "nixpkgs-lib": [
-          "anyrun-plugins",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1701473968,
-        "narHash": "sha256-YcVE5emp1qQ8ieHUnxt1wCZCC3ZfAS+SRRWZ2TMda7E=",
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "rev": "34fed993f1674c8d06d58b37ce1e0fe5eebcb9f5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "type": "github"
-      }
-    },
-    "flake-parts_4": {
-      "inputs": {
         "nixpkgs-lib": "nixpkgs-lib_3"
       },
       "locked": {
@@ -313,7 +271,7 @@
         "type": "github"
       }
     },
-    "flake-parts_5": {
+    "flake-parts_4": {
       "inputs": {
         "nixpkgs-lib": "nixpkgs-lib_4"
       },
@@ -331,7 +289,7 @@
         "type": "github"
       }
     },
-    "flake-parts_6": {
+    "flake-parts_5": {
       "inputs": {
         "nixpkgs-lib": [
           "snowyvim",
@@ -1091,7 +1049,7 @@
       "inputs": {
         "devshell": "devshell",
         "flake-compat": "flake-compat_4",
-        "flake-parts": "flake-parts_6",
+        "flake-parts": "flake-parts_5",
         "home-manager": "home-manager_2",
         "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs_11",
@@ -1190,7 +1148,7 @@
     "prismlauncher": {
       "inputs": {
         "flake-compat": "flake-compat_2",
-        "flake-parts": "flake-parts_4",
+        "flake-parts": "flake-parts_3",
         "libnbtplusplus": "libnbtplusplus",
         "nixpkgs": "nixpkgs_9",
         "pre-commit-hooks": "pre-commit-hooks"
@@ -1214,7 +1172,6 @@
         "ags": "ags",
         "anyrun": "anyrun",
         "anyrun-nixos-options": "anyrun-nixos-options",
-        "anyrun-plugins": "anyrun-plugins",
         "auto-cpufreq": "auto-cpufreq",
         "firefox": "firefox",
         "home-manager": "home-manager",
@@ -1277,16 +1234,16 @@
     },
     "snowyvim": {
       "inputs": {
-        "flake-parts": "flake-parts_5",
+        "flake-parts": "flake-parts_4",
         "nixpkgs": "nixpkgs_10",
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1710776979,
-        "narHash": "sha256-jBh10i+6dIfDYalaBgHx/aKUyuL4npn3Fj+mhmgfbxg=",
+        "lastModified": 1710836047,
+        "narHash": "sha256-qMBSLpgxZy6mfC+PmvEAZKmqqNwj/yTOIKpU0uUVZi0=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "9d563dc7285aa49b9b16244bf2b4bb3602bbf9ca",
+        "rev": "1d1885e2f632713b1634673409a395a77fa2ce2a",
         "type": "sourcehut"
       },
       "original": {
