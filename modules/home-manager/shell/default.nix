@@ -2,14 +2,10 @@
 {
   config,
   pkgs,
-  # inputs,
   lib,
   ...
 }: {
   imports = [./zsh.nix ./extras.nix ./tmux.nix];
-
-  # Global shell theme
-  programs.oh-my-posh.useTheme = "zash";
 
   # Enable bash for oh-my-posh support
   programs.bash = {
@@ -47,6 +43,6 @@
     man = "batman";
     grep = "batgrep";
     cat = bat;
-    firefox = firefox;
+    inherit firefox;
   };
 }
