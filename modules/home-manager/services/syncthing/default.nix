@@ -1,6 +1,8 @@
 {
   services.syncthing = {
     enable = true;
-    tray = true;
+    tray = {
+      enable = true;
+    };
   };
 }

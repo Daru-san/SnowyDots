@@ -15,6 +15,7 @@
       shell
       themes
       languages
+      services
     ])
     ++ (with inputs; [
       hyprland.homeManagerModules.default
