@@ -43,17 +43,17 @@
         keybind = "h";
       }
     ];
-    xdg.configFile."wlogout/icons".source =
-      pkgs.fetchFromGitHub {
-        owner = "ArtsyMacaw";
-        repo = "wlogout";
-        rev = "bc76e5d2433d234cce0e923fd386429759ef8f7a";
-        hash = "sha256-5ikvElaMYdg7jtSsn26FH1SvhEUhqgw9J6V9y/aPzIc=";
-      }
-      + "/icons";
     style = builtins.concatStringsSep "\n" [
       config.theme.colorScheme.css
       (builtins.readFile ./style.css)
     ];
   };
+  xdg.configFile."wlogout/icons".source =
+    pkgs.fetchFromGitHub {
+      owner = "ArtsyMacaw";
+      repo = "wlogout";
+      rev = "bc76e5d2433d234cce0e923fd386429759ef8f7a";
+      hash = "sha256-5ikvElaMYdg7jtSsn26FH1SvhEUhqgw9J6V9y/aPzIc=";
+    }
+    + "/icons";
 }
