@@ -95,7 +95,7 @@
           # > My main nixos configuration file <
           ./systems/AspireLaptop
           # > Specialisations for custom boot entries <
-          ./systems/specialisations
+          ./systems/specialise
         ];
       };
     };
