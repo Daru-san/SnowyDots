@@ -19,13 +19,10 @@ with lib; {
         editor = "${getExe config.programs.neovim.package}";
         ranger = "${getExe pkgs.ranger}";
         image-editor = "${getExe' pkgs.krita "krita"}";
-        swaylock = "${getExe config.programs.swaylock.package}";
-        gtklock = "${getExe pkgs.gtklock}";
         hyprlock = "${getExe config.programs.hyprlock.package}";
         copyq = "${getExe config.services.copyq.package}";
         btop = "${getExe config.programs.btop.package}";
         swayosd = "${getExe' config.services.swayosd.package "swayosd-client"}";
-        swww = "${getExe pkgs.swww}";
         pypr = "${getExe pkgs.pyprland}";
       in [
         # Launching programs
@@ -125,7 +122,6 @@ with lib; {
         any = "${getExe' config.programs.anyrun.package "anyrun"}";
         easy = "${getExe config.services.easyeffects.package}";
         cl = "${getExe inputs.scripts.packages.${pkgs.system}.color-picker}";
-        wl = "${getExe config.programs.wlogout.package}";
         tsc = "${getExe' pkgs.tschuss "tschuss"}";
         pk = "pkill";
 

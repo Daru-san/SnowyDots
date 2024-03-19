@@ -16,51 +16,18 @@
       selection-notification = true;
       selection-clipboard = "clipboard";
       scroll-page-aware = true;
-      guioptions = "sv";
+      guioptions = "none";
+      sandbox = "strict";
       statusbar-home-tilde = true;
       window-title-basename = true;
     };
-    extraConfig = ''
-      set notification-error-bg       "#45403D" # bg
-      set notification-error-fg       "#fb4934" # bright:red
-      set notification-warning-bg     "#45403D" # bg
-      set notification-warning-fg     "#fabd2f" # bright:yellow
-      set notification-bg             "#45403D" # bg
-      set notification-fg             "#b8bb26" # bright:green
-
-      set completion-bg               "#504945" # bg2
-      set completion-fg               "#ebdbb2" # fg
-      set completion-group-bg         "#3c3836" # bg1
-      set completion-group-fg         "#928374" # gray
-      set completion-highlight-bg     "#83a598" # bright:blue
-      set completion-highlight-fg     "#504945" # bg2
-
-      # Define the color in index mode
-      set index-bg                    "#504945" # bg2
-      set index-fg                    "#ebdbb2" # fg
-      set index-active-bg             "#83a598" # bright:blue
-      set index-active-fg             "#504945" # bg2
-
-      set inputbar-bg                 "#45403D" # bg
-      set inputbar-fg                 "#ebdbb2" # fg
-
-      set statusbar-bg                "#504945" # bg2
-      set statusbar-fg                "#ebdbb2" # fg
-
-      set highlight-color             "#fabd2f" # bright:yellow
-      set highlight-active-color      "#fe8019" # bright:orange
-
-      set default-bg                  "#45403D" # bg
-      set default-fg                  "#ebdbb2" # fg
-      set render-loading              true
-      set render-loading-bg           "#45403D" # bg
-      set render-loading-fg           "#ebdbb2" # fg
-
-      # Recolor book content's color
-      set recolor-lightcolor          "#45403D" # bg
-      set recolor-darkcolor           "#ebdbb2" # fg
-      set recolor                     "true"
-      # set recolor-keephue             true      # keep original color
-    '';
+    extraConfig =
+      builtins.readFile pkgs.fetchFromGitHub {
+        owner = "catppuccin";
+        repo = "zathura";
+        rev = "1bda9d8274dd327b7931886ef0c5c1eb33903814";
+        hash = "sha256-HWOc5tnVgU/HUcVcIXACeuu3RDH1pHO/8DQRsWqumIA=";
+      }
+      + "/src/catpuccin-mocha";
   };
 }

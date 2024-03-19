@@ -1,11 +1,10 @@
 # Firefox theme for this user
-{...}: let
+let
   # Fetch css from Godiesc/firefox-one
-  src = with builtins;
-    fetchGit {
-      url = "https://github.com/Godiesc/firefox-one";
-      rev = "33e012a4d9ac45342bf159bffb2779b6147ac5d2";
-    };
+  src = builtins.fetchGit {
+    url = "https://github.com/Godiesc/firefox-one";
+    rev = "33e012a4d9ac45342bf159bffb2779b6147ac5d2";
+  };
 in {
   home.file.".mozilla/firefox/daru/chrome" = {
     source = "${src}/chrome";

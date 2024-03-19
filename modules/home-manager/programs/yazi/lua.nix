@@ -1,4 +1,4 @@
-{...}: {
+{
   xdg.configFile = {
     "yazi/init.lua".text = ''
         function Manager:render(area)

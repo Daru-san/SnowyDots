@@ -1,4 +1,4 @@
-{config, ...}: {
+{
   wayland.windowManager.hyprland = {
     settings = {
       general = {
@@ -26,8 +26,6 @@
         drop_shadow = true;
         shadow_range = 7;
         shadow_render_power = 6;
-        # active_opacity = 0.97;
-        # inactive_opacity = 0.9;
         dim_inactive = true;
         dim_strength = 0.34;
       };

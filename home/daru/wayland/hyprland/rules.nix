@@ -1,5 +1,4 @@
-# Window and workspace rules
-{...}: {
+{
   wayland.windowManager.hyprland = {
     settings = {
       windowrulev2 = [
@@ -62,9 +61,3 @@
     };
   };
 }
-##workspace guidelines
-#1-9 anything(mostly terminals)
-#F1-F4 Productivity i.e firefox, nautilus
-#F5-F8 Media i.e ani-cli, freetube, cmus, spotify
-#F9-F12 Anything else i.e clock screensaver, newsflash, evince
-
