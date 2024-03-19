@@ -1,0 +1,52 @@
+* {
+  background-image: none;
+  box-shadow: none;
+}
+
+window {
+  background-color: rgba(12, 12, 12, 0.9);
+}
+
+button {
+  border-radius: 0;
+  border-color: black;
+  text-decoration-color: #ffffff;
+  color: #ffffff;
+  background-color: #1e1e1e;
+  border-style: solid;
+  border-width: 1px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25%;
+}
+
+button:focus,
+button:active,
+button:hover {
+  background-color: #3700b3;
+  outline-style: none;
+}
+
+#lock {
+  background-image: image(var(--lock));
+}
+
+#logout {
+  background-image: image(var(--logout));
+}
+
+#suspend {
+  background-image: image(var(--suspend));
+}
+
+#hibernate {
+  background-image: image(var(--hibernate));
+}
+
+#shutdown {
+  background-image: image(var(--shutdown));
+}
+
+#reboot {
+  background-image: image(var(--reboot));
+}
