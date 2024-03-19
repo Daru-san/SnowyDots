@@ -1,10 +1,6 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
-  programs.neovim = {
-    package = inputs.snowyvim.packages.${pkgs.system}.nvim;
+{inputs, ...}: {
+  imports = [inputs.snowyvim.homeManagerModules.default];
+  programs.snowvim = {
     enable = true;
     defaultEditor = true;
     viAlias = true;
