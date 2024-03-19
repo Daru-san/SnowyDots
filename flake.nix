@@ -25,9 +25,6 @@
     # My custom neovim configuration for nix
     snowyvim.url = "sourcehut:~darumaka/SnowyVim";
 
-    # Prism launcher(Modded)
-    prismlauncher.url = "github:Diegiwg/PrismLauncher-Cracked";
-
     # Firefox nightly
     firefox.url = "github:nix-community/flake-firefox-nightly";
 
@@ -64,28 +61,28 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
-    # Supported systems for your flake packages, shell, etc.
+
+    # Supported systems
     systems = ["x86_64-linux"];
+
     # This is a function that generates an attribute by calling a function you
     # pass to it, with each system as an argument
     forAllSystems = nixpkgs.lib.genAttrs systems;
+
+    # Import packages and overlays at once
+    pkgs = import ./pkgs;
   in {
-    # Your custom packages
-    # Accessible through 'nix build', 'nix shell', etc
+    # Custom packages
     packages =
-      forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
-    # Formatter for your nix files, available through 'nix fmt'
-    # Other options beside 'alejandra' include 'nixpkgs-fmt'
-    formatter =
-      forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
+      forAllSystems (system: pkgs.packages nixpkgs.legacyPackages.${system});
 
     # Your custom packages and modifications, exported as overlays
-    overlays = import ./overlays {inherit inputs;};
-    # Reusable nixos modules you might want to export
-    # These are usually stuff you would upstream into nixpkgs
+    overlays = pkgs.overlays {inherit inputs;};
+
+    # NixOS modules to be used by the system configuration
     nixosModules = import ./modules/nixos;
-    # Reusable home-manager modules you might want to export
-    # These are usually stuff you would upstream into home-manager
+
+    # Home-manager modules to be used by home-manager
     homeManagerModules = import ./modules/home-manager;
 
     # NixOS configuration
@@ -98,10 +95,12 @@
           # > My main nixos configuration file <
           ./systems/AspireLaptop
           # > Specialisations for custom boot entries <
-          ./specialisations
+          ./systems/specialisations
         ];
       };
     };
+
+    # Home configuration
     homeConfigurations = {
       # My home configuration for Hyprland
       # 'home-manager switch --flake .#daru@AspireLaptop'
