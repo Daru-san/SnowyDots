@@ -5,20 +5,10 @@
   lib,
   ...
 }: let
-  date = with pkgs;
-    writeShellScriptBin "date" ''
-      date=$(date +"%A %d %B %Y")
-      echo "$date"
-    '';
-  time = with pkgs;
-    writeShellScriptBin "time" ''
-      time=$(date +"%X")
-      echo "$time"
-    '';
   now-playing = with pkgs;
     writeShellScriptBin "now-playing" ''
-      songstats=$(playerctl metadata --format '󰎈 {{title}} - {{artist}} 󰎈')
-      echo "$songstats"
+      songstats=$(${lib.getExe' pkgs.playerctld "playerctl"} metadata --format '󰎈 {{title}} - {{artist}} 󰎈')
+      ${lib.getExe' pkgs.coreutils "echo"} "$songstats"
     '';
 in {
   imports = [inputs.hyprlock.homeManagerModules.default];
@@ -60,7 +50,7 @@ in {
     ];
     labels = [
       {
-        text = ''cmd[update:1000] ${with lib; getExe time}'';
+        text = ''cmd[update:1000] ${lib.getExe' pkgs.coreutils "date"} +"%X"'';
         font_size = 72;
         font_family = "JetBrains Mono Nerd Font 10";
         position = {
@@ -71,7 +61,7 @@ in {
         valign = "center";
       }
       {
-        text = ''cmd[update 1000] ${with lib; getExe date}'';
+        text = ''cmd[update 1000] ${lib.getExe' pkgs.coreutils "date"} +"%A %d %B %Y"'';
         font_size = 20;
         font_family = "JetBrains Mono Nerd Font 10";
         position = {
