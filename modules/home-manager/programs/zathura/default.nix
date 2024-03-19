@@ -27,6 +27,6 @@
         rev = "1bda9d8274dd327b7931886ef0c5c1eb33903814";
         hash = "sha256-HWOc5tnVgU/HUcVcIXACeuu3RDH1pHO/8DQRsWqumIA=";
       }
-      + "/src/catpuccin-mocha");
+      + "/src/catppuccin-mocha");
   };
 }
