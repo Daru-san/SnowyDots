@@ -41,7 +41,6 @@
           "chisui/zsh-nix-shell"
           "hlissner/zsh-autopair"
           "mollifier/cd-gitroot"
-          "tom-auger/cmdtime"
           "Atlas34/fzf-plugin"
           "jeffreytse/zsh-vi-mode"
           "z-shell/F-Sy-H"

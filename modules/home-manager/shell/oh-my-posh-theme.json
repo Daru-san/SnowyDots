@@ -45,9 +45,24 @@
         },
         {
           "style": "plain",
-          "foreground": #62EDAB,
+          "foreground": "#62EDAB",
           "template": "\uf105",
           "type": "text"
+        }
+      ]
+    },
+    {
+      "alignment": "right",
+      "type": "rprompt",
+      "segments": [
+        {
+          "foreground": "#6A6A66",
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "plain",
+          "template": "{{ .FormattedMs }} ",
+          "type": "executiontime"
         }
       ]
     }
