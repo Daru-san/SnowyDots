@@ -28,25 +28,25 @@ button:hover {
 }
 
 #lock {
-  background-image: image(var(--lock));
+  background-image: image(url(icons/lock.png));
 }
 
 #logout {
-  background-image: image(var(--logout));
+  background-image: image(url(icons/logout.png));
 }
 
 #suspend {
-  background-image: image(var(--suspend));
+  background-image: image(url(icons/suspend.png));
 }
 
 #hibernate {
-  background-image: image(var(--hibernate));
+  background-image: image(url(icons/hibernate.png));
 }
 
 #shutdown {
-  background-image: image(var(--shutdown));
+  background-image: image(url(icons/shutdown.png));
 }
 
 #reboot {
-  background-image: image(var(--reboot));
+  background-image: image(url(icons/reboot.png));
 }
