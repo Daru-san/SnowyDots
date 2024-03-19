@@ -13,9 +13,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # auto-cpufreq
-    auto-cpufreq.url = "github:AdnanHodzic/auto-cpufreq";
-
     # NUR Packages
     nur.url = "github:nix-community/NUR";
 

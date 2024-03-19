@@ -104,27 +104,28 @@
     ]
     ++ (with inputs.scripts.packages.${pkgs.system}; [nix-rebuild hm-build]);
 
-  os.security.polkit.enable = true;
-
-  # System configurations
   os = {
+    # Enable polkit
+    security.polkit.enable = true;
+
+    # Boot config
     boot = {
       grub.enable = true;
       systemd.enable = false;
       quiet = true;
       plymouth.enable = true;
     };
-  };
 
-  # System options for drivers and optimizations
-  os.system = {
-    drivers.intel.enable = true;
-    zram.enable = true;
-    optimizations = {
-      laptop.enable = true;
-      ssd.enable = true;
-      intel.enable = true;
-      cpu.enable = true;
+    # System options for drivers and optimizations
+    system = {
+      drivers.intel.enable = true;
+      zram.enable = true;
+      optimizations = {
+        laptop.enable = true;
+        ssd.enable = true;
+        intel.enable = true;
+        cpu.enable = true;
+      };
     };
   };
 

@@ -2,13 +2,11 @@
   pkgs,
   lib,
   config,
-  inputs,
   ...
 }: let
   cfg = config.os.system;
 in
   with lib; {
-    imports = [inputs.auto-cpufreq.nixosModules.default];
     options = {
       os.system = {
         zram.enable = mkEnableOption "Enable zram swapping";
@@ -38,7 +36,7 @@ in
         services.fstrim = {enable = true;};
       })
       (mkIf cfg.optimizations.laptop.enable {
-        programs.auto-cpufreq = {
+        services.auto-cpufreq = {
           enable = true;
           settings = {
             charger = {
