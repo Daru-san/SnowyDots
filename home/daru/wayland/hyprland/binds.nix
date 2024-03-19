@@ -16,7 +16,7 @@ with lib; {
         terminal = "${getExe config.programs.kitty.package}";
         browser = "${getExe config.programs.firefox.package}";
         file-manager = "${getExe pkgs.gnome.nautilus}";
-        editor = "${getExe config.programs.neovim.package}";
+        editor = "${getExe config.programs.snowvim.package}";
         ranger = "${getExe pkgs.ranger}";
         image-editor = "${getExe' pkgs.krita "krita"}";
         hyprlock = "${getExe config.programs.hyprlock.package}";
