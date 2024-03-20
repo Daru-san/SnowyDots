@@ -24,7 +24,7 @@ I'm running Hyprland, with greetd as a login manager.
 - Desktop: [Hyprland](https://github.com/hyprwm/Hyprland 'hyprland')
 - Launcher: [anyrun](https://github.com/Kirottu/anyrun 'anyrun')
 - Shell: [zsh](http://zsh.sourceforge.net/ 'zsh') configured with [oh-my-posh](https://ohmyposh.dev/), [antidote](https://getantidote.github.io/) and [prezto](https://github.com/sorin-ionescu/prezto)
-- Editor: [SnowyVim](https://git.sr.ht/~darumaka/SnowyVim), a custom Neovim configuration made with nixvim
+- Editor: [SnowyVim](https://git.sr.ht/~darumaka/SnowyVim), my custom [Neovim](https://github.com/neovim/neovim) configuration made with [nixvim](https://github.com/nix-community/nixvim)
 - Bar: [waybar](https://github.com/Alexays/Waybar 'waybar')
 <!--- TODO: Add ags --->
 - Kernel: [Linux-zen](https://archlinux.org/packages/extra/x86_64/linux-zen/ 'zen')
