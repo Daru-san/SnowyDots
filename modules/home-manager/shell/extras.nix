@@ -5,6 +5,7 @@
       enable = true;
       enableBashIntegration = true;
       enableZshIntegration = true;
+      enableNushellIntegration = true;
       settings = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile ./oh-my-posh-theme.json));
     };
 
@@ -22,6 +23,7 @@
     zoxide = {
       enable = true;
       enableZshIntegration = true;
+      enableNushellIntegration = true;
       enableBashIntegration = true;
     };
 
@@ -30,6 +32,7 @@
       enable = true;
       enableZshIntegration = true;
       enableBashIntegration = true;
+      enableNushellIntegration = true;
       settings.modal = true;
     };
 

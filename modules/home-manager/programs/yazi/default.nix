@@ -36,6 +36,7 @@ in {
   programs.yazi = {
     enable = true;
     enableZshIntegration = true;
+    enableNushellIntegration = true;
     keymap = import ./keymap.nix;
     settings = {
       manager = {
