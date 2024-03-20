@@ -1,7 +1,4 @@
-{
-  lib,
-  ...
-}: let
+{lib, ...}: let
   workspaces =
     (map toString (lib.range 0 9))
     ++ (map (n: "F${toString n}") (lib.range 1 12));
@@ -39,7 +36,7 @@ in {
         "SUPERSHIFT,apostrophe,changegroupactive,b"
 
         "SUPER,u,togglespecialworkspace,stash"
-        "SUPERSHIFT,u,exec,pypr toggle_special stash"
+        # "SUPERSHIFT,u,exec,pypr toggle_special stash"
 
         #Super+tab to move to next workspace and back
         "SUPER,TAB,workspace, m+1"

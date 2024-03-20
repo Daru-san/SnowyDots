@@ -3,7 +3,6 @@
   pkgs,
   ...
 }: {
-  imports = [./pyprland.nix];
   wayland.windowManager.hyprland = {
     plugins = [
       inputs.hycov.packages.${pkgs.system}.hycov
