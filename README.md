@@ -38,7 +38,7 @@ I also use specialisations to configure special system configs that I can switch
 # systems/specialise/default.nix
 {...}: {
   specialisation = {
- # Config with KDE plasma
+    # Config with KDE plasma
     plasma.configuration = {
       imports = [./plasma.nix];
     };
@@ -88,7 +88,7 @@ In configuration.nix
     # Particularly kde plasma 6
     kde.enable = true;
 
-   # You can also use sddm or greetd as greeters
+    # You can also use sddm or greetd as greeters
     sddm.enable = true;
     greetd = {
       enable = true;
@@ -105,7 +105,7 @@ In home.nix
 # Enable hyprland or sway, it will not work if you enable both at once, unlike in configuration.nix
 # They will work whether kde is enabled or not
 {
- # Here you can put hyprland or sway
+  # Here you can put hyprland or sway
   wayland.compositor = "hyprland";
 }
 ```
