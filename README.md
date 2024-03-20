@@ -46,7 +46,7 @@ I also use specialisations to configure special system configs that I can switch
     hyprland.configuration = {
       imports = [./hyprland.nix];
     };
- # Config with plasma and disables my laptop's builtin display
+    # Config with plasma and disables my laptop's builtin display
     plasma-ext-display.configuration = {
       imports = [./plasma.nix ./no-laptop-display.nix];
     };
