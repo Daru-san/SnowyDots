@@ -51,8 +51,6 @@
           (t "dimaround")
         ]);
       workspace = [
-        "name:1, persistent:true"
-        "name:F1, default:true, persistent:true"
         "name:F9, rounding:false, decorate:false, gapsin:0, gapsout:0, border:false"
         "name:F10, rounding:false, decorate:false, gapsin:0, gapsout:0, border:false"
         "name:F11, rounding:false, decorate:false, gapsin:0, gapsout:0, border:false"
