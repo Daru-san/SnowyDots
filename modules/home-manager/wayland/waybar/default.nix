@@ -6,8 +6,19 @@
   programs.waybar = {
     enable = true;
 
-    # Will be on stable channel until waybar gets fixed upstream
-    package = pkgs.stable.waybar;
+    # A fix for waybar 0.10 from
+    # https://github.com/IceDBorn/nerivations/commit/cdb739c3a9c1db287dd36cba43a45df0f44809ad
+    package = pkgs.waybar.overrideAttrs (oa: {
+      wireplumber = oa.wireplumber.overrideAttrs rec {
+        version = "0.4.17";
+        src = oa.fetchFromGitHub {
+          owner = "pipewire";
+          repo = "wireplumber";
+          rev = version;
+          sha256 = "sha256-vhpQT67+849WV1SFthQdUeFnYe/okudTQJoL3y+wXwI=";
+        };
+      };
+    });
 
     style = builtins.concatStringsSep "\n" [
       config.theme.colorScheme.css
