@@ -1,7 +1,13 @@
-# # To be replaced with ags
-{config, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   programs.waybar = {
     enable = true;
+
+    # Will be on stable channel until waybar gets fixed upstream
+    package = pkgs.stable.waybar;
 
     style = builtins.concatStringsSep "\n" [
       config.theme.colorScheme.css
