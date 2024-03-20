@@ -22,13 +22,14 @@ in {
       {
         path = "${config.theme.wallpaper.image}";
         blur_size = 9;
+        blur_passes = 2;
       }
     ];
     input-fields = [
       {
         size = {
-          width = 240;
-          height = 60;
+          width = 220;
+          height = 50;
         };
         outline_thickness = 3;
         dots_size = 0.33;
@@ -39,10 +40,10 @@ in {
         font_color = "rgb(200, 200, 200)";
         fade_on_empty = false;
         placeholder_text = "<i>Input Password...</i>";
-        hide_input = true;
+        hide_input = false;
         position = {
           x = 0;
-          y = -110;
+          y = -130;
         };
         halign = "center";
         valign = "center";
@@ -61,7 +62,7 @@ in {
         valign = "center";
       }
       {
-        text = ''cmd[update 1000] ${lib.getExe' pkgs.coreutils "date"} +"%A %d %B %Y"'';
+        text = ''cmd[update 1000] ${lib.getExe' pkgs.coreutils "date"} +"%A, %d %B %Y"'';
         font_size = 20;
         font_family = "JetBrains Mono Nerd Font 10";
         position = {
@@ -71,17 +72,17 @@ in {
         halign = "center";
         valign = "center";
       }
-      # {
-      #   text = ''cmd[update:1000] ${lib.getExe greeter}'';
-      #   font_size = 21;
-      #   font_family = "JetBrains Mono Nerd Font 10";
-      #   position = {
-      #     x = 0;
-      #     y = -80;
-      #   };
-      #   halign = "center";
-      #   valign = "center";
-      # }
+      {
+        text = ''Welcome, $USER'';
+        font_size = 16;
+        font_family = "JetBrains Mono Nerd Font 10";
+        position = {
+          x = 0;
+          y = -80;
+        };
+        halign = "center";
+        valign = "center";
+      }
       {
         text = ''cmd[update 1000] ${lib.getExe now-playing}'';
         font_size = 16;
