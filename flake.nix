@@ -42,11 +42,15 @@
     };
 
     # Hyprland and plugins
-    hyprland.url = "github:hyprwm/Hyprland/v0.36.0";
+    hyprland.url = "github:hyprwm/Hyprland/v0.37.1";
     hyprlock.url = "github:hyprwm/hyprlock";
     hypridle.url = "github:hyprwm/hypridle";
+    hyprfocus = {
+      url = "github:pyt0xic/hyprfocus";
+      inputs.hyprland.follows = "hyprland";
+    };
     hycov = {
-      url = "github:DreamMaoMao/hycov";
+      url = "github:Ayuei/hycov";
       inputs.hyprland.follows = "hyprland";
     };
   };
