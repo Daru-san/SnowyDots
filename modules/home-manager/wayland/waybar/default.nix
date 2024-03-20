@@ -6,7 +6,6 @@
   programs.waybar = {
     enable = true;
 
-    # package = pkgs.stable.waybar;
     # A fix for waybar 0.10 from
     # https://github.com/IceDBorn/nerivations/commit/cdb739c3a9c1db287dd36cba43a45df0f44809ad
     package = pkgs.waybar.override {
@@ -90,28 +89,6 @@
         "hyprland/workspaces" = {
           format = "{icon}";
           format-icons = {
-            "0" = "";
-            "1" = "";
-            "2" = "󰜗";
-            "3" = "";
-            "4" = "";
-            "5" = "";
-            "6" = "";
-            "7" = "󱇣";
-            "8" = "";
-            "9" = "";
-            "F1" = "󰈹";
-            "F2" = "";
-            "F3" = "";
-            "F4" = "";
-            "F5" = "󰝚";
-            "F6" = "";
-            "F7" = "󰗃";
-            "F8" = "";
-            "F9" = "";
-            "F10" = "󰈙";
-            "F11" = "";
-            "F12" = "";
             "default" = "";
             "urgent" = "󰗖";
           };
