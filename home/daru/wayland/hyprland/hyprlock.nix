@@ -7,7 +7,7 @@
 }: let
   now-playing = with pkgs;
     writeShellScriptBin "now-playing" ''
-      songstats=$(${lib.getExe' pkgs.playerctld "playerctl"} metadata --format '󰎈 {{title}} - {{artist}} 󰎈')
+      songstats=$(${lib.getExe pkgs.playerctl} metadata --format '󰎈 {{title}} - {{artist}} 󰎈')
       ${lib.getExe' pkgs.coreutils "echo"} "$songstats"
     '';
 in {
