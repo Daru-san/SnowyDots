@@ -2,19 +2,16 @@
   config,
   pkgs,
   ...
-}: {
-  xdg.configFile."wlogout/icons" = let
-    repo = pkgs.fetchFromGitHub {
+}: let
+  icons =
+    pkgs.fetchFromGitHub {
       owner = "ArtsyMacaw";
       repo = "wlogout";
       rev = "0a4289e02c6c4337756d4df7ff31605f8c8795c3";
       hash = "sha256-cTscfx+erHVFHwwYpN7pADQWt5sq75sQSyXSP/H8kOs=";
-    };
-  in {
-    source = "${repo}/icons";
-    recursive = true;
-  };
-
+    }
+    + "/icons";
+in {
   programs.wlogout = {
     enable = true;
     layout = [
@@ -55,9 +52,7 @@
         keybind = "h";
       }
     ];
-    style = let
-      dir = "/usr/share/wlogout/icons";
-    in ''
+    style = ''
       window {
            font-family: ${config.gtk.font.name};
            font-size: 0px;
@@ -87,27 +82,27 @@
        }
        /** ********** Icons ********** **/
        #lock {
-           background-image: image(url("icons/lock.png"), url("${dir}/lock.png"));
+           background-image: image(url("${icons}/lock.png"));
        }
 
        #logout {
-           background-image: image(url("icons/logout.png"), url("${dir}/logout.png"));
+           background-image: image(url("${icons}/logout.png"));
        }
 
        #suspend {
-           background-image: image(url("icons/suspend.png"), url("${dir}/suspend.png"));
+           background-image: image(url("${icons}/suspend.png"));
        }
 
        #hibernate {
-           background-image: image(url("icons/hibernate.png"), url("${dir}/hibernate.png"));
+           background-image: image(url("${icons}/hibernate.png"));
        }
 
        #shutdown {
-           background-image: image(url("icons/shutdown.png"), url("${dir}/shutdown.png"));
+           background-image: image(url("${icons}/shutdown.png"));
        }
 
        #reboot {
-           background-image: image(url("icons/reboot.png"), url("${dir}/reboot.png"));
+           background-image: image(url("${icons}/reboot.png"));
        }
     '';
   };
