@@ -9,22 +9,10 @@
       "alignment": "left",
       "segments": [
         {
-          "type": "session",
-          "style": "plain",
-          "foreground": "#E36464",
-          "template": "@{{ .UserName }} "
-        },
-        {
-          "type": "text",
-          "style": "plain",
-          "foreground": "#62ED8B",
-          "template": "➜"
-        },
-        {
           "type": "path",
           "style": "plain",
           "foreground": "#56B6C2",
-          "template": " {{ .Path }}",
+          "template": "<#E36464>{{ .Shell }}(</>{{ .Path }}<#E36464>)</>",
           "properties": {
             "style": "folder"
           }
@@ -32,11 +20,8 @@
         {
           "type": "git",
           "style": "plain",
-          "foreground": "#D4AAFC",
-          "template": " <#DDB15F>git(</>{{ .HEAD }}<#DDB15F>)</>",
-          "properties": {
-            "branch_icon": ""
-          }
+          "foreground": "#DDB15F",
+          "template": "[{{ .HEAD }}]"
         },
         {
           "type": "status",
@@ -47,7 +32,7 @@
         {
           "style": "plain",
           "foreground": "#62EDAB",
-          "template": "\uf105",
+          "template": " \uf105",
           "type": "text"
         }
       ]
@@ -71,6 +56,12 @@
   "transient_prompt": {
     "background": "transparent",
     "foreground": "#ffffff",
-    "template": "{{ .Shell }}> "
+    "template": "{{ .Shell }} \uf105 "
+  },
+  "secondary_prompt": {
+    "style": "plain",
+    "foreground": "#62EDAB",
+    "template": "\uf105 ",
+    "type": "text"
   }
 }
