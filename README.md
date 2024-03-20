@@ -2,7 +2,7 @@
 
 My beautiful, functional, focused nix flake with Hyprland, Sway and KDE plasma 6, written completely in nix.
 
-***Hosted at [SnowyDots](https://git.sr.ht/~darumaka/SnowyDots)***
+**_Hosted at [SnowyDots](https://git.sr.ht/~darumaka/SnowyDots)_**
 
 ## Showcase
 
