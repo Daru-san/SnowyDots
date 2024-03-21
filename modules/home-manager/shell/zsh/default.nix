@@ -24,8 +24,10 @@
         r = "reset";
         nhp = "nohup";
         dtc = "detach";
-        hctl = "hyprctl";
-        hprv = "hyprctl version";
+        hycl = "hyprctl";
+        hyprv = "hyprctl version";
+        hypr = "Hyprland";
+        hyprld = "hyprctl reload";
         rf = "rm -rf";
         tp = "trashy put";
         tls = "trashy list";
