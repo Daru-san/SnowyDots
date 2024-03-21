@@ -106,11 +106,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1710954791,
-        "narHash": "sha256-GAI9Ac8U+G/0p0xNsHawRDQwsw9f429q7AiEio9MmaU=",
+        "lastModified": 1710982600,
+        "narHash": "sha256-KC8V8aTUHZAORn0uJ5ENKkF8VIBvNmZvkF/O/nSaB1A=",
         "owner": "nix-community",
         "repo": "flake-firefox-nightly",
-        "rev": "d0eac74ece358d7e6725fcb824fdc8718db72857",
+        "rev": "6778dc738c3a40a63df286005d44d2ddf5903e47",
         "type": "github"
       },
       "original": {
@@ -397,11 +397,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1710820906,
-        "narHash": "sha256-2bNMraoRB4pdw/HtxgYTFeMhEekBZeQ53/a8xkqpbZc=",
+        "lastModified": 1710974515,
+        "narHash": "sha256-jZpdsypecYTOO9l12Vy77otGmh9uz8tGzcguifA30Vs=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "022464438a85450abb23d93b91aa82e0addd71fb",
+        "rev": "1c2acec99933f9835cc7ad47e35303de92d923a4",
         "type": "github"
       },
       "original": {
@@ -966,11 +966,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1710967499,
-        "narHash": "sha256-f5Ro10NEDq+aZPrSO5f+Hg40iD4BOx2U8NJGomnCqi8=",
+        "lastModified": 1711012483,
+        "narHash": "sha256-fC/K11tSwV/GfUAgefZiLqOHmEnzU+Dt3cWYmPmlvnc=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "5ee15db66832970cf391e0c18392779a57a79605",
+        "rev": "a0711761783406e893cf74c6b034b4e08c7265fd",
         "type": "github"
       },
       "original": {
@@ -1079,11 +1079,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1710877912,
-        "narHash": "sha256-FGTJLRAYUtx4AhjcO3OM0MXQCnNv5AdS/kyxqL+SA8c=",
+        "lastModified": 1711012439,
+        "narHash": "sha256-sZWDy9tu3X+0LjQ1lzzQ61xgBbTLhnXCcAcjRHxrjL0=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "3d57f738b181d5126313ba8f8d077f49dd3ec9e5",
+        "rev": "2b5b931be215c5682fd474d5fb9985239aa54926",
         "type": "sourcehut"
       },
       "original": {
