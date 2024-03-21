@@ -5,6 +5,7 @@
   imports = [
     (import (builtins.fetchurl {
       url = "https://raw.githubusercontent.com/rhoriguchi/home-manager/swaync/modules/services/swaync.nix";
+      sha256 = "0y8hf85yqlvj61xwha75p1nywn3m8m3bjngsa6ak906xdi2c63rg";
     }))
   ];
 
