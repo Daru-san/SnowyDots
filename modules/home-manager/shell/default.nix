@@ -3,6 +3,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }: {
   imports = [./zsh ./extras.nix ./tmux ./nushell ./oh-my-posh];
@@ -25,8 +26,9 @@
     lazygit = "${config.programs.lazygit.package}/bin/lazygit";
     neofetch = "${pkgs.neofetch}/bin/neofetch";
     tty-clock = "${pkgs.tty-clock}/bin/tty-clock";
-    trash = "${pkgs.trashy}/bin/trash";
+    trashy = "${inputs.trashy.defaultPackage.${pkgs.system}}/bin/trashy";
     yazi = "${config.programs.yazi.package}/bin/yazi";
+    fzf = "${config.programs.fzf.package}/bin/fzf";
   in {
     g = git;
     lg = lazygit;
@@ -34,14 +36,14 @@
     clock = "${tty-clock} -bscBrnS";
     nb = "nix-rebuild";
     hb = "hm-build";
-    tp = "${trash} put";
-    te = "${trash} empty";
-    tls = "${trash} list";
-    trs = "${trash} restore";
+    tp = "${trashy} put";
+    te = "${trashy} empty";
     y = yazi;
     man = "batman";
     grep = "batgrep";
     cat = bat;
+    trashy-empty = "${trashy} list | ${fzf} --multi | awk '{$1=$1;print}' | rev | cut -d ' ' -f1 | rev | xargs ${trashy} empty --match=exact --force";
+    trashy-restore = "${trashy} list | ${fzf} --multi | awk '{$1=$1;print}' | rev | cut -d ' ' -f1 | rev | xargs ${trashy} restore --match=exact --force";
     inherit firefox;
   };
 }

@@ -25,10 +25,12 @@
         hctl = "hyprctl";
         hprv = "hyprctl version";
         rf = "rm -rf";
-        tp = "trash put";
-        tls = "trash list";
-        trs = "trash restore";
-        te = "trash empty";
+        tp = "trashy put";
+        tls = "trashy list";
+        trs = "trashy-restore";
+        tra = "trashy restore --all";
+        te = "trashy-empty";
+        tea = "trashy empty --all";
         yz = "yazi";
         ntc = "nitch";
         lzg = "lazygit";

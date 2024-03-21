@@ -37,6 +37,9 @@
     # Firefox nightly
     firefox.url = "github:nix-community/flake-firefox-nightly";
 
+    # Trashy
+    trashy.url = "github:oberblastmeister/trashy";
+
     # Anyrun, a launcher for hyprland
     anyrun = {
       url = "github:Kirottu/anyrun";
