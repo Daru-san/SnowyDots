@@ -19,7 +19,13 @@ in
       };
     };
     config = mkMerge [
-      (mkIf cfg.zram.enable {zramSwap.enable = true;})
+      (mkIf cfg.zram.enable {
+        zramSwap = {
+          enable = true;
+          memoryPercent = 200;
+        };
+        services.earlyoom.enable = true;
+      })
       (mkIf cfg.optimizations.cpu.enable {
         boot.kernelModules = ["cpupower"];
         services.cpupower-gui.enable = true;
