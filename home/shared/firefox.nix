@@ -6,13 +6,14 @@
   ...
 }: let
   # Fetch custom css from christorange/VerticalFox on github
-  userChrome = with pkgs;
-    fetchgit {
-      url = "https://github.com/christorange/VerticalFox";
-      rev = "29d7ee3f320bc52bb928a1b0ba82457a6583fbfe";
-      sha256 = "Mua9eBbAEisch3YhgdzkXLZTfL1x+wXqq1u8tcvsOC0=";
-    }
-    + "/windows/userChrome.css";
+  userChrome = with builtins;
+    readFile (with pkgs;
+      fetchgit {
+        url = "https://github.com/christorange/VerticalFox";
+        rev = "29d7ee3f320bc52bb928a1b0ba82457a6583fbfe";
+        sha256 = "Mua9eBbAEisch3YhgdzkXLZTfL1x+wXqq1u8tcvsOC0=";
+      }
+      + "/windows/userChrome.css");
 in {
   programs.firefox = {
     enable = true;
@@ -20,9 +21,10 @@ in {
     # Package, firefox-nightly
     package = with inputs.firefox.packages.${pkgs.system}; firefox-nightly-bin;
 
-    inherit userChrome;
-
     profiles.${config.home.username} = {
+      # Import the theme
+      inherit userChrome;
+
       # Extensions(from NUR)
       extensions = with config.nur.repos.rycee.firefox-addons;
         [
