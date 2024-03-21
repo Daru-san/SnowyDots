@@ -4,7 +4,7 @@
   lib,
   ...
 }: {
-  imports = [./desktop-entries.nix ./firefoxTheme.nix ./nautilus.nix];
+  imports = [./desktop-entries.nix ./nautilus.nix];
 
   home.packages = with lib;
     mkMerge [
