@@ -43,7 +43,7 @@ in {
         hide_input = false;
         position = {
           x = 0;
-          y = -130;
+          y = -185;
         };
         halign = "center";
         valign = "center";
@@ -52,11 +52,11 @@ in {
     labels = [
       {
         text = ''cmd[update:1000] ${lib.getExe' pkgs.coreutils "date"} +"%X"'';
-        font_size = 72;
+        font_size = 90;
         font_family = "JetBrains Mono Nerd Font 10";
         position = {
           x = 0;
-          y = 80;
+          y = 10;
         };
         halign = "center";
         valign = "center";
@@ -67,7 +67,7 @@ in {
         font_family = "JetBrains Mono Nerd Font 10";
         position = {
           x = 0;
-          y = 60;
+          y = -20;
         };
         halign = "center";
         valign = "center";
@@ -78,7 +78,7 @@ in {
         font_family = "JetBrains Mono Nerd Font 10";
         position = {
           x = 0;
-          y = -80;
+          y = -140;
         };
         halign = "center";
         valign = "center";
@@ -89,7 +89,7 @@ in {
         font_family = "JetBrains Mono Nerd Font 10";
         position = {
           x = 0;
-          y = -30;
+          y = -60;
         };
         halign = "center";
         valign = "bottom";
