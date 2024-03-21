@@ -15,8 +15,6 @@
     historyControl = ["erasedups" "ignorespace"];
   };
 
-  programs.nushell.enable = true;
-
   # Enable command-not-found
   programs.command-not-found.enable = true;
 
