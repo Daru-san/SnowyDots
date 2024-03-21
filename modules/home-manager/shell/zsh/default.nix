@@ -39,6 +39,7 @@
         nl = "nurl";
         npg = "nix-prefetch-git";
         npgh = "nix-prefetch-github";
+        npu = "nix-prefetch-url";
       };
     };
 
