@@ -1,11 +1,5 @@
 # # My home configuration file ##
-{...}: {
-  # Playerctl and easyeffects
-  audio = {
-    easyeffects.enable = true;
-    playerctl.enable = true;
-  };
-
+{
   home = {
     username = "daru";
     homeDirectory = "/home/daru";

@@ -1,7 +1,9 @@
 {
   imports = [
-    ./syncthing/default.nix
-    ./kde-connect/default.nix
-    ./activitywatch/default.nix
+    ./syncthing
+    ./kde-connect
+    ./activitywatch
+    ./playerctl
+    ./easyeffects
   ];
 }
