@@ -26,34 +26,26 @@ in {
       inherit userChrome;
 
       # Extensions(from NUR)
-      extensions = with config.nur.repos.rycee.firefox-addons;
-        [
-          boring-rss
-          disable-javascript
-          don-t-fuck-with-paste
-          enhanced-github
-          violentmonkey
-          foxytab
-          github-file-icons
-          gitako-github-file-tree
-          hover-zoom-plus
-          image-search-options
-          keepassxc-browser
-          multi-account-containers
-          no-pdf-download
-          re-enable-right-click
-          simplelogin
-          skip-redirect
-          temporary-containers
-          ublock-origin
-          widegithub
-          auto-tab-discard
-          dark-mode-webextension
-          lovely-forks
-          tabliss
-          vimium-c
-        ]
-        ++ (with config.nur.repos.bandithedoge.firefoxAddons; [sidebery]);
+      extensions = with config.nur.repos.rycee.firefox-addons; [
+        disable-javascript
+        don-t-fuck-with-paste
+        enhanced-github
+        violentmonkey
+        github-file-icons
+        gitako-github-file-tree
+        hover-zoom-plus
+        keepassxc-browser
+        multi-account-containers
+        re-enable-right-click
+        simplelogin
+        skip-redirect
+        temporary-containers
+        widegithub
+        auto-tab-discard
+        dark-mode-webextension
+        lovely-forks
+        vimium-c
+      ];
 
       # Make this profile the default
       isDefault = true;
@@ -315,6 +307,34 @@ in {
       PopupBlocking = {Default = true;};
       Preferences = {
         browser.backspace_action = 0;
+      };
+
+      # Always install these extensions
+      ExtensionSettings = {
+        # ublock-origin
+        "uBlock0@raymondhill.net" = {
+          installation_mode = "force_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+        };
+        # The theme
+        "{e0de5ee2-4619-413a-8300-a43a90196a6d}" = {
+          installation_mode = "normal_installed";
+          install_url = "http://addons.mozilla.org/firefox/downloads/latest/simplerentfox/latest.xpi";
+        };
+        # Sidebery for sidebar
+        "{3c078156-979c-498b-8990-85f7987dd929}" = {
+          installation_mode = "force_installed";
+          install_url = "http://addons.mozilla.org/firefox/downloads/latest/sidebery/latest.xpi";
+        };
+        # Tabliss new tab
+        "extension@tabliss.io" = {
+          installation_mode = "force_installed";
+          install_url = "http://addons.mozilla.org/firefox/downloads/latest/tabliss/latest.xpi";
+        };
+
+        # Disable bing and DuckDuckGo
+        "bing@search.mozilla.org".installation_mode = "blocked";
+        "ddg@search.mozilla.org".installation_mode = "blocked";
       };
     };
   };
