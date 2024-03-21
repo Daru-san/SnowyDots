@@ -1,7 +1,7 @@
 {
   programs.nushell = {
     enable = true;
-    configFile = ./config.nu;
+    extraConfig = with builtins; readFile ./config.nu;
     shellAliases = {
       c = "clear";
       r = "reset";

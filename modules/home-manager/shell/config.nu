@@ -57,10 +57,8 @@ let carapace_completer = {|spans|
 $env.config = {
   edit_mode: vi
   show_banner: false
-  filesize_metric: true
   use_ls_colors: true
   use_ansi_coloring: true
-  animate_prompt: false
   color_config: $base16_theme
   completions: {
     case_sensitive: false
