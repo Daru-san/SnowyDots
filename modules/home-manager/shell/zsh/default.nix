@@ -18,6 +18,8 @@
         gps = "git push";
         gpl = "git pull";
         gft = "git fetch";
+        grt = "git-root";
+        cgrt = "cd-gitroot";
         c = "clear";
         r = "reset";
         nhp = "nohup";
