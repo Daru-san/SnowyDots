@@ -37,6 +37,8 @@
         g = "git";
         nv = "nvim";
         nl = "nurl";
+        npg = "nix-prefetch-git";
+        npgh = "nix-prefetch-github";
       };
     };
 
