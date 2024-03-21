@@ -11,7 +11,7 @@ My beautiful, functional, focused nix flake with Hyprland, Sway and KDE plasma 6
 ![Image](https://i.imgur.com/U6HGbvN.png 'I use Nix by the way')
 ![Image](https://i.imgur.com/dvySPYo.png 'Neovim for winter days')
 ![image](https://i.imgur.com/yuK0FGO.png 'Why not take a look at my files?')
-![image](https://i.imgur.com/iTgxn7s.png 'Firefox W')
+![image](https://i.imgur.com/8dX89D4.png 'Firefox looking amazing')
 
 ## My System
 
