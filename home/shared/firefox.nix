@@ -267,14 +267,6 @@ in {
         "privacy.donottrackheader.enabled" = true;
         "svg.context-properties.content.enabled" = true;
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-
-        "layout.css.color-mix.enabled" = true;
-        "browser.tabs.delayHidingAudioPlayingIconMS" = 0;
-        "layout.css.backdrop-filter.enabled" = true;
-
-        "privacy.userContext.enabled" = true;
-        "privacy.userContext.ui.enabled" = true;
-        "privacy.userContext.longPressBehavior" = 2;
       };
     };
     policies = {
@@ -326,10 +318,10 @@ in {
           installation_mode = "force_installed";
           install_url = "http://addons.mozilla.org/firefox/downloads/latest/sidebery/latest.xpi";
         };
-        # Tabliss new tab
-        "extension@tabliss.io" = {
+        # Bonjourr new tab
+        "{4f391a9e-8717-4ba6-a5b1-488a34931fcb}" = {
           installation_mode = "force_installed";
-          install_url = "http://addons.mozilla.org/firefox/downloads/latest/tabliss/latest.xpi";
+          install_url = "http://addons.mozilla.org/firefox/downloads/latest/bonjourr-startpage/latest.xpi";
         };
 
         # Disable bing and DuckDuckGo
