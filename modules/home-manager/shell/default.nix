@@ -5,7 +5,7 @@
   lib,
   ...
 }: {
-  imports = [./zsh.nix ./extras.nix ./tmux.nix];
+  imports = [./zsh.nix ./extras.nix ./tmux.nix ./nushell.nix];
 
   # Enable bash for oh-my-posh support
   programs.bash = {
