@@ -26,7 +26,7 @@
         };
       };
       os = {
-        editPreset = "vi";
+        editPreset = "nvim";
       };
       refresher = {
         refreshInterval = 7;
