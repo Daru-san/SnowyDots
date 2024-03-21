@@ -8,7 +8,35 @@
     autocd = true;
 
     # Abbreviations
-    zsh-abbr.enable = true;
+    zsh-abbr = {
+      enable = true;
+      abbreviations = {
+        gcl = "git clone";
+        gbr = "git branch";
+        gre = "git remote";
+        gst = "git status";
+        gps = "git push";
+        gpl = "git pull";
+        gft = "git fetch";
+        c = "clear";
+        r = "reset";
+        nhp = "nohup";
+        dtc = "detach";
+        hctl = "hyprctl";
+        hprv = "hyprctl version";
+        rf = "rm -rf";
+        tp = "trash put";
+        tls = "trash list";
+        trs = "trash restore";
+        te = "trash empty";
+        yz = "yazi";
+        ntc = "nitch";
+        lzg = "lazygit";
+        g = "git";
+        nv = "nvim";
+        nl = "nurl";
+      };
+    };
 
     # Put zsh configs in .config/zsh
     dotDir = ".config/zsh";
@@ -44,11 +72,12 @@
           "Atlas34/fzf-plugin"
           "jeffreytse/zsh-vi-mode"
           "z-shell/F-Sy-H"
+          "romkatv/zsh-bench kind:path"
         ]
         ++ (let
           # Plugins from the oh-my-zsh repo
           o = regex: "ohmyzsh/ohmyzsh path:plugins/${regex}";
-        in [(o "sudo") (o "extract") (o "cp")]);
+        in [(o "sudo") (o "extract") (o "cp") (o "adb kind:fpath")]);
     };
 
     # Configuration and custom modules from Prezto
