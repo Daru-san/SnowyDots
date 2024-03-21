@@ -5,9 +5,8 @@
   lib,
   ...
 }: {
-  imports = [./zsh.nix ./extras.nix ./tmux.nix ./nushell.nix];
+  imports = [./zsh ./extras.nix ./tmux ./nushell ./oh-my-posh];
 
-  # Enable bash for oh-my-posh support
   programs.bash = {
     enable = true;
     historyFile = "${config.xdg.dataHome}/bash/history";

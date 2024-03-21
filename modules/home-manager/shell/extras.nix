@@ -1,14 +1,5 @@
 {
   programs = {
-    # Unified theming for bash and zsh
-    oh-my-posh = {
-      enable = true;
-      enableBashIntegration = true;
-      enableZshIntegration = true;
-      enableNushellIntegration = true;
-      settings = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile ./oh-my-posh-theme.json));
-    };
-
     # Coloured ls with cool features
     eza = {
       enable = true;
