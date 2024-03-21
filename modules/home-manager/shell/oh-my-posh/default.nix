@@ -1,6 +1,6 @@
 {
-  # Unified theming for bash and zsh
-  oh-my-posh = {
+  # Unified theming for bash, zsh and nushell
+  programs.oh-my-posh = {
     enable = true;
     enableBashIntegration = true;
     enableZshIntegration = true;
