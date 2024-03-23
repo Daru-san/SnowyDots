@@ -22,7 +22,7 @@ in
       (mkIf cfg.zram.enable {
         zramSwap = {
           enable = true;
-          memoryPercent = 200;
+          memoryPercent = 120;
         };
         services.earlyoom.enable = true;
       })
