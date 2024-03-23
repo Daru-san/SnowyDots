@@ -10,6 +10,7 @@
       songstats=$(${lib.getExe pkgs.playerctl} metadata --format '󰎈 {{title}} - {{artist}} 󰎈')
       ${lib.getExe' pkgs.coreutils "echo"} "$songstats"
     '';
+  font = "NotoMono Nerd Font";
 in {
   imports = [inputs.hyprlock.homeManagerModules.default];
   programs.hyprlock = {
@@ -53,7 +54,7 @@ in {
       {
         text = ''cmd[update:1000] ${lib.getExe' pkgs.coreutils "date"} +"%X"'';
         font_size = 90;
-        font_family = "JetBrains Mono Nerd Font 10";
+        font_family = font;
         position = {
           x = 0;
           y = 10;
@@ -64,7 +65,7 @@ in {
       {
         text = ''cmd[update 1000] ${lib.getExe' pkgs.coreutils "date"} +"%A, %d %B %Y"'';
         font_size = 20;
-        font_family = "JetBrains Mono Nerd Font 10";
+        font_family = font;
         position = {
           x = 0;
           y = -20;
@@ -75,7 +76,7 @@ in {
       {
         text = ''Welcome, $USER'';
         font_size = 16;
-        font_family = "JetBrains Mono Nerd Font 10";
+        font_family = font;
         position = {
           x = 0;
           y = -140;
@@ -86,7 +87,7 @@ in {
       {
         text = ''cmd[update 1000] ${lib.getExe now-playing}'';
         font_size = 16;
-        font_family = "JetBrains Mono Nerd Font 10";
+        font_family = font;
         position = {
           x = 0;
           y = -60;

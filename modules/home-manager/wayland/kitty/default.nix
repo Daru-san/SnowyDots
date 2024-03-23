@@ -3,12 +3,21 @@
   lib,
   config,
   ...
-}: {
+}: let
+  theme = with builtins;
+    readFile (pkgs.fetchFromGitHub {
+        owner = "hbjydev";
+        repo = "oxocarbon-kitty";
+        rev = "d012fc5002c801949808679ad1f476e4ffb8209e";
+        hash = "sha256-vjyalOp3kfHpIeHiLScxW2sLhwVg8c6WnNKlarwkzjs=";
+      }
+      + "/skin.conf");
+in {
   programs.kitty = {
     enable = true;
 
     #Kitty theme
-    theme = "Wryan";
+    extraConfig = theme;
 
     # Shell integration
     shellIntegration = {
@@ -39,7 +48,7 @@
 
       hide_window_decorations = true;
 
-      background_opacity = "0.7";
+      background_opacity = "1";
       dynamic_background_opacity = true;
 
       sync_to_monitor = true;

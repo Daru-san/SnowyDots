@@ -18,6 +18,7 @@
         archiver
         audacity
         valent
+        g4music
 
         # CLI
         tree

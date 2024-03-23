@@ -1,8 +1,11 @@
-{
+{pkgs, ...}: {
   qt = {
     enable = true;
 
     platformTheme = "gtk";
-    style = {name = "adwaita-dark";};
+    style = {
+      name = "Colloid-dark";
+      package = pkgs.colloid-kde;
+    };
   };
 }
