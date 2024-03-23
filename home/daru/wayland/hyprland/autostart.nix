@@ -15,7 +15,7 @@ with lib; {
     exec = [
       "systemctl --user restart kanshi.service"
 
-      "swww img ${config.theme.wallpaper.image}"
+      "swww img ${config.wallpaperImage}"
     ];
   };
   services.kanshi.systemdTarget = mkIf config.wayland.windowManager.hyprland.enable "hyprland-session.target";

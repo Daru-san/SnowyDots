@@ -1,15 +1,7 @@
-{
-  lib,
-  config,
-  ...
-}: let
-  cfg = config.theme.colorScheme;
-in
-  with lib; {
-    options.theme.colorScheme = {
-      css = mkOption {
-        type = with types; (either path str);
-        default = null;
-      };
-    };
-  }
+{lib, ...}:
+with lib; {
+  options.colorSchemeCss = {
+    type = with types; (either path str);
+    default = null;
+  };
+}

@@ -21,7 +21,7 @@ in {
     };
     backgrounds = [
       {
-        path = "${config.theme.wallpaper.image}";
+        path = "${config.wallpaperImage}";
         blur_size = 9;
         blur_passes = 2;
       }

@@ -1,14 +1,14 @@
 /* Global color definitions */
 
-@define-color window_bg_color #141414;
-@define-color window_fg_color #f8f8f2;
-@define-color view_bg_color #181818;
+@define-color window_bg_color @base00;
+@define-color window_fg_color @base05;
+@define-color view_bg_color shade(@base01,0.5);
 @define-color view_fg_color @window_fg_color;
-@define-color accent_bg_color #246993;
+@define-color accent_bg_color shade(@base0B,0.7);
 @define-color accent_color @accent_bg_color;
 @define-color headerbar_bg_color @window_bg_color;
 @define-color headerbar_fg_color @window_fg_color;
-@define-color popover_bg_color #252525;
+@define-color popover_bg_color shade(@base01,0.7);
 @define-color popover_fg_color @view_fg_color;
 @define-color dialog_bg_color @popover_bg_color;
 @define-color dialog_fg_color @popover_fg_color;

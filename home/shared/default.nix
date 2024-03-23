@@ -7,7 +7,11 @@
 with lib; {
   imports =
     [./firefox.nix ./spotify.nix ./packages.nix]
-    ++ (with inputs; [spicetify-nix.homeManagerModules.default nur.nixosModules.nur]);
+    ++ (with inputs; [
+      spicetify-nix.homeManagerModules.default
+      nur.nixosModules.nur
+      nix-colors.homeManagerModules.default
+    ]);
 
   nixpkgs = {
     overlays = [

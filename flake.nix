@@ -31,6 +31,9 @@
     # Spicetify
     spicetify-nix.url = "github:the-argus/spicetify-nix/master";
 
+    # Nix-colors
+    nix-colors.url = "https://github.com/Misterio77/nix-colors";
+
     # My custom neovim configuration for nix
     snowyvim.url = "sourcehut:~darumaka/SnowyVim";
 

@@ -21,7 +21,7 @@
     };
 
     style = builtins.concatStringsSep "\n" [
-      config.theme.colorScheme.css
+      config.colorSchemeCss
       (with builtins; readFile ./style.css)
     ];
 

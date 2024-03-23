@@ -1,10 +1,13 @@
 {
   pkgs,
   config,
+  lib,
   ...
 }: let
-  extraCss = with builtins;
-    readFile ./gtk.css;
+  extraCss = lib.concatStringsSep "\n" [
+    config.colorSchemeCss
+    (with builtins; readFile ./gtk.css)
+  ];
 in {
   gtk = {
     enable = true;
