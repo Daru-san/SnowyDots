@@ -22,7 +22,7 @@ in
       (mkIf cfg.zram.enable {
         zramSwap = {
           enable = true;
-          memoryPercent = 120;
+          memoryPercent = 150;
         };
         services.earlyoom.enable = true;
       })
@@ -47,7 +47,7 @@ in
           settings = {
             charger = {
               governor = "performance";
-              turbo = "auto";
+              turbo = "always";
             };
             battery = {
               governor = "powersave";
