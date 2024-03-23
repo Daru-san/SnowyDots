@@ -3,6 +3,6 @@
     enable = true;
 
     platformTheme = "gtk";
-    style = {name = "adwaita-dark";};
+    style = {name = "Adwaita-dark";};
   };
 }

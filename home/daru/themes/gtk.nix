@@ -20,9 +20,9 @@ in {
     };
 
     iconTheme = {
-      name = "Vimix-Doder";
-      package = pkgs.vimix-icon-theme.override {
-        colorVariants = ["Doder"];
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme.override {
+        color = "bluegrey";
       };
     };
 
