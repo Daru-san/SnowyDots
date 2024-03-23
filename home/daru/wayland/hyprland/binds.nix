@@ -5,7 +5,24 @@
   lib,
   ...
 }:
-with lib; {
+with lib; let
+  focusmode = with pkgs;
+    writeShellScriptBin "focusmode" ''
+      HYPRFOCUSMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
+      if [ "$HYPRFOCUSMODE" = 1 ] ; then
+        hyprctl --batch "\
+          keyword animations:enabled 0;\
+          keyword decoration:drop_shadow 0;\
+          keyword decoration:blur:enabled 0;\
+          keyword general:gaps_in 0;\
+          keyword general:gaps_out 0;\
+          keyword general:border_size 1;\
+          keyword decoration:rounding 0"
+        exit
+      fi
+      hyprctl reload
+    '';
+in {
   imports = [./extra-binds.nix];
   wayland.windowManager.hyprland.settings = let
     h = "${getExe pkgs.hdrop}";
@@ -41,6 +58,9 @@ with lib; {
         "SUPER,s,togglesplit"
         "SUPER,f,fullscreen"
         "SUPER,v,togglefloating"
+
+        # Toggle focus mode
+        "SUPERALT,F12,exec,${getExe focusmode}"
 
         #Lock screen
         "SUPER, l ,${e} , ${hyprlock}"

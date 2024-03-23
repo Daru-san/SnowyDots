@@ -15,7 +15,7 @@
         no_gaps_when_only = false;
       };
       decoration = {
-        rounding = 14;
+        rounding = 7;
         blur = {
           enabled = true;
           size = 7;
@@ -31,7 +31,7 @@
       };
       misc = {
         vrr = 1;
-        animate_mouse_windowdragging = true;
+        animate_mouse_windowdragging = false;
         enable_swallow = true;
       };
       animations = {
