@@ -2,17 +2,16 @@
   pkgs,
   config,
   ...
-}: {
+}: let
+  extraCss = with builtins;
+    readFile ./gtk.css;
+in {
   gtk = {
     enable = true;
 
     theme = {
-      name = "Colloid-Grey-Dark";
-      package = pkgs.colloid-gtk-theme.override {
-        themeVariants = ["default" "grey"];
-        colorVariants = ["dark"];
-        sizeVariants = ["standard"];
-      };
+      name = "adw-gtk3-dark";
+      package = pkgs.adw-gtk3;
     };
 
     font = {
@@ -21,9 +20,9 @@
     };
 
     iconTheme = {
-      name = "Vimix";
+      name = "Vimix-Doder";
       package = pkgs.vimix-icon-theme.override {
-        colorVariants = ["standard"];
+        colorVariants = ["Doder"];
       };
     };
 
@@ -32,6 +31,9 @@
       name = "Bibata-Modern-Classic";
       package = pkgs.bibata-cursors;
     };
+
+    gtk3 = {inherit extraCss;};
+    gtk4 = {inherit extraCss;};
   };
   dconf.settings = {
     # Make gtk apps follow a dark theme
@@ -41,7 +43,7 @@
   };
 
   # Set gtk theme session variable for nautilus
-  home.sessionVariables = {GTK_THEME = "Colloid-Grey-Dark";};
+  home.sessionVariables = {GTK_THEME = "adw-gtk3-dark";};
 
   # Set cursor themes
   home.file.".icons/default".source = "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Classic";
