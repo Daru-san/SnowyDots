@@ -10,7 +10,7 @@
 }:
 stdenv.mkDerivation {
   pname = "zaread";
-  version = "c2d45e";
+  version = "1.0.0";
 
   src = fetchFromGitHub {
     owner = "paoloap";
