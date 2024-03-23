@@ -5,4 +5,7 @@
 
   # Bridge app for minecraft modding
   bridge-core = pkgs.callPackage ./bridge.nix {};
+
+  # An audio mixer widget
+  mixxc = pkgs.callPackage ./mixxc.nix {};
 }

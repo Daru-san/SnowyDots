@@ -55,6 +55,11 @@
       url = "sourcehut:~darumaka/Nix-Scripts";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # My custom packages in one repo
+    snowpkgs = {
+      url = "sourcehut:~darumaka/Snowpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Hyprland and plugins
     hyprland.url = "github:hyprwm/Hyprland/v0.37.1";
