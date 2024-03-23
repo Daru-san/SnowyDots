@@ -151,6 +151,8 @@ in {
         r = "region";
         o = "output";
 
+        mx = "${getExe pkgs.mixxc}";
+
         sc = "${getExe' pkgs.swaynotificationcenter "swaync-client"}";
       in [
         # Launch the launcher - anyrun
@@ -164,6 +166,9 @@ in {
 
         # wlogout
         "super, x, ${e}, ${pk} ${wl} || ${wl}"
+
+        # Audio mixer
+        "altshift,F7,${e},${pk} ${mx} || ${wl}"
 
         # Screenshotting
         ", print, ${e}, ${pk} ${hs} || ${h} '${hs} -m ${r} -o ${scr-dir}'"

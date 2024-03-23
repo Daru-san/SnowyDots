@@ -19,6 +19,7 @@
         audacity
         valent
         g4music
+        mixxc
 
         # CLI
         tree
