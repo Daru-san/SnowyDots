@@ -52,6 +52,7 @@
         asciinema-agg
         asciinema-scenario
         xdragon
+        zaread
       ])
       (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild])
       (with inputs.trashy; [defaultPackage.${pkgs.system}])

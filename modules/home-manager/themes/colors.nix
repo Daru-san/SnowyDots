@@ -1,6 +1,6 @@
 {lib, ...}:
 with lib; {
-  options.colorSchemeCss = {
+  options.colorSchemeCss = mkOption {
     type = with types; (either path str);
     default = null;
   };

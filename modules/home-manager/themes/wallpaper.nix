@@ -1,6 +1,6 @@
 {lib, ...}:
 with lib; {
-  options.wallpaperImage = {
+  options.wallpaperImage = mkOption {
     type = with types; nullOr path;
     default = null;
   };

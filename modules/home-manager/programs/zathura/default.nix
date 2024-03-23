@@ -1,4 +1,4 @@
-{config}: {
+{config, ...}: {
   programs.zathura = {
     enable = true;
     options = {
@@ -14,7 +14,7 @@
       statusbar-home-tilde = true;
       window-title-basename = true;
     };
-    extraConfig = with config.colorScheme.colors; ''
+    extraConfig = with config.colorScheme.palette; ''
       set notification-error-bg       "#${base03}" #525252
       set notification-error-fg       "#${base0A}" #ee5396
       set notification-warning-bg     "#${base03}" #525252
