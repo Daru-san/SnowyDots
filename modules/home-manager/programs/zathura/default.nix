@@ -2,7 +2,7 @@
   programs.zathura = {
     enable = true;
     options = {
-      recolor = false;
+      recolor = true;
       recolor-keephue = true;
       font = "${config.fonts.monospace.name} ${toString config.fonts.sizes.terminal}";
       page-padding = 3;
