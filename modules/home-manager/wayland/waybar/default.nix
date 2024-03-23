@@ -161,7 +161,7 @@
             car = "";
             default = ["" "" ""];
           };
-          on-click = "pypr show volume";
+          on-click = "${pkgs.mixxc}/bin/mixxc --anchor right --anchor bottom --margin 20 --margin 30";
           on-click-right = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
           tooltip = false;
         };
