@@ -38,9 +38,10 @@ stdenv.mkDerivation {
   makeFlags = ["PREFIX=$(out)"];
 
   meta = with lib; {
-    description = "Simple and fast highly customisable dropdown power menu for Linux systems.";
-    homepage = "https://github.com/Lucad44/tschuss";
-    license = licenses.mit;
+    description = "A (very) lightweight ebook and Office document reader";
+    homepage = "https://github.com/paoloap/zaread";
+    license = licenses.gpl3Plus;
+    mainProgram = "zaread";
     maintainers = with maintainers; [daru];
     platforms = platforms.linux;
   };
