@@ -3,21 +3,12 @@
   lib,
   config,
   ...
-}: let
-  theme = with builtins;
-    readFile (pkgs.fetchFromGitHub {
-        owner = "hbjydev";
-        repo = "oxocarbon-kitty";
-        rev = "d012fc5002c801949808679ad1f476e4ffb8209e";
-        hash = "sha256-vjyalOp3kfHpIeHiLScxW2sLhwVg8c6WnNKlarwkzjs=";
-      }
-      + "/skin.conf");
-in {
+}: {
   programs.kitty = {
     enable = true;
 
     #Kitty theme
-    extraConfig = theme;
+    theme = "Wryan";
 
     # Shell integration
     shellIntegration = {
@@ -59,7 +50,10 @@ in {
 
       #Scrollback pager
       scrollback_lines = 100000;
-      scrollback_pager = "${with lib; getExe pkgs.bat} --pager=always";
+      scrollback_pager = lib.getExe (with pkgs;
+        writeShellScriptBin "kitty-scroll" ''
+          nvim --noplugin -c "set signcolumn=no showtabline=0" -c "silent! write! /tmp/kitty_scrollback_buffer | te cat /tmp/kitty_scrollback_buffer - "
+        '');
     };
     keybindings = let
       c = "ctrl";
@@ -83,7 +77,7 @@ in {
 
   #Script for scrollback pager
   home.packages = with pkgs; [
-    (pkgs.writeShellScriptBin "kitty-scroll" ''
+    (writeShellScriptBin "kitty-scroll" ''
       nvim --noplugin -c "set signcolumn=no showtabline=0" -c "silent! write! /tmp/kitty_scrollback_buffer | te cat /tmp/kitty_scrollback_buffer - "
     '')
   ];
