@@ -41,7 +41,7 @@
       set statusbar-bg                "#${base02}" #262626
       set statusbar-fg                "#${base04}" #dde1e6
 
-      set highlight-color             "#${base0F}" #82cfff
+      set highlight-color             "#${base03}" #525252
       set highlight-active-color      "#${base0B}" #33b1ff
 
       set default-bg                  "#${base00}" #161616
