@@ -30,7 +30,7 @@
         chroma
         glow
         gping
-        nvtop-intel
+        nvtopPackages.intel
         sysz
         exiftool
         xdg-utils
