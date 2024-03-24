@@ -22,9 +22,9 @@ in {
     };
 
     latitude = mkOption {
-      type = with types; nullOr str;
+      type = with types; nullOr float;
       default = null;
-      example = "-74.3";
+      example = -74.3;
       description = ''
         Your current latitude, between `-90.0` and
         `90.0`.
@@ -32,9 +32,9 @@ in {
     };
 
     longitude = mkOption {
-      type = with types; nullOr str;
+      type = with types; nullOr float;
       default = null;
-      example = "12.5";
+      example = 12.5;
       description = ''
         Your current longitude, between `-180.0` and
         `180.0`.
@@ -62,8 +62,8 @@ in {
     };
 
     gamma = mkOption {
-      type = with types; str;
-      default = "1.0";
+      type = with types; float;
+      default = 1.0;
       description = ''
         Gamma value to use.
       '';
@@ -77,33 +77,22 @@ in {
       '';
     };
 
-    time = {
-      duration = mkOption {
-        type = with types; nullOr int;
-        default = null;
-        example = 1800;
-        description = ''
-          The duration in seconds.
-        '';
-      };
+    sunrise = mkOption {
+      type = with types; nullOr str;
+      default = null;
+      example = "06:30";
+      description = ''
+        The time when the sun rises (in 24 hour format).
+      '';
+    };
 
-      sunrise = mkOption {
-        type = with types; nullOr str;
-        default = null;
-        example = "06:30";
-        description = ''
-          The time when the sun rises (in 24 hour format).
-        '';
-      };
-
-      sunset = mkOption {
-        type = with types; nullOr str;
-        default = null;
-        example = "18:00";
-        description = ''
-          The time when the sun sets (in 24 hour format).
-        '';
-      };
+    sunset = mkOption {
+      type = with types; nullOr str;
+      default = null;
+      example = "18:00";
+      description = ''
+        The time when the sun sets (in 24 hour format).
+      '';
     };
 
     systemdTarget = mkOption {
@@ -117,7 +106,7 @@ in {
 
   config = mkIf cfg.enable {
     assertions = [
-      (lib.hm.assertions.assertPlatform "services.wlsunset-test" pkgs
+      (lib.hm.assertions.assertPlatform "services.wlsunset" pkgs
         lib.platforms.linux)
     ];
 
@@ -129,18 +118,17 @@ in {
 
       Service = {
         ExecStart = let
-          args = [
-            "-t ${toString cfg.temperature.night}"
-            "-T ${toString cfg.temperature.day}"
-            "-g ${cfg.gamma}"
-            ((mkIf cfg.latitude != null) "-l ${cfg.latitude}")
-            ((mkIf cfg.longitude != null) "-L ${cfg.longitude}")
-            ((mkIf cfg.time.sunrise != null) "-S ${cfg.time.sunrise}")
-            ((mkIf cfg.time.sunset != null) "-s ${cfg.time.sunset}")
-            ((mkIf cfg.time.duration != null) "-d ${toString cfg.time.duration}")
-            ((mkIf cfg.output != null) "-o ${cfg.output}")
-          ];
-        in "${cfg.package}/bin/wlsunset ${concatStringsSep " " args}";
+          args = cli.toGNUCommandLineShell {} {
+            t = cfg.temperature.night;
+            T = cfg.temperature.day;
+            g = cfg.gamma;
+            l = cfg.latitude;
+            L = cfg.longitude;
+            S = cfg.sunrise;
+            s = cfg.sunset;
+            o = cfg.output;
+          };
+        in "${cfg.package}/bin/wlsunset ${args}";
       };
 
       Install = {WantedBy = [cfg.systemdTarget];};
