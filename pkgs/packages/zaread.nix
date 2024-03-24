@@ -7,6 +7,7 @@
   libreoffice,
   typst,
   bash,
+  file,
 }:
 stdenv.mkDerivation {
   pname = "zaread";
@@ -32,7 +33,7 @@ stdenv.mkDerivation {
   installPhase = ''
     wrapProgram $out/bin/zaread \
       --prefix PATH : ${
-      lib.makeBinPath [bash zathura libreoffice typst]
+      lib.makeBinPath [bash zathura libreoffice typst file]
     }  '';
 
   makeFlags = ["PREFIX=$(out)"];
