@@ -7,6 +7,7 @@
     consoleLogLevel = 0;
     kernelParams = ["quiet"];
     kernelPackages = pkgs.linuxPackages_cachyos;
+    kernelModules = ["cpupower" "turbostat"];
     extraModulePackages = with config.boot.kernelPackages; [turbostat cpupower];
     loader.efi.canTouchEfiVariables = true;
     initrd.verbose = false;
