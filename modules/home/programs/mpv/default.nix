@@ -3,9 +3,10 @@
     enable = true;
 
     config = {
-      #Enable hardware-acceleration
       hwdec = "auto-safe";
-
+      vo = "gpu";
+      profile = "gpu-hq";
+      gpu-context = "wayland";
       force-window = true;
     };
 
