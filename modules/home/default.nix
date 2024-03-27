@@ -6,5 +6,6 @@
     ./xdg
     ./themes
     ./programs
+    ./languages
   ];
 }

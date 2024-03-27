@@ -1,4 +1,4 @@
-pkgs: {
+{pkgs, ...}: {
   freetube = {
     name = "FreeTube";
     genericName = "YouTube";
