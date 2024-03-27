@@ -15,11 +15,15 @@
         scrcpy
         keepassxc
         bridge-core
-        archiver
         audacity
         valent
         g4music
         mixxc
+        newsflash
+        archiver
+        overskride
+        pavucontrol
+        iwgtk
 
         # CLI
         tree
@@ -55,6 +59,7 @@
         zaread
       ])
       (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild])
+      (with pkgs.gnome; [nautilus dconf-editor gnome-clocks file-roller gnome-calculator])
       (with inputs.trashy; [defaultPackage.${pkgs.system}])
     ];
 }

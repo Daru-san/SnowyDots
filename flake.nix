@@ -81,42 +81,23 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
-
-    # Supported systems
-    systems = ["x86_64-linux"];
-
-    # This is a function that generates an attribute by calling a function you
-    # pass to it, with each system as an argument
-    forAllSystems = nixpkgs.lib.genAttrs systems;
-
-    # Import packages and overlays at once
     pkgs = import ./pkgs;
     modules = {
       home = import ./modules/home;
       system = import ./modules/system;
+      specialisations = import ./systems/specialise;
     };
   in {
-    # Custom packages
-    packages =
-      forAllSystems (system: pkgs.packages nixpkgs.legacyPackages.${system});
-
-    # Your custom packages and modifications, exported as overlays
     overlays = pkgs.overlays {inherit inputs;};
 
-    # NixOS configuration
     nixosConfigurations = {
-      # Configuration on my Acer laptop
-      # 'nixos-rebuild switch --flake .#AspireLaptop'
       AspireLaptop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [./systems/AspireLaptop modules.system modules.specialisations];
       };
     };
 
-    # Home configuration
     homeConfigurations = {
-      # My home configuration for Hyprland
-      # 'home-manager switch --flake .#daru@AspireLaptop'
       "daru@AspireLaptop" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
