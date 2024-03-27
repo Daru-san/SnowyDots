@@ -42,7 +42,6 @@
         pulsemixer
         ani-cli
         manga-cli
-        pokeshell
         transmission
         du-dust
         fzf

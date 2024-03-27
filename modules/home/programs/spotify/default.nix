@@ -6,7 +6,7 @@
 }: let
   spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default;
 in {
-  imports = with inputs.spicetify-nix.homeManagerModules; [spicetify-nix];
+  imports = with inputs.spicetify-nix.homeManagerModules; [spicetify];
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) ["spotify"];
 

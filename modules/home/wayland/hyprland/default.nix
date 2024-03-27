@@ -14,7 +14,7 @@
       ./hyprlock.nix
       ./hypridle.nix
     ]
-    ++ (with inputs.hyprland.homeManagerModules; [hyprland]);
+    ++ (with inputs.hyprland.homeManagerModules; [default]);
 
   wayland.windowManager.hyprland = {
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;

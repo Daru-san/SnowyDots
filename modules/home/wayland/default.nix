@@ -8,7 +8,6 @@
     ./swayosd
     ./hyprland
     ./swaync
-    ./cliphist
     ./waybar
     ./wlogout
     ./wlsunset
