@@ -222,7 +222,7 @@
       "inputs": {
         "flake-utils": "flake-utils_4",
         "nixpkgs": [
-          "snowvim",
+          "snowyvim",
           "nixvim",
           "nixpkgs"
         ]
@@ -399,7 +399,7 @@
     "flake-parts_4": {
       "inputs": {
         "nixpkgs-lib": [
-          "snowvim",
+          "snowyvim",
           "nixvim",
           "nixpkgs"
         ]
@@ -599,7 +599,7 @@
     "gitignore": {
       "inputs": {
         "nixpkgs": [
-          "snowvim",
+          "snowyvim",
           "nixvim",
           "pre-commit-hooks",
           "nixpkgs"
@@ -663,7 +663,7 @@
     "home-manager_3": {
       "inputs": {
         "nixpkgs": [
-          "snowvim",
+          "snowyvim",
           "nixvim",
           "nixpkgs"
         ]
@@ -1037,7 +1037,7 @@
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
-          "snowvim",
+          "snowyvim",
           "nixvim",
           "nixpkgs"
         ]
@@ -1388,7 +1388,7 @@
         "home-manager": "home-manager_3",
         "nix-darwin": "nix-darwin",
         "nixpkgs": [
-          "snowvim",
+          "snowyvim",
           "nixpkgs"
         ],
         "pre-commit-hooks": "pre-commit-hooks"
@@ -1428,12 +1428,12 @@
         "flake-utils": "flake-utils_5",
         "gitignore": "gitignore",
         "nixpkgs": [
-          "snowvim",
+          "snowyvim",
           "nixvim",
           "nixpkgs"
         ],
         "nixpkgs-stable": [
-          "snowvim",
+          "snowyvim",
           "nixvim",
           "nixpkgs"
         ]
@@ -1469,7 +1469,7 @@
         "nur": "nur",
         "scripts": "scripts",
         "snowpkgs": "snowpkgs",
-        "snowvim": "snowvim",
+        "snowyvim": "snowyvim",
         "spicetify-nix": "spicetify-nix",
         "trashy": "trashy"
       }
@@ -1602,7 +1602,7 @@
         "type": "sourcehut"
       }
     },
-    "snowvim": {
+    "snowyvim": {
       "inputs": {
         "flake-parts": "flake-parts_3",
         "nixpkgs": "nixpkgs_11",
