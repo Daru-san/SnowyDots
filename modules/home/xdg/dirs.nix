@@ -1,5 +1,5 @@
 {config, ...}: let
-  hm = "${config.home.homeDirectory}";
+  hm = config.home.homeDirectory;
 in {
   enable = true;
 

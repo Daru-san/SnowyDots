@@ -1,8 +1,11 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = with inputs.ags.homeManagerModules; [default];
   programs.ags = {
-    # Enable ags
     enable = true;
-    # packages to add to gjs's runtime
-    extraPackages = [pkgs.libsoup_3];
+    extraPackages = with pkgs; [sassc libsoup_3];
   };
 }

@@ -1,6 +1,7 @@
 {
   inputs,
   outputs,
+  pkgs,
   ...
 }: {
   imports =
@@ -22,6 +23,7 @@
       permittedInsecurePackages = ["electron-25.9.0"];
     };
   };
+  nix.package = pkgs.nix;
   nix.gc = {
     automatic = true;
     frequency = "weekly";

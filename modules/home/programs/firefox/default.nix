@@ -1,10 +1,8 @@
-# Shared firefox configuration
 {
   pkgs,
   config,
   ...
 }: let
-  # Fetch custom css from christorange/VerticalFox on github
   userChrome = with builtins;
     readFile (with pkgs;
       fetchgit {
@@ -16,15 +14,12 @@
 in {
   programs.firefox = {
     enable = true;
-
-    # Package, firefox-nightly
-    package = pkgs.firefox-nightly;
+    package = pkgs.firefox_nightly;
 
     profiles.${config.home.username} = {
-      # Import the theme
+      isDefault = true;
       inherit userChrome;
 
-      # Extensions(from NUR)
       extensions = with config.nur.repos.rycee.firefox-addons; [
         disable-javascript
         don-t-fuck-with-paste
@@ -46,10 +41,6 @@ in {
         vimium-c
       ];
 
-      # Make this profile the default
-      isDefault = true;
-
-      # Containers
       containers = {
         general = {
           color = "blue";
@@ -113,9 +104,8 @@ in {
         };
       };
 
-      # Search engines
       search = {
-        # Make Brave and StartPage defaults
+        force = true;
         default = "Brave Search";
         privateDefault = "StartPage";
 
@@ -131,12 +121,7 @@ in {
           "Home Manager"
         ];
 
-        # Force apply configs
-        force = true;
-
-        # Add custom search engines and modify existing ones
         engines = {
-          #Brave search
           "Brave Search" = {
             urls = [{template = "https://search.brave.com/search?q={searchTerms}";}];
             iconUpdateURL = "https://brave.com/static-assets/images/brave-logo-sans-text.svg";
@@ -144,7 +129,6 @@ in {
             definedAliases = ["@br" "@b" "@brave"];
           };
 
-          #StartPage
           "StartPage" = {
             urls = [{template = "https://www.startpage.com/sp/search?query={searchTerms}";}];
             iconUpdateURL = "https://www.startpage.com/sp/cdn/favicons/favicon-gradient.ico";
@@ -152,14 +136,12 @@ in {
             definedAliases = ["@sp" "@s" "@start"];
           };
 
-          # Disable a bunch of search engines
           "Google" = {metaData = {hidden = true;};};
           "DuckDuckGo" = {metaData = {hidden = true;};};
           "Bing" = {metaData = {hidden = true;};};
           "Amazon.com" = {metaData = {hidden = true;};};
           "Wikipedia (en)" = {metaData = {hidden = true;};};
 
-          # Reddit
           "Reddit" = {
             urls = [{template = "https://www.reddit.com/search/?q={searchTerms}";}];
             iconUpdateURL = "https://www.redditstatic.com/shreddit/assets/favicon/favicon.ico";
@@ -167,7 +149,6 @@ in {
             definedAliases = ["@r" "@reddit"];
           };
 
-          # Github
           "Github" = {
             urls = [{template = "https://github.com/search?q={searchTerms}";}];
             iconUpdateURL = "https://github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg";
@@ -175,7 +156,6 @@ in {
             definedAliases = ["@gh" "@g" "@git"];
           };
 
-          # Add the NixOS wiki
           "NixOS Wiki" = {
             urls = [{template = "https://nixos.wiki/index.php?search={searchTerms}";}];
             iconUpdateURL = "https://nixos.wiki/favicon.png";
@@ -183,7 +163,6 @@ in {
             definedAliases = ["@nw" "@nixwiki"];
           };
 
-          # Nix packages and options from search.nixos.org
           "Nix Packages" = {
             urls = [
               {
@@ -223,14 +202,12 @@ in {
             definedAliases = ["@no" "@nixopts"];
           };
 
-          # Similiar to search.nixos.org but with more info
           "My NixOS" = {
             urls = [{template = "https://mynixos.com/search?q={searchTerms}";}];
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake-white.svg";
             definedAliases = ["@mn" "@nx" "@mynixos"];
           };
 
-          #Home manager search
           "Home Manager" = {
             urls = [{template = "https://home-manager-options.extranix.com/?query={searchTerms}";}];
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
@@ -300,30 +277,23 @@ in {
         browser.backspace_action = 0;
       };
 
-      # Always install these extensions
       ExtensionSettings = {
-        # ublock-origin
         "uBlock0@raymondhill.net" = {
           installation_mode = "force_installed";
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
         };
-        # The theme
         "{e0de5ee2-4619-413a-8300-a43a90196a6d}" = {
           installation_mode = "normal_installed";
           install_url = "http://addons.mozilla.org/firefox/downloads/latest/simplerentfox/latest.xpi";
         };
-        # Sidebery for sidebar
         "{3c078156-979c-498b-8990-85f7987dd929}" = {
           installation_mode = "force_installed";
           install_url = "http://addons.mozilla.org/firefox/downloads/latest/sidebery/latest.xpi";
         };
-        # Bonjourr new tab
         "{4f391a9e-8717-4ba6-a5b1-488a34931fcb}" = {
           installation_mode = "force_installed";
           install_url = "http://addons.mozilla.org/firefox/downloads/latest/bonjourr-startpage/latest.xpi";
         };
-
-        # Disable bing and DuckDuckGo
         "bing@search.mozilla.org".installation_mode = "blocked";
         "ddg@search.mozilla.org".installation_mode = "blocked";
       };
