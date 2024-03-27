@@ -15,7 +15,6 @@
     overlays = with outputs.overlays; [
       stable-packages
       packages
-      scripts
     ];
     config = {
       allowUnfree = true;

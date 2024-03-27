@@ -5,7 +5,7 @@
   ...
 }:
 with lib;
-  mkIf programs.hyprland.enable {
+  mkIf config.programs.hyprland.enable {
     programs = {
       dconf.enable = true;
       file-roller.enable = true;

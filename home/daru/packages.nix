@@ -56,9 +56,8 @@
         asciinema-scenario
         xdragon
         zaread
-        hm-build
-        nix-rebuild
       ])
+      (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild])
       (with pkgs.gnome; [nautilus dconf-editor gnome-clocks file-roller gnome-calculator])
       (with inputs.trashy; [defaultPackage.${pkgs.system}])
     ];

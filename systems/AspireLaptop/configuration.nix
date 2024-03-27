@@ -1,10 +1,11 @@
 {
   pkgs,
   lib,
+  inputs,
   ...
 }: {
   imports = [./hardware-configuration.nix];
-
+  chaotic.nyx.cache.enable = true;
   users = {
     defaultUserShell = pkgs.zsh;
     mutableUsers = true;
@@ -26,8 +27,8 @@
       package = lib.mkDefault pkgs.kdePackages.kdeconnect-kde;
     };
     yazi = {
-      enable = true;
-      settings = {
+      enable = false;
+      settings.yazi = {
         manager = {
           ratio = [1 3 4];
           sort_by = "natural";
@@ -49,33 +50,32 @@
     settings = {gui = {theme = "black";};};
   };
 
-  environment.systemPackages = with pkgs; [
-    htop
-    wget2
-    nix-prefetch-git
-    nix-prefetch-github
-    gcc
-    glib
-    nodejs_20
-    unzip
-    clang
-    zig
-    iw
-    clinfo
-    glxinfo
-    exfatprogs
-    nurl
-    nix-melt
-    ncdu
-    busybox
-    usbutils
-    gparted
-    home-manager
-    alejandra
-    nix-rebuild
-    hm-build
-    scx
-  ];
+  environment.systemPackages = with pkgs;
+    [
+      htop
+      wget2
+      nix-prefetch-git
+      nix-prefetch-github
+      gcc
+      glib
+      nodejs_20
+      unzip
+      clang
+      zig
+      iw
+      clinfo
+      glxinfo
+      exfatprogs
+      nurl
+      nix-melt
+      ncdu
+      busybox
+      usbutils
+      gparted
+      home-manager
+      alejandra
+    ]
+    ++ (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild]);
 
   time.timeZone = "Africa/Johannesburg";
   i18n.defaultLocale = "en_ZA.UTF-8";
