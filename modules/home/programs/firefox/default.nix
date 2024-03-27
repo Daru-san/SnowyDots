@@ -115,6 +115,7 @@ in {
           "Github"
           "Reddit"
           "My NixOS"
+          "Noogle"
           "NixOS Wiki"
           "Nix Packages"
           "Nix Options"
@@ -159,10 +160,15 @@ in {
           "NixOS Wiki" = {
             urls = [{template = "https://nixos.wiki/index.php?search={searchTerms}";}];
             iconUpdateURL = "https://nixos.wiki/favicon.png";
-            updateInterval = 24 * 60 * 60 * 1000; # every day
+            updateInterval = 24 * 60 * 60 * 1000;
             definedAliases = ["@nw" "@nixwiki"];
           };
-
+          "Noogle" = {
+            urls = [{template = "https://noogle.dev/q?term={searchTerms}";}];
+            iconUpdateUrl = "https://noogle.dev/favicon.png";
+            updateInterval = 24 * 60 * 60 * 1000;
+            definedAliases = ["@noogle" "@ng"];
+          };
           "Nix Packages" = {
             urls = [
               {
@@ -274,7 +280,7 @@ in {
       OverrideFirstRunPage = "";
       PopupBlocking = {Default = true;};
       Preferences = {
-        browser.backspace_action = 0;
+        "browser.backspace_action" = 0;
       };
 
       ExtensionSettings = {
