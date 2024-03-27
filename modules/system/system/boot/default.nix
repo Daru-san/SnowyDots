@@ -2,7 +2,7 @@
   boot = {
     consoleLogLevel = 0;
     kernelParams = ["quiet"];
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_cachyos;
     loader.efi.canTouchEfiVariables = true;
     initrd.verbose = false;
     loader.grub = {
@@ -28,5 +28,9 @@
       ];
     };
     initrd.systemd.enable = true;
+  };
+  chaotic.scx = {
+    enable = true;
+    scheduler = "scx_rustland";
   };
 }

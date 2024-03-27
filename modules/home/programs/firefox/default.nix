@@ -2,7 +2,6 @@
 {
   pkgs,
   config,
-  inputs,
   ...
 }: let
   # Fetch custom css from christorange/VerticalFox on github
@@ -19,7 +18,7 @@ in {
     enable = true;
 
     # Package, firefox-nightly
-    package = with inputs.firefox.packages.${pkgs.system}; firefox-nightly-bin;
+    package = pkgs.firefox-nightly;
 
     profiles.${config.home.username} = {
       # Import the theme

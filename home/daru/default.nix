@@ -8,6 +8,7 @@
     ++ (with inputs; [
       nur.nixosModules.nur
       nix-colors.homeManagerModules.default
+      chaotic.homeManagerModules.default
     ]);
 
   nixpkgs = {
