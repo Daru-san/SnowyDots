@@ -45,6 +45,9 @@
         npgh = "nix-prefetch-github";
         npu = "nix-prefetch-url";
         zc = "z ~ && clear";
+        bs = "bash";
+        flakelockupdate = "nix flake update --commit-lock-file";
+        flakeupdate = "nix flake update";
       };
     };
 
