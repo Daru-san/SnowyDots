@@ -81,14 +81,14 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
-    pkgs = import ./pkgs;
     modules = {
       home = import ./modules/home;
       system = import ./modules/system;
       specialisations = import ./systems/specialise;
+      overlays = import ./overlays;
     };
   in {
-    overlays = pkgs.overlays {inherit inputs;};
+    overlays = modules.overlays {inherit inputs;};
 
     nixosConfigurations = {
       AspireLaptop = nixpkgs.lib.nixosSystem {

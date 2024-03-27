@@ -8,9 +8,9 @@
   imports = [./configuration.nix];
 
   nixpkgs = {
-    overlays = [
-      outputs.overlays.additions
-      outputs.overlays.stable-packages
+    overlays = with outputs.overlays; [
+      stable-packages
+      scripts
     ];
     config = {allowUnfree = true;};
   };

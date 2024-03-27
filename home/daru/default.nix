@@ -11,20 +11,14 @@
     ]);
 
   nixpkgs = {
-    overlays = [
-      # Overlay for stable packages (23.05)
-      outputs.overlays.stable-packages
-
-      # Import custom packages
-      outputs.overlays.additions
+    overlays = with outputs.overlays; [
+      stable-packages
+      packages
+      scripts
     ];
     config = {
-      # Allowing unfree packages
       allowUnfree = true;
-      # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = _: true;
-
-      # Fix electron packages
       permittedInsecurePackages = ["electron-25.9.0"];
     };
   };
