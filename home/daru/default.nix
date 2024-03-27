@@ -1,22 +1,36 @@
 {
-  outputs,
   inputs,
+  outputs,
   ...
 }: {
   imports =
-    [./home.nix]
-    ++ [./themes/default.nix ./wayland/default.nix ./programs/default.nix]
-    ++ (with outputs.homeManagerModules; [
-      editor
-      programs
-      xdg
-      wayland
-      shell
-      themes
-      languages
-      services
-    ])
+    [./home.nix ./theme ./packages.nix]
     ++ (with inputs; [
-      hyprland.homeManagerModules.default
+      nur.nixosModules.nur
+      nix-colors.homeManagerModules.default
     ]);
+
+  nixpkgs = {
+    overlays = [
+      # Overlay for stable packages (23.05)
+      outputs.overlays.stable-packages
+
+      # Import custom packages
+      outputs.overlays.additions
+    ];
+    config = {
+      # Allowing unfree packages
+      allowUnfree = true;
+      # Workaround for https://github.com/nix-community/home-manager/issues/2942
+      allowUnfreePredicate = _: true;
+
+      # Fix electron packages
+      permittedInsecurePackages = ["electron-25.9.0"];
+    };
+  };
+  nix.gc = {
+    automatic = true;
+    frequency = "weekly";
+    options = "--delete-older-than 7d";
+  };
 }

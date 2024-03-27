@@ -91,6 +91,10 @@
 
     # Import packages and overlays at once
     pkgs = import ./pkgs;
+    modules = {
+      home = import ./modules/home;
+      system = import ./modules/system;
+    };
   in {
     # Custom packages
     packages =
@@ -99,24 +103,13 @@
     # Your custom packages and modifications, exported as overlays
     overlays = pkgs.overlays {inherit inputs;};
 
-    # NixOS modules to be used by the system configuration
-    nixosModules = import ./modules/nixos;
-
-    # Home-manager modules to be used by home-manager
-    homeManagerModules = import ./modules/home-manager;
-
     # NixOS configuration
     nixosConfigurations = {
       # Configuration on my Acer laptop
       # 'nixos-rebuild switch --flake .#AspireLaptop'
       AspireLaptop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [
-          # > My main nixos configuration file <
-          ./systems/AspireLaptop
-          # > Specialisations for custom boot entries <
-          ./systems/specialise
-        ];
+        modules = [./systems/AspireLaptop modules.system modules.specialisations];
       };
     };
 
@@ -127,12 +120,7 @@
       "daru@AspireLaptop" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          # > Main home configuration file <
-          ./home/daru
-          # > Shared home options <
-          ./home/shared
-        ];
+        modules = [./home/daru modules.home];
       };
     };
   };

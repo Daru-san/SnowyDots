@@ -1,7 +1,14 @@
 {
   system.nixos.tags = ["plasma"];
-  wayland = {
-    enable = true;
-    kde.enable = true;
+  programs.dconf.enable = true;
+  services = {
+    xserver = {
+      enable = true;
+      displayManager.sddm = {
+        enable = true;
+        wayland.enable = true;
+      };
+    };
+    desktopManager.plasma6.enable = true;
   };
 }

@@ -12,27 +12,15 @@
   # User configurations
   users = {
     users = {
-      #My main user
       daru = {
         isNormalUser = true;
         shell = pkgs.zsh;
         description = "Daru";
         extraGroups = ["networkmanager" "wheel" "video" "adbusers" "input"];
       };
-      #Disables root user
       root.hashedPassword = "!";
     };
     mutableUsers = true;
-  };
-
-  # Enable android tools
-  android = {
-    adb.enable = true;
-    mtp = {
-      gvfs.enable = true;
-      jmtpfs.enable = true;
-    };
-    waydroid.enable = true;
   };
 
   programs = {
@@ -103,41 +91,6 @@
       alejandra
     ]
     ++ (with inputs.scripts.packages.${pkgs.system}; [nix-rebuild hm-build]);
-
-  os = {
-    # Enable polkit
-    security.polkit.enable = true;
-
-    # Boot config
-    boot = {
-      grub.enable = true;
-      systemd.enable = false;
-      quiet = true;
-      plymouth.enable = true;
-    };
-
-    # System options for drivers and optimizations
-    system = {
-      drivers.intel.enable = true;
-      zram.enable = true;
-      optimizations = {
-        laptop.enable = true;
-        ssd.enable = true;
-        intel.enable = true;
-        cpu.enable = true;
-      };
-    };
-  };
-
-  # Enable audio using pipewire
-  os.audio.enable = true;
-
-  # Enable wifi and bluetooth
-  os.networking = {
-    enable = true;
-    wifi.enable = true;
-    bluetooth.enable = true;
-  };
 
   # Set your time zone.
   time.timeZone = "Africa/Johannesburg";
