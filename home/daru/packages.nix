@@ -55,6 +55,13 @@
         asciinema-agg
         asciinema-scenario
         xdragon
+        nox
+        comma
+        nix-du
+        manix
+        deadnix
+        nix-output-monitor
+        statix
         zaread
       ])
       (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild])
