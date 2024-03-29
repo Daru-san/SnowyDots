@@ -14,7 +14,7 @@
 
     firewall = {
       enable = true;
-      allowUDPPorts = ["51413"];
+      allowedUDPPorts = [51413];
       allowedUDPPortRanges = [
         {
           from = 1714;
