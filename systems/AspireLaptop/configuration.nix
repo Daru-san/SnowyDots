@@ -50,7 +50,6 @@
       configDir = "/home/daru/.sync";
       settings = {gui = {theme = "black";};};
     };
-    ntopng.enable = true;
   };
 
   environment.systemPackages = with pkgs;

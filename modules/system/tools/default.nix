@@ -1,3 +1,3 @@
 {
-  imports = [./ssh.nix ./neovim.nix ./android.nix ./transmission.nix];
+  imports = [./ssh.nix ./neovim.nix ./android.nix ./transmission.nix ./ntopng.nix];
 }
