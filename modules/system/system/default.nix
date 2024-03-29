@@ -5,5 +5,6 @@
     ./hardware
     ./fonts
     ./shell
+    ./security
   ];
 }
