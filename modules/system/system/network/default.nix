@@ -1,5 +1,4 @@
 {
-  security.polkit.enable = true;
   networking = {
     nameservers = ["1.1.1.1" "1.0.0.1"];
     dhcpcd.extraConfig = "nohook resolv.conf";
@@ -15,6 +14,7 @@
 
     firewall = {
       enable = true;
+      allowUDPPorts = ["51413"];
       allowedUDPPortRanges = [
         {
           from = 1714;
