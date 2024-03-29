@@ -28,19 +28,5 @@ with lib;
         default_session = initial_session;
       };
     };
-    systemd = {
-      user.services.lxpolkit = {
-        description = "lxpolkit";
-        wantedBy = ["graphical-session.target"];
-        wants = ["graphical-session.target"];
-        after = ["graphical-session.target"];
-        serviceConfig = {
-          Type = "simple";
-          ExecStart = "${getExe' pkgs.lxde.lxsession "lxpolkit"}";
-          Restart = "on-failure";
-          RestartSec = 1;
-          TimeoutStopSec = 10;
-        };
-      };
-    };
+    environment.systemPackages = with pkgs.lxqt; [lxqt-policykit];
   }

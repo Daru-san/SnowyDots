@@ -1,6 +1,5 @@
 {
   config,
-  pkgs,
   lib,
   ...
 }:
@@ -11,6 +10,7 @@ with lib; {
       "${config.services.copyq.package}/bin/copyq"
       "${config.programs.waybar.package}/bin/waybar"
       "swww init"
+      "lxqt-policykit-agent"
     ];
     exec = [
       "systemctl --user restart kanshi.service"
