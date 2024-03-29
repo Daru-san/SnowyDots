@@ -1,8 +1,8 @@
 {
   imports = [
     ./ags
-    ./copyq
     ./anyrun
+    ./clipboard
     ./kitty
     ./kanshi
     ./swayosd
