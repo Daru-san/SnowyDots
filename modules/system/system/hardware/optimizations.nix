@@ -3,6 +3,10 @@
     enable = true;
     memoryPercent = 200;
   };
+  chaotic.scx = {
+    enable = true;
+    scheduler = "scx_rusty";
+  };
   services = {
     earlyoom.enable = true;
     throttled.enable = true;
