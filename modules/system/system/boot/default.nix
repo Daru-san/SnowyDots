@@ -18,12 +18,12 @@
         withBanner = "Hello, Daru";
       };
     };
-    plymouth = {
+    plymouth = rec {
       enable = true;
-      theme = "loader";
+      theme = "blockchain";
       themePackages = [
         (pkgs.adi1090x-plymouth-themes.override {
-          selected_themes = ["loader"];
+          selected_themes = [theme];
         })
       ];
     };
