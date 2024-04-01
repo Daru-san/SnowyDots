@@ -10,7 +10,6 @@
       selection-clipboard = "clipboard";
       scroll-page-aware = true;
       guioptions = "none";
-      sandbox = "strict";
       statusbar-home-tilde = true;
       window-title-basename = true;
     };
