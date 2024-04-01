@@ -9,13 +9,13 @@
   bash,
   file,
 }:
-stdenv.mkDerivation {
+stdenv.mkDerivation rec {
   pname = "zaread";
   version = "1.0.0";
 
   src = fetchFromGitHub {
     owner = "paoloap";
-    repo = "zaread";
+    repo = pname;
     rev = "c2d45e1bbaeb0a637b1747cc89b483f2c6d11cb3";
     hash = "sha256-g4Xb6gGA09/rfv0myzHbc830BwtD37IOYuEIwoOigP8=";
   };
