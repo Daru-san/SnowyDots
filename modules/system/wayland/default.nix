@@ -1,3 +1,3 @@
 {
-  imports = [./hyprland.nix ./sddm.nix];
+  imports = [./hyprland.nix];
 }

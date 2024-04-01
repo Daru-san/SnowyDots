@@ -19,7 +19,7 @@ with lib;
     };
     services.greetd = {
       package = pkgs.greetd;
-      enable = false;
+      enable = true;
       settings = rec {
         initial_session = {
           command = "${pkgs.greetd.tuigreet}/bin/tuigreet -t --window-padding 1 -g 'Welcome to ${config.networking.hostName}' -c Hyprland";
