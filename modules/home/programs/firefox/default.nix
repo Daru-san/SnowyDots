@@ -2,23 +2,14 @@
   pkgs,
   config,
   ...
-}: let
-  userChrome = with builtins;
-    readFile (with pkgs;
-      fetchgit {
-        url = "https://github.com/christorange/VerticalFox";
-        rev = "29d7ee3f320bc52bb928a1b0ba82457a6583fbfe";
-        sha256 = "Mua9eBbAEisch3YhgdzkXLZTfL1x+wXqq1u8tcvsOC0=";
-      }
-      + "/windows/userChrome.css");
-in {
+}: {
   programs.firefox = {
     enable = true;
     package = pkgs.firefox_nightly;
 
     profiles.${config.home.username} = {
       isDefault = true;
-      inherit userChrome;
+      userChrome = builtins.readFile ./userChrome.css;
 
       extensions = with config.nur.repos.rycee.firefox-addons; [
         disable-javascript
