@@ -11,7 +11,7 @@
       view = true;
       show-original-dictionary = true;
       show-alternatives = true;
-      pager = "${with lib; getExe pkgs.bat}";
+      pager = lib.getExe pkgs.bat;
       verbose = true;
     };
   };

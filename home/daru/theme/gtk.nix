@@ -6,7 +6,7 @@
 }: let
   extraCss = lib.concatStringsSep "\n" [
     config.colorSchemeCss
-    (with builtins; readFile ./gtk.css)
+    (builtins.readFile ./gtk.css)
   ];
 in {
   gtk = {

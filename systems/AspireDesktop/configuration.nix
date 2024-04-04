@@ -42,16 +42,6 @@
     };
   };
 
-  services = {
-    syncthing = {
-      enable = true;
-      dataDir = "/home/daru";
-      user = "daru";
-      configDir = "/home/daru/.sync";
-      settings = {gui = {theme = "black";};};
-    };
-  };
-
   environment.systemPackages = with pkgs;
     [
       htop
@@ -80,17 +70,15 @@
     ++ (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild]);
 
   os = {
-    laptop = true;
-    ssdTweaks = true;
-    networking = {
-      wifi.enable = true;
-      bluetooth.enable = true;
-    };
+    networking.wifi.enale = true;
+    dekstop.enable = true;
   };
+  wayland.sway.enable = true;
+
   time.timeZone = "Africa/Johannesburg";
   i18n.defaultLocale = "en_ZA.UTF-8";
 
-  networking.hostName = "AspireLaptop";
+  networking.hostName = "AspireDesktop";
 
-  system.stateVersion = "24.05";
+  system.stateVersion = "23.11";
 }

@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  imports = with inputs.snowyvim.homeManagerModules; [default];
+  imports = [inputs.snowyvim.homeManagerModules.default];
   programs.snowvim = {
     enable = true;
     defaultEditor = true;

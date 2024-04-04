@@ -1,16 +1,8 @@
 {
   imports = [
-    ./ags
-    ./anyrun
-    ./clipboard
-    ./kitty
-    ./kanshi
-    ./swayosd
     ./hyprland
-    ./swaync
-    ./waybar
-    ./wlogout
-    ./wlsunset
+    ./sway
+    ./share
   ];
   home.sessionVariables.NIXOS_OZONE_WL = "1";
 }

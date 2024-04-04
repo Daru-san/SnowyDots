@@ -1,34 +1,44 @@
 {
-  inputs,
   pkgs,
+  config,
+  lib,
+  inputs,
   ...
-}: {
-  imports =
-    [
-      ./binds.nix
-      ./rules.nix
-      ./devices.nix
-      ./style.nix
-      ./autostart.nix
-      ./plugins.nix
-      ./hyprlock.nix
-      ./hypridle.nix
-    ]
-    ++ (with inputs.hyprland.homeManagerModules; [default]);
-
-  wayland.windowManager.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    systemd = {
-      enable = true;
-      extraCommands = [
-        "systemctl --user start easyeffects.service"
-        "systemctl --user start app-org.keepassxc.KeePassXC@autostart.service"
-        "systemctl --user start hypridle.service"
-        "systemctl --user start swayosd.service"
-        "systemctl --user start wlsunset.service"
-      ];
+}: let
+  cfg = config.wayland.compositor;
+in
+  with lib; {
+    imports = [
+      ./ags
+      ./kitty
+      ./config
+      ./anyrun
+    ];
+    config = mkIf (cfg == "hyprland") {
+      services = let
+        systemdTarget = "hyprland-session.target";
+      in {
+        wlsunset = {inherit systemdTarget;};
+        kanshi = {inherit systemdTarget;};
+        swaync = {inherit systemdTarget;};
+      };
+      wayland = {
+        launcher.anyrun.enable = true;
+        terminal.kitty.enable = true;
+        windowManager.hyprland = {
+          package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+          systemd = {
+            enable = true;
+            extraCommands = [
+              "systemctl --user start easyeffects.service"
+              "systemctl --user start app-org.keepassxc.KeePassXC@autostart.service"
+              "systemctl --user start hypridle.service"
+              "systemctl --user start swayosd.service"
+              "systemctl --user start wlsunset.service"
+            ];
+          };
+          settings = {source = ["extra.conf"];};
+        };
+      };
     };
-    settings = {source = ["extra.conf"];};
-  };
-}
+  }

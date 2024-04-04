@@ -71,7 +71,20 @@
     nixosConfigurations = {
       AspireLaptop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = with modules; [./systems/AspireLaptop system specialisations];
+        modules = with modules; [
+          ./systems/AspireLaptop
+          system
+          specialisations
+          {wayland.hyprland.enable = true;}
+        ];
+      };
+      AspireDesktop = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = with modules; [
+          ./systems/Desktop
+          system
+          {wayland.sway.enable = true;}
+        ];
       };
     };
 
@@ -79,7 +92,26 @@
       "daru@AspireLaptop" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
-        modules = with modules; [./home/daru home];
+        modules = with modules; [
+          ./home/daru
+          home
+          {
+            wayland.compositor = "hyprland";
+            home.stateVersion = "24.05";
+          }
+        ];
+      };
+      "daru@AspireDesktop" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = with modules; [
+          ./home/daru
+          home
+          {
+            wayland.compositor = "sway";
+            home.stateVersion = "23.11";
+          }
+        ];
       };
     };
   };

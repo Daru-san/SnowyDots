@@ -1,4 +1,4 @@
 {
   system.nixos.tags = ["hyprland"];
-  programs.hyprland.enable = true;
+  wayland.hyprland.enable = true;
 }

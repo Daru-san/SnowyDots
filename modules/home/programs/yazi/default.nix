@@ -1,5 +1,5 @@
-{pkgs, ...}: let
-  theme = with pkgs;
+{fetchFromGitHub, ...}: let
+  theme =
     fetchFromGitHub {
       owner = "catppuccin";
       repo = "yazi";
@@ -11,27 +11,24 @@ in {
   imports = [./lua.nix];
   xdg.configFile = {
     "yazi/theme.toml".source = theme;
-    "yazi/plugins/exifaudio.yazi".source = with pkgs;
-      fetchFromGitHub {
-        owner = "Sonico98";
-        repo = "exifaudio.yazi";
-        rev = "94329ead8b3a6d3faa2d4975930a3d0378980c7a";
-        hash = "sha256-jz6fVtcLHw9lsxFWECbuxE7tEBttE08Fl4oJSTifaEc=";
-      };
-    "yazi/plugins/glow.yazi".source = with pkgs;
-      fetchFromGitHub {
-        owner = "Reledia";
-        repo = "glow.yazi";
-        rev = "54b34c2b337ab0933130a06f61038398efa9ce65";
-        hash = "sha256-YTe76i5pdw0GhzWGBU41FDAKy3PJR7aPQgn+dbXHPNg=";
-      };
-    "yazi/plugins/mime.yazi".source = with pkgs;
-      fetchFromGitHub {
-        owner = "DreamMaoMao";
-        repo = "mime.yazi";
-        rev = "0ba4bb22e452c287daaf67fe87e218dc12205dba";
-        hash = "sha256-K+JXBfJPPl/scLeMCq4+OiyGjYKM7bJgdZf8q8O+2zk=";
-      };
+    "yazi/plugins/exifaudio.yazi".source = fetchFromGitHub {
+      owner = "Sonico98";
+      repo = "exifaudio.yazi";
+      rev = "94329ead8b3a6d3faa2d4975930a3d0378980c7a";
+      hash = "sha256-jz6fVtcLHw9lsxFWECbuxE7tEBttE08Fl4oJSTifaEc=";
+    };
+    "yazi/plugins/glow.yazi".source = fetchFromGitHub {
+      owner = "Reledia";
+      repo = "glow.yazi";
+      rev = "54b34c2b337ab0933130a06f61038398efa9ce65";
+      hash = "sha256-YTe76i5pdw0GhzWGBU41FDAKy3PJR7aPQgn+dbXHPNg=";
+    };
+    "yazi/plugins/mime.yazi".source = fetchFromGitHub {
+      owner = "DreamMaoMao";
+      repo = "mime.yazi";
+      rev = "0ba4bb22e452c287daaf67fe87e218dc12205dba";
+      hash = "sha256-K+JXBfJPPl/scLeMCq4+OiyGjYKM7bJgdZf8q8O+2zk=";
+    };
   };
   programs.yazi = {
     enable = true;
