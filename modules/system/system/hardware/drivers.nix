@@ -4,7 +4,6 @@
     extraPackages = with pkgs; [
       intel-media-driver
       vaapiIntel
-      intel-compute-runtime
     ];
     driSupport = true;
     driSupport32Bit = true;

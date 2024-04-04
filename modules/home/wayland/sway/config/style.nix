@@ -19,7 +19,7 @@
         border = 0;
       };
       bars = [{command = "${config.programs.waybar.package}/bin/waybar";}];
-      output = {HDMI-A-1 = {bg = config.wallpaperImage;};};
+      output."*".bg = config.wallpaperImage;
     };
 
     extraConfig = ''

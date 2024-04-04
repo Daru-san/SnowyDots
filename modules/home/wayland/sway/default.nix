@@ -19,7 +19,7 @@ in
       in {
         wlsunset = {inherit systemdTarget;};
         kanshi = {inherit systemdTarget;};
-        swaync = {inherit systemdTarget;};
+        swaync.systemd.target = systemdTarget;
       };
       wayland = {
         launcher.fuzzel.enable = true;

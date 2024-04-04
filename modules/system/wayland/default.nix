@@ -13,20 +13,20 @@ in
         hyprland.enable = mkEnableOption "Enable hyprland";
         compositor = mkOption {
           type = with types; nullOr str;
-          default = "";
+          default = null;
         };
       };
     };
     config = mkMerge [
       (mkIf cfg.sway.enable {
         programs.sway.enable = true;
-        wayland.compositor = "sway";
+        wayland.compositor = mkForce "sway";
       })
       (mkIf cfg.hyprland.enable {
         programs.hyprland.enable = true;
-        wayland.compositor = "hyprland";
+        wayland.compositor = mkForce "hyprland";
       })
-      {
+      (mkIf cfg.compositor {
         programs = {
           dconf.enable = true;
           file-roller.enable = true;
@@ -59,6 +59,6 @@ in
             TimeoutStopSec = 10;
           };
         };
-      }
+      })
     ];
   }
