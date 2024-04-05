@@ -31,7 +31,7 @@ in {
 
     # gtk cursor theme
     cursorTheme = {
-      name = "Bibata-Modern-Classic";
+      name = "Bibata-Modern-Ice";
       package = pkgs.bibata-cursors;
     };
 
@@ -49,5 +49,5 @@ in {
   home.sessionVariables = {GTK_THEME = "adw-gtk3-dark";};
 
   # Set cursor themes
-  home.file.".icons/default".source = "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Classic";
+  home.file.".icons/default".source = "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Ice";
 }
