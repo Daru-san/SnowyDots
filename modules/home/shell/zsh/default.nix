@@ -1,13 +1,20 @@
 {config, ...}: {
-  # Enable and configure zsh
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-
-    # Auto cd into directories
+    autosuggestion.enable = true;
     autocd = true;
+    dotDir = ".config/zsh";
 
-    # Abbreviations
+    historySubstringSearch.enable = true;
+    history = {
+      size = 10000;
+      path = "${config.xdg.dataHome}/zsh/history";
+      ignoreSpace = true;
+      ignoreAllDups = true;
+      expireDuplicatesFirst = true;
+    };
+
     zsh-abbr = {
       enable = true;
       abbreviations = {
@@ -30,7 +37,7 @@
         hyprld = "hyprctl reload";
         rf = "rm -rf";
         tp = "trashy put";
-        tls = "trashy list";
+        tls = "trashy list | bat";
         trs = "trashy-restore";
         tra = "trashy restore --all";
         te = "trashy-empty";
@@ -44,56 +51,31 @@
         npg = "nix-prefetch-git";
         npgh = "nix-prefetch-github";
         npu = "nix-prefetch-url";
-        zc = "z ~ && clear";
+        zc = "cd ~ && clear";
         bs = "bash";
-        flakelockupdate = "nix flake update --commit-lock-file";
-        flakeupdate = "nix flake update";
+        nflkdl = "nix flake update --commit-lock-file";
+        nflkd = "nix flake update";
       };
     };
 
-    # Put zsh configs in .config/zsh
-    dotDir = ".config/zsh";
-
-    # History file
-    history = {
-      size = 10000;
-      path = "${config.xdg.dataHome}/zsh/history";
-      ignoreSpace = true;
-      ignoreAllDups = true;
-      expireDuplicatesFirst = true;
-    };
-
-    # Enable autosuggestions
-    autosuggestion.enable = true;
-
-    # History substring searching
-    historySubstringSearch.enable = true;
-
-    # Plugins managed by antidote
     antidote = {
       enable = true;
       useFriendlyNames = true;
-
-      # Custom plugins
       plugins =
         [
-          # Plugins fetched from github
           "jimhester/per-directory-history"
           "chisui/zsh-nix-shell"
           "hlissner/zsh-autopair"
           "mollifier/cd-gitroot"
           "Atlas34/fzf-plugin"
-          "jeffreytse/zsh-vi-mode"
           "z-shell/F-Sy-H"
           "romkatv/zsh-bench kind:path"
         ]
         ++ (let
-          # Plugins from the oh-my-zsh repo
           o = regex: "ohmyzsh/ohmyzsh path:plugins/${regex}";
-        in [(o "sudo") (o "extract") (o "cp") (o "adb kind:fpath")]);
+        in [(o "sudo") (o "extract") (o "cp") (o "adb kind:fpath") (o "vi-mode")]);
     };
 
-    # Configuration and custom modules from Prezto
     prezto = {
       enable = true;
       caseSensitive = true;
@@ -106,9 +88,7 @@
         "git"
         "utility"
       ];
-      extraFunctions = [
-        "zcalc"
-      ];
+      extraFunctions = ["zcalc"];
     };
   };
 }
