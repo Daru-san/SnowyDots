@@ -24,6 +24,7 @@
         overskride
         pavucontrol
         iwgtk
+        hmcl
 
         # CLI
         tree
