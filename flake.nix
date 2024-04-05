@@ -28,8 +28,12 @@
     hyprland.url = "github:hyprwm/Hyprland/v0.37.1";
     hyprlock.url = "github:hyprwm/hyprlock";
     hypridle.url = "github:hyprwm/hypridle";
+    hyprfocus = {
+      url = "github:pyt0xic/hyprfocus";
+      inputs.hyprland.follows = "hyprland";
+    };
     hycov = {
-      url = "github:Ayuei/hycov";
+      url = "github:nlintn/hycov";
       inputs.hyprland.follows = "hyprland";
     };
 
@@ -55,6 +59,7 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-stable,
     home-manager,
     ...
   } @ inputs: let
@@ -78,11 +83,11 @@
           {wayland.hyprland.enable = true;}
         ];
       };
-      AspireDesktop = nixpkgs.lib.nixosSystem {
+      AspireDesktop = nixpkgs-stable.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = with modules; [
+        modules = [
           ./systems/Desktop
-          system
+          modules.system
           {wayland.sway.enable = true;}
         ];
       };
@@ -92,9 +97,9 @@
       "daru@AspireLaptop" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
-        modules = with modules; [
+        modules = [
           ./home/daru
-          home
+          modules.home
           {
             wayland.compositor = "hyprland";
             home.stateVersion = "24.05";
@@ -102,11 +107,11 @@
         ];
       };
       "daru@AspireDesktop" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        pkgs = nixpkgs-stable.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
-        modules = with modules; [
+        modules = [
           ./home/daru
-          home
+          modules.home
           {
             wayland.compositor = "sway";
             home.stateVersion = "23.11";

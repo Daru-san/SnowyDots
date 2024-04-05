@@ -33,7 +33,7 @@ in
         tab_bar_edge = "top";
         tab_bar_style = "separator";
         tab_bar_min_tabs = 1;
-        tab_separator = ''""'';
+        tab_separator = ''" "'';
         tab_activity_symbol = ''""'';
         active_tab_font_style = "bold";
         inactive_tab_font_style = "italics";
@@ -81,13 +81,6 @@ in
         "${c}+${a}+plus" = "set_background_opacity +0.1";
       };
     };
-
-    #Script for scrollback pager
-    home.packages = with pkgs; [
-      (writeShellScriptBin "kitty-scroll" ''
-        nvim --noplugin -c "set signcolumn=no showtabline=0" -c "silent! write! /tmp/kitty_scrollback_buffer | te cat /tmp/kitty_scrollback_buffer - "
-      '')
-    ];
 
     #Autostart session files
     home.file.".config/kitty/git.conf".text = ''

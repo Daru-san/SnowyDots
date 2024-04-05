@@ -7,7 +7,6 @@
       "F6" = [{class = "mpv";}];
       "F7" = [{class = "FreeTube";}];
       "F8" = [{class = "Spotify";}];
-      # "F11" = [{class = "Waypaper"}]
     };
 
     # Floating windows

@@ -1,7 +1,8 @@
-{lib, ...}: let
+{lib, ...}:
+with lib; let
   workspaces =
-    (map toString (lib.range 0 9))
-    ++ (map (n: "F${toString n}") (lib.range 1 12));
+    (map toString (range 0 9))
+    ++ (map (n: "F${toString n}") (range 1 12));
   directions = rec {
     left = "l";
     right = "r";
@@ -15,13 +16,11 @@
 in {
   wayland.windowManager.hyprland.settings = {
     bindm = [
-      #Mouse bindings
       "SUPER,mouse:272,movewindow"
       "SUPER,mouse:273,resizewindow"
     ];
     bind =
       [
-        #Changing split ratio
         "SUPER,minus,splitratio,-0.25"
         "SUPERSHIFT,minus,splitratio,-0.3333333"
 
@@ -34,9 +33,7 @@ in {
         "SUPERSHIFT,apostrophe,changegroupactive,b"
 
         "SUPER,u,togglespecialworkspace,stash"
-        # "SUPERSHIFT,u,exec,pypr toggle_special stash"
 
-        #Super+tab to move to next workspace and back
         "SUPER,TAB,workspace, m+1"
         "SUPERSHIFT,TAB,workspace, m-1"
 
@@ -55,27 +52,27 @@ in {
       (map (n: "SUPERSHIFT,${n},movetoworkspacesilent,name:${n}") workspaces)
       ++
       # Move focus
-      (lib.mapAttrsToList
+      (mapAttrsToList
         (key: direction: "SUPER,${key},movefocus,${direction}")
         directions)
       ++
       # Swap windows
-      (lib.mapAttrsToList
+      (mapAttrsToList
         (key: direction: "SUPERSHIFT,${key},swapwindow,${direction}")
         directions)
       ++
       # Move windows
-      (lib.mapAttrsToList
+      (mapAttrsToList
         (key: direction: "SUPERCONTROL,${key},movewindoworgroup,${direction}")
         directions)
       ++
       # Move monitor focus
-      (lib.mapAttrsToList
+      (mapAttrsToList
         (key: direction: "SUPERALT,${key},focusmonitor,${direction}")
         directions)
       ++
       # Move workspace to other monitor
-      (lib.mapAttrsToList (key: direction: "SUPERALTSHIFT,${key},movecurrentworkspacetomonitor,${direction}")
+      (mapAttrsToList (key: direction: "SUPERALTSHIFT,${key},movecurrentworkspacetomonitor,${direction}")
         directions);
   };
 }
