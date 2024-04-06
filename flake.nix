@@ -13,6 +13,10 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    home-manager-stable = {
+      url = "github:nix-community/home-manager/nixos-23.11";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
 
     # Custom stuff
     nix-colors.url = "github:Misterio77/nix-colors";
@@ -25,7 +29,7 @@
     snowpkgs.url = "sourcehut:~darumaka/Snowpkgs";
 
     # Hyprland stuff
-    hyprland.url = "github:hyprwm/Hyprland/v0.37.1";
+    hyprland.url = "github:hyprwm/Hyprland/v0.38.0";
     hyprlock.url = "github:hyprwm/hyprlock";
     hypridle.url = "github:hyprwm/hypridle";
     hyprfocus = {
@@ -61,6 +65,7 @@
     nixpkgs,
     nixpkgs-stable,
     home-manager,
+    home-manager-stable,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -106,7 +111,7 @@
           }
         ];
       };
-      "daru@AspireDesktop" = home-manager.lib.homeManagerConfiguration {
+      "daru@AspireDesktop" = home-manager-stable.lib.homeManagerConfiguration {
         pkgs = nixpkgs-stable.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [

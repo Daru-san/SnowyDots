@@ -3,7 +3,7 @@
   inputs,
   config,
   lib,
-  # sysConfig ? (import <nixpkgs/nixos> {}).config,
+  sysConfig ? (import inputs.nixpkgs {}).config,
   ...
 }: let
   cfg = config.wayland.launcher.anyrun;
@@ -35,16 +35,16 @@ in
 
       extraConfigFiles = {
         "nixos-options.ron".text = let
-          # nixos-options =
-          # sysConfig.system.build.manual.optionsJSON
-          # + "/share/doc/nixos/options.json";
+          nixos-options =
+            sysConfig.system.build.manual.optionsJSON
+            + "/share/doc/nixos/options.json";
           hm-options =
             inputs.home-manager.packages.${pkgs.system}.docs-json
             + "/share/doc/home-manager/options.json";
 
           # merge your options
           options = builtins.toJSON {
-            # ":nix" = [nixos-options];
+            ":nix" = [nixos-options];
             ":hm" = [hm-options];
           };
         in ''

@@ -25,15 +25,28 @@ in
           thermald.enable = true;
         };
       }
-      (
-        mkIf cfg.desktop {
-          zramSwap = {
+      (mkIf cfg.desktop {
+        zramSwap = {
+          enable = true;
+          memoryPercent = 150;
+        };
+        hardware = {
+          enableRedistributableFirmware = true;
+          fancontrol = {
             enable = true;
-            memoryPercent = 150;
+            config = {
+            };
           };
-        }
-      )
+        };
+        boot = {
+          hardwareScan = false;
+          kernel.sysctl."vm.swappiness" = "0.3";
+          extraModulePackages = with config.boot.kernelPackages; [cpupower turbostat];
+          kernelModules = ["cpupower" "turbostat"];
+        };
+      })
       (mkIf cfg.laptop {
+        boot.kernel.sysctl."vm.swappiness" = "0.1";
         zramSwap = {
           enable = true;
           memoryPercent = 200;

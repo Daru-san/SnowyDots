@@ -83,8 +83,8 @@
     laptop = true;
     ssdTweaks = true;
     networking = {
-      wifi.enable = true;
-      bluetooth.enable = true;
+      wifi = true;
+      bluetooth = true;
     };
   };
   time.timeZone = "Africa/Johannesburg";

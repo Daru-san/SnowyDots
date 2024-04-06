@@ -70,10 +70,13 @@
     ++ (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild]);
 
   os = {
-    networking.wifi.enale = true;
-    dekstop.enable = true;
+    networking.wifi = true;
+    dekstop = true;
   };
-  wayland.sway.enable = true;
+  wayland = {
+    enable = true;
+    sway.enable = true;
+  };
 
   time.timeZone = "Africa/Johannesburg";
   i18n.defaultLocale = "en_ZA.UTF-8";

@@ -1,8 +1,15 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   boot = {
     consoleLogLevel = 0;
     kernelParams = ["quiet"];
-    kernelPackages = pkgs.linuxPackages_cachyos;
+    kernelPackages =
+      if (config.system.stateVersion == "24.05")
+      then pkgs.linuxPackages_cachyos
+      else pkgs.linuxPackages_zen;
     loader.efi.canTouchEfiVariables = true;
     initrd.verbose = false;
     loader.grub = {

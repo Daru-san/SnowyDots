@@ -20,6 +20,7 @@ in {
   home.packages = [lockscreen];
   services.hypridle = {
     enable = true;
+    package = mkIf (home.stateVersion != "24.05") pkgs.hypridle;
     listeners = [
       {
         timeout = 1200;

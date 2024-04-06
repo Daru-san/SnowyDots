@@ -5,7 +5,10 @@
 }: {
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox_nightly;
+    package =
+      if (config.home.stateVersion == "24.05")
+      then pkgs.firefox_nightly
+      else pkgs.firefox;
 
     profiles.${config.home.username} = {
       isDefault = true;
@@ -113,7 +116,15 @@
           "Home Manager"
         ];
 
-        engines = {
+        engines = let
+          disabled.metaData.hidden = true;
+        in {
+          "Google" = {inherit (disabled) metaData;};
+          "DuckDuckGo" = {inherit (disabled) metaData;};
+          "Bing" = {inherit (disabled) metaData;};
+          "Amazon.com" = {inherit (disabled) metaData;};
+          "Wikipedia (en)" = {inherit (disabled) metaData;};
+
           "Brave Search" = {
             urls = [{template = "https://search.brave.com/search?q={searchTerms}";}];
             iconUpdateURL = "https://brave.com/static-assets/images/brave-logo-sans-text.svg";
@@ -127,12 +138,6 @@
             updateInterval = 24 * 60 * 60 * 1000;
             definedAliases = ["@sp" "@s" "@start"];
           };
-
-          "Google" = {metaData = {hidden = true;};};
-          "DuckDuckGo" = {metaData = {hidden = true;};};
-          "Bing" = {metaData = {hidden = true;};};
-          "Amazon.com" = {metaData = {hidden = true;};};
-          "Wikipedia (en)" = {metaData = {hidden = true;};};
 
           "Reddit" = {
             urls = [{template = "https://www.reddit.com/search/?q={searchTerms}";}];

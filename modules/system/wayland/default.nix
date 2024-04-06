@@ -9,6 +9,7 @@ in
   with lib; {
     options = {
       wayland = {
+        enable = mkEnableOption "Enable wayland compositors";
         sway.enable = mkEnableOption "Enable sway";
         hyprland.enable = mkEnableOption "Enable hyprland";
         compositor = mkOption {
@@ -17,16 +18,19 @@ in
         };
       };
     };
-    config = mkMerge [
+    config = mkIf cfg.enable mkMerge [
       (mkIf cfg.sway.enable {
-        programs.sway.enable = true;
+        programs.sway = {
+          enable = true;
+          package = pkgs.swayfx;
+        };
         wayland.compositor = mkForce "sway";
       })
       (mkIf cfg.hyprland.enable {
         programs.hyprland.enable = true;
-        wayland.compositor = mkForce "hyprland";
+        wayland.compositor = mkForce "Hyprland";
       })
-      (mkIf cfg.compositor {
+      {
         programs = {
           dconf.enable = true;
           file-roller.enable = true;
@@ -59,6 +63,6 @@ in
             TimeoutStopSec = 10;
           };
         };
-      })
+      }
     ];
   }
