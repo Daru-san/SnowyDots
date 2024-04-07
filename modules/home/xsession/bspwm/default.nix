@@ -1,11 +1,13 @@
 {
   pkgs,
   lib,
+  config,
   ...
 }:
 with lib; let
   cfg = config.xsession;
 in {
+  home.packages = with pkgs; [dmenu xautolock];
   xsession.windowManager.bspwm = mkIf cfg.enable {
     enable = true;
     rules = import ./rules.nix;

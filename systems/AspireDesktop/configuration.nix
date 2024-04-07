@@ -73,7 +73,7 @@
     system.desktop = true;
   };
   wayland = {
-    enable = true;
+    enable = false;
     sway.enable = true;
   };
 
