@@ -13,7 +13,7 @@ in {
     rules = import ./rules.nix;
     settings = import ./settings.nix;
     monitors = {
-      HDMI-0 = [
+      HDMI-1 = [
         "web"
         "docs"
         "files"
@@ -28,9 +28,9 @@ in {
     };
     alwaysResetDesktops = true;
     startupPrograms = [
-      "${pkgs.picom}/bin/picom &"
-      "pgrep -x sxhkd > /dev/null || sxhkd &"
-      "pgrep -x polybar > /dev/null || polybar &"
+      "${pkgs.picom}/bin/picom"
+      "pgrep -x sxhkd > /dev/null || sxhkd"
+      "pgrep -x polybar > /dev/null || polybar"
     ];
   };
 }

@@ -26,7 +26,6 @@
       blur false
       blur_passes 4
       blur_radius 4
-      blur_ignore_transparent enable
 
       corner_radius 7
 

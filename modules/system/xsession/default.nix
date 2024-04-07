@@ -1,12 +1,24 @@
 {
   pkgs,
   lib,
+  config,
   ...
 }:
 with lib; {
+  # Enable the desktop environment.
   services.xserver = {
-    windowManager.bspwm.enable = true;
     enable = true;
+    windowManager.bspwm.enable = true;
+    displayManager = {
+      defaultSession = "none+bspwm";
+      lightdm = {
+        enable = true;
+        greeters.slick.enable = true;
+      };
+    };
+    # Configure keymap in X11
+    layout = "us";
+    xkbVariant = "euro";
   };
   programs = {
     dconf.enable = true;
