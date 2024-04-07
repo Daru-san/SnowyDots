@@ -1,6 +1,7 @@
 {
   imports = [
     ./wayland
+    ./xsession
     ./shell
     ./services
     ./xdg
