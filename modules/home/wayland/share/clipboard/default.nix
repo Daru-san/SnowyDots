@@ -1,4 +1,4 @@
 {pkgs, ...}: {
   services.copyq = {enable = false;};
-  home.packages = [pkgs.wl-clipboard-rs];
+  home.packages = [pkgs.unstable.wl-clipboard-rs];
 }

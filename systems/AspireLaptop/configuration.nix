@@ -80,12 +80,13 @@
     ++ (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild]);
 
   os = {
-    laptop = true;
-    ssdTweaks = true;
+    system.laptop = true;
+    system.ssdTweaks = true;
     networking = {
       wifi = true;
       bluetooth = true;
     };
+    boot.enableEfiGrub = true;
   };
   time.timeZone = "Africa/Johannesburg";
   i18n.defaultLocale = "en_ZA.UTF-8";

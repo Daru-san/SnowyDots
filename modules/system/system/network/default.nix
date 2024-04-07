@@ -8,24 +8,30 @@ in
   with lib; {
     options = {
       os.networking = {
-        wifi = mkEnableOption "Enable wifi";
-        bluetooth = mkEnableOption "Enable bluetooth";
+        wifi = {
+          enable = mkEnableOption "Enable wifi";
+          iwd.enable = mkEnableOption "Enable iwd";
+        };
+        bluetooth.enable = mkEnableOption "Enable bluetooth";
       };
     };
     config = mkMerge [
-      (mkIf cfg.wifi {
+      (mkIf cfg.wifi.enable {
         networking = {
           nameservers = ["1.1.1.1" "1.0.0.1"];
           dhcpcd.extraConfig = "nohook resolv.conf";
-          networkmanager = {
-            enable = true;
-            wifi.backend = "iwd";
-            dns = "none";
-            extraConfig = ''
-              [device]
-              wifi.iwd.autoconnect=false
-            '';
-          };
+          networkmanager = mkMerge [
+            {enable = true;}
+            (mkIf cfg.wifi.iwd.enable {
+              enable = true;
+              wifi.backend = "iwd";
+              dns = "none";
+              extraConfig = ''
+                [device]
+                wifi.iwd.autoconnect=false
+              '';
+            })
+          ];
 
           firewall = {
             enable = true;
@@ -45,7 +51,7 @@ in
           };
         };
       })
-      (mkIf cfg.bluetooth {
+      (mkIf cfg.bluetooth.enable {
         services.blueman.enable = true;
         hardware.bluetooth = {
           enable = true;

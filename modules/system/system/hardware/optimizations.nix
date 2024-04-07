@@ -11,35 +11,35 @@ in
         laptop = mkEnableOption "Enable laptop based tweaks";
         desktop = mkEnableOption "Enable desktop tweaks";
         ssdTweaks = mkEnableOption "Enable ssd tweaks";
+        advanced = mkEnableOption "Enable advanced tweaks";
       };
     };
     config = mkMerge [
-      {
+      {services.earlyoom.enable = true;}
+      (mkIf cfg.advanced {
         chaotic.scx = {
           enable = true;
           scheduler = "scx_simple";
         };
         services = {
-          earlyoom.enable = true;
           throttled.enable = true;
           thermald.enable = true;
         };
-      }
+      })
       (mkIf cfg.desktop {
         zramSwap = {
           enable = true;
           memoryPercent = 150;
         };
-        hardware = {
-          enableRedistributableFirmware = true;
-          fancontrol = {
-            enable = true;
-            config = {
-            };
-          };
-        };
+        # hardware = {
+        #fancontrol = {
+        #  enable = true;
+        #  config = {
+
+        #  };
+        # };
+        #};
         boot = {
-          hardwareScan = false;
           kernel.sysctl."vm.swappiness" = "0.3";
           extraModulePackages = with config.boot.kernelPackages; [cpupower turbostat];
           kernelModules = ["cpupower" "turbostat"];
@@ -51,7 +51,7 @@ in
           enable = true;
           memoryPercent = 200;
         };
-        auto-cpufreq = {
+        services.auto-cpufreq = {
           enable = true;
           settings = {
             charger = {
@@ -65,11 +65,11 @@ in
           };
         };
       })
-      (mkIF cfg.ssdTweaks {
-        udev.extraRules = ''
+      (mkIf cfg.ssdTweaks {
+        services.udev.extraRules = ''
           ACTION=="add|change", KERNEL=="[sv]d[a-z]", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="none"
         '';
-        fstrim = {enable = true;};
+        services.fstrim = {enable = true;};
       })
     ];
   }

@@ -24,7 +24,6 @@
     gnome-disks = {enable = true;};
     kdeconnect = {
       enable = true;
-      package = lib.mkDefault pkgs.kdePackages.kdeconnect-kde;
     };
     yazi = {
       enable = false;
@@ -70,8 +69,8 @@
     ++ (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild]);
 
   os = {
-    networking.wifi = true;
-    dekstop = true;
+    networking.wifi.enable = true;
+    system.desktop = true;
   };
   wayland = {
     enable = true;

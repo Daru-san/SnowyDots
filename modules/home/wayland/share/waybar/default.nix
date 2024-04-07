@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   pkgs,
   lib,
   ...
@@ -7,17 +8,7 @@
   programs.waybar = {
     enable = true;
 
-    package = pkgs.waybar.override {
-      wireplumber = pkgs.wireplumber.overrideAttrs rec {
-        version = "0.4.17";
-        src = pkgs.fetchFromGitHub {
-          owner = "pipewire";
-          repo = "wireplumber";
-          rev = version;
-          sha256 = "sha256-vhpQT67+849WV1SFthQdUeFnYe/okudTQJoL3y+wXwI=";
-        };
-      };
-    };
+    package = pkgs.unstable.waybar;
 
     style = builtins.concatStringsSep "\n" [
       config.colorSchemeCss
@@ -42,10 +33,10 @@
           "pulseaudio"
           "pulseaudio/slider"
           "network"
-          "bluetooth"
-          "battery"
-          # "cpu"
-          # "memory"
+          #"bluetooth"
+          #"battery"
+          "cpu"
+          "memory"
           "custom/notification"
         ];
 
@@ -138,7 +129,7 @@
             car = "";
             default = ["" "" ""];
           };
-          on-click = "${pkgs.mixxc}/bin/mixxc --anchor right --anchor bottom --margin 20 --margin 30";
+          on-click = "${inputs.snowpkgs.packages.${pkgs.system}.mixxc}/bin/mixxc --anchor right --anchor bottom --margin 20 --margin 30";
           on-click-right = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
           tooltip = false;
         };

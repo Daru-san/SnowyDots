@@ -19,7 +19,7 @@
         border = 0;
       };
       bars = [{command = "${config.programs.waybar.package}/bin/waybar";}];
-      output."*".bg = config.wallpaperImage;
+      output."*".bg = "${config.wallpaperImage} fill";
     };
 
     extraConfig = ''
@@ -30,12 +30,11 @@
 
       corner_radius 7
 
-      shadows enable
+      shadows false
       shadow_blur_radius 70
       shadow_color #202020
 
-      default_dim_inactive 0.17
-      layer_effects "waybar" blur enable; shadows enable; corner_radius 20
+      layer_effects "waybar" corner_radius 20
     '';
   };
 }

@@ -3,6 +3,7 @@
   home = {
     username = "daru";
     homeDirectory = "/home/daru";
+    enableNixpkgsReleaseCheck = false;
   };
 
   # Enable home-manager

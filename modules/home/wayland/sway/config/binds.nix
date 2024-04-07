@@ -20,8 +20,8 @@
       file-manager = getExe pkgs.gnome.nautilus;
       shotman = getExe pkgs.shotman;
       editor = getExe config.programs.snowvim.package;
-      hdrop = getExe pkgs.hdrop;
       gtklock = getExe pkgs.gtklock;
+      hdrop = getExe pkgs.unstable.hdrop;
       copyq = getExe config.services.copyq.package;
       wlogout = getExe config.programs.wlogout.package;
       easyeffects = getExe config.services.easyeffects.package;
@@ -44,7 +44,7 @@
       "${mod}+f" = "fullscreen";
 
       #Lock screen
-      "${mod}+l" = "exec ${gtklock} -Ff";
+      "${mod}+l" = "exec ${gtklock}";
 
       #Clipboard menu
       "${mod}+shift+v" = "exec ${copyq} menu";

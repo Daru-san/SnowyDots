@@ -6,7 +6,7 @@
 }:
 with lib; let
   cfg = config.services.kdeconnect-qt6;
-  package = pkgs.kdePackages.kdeconnect-kde;
+  package = pkgs.unstable.kdePackages.kdeconnect-kde;
 in {
   meta.maintainers = [maintainers.adisbladis];
 

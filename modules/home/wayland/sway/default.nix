@@ -26,6 +26,7 @@ in
         lockscreen.gtklock.enable = true;
         terminal.alacritty.enable = true;
         windowManager.sway = {
+          enable = true;
           package = pkgs.swayfx;
           systemd = {enable = true;};
           wrapperFeatures = {gtk = true;};

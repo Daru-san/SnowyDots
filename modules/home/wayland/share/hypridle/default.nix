@@ -6,32 +6,31 @@
   ...
 }:
 with lib; let
-  cfg = config.wayland.compositor;
-  lockscreen = pkgs.writeShellScriptBin "lock" ''
-    ${mkIf (cfg == "hyprland") (getExe config.programs.hyprlock.package)}
-    ${mkIf (cfg == "sway") (getExe pkgs.gtklock)}
-  '';
+  cfg = config.wayland;
+  lockscreen =
+    if (cfg.compositor == "hyprland")
+    then (getExe config.programs.hyprlock.package)
+    else (getExe pkgs.gtklock);
   beforeSleepCmd = getExe (pkgs.writeShellScriptBin "sleep" ''
     ${getExe' config.services.playerctld.package "playerctl"} pause
-    ${getExe lockscreen}
+    ${lockscreen}
   '');
 in {
   imports = with inputs.hypridle.homeManagerModules; [default];
-  home.packages = [lockscreen];
-  services.hypridle = {
+  services.hypridle = mkIf cfg.enable {
     enable = true;
-    package = mkIf (home.stateVersion != "24.05") pkgs.hypridle;
+    package = pkgs.unstable.hypridle;
     listeners = [
       {
         timeout = 1200;
-        onTimeout = getExe lockscreen;
+        onTimeout = lockscreen;
       }
       {
         timeout = 1800;
         onTimeout = "systemctl suspend";
       }
     ];
-    lockCmd = getExe lockscreen;
+    lockCmd = lockscreen;
     inherit beforeSleepCmd;
   };
 }

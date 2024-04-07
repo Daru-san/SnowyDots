@@ -15,6 +15,5 @@
     {command = "systemctl --user start swayosd";}
     {command = "systemctl --user start wlsunset";}
     {command = "systemctl --user start lxpolkit";}
-    {command = "${config.nur.repos.misterio.swayfader}/bin/swayfader";}
   ];
 }

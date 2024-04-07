@@ -1,4 +1,5 @@
-{fetchFromGitHub, ...}: let
+{pkgs, ...}:
+with pkgs; let
   theme =
     fetchFromGitHub {
       owner = "catppuccin";
@@ -31,6 +32,7 @@ in {
     };
   };
   programs.yazi = {
+    package = pkgs.unstable.yazi;
     enable = true;
     enableZshIntegration = true;
     enableNushellIntegration = true;

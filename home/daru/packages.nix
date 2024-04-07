@@ -18,10 +18,8 @@
         audacity
         valent
         g4music
-        mixxc
         newsflash
         archiver
-        overskride
         pavucontrol
         iwgtk
         hmcl
@@ -35,7 +33,7 @@
         chroma
         glow
         gping
-        nvtopPackages.intel
+        unstable.nvtopPackages.intel
         sysz
         exiftool
         xdg-utils
@@ -62,6 +60,7 @@
         nix-output-monitor
         zaread
       ])
+      (with inputs.snowpkgs.packages.${pkgs.system}; [mixxc])
       (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild])
       (with pkgs.gnome; [nautilus dconf-editor gnome-clocks file-roller gnome-calculator])
       (with inputs.trashy; [defaultPackage.${pkgs.system}])

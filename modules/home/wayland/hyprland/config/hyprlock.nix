@@ -5,6 +5,7 @@
   lib,
   ...
 }: let
+  cfg = config.wayland.compositor;
   font = "NotoMono Nerd Font";
   now-playing = pkgs.writeShellScriptBin "now-playing" ''
     songstats=$(${lib.getExe pkgs.playerctl} metadata --format '󰎈 {{title}} - {{artist}} 󰎈')
@@ -12,7 +13,7 @@
   '';
 in {
   imports = [inputs.hyprlock.homeManagerModules.default];
-  programs.hyprlock = {
+  config.programs.hyprlock = lib.mkIf (cfg == "hyprland") {
     enable = true;
     general = {
       grace = 5;
@@ -20,7 +21,7 @@ in {
     };
     backgrounds = [
       {
-        path = config.wallpaperImage;
+        path = toString config.wallpaperImage;
         blur_size = 9;
         blur_passes = 2;
       }

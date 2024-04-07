@@ -35,7 +35,14 @@ window#waybar {
   background-size: 400% 400%;
   transition: all 0.3s ease-in-out;
 }
-
+#workspaces button:focused {
+  background: shade(@base0B, 0.6);
+  color: alpha(@base00, 1);
+  border-radius: 16px;
+  min-width: 37px;
+  background-size: 400% 400%;
+  transition: all 0.3s ease-in-out;
+}
 #workspaces button:hover {
   background-color: alpha(@base0F, 1);
   color: #000000;
@@ -80,12 +87,14 @@ window#waybar {
 /**/
 
 /* Custom */
-#bluetooth {
+#bluetooth,
+#cpu {
   border-radius: 0px;
   margin: 5px 0;
 }
 
-#battery {
+#battery,
+#memory {
   border-radius: 0px 24px 24px 0px;
   margin: 5px 0;
 }

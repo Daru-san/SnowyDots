@@ -20,7 +20,7 @@ in
                 "${gtklock-powerbar-module}/lib/gtklock/powerbar-module.so"
                 "${gtklock-playerctl-module}/lib/gtklock/playerctl-module.so"
               ];
-            background = config.wallpaperImage;
+            background = toString config.wallpaperImage;
           };
         };
         "gtklock/style.css".text = builtins.readFile ./style.css;

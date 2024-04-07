@@ -11,7 +11,7 @@ in
       enable = true;
       settings = {
         general.import = [
-          ./colorsScheme.toml
+          #          ./colorsScheme.toml
         ];
         window = {
           opacity = 0.7;
@@ -21,11 +21,12 @@ in
             family = "JetbrainsMono NF";
             style = "Regular";
           };
+          size = 16;
         };
         selection.save_to_clipboard = true;
         cursor = {
           style = {
-            shape = "Beam";
+            shape = "Block";
             blinking = "on";
           };
           vi_mode_style = {

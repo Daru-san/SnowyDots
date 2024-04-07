@@ -18,12 +18,13 @@ in
         };
       };
     };
-    config = mkIf cfg.enable mkMerge [
+    config = mkIf cfg.enable (mkMerge [
       (mkIf cfg.sway.enable {
         programs.sway = {
           enable = true;
-          package = pkgs.swayfx;
+          extraPackages = [];
         };
+        security.pam.services.gtklock.text = readFile "${pkgs.gtklock}/etc/pam.d/gtklock";
         wayland.compositor = mkForce "sway";
       })
       (mkIf cfg.hyprland.enable {
@@ -64,5 +65,5 @@ in
           };
         };
       }
-    ];
+    ]);
   }
