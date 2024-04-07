@@ -4,4 +4,5 @@
   split_ratio = 0.52;
   borderless_monocle = true;
   gapless_monocle = true;
+  focus_follows_pointer = true;
 }

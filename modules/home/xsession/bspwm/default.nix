@@ -7,7 +7,7 @@
 with lib; let
   cfg = config.xsession;
 in {
-  home.packages = with pkgs; [dmenu xautolock];
+  home.packages = with pkgs; [dmenu xautolock polybar];
   xsession.windowManager.bspwm = mkIf cfg.enable {
     enable = true;
     rules = import ./rules.nix;
@@ -28,7 +28,9 @@ in {
     };
     alwaysResetDesktops = true;
     startupPrograms = [
-      "${pkgs.picom}/bin/picom"
+      "${pkgs.picom}/bin/picom &"
+      "pgrep -x sxhkd > /dev/null || sxhkd &"
+      "pgrep -x polybar > /dev/null || polybar &"
     ];
   };
 }

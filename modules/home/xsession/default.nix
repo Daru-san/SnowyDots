@@ -1,3 +1,3 @@
 {
-  imports = [./bspwm ./sxhkd ./redshift ./dunst ./clipboard];
+  imports = [./bspwm ./sxhkd ./redshift ./dunst ./clipboard ./polybar];
 }
