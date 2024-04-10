@@ -8,6 +8,9 @@
     config.colorSchemeCss
     (builtins.readFile ./gtk.css)
   ];
+  extraConfig = {
+    gtk-decoration-layout = "";
+  };
 in {
   gtk = {
     enable = true;
@@ -29,14 +32,8 @@ in {
       };
     };
 
-    # gtk cursor theme
-    cursorTheme = {
-      name = "Bibata-Modern-Ice";
-      package = pkgs.bibata-cursors;
-    };
-
-    gtk3 = {inherit extraCss;};
-    gtk4 = {inherit extraCss;};
+    gtk3 = {inherit extraCss extraConfig;};
+    gtk4 = {inherit extraCss extraConfig;};
   };
   dconf.settings = {
     # Make gtk apps follow a dark theme
@@ -44,10 +41,14 @@ in {
     # Remove buttons in gtk apps
     "org/gnome/desktop/wm/preferences" = {button-layout = "appmenu";};
   };
-
-  # Set gtk theme session variable for nautilus
-  home.sessionVariables = {GTK_THEME = "adw-gtk3-dark";};
-
-  # Set cursor themes
-  home.file.".icons/default".source = "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Ice";
+  home = {
+    pointerCursor = {
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
+      size = 15;
+      gtk.enable = true;
+    };
+    sessionVariables = {GTK_THEME = "adw-gtk3-dark";};
+    file.".icons/default".source = "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Ice";
+  };
 }
