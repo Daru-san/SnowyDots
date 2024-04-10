@@ -1,43 +1,31 @@
 {
   pkgs,
   lib,
-  config,
   ...
 }:
-with lib; {
-  # Enable the desktop environment.
-  services.xserver = {
+with lib; let
+  cfg = config.services.xsession;
+in {
+  services.xserver = mkIf cfg.enable {
     enable = true;
-    windowManager.bspwm.enable = true;
+    windowManager.i3.enable = true;
     displayManager = {
-      defaultSession = "none+bspwm";
+      defaultSession = "none+i3";
       lightdm = {
         enable = true;
         greeters.slick.enable = true;
       };
     };
-    # Configure keymap in X11
     layout = "us";
-    xkbVariant = "euro";
   };
   programs = {
+    i3lock.enable = true;
     dconf.enable = true;
     file-roller.enable = true;
   };
   services.gnome = {
     gnome-keyring.enable = true;
     sushi.enable = true;
-  };
-  services.greetd = {
-    package = pkgs.greetd;
-    enable = true;
-    settings = rec {
-      initial_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -t --window-padding 1 -g 'Welcome to ${config.networking.hostName}' -c bspwm";
-        user = "daru";
-      };
-      default_session = initial_session;
-    };
   };
   systemd.user.services.lxpolkit = {
     description = "lxpolkit";

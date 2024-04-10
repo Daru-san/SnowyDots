@@ -88,7 +88,7 @@
         modules = [
           ./systems/AspireDesktop
           modules.system
-          {wayland.sway.enable = false;}
+          {services.xsession.enable = true;}
         ];
       };
     };
@@ -101,7 +101,10 @@
           ./home/daru
           modules.home
           {
-            wayland.compositor = "hyprland";
+            wayland = {
+              enable = true;
+              compositor = "hyprland";
+            };
             home.stateVersion = "24.05";
           }
         ];
@@ -114,10 +117,6 @@
           modules.home
           {
             xsession.enable = true;
-            wayland = {
-              enable = true;
-              compositor = "sway";
-            };
             home.stateVersion = "23.11";
           }
         ];
