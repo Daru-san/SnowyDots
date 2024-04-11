@@ -1,0 +1,7 @@
+{
+  imports = [
+    ./shared
+    ./wayland
+    ./xsession
+  ];
+}

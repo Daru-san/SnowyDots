@@ -10,13 +10,10 @@
       (with pkgs; [
         # GUI
         obsidian
-        krita
         freetube
         scrcpy
         keepassxc
         bridge-core
-        audacity
-        valent
         g4music
         newsflash
         archiver
