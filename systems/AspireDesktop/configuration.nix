@@ -66,7 +66,8 @@
       home-manager
       alejandra
     ]
-    ++ (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild]);
+    ++ (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild])
+    ++ (with inputs.nix-inspect.packages.${pkgs.system}; [nix-inspect]);
 
   os = {
     networking.wifi.enable = true;
