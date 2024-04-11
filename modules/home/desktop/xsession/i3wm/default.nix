@@ -5,6 +5,14 @@
   ...
 }:
 with lib; {
+  imports = [
+    ./bar.nix
+    ./binds.nix
+    ./style.nix
+    ./windows.nix
+    ./autostart.nix
+    ./workspaces.nix
+  ];
   xsession.windowManager.i3 = {
     package = pkgs.i3-rounded;
     config = {

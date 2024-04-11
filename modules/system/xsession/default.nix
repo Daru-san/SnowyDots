@@ -1,14 +1,15 @@
 {
   pkgs,
   lib,
+  config,
   ...
 }:
 with lib; let
-  cfg = config.services.xsession;
+  cfg = config.services.xserver;
 in {
   services.xserver = mkIf cfg.enable {
-    enable = true;
     windowManager.i3.enable = true;
+    desktopManager.xterm.enable = false;
     displayManager = {
       defaultSession = "none+i3";
       lightdm = {

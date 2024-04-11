@@ -20,6 +20,7 @@
         pavucontrol
         iwgtk
         hmcl
+        pcmanfm-qt
 
         # CLI
         tree

@@ -9,11 +9,18 @@ in {
   imports = [./redshift ./dunst ./i3wm];
   config = mkIf cfg.enable {
     xsession.windowManager.i3.enable = true;
-    programs.rofi.enable = true;
-    home.pointerCursor.x11.enable = true;
+    programs = {
+      rofi.enable = true;
+      alacritty.enable = true;
+    };
+    home = {
+      pointerCursor.x11.enable = true;
+      sessionVariables.CM_LAUNCHER = "rofi";
+    };
     services = {
       dunst.enable = true;
       redshift.enable = true;
+      clipmenu.enable = true;
     };
   };
 }

@@ -1,71 +1,50 @@
 {
   config,
   pkgs,
-  inputs,
   lib,
   ...
 }: {
   imports = [./workspaces.nix];
   xsession.windowManager.i3.config = {
     modifier = "Mod4";
-    bindkeysToCode = true;
     keybindings = with lib; let
-      inherit (config.wayland.windowManager.sway.config) terminal;
+      inherit (config.xsession.windowManager.i3.config) terminal menu;
       mod = config.wayland.windowManager.sway.config.modifier;
       yazi = getExe config.programs.yazi.package;
       playerctl = getExe config.services.playerctld.package;
       browser = getExe config.programs.firefox.package;
-      launcher = config.wayland.windowManager.sway.config.menu;
-      file-manager = getExe pkgs.gnome.nautilus;
+      file-manager = getExe pkgs.pcmanfm-qt;
       shotman = getExe pkgs.shotman;
       editor = getExe config.programs.snowvim.package;
-      copyq = getExe config.services.copyq.package;
+      i3lock = getExe pkgs.i3lock;
       easyeffects = getExe config.services.easyeffects.package;
+      clipmenu = getExe config.services.clipmenu.package;
     in {
       #Basic binds
-      "${mod}+space" = "exec ${launcher} -show drun";
-      "${mod}+return" = "exec ${terminal}";
+      "${mod}+space" = "exec ${menu} -show drun";
+      "${mod}+Return" = "exec ${terminal}";
       "${mod}+e" = "exec  ${file-manager}";
       "${mod}+b" = "exec  ${browser}";
-      "${mod}+x" = "exec  ${laucher} -show powermenu";
+      "${mod}+x" = "exec  ${menu} -show powermenu";
       "${mod}+r" = "exec ${terminal} -e ${yazi}";
       "${mod}+z" = "exec ${terminal} -e ${editor}";
       "${mod}+a" = "exec  ${easyeffects}";
+      "${mod}+l" = "exec ${i3lock}";
 
       #Window bings
-      "alt+q" = "kill";
+      "mod+q" = "kill";
       "${mod}+shift+e" = "exit";
       "${mod}+v" = "floating toggle";
       "${mod}+f" = "fullscreen";
 
       #Clipboard menu
-      "${mod}+shift+v" = "exec ${clipmenu} menu";
+      "${mod}+shift+v" = "exec ${clipmenu}";
 
       #Suspend
       "${mod}+alt+F12" = "exec systemctl suspend";
 
       ##Controls##
       ############
-
-      #Brightness controll#
-
-      # Brightness control using swayosd
-      "XF86MonBrightnessUp" = "exec,${swayosd} --brightness=raise 5";
-      "XF86MonBrightnessDown" = "exec,${swayosd} --brightness=lower 5";
-
-      ##Volume Control##
-      # Volume using swayosd
-      "XF86AudioRaiseVolume" = "exec ${swayosd} --output-volume=raise 5";
-      "XF86AudioLowerVolume" = "exec ${swayosd} --output-volume=lower 5";
-      "XF86AudioMute" = "exec ${swayosd} --output-volume=mute-toggle";
-
-      #Same but for keyboards without media keys
-      "alt+F8" = "exec ${swayosd} --output-volume=raise 5";
-      "alt+F6" = "exec ${swayosd} --output-volume=lower 5";
-      "alt+F7" = "exec ${swayosd} --output-volume=mute-toggle";
-
-      #Show when caps lock is pressed
-      "caps_lock" = "exec,${swayosd} --caps-lock";
 
       # Screenshotting
       "Print" = "exec ${shotman} --capture region";

@@ -18,12 +18,12 @@ in {
 
     # Switch to workspace
     switchworkspace = concatLines (map
-      (n: "bindsym --to-code ${mod}+${n} workspace $ws${n}")
+      (n: "bindsym ${mod}+${n} workspace $ws${n}")
       workspaces);
 
     # Move window to workspace
     moveworkspace = concatLines (map
-      (n: "bindsym --to-code ${mod}+Shift+${n} move container to workspace $ws${n}")
+      (n: "bindsym ${mod}+Shift+${n} move container to workspace $ws${n}")
       workspaces);
   in ''
     ${workspace}
