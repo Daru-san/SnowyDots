@@ -6,7 +6,7 @@
 with lib; let
   cfg = config.xsession;
 in {
-  imports = [./redshift ./dunst ./i3wm];
+  imports = [./redshift ./dunst ./i3wm ./polybar];
   config = mkIf cfg.enable {
     xsession.windowManager.i3.enable = true;
     programs = {
@@ -20,7 +20,7 @@ in {
     services = {
       dunst.enable = true;
       redshift.enable = true;
-      clipmenu.enable = true;
+      copyq.enable = true;
     };
   };
 }

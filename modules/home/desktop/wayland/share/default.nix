@@ -23,7 +23,6 @@ in {
       swaync.enable = true;
       swayosd.enable = true;
       wlsunset.enable = true;
-      copyq.enable = false;
     };
     programs = {
       wlogout.enable = true;

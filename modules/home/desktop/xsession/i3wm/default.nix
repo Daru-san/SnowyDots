@@ -6,7 +6,6 @@
 }:
 with lib; {
   imports = [
-    ./bar.nix
     ./binds.nix
     ./style.nix
     ./windows.nix

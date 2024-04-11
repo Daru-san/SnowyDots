@@ -1,6 +1,7 @@
-{
+{config, ...}: {
   xsession.windowManager.i3 = {
     config = {
+      bars = [{command = "${config.programs.polybar.package}/bin/polybar simple";}];
       fonts = {
         names = ["JetbrainsMono Nerd Font" "UbuntuMono Nerd Font"];
         style = "Semi-Bold";

@@ -14,11 +14,10 @@
       playerctl = getExe config.services.playerctld.package;
       browser = getExe config.programs.firefox.package;
       file-manager = getExe pkgs.pcmanfm-qt;
-      shotman = getExe pkgs.shotman;
+      copyq = getExe config.services.copyq.package;
       editor = getExe config.programs.snowvim.package;
       i3lock = getExe pkgs.i3lock;
       easyeffects = getExe config.services.easyeffects.package;
-      clipmenu = getExe config.services.clipmenu.package;
     in {
       #Basic binds
       "${mod}+space" = "exec ${menu} -show drun";
@@ -32,13 +31,13 @@
       "${mod}+l" = "exec ${i3lock}";
 
       #Window bings
-      "mod+q" = "kill";
+      "${mod}+q" = "kill";
       "${mod}+shift+e" = "exit";
       "${mod}+v" = "floating toggle";
       "${mod}+f" = "fullscreen";
 
       #Clipboard menu
-      "${mod}+shift+v" = "exec ${clipmenu}";
+      "${mod}+shift+v" = "exec ${copyq}";
 
       #Suspend
       "${mod}+alt+F12" = "exec systemctl suspend";
