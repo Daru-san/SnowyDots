@@ -20,35 +20,32 @@
       easyeffects = getExe config.services.easyeffects.package;
     in {
       #Basic binds
-      "${mod}+space" = "exec ${menu} -show drun";
+      "${mod}+space" = "exec ${menu} -show drun -theme ~/.config/rofi/theme.rasi";
+      "${mod}+shift+c" = "exec ${menu} -show calc -theme ~/.config/rofi/theme.rasi";
       "${mod}+Return" = "exec ${terminal}";
       "${mod}+e" = "exec  ${file-manager}";
       "${mod}+b" = "exec  ${browser}";
-      "${mod}+x" = "exec  ${menu} -show powermenu";
+      "${mod}+x" = "exec  rofi-power";
       "${mod}+r" = "exec ${terminal} -e ${yazi}";
       "${mod}+z" = "exec ${terminal} -e ${editor}";
       "${mod}+a" = "exec  ${easyeffects}";
       "${mod}+l" = "exec ${i3lock}";
+      "${mod}+p" = "exec ${menu} -show top -theme ~/.config/rofi/theme.rasi";
 
       #Window bings
-      "${mod}+q" = "kill";
+      "Mod1+q" = "kill";
       "${mod}+shift+e" = "exit";
       "${mod}+v" = "floating toggle";
       "${mod}+f" = "fullscreen";
 
       #Clipboard menu
-      "${mod}+shift+v" = "exec ${copyq}";
+      "${mod}+shift+v" = "exec ${copyq} menu";
 
       #Suspend
       "${mod}+alt+F12" = "exec systemctl suspend";
 
       ##Controls##
       ############
-
-      # Screenshotting
-      "Print" = "exec ${shotman} --capture region";
-      "shift+print" = "exec, ${shotman} --capture output";
-
       # Media control
       "XF86AudioNext" = "exec,${playerctl} next";
       "XF86AudioPrev" = "exec,${playerctl} previous";

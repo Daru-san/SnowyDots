@@ -1,7 +1,8 @@
 {config, ...}: {
   xsession.windowManager.i3 = {
+    extraConfig = ''border_radius 5'';
     config = {
-      bars = [{command = "${config.programs.polybar.package}/bin/polybar simple";}];
+      bars = [{command = "${config.services.polybar.package}/bin/polybar simple";}];
       fonts = {
         names = ["JetbrainsMono Nerd Font" "UbuntuMono Nerd Font"];
         style = "Semi-Bold";
@@ -12,8 +13,8 @@
         newWindow = "smart";
       };
       gaps = {
-        outer = 6;
-        inner = 4;
+        outer = 3;
+        inner = 2;
       };
       window = {
         titlebar = false;

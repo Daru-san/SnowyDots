@@ -13,14 +13,12 @@ in {
       rofi.enable = true;
       alacritty.enable = true;
     };
-    home = {
-      pointerCursor.x11.enable = true;
-      sessionVariables.CM_LAUNCHER = "rofi";
-    };
+    home.pointerCursor.x11.enable = true;
     services = {
       dunst.enable = true;
       redshift.enable = true;
       copyq.enable = true;
+      polybar.enable = true;
     };
   };
 }
