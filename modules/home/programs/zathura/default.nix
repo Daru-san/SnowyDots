@@ -29,7 +29,7 @@
       set completion-highlight-fg     "#${base0B}" #33b1ff
 
       # Define the color in index mode
-      set index-bg                   "#${base09}" #78a9ff
+      set index-bg                   "#${base01}" #262626
       set index-fg                   "#${base04}" #dde1e6
       set index-active-bg             "#${base0B}" #33b1ff
       set index-active-fg             "#${base04}" #dde1e6
