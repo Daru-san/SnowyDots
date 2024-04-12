@@ -26,10 +26,8 @@ in {
     };
 
     iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme.override {
-        color = "bluegrey";
-      };
+      name = "Qogir";
+      package = pkgs.qogir-icon-theme;
     };
 
     gtk3 = {inherit extraCss extraConfig;};
