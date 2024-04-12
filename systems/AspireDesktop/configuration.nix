@@ -67,11 +67,14 @@
       alejandra
     ]
     ++ (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild])
-    ++ (with inputs.nix-inspect.packages.${pkgs.system}; [nix-inspect]);
+    ++ (with inputs.nix-inspect.packages.${pkgs.system}; [default]);
 
   os = {
     networking.wifi.enable = true;
-    system.desktop = true;
+    system = {
+      desktop = true;
+      ssdTweaks = true;
+    };
   };
   wayland = {
     enable = false;
