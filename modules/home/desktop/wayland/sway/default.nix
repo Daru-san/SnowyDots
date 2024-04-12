@@ -4,7 +4,7 @@
   lib,
   ...
 }: let
-  cfg = config.wayland.compositor;
+  cfg = config.wayland;
 in
   with lib; {
     imports = [
@@ -12,7 +12,7 @@ in
       ./fuzzel
       ./gtklock
     ];
-    config = mkIf (cfg == "sway") {
+    config = mkIf cfg.enable (mkIf (cfg.compostor == "sway") {
       services = let
         systemdTarget = "sway-session.target";
       in {
@@ -34,5 +34,5 @@ in
           menu = getExe config.programs.fuzzel.package;
         };
       };
-    };
+    });
   }

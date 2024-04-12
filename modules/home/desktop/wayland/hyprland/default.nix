@@ -5,7 +5,7 @@
   inputs,
   ...
 }: let
-  cfg = config.wayland.compositor;
+  cfg = config.wayland;
 in
   with lib; {
     imports = [
@@ -13,7 +13,7 @@ in
       ./config
       ./anyrun
     ];
-    config = mkIf (cfg == "hyprland") {
+    config = mkIf cfg.enable (mkIf (cfg.compositor == "hyprland") {
       services = let
         systemdTarget = "hyprland-session.target";
       in {
@@ -41,5 +41,5 @@ in
         };
         settings = {source = ["extra.conf"];};
       };
-    };
+    });
   }
