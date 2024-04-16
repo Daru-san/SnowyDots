@@ -61,6 +61,10 @@
       glib
       nodejs_20
       unzip
+      zip
+      rar
+      p7zip
+      commonsCompress
       clang
       zig
       iw
