@@ -31,15 +31,7 @@ in
           enable = true;
           memoryPercent = 150;
         };
-        hardware = {
-          enableAllFirmware = true;
-          #fancontrol = {
-          #  enable = true;
-          #  config = {
-
-          #  };
-          # };
-        };
+        hardware.enableAllFirmware = true;
       })
       (mkIf cfg.laptop {
         zramSwap = {

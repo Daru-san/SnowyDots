@@ -5,7 +5,6 @@
   ...
 }: {
   imports = [./hardware-configuration.nix];
-  chaotic.nyx.cache.enable = true;
   users = {
     defaultUserShell = pkgs.zsh;
     mutableUsers = true;
@@ -77,7 +76,8 @@
       home-manager
       alejandra
     ]
-    ++ (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild]);
+    ++ (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild])
+    ++ (with inputs.nix-inspect.packages.${pkgs.system}; [default]);
 
   os = {
     system.laptop = true;

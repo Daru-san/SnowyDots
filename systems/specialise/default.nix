@@ -1,16 +1,11 @@
-{...}: {
+{
   specialisation = {
-    # plasma.configuration = {
-    #   imports = [./plasma.nix];
-    # };
-    plasma-ext-display.configuration = {
-      imports = [./plasma.nix ./no-laptop-display.nix];
-    };
-    hyprland-ext-display.configuration = {
+    hyprland.configuration = {
       imports = [./no-laptop-display.nix ./hyprland.nix];
     };
-    # hyprland.configuration = {
-    #   imports = [./hyprland.nix];
-    # };
+    i3wm.configuration = {
+      imports = [./no-laptop-display.nix];
+      services.xserver.enable = true;
+    };
   };
 }

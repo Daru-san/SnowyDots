@@ -1,7 +1,7 @@
-{
-  imports = [./kdeconnect-qt6.nix];
-  services.kdeconnect-qt6 = {
+{pkgs, ...}: {
+  services.kdeconnect = {
     enable = true;
     indicator = true;
+    package = pkgs.kdePackages.kdeconnect-kde;
   };
 }

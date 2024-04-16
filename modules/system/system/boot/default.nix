@@ -16,10 +16,7 @@ in {
     {
       consoleLogLevel = 0;
       kernelParams = ["quiet"];
-      kernelPackages =
-        if (config.system.stateVersion == "24.05")
-        then pkgs.linuxPackages_cachyos
-        else pkgs.unstable.linuxPackages_zen;
+      kernelPackages = pkgs.unstable.linuxPackages_zen;
       initrd.verbose = false;
       loader.grub = {
         enable = true;
@@ -27,10 +24,6 @@ in {
         default = "saved";
         useOSProber = true;
         timeoutStyle = "menu";
-        #        theme = pkgs.sleek-grub-theme.override {
-        #          withStyle = "dark";
-        #          withBanner = "Hello, Daru";
-        #        };
       };
       plymouth = rec {
         enable = true;
@@ -48,6 +41,10 @@ in {
         efi.canTouchEfiVariables = true;
         grub = {
           device = "nodev";
+          theme = pkgs.sleek-grub-theme.override {
+            withStyle = "dark";
+            withBanner = "Hello, Daru";
+          };
           efiSupport = true;
         };
       };
