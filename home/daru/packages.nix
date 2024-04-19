@@ -26,6 +26,7 @@
         tree
         tgpt
         tty-clock
+        yai
         libnotify
         speedtest-cli
         chroma

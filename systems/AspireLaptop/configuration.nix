@@ -87,8 +87,11 @@
     system.laptop = true;
     system.ssdTweaks = true;
     networking = {
-      wifi = true;
-      bluetooth = true;
+      wifi = {
+        enable = true;
+        iwd.enable = true;
+      };
+      bluetooth.enable = true;
     };
     boot.enableEfiGrub = true;
   };

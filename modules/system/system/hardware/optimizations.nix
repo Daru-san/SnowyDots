@@ -17,10 +17,6 @@ in
     config = mkMerge [
       {services.earlyoom.enable = true;}
       (mkIf cfg.advanced {
-        chaotic.scx = {
-          enable = true;
-          scheduler = "scx_simple";
-        };
         services = {
           throttled.enable = true;
           thermald.enable = true;
@@ -38,6 +34,7 @@ in
           enable = true;
           memoryPercent = 200;
         };
+        boot.kernelParams = ["video=eDP-1:d" "video=LVDS-1:d"];
         services.auto-cpufreq = {
           enable = true;
           settings = {
