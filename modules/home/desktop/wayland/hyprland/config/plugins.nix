@@ -6,10 +6,20 @@
   wayland.windowManager.hyprland = {
     plugins = [
       inputs.hyprfocus.packages.${pkgs.system}.hyprfocus
-      inputs.hyprspace.packages.${pkgs.system}.Hyprspace
+      inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
     ];
     extraConfig = ''
       plugin {
+        hyprexpo {
+          columns = 3
+          gap_size = 5
+          bg_col = rgb(111111)
+          workspace_method = center current
+          enable_gesture = true
+          gesture_distance = 300
+          gesture_positive = true
+          }
+
         hyprfocus {
           enabled = yes
           keyboard_focus_animation = flash
