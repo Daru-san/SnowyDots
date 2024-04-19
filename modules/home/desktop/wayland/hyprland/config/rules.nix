@@ -1,8 +1,11 @@
 {lib, ...}: {
   wayland.windowManager.hyprland = {
     settings = {
-      windowrulev2 = [
+      windowrulev2 = let
+        p = regex: "float,class:(pcmanfm-qt),title:(${regex})";
+      in [
         "float,class:(firefox-nightly),title:(Library)"
+        (p "Copy Files" "Move Files" "Removable medium is inserted" "Confirm to replace files" "Preferences" "Choose an Application" "Edit Bookmarks" "Connect to remote server" "File Properties")
       ];
       windowrule = lib.mkMerge [
         (let
