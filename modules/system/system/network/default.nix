@@ -55,8 +55,7 @@ in
         services.blueman.enable = true;
         hardware.bluetooth = {
           enable = true;
-          powerOnBoot = false;
-          network.general.DisableSecurity = true;
+          powerOnBoot = true;
         };
       })
     ];
