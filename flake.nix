@@ -26,15 +26,15 @@
     snowpkgs.url = "sourcehut:~darumaka/Snowpkgs";
 
     # Hyprland stuff
-    hyprland.url = "github:hyprwm/Hyprland/v0.38.1";
+    hyprland.url = "github:hyprwm/Hyprland/v0.39.1";
     hyprlock.url = "github:hyprwm/hyprlock/v0.2.0";
     hypridle.url = "github:hyprwm/hypridle/v0.1.1";
-    hyprfocus = {
-      url = "github:pyt0xic/hyprfocus";
+    hyprspace = {
+      url = "github:KZDKM/Hyprspace";
       inputs.hyprland.follows = "hyprland";
     };
-    hycov = {
-      url = "github:nlintn/hycov";
+    hyprfocus = {
+      url = "github:pyt0xic/hyprfocus";
       inputs.hyprland.follows = "hyprland";
     };
 
@@ -80,8 +80,13 @@
         modules = with modules; [
           ./systems/AspireLaptop
           system
-          specialisations
-          {wayland.hyprland.enable = true;}
+          #          specialisations
+          {
+            wayland = {
+              hyprland.enable = true;
+              enable = true;
+            };
+          }
         ];
       };
       AspireDesktop = nixpkgs-stable.lib.nixosSystem {
@@ -97,7 +102,10 @@
     homeConfigurations = {
       "daru@AspireLaptop" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
+        extraSpecialArgs = {
+          inherit inputs outputs;
+          osConfig = self.nixosConfigurations.AspireLaptop.config;
+        };
         modules = [
           ./home/daru
           modules.home

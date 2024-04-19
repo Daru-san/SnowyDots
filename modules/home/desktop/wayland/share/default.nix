@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 with lib; let
@@ -28,6 +29,6 @@ in {
       wlogout.enable = true;
       waybar.enable = true;
     };
-    home.packages = [pkgs.unstable.wl-clipboard-rs];
+    home.packages = [pkgs.wl-clipboard-rs];
   };
 }

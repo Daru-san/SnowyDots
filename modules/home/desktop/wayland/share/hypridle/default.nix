@@ -18,7 +18,7 @@ with lib; let
 in {
   imports = with inputs.hypridle.homeManagerModules; [default];
   services.hypridle = mkIf cfg.enable {
-    package = pkgs.unstable.hypridle;
+    package = pkgs.hypridle;
     listeners = [
       {
         timeout = 1200;

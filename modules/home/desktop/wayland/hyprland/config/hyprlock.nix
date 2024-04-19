@@ -22,7 +22,7 @@ in {
       {
         path = toString config.wallpaperImage;
         blur_size = 9;
-        blur_passes = 2;
+        blur_passes = 1;
       }
     ];
     input-fields = [

@@ -2,7 +2,7 @@
   pkgs,
   inputs,
   config,
-  sysConfig ? (import inputs.nixpkgs {}).config,
+  osConfig,
   ...
 }: {
   imports = [inputs.anyrun.homeManagerModules.default];
@@ -29,7 +29,7 @@
     extraConfigFiles = {
       "nixos-options.ron".text = let
         nixos-options =
-          sysConfig.system.build.manual.optionsJSON
+          osConfig.system.build.manual.optionsJSON
           + "/share/doc/nixos/options.json";
         hm-options =
           inputs.home-manager.packages.${pkgs.system}.docs-json

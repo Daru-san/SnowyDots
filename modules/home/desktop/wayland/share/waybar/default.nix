@@ -6,7 +6,7 @@
   ...
 }: {
   programs.waybar = {
-    package = pkgs.unstable.waybar;
+    package = pkgs.waybar;
 
     style = builtins.concatStringsSep "\n" [
       config.colorSchemeCss

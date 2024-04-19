@@ -5,17 +5,11 @@
 }: {
   wayland.windowManager.hyprland = {
     plugins = [
-      inputs.hycov.packages.${pkgs.system}.hycov
       inputs.hyprfocus.packages.${pkgs.system}.hyprfocus
+      inputs.hyprspace.packages.${pkgs.system}.Hyprspace
     ];
     extraConfig = ''
       plugin {
-        hycov {
-          overview_gappo = 60
-          overview_gappi = 24
-          hotarea_size = 10
-          enable_hotarea = 1
-        }
         hyprfocus {
           enabled = yes
           keyboard_focus_animation = flash

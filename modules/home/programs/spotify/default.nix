@@ -13,7 +13,7 @@ in {
   # configure spicetify :)
   programs.spicetify = {
     #Enable spicetify
-    enable = false;
+    enable = true;
 
     spotifyPackage = pkgs.spotify;
     #Spicetify theme

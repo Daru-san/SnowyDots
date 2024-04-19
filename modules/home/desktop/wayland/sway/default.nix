@@ -12,7 +12,7 @@ in
       ./fuzzel
       ./gtklock
     ];
-    config = mkIf cfg.enable (mkIf (cfg.compostor == "sway") {
+    config = mkIf cfg.enable (mkIf (cfg.compositor == "sway") {
       services = let
         systemdTarget = "sway-session.target";
       in {

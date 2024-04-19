@@ -3,7 +3,7 @@
   programs.git-cliff = {enable = true;};
   programs.git = {
     enable = true;
-    userName = "Daru-san";
+    userName = "Daru";
     userEmail = "mica.tui@proton.me";
 
     # Git highlighting
