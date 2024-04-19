@@ -43,7 +43,7 @@ in {
     pointerCursor = {
       name = "Bibata-Modern-Ice";
       package = pkgs.bibata-cursors;
-      size = 15;
+      size = 40;
       gtk.enable = true;
     };
     sessionVariables = {GTK_THEME = "adw-gtk3-dark";};

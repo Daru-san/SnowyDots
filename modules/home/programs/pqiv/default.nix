@@ -7,7 +7,7 @@
         fade = 1;
         hide-info-box = 1;
         scale-images-up = 1;
-        command-1 = "nautilus";
+        command-1 = "pcmanfm-qt";
       };
     };
   };

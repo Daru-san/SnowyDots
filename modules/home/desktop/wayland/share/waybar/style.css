@@ -27,7 +27,7 @@ window#waybar {
   transition: all 0.3s ease-in-out;
 }
 
-#workspaces button .active {
+#workspaces button.active {
   background: shade(@base0B, 0.6);
   color: alpha(@base00, 1);
   border-radius: 16px;

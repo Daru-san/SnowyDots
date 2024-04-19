@@ -5,10 +5,7 @@
 }: {
   programs.firefox = {
     enable = true;
-    package =
-      if (config.home.stateVersion == "24.05")
-      then pkgs.firefox_nightly
-      else pkgs.firefox;
+    package = pkgs.firefox_nightly;
 
     profiles.${config.home.username} = {
       isDefault = true;
@@ -35,6 +32,7 @@
         vimium-c
       ];
 
+      containersForce = true;
       containers = {
         general = {
           color = "blue";

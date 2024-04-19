@@ -5,7 +5,15 @@
         p = regex: "float,class:(pcmanfm-qt),title:(${regex})";
       in [
         "float,class:(firefox-nightly),title:(Library)"
-        (p "Copy Files" "Move Files" "Removable medium is inserted" "Confirm to replace files" "Preferences" "Choose an Application" "Edit Bookmarks" "Connect to remote server" "File Properties")
+        (p "Copy Files")
+        (p "Move Files")
+        (p "Removable medium is inserted")
+        (p "Confirm to replace files")
+        (p "Preferences")
+        (p "Choose an Application")
+        (p "Edit Bookmarks")
+        (p "Connect to remote server")
+        (p "File Properties")
       ];
       windowrule = lib.mkMerge [
         (let

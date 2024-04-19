@@ -21,6 +21,7 @@
         iwgtk
         hmcl
         pcmanfm-qt
+        blanket
 
         # CLI
         tree
@@ -61,7 +62,7 @@
       ])
       (with inputs.snowpkgs.packages.${pkgs.system}; [mixxc])
       (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild])
-      (with pkgs.gnome; [nautilus dconf-editor gnome-clocks file-roller gnome-calculator])
+      (with pkgs.gnome; [dconf-editor gnome-clocks file-roller gnome-calculator])
       (with inputs.trashy; [defaultPackage.${pkgs.system}])
     ];
 }
