@@ -16,52 +16,25 @@
     settings = [
       {
         layer = "top";
-        position = "bottom";
+        position = "top";
         height = 16;
         output = "HDMI-A-1";
 
-        #Enabled modules
-        modules-left = ["clock" "custom/playerctl"];
-        modules-center = with lib; [
-          (mkIf (config.wayland.compositor == "sway") "sway/workspaces")
-          (mkIf (config.wayland.compositor == "hyprland") "hyprland/workspaces")
-        ];
+        modules-left = ["hyprland/workspaces" "custom/playerctl"];
+        modules-center = ["clock" "custom/notification"];
         modules-right = [
-          "tray"
+          "network"
+          "bluetooth"
+          "battery"
           "pulseaudio"
           "pulseaudio/slider"
-          "network"
-          #"bluetooth"
-          #"battery"
-          "cpu"
-          "memory"
-          "custom/notification"
+          "tray"
         ];
-
-        #####################
-        ## Module configs ###
-        ####################
-
-        "custom/launcher" = {format = "";};
-        "sway/workspaces" = {
-          format = "{icon}";
-          format-icons = {
-            "default" = "";
-            "urgent" = "󰗖";
-          };
-          disable-scroll-wraparound = true;
-          numeric-first = true;
-        };
         "hyprland/workspaces" = {
-          format = "{icon}";
-          format-icons = {
-            "default" = "";
-            "urgent" = "󰗖";
-          };
+          format = "{name}";
           on-scroll-up = "hyprctl dispatch workspace e+1";
           on-scroll-down = "hyprctl dispatch workspace e-1";
         };
-
         "tray" = {
           spacing = 10;
           icon-size = 21;
@@ -108,13 +81,17 @@
             warning = 30;
             critical = 15;
           };
-          format = "{icon} {capacity}%";
-          format-good = "󰢞";
-          format-icons = ["󰁺" "󰁼" "󰁿" "󰂁" "󰁹"];
-          format-critical = "<span foreground='red'>{icon}<sup></sup></span>";
-          format-warning = "{icon}<span foreground='orange'><sup></sup></span>";
-          format-charging = "{icon}<span foreground='yellow'><sup>󱐌</sup></span>";
-          format-full = "{icon}<span foreground='green'><sup></sup></span>";
+          format = "{capacity}% {icon}";
+          format-charging = "{icon}<span foreground='yellow'><sup>󱐌</sup></span> {capacity}%";
+          format-critical = "<span foreground='red'>{icon}<sup></sup></span> {capacity}%";
+          format-full = "{icon}<span foreground='green'><sup></sup></span> {capacity}%";
+          format-icons = [
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
         };
         "pulseaudio" = {
           ignored-sinks = ["Easy Effects Sink"];
@@ -127,7 +104,7 @@
             car = "";
             default = ["" "" ""];
           };
-          on-click = "${inputs.snowpkgs.packages.${pkgs.system}.mixxc}/bin/mixxc --anchor right --anchor bottom --margin 20 --margin 30";
+          on-click = "${pkgs.mixxc}/bin/mixxc --anchor right --anchor top --margin 20 --margin 30";
           on-click-right = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
           tooltip = false;
         };
@@ -143,7 +120,7 @@
           tooltip-format = "{essid}({signalStrength}%)";
           format-linked = "{ifname} (No IP)";
           format-disconnected = "󰖪";
-          on-click = "pypr show wifi";
+          on-click = lib.getExe pkgs.iwgtk;
         };
         "bluetooth" = {
           format-on = "󰂯";
@@ -152,15 +129,15 @@
           format-connected = "󰂱";
           tooltip-format = "{status}: {num_connections} devices connected";
           tooltip = true;
-          on-click = "pypr show bluetooth";
+          on-click = "blueman-manager";
         };
         "custom/playerctl" = {
-          format-alt = "󰎈 Music playing 󰎈";
-          format = "<span>󰎈 {} 󰎈</span>";
+          format = "<span>> {} <</span>";
           return-type = "json";
           max-length = 40;
           exec = ''
-            playerctl -a metadata --format '{"text": "{{artist}} - {{markup_escape(title)}}", "tooltip": "{{playerName}} : {{markup_escape(title)}}", "alt": "{{status}}", "class": "{{status}}"}' -F'';
+            ${config.services.playerctld.package}/bin/playerctl -a metadata --format '{"text": "{{artist}} - {{markup_escape(title)}}", "tooltip": "{{playerName}} : {{markup_escape(title)}}", "alt": "{{status}}", "class": "{{status}}"}' -F
+          '';
           on-click-right = "${config.services.playerctld.package}/bin/playerctl play-pause";
         };
         "custom/notification" = {

@@ -34,7 +34,7 @@
 
           "workspace name:F1,^(firefox-nightly)$"
           "workspace name:F2,^(osidian)$"
-          "workspace name:F4,^(pcmanfm-qt)$"
+          "workspace name:F4,^(org.gnome.Nautilus)$"
 
           "workspace name:F6,^(mpv)$"
           "workspace name:F7,^(FreeTube)$"

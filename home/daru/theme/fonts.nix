@@ -15,7 +15,7 @@
     };
     sizes = {
       desktop = 15;
-      applications = 14;
+      applications = 15;
       terminal = 16;
     };
     extraFonts = with pkgs; [monocraft noto-fonts];

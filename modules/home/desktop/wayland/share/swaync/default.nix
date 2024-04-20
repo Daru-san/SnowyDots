@@ -12,14 +12,14 @@
   services.swaync = {
     systemd.enable = true;
     settings = {
-      positionX = "right";
+      positionX = "centre";
       positionY = "top";
       layer = "overlay";
       control-center-layer = "overlay";
       layer-shell = true;
       cssPriority = "application";
-      control-center-positionX = "right";
-      control-center-positionY = "bottom";
+      control-center-positionX = "centre";
+      control-center-positionY = "top";
       control-center-margin-top = 0;
       control-center-margin-bottom = 0;
       control-center-margin-right = 0;

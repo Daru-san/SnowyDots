@@ -1,12 +1,12 @@
 {
   pkgs,
   inputs,
-  config,
   osConfig,
   ...
 }: {
   imports = [inputs.anyrun.homeManagerModules.default];
   programs.anyrun = {
+    package = pkgs.anyrun;
     config = {
       plugins =
         (with inputs.anyrun.packages.${pkgs.system}; [
@@ -23,7 +23,6 @@
       hidePluginInfo = true;
       closeOnClick = true;
     };
-
     extraCss = builtins.readFile ./style.css;
 
     extraConfigFiles = {
@@ -44,6 +43,7 @@
         Config(
             // add your option paths
             options: ${options},
+            max_entires: 3,
          )
       '';
       "randr.ron".text = ''
