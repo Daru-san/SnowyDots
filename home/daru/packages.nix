@@ -22,6 +22,7 @@
         hmcl
         pcmanfm-qt
         blanket
+        mixxc
 
         # CLI
         tree
@@ -61,7 +62,6 @@
         nix-output-monitor
         zaread
       ])
-      (with inputs.snowpkgs.packages.${pkgs.system}; [mixxc])
       (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild])
       (with pkgs.gnome; [dconf-editor gnome-clocks file-roller gnome-calculator])
       (with inputs.trashy; [defaultPackage.${pkgs.system}])
