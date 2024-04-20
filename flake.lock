@@ -1801,11 +1801,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1713640882,
-        "narHash": "sha256-bPeQZ2LrrgL1f0uxyK7Ng7J4b4HZ9cr9M0aicYE1SxA=",
+        "lastModified": 1713643551,
+        "narHash": "sha256-wGVAc1/aMMpJOc+59JInBEE8L1lQMJWd6t2pbNINktU=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "56d1077dd92be99fea58f0266ac4de112e7baa95",
+        "rev": "1243a917486720041bbe8af4902e3247c38b2181",
         "type": "sourcehut"
       },
       "original": {
