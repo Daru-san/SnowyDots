@@ -65,6 +65,9 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
+    systems = ["x86_64-linux"];
+    forAllSystems = nixpkgs.lib.genAttrs systems;
+
     modules = {
       home = import ./modules/home;
       system = import ./modules/system;
@@ -73,6 +76,8 @@
     };
   in {
     overlays = modules.pkgs.overlays {inherit inputs;};
+    packages =
+      forAllSystems (system: modules.pkgs.packages nixpkgs.legacyPackages.${system});
 
     nixosConfigurations = {
       AspireLaptop = nixpkgs.lib.nixosSystem {
