@@ -62,7 +62,7 @@
       nodejs_20
       unzip
       zip
-      rar
+      unrar
       p7zip
       commonsCompress
       clang
@@ -79,9 +79,9 @@
       gparted
       home-manager
       alejandra
+      nix-inspect
     ]
-    ++ (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild])
-    ++ (with inputs.nix-inspect.packages.${pkgs.system}; [default]);
+    ++ (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild]);
 
   os = {
     system.laptop = true;

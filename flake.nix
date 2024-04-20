@@ -18,7 +18,6 @@
     nix-colors.url = "github:Misterio77/nix-colors";
     spicetify-nix.url = "github:the-argus/spicetify-nix/master";
     trashy.url = "github:oberblastmeister/trashy";
-    nix-inspect.url = "github:bluskript/nix-inspect";
 
     # My own repos
     snowyvim.url = "sourcehut:~darumaka/SnowyVim";
