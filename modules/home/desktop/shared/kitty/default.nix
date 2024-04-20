@@ -24,12 +24,12 @@
 
     #Settings
     settings = {
-      tab_title_template = "{fmt.fg._5c6370}{fmt.bg.default}{fmt.fg._abb2bf}{fmt.bg._5c6370}{index}: {title[:15] + (title[15:] and '…')}{fmt.fg._5c6370}{fmt.bg.default} ";
-      active_tab_title_template = "{fmt.fg._246993}{fmt.bg.default}{fmt.fg._282c34}{fmt.bg._246993}{index}: {title[:40] + (title[40:] and '…')}{fmt.fg._246993}{fmt.bg.default} ";
+      tab_title_template = " {fmt.fg._5c6370}{fmt.bg.default}{fmt.fg._abb2bf}{fmt.bg._5c6370}{index}: {title[:15] + (title[15:] and '…')}{fmt.fg._5c6370}{fmt.bg.default} ";
+      active_tab_title_template = " {fmt.fg._246993}{fmt.bg.default}{fmt.fg._282c34}{fmt.bg._246993}{index}: {title[:40] + (title[40:] and '…')}{fmt.fg._246993}{fmt.bg.default} ";
       tab_bar_edge = "top";
       tab_bar_style = "separator";
       tab_bar_min_tabs = 1;
-      tab_separator = ''" "'';
+      tab_separator = ''""'';
       tab_activity_symbol = ''""'';
       active_tab_font_style = "bold";
       inactive_tab_font_style = "italics";
@@ -47,7 +47,7 @@
 
       sync_to_monitor = true;
       mouse_hide_wait = 20;
-      cursor_shape = "beam";
+      cursor_shape = "block";
       cursor_blink_interval = 1;
       cursor_stop_blinking_after = 15;
 

@@ -98,11 +98,12 @@
 
       search = {
         force = true;
-        default = "Brave Search";
+        default = "Freespoke";
         privateDefault = "StartPage";
 
         order = [
-          "Brave Search"
+          "Freespoke"
+          "Presearch"
           "StartPage"
           "Github"
           "Reddit"
@@ -118,17 +119,9 @@
           disabled.metaData.hidden = true;
         in {
           "Google" = {inherit (disabled) metaData;};
-          "DuckDuckGo" = {inherit (disabled) metaData;};
           "Bing" = {inherit (disabled) metaData;};
           "Amazon.com" = {inherit (disabled) metaData;};
           "Wikipedia (en)" = {inherit (disabled) metaData;};
-
-          "Brave Search" = {
-            urls = [{template = "https://search.brave.com/search?q={searchTerms}";}];
-            iconUpdateURL = "https://brave.com/static-assets/images/brave-logo-sans-text.svg";
-            updateInterval = 24 * 60 * 60 * 1000;
-            definedAliases = ["@br" "@b" "@brave"];
-          };
 
           "StartPage" = {
             urls = [{template = "https://www.startpage.com/sp/search?query={searchTerms}";}];
@@ -136,7 +129,18 @@
             updateInterval = 24 * 60 * 60 * 1000;
             definedAliases = ["@sp" "@s" "@start"];
           };
-
+          "Freespoke" = {
+            urls = [{template = "https://freespoke.com/search/web?q={searchTerms}";}];
+            iconUpdateURL = "https://freespoke.com/favicon.ico";
+            updateInterval = 24 * 60 * 60 * 1000;
+            definedAliases = ["@fs" "@f"];
+          };
+          "Presearch" = {
+            urls = [{template = "https://presearch.com/search?q={searchTerms}";}];
+            iconUpdateURL = "https://presearch.com/favicon.ico";
+            updateInterval = 24 * 60 * 60 * 1000;
+            definedAliases = ["@ps"];
+          };
           "Reddit" = {
             urls = [{template = "https://www.reddit.com/search/?q={searchTerms}";}];
             iconUpdateURL = "https://www.redditstatic.com/shreddit/assets/favicon/favicon.ico";
@@ -295,7 +299,6 @@
           install_url = "http://addons.mozilla.org/firefox/downloads/latest/bonjourr-startpage/latest.xpi";
         };
         "bing@search.mozilla.org".installation_mode = "blocked";
-        "ddg@search.mozilla.org".installation_mode = "blocked";
       };
     };
   };
