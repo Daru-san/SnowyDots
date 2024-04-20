@@ -26,10 +26,11 @@ in
               enable = true;
               wifi.backend = "iwd";
               dns = "none";
-              extraConfig = ''
-                [device]
-                wifi.iwd.autoconnect=false
-              '';
+              settings = {
+                device = {
+                  "wifi.iwd.autoconnect" = false;
+                };
+              };
             })
           ];
 
