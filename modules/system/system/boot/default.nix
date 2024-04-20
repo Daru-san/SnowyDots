@@ -16,7 +16,7 @@ in {
     {
       consoleLogLevel = 0;
       kernelParams = ["quiet"];
-      kernelPackages = pkgs.linuxPackages_zen;
+      kernelPackages = pkgs.linuxPackages_cachyos;
       initrd.verbose = false;
       loader.grub = {
         enable = true;
