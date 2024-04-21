@@ -1,17 +1,19 @@
 {
   pkgs,
+  system,
   inputs,
   lib,
   ...
 }: let
-  spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default;
+  spicePkgs = inputs.spicetify-nix.packages.${system}.default;
 in {
   imports = with inputs.spicetify-nix.homeManagerModules; [spicetify ./spotify-player.nix];
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) ["spotify"];
   programs.spicetify = {
     enable = true;
-    theme = spicePkgs.themes.Sleek;
+    spotifyPackage = pkgs.spotify;
+    theme = spicePkgs.themes.text;
     enabledExtensions = with spicePkgs.extensions; [
       fullAppDisplayMod
       powerBar
