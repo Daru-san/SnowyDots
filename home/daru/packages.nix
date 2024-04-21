@@ -1,6 +1,7 @@
 # Home packages shared between users
 {
   pkgs,
+  system,
   inputs,
   lib,
   ...
@@ -62,8 +63,8 @@
         nix-output-monitor
         zaread
       ])
-      (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild])
+      (with inputs.scripts.packages.${system}; [hm-build nix-rebuild])
       (with pkgs.gnome; [dconf-editor gnome-clocks file-roller gnome-calculator])
-      (with inputs.trashy; [defaultPackage.${pkgs.system}])
+      (with inputs.trashy; [defaultPackage.${system}])
     ];
 }
