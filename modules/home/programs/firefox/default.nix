@@ -98,12 +98,11 @@
 
       search = {
         force = true;
-        default = "Freespoke";
+        default = "DuckDuckGo";
         privateDefault = "StartPage";
 
         order = [
-          "Freespoke"
-          "Presearch"
+          "DuckDuckGo"
           "StartPage"
           "Github"
           "Reddit"
@@ -122,24 +121,12 @@
           "Bing" = {inherit (disabled) metaData;};
           "Amazon.com" = {inherit (disabled) metaData;};
           "Wikipedia (en)" = {inherit (disabled) metaData;};
-
+          "DuckDuckGo" = {metaData.alias = "@dg";};
           "StartPage" = {
             urls = [{template = "https://www.startpage.com/sp/search?query={searchTerms}";}];
             iconUpdateURL = "https://www.startpage.com/sp/cdn/favicons/favicon-gradient.ico";
             updateInterval = 24 * 60 * 60 * 1000;
             definedAliases = ["@sp" "@s" "@start"];
-          };
-          "Freespoke" = {
-            urls = [{template = "https://freespoke.com/search/web?q={searchTerms}";}];
-            iconUpdateURL = "https://freespoke.com/favicon.ico";
-            updateInterval = 24 * 60 * 60 * 1000;
-            definedAliases = ["@fs" "@f"];
-          };
-          "Presearch" = {
-            urls = [{template = "https://presearch.com/search?q={searchTerms}";}];
-            iconUpdateURL = "https://presearch.com/favicon.ico";
-            updateInterval = 24 * 60 * 60 * 1000;
-            definedAliases = ["@ps"];
           };
           "Reddit" = {
             urls = [{template = "https://www.reddit.com/search/?q={searchTerms}";}];
