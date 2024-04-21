@@ -2,6 +2,7 @@
 {
   config,
   pkgs,
+  system,
   lib,
   inputs,
   ...
@@ -26,7 +27,7 @@
     lazygit = "${config.programs.lazygit.package}/bin/lazygit";
     neofetch = "${pkgs.neofetch}/bin/neofetch";
     tty-clock = "${pkgs.tty-clock}/bin/tty-clock";
-    trashy = "${inputs.trashy.defaultPackage.${pkgs.system}}/bin/trashy";
+    trashy = "${inputs.trashy.defaultPackage.${system}}/bin/trashy";
     yazi = "${config.programs.yazi.package}/bin/yazi";
     fzf = "${config.programs.fzf.package}/bin/fzf";
   in {

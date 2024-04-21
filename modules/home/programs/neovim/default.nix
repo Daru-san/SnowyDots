@@ -1,10 +1,8 @@
-{inputs, ...}: {
-  imports = [inputs.snowyvim.homeManagerModules.default];
-  programs.snowvim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
-  };
+{
+  inputs,
+  system,
+  ...
+}: {
+  home.packages = [inputs.snowyvim.packages.${system}.default];
+  home.sessionVariables.EDITOR = "nvim";
 }

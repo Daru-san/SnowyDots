@@ -46,7 +46,7 @@
         ntc = "nitch";
         lzg = "lazygit";
         g = "git";
-        nv = "nvim";
+        v = "vi";
         nl = "nurl";
         npg = "nix-prefetch-git";
         npgh = "nix-prefetch-github";
