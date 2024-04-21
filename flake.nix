@@ -84,7 +84,6 @@
         modules = with modules; [
           ./systems/AspireLaptop
           system
-          #          specialisations
           {
             wayland = {
               hyprland.enable = true;
@@ -109,6 +108,7 @@
         extraSpecialArgs = {
           inherit inputs outputs;
           osConfig = self.nixosConfigurations.AspireLaptop.config;
+          system = "x86_64-linux";
         };
         modules = [
           ./home/daru
