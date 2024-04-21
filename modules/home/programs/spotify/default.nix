@@ -15,7 +15,7 @@ in {
     spotifyPackage = pkgs.spotify;
     theme = spicePkgs.themes.text;
     enabledExtensions = with spicePkgs.extensions; [
-      fullAppDisplayMod
+      fullAppDisplay
       powerBar
       bookmark
       autoVolume
