@@ -13,5 +13,6 @@
     ./neovim
     ./spotify
     ./firefox
+    ./thunderbird
   ];
 }
