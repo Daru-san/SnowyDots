@@ -16,7 +16,7 @@ in {
     enable = true;
 
     theme = {
-      name = "Colloid-green-dark";
+      name = "Colloid-Green-Dark";
       package = pkgs.colloid-gtk-theme.override {
         colorVariants = ["dark"];
         themeVariants = ["green" "default" "grey"];
@@ -49,7 +49,7 @@ in {
       size = 23;
       gtk.enable = true;
     };
-    sessionVariables = {GTK_THEME = "Colloid-green-dark";};
+    sessionVariables = {GTK_THEME = "Colloid-Green-Dark";};
     file.".icons/default".source = "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Ice";
   };
 }
