@@ -55,7 +55,7 @@
       scrollback_lines = 100000;
       scrollback_pager = with lib;
         getExe (pkgs.writeShellScriptBin "kitty-scroll" ''
-          ${getExe config.programs.snowvim.package} --noplugin -c "set signcolumn=no showtabline=0" -c "silent! write! /tmp/kitty_scrollback_buffer | te cat /tmp/kitty_scrollback_buffer - "
+          nvim --noplugin -c "set signcolumn=no showtabline=0" -c "silent! write! /tmp/kitty_scrollback_buffer | te cat /tmp/kitty_scrollback_buffer - "
         '');
     };
     keybindings = let

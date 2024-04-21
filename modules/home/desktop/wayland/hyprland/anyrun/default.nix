@@ -2,6 +2,7 @@
   pkgs,
   inputs,
   osConfig,
+  system,
   ...
 }: {
   imports = [inputs.anyrun.homeManagerModules.default];
@@ -9,14 +10,14 @@
     package = pkgs.anyrun;
     config = {
       plugins =
-        (with inputs.anyrun.packages.${pkgs.system}; [
+        (with inputs.anyrun.packages.${system}; [
           rink
           shell
           applications
           dictionary
           websearch
         ])
-        ++ (with inputs.anyrun-nixos-options.packages.${pkgs.system}; [default]);
+        ++ (with inputs.anyrun-nixos-options.packages.${system}; [default]);
 
       width.fraction = 0.3;
       y.absolute = 70;
@@ -31,7 +32,7 @@
           osConfig.system.build.manual.optionsJSON
           + "/share/doc/nixos/options.json";
         hm-options =
-          inputs.home-manager.packages.${pkgs.system}.docs-json
+          inputs.home-manager.packages.${system}.docs-json
           + "/share/doc/home-manager/options.json";
 
         # merge your options

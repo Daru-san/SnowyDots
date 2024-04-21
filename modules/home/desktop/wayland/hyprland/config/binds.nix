@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  system,
   inputs,
   lib,
   ...
@@ -32,7 +33,7 @@ in {
         terminal = getExe config.programs.kitty.package;
         browser = getExe config.programs.firefox.package;
         file-manager = getExe pkgs.gnome.nautilus;
-        editor = getExe config.programs.snowvim.package;
+        editor = "nvim";
         ranger = getExe pkgs.ranger;
         image-editor = getExe' pkgs.krita "krita";
         hyprlock = getExe config.programs.hyprlock.package;
@@ -117,7 +118,7 @@ in {
       bindr = let
         any = getExe' config.programs.anyrun.package "anyrun";
         easy = getExe config.services.easyeffects.package;
-        cl = getExe inputs.scripts.packages.${pkgs.system}.color-picker;
+        cl = getExe inputs.scripts.packages.${system}.color-picker;
         wl = getExe config.programs.wlogout.package;
         pk = "pkill";
 
