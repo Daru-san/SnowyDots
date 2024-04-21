@@ -25,7 +25,7 @@
     #Settings
     settings = {
       tab_title_template = " {fmt.fg._5c6370}{fmt.bg.default}{fmt.fg._abb2bf}{fmt.bg._5c6370}{index}: {title[:15] + (title[15:] and '…')}{fmt.fg._5c6370}{fmt.bg.default} ";
-      active_tab_title_template = " {fmt.fg._246993}{fmt.bg.default}{fmt.fg._282c34}{fmt.bg._246993}{index}: {title[:40] + (title[40:] and '…')}{fmt.fg._246993}{fmt.bg.default} ";
+      active_tab_title_template = " {fmt.fg._287373}{fmt.bg.default}{fmt.fg._282c34}{fmt.bg._287373}{index}: {title[:40] + (title[40:] and '…')}{fmt.fg._287373}{fmt.bg.default} ";
       tab_bar_edge = "top";
       tab_bar_style = "separator";
       tab_bar_min_tabs = 1;
