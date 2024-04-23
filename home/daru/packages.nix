@@ -30,7 +30,7 @@
         tgpt
         tty-clock
         yai
-        adbtuifm
+        alt.adbtuifm
         libnotify
         speedtest-cli
         chroma
