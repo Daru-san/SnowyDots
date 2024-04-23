@@ -2,11 +2,8 @@
   programs.thunderbird = {
     enable = true;
     profiles = {
-      gmail = {
-        name = "daru-gmail";
-      };
+      gmail = {};
       proton = {
-        name = "daru-proton";
         isDefault = true;
       };
     };
