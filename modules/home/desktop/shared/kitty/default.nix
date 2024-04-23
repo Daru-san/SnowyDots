@@ -42,7 +42,7 @@
 
       hide_window_decorations = true;
 
-      background_opacity = "0.74";
+      background_opacity = "0";
       dynamic_background_opacity = true;
 
       sync_to_monitor = true;
