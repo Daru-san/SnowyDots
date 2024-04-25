@@ -23,7 +23,9 @@
           (f "com.github.hluk.copyq")
           (f "file-roller")
           (f "org.kde.kdeconnect.daemon")
+          (f ".blueman-manager-wrapped")
           (c "file-roller")
+          (c ".blueman-manager-wrapped")
           (c "com.github.hluk.copyq")
           (c "org.kde.kdeconnect.daemon")
         ])
@@ -35,7 +37,7 @@
           "workspace name:F1,^(firefox-nightly)$"
           "workspace name:F2,^(osidian)$"
           "workspace name:F4,^(org.gnome.Nautilus)$"
-
+          "workspace name:F5,^(io.bassi.Amberol)$"
           "workspace name:F6,^(mpv)$"
           "workspace name:F7,^(FreeTube)$"
           "workspace name:F8,title:^(Spotify)(.*)$"
