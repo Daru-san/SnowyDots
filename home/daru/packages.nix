@@ -15,13 +15,11 @@
         scrcpy
         keepassxc
         bridge-core
-        g4music
         newsflash
         archiver
         pavucontrol
         iwgtk
         hmcl
-        pcmanfm-qt
         blanket
         mixxc
 

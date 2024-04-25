@@ -4,5 +4,6 @@
     ./kde-connect
     ./playerctl
     ./easyeffects
+    ./amberol
   ];
 }
