@@ -120,7 +120,7 @@ in {
         easy = getExe config.services.easyeffects.package;
         cl = getExe inputs.scripts.packages.${system}.color-picker;
         wl = getExe config.programs.wlogout.package;
-        pk = "pkill";
+        pk = getExe' pkgs.busybox "pkill";
 
         # Screenshots
         hs = getExe pkgs.hyprshot;
@@ -133,25 +133,26 @@ in {
         sc = getExe' pkgs.swaynotificationcenter "swaync-client";
       in [
         # Launch the launcher - anyrun
-        "super, space, ${e}, ${pk} ${any} || ${any}"
+        "super, space, ${e}, ${pk} anyrun || ${any}"
 
         # Launch easyeffects
         "super, a, ${e}, ${h} '${easy}'"
 
         # Color picker
-        "supershift, c, ${e}, ${pk} ${cl} || ${cl}"
+        "supershift, c, ${e}, ${pk} color-picker || ${cl}"
 
         # wlogout
-        "super, x, ${e}, ${pk} ${wl} || ${wl}"
+        "super, x, ${e}, ${pk} wlogout || ${wl}"
 
         # Audio mixer
-        "altshift,F7,${e},${pk} ${mx} || ${wl}"
+        "altshift,F7,${e},${pk} mixxc || ${mx} --anchor right --anchor top --margin 20 --margin 30 -M"
 
         # Screenshotting
-        ", print, ${e}, ${pk} ${hs} || ${h} '${hs} -m ${r} -o ${scr-dir}'"
-        "shift, print, ${e}, ${pk} ${hs} || ${h} '${hs} -m ${o} -c -o ${scr-dir}'"
-        "alt, print, ${e}, ${pk} ${hs} || ${h} '${hs} -m ${o} -o ${scr-dir}'"
+        ", print, ${e}, ${pk} hyprshot || ${hs} -m ${r} -o ${scr-dir}"
+        "shift, print, ${e}, ${pk} hyprshot || ${hs} -m ${o} -c -o ${scr-dir}"
+        "alt, print, ${e}, ${pk} hyprshot || ${hs} -m ${o} -o ${scr-dir}"
 
+        # Notifcations
         "super,n, ${e}, ${sc} -t"
         "supershift,n, ${e}, ${sc} -d"
         "superalt,n, ${e}, ${sc} -C"

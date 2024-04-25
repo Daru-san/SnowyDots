@@ -1,6 +1,6 @@
 {
   services = {
-    playerctl.enable = true;
+    playerctld.enable = true;
     easyeffects.enable = true;
     kdeconnect.enable = true;
     blueman-applet.enable = true;
