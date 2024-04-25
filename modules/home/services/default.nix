@@ -1,6 +1,6 @@
 {
   imports = [
-    ./kde-connect
+    ./kdeconnect
     ./common.nix
   ];
 }

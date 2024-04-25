@@ -2,7 +2,7 @@
   services = {
     playerctl.enable = true;
     easyeffects.enable = true;
-    kde-connect.enable = true;
+    kdeconnect.enable = true;
     blueman-applet.enable = true;
     network-manager-applet.enable = true;
     syncthing = {
