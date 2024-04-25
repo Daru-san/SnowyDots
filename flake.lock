@@ -1020,6 +1020,26 @@
         "type": "github"
       }
     },
+    "hyprspace": {
+      "inputs": {
+        "hyprland": [
+          "hyprland"
+        ]
+      },
+      "locked": {
+        "lastModified": 1713989021,
+        "narHash": "sha256-oIpcibtKHP8e7yhYilK9+TaiOTApS4TqXQbdKqJpyWQ=",
+        "owner": "KZDKM",
+        "repo": "Hyprspace",
+        "rev": "a44d834af279f233a269d065d2e14fe4101d6f41",
+        "type": "github"
+      },
+      "original": {
+        "owner": "KZDKM",
+        "repo": "Hyprspace",
+        "type": "github"
+      }
+    },
     "hyprwayland-scanner": {
       "inputs": {
         "nixpkgs": [
@@ -1695,6 +1715,7 @@
         "hyprland": "hyprland",
         "hyprland-plugins": "hyprland-plugins",
         "hyprlock": "hyprlock",
+        "hyprspace": "hyprspace",
         "nix-colors": "nix-colors",
         "nixpkgs": "nixpkgs_8",
         "nixpkgs-alt": "nixpkgs-alt",
