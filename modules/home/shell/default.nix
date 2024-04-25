@@ -21,7 +21,7 @@
 
   # Global shell aliases
   home.shellAliases = let
-    bat = "${pkgs.bat}/bin/bat";
+    bat = "${config.programs.bat.package}/bin/bat";
     git = "${config.programs.git.package}/bin/git";
     firefox = "${lib.getExe config.programs.firefox.package}";
     lazygit = "${config.programs.lazygit.package}/bin/lazygit";
@@ -40,8 +40,8 @@
     tp = "${trashy} put";
     te = "${trashy} empty";
     y = yazi;
-    man = "batman";
-    grep = "batgrep";
+    man = "${pkgs.bat-extras.batman}/bin/batman";
+    grep = "${pkgs.bat-extras.batgrep}/bin/batgrep";
     cat = bat;
     trashy-empty = "${trashy} list | ${fzf} --multi | awk '{$1=$1;print}' | rev | cut -d ' ' -f1 | rev | xargs ${trashy} empty --match=exact --force";
     trashy-restore = "${trashy} list | ${fzf} --multi | awk '{$1=$1;print}' | rev | cut -d ' ' -f1 | rev | xargs ${trashy} restore --match=exact --force";
