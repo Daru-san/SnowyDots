@@ -22,9 +22,11 @@
         in [
           (f "com.github.hluk.copyq")
           (f "file-roller")
+          (f "nm-connection-editor")
           (f "org.kde.kdeconnect.daemon")
           (f ".blueman-manager-wrapped")
           (c "file-roller")
+          (c "nm-connection-editor")
           (c ".blueman-manager-wrapped")
           (c "com.github.hluk.copyq")
           (c "org.kde.kdeconnect.daemon")
