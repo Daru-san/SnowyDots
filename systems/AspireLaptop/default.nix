@@ -5,7 +5,7 @@
   outputs,
   ...
 }: {
-  imports = with inputs; [./configuration.nix chaotic.nixosModules.default];
+  imports = [./configuration.nix];
 
   nixpkgs = {
     overlays = with outputs.overlays; [
@@ -55,7 +55,7 @@
   system.autoUpgrade = {
     enable = true;
     flake = "github:Daru-san/Snowflake-dots";
-    flags = ["--update-input" "nixpkgs" "--impure"];
+    flags = ["--update-input" "nixpkgs"];
     operation = "boot";
     dates = "00:00";
     randomizedDelaySec = "180min";

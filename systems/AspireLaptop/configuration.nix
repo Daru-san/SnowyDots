@@ -80,6 +80,8 @@
       home-manager
       alejandra
       nix-inspect
+      nixpkgs-review
+      cachix
     ]
     ++ (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild]);
 
