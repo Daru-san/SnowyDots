@@ -1,12 +1,13 @@
 {
   inputs,
-  pkgs,
+  system,
   ...
 }: {
   wayland.windowManager.hyprland = {
-    plugins = [
-      inputs.hyprfocus.packages.${pkgs.system}.hyprfocus
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
+    plugins = with inputs; [
+      hyprfocus.packages.${system}.hyprfocus
+      hyprland-plugins.packages.${system}.hyprexpo
+      hyprspace.packages.${system}.Hyprspace
     ];
     extraConfig = ''
       plugin {

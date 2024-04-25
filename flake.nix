@@ -29,6 +29,10 @@
     hyprland.url = "github:hyprwm/Hyprland";
     hyprlock.url = "github:hyprwm/hyprlock/v0.3.0";
     hypridle.url = "github:hyprwm/hypridle/v0.1.2";
+    hyprspace = {
+      url = "github:KZDKM/Hyprspace";
+      inputs.hyprland.follows = "hyprland";
+    };
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
