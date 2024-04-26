@@ -7,7 +7,6 @@
   imports =
     [./home.nix ./theme ./packages.nix]
     ++ (with inputs; [
-      nur.nixosModules.nur
       nix-colors.homeManagerModules.default
       chaotic.homeManagerModules.default
     ]);
