@@ -82,6 +82,7 @@
       nix-inspect
       nixpkgs-review
       cachix
+      v4l-utils
     ]
     ++ (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild]);
 
