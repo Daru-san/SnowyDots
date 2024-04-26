@@ -6,6 +6,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/release-23.11";
     nixpkgs-alt.url = "github:Daru-san/nixpkgs/master";
+    nixpkgs-gnome46.url = "github:nixos/nixpkgs/gnome46";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     # Home manager
