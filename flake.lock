@@ -1381,6 +1381,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-gnome46": {
+      "locked": {
+        "lastModified": 1713814968,
+        "narHash": "sha256-WI+qn3uHqIZowzB5ih9GZEOSqvZ0bKftAvGCDMiP1Ns=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "3d96608e696256e110666409a0ddca12c9d835c1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "gnome-46",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-lib": {
       "locked": {
         "dir": "lib",
@@ -1757,6 +1773,7 @@
         "nix-colors": "nix-colors",
         "nixpkgs": "nixpkgs_9",
         "nixpkgs-alt": "nixpkgs-alt",
+        "nixpkgs-gnome46": "nixpkgs-gnome46",
         "nixpkgs-stable": "nixpkgs-stable_2",
         "scripts": "scripts",
         "snowpkgs": "snowpkgs",
