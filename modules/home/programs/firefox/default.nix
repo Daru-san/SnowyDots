@@ -1,6 +1,8 @@
 {
   pkgs,
   config,
+  system,
+  inputs,
   ...
 }: {
   programs.firefox = {
@@ -11,7 +13,7 @@
       isDefault = true;
       userChrome = builtins.readFile ./userChrome.css;
 
-      extensions = with config.nur.repos.rycee.firefox-addons; [
+      extensions = with inputs.firefox-addons.packages.${system}; [
         disable-javascript
         don-t-fuck-with-paste
         enhanced-github
