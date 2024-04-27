@@ -2041,11 +2041,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1714234970,
-        "narHash": "sha256-TGX9gWfvKd+ib/ls2IVJx8y02d4HMracS7/Ag0DVDIA=",
+        "lastModified": 1714236808,
+        "narHash": "sha256-sPqWEI1+85JnjT1r0Fg0gLYw61cg9dem9H2ZdesGLF4=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "ab51cb8cb2e0875a62cf4df8f0f927bb4cd0cde2",
+        "rev": "e9da159cd9237dda2044e785652b811d9b6696e5",
         "type": "sourcehut"
       },
       "original": {
