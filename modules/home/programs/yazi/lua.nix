@@ -60,6 +60,10 @@
           ui.Paragraph(area, { right }):align(ui.Paragraph.RIGHT),
         }
       end
+
+      require("zoxide"):setup {
+        update_db = true
+      }
     '';
     "yazi/plugins/smart-enter.yazi/init.lua".text = ''
       return {
