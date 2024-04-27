@@ -16,7 +16,6 @@
       extraGroups = ["networkmanager" "wheel" "video" "adbusers" "input"];
     };
   };
-
   programs = {
     git.enable = true;
     nix-ld.enable = true;
@@ -51,8 +50,8 @@
     };
   };
 
-  environment.systemPackages = with pkgs;
-    [
+  environment.systemPackages =
+    (with pkgs; [
       htop
       wget2
       nix-prefetch-git
@@ -83,7 +82,7 @@
       nixpkgs-review
       cachix
       v4l-utils
-    ]
+    ])
     ++ (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild]);
 
   os = {

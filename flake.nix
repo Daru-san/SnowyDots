@@ -89,9 +89,9 @@
     nixosConfigurations = {
       AspireLaptop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = with modules; [
+        modules = [
           ./systems/AspireLaptop
-          system
+          modules.system
           {
             wayland = {
               hyprland.enable = true;

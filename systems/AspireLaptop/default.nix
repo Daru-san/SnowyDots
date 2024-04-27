@@ -18,7 +18,7 @@
     (lib.mapAttrs (_: flake: {inherit flake;}))
     ((lib.filterAttrs (_: lib.isType "flake")) inputs);
 
-  nix.nixPath = ["/etc/nix/path"];
+  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
   environment.etc =
     lib.mapAttrs' (name: value: {
       name = "nix/path/${name}";

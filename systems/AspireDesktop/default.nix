@@ -6,7 +6,6 @@
   ...
 }: {
   imports = with inputs; [./configuration.nix chaotic.nixosModules.default];
-
   nixpkgs = {
     overlays = with outputs.overlays; [
       unstable-packages

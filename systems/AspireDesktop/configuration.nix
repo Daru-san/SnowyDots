@@ -41,8 +41,8 @@
     };
   };
 
-  environment.systemPackages = with pkgs;
-    [
+  environment.systemPackages =
+    (with pkgs; [
       htop
       wget2
       nix-prefetch-git
@@ -65,9 +65,8 @@
       gparted
       home-manager
       alejandra
-    ]
-    ++ (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild])
-    ++ (with inputs.nix-inspect.packages.${pkgs.system}; [default]);
+    ])
+    ++ (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild]);
 
   os = {
     networking.wifi.enable = true;
