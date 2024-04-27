@@ -27,7 +27,7 @@
     snowpkgs.url = "sourcehut:~darumaka/Snowpkgs";
 
     # Hyprland stuff
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "github:hyprwm/Hyprland/25aec3ac8ce65ed224f025f8f6dfef73780577a4";
     hyprlock.url = "github:hyprwm/hyprlock/v0.3.0";
     hypridle.url = "github:hyprwm/hypridle/v0.1.2";
     hyprspace = {
