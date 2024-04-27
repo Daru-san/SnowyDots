@@ -53,10 +53,9 @@
 
       #Scrollback pager
       scrollback_lines = 100000;
-      scrollback_pager = with lib;
-        getExe (pkgs.writeShellScriptBin "kitty-scroll" ''
-          nvim --noplugin -c "set signcolumn=no showtabline=0" -c "silent! write! /tmp/kitty_scrollback_buffer | te cat /tmp/kitty_scrollback_buffer - "
-        '');
+      scrollback_pager = lib.getExe (pkgs.writeShellScriptBin "kitty-scroll" ''
+        nvim --noplugin -c "set signcolumn=no showtabline=0" -c "silent! write! /tmp/kitty_scrollback_buffer | te cat /tmp/kitty_scrollback_buffer - "
+      '');
     };
     keybindings = let
       c = "ctrl";
