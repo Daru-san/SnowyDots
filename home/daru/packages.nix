@@ -21,7 +21,7 @@
         iwgtk
         hmcl
         blanket
-        mixxc
+        alt.mixxc
 
         # CLI
         tree
