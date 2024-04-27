@@ -62,7 +62,7 @@
         zaread
       ])
       (with inputs.scripts.packages.${system}; [hm-build nix-rebuild])
-      (with pkgs.gnome46.gnome; [dconf-editor gnome-clocks file-roller cheese])
+      (with pkgs.gnome46.gnome; [dconf-editor gnome-clocks file-roller cheese nautilus])
       (with inputs.trashy; [defaultPackage.${system}])
     ];
 }
