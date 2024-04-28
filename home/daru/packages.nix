@@ -20,13 +20,14 @@
       iwgtk
       hmcl
       blanket
-      alt.mixxc
+      mixxc
 
       # CLI
       tree
       tgpt
       tty-clock
       yai
+      nvfetcher
       adbtuifm
       libnotify
       speedtest-cli
