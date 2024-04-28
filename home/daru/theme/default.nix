@@ -3,7 +3,7 @@
   config,
   ...
 }: {
-  imports = [./qt.nix ./fonts.nix ./gtk.nix ./wallpaper];
+  imports = [./qt.nix ./fonts.nix ./gtk.nix ./wallpaper.nix];
 
   # Colorscheme from nix-colors
   colorScheme = inputs.nix-colors.colorSchemes.oxocarbon-dark;
