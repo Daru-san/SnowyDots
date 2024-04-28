@@ -4,5 +4,5 @@
   ...
 }: {
   home.packages = [pkgs.swww];
-  wallpaperImage = "${inputs.wallpapers}/walls/dark-leaves.png";
+  wallpaperImage = "${inputs.wallpapers}/images/dark-leaves.png";
 }
