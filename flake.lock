@@ -1234,11 +1234,11 @@
       },
       "locked": {
         "dir": "contrib",
-        "lastModified": 1714170745,
-        "narHash": "sha256-gWPADWNO+tOuwSAcOu3loOUul7ctHM0JG4QjDuU8AJo=",
+        "lastModified": 1714258115,
+        "narHash": "sha256-Nc1sGXp2O28zRLt20l/1ivO8I3LByl2Z9kluBzXZaBw=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "435dee74bb3593b778328138dac054f26e2d7396",
+        "rev": "a41546d4ac60cecc48b83f85ea9d53ee2fb7dfbb",
         "type": "github"
       },
       "original": {
@@ -1257,11 +1257,11 @@
         "nixpkgs": "nixpkgs_12"
       },
       "locked": {
-        "lastModified": 1714176336,
-        "narHash": "sha256-D0YFMkMc/eb8zfyPSN75gGVe19S6JqGnYwzASMNuaQE=",
+        "lastModified": 1714262649,
+        "narHash": "sha256-d95TjD2unoW9epwZ4ig1PFM+YHhlXOKSn2U6B3Npfng=",
         "owner": "nix-community",
         "repo": "neovim-nightly-overlay",
-        "rev": "7326db488a5138a6cdc1d5083a8e6218df4a0dd4",
+        "rev": "3f0a19ceb63a11f88f77a996f630f985bad8861e",
         "type": "github"
       },
       "original": {
@@ -1556,11 +1556,11 @@
     },
     "nixpkgs-stable_2": {
       "locked": {
-        "lastModified": 1714230522,
-        "narHash": "sha256-RODqrJQ9QqNnJe6floeUM5cbz4fh3BBqCEegA+4zm0M=",
+        "lastModified": 1714324733,
+        "narHash": "sha256-RrLThjnSTeKQqgLO/4nZFkMz/Fx1b++d8QIUrCgxgVo=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "485480127ad7df42fb0d82bc56efcdd33f37f350",
+        "rev": "06347bf1e5b9b540c5159230e1bc189fe342b0ae",
         "type": "github"
       },
       "original": {
@@ -1604,11 +1604,11 @@
     },
     "nixpkgs_12": {
       "locked": {
-        "lastModified": 1714091391,
-        "narHash": "sha256-68n3GBvlm1MIeJXadPzQ3v8Y9sIW3zmv8gI5w5sliC8=",
+        "lastModified": 1714213793,
+        "narHash": "sha256-Yg5D5LhyAZvd3DZrQQfJAVK8K3TkUYKooFtH1ulM0mw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "4c86138ce486d601d956a165e2f7a0fc029a03c1",
+        "rev": "d6f6eb2a984f2ba9a366c31e4d36d65465683450",
         "type": "github"
       },
       "original": {
@@ -1791,11 +1791,11 @@
     },
     "nixpkgs_9": {
       "locked": {
-        "lastModified": 1714076141,
-        "narHash": "sha256-Drmja/f5MRHZCskS6mvzFqxEaZMeciScCTFxWVLqWEY=",
+        "lastModified": 1714253743,
+        "narHash": "sha256-mdTQw2XlariysyScCv2tTE45QSU9v/ezLcHJ22f0Nxc=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "7bb2ccd8cdc44c91edba16c48d2c8f331fb3d856",
+        "rev": "58a1abdbae3217ca6b702f03d3b35125d88a2994",
         "type": "github"
       },
       "original": {
@@ -1902,7 +1902,8 @@
         "snowpkgs": "snowpkgs",
         "snowyvim": "snowyvim",
         "spicetify-nix": "spicetify-nix",
-        "trashy": "trashy"
+        "trashy": "trashy",
+        "wallpapers": "wallpapers"
       }
     },
     "rust-analyzer-src": {
@@ -2042,11 +2043,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1714236808,
-        "narHash": "sha256-sPqWEI1+85JnjT1r0Fg0gLYw61cg9dem9H2ZdesGLF4=",
+        "lastModified": 1714307563,
+        "narHash": "sha256-bpuNBA/poZnBVyUyrRD8Zw9bzUJS4lF0EaPiG4IKItQ=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "e9da159cd9237dda2044e785652b811d9b6696e5",
+        "rev": "1850b13c4816e9a23a42e697ce0dd496e36a66f0",
         "type": "sourcehut"
       },
       "original": {
@@ -2288,6 +2289,22 @@
         "owner": "oberblastmeister",
         "repo": "trashy",
         "type": "github"
+      }
+    },
+    "wallpapers": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1714328341,
+        "narHash": "sha256-nbBDGh95SEn5TmLsOU4Yh+VKHrKrX4evGl1PsoBKPws=",
+        "owner": "~darumaka",
+        "repo": "Wallpapers",
+        "rev": "9fc7ce98b7451201767be54511d1e5133020fa6a",
+        "type": "sourcehut"
+      },
+      "original": {
+        "owner": "~darumaka",
+        "repo": "Wallpapers",
+        "type": "sourcehut"
       }
     },
     "wlroots": {
