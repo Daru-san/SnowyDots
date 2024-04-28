@@ -22,6 +22,7 @@
         modules-left = ["hyprland/workspaces" "custom/playerctl"];
         modules-center = ["clock" "custom/notification"];
         modules-right = [
+          "idle_inhibitor"
           "network"
           "bluetooth"
           "battery"
@@ -37,6 +38,13 @@
         "tray" = {
           spacing = 10;
           icon-size = 21;
+        };
+        idle_inhibitor = {
+          format = "{icon}";
+          format-icons = {
+            activated = "";
+            deactivated = "";
+          };
         };
         "clock" = {
           format-alt = " {:%R}";
