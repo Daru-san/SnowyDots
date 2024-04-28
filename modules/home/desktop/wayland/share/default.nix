@@ -3,8 +3,7 @@
   lib,
   pkgs,
   ...
-}:
-with lib; let
+}: let
   cfg = config.wayland;
 in {
   imports = [
@@ -17,7 +16,7 @@ in {
     ./wlogout
     ./wlsunset
   ];
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     services = {
       kanshi.enable = true;
       hypridle.enable = true;
