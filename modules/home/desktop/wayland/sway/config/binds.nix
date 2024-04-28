@@ -4,12 +4,14 @@
   inputs,
   lib,
   ...
-}: {
+}: let
+  inherit (lib) getExe;
+in {
   imports = [./workspaces.nix];
   wayland.windowManager.sway.config = {
     modifier = "Mod4";
     bindkeysToCode = true;
-    keybindings = with lib; let
+    keybindings = let
       inherit (config.wayland.windowManager.sway.config) terminal;
       mod = config.wayland.windowManager.sway.config.modifier;
       yazi = getExe config.programs.yazi.package;

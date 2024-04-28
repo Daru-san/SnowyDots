@@ -3,8 +3,8 @@
   pkgs,
   lib,
   ...
-}:
-with lib; let
+}: let
+  inherit (lib) types mdDoc mkOption;
   fontType = types.submodule {
     options = {
       package = mkOption {

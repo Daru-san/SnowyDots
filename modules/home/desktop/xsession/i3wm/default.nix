@@ -3,8 +3,7 @@
   config,
   lib,
   ...
-}:
-with lib; {
+}: {
   imports = [
     ./binds.nix
     ./style.nix
@@ -15,8 +14,8 @@ with lib; {
   xsession.windowManager.i3 = {
     package = pkgs.i3-rounded;
     config = {
-      terminal = getExe config.programs.alacritty.package;
-      menu = getExe config.programs.rofi.package;
+      terminal = lib.getExe config.programs.alacritty.package;
+      menu = lib.getExe config.programs.rofi.package;
     };
   };
 }

@@ -10,11 +10,10 @@
       main = {
         start-hidden = true;
         idle-hide = true;
-        modules = with pkgs;
-          builtins.concatStringsSep ";" [
-            "${gtklock-powerbar-module}/lib/gtklock/powerbar-module.so"
-            "${gtklock-playerctl-module}/lib/gtklock/playerctl-module.so"
-          ];
+        modules = builtins.concatStringsSep ";" [
+          "${pkgs.gtklock-powerbar-module}/lib/gtklock/powerbar-module.so"
+          "${pkgs.gtklock-playerctl-module}/lib/gtklock/playerctl-module.so"
+        ];
         background = toString config.wallpaperImage;
       };
     };

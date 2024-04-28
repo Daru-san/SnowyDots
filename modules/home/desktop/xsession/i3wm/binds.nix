@@ -3,11 +3,13 @@
   pkgs,
   lib,
   ...
-}: {
+}: let
+  inherit (lib) getExe;
+in {
   imports = [./workspaces.nix];
   xsession.windowManager.i3.config = {
     modifier = "Mod4";
-    keybindings = with lib; let
+    keybindings = let
       inherit (config.xsession.windowManager.i3.config) terminal menu;
       mod = config.wayland.windowManager.sway.config.modifier;
       yazi = getExe config.programs.yazi.package;

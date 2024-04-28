@@ -5,8 +5,8 @@
   inputs,
   lib,
   ...
-}:
-with lib; let
+}: let
+  inherit (lib) getExe getExe';
   focusmode = pkgs.writeShellScriptBin "focusmode" ''
     HYPRFOCUSMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
     if [ "$HYPRFOCUSMODE" = 1 ] ; then
@@ -28,7 +28,7 @@ in {
     h = getExe pkgs.hdrop;
     e = "exec";
   in
-    mkIf config.wayland.windowManager.hyprland.enable {
+    lib.mkIf config.wayland.windowManager.hyprland.enable {
       bind = let
         terminal = getExe config.programs.kitty.package;
         browser = getExe config.programs.firefox.package;
@@ -77,7 +77,7 @@ in {
         "SUPER, w, ${e}, hyprctl notify -1 2000 0 `hyprctl activeworkspace | head -n 1`"
       ];
 
-      bindle = with lib; let
+      bindle = let
         s = getExe' config.services.swayosd.package "swayosd-client";
         volup = "--output-volume raise";
         voldown = "--output-volume lower";

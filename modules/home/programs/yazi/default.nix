@@ -1,5 +1,5 @@
-{pkgs, ...}:
-with pkgs; let
+{pkgs, ...}: let
+  inherit (pkgs) fetchFromGitHub;
   theme =
     fetchFromGitHub {
       owner = "catppuccin";

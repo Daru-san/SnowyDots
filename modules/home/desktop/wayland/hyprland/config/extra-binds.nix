@@ -1,5 +1,5 @@
-{lib, ...}:
-with lib; let
+{lib, ...}: let
+  inherit (lib) range mapAttrsToList;
   workspaces =
     (map toString (range 0 9))
     ++ (map (n: "F${toString n}") (range 1 12));

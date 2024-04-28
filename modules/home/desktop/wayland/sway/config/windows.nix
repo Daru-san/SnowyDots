@@ -1,4 +1,4 @@
-{...}: {
+{
   wayland.windowManager.sway.config = {
     assigns = {
       "F1" = [{class = "firefox-nighly";}];

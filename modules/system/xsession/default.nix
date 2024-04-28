@@ -3,8 +3,8 @@
   lib,
   config,
   ...
-}:
-with lib; let
+}: let
+  inherit (lib) getExe mkIf;
   cfg = config.services.xserver;
 in {
   services.xserver = mkIf cfg.enable {
@@ -35,7 +35,7 @@ in {
     after = ["graphical-session.target"];
     serviceConfig = {
       Type = "simple";
-      ExecStart = getExe' pkgs.lxqt.lxqt-policykit "lxqt-policykit-agent";
+      ExecStart = getExe pkgs.lxqt.lxqt-policykit;
       Restart = "on-failure";
       RestartSec = 1;
       TimeoutStopSec = 10;

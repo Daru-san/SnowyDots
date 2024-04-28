@@ -4,8 +4,8 @@
   config,
   pkgs,
   ...
-}:
-with lib; let
+}: let
+  inherit (lib) getExe getExe' mkIf;
   cfg = config.wayland;
   lockscreen =
     if (cfg.compositor == "hyprland")
