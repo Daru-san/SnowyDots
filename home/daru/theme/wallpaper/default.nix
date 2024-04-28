@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   home.packages = [pkgs.swww];
-  wallpaperImage = ./wallpaper.jpg;
+  wallpaperImage = "${inputs.wallpapers}/walls/dark-leaves.png";
 }
