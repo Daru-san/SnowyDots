@@ -2,8 +2,8 @@
   config,
   lib,
   ...
-}:
-with lib; let
+}: let
+  inherit (lib) range concatLines;
   mod = config.wayland.windowManager.sway.config.modifier;
   workspaces =
     (map toString (range 0 9))
