@@ -40,6 +40,7 @@
     tp = "${trashy} put";
     te = "${trashy} empty";
     y = yazi;
+    jtp = ''find $1 -name "*.jpg" -exec mogrify -format png {} \;'';
     man = "${pkgs.bat-extras.batman}/bin/batman";
     grep = "${pkgs.bat-extras.batgrep}/bin/batgrep";
     cat = bat;
