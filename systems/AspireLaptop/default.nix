@@ -11,14 +11,15 @@
     overlays = with outputs.overlays; [
       stable-packages
     ];
-    config = {allowUnfree = true;};
+    config.allowUnfree = true;
   };
 
-  nix.registry =
-    (lib.mapAttrs (_: flake: {inherit flake;}))
-    ((lib.filterAttrs (_: lib.isType "flake")) inputs);
-
-  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+  nix = {
+    registry =
+      (lib.mapAttrs (_: flake: {inherit flake;}))
+      ((lib.filterAttrs (_: lib.isType "flake")) inputs);
+    nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+  };
   environment.etc =
     lib.mapAttrs' (name: value: {
       name = "nix/path/${name}";
@@ -52,14 +53,17 @@
   nix.gc = {
     automatic = true;
     options = "--delete-older-than 7d";
+    persistent = true;
+    randomizedDelaySec = "180min";
   };
 
   system.autoUpgrade = {
     enable = true;
-    flake = "github:Daru-san/Snowflake-dots";
-    flags = ["--update-input" "nixpkgs"];
+    flake = inputs.self.outPath;
+    flags = ["--update-input" "nixpkgs" "-L"];
     operation = "boot";
     dates = "00:00";
+    persistent = true;
     randomizedDelaySec = "180min";
   };
 }

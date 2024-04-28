@@ -5,19 +5,21 @@
   outputs,
   ...
 }: {
-  imports = with inputs; [./configuration.nix chaotic.nixosModules.default];
+  imports = [./configuration.nix];
+
   nixpkgs = {
     overlays = with outputs.overlays; [
-      unstable-packages
+      stable-packages
     ];
-    config = {allowUnfree = true;};
+    config.allowUnfree = true;
   };
 
-  nix.registry =
-    (lib.mapAttrs (_: flake: {inherit flake;}))
-    ((lib.filterAttrs (_: lib.isType "flake")) inputs);
-
-  nix.nixPath = ["/etc/nix/path"];
+  nix = {
+    registry =
+      (lib.mapAttrs (_: flake: {inherit flake;}))
+      ((lib.filterAttrs (_: lib.isType "flake")) inputs);
+    nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+  };
   environment.etc =
     lib.mapAttrs' (name: value: {
       name = "nix/path/${name}";
@@ -37,6 +39,7 @@
       "https://nyx.chaotic.cx/"
       "https://hyprland.cachix.org"
       "https://nix-community.cachix.org"
+      "https://snowy-cache.cachix.org"
     ];
 
     trusted-public-keys = [
@@ -44,19 +47,23 @@
       "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "snowy-cache.cachix.org-1:okWl5IF/yzdZ+p/eRhDFvcanQo/y0ta80dvfdGgy28U="
     ];
   };
   nix.gc = {
     automatic = true;
     options = "--delete-older-than 7d";
+    persistent = true;
+    randomizedDelaySec = "180min";
   };
 
   system.autoUpgrade = {
     enable = true;
-    flake = "github:Daru-san/Snowflake-dots";
-    flags = ["--update-input" "nixpkgs" "--impure"];
+    flake = inputs.self.outPath;
+    flags = ["--update-input" "nixpkgs" "--update-input" "nixpkgs-stable" "-L"];
     operation = "boot";
     dates = "00:00";
+    persistent = true;
     randomizedDelaySec = "180min";
   };
 }
