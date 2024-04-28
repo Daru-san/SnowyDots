@@ -1,6 +1,6 @@
 # Snowy Dots
 
-My beautiful, functional, focused nix flake with Hyprland, Sway and KDE plasma 6, written completely in nix.
+My beautiful, functional, focused nix flake with Hyprland and Sway, written completely in nix.
 
 **_Hosted at [SnowyDots](https://git.sr.ht/~darumaka/SnowyDots)_**
 
@@ -8,16 +8,15 @@ My beautiful, functional, focused nix flake with Hyprland, Sway and KDE plasma 6
 
 ### Hyprland
 
-![Image](https://i.imgur.com/U6HGbvN.png 'I use Nix by the way')
-![Image](https://i.imgur.com/dvySPYo.png 'Neovim for winter days')
-![image](https://i.imgur.com/yuK0FGO.png 'Why not take a look at my files?')
-![image](https://i.imgur.com/8dX89D4.png 'Firefox looking amazing')
+![Image](https://imgur.com/Tm8C6SN.png 'I use Nix by the way')
+![Image](https://i.imgur.com/JnzkFhK.png 'Neovim for winter days')
+![image](https://imgur.com/3sTDYzG.png 'Why not take a look at my files?')
+![image](https://i.imgur.com/Q0cOgNT.png 'Firefox looking amazing')
+![Image](https://i.imgur.com/Vnck7Oi.png 'Read with me?')
 
 ## My System
 
 ### The base environment
-
-I'm running Hyprland, with greetd as a login manager.
 
 #### Desktop environment
 
@@ -26,37 +25,8 @@ I'm running Hyprland, with greetd as a login manager.
 - Shell: [zsh](http://zsh.sourceforge.net/ 'zsh') configured with [oh-my-posh](https://ohmyposh.dev/), [antidote](https://getantidote.github.io/) and [prezto](https://github.com/sorin-ionescu/prezto)
 - Editor: [SnowyVim](https://git.sr.ht/~darumaka/SnowyVim), my custom [Neovim](https://github.com/neovim/neovim) configuration made with [nixvim](https://github.com/nix-community/nixvim)
 - Bar: [waybar](https://github.com/Alexays/Waybar 'waybar')
-<!--- TODO: Add ags --->
 - Kernel: [Linux-zen](https://archlinux.org/packages/extra/x86_64/linux-zen/ 'zen')
 - Lockscreen and idle: [hypridle](https://github.com/hyprwm/hypridle) and [hyprlock](https://github.com/hyprwm/hyprlock)
-
-### Specialisations
-
-I also use specialisations to configure special system configs that I can switch between at boot:
-
-```nix
-# systems/specialise/default.nix
-{...}: {
-  specialisation = {
-    # Config with KDE plasma
-    plasma.configuration = {
-      imports = [./plasma.nix];
-    };
-    # Config with hyprland
-    hyprland.configuration = {
-      imports = [./hyprland.nix];
-    };
-    # Config with plasma and disables my laptop's builtin display
-    plasma-ext-display.configuration = {
-      imports = [./plasma.nix ./no-laptop-display.nix];
-    };
-    # Config with hyprland and disables the builtin display
-    hyprland-ext-display.configuration = {
-      imports = [./no-laptop-display.nix ./hyprland.nix];
-    };
-  };
-}
-```
 
 ## Installing NixOS
 
@@ -140,20 +110,14 @@ home-manager switch --flake .#daru@AspireLaptop
 ### Useful resources
 
 - [NixOS Manual](https://nixos.org/manual/nixos/unstable/ 'nix')
-- [Erase your darlings](https://grahamc.com/blog/erase-your-darlings/ 'persist')
+- [Nix best practices](https://nix.dev/guides/best-practices.html)
 - [NixOS wiki](https://nixos.wiki 'nix-wiki')
 - [MyNixOS](https://mynixos.com 'Best nix resource')
 - [NixOS install guide](https://nixos.wiki/wiki/NixOS_Installation_Guide)
 
 ### Inspirations
 
-- [justinlime's waybar configuration](https://github.com/justinlime/dotfiles)
 - [D3Ext's aesthetic wallpaper repo](https://github.com/D3Ext/aesthetic-wallpapers 'walls')
 - [fufexan/dotfiles](https://github.com/fufexan/dotfiles/ 'fufexan dots')
 - [misterio's dotfiles](https://git.sr.ht/~misterio/nix-config 'dots')
 - [Misterio77's nix-starter-configs](https://github.com/Misterio77/nix-starter-configs 'nix-starter-configs')
-
-<!---
-TODO:
-- Update Minecraft config
---->
