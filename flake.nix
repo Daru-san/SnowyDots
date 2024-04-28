@@ -25,6 +25,10 @@
     snowyvim.url = "sourcehut:~darumaka/SnowyVim";
     scripts.url = "sourcehut:~darumaka/Nix-Scripts";
     snowpkgs.url = "sourcehut:~darumaka/Snowpkgs";
+    wallpapers = {
+      url = "sourcehut:~darumaka/Wallpapers";
+      flake = false;
+    };
 
     # Hyprland stuff
     hyprland.url = "github:hyprwm/Hyprland/25aec3ac8ce65ed224f025f8f6dfef73780577a4";
