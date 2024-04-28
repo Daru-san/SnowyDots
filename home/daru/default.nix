@@ -28,9 +28,6 @@
   nix.package = pkgs.nix;
   nix.gc = {
     automatic = true;
-    interval = {
-      Hour = 3;
-      Minute = 40;
-    };
+    frequency = "daily";
   };
 }
