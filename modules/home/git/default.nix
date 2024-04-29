@@ -1,5 +1,5 @@
 {
-  imports = [./lazygit.nix];
+  imports = [./lazygit.nix ./gh.nix];
   programs.git-cliff = {enable = true;};
   programs.git = {
     enable = true;
