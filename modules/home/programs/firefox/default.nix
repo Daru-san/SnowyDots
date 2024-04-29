@@ -162,6 +162,10 @@
                 template = "https://search.nixos.org/packages";
                 params = [
                   {
+                    name = "channels";
+                    value = "unstable";
+                  }
+                  {
                     name = "type";
                     value = "packages";
                   }
@@ -180,6 +184,10 @@
               {
                 template = "https://search.nixos.org/options";
                 params = [
+                  {
+                    name = "channels";
+                    value = "unstable";
+                  }
                   {
                     name = "type";
                     value = "options";
