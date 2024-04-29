@@ -1,6 +1,5 @@
 {...}: {
   imports = [
-    ./git
     ./mpv
     ./btop
     ./translate-shell

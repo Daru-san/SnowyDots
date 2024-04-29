@@ -3,6 +3,7 @@
     ./desktop
     ./shell
     ./services
+    ./git
     ./xdg
     ./themes
     ./programs

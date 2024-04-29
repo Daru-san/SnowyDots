@@ -32,11 +32,14 @@
       adbtuifm
       libnotify
       speedtest-cli
+      hydra-check
       chroma
       glow
       gping
       unstable.nvtopPackages.intel
       sysz
+      # ghfetch
+      charm-freeze
       exiftool
       xdg-utils
       nitch
