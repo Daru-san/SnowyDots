@@ -17,6 +17,7 @@
       newsflash
       archiver
       pavucontrol
+      libreoffice-qt-fresh
       iwgtk
       hmcl
       blanket
