@@ -13,7 +13,6 @@ in {
   programs.spicetify = {
     enable = true;
     spotifyPackage = pkgs.spotify;
-    windowManagerPatch = true;
     theme = spicePkgs.themes.text;
     enabledExtensions = with spicePkgs.extensions; [
       fullAppDisplayMod
