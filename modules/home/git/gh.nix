@@ -15,7 +15,6 @@
         gh-f
         ghq
         gh-cal
-        ghfetch
         gh-s
         gh-download
       ];

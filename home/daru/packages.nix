@@ -38,13 +38,14 @@
       gping
       unstable.nvtopPackages.intel
       sysz
-      # ghfetch
+      ghfetch
       charm-freeze
       exiftool
       xdg-utils
       nitch
       pulsemixer
       ani-cli
+      maven
       manga-cli
       transmission
       du-dust
