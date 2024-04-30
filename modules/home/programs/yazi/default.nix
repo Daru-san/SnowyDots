@@ -47,7 +47,7 @@
           }
           {
             name = "text/*";
-            exec = "bat";
+            run = "bat";
           }
         ];
       };
