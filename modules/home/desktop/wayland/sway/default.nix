@@ -18,7 +18,6 @@ in
       in {
         wlsunset = {inherit systemdTarget;};
         kanshi = {inherit systemdTarget;};
-        swaync.systemd.target = systemdTarget;
       };
       programs = {
         alacritty.enable = true;

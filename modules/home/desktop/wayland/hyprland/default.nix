@@ -19,7 +19,6 @@ in {
     in {
       wlsunset = {inherit systemdTarget;};
       kanshi = {inherit systemdTarget;};
-      swaync.systemd.target = systemdTarget;
     };
     programs = {
       kitty.enable = true;

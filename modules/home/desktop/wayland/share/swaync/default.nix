@@ -1,6 +1,5 @@
 {
   services.swaync = {
-    systemd.enable = true;
     settings = {
       positionX = "center";
       positionY = "top";
