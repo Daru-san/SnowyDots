@@ -100,10 +100,11 @@
 
       search = {
         force = true;
-        default = "Brave";
+        default = "Brave Search";
         privateDefault = "DuckDuckGo";
 
         order = [
+          "Brave Search"
           "DuckDuckGo"
           "StartPage"
           "Github"
