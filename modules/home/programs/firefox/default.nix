@@ -100,8 +100,8 @@
 
       search = {
         force = true;
-        default = "DuckDuckGo";
-        privateDefault = "StartPage";
+        default = "Brave";
+        privateDefault = "DuckDuckGo";
 
         order = [
           "DuckDuckGo"
@@ -124,6 +124,12 @@
           "Amazon.com" = {inherit (disabled) metaData;};
           "Wikipedia (en)" = {inherit (disabled) metaData;};
           "DuckDuckGo" = {metaData.alias = "@dg";};
+          "Brave Search" = {
+            urls = [{template = "https://search.brave.com/search?q={searchTerms}";}];
+            iconUpdateURL = "https://brave.com/static-assets/images/brave-logo-sans-text.svg";
+            updateInterval = 24 * 60 * 60 * 1000;
+            definedAliases = ["@br" "@b" "@brave"];
+          };
           "StartPage" = {
             urls = [{template = "https://www.startpage.com/sp/search?query={searchTerms}";}];
             iconUpdateURL = "https://www.startpage.com/sp/cdn/favicons/favicon-gradient.ico";
