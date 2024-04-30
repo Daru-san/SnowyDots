@@ -17,7 +17,7 @@
 
     # Custom stuff
     nix-colors.url = "github:Misterio77/nix-colors";
-    spicetify-nix.url = "github:the-argus/spicetify-nix/master";
+    spicetify-nix.url = "github:honnip/spicetify-nix";
     trashy.url = "github:Daru-san/trashy";
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
 
