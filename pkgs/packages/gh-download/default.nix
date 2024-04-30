@@ -3,13 +3,13 @@
   stdenv,
   makeWrapper,
 }:
-stdenv.mkDerivation (finalAttrs: {
+stdenv.mkDerivation rec {
   pname = "gh-download";
   version = "0.6.1";
   src = pkgs.fetchFromGitHub {
     owner = "yuler";
     repo = "gh-download";
-    rev = "v${finalAttrs.version}";
+    rev = "v${version}";
     hash = "sha256-thaAkam5oC0+m7B9yGpOU8V8wyF0R3BOCGz8fko+QQk=";
   };
   nativeBuildInputs = [makeWrapper];
@@ -19,4 +19,4 @@ stdenv.mkDerivation (finalAttrs: {
   '';
   installPhase = ''
     wrapProgram $out/bin/gh-download'';
-})
+}
