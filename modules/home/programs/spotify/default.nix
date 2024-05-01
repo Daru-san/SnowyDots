@@ -1,5 +1,4 @@
 {
-  pkgs,
   system,
   inputs,
   ...
@@ -15,8 +14,6 @@ in {
       powerBar
       bookmark
       autoVolume
-      history
-      historyShortcut
       keyboardShortcut
       copyToClipboard
       volumePercentage
@@ -24,19 +21,11 @@ in {
       shuffle
       playlistIcons
     ];
-    enabledCustomApps = let
-      better-library = pkgs.fetchzip {
-        url = "https://github.com/Sowgro/betterLibrary/archive/refs/tags/3.0.zip";
-        hash = "sha256-8xdhNvL2yF9bFzEH4JUAcOxexdoif9czpUHI3K7cPWk=";
-      };
-    in
-      [
-        {
-          name = "betterLibrary";
-          src = better-library + "/CustomApps/betterLibrary";
-          appendName = false;
-        }
-      ]
-      ++ (with spicePkgs.apps; [new-releases lyrics-plus]);
+    enabledCustomApps = with spicePkgs.apps; [
+      new-releases
+      lyrics-plus
+      library
+      stats
+    ];
   };
 }
