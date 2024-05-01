@@ -5,6 +5,7 @@
     kdeconnect.enable = true;
     blueman-applet.enable = true;
     network-manager-applet.enable = true;
+    psd.enable = true;
     syncthing = {
       enable = true;
       tray.enable = true;
