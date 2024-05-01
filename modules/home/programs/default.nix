@@ -7,6 +7,7 @@
     ./zathura
     ./yazi
     ./pqiv
+    ./freetube
     ./yt-dlp
     ./nautilus
     ./neovim

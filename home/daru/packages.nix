@@ -10,7 +10,6 @@
     (with pkgs; [
       # GUI
       obsidian
-      freetube
       scrcpy
       keepassxc
       bridge-core
