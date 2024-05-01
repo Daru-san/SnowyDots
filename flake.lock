@@ -2080,11 +2080,11 @@
         "nixpkgs": "nixpkgs_15"
       },
       "locked": {
-        "lastModified": 1714569472,
-        "narHash": "sha256-Oy/1g4LZVlSXVo8bVPAE+Y2Hv+vML7UM8sobaORfl24=",
+        "lastModified": 1714570296,
+        "narHash": "sha256-lA4GqtylpP+AYlYcHLR5DO0DyBYl52A/8cGvL/pdMrE=",
         "owner": "Daru-san",
         "repo": "spicetify-nix",
-        "rev": "9fc4ca2cd059900f30e2719073e6e11aca47e651",
+        "rev": "d7d0c960391ae4575833b4fed333da97e1cc20d8",
         "type": "github"
       },
       "original": {
