@@ -10,7 +10,7 @@ in {
   programs.spicetify = {
     enable = true;
     theme = spicePkgs.themes.text;
-    tyenabledExtensions = with spicePkgs.extensions; [
+    enabledExtensions = with spicePkgs.extensions; [
       fullAppDisplay
       powerBar
       bookmark
