@@ -25,7 +25,6 @@
     git = "${config.programs.git.package}/bin/git";
     firefox = "${lib.getExe config.programs.firefox.package}";
     lazygit = "${config.programs.lazygit.package}/bin/lazygit";
-    neofetch = "${pkgs.neofetch}/bin/neofetch";
     tty-clock = "${pkgs.tty-clock}/bin/tty-clock";
     trashy = "${inputs.trashy.packages.${system}.trashy}/bin/trashy";
     yazi = "${config.programs.yazi.package}/bin/yazi";
@@ -33,7 +32,6 @@
   in {
     g = git;
     lg = lazygit;
-    neofetch = "${neofetch} --config none";
     clock = "${tty-clock} -bscBrnS";
     nb = "nix-rebuild";
     hb = "hm-build";
