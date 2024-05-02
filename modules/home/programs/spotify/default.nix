@@ -26,7 +26,7 @@ in {
       lyrics-plus
       library
       statistics
-      history-in-Sidebar
+      history-in-sidebar
       betterLocalFiles
       playlistTags
     ];
