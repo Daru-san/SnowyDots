@@ -25,7 +25,10 @@ in {
       new-releases
       lyrics-plus
       library
-      stats
+      statistics
+      history-in-Sidebar
+      betterLocalFiles
+      playlistTags
     ];
   };
 }
