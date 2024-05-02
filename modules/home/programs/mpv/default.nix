@@ -5,7 +5,6 @@
     config = {
       hwdec = "auto-safe";
       vo = "gpu";
-      gpu-api = "vulkan";
       taskbar-progress = false;
       keep-open = "always";
       profile = "gpu-hq";
