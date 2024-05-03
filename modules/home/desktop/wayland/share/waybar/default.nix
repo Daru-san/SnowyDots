@@ -47,7 +47,7 @@
           };
         };
         "clock" = {
-          format-alt = " {:%R}";
+          format-alt = " {:%X}";
           format = " {:%a, %e %b, %R}";
           tooltip-format = "<tt><small>{calendar}</small></tt>";
           on-click-right = "mode";
