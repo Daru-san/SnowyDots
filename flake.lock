@@ -379,6 +379,22 @@
         "type": "github"
       }
     },
+    "flake-compat_6": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1696426674,
+        "narHash": "sha256-kvjfFW7WAETZlt09AgDn1MrtKzP7t90Vf7vypd3OL1U=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "0f9255e01c2351cc7d116c072cb317785dd33b33",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
@@ -1005,26 +1021,6 @@
         "owner": "hyprwm",
         "ref": "v0.3.0",
         "repo": "hyprlock",
-        "type": "github"
-      }
-    },
-    "hyprspace": {
-      "inputs": {
-        "hyprland": [
-          "hyprland"
-        ]
-      },
-      "locked": {
-        "lastModified": 1714135626,
-        "narHash": "sha256-ATUzRiHEA91Fqdpf/MfUQifxJuT4kT6YRWgxbOOzCzw=",
-        "owner": "KZDKM",
-        "repo": "Hyprspace",
-        "rev": "cbdac93d2a2b2cb70933a8f6a51ae7511de35615",
-        "type": "github"
-      },
-      "original": {
-        "owner": "KZDKM",
-        "repo": "Hyprspace",
         "type": "github"
       }
     },
@@ -1741,7 +1737,6 @@
         "hyprland": "hyprland",
         "hyprland-plugins": "hyprland-plugins",
         "hyprlock": "hyprlock",
-        "hyprspace": "hyprspace",
         "nix-colors": "nix-colors",
         "nixpkgs": "nixpkgs_9",
         "nixpkgs-alt": "nixpkgs-alt",
@@ -1752,7 +1747,8 @@
         "snowyvim": "snowyvim",
         "spicetify-nix": "spicetify-nix",
         "trashy": "trashy",
-        "wallpapers": "wallpapers"
+        "wallpapers": "wallpapers",
+        "waybar": "waybar"
       }
     },
     "rust-analyzer-src": {
@@ -2122,6 +2118,27 @@
         "owner": "~darumaka",
         "repo": "Wallpapers",
         "type": "sourcehut"
+      }
+    },
+    "waybar": {
+      "inputs": {
+        "flake-compat": "flake-compat_6",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1714718861,
+        "narHash": "sha256-mCQdrn0Y3oOVZP/CileWAhuBX6aARBNrfxyqJBB4NxA=",
+        "owner": "Alexays",
+        "repo": "waybar",
+        "rev": "231d6972d7a023e9358ab7deda509baac49006cb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Alexays",
+        "repo": "waybar",
+        "type": "github"
       }
     },
     "wlroots": {
