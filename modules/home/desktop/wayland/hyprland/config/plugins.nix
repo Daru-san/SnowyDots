@@ -5,9 +5,9 @@
 }: {
   wayland.windowManager.hyprland = {
     plugins = [
-      inputs.hyprfocus.packages.${system}.hyprfocus
+      # inputs.hyprfocus.packages.${system}.hyprfocus
       inputs.hyprland-plugins.packages.${system}.hyprexpo
-      inputs.hyprspace.packages.${system}.Hyprspace
+      # inputs.hyprspace.packages.${system}.Hyprspace
     ];
     extraConfig = ''
       plugin {
