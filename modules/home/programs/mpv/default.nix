@@ -7,8 +7,7 @@
       vo = "gpu";
       taskbar-progress = false;
       keep-open = "always";
-      profile = "gpu-hq";
-      gpu-context = "wayland";
+      # profile = "gpu-hq";
       force-window = true;
       save-position-on-quit = true;
       deband = false;
@@ -34,10 +33,11 @@
     };
     scripts = with pkgs.mpvScripts; [
       sponsorblock
-      modernx
+      uosc
       mpv-cheatsheet
       quality-menu
       quack
+      mpris
       thumbfast
     ];
   };
