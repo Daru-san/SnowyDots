@@ -24,6 +24,7 @@
       defaultQuality = "1080";
       enableScreenshot = true;
       fetchSubscriptionsAutomatically = true;
+      externalPlayer = "mpv";
     };
   };
 }
