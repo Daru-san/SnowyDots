@@ -34,10 +34,6 @@
     hyprland.url = "github:hyprwm/Hyprland/v0.40.0";
     hyprlock.url = "github:hyprwm/hyprlock/v0.3.0";
     hypridle.url = "github:hyprwm/hypridle/v0.1.2";
-    hyprspace = {
-      url = "github:KZDKM/Hyprspace";
-      inputs.hyprland.follows = "hyprland";
-    };
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
@@ -51,6 +47,10 @@
     anyrun.url = "github:Kirottu/anyrun";
     anyrun-nixos-options.url = "github:n3oney/anyrun-nixos-options";
     ags.url = "github:Aylur/ags";
+    waybar = {
+      url = "github:Alexays/waybar";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   nixConfig = {
     extra-substituters = [
