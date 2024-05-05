@@ -123,7 +123,7 @@ in {
         pk = getExe' pkgs.busybox "pkill";
 
         # Screenshots
-        gb = getExe pkgs.grimblast;
+        gb = getExe inputs.hyprland-contrib.packages.${system}.grimblast;
         hs = getExe pkgs.hyprshot;
         scr-dir = "${config.home.homeDirectory}/Pictures/Screenshots";
         r = "region";
