@@ -12,7 +12,7 @@
         ++ [
           (pkgs.fetchpatch {
             url = "https://github.com/Alexays/waybar/commit/f41458ea24a57bb71b629089396c31fe4dd97f1c.patch";
-            sha256 = "sha256-mCQdrn0Y3oOVZP/CileWAhuBX6aARBNrfxyqJBB4NxA=";
+            sha256 = "sha256-HdtJVuuEbMcLEIPS8W/UwuWBJC7D9oy+pCOX0ILJY5g=";
           })
         ];
     });
