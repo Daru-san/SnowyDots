@@ -4,6 +4,6 @@
     ./neovim.nix
     ./android.nix
     ./vnstat.nix
-    ./nh
+    ./nh.nix
   ];
 }
