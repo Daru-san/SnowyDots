@@ -50,13 +50,6 @@
       "snowy-cache.cachix.org-1:okWl5IF/yzdZ+p/eRhDFvcanQo/y0ta80dvfdGgy28U="
     ];
   };
-  nix.gc = {
-    automatic = true;
-    options = "--delete-older-than 7d";
-    persistent = true;
-    randomizedDelaySec = "180min";
-  };
-
   system.autoUpgrade = {
     enable = true;
     flake = inputs.self.outPath;
