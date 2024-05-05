@@ -239,6 +239,8 @@
         "browser.urlbar.suggest.history" = false;
         "browser.urlbar.suggest.topsites" = false;
 
+        "extensions.autoDisableScope" = false;
+
         "gfx.webrender.all" = true;
         "layers.acceleration.force-enabled" = true;
 
