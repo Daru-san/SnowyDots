@@ -12,15 +12,13 @@
     ]);
 
   nixpkgs = {
-    overlays =
-      (with inputs; [waybar.overlays.default])
-      ++ (with outputs.overlays; [
-        stable-packages
-        unstable-packages
-        alt-packages
-        packages
-        gnome46-packages
-      ]);
+    overlays = with outputs.overlays; [
+      stable-packages
+      unstable-packages
+      alt-packages
+      packages
+      gnome46-packages
+    ];
     config = {
       allowUnfree = true;
       allowUnfreePredicate = _: true;
