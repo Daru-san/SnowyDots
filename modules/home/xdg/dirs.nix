@@ -2,29 +2,24 @@
   hm = config.home.homeDirectory;
 in rec {
   enable = true;
-
-  # Automatically create directories
   createDirectories = true;
 
-  # Default directories
   desktop = null;
   music = "${hm}/Music";
   pictures = "${hm}/Pictures";
   videos = "${hm}/Videos";
   download = "${hm}/Downloads";
-  screenshots = "${pictures}/Screenshots";
-  publicshare = null;
+  publicShare = null;
   templates = null;
 
-  # Special directories
   extraConfig = rec {
-    emu = "${hm}/Emulation";
-    anime = "${videos}/Anime";
-    projects = "${dev}/Projects";
-    notes = "${hm}/Notes";
-    walls = "${hm}/Wallpapers";
-    dev = "${hm}/Development";
-    secret = "${hm}/.secrets";
-    repos = "${dev}/Repos";
+    XDG_SCREENSHOTS_DIR = "${pictures}/Screenshots";
+    XDG_WALLPAPER_DIR = "${hm}/Wallpapers";
+    XDG_MISC_DIR = "${hm}/Misc";
+    XDG_REPO_DIR = "${XDG_DEV_DIR}/Repos";
+    XDG_PROJECTS_DIR = "${XDG_DEV_DIR}/Projects";
+    XDG_NOTES_DIR = "${hm}/Notes";
+    XDG_DEV_DIR = "${hm}/Development";
+    XDG_SECRET_DIR = "${hm}/.secrets";
   };
 }
