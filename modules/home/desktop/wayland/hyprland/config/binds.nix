@@ -123,6 +123,7 @@ in {
         pk = getExe' pkgs.busybox "pkill";
 
         # Screenshots
+        gb = getExe pkgs.grimblast;
         hs = getExe pkgs.hyprshot;
         scr-dir = "${config.home.homeDirectory}/Pictures/Screenshots";
         r = "region";
@@ -148,9 +149,9 @@ in {
         "altshift,F7,${e},${pk} mixxc || ${mx} --anchor right --anchor top --margin 20 --margin 30 -M"
 
         # Screenshotting
-        ", print, ${e}, ${pk} hyprshot || ${hs} -m ${r} -o ${scr-dir}"
-        "shift, print, ${e}, ${pk} hyprshot || ${hs} -m ${o} -c -o ${scr-dir}"
-        "alt, print, ${e}, ${pk} hyprshot || ${hs} -m ${o} -o ${scr-dir}"
+        ", print, ${e}, ${pk} grimblast || ${gb} -n -f save area"
+        "shift, print, ${e}, ${pk} grimblast || ${gb} -n -f save active"
+        "alt, print, ${e}, ${pk} grimblast || ${gb} -n -f save output"
 
         # Notifcations
         "super,n, ${e}, ${sc} -t"

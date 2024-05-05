@@ -13,7 +13,7 @@
 
   nixpkgs = {
     overlays =
-      [inputs.waybar.overlays.default]
+      (with inputs; [waybar.overlays.default hyprland-contrib.overlays.default])
       ++ (with outputs.overlays; [
         stable-packages
         unstable-packages
