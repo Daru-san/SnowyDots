@@ -1,28 +1,30 @@
 {config, ...}: let
   hm = config.home.homeDirectory;
-in {
+in rec {
   enable = true;
 
   # Automatically create directories
   createDirectories = true;
 
   # Default directories
-  desktop = "${hm}/Desktop";
+  desktop = null;
   music = "${hm}/Music";
   pictures = "${hm}/Pictures";
   videos = "${hm}/Videos";
   download = "${hm}/Downloads";
+  screenshots = "${pictures}/Screenshots";
+  publicshare = null;
+  templates = null;
 
   # Special directories
-  extraConfig = {
+  extraConfig = rec {
     emu = "${hm}/Emulation";
-    anime = "${hm}/Anime";
-    projects = "${hm}/Projects";
-    scripts = "${hm}/Scripts";
+    anime = "${videos}/Anime";
+    projects = "${dev}/Projects";
     notes = "${hm}/Notes";
     walls = "${hm}/Wallpapers";
     dev = "${hm}/Development";
-    secret = "${hm}/Secret";
-    repos = "${hm}/Repos";
+    secret = "${hm}/.secrets";
+    repos = "${dev}/Repos";
   };
 }
