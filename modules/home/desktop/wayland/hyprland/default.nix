@@ -39,6 +39,7 @@ in {
           "systemctl --user start wlsunset.service"
           "systemctl --user start network-manager-applet.service"
           "systemctl --user start blueman-applet"
+          "systemctl --user start blanket"
         ];
       };
       settings = {source = ["extra.conf"];};

@@ -7,9 +7,9 @@
   cfg = config.services.blanket;
   inherit (lib) mkIf mkEnableOption mkPackageOption hm platforms;
 in {
-  options = {
+  options.services.blanket = {
     enable = mkEnableOption "Enable the blanket service";
-    package = mkPackageOption pkgs.blanket "Package for blanket";
+    package = mkPackageOption pkgs "blanket" {};
   };
   config = mkIf cfg.enable {
     assertions = [
