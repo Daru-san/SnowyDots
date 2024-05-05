@@ -15,13 +15,15 @@ in {
     };
   };
   config = mkMerge [
-    {services.earlyoom.enable = true;}
-    (mkIf cfg.advanced {
-      services = {
-        throttled.enable = true;
-        thermald.enable = true;
+    {
+      services.earlyoom.enable = true;
+      boot = {
+        kernelModules = ["cpupower"];
+        extraModulePackages = with config.boot.kernelPackages; [
+          cpupower
+        ];
       };
-    })
+    }
     (mkIf cfg.desktop {
       zramSwap = {
         enable = true;
@@ -34,7 +36,12 @@ in {
         enable = true;
         memoryPercent = 200;
       };
-      boot.kernelParams = ["video=eDP-1:d" "video=LVDS-1:d"];
+      services.thermald.enable = true;
+      powerManagement.resumeCommands = ''
+        ${config.boot.kernelPackages.cpupower}/bin/cpupower frequency-set -g schedutil
+        ${config.boot.kernelPackages.cpupower}/bin/cpupower frequency-set -g performance
+      '';
+      boot.kernelParams = ["video=eDP-1:d"];
       services.auto-cpufreq = {
         enable = true;
         settings = {
