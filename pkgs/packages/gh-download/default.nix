@@ -10,7 +10,7 @@ stdenv.mkDerivation rec {
     owner = "yuler";
     repo = "gh-download";
     rev = "v${version}";
-    hash = "sha256-thaAkam5oC0+m7B9yGpOU8V8wyF0R3BOCGz8fko+QQk=";
+    hash = "sha256-pMKVDJDhvzMlezhs7JpxrpljuRyW8Vz2rmwpAWLxXko=";
   };
   nativeBuildInputs = [makeWrapper];
   buildPhase = ''
