@@ -32,7 +32,7 @@ in {
       bind = let
         terminal = getExe config.programs.kitty.package;
         browser = getExe config.programs.firefox.package;
-        file-manager = getExe pkgs.gnome46.gnome.nautilus;
+        file-manager = getExe pkgs.gnome.nautilus;
         editor = "nvim";
         ranger = getExe pkgs.ranger;
         image-editor = getExe' pkgs.krita "krita";

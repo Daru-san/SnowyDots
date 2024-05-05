@@ -2,7 +2,7 @@
   nautEnv = pkgs.buildEnv {
     name = "nautilus-env";
 
-    paths = with pkgs.gnome46; [
+    paths = with pkgs; [
       gnome.nautilus
       gnome.nautilus-python
       nautilus-open-any-terminal

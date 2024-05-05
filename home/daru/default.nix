@@ -17,7 +17,6 @@
       unstable-packages
       alt-packages
       packages
-      gnome46-packages
     ];
     config = {
       allowUnfree = true;

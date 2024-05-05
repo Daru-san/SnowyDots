@@ -67,7 +67,7 @@
       fastfetch
     ])
     (with inputs.scripts.packages.${system}; [hm-build nix-rebuild])
-    (with pkgs.gnome46.gnome; [dconf-editor gnome-clocks file-roller cheese nautilus])
+    (with pkgs.gnome; [dconf-editor gnome-clocks file-roller cheese])
     [inputs.trashy.packages.${system}.trashy]
   ];
 }

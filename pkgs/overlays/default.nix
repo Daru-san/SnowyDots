@@ -17,9 +17,4 @@
       inherit (final) system;
     };
   };
-  gnome46-packages = final: _prev: {
-    gnome46 = import inputs.nixpkgs-gnome46 {
-      inherit (final) system;
-    };
-  };
 }
