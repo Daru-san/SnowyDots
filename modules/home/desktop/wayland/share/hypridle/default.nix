@@ -16,9 +16,7 @@
     ${lockscreen}
   '');
 in {
-  imports = with inputs.hypridle.homeManagerModules; [default];
   services.hypridle = mkIf cfg.enable {
-    package = pkgs.hypridle;
     listeners = [
       {
         timeout = 1200;
