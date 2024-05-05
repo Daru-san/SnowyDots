@@ -51,10 +51,7 @@
     anyrun.url = "github:Kirottu/anyrun";
     anyrun-nixos-options.url = "github:n3oney/anyrun-nixos-options";
     ags.url = "github:Aylur/ags";
-    waybar = {
-      url = "github:Alexays/waybar";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    waybar.url = "github:Alexays/waybar";
   };
   nixConfig = {
     extra-substituters = [
