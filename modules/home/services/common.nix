@@ -1,5 +1,6 @@
 {
   services = {
+    blanket.enable = true;
     playerctld.enable = true;
     easyeffects.enable = true;
     kdeconnect.enable = true;
