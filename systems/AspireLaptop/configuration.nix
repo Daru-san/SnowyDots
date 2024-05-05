@@ -50,40 +50,38 @@
     };
   };
 
-  environment.systemPackages =
-    (with pkgs; [
-      htop
-      wget2
-      nix-prefetch-git
-      nix-prefetch-github
-      gcc
-      glib
-      nodejs_20
-      unzip
-      zip
-      unrar
-      p7zip
-      commonsCompress
-      clang
-      zig
-      iw
-      clinfo
-      glxinfo
-      exfatprogs
-      nurl
-      nix-melt
-      ncdu
-      busybox
-      usbutils
-      gparted
-      home-manager
-      alejandra
-      nix-inspect
-      nixpkgs-review
-      cachix
-      v4l-utils
-    ])
-    ++ (with inputs.scripts.packages.${pkgs.system}; [hm-build nix-rebuild]);
+  environment.systemPackages = with pkgs; [
+    htop
+    wget2
+    nix-prefetch-git
+    nix-prefetch-github
+    gcc
+    glib
+    nodejs_20
+    unzip
+    zip
+    unrar
+    p7zip
+    commonsCompress
+    clang
+    zig
+    iw
+    clinfo
+    glxinfo
+    exfatprogs
+    nurl
+    nix-melt
+    ncdu
+    busybox
+    usbutils
+    gparted
+    home-manager
+    alejandra
+    nix-inspect
+    nixpkgs-review
+    cachix
+    v4l-utils
+  ];
 
   os = {
     system.laptop = true;

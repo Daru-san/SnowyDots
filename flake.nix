@@ -22,7 +22,6 @@
 
     # My own repos
     snowyvim.url = "sourcehut:~darumaka/SnowyVim";
-    scripts.url = "sourcehut:~darumaka/Nix-Scripts";
     snowpkgs.url = "sourcehut:~darumaka/Snowpkgs";
     wallpapers = {
       url = "sourcehut:~darumaka/Wallpapers";
