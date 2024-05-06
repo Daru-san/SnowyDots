@@ -6,7 +6,7 @@
 }: let
   inherit (lib) getExe getExe';
   hyprlock = getExe config.programs.hyprlock.package;
-  pausemusic = getExe (pkgs.writeShellScriptBin "sleep" ''
+  pausemusic = getExe (pkgs.writeShellScriptBin "music-pause" ''
     ${getExe' config.services.playerctld.package "playerctl"} pause
   '');
 in {
@@ -14,7 +14,7 @@ in {
     settings = {
       general = {
         before_sleep_cmd = "${pausemusic} && loginctl lock-session";
-        lock_cmd = ''pidof hyprlock || ${hyprlock}'';
+        lock_cmd = "pidof hyprlock || ${hyprlock}";
         after_sleep_cmd = "hyprctl dispatch dpms on";
       };
       listeners = [
