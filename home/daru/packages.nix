@@ -35,6 +35,7 @@
       chroma
       glow
       gping
+      hut
       unstable.nvtopPackages.intel
       sysz
       ghfetch
