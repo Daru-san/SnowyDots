@@ -36,12 +36,8 @@
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
-    hyprfocus = {
-      url = "github:pyt0xic/hyprfocus";
+    hycov = {
+      url = "github:DreamMaoMao/hycov";
       inputs.hyprland.follows = "hyprland";
     };
 
