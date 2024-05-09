@@ -16,7 +16,7 @@ in {
     {
       consoleLogLevel = 0;
       kernelParams = ["quiet"];
-      kernelPackages = pkgs.linuxPackages_zen;
+      kernelPackages = pkgs.linuxPackages_xanmod_stable;
       initrd.verbose = false;
       loader.grub = {
         enable = true;
