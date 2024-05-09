@@ -12,7 +12,7 @@
         hycov {
           overview_gappo = 60
           overview_gappi = 24
-          enable_hotarea =
+          enable_hotarea = 1
           enable_click_action = 1
           hotarea_monitor = all
           hotarea_pos = 1

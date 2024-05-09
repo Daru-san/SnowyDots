@@ -37,7 +37,8 @@ in {
         "SUPER,TAB,workspace, m+1"
         "SUPERSHIFT,TAB,workspace, m-1"
 
-        "ALT,tab,hyprexpo:expo, toggle"
+        "ALT,tab,hycov:toggleoverview"
+        "ALTSHIFT,tab,hycov:toggleoverview,forceall"
       ]
       ++
       # Change workspace
