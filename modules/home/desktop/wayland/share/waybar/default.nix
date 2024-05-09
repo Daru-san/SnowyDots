@@ -5,18 +5,6 @@
   ...
 }: {
   programs.waybar = {
-    package = pkgs.waybar.overrideAttrs (oa: {
-      mesonFlags = (oa.mesonFlags or []) ++ ["-Dexperimental=true"];
-      patches =
-        (oa.patches or [])
-        ++ [
-          (pkgs.fetchpatch {
-            url = "https://github.com/Alexays/waybar/commit/f41458ea24a57bb71b629089396c31fe4dd97f1c.patch";
-            sha256 = "sha256-HdtJVuuEbMcLEIPS8W/UwuWBJC7D9oy+pCOX0ILJY5g=";
-          })
-        ];
-    });
-
     style = builtins.concatStringsSep "\n" [
       config.colorSchemeCss
       (builtins.readFile ./style.css)
