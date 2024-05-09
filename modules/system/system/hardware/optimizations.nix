@@ -38,7 +38,7 @@ in {
       };
       services.thermald.enable = true;
       powerManagement.resumeCommands = ''
-        ${config.boot.kernelPackages.cpupower}/bin/cpupower frequency-set -g schedutil
+        ${config.boot.kernelPackages.cpupower}/bin/cpupower frequency-set -g powersave
         ${config.boot.kernelPackages.cpupower}/bin/cpupower frequency-set -g performance
       '';
       boot.kernelParams = ["video=eDP-1:d"];
