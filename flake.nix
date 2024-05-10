@@ -89,14 +89,14 @@
       forAllSystems (system: modules.pkgs.packages nixpkgs.legacyPackages.${system});
 
     nixosConfigurations = {
-      ${laptop.hostname} = nixpkgs.lib.nixosSystem {
+      ${laptop.hostName} = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
           laptop.config
           modules.system
           {
             system = {inherit (laptop) stateVersion;};
-            networking = {inherit (laptop) hostname;};
+            networking = {inherit (laptop) hostName;};
             wayland = {
               hyprland.enable = true;
               enable = true;
@@ -107,12 +107,12 @@
     };
 
     homeConfigurations = {
-      "daru@${laptop.hostname}" = home-manager.lib.homeManagerConfiguration {
+      "daru@${laptop.hostName}" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${laptop.system};
         extraSpecialArgs = {
           inherit inputs outputs;
           inherit (laptop) system;
-          osConfig = self.nixosConfigurations.${laptop.hostname}.config;
+          osConfig = self.nixosConfigurations.${laptop.hostName}.config;
         };
         modules = [
           ./home/daru
