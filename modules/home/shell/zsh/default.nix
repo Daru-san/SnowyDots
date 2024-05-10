@@ -55,6 +55,7 @@
         bs = "bash";
         nflkdl = "nix flake update --commit-lock-file";
         nflkd = "nix flake update";
+        ff = "fastfetch";
       };
     };
 
