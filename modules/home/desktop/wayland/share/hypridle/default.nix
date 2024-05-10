@@ -6,6 +6,8 @@
 }: let
   inherit (lib) getExe getExe';
   hyprlock = getExe config.programs.hyprlock.package;
+  hyprctl = getExe' config.programs.hyprland.package "hyprctl";
+  lock_cmd = "pidof hyprlock || ${hyprlock}";
   pausemusic = getExe (pkgs.writeShellScriptBin "music-pause" ''
     ${getExe' config.services.playerctld.package "playerctl"} pause
   '');
@@ -13,19 +15,20 @@ in {
   services.hypridle = {
     settings = {
       general = {
-        before_sleep_cmd = "${pausemusic} && loginctl lock-session";
-        lock_cmd = "pidof hyprlock || ${hyprlock}";
-        after_sleep_cmd = "hyprctl dispatch dpms on";
+        before_sleep_cmd = "${pausemusic} && ${hyprlock}";
+        inherit lock_cmd;
+        ignore_dbus_inhibit = false;
+        after_sleep_cmd = "${hyprctl} dispatch dpms on";
       };
       listeners = [
         {
           timeout = 300;
-          on-timeout = "loginctl lock-session";
+          on-timeout = lock_cmd;
         }
         {
           timeout = 600;
-          on-timeout = "hyprctl dispatch dpms off";
-          on-resume = "hyprctl dispatch dpms on";
+          on-timeout = "${hyprctl} dispatch dpms off";
+          on-resume = "${hyprctl} dispatch dpms on";
         }
         {
           timeout = 1200;
