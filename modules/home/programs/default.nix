@@ -7,6 +7,7 @@
     ./zathura
     ./yazi
     ./pqiv
+    ./fastfetch
     ./freetube
     ./yt-dlp
     ./nautilus
