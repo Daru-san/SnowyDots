@@ -29,6 +29,7 @@ in {
     })
     (mkIf cfg.hyprland.enable {
       programs.hyprland.enable = true;
+      security.pam.services.hyprlock = {};
       wayland.compositor = mkForce "Hyprland";
     })
     {
