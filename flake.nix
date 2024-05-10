@@ -78,8 +78,8 @@
       pkgs = import ./pkgs;
     };
     laptop = {
-      hostname = "";
-      config = ./systems/AspireLaptop;
+      hostname = "Aceburn";
+      config = ./systems/laptop;
       system = "x86_64-linux";
       stateVersion = "24.05";
     };
@@ -108,11 +108,11 @@
 
     homeConfigurations = {
       "daru@${laptop.hostname}" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        pkgs = nixpkgs.legacyPackages.${laptop.system};
         extraSpecialArgs = {
           inherit inputs outputs;
           inherit (laptop) system;
-          osConfig = self.nixosConfigurations.AspireLaptop.config;
+          osConfig = self.nixosConfigurations.${laptop.hostname}.config;
         };
         modules = [
           ./home/daru
