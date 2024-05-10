@@ -31,7 +31,6 @@
 
     # Hyprland stuff
     hyprland.url = "github:hyprwm/Hyprland/v0.40.0";
-    hyprlock.url = "github:hyprwm/hyprlock/v0.3.0";
     hyprland-contrib = {
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -65,7 +64,6 @@
   outputs = {
     self,
     nixpkgs,
-    nixpkgs-stable,
     home-manager,
     ...
   } @ inputs: let
@@ -79,18 +77,26 @@
       specialisations = import ./systems/specialise;
       pkgs = import ./pkgs;
     };
+    laptop = {
+      hostname = "";
+      config = ./systems/AspireLaptop;
+      system = "x86_64-linux";
+      stateVersion = "24.05";
+    };
   in {
     overlays = modules.pkgs.overlays {inherit inputs;};
     packages =
       forAllSystems (system: modules.pkgs.packages nixpkgs.legacyPackages.${system});
 
     nixosConfigurations = {
-      AspireLaptop = nixpkgs.lib.nixosSystem {
+      ${laptop.hostname} = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          ./systems/AspireLaptop
+          laptop.config
           modules.system
           {
+            system = {inherit (laptop) stateVersion;};
+            networking = {inherit (laptop) hostname;};
             wayland = {
               hyprland.enable = true;
               enable = true;
@@ -98,45 +104,25 @@
           }
         ];
       };
-      AspireDesktop = nixpkgs-stable.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-          ./systems/AspireDesktop
-          modules.system
-          {services.xserver.enable = true;}
-        ];
-      };
     };
 
     homeConfigurations = {
-      "daru@AspireLaptop" = home-manager.lib.homeManagerConfiguration {
+      "daru@${laptop.hostname}" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {
           inherit inputs outputs;
+          inherit (laptop) system;
           osConfig = self.nixosConfigurations.AspireLaptop.config;
-          system = "x86_64-linux";
         };
         modules = [
           ./home/daru
           modules.home
           {
+            home = {inherit (laptop) stateVersion;};
             wayland = {
               enable = true;
               compositor = "hyprland";
             };
-            home.stateVersion = "24.05";
-          }
-        ];
-      };
-      "daru@AspireDesktop" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs-stable.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          ./home/daru
-          modules.home
-          {
-            xsession.enable = true;
-            home.stateVersion = "23.11";
           }
         ];
       };
