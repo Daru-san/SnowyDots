@@ -91,6 +91,7 @@ window#waybar {
 #battery,
 #pulseaudio-slider,
 #idle_inhibitor,
+#custom-playerctl,
 #bluetooth {
   background-color: shade(@base00, 1.5);
   font-weight: bold;

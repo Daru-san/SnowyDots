@@ -137,7 +137,7 @@
           on-click = "blueman-manager";
         };
         "custom/playerctl" = {
-          format = "<span>> {} <</span>";
+          format = "<span> {} </span>";
           return-type = "json";
           max-length = 40;
           exec = ''
