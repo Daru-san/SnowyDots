@@ -78,7 +78,7 @@
       pkgs = import ./pkgs;
     };
     laptop = {
-      hostName = "Aceburn";
+      hostName = "Aurorus";
       config = ./systems/laptop;
       system = "x86_64-linux";
       stateVersion = "24.05";
