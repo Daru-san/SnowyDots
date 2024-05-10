@@ -5,15 +5,13 @@
   lib,
   ...
 }: let
-  cfg = config.wayland.compositor;
   font = "NotoMono Nerd Font";
   now-playing = pkgs.writeShellScriptBin "now-playing" ''
     songstats=$(${lib.getExe pkgs.playerctl} metadata --format '󰎈 {{title}} - {{artist}} 󰎈')
     ${lib.getExe' pkgs.coreutils "echo"} "$songstats"
   '';
 in {
-  imports = [inputs.hyprlock.homeManagerModules.default];
-  config.programs.hyprlock = lib.mkIf (cfg == "hyprland") {
+  programs.hyprlock = {
     general = {
       grace = 5;
       hide_cursor = true;
