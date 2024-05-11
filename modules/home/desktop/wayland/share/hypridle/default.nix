@@ -6,7 +6,7 @@
 }: let
   inherit (lib) getExe getExe';
   hyprlock = getExe config.programs.hyprlock.package;
-  hyprctl = getExe' config.programs.hyprland.package "hyprctl";
+  hyprctl = getExe' config.wayland.windowManager.hyprland.package "hyprctl";
   lock_cmd = "pidof hyprlock || ${hyprlock}";
   pausemusic = getExe (pkgs.writeShellScriptBin "music-pause" ''
     ${getExe' config.services.playerctld.package "playerctl"} pause
