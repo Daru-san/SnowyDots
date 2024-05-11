@@ -8,6 +8,7 @@
     style = builtins.concatStringsSep "\n" [
       config.colorSchemeCss
       (builtins.readFile ./style.css)
+      "/* EOF */"
     ];
 
     settings = [
@@ -137,7 +138,7 @@
           on-click = "blueman-manager";
         };
         "custom/playerctl" = {
-          format = "<span> {} </span>";
+          format = "<span>󰎇 {} 󰎇</span>";
           return-type = "json";
           max-length = 40;
           exec = ''

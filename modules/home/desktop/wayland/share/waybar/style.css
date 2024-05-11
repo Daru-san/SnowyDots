@@ -1,27 +1,3 @@
-/*
-You can type here any CSS rule recognized by GTK+.
-You can temporarily disable this custom CSS by clicking on the “Pause” button above.
-
-Changes are applied instantly and globally, for the whole application.
-*/
-
-@define-color base00 #161616; /*#161616*/
-@define-color base01 #262626; /*#262626*/
-@define-color base02 #393939; /*#393939*/
-@define-color base03 #525252; /*#525252*/
-@define-color base04 #dde1e6; /*#dde1e6*/
-@define-color base05 #f2f4f8; /*#f2f4f8*/
-@define-color base06 #ffffff; /*#ffffff*/
-@define-color base07 #08bdba; /*#08bdba*/
-@define-color base08 #3ddbd9; /*#3ddbd9*/
-@define-color base09 #78a9ff; /*#78a9ff*/
-@define-color base0A #ee5396; /*#ee5396*/
-@define-color base0B #33b1ff; /*#33b1ff*/
-@define-color base0C #ff7eb6; /*#ff7eb6*/
-@define-color base0D #42be65; /*#42be65*/
-@define-color base0E #be95ff; /*#be95ff*/
-@define-color base0F #82cfff; /*#82cfff*/
-
 * {
   border: none;
   border-radius: 7px;
@@ -157,10 +133,8 @@ window#waybar {
   border-radius: 10px;
 }
 #custom-playerctl {
-  color: alpha(@base0E, 1);
-  padding: 0 20px;
-  margin: 5px 0;
-  font-weight: bold;
+  border-radius: 5px;
+  color: alpha(@base0B, 1);
 }
 #pulseaudio {
   color: @base0D;
@@ -195,4 +169,3 @@ window#waybar {
   background-color: @base0D;
   color: @base00;
 }
-/* EOF */
