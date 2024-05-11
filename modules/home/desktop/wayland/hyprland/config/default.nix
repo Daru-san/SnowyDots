@@ -7,5 +7,6 @@
     ./autostart.nix
     ./plugins.nix
     ./hyprlock.nix
+    ./hyprpaper.nix
   ];
 }

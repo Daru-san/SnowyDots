@@ -19,6 +19,7 @@ in {
     in {
       wlsunset = {inherit systemdTarget;};
       kanshi = {inherit systemdTarget;};
+      hyprpaper.enable = true;
     };
     programs = {
       kitty.enable = true;
@@ -41,6 +42,8 @@ in {
           "systemctl --user start blueman-applet"
           "systemctl --user start blanket"
           "systemctl --user start clipse"
+          "systemctl --user start lxpolkit"
+          "systemctl --user start hyprpaper"
         ];
       };
       settings = {source = ["extra.conf"];};
