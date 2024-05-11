@@ -1,32 +1,44 @@
 # Snowy Dots
 
+<p align="center">
 My beautiful, functional, focused nix flake with Hyprland and Sway, written completely in nix.
+</p>
 
-**_Hosted at [SnowyDots](https://git.sr.ht/~darumaka/SnowyDots)_**
+<p align="center">
+    <img src="https://img.shields.io/static/v1?label=Hyprland&message=v0.40.0&style=flat&logo=hyprland&colorA=24273A&colorB=8AADF4&logoColor=CAD3F5"/>
+    <img src="https://img.shields.io/static/v1?label=NixOS&message=24.05(unstable)&style=flat&logo=nixos&colorA=24273A&colorB=9173ff&logoColor=CAD3F5"/>
+    <img src="https://img.shields.io/static/v1?label=Sourcehut&message=SnowyDots&style=flat&logo=sourcehut&colorA=24273A&colorB=9173ff&logoColor=CAD3F5" alt="https://git.sr.ht/~darumaka/SnowyDots"/>
+</p>
 
 ## Showcase
 
 ### Hyprland
 
-![Image](https://imgur.com/Tm8C6SN.png 'I use Nix by the way')
-![Image](https://i.imgur.com/JnzkFhK.png 'Neovim for winter days')
-![image](https://imgur.com/3sTDYzG.png 'Why not take a look at my files?')
+![Image](https://i.imgur.com/4c7idYL.png 'I use Nix by the way')
+![Image](https://i.imgur.com/JnzkFhK.png 'Java > everything else')
+![image](https://i.imgur.com/vGkkXsx.png 'Study with me?')
 ![image](https://i.imgur.com/Q0cOgNT.png 'Firefox looking amazing')
-![Image](https://i.imgur.com/Vnck7Oi.png 'Read with me?')
+![Image](https://i.imgur.com/lMwQ1qy.png 'Read with me?')
 
-## My System
+## Systems
 
-### The base environment
+### Aurorus (Acer Laptop)
 
-#### Desktop environment
-
-- Desktop: [Hyprland](https://github.com/hyprwm/Hyprland 'hyprland')
-- Launcher: [anyrun](https://github.com/Kirottu/anyrun 'anyrun')
+- Kernel: [Linux-xanmod](https://xanmod.org/ 'xanmod')
 - Shell: [zsh](http://zsh.sourceforge.net/ 'zsh') configured with [oh-my-posh](https://ohmyposh.dev/), [antidote](https://getantidote.github.io/) and [prezto](https://github.com/sorin-ionescu/prezto)
 - Editor: [SnowyVim](https://git.sr.ht/~darumaka/SnowyVim), my custom [Neovim](https://github.com/neovim/neovim) configuration made with [nixvim](https://github.com/nix-community/nixvim)
+- Window Manager: [Hyprland](https://github.com/hyprwm/Hyprland 'hyprland')
+- Launcher: [anyrun](https://github.com/Kirottu/anyrun 'anyrun')
 - Bar: [waybar](https://github.com/Alexays/Waybar 'waybar')
-- Kernel: [Linux-zen](https://archlinux.org/packages/extra/x86_64/linux-zen/ 'zen')
-- Lockscreen and idle: [hypridle](https://github.com/hyprwm/hypridle) and [hyprlock](https://github.com/hyprwm/hyprlock)
+
+## Flake Info
+
+### Packages provided by my flake
+
+- [gh-s](https://github.com/gennaro-tedesco/gh-s), a Github extension for searching through Github repositories
+- [zaread](https://github.com/paolop/zaread), a script that can open different files like docx files in zathura
+- [bridge-core](https://github.com/bridge-core/editor), a Minecraft add-on creator for Minecraft Bedrock Edition
+- [gh-download](https://github.com/yuler/gh-download), a Github extension for downloading any file from a Github repo without cloning it
 
 ## Installing NixOS
 
@@ -105,9 +117,9 @@ nix-shell -p home-manager
 home-manager switch --flake .#daru@AspireLaptop
 ```
 
-## Resources
+## Thanks to
 
-### Useful resources
+### For their useful information on NixOS and Nix
 
 - [NixOS Manual](https://nixos.org/manual/nixos/unstable/ 'nix')
 - [Nix best practices](https://nix.dev/guides/best-practices.html)
@@ -115,9 +127,9 @@ home-manager switch --flake .#daru@AspireLaptop
 - [MyNixOS](https://mynixos.com 'Best nix resource')
 - [NixOS install guide](https://nixos.wiki/wiki/NixOS_Installation_Guide)
 
-### Inspirations
+### For their inspiration
 
-- [D3Ext's aesthetic wallpaper repo](https://github.com/D3Ext/aesthetic-wallpapers 'walls')
 - [fufexan/dotfiles](https://github.com/fufexan/dotfiles/ 'fufexan dots')
 - [misterio's dotfiles](https://git.sr.ht/~misterio/nix-config 'dots')
 - [Misterio77's nix-starter-configs](https://github.com/Misterio77/nix-starter-configs 'nix-starter-configs')
+- Plenty of others that I cannot remember
