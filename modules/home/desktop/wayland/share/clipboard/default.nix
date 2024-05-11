@@ -29,7 +29,7 @@ in {
     (writeShellScriptBin "clipse-manager" ''
       if [[ ! $(pgrep -f tui-clipboard) ]]
       then
-        ${foot} --title tui-clipboard -e ${clipse} -c ${foot-config}
+        ${foot} -c ${foot-config} --title tui-clipboard -e ${clipse}
       else
         pkill -f tui-clipboard
       fi
