@@ -10,6 +10,7 @@
         "kernel"
         "uptime"
         "packages"
+        "shell"
         "wm"
         "cpu"
         "gpu"
