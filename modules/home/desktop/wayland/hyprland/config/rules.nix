@@ -20,15 +20,15 @@
           f = regex: "float,^(${regex})$";
           c = regex: "center,^(${regex})$";
         in [
-          (f "com.github.hluk.copyq")
           (f "file-roller")
+          (f "foot")
           (f "nm-connection-editor")
           (f "org.kde.kdeconnect.daemon")
           (f ".blueman-manager-wrapped")
           (c "file-roller")
+          (c "foot")
           (c "nm-connection-editor")
           (c ".blueman-manager-wrapped")
-          (c "com.github.hluk.copyq")
           (c "org.kde.kdeconnect.daemon")
         ])
         [
