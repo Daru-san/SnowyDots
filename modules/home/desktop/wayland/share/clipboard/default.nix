@@ -20,7 +20,7 @@ in {
     };
     Install.WantedBy = ["graphical-session.target"];
     Service = {
-      ExecStart = "${clipse} --listen";
+      ExecStart = "${clipse} --listen-shell";
       Restart = "on-failure";
       RestartSec = 5;
     };
