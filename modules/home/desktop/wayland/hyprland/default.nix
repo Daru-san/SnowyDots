@@ -40,6 +40,7 @@ in {
           "systemctl --user start network-manager-applet.service"
           "systemctl --user start blueman-applet"
           "systemctl --user start blanket"
+          "systemctl --user start clipse"
         ];
       };
       settings = {source = ["extra.conf"];};

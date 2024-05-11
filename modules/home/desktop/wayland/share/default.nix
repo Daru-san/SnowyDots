@@ -10,6 +10,7 @@ in {
     ./kanshi
     ./hypridle
     ./compositor
+    ./clipboard
     ./swaync
     ./swayosd
     ./waybar

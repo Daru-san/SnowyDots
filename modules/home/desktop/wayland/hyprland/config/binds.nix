@@ -37,7 +37,6 @@ in {
         ranger = getExe pkgs.ranger;
         image-editor = getExe' pkgs.krita "krita";
         hyprlock = getExe config.programs.hyprlock.package;
-        copyq = getExe config.services.copyq.package;
         btop = getExe config.programs.btop.package;
         swayosd = getExe' config.services.swayosd.package "swayosd-client";
       in [
@@ -66,7 +65,7 @@ in {
         "SUPER, l ,${e} , ${hyprlock}"
 
         #Clipboard menu
-        "SUPERSHIFT, v, ${e}, ${copyq} menu"
+        "SUPERSHIFT, v, ${e},clipse-manager"
 
         # Show when caps lock is pressed
         ",caps_lock,${e},${swayosd} --caps-lock"
