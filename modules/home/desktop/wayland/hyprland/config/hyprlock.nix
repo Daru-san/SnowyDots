@@ -13,6 +13,7 @@
 in {
   imports = [inputs.hyprlock.homeManagerModules.default];
   programs.hyprlock = {
+    package = pkgs.hyprlock;
     general = {
       grace = 5;
       hide_cursor = true;

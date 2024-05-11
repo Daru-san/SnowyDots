@@ -31,7 +31,7 @@
 
     # Hyprland stuff
     hyprland.url = "github:hyprwm/Hyprland/v0.40.0";
-    hyprlock.url = "github:hyprwm/hyprlock";
+    hyprlock.url = "github:hyprwm/hyprlock/v0.3.0";
     hyprland-contrib = {
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
