@@ -1,20 +1,17 @@
 {
   pkgs,
   lib,
-  config,
   ...
 }: let
   inherit (lib) getExe;
-  inherit (pkgs) writeShellScriptBin;
-  foot = getExe config.programs.foot.package;
+  inherit (pkgs) writeShellScriptBin formats;
+  foot = getExe pkgs.foot;
   clipse = getExe pkgs.clipse;
-in {
-  programs.foot = {
-    enable = true;
-    settings = {
-      main.font = "JetbrainsMono Nerd Font:size=14";
-    };
+  iniFormat = formats.ini {};
+  foot-config = iniFormat.generate "foot.ini" {
+    main.font = "JetbrainsMono Nerd Font:size=14";
   };
+in {
   systemd.user.services.clipse = {
     Unit = {
       Description = "Clipse clipboard manager";
@@ -32,7 +29,7 @@ in {
     (writeShellScriptBin "clipse-manager" ''
       if [[ ! $(pgrep -f tui-clipboard) ]]
       then
-        ${foot} --title tui-clipboard -e ${clipse}
+        ${foot} --title tui-clipboard -e ${clipse} -c ${foot-config}
       else
         pkill -f tui-clipboard
       fi
