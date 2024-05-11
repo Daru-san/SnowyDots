@@ -62,7 +62,7 @@ in {
         "SUPERALT,F12,exec,${getExe focusmode}"
 
         #Lock screen
-        "SUPER, l ,${e} , ${hyprlock}"
+        "SUPER, l ,${e} , ${hyprlock} --immediate"
 
         #Clipboard menu
         "SUPERSHIFT, v, ${e},clipse-manager"

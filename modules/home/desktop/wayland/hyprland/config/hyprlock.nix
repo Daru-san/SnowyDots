@@ -18,14 +18,14 @@ in {
       grace = 5;
       hide_cursor = true;
     };
-    background = [
+    backgrounds = [
       {
         path = toString config.wallpaperImage;
         blur_size = 9;
         blur_passes = 1;
       }
     ];
-    input-field = [
+    input-fields = [
       {
         size = {
           width = 220;
@@ -49,7 +49,7 @@ in {
         valign = "center";
       }
     ];
-    label = [
+    labels = [
       {
         text = ''cmd[update:1000] ${lib.getExe' pkgs.coreutils "date"} +"%X"'';
         font_size = 90;
