@@ -55,16 +55,11 @@
     wget2
     nix-prefetch-git
     nix-prefetch-github
-    gcc
-    glib
-    nodejs_20
     unzip
     zip
     unrar
     p7zip
     commonsCompress
-    clang
-    zig
     iw
     clinfo
     glxinfo

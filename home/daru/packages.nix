@@ -27,7 +27,6 @@
       tgpt
       tty-clock
       yai
-      nvfetcher
       adbtuifm
       libnotify
       speedtest-cli
