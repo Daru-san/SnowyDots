@@ -20,7 +20,7 @@ in {
         ignore_dbus_inhibit = false;
         after_sleep_cmd = "${hyprctl} dispatch dpms on";
       };
-      listeners = [
+      listener = [
         {
           timeout = 300;
           on-timeout = lock_cmd;
