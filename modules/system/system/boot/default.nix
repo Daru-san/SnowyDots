@@ -2,6 +2,8 @@
   pkgs,
   config,
   lib,
+  system,
+  inputs,
   ...
 }: let
   inherit (lib) mkEnableOption mkMerge mkIf;
@@ -41,10 +43,7 @@ in {
         efi.canTouchEfiVariables = true;
         grub = {
           device = "nodev";
-          theme = pkgs.sleek-grub-theme.override {
-            withStyle = "dark";
-            withBanner = "Hello, Daru";
-          };
+          theme = inputs.grub-themes.packages.${system}.hyperfluent;
           efiSupport = true;
         };
       };
