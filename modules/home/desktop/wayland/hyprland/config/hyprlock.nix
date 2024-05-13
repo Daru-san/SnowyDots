@@ -18,6 +18,7 @@ in {
       };
       background = [
         {
+          monitor = "";
           path = toString config.wallpaperImage;
           blur_size = 9;
           blur_passes = 1;
@@ -25,6 +26,7 @@ in {
       ];
       input-field = [
         {
+          monitor = "";
           size = {
             width = 220;
             height = 50;
@@ -49,6 +51,7 @@ in {
       ];
       label = [
         {
+          monitor = "";
           text = ''cmd[update:1000] ${lib.getExe' pkgs.coreutils "date"} +"%X"'';
           font_size = 90;
           font_family = font;
@@ -60,6 +63,7 @@ in {
           valign = "center";
         }
         {
+          monitor = "";
           text = ''cmd[update 1000] ${lib.getExe' pkgs.coreutils "date"} +"%A, %d %B %Y"'';
           font_size = 20;
           font_family = font;
@@ -71,6 +75,7 @@ in {
           valign = "center";
         }
         {
+          monitor = "";
           text = ''Welcome, $USER'';
           font_size = 16;
           font_family = font;
@@ -82,6 +87,7 @@ in {
           valign = "center";
         }
         {
+          monitor = "";
           text = ''cmd[update 1000] ${lib.getExe now-playing}'';
           font_size = 16;
           font_family = font;
