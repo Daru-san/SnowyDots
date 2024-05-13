@@ -713,15 +713,15 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1715615759,
+        "lastModified": 1715617950,
         "narHash": "sha256-RTeKiU9HgYKF7pbys3KD0z5T941SFEUNqmdAU/gBFHY=",
-        "owner": "Daru-san",
+        "owner": "jeslie0",
         "repo": "nixos-grub-themes",
-        "rev": "9551432bf26282d9fdc6c8b6b220721562f9ddf0",
+        "rev": "86816e735a6269babf12f475d1ef68e69f506761",
         "type": "github"
       },
       "original": {
-        "owner": "Daru-san",
+        "owner": "jeslie0",
         "repo": "nixos-grub-themes",
         "type": "github"
       }
