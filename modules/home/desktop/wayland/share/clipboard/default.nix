@@ -12,19 +12,6 @@
     main.font = "JetbrainsMono Nerd Font:size=14";
   };
 in {
-  systemd.user.services.clipse = {
-    Unit = {
-      Description = "Clipse clipboard manager";
-      After = ["graphical-session-pre.target"];
-      PartOf = ["graphical-session.target"];
-    };
-    Install.WantedBy = ["graphical-session.target"];
-    Service = {
-      ExecStart = "${clipse} --listen-shell";
-      Restart = "on-failure";
-      RestartSec = 5;
-    };
-  };
   home.packages = [
     (writeShellScriptBin "clipse-manager" ''
       if [[ ! $(pgrep -f tui-clipboard) ]]
