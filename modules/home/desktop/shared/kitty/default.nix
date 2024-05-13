@@ -29,8 +29,8 @@
       tab_bar_edge = "top";
       tab_bar_style = "separator";
       tab_bar_min_tabs = 1;
-      tab_separator = ''" "'';
-      tab_activity_symbol = ''" "'';
+      tab_separator = ''""'';
+      tab_activity_symbol = ''""'';
       active_tab_font_style = "bold";
       inactive_tab_font_style = "italics";
       input_delay = 1;
