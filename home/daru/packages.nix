@@ -27,17 +27,17 @@
       tree
       tgpt
       tty-clock
-      yai
       adbtuifm
       libnotify
       speedtest-cli
       hydra-check
-      chroma
       glow
       gping
       hut
       unstable.nvtopPackages.intel
       sysz
+      systemctl-tui
+      bluetuith
       ghfetch
       charm-freeze
       exiftool
@@ -50,9 +50,7 @@
       transmission
       du-dust
       fzf
-      nil
       musikcube
-      music-player
       mediainfo
       unrar
       onefetch
@@ -60,12 +58,8 @@
       asciinema-agg
       asciinema-scenario
       xdragon
-      nix-du
-      manix
-      deadnix
       nix-output-monitor
       zaread
-      fastfetch
     ])
     (with pkgs.gnome; [dconf-editor gnome-clocks file-roller cheese])
     [inputs.trashy.packages.${system}.trashy]

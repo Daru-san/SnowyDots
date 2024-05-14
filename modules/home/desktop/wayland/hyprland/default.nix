@@ -36,12 +36,9 @@ in {
           "systemctl --user start app-org.keepassxc.KeePassXC@autostart.service"
           "systemctl --user start hypridle.service"
           "systemctl --user start swayosd.service"
-          "systemctl --user start amberol.service"
           "systemctl --user start wlsunset.service"
           "systemctl --user start network-manager-applet.service"
           "systemctl --user start blueman-applet"
-          "systemctl --user start blanket"
-          "systemctl --user start clipse"
           "systemctl --user start lxpolkit"
           "systemctl --user start hyprpaper"
         ];
