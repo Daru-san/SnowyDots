@@ -31,9 +31,9 @@ in {
       package = inputs.hyprland.packages.${pkgs.system}.hyprland;
       systemd = {
         enable = true;
+        enableXdgAutostart = true;
         extraCommands = [
           "systemctl --user start easyeffects.service"
-          "systemctl --user start app-org.keepassxc.KeePassXC@autostart.service"
           "systemctl --user start hypridle.service"
           "systemctl --user start swayosd.service"
           "systemctl --user start wlsunset.service"
