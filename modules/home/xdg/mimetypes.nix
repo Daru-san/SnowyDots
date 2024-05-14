@@ -4,6 +4,8 @@
     "image/*" = ["oculante.desktop"];
     "video/*" = ["mpv.desktop"];
     "audio/*" = ["qmmp.desktop"];
-    "audio/mp3" = ["qmmp.desktop"];
+    "audio/mpeg" = ["qmmp.desktop"];
+    "audio/mp4" = ["qmmp.desktop"];
+    "*.ogg" = ["qmmp.desktop"];
   };
 }
