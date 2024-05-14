@@ -3,9 +3,10 @@
     enable = true;
     package = pkgs.jdk;
   };
-  home.sessionVariables = {
-    JAVA_8_HOME = "${pkgs.jre8}/lib/openjdk/jre";
-    JAVA_11_HOME = "${pkgs.jdk11}/lib/openjdk";
-    JAVA_17_HOME = "${pkgs.jre17_minimal}";
-  };
+  # home.sessionVariables = {
+  #   JAVA_8_HOME = "${pkgs.jdk8}/lib/openjdk";
+  #   JAVA_11_HOME = "${pkgs.jdk11}/lib/openjdk";
+  #   JAVA_17_HOME = "${pkgs.jdk17}/lib/openjdk";
+  #   JAVA_19_HOME = "${pkgs.jdk19}/lib/openjdk";
+  # };
 }
