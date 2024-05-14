@@ -17,7 +17,6 @@ in {
       general = {
         before_sleep_cmd = "${pausemusic} && ${hyprlock}";
         inherit lock_cmd;
-        ignore_dbus_inhibit = false;
         after_sleep_cmd = "${hyprctl} dispatch dpms on";
       };
       listener = [
