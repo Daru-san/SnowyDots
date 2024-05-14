@@ -110,7 +110,7 @@
             car = "";
             default = ["" "" ""];
           };
-          on-click = "${pkgs.alt.mixxc}/bin/mixxc --anchor right --anchor top --margin 20 --margin 30 -M";
+          on-click = "${pkgs.mixxc}/bin/mixxc --anchor right --anchor top --margin 20 --margin 30 -M";
           on-click-right = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
           tooltip = false;
         };

@@ -128,7 +128,7 @@ in {
         r = "region";
         o = "output";
 
-        mx = getExe pkgs.alt.mixxc;
+        mx = getExe pkgs.mixxc;
 
         sc = getExe' pkgs.swaynotificationcenter "swaync-client";
       in [
