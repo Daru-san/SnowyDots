@@ -18,7 +18,7 @@
       pavucontrol
       libreoffice-qt-fresh
       iwgtk
-      alt.hmcl
+      prismlauncher
       blanket
       mixxc
 
