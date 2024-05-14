@@ -34,7 +34,7 @@ in {
         browser = getExe config.programs.firefox.package;
         file-manager = getExe pkgs.gnome.nautilus;
         editor = "nvim";
-        ranger = getExe pkgs.ranger;
+        yazi = getExe config.programs.yazi.package;
         image-editor = getExe' pkgs.krita "krita";
         hyprlock = getExe config.programs.hyprlock.package;
         btop = getExe config.programs.btop.package;
@@ -47,7 +47,7 @@ in {
 
         # Terminal stuff
         "SUPER, Return, ${e}, ${terminal}"
-        "SUPER, r, ${e}, ${terminal} --hold ${ranger}"
+        "SUPER, r, ${e}, ${terminal} --hold ${yazi}"
         "SUPER, z, ${e}, ${terminal} --hold ${editor}"
         "SUPER, m, ${e}, ${terminal} --hold ${btop}"
 
