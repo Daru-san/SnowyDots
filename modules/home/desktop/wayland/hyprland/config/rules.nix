@@ -1,19 +1,8 @@
 {lib, ...}: {
   wayland.windowManager.hyprland = {
     settings = {
-      windowrulev2 = let
-        p = regex: "float,class:(pcmanfm-qt),title:(${regex})";
-      in [
+      windowrulev2 = [
         "float,class:(firefox-nightly),title:(Library)"
-        (p "Copy Files")
-        (p "Move Files")
-        (p "Removable medium is inserted")
-        (p "Confirm to replace files")
-        (p "Preferences")
-        (p "Choose an Application")
-        (p "Edit Bookmarks")
-        (p "Connect to remote server")
-        (p "File Properties")
       ];
       windowrule = lib.mkMerge [
         (let
@@ -33,7 +22,10 @@
         ])
         [
           "workspace name:7,^(krita)$"
+
+          "group,^(oculante)$"
           "workspace name:8,^(oculante)$"
+
           "workspace name:9,^(com.github.wwmm.easyeffects)$"
 
           "workspace name:F1,^(firefox-nightly)$"
@@ -41,10 +33,14 @@
           "workspace name:F3,^(libreoffice)(.*)$"
           "workspace name:F4,^(org.gnome.Nautilus)$"
           "workspace name:F5,^(io.bassi.Amberol)$"
+
+          "group,(mpv)$"
           "workspace name:F6,^(mpv)$"
+
           "workspace name:F7,^(FreeTube)$"
           "workspace name:F8,title:^(Spotify)(.*)$"
 
+          "group,^(org.pwmt.zathura)$"
           "workspace name:F10,^(org.pwmt.zathura)$"
         ]
         (let
