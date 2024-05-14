@@ -75,6 +75,7 @@
     nix-inspect
     nixpkgs-review
     cachix
+    file
     v4l-utils
   ];
 
