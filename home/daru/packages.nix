@@ -18,7 +18,7 @@
       pavucontrol
       libreoffice-qt-fresh
       iwgtk
-      hmcl
+      alt.hmcl
       blanket
       mixxc
 
