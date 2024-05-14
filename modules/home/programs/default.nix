@@ -6,7 +6,6 @@
     ./bat
     ./zathura
     ./yazi
-    ./pqiv
     ./fastfetch
     ./freetube
     ./yt-dlp

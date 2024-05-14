@@ -15,6 +15,7 @@
       bridge-core
       newsflash
       archiver
+      oculante
       pavucontrol
       libreoffice-qt-fresh
       iwgtk

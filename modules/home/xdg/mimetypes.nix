@@ -1,8 +1,7 @@
 {
   defaultApplications = {
     "application/pdf" = ["org.pwmt.zathura-pdf-mupdf.desktop"];
-    "image/*" = ["pqiv.desktop"];
+    "image/*" = ["oculante.desktop"];
     "video/*" = ["mpv.desktop"];
-    "audio/*" = ["music-player.desktop"];
   };
 }

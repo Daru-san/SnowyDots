@@ -33,8 +33,8 @@
         ])
         [
           "workspace name:7,^(krita)$"
-          "workspace name:8,^(pqiv)$"
-          "workspace name:9,^(com.github.wwmmasyeffects)$"
+          "workspace name:8,^(oculante)$"
+          "workspace name:9,^(com.github.wwmm.easyeffects)$"
 
           "workspace name:F1,^(firefox-nightly)$"
           "workspace name:F2,^(osidian)$"
