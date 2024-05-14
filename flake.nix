@@ -5,7 +5,6 @@
     # Nixpkgs repos
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/release-23.11";
-    nixpkgs-alt.url = "github:Daru-san/nixpkgs/update-hmcl";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     # Home manager

@@ -12,9 +12,4 @@
       config.allowUnfree = true;
     };
   };
-  alt-packages = final: _prev: {
-    alt = import inputs.nixpkgs-alt {
-      inherit (final) system;
-    };
-  };
 }

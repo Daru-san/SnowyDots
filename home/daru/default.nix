@@ -15,7 +15,6 @@
     overlays = with outputs.overlays; [
       stable-packages
       unstable-packages
-      alt-packages
       packages
     ];
     config = {
