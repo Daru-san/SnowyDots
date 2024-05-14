@@ -16,7 +16,7 @@ in {
     layout = [
       {
         label = "lock";
-        action = "lockscreen";
+        action = "loginctl lock-session";
         text = "lock";
         keybind = "l";
       }
