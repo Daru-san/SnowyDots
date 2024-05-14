@@ -51,6 +51,7 @@
       du-dust
       fzf
       musikcube
+      qmmp
       mediainfo
       unrar
       onefetch
