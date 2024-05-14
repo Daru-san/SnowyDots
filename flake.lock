@@ -1145,16 +1145,16 @@
     },
     "nixpkgs-alt": {
       "locked": {
-        "lastModified": 1715658311,
-        "narHash": "sha256-IDTu2W8iS3bNJRYzNU6P+GKI3ZajlUfqzteeTsLOMoE=",
+        "lastModified": 1715658980,
+        "narHash": "sha256-GxJ2Du1Z+hN1mQkyb/GNnVQmI7Y95srwiv4yKRAyN20=",
         "owner": "Daru-san",
         "repo": "nixpkgs",
-        "rev": "bc4eacca8c7e764251c7640d065f60b300a742a8",
+        "rev": "1cb1f3bcad45c844a54b1398b426bfc240868d56",
         "type": "github"
       },
       "original": {
         "owner": "Daru-san",
-        "ref": "master",
+        "ref": "update-hmcl",
         "repo": "nixpkgs",
         "type": "github"
       }
