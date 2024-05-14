@@ -38,6 +38,7 @@
 
           "workspace name:F1,^(firefox-nightly)$"
           "workspace name:F2,^(osidian)$"
+          "workspace name:F3,^(libreoffice)(.*)$"
           "workspace name:F4,^(org.gnome.Nautilus)$"
           "workspace name:F5,^(io.bassi.Amberol)$"
           "workspace name:F6,^(mpv)$"
