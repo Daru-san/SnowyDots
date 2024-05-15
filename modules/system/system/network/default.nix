@@ -8,10 +8,7 @@
 in {
   options = {
     os.networking = {
-      wifi = {
-        enable = mkEnableOption "Enable wifi";
-        iwd.enable = mkEnableOption "Enable iwd";
-      };
+      wifi.enable = mkEnableOption "Enable wifi";
       bluetooth.enable = mkEnableOption "Enable bluetooth";
     };
   };
@@ -20,19 +17,24 @@ in {
       networking = {
         nameservers = ["1.1.1.1" "1.0.0.1"];
         dhcpcd.extraConfig = "nohook resolv.conf";
-        networkmanager = mkMerge [
-          {enable = true;}
-          (mkIf cfg.wifi.iwd.enable {
-            enable = true;
-            wifi.backend = "iwd";
-            dns = "none";
-            settings = {
-              device = {
-                "wifi.iwd.autoconnect" = false;
-              };
+        networkmanager = {
+          enable = true;
+          dns = "none";
+          wifi = {
+            macAddress = "random";
+            backend = "iwd";
+          };
+        };
+        wireless.iwd = {
+          enable = true;
+          settings = {
+            Network = {
+              EnableIPv6 = true;
+              RoutePriorityOffset = 300;
             };
-          })
-        ];
+            Settings.AutoConnect = false;
+          };
+        };
 
         firewall = {
           enable = true;
@@ -54,10 +56,7 @@ in {
     })
     (mkIf cfg.bluetooth.enable {
       services.blueman.enable = true;
-      hardware.bluetooth = {
-        enable = true;
-        powerOnBoot = true;
-      };
+      hardware.bluetooth.enable = true;
     })
   ];
 }

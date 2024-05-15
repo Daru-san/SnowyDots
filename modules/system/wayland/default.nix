@@ -29,7 +29,7 @@ in {
     })
     (mkIf cfg.hyprland.enable {
       programs.hyprland.enable = true;
-      security.pam.services.hyprlock = {};
+      security.pam.services.hyprlock.text = {};
       wayland.compositor = mkForce "Hyprland";
     })
     {
@@ -52,17 +52,17 @@ in {
           default_session = initial_session;
         };
       };
-      systemd.user.services.lxpolkit = {
-        description = "lxpolkit";
-        wantedBy = ["graphical-session.target"];
-        wants = ["graphical-session.target"];
-        after = ["graphical-session.target"];
-        serviceConfig = {
-          Type = "simple";
-          ExecStart = getExe pkgs.lxqt.lxqt-policykit;
-          Restart = "on-failure";
-          RestartSec = 1;
-          TimeoutStopSec = 10;
+      systemd = {
+        user.services.polkit-gnome-authentication-agent-1 = {
+          description = "polkit-gnome-authentication-agent-1";
+          after = ["graphical-session.target"];
+          serviceConfig = {
+            Type = "simple";
+            ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+            Restart = "on-failure";
+            RestartSec = 1;
+            TimeoutStopSec = 10;
+          };
         };
       };
     }

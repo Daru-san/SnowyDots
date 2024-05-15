@@ -11,7 +11,6 @@ in {
       laptop = mkEnableOption "Enable laptop based tweaks";
       desktop = mkEnableOption "Enable desktop tweaks";
       ssdTweaks = mkEnableOption "Enable ssd tweaks";
-      advanced = mkEnableOption "Enable advanced tweaks";
     };
   };
   config = mkMerge [
