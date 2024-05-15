@@ -10,7 +10,6 @@ in {
     ./kanshi
     ./hypridle
     ./compositor
-    ./clipboard
     ./swaync
     ./swayosd
     ./waybar
@@ -29,6 +28,6 @@ in {
       wlogout.enable = true;
       waybar.enable = true;
     };
-    home.packages = [pkgs.wl-clipboard-rs];
+    home.packages = [pkgs.wl-clipboard-rs clipse];
   };
 }

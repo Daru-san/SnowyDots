@@ -14,8 +14,10 @@
           (f "nm-connection-editor")
           (f "org.kde.kdeconnect.daemon")
           (f ".blueman-manager-wrapped")
+          (f "org.twosheds.iwgtk")
           (c "file-roller")
           (c "foot")
+          (c "org.twosheds.iwgtk")
           (c "nm-connection-editor")
           (c ".blueman-manager-wrapped")
           (c "org.kde.kdeconnect.daemon")
@@ -42,6 +44,11 @@
 
           "group,^(org.pwmt.zathura)$"
           "workspace name:F10,^(org.pwmt.zathura)$"
+
+          "group,^(org.prismlauncher.PrismLauncher)$"
+          "workspace name:F12,^(org.prismlauncher.PrismLauncher)$"
+          "group,^(Minecraft)(.*)$"
+          "workspace name:F12,(Minecraft)(.*)$"
         ]
         (let
           t = regex: "${regex},^(wlogout)$";

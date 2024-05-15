@@ -35,21 +35,26 @@ in {
         file-manager = getExe pkgs.gnome.nautilus;
         editor = "nvim";
         yazi = getExe config.programs.yazi.package;
-        image-editor = getExe' pkgs.krita "krita";
         hyprlock = getExe config.programs.hyprlock.package;
         btop = getExe config.programs.btop.package;
         swayosd = getExe' config.services.swayosd.package "swayosd-client";
+
+        blue-ui = getExe pkgs.bluetooth-tui;
+        net-ui = getExe pkgs.network-tui;
+        clip-ui = getExe pkgs.clipboard-tui;
       in [
         # Launching programs
         "SUPER, e, ${e}, ${h} '${file-manager}'"
         "SUPERSHIFT, f, ${e}, ${h} '${browser}'"
-        "SUPER, i, ${e}, ${h} '${image-editor}'"
 
         # Terminal stuff
         "SUPER, Return, ${e}, ${terminal}"
         "SUPER, r, ${e}, ${terminal} --hold ${yazi}"
         "SUPER, z, ${e}, ${terminal} --hold ${editor}"
         "SUPER, m, ${e}, ${terminal} --hold ${btop}"
+
+        "super,i,${e},${net-ui}"
+        "supershift,i,${e},${blue-ui}"
 
         #Window bings
         "alt,q,killactive"
@@ -65,7 +70,7 @@ in {
         "SUPER, l ,${e} , ${hyprlock} --immediate"
 
         #Clipboard menu
-        "SUPERSHIFT, v, ${e},clipse-manager"
+        "SUPERSHIFT, v, ${e},${clip-ui}"
 
         # Show when caps lock is pressed
         ",caps_lock,${e},${swayosd} --caps-lock"
