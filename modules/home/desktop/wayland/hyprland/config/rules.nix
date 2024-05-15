@@ -8,7 +8,7 @@
         (let
           f = regex: "float,^(${regex})$";
           c = regex: "center,^(${regex})$";
-          s = regex: "size,^(${regex})$";
+          s = regex: "size 60%,^(${regex})$";
         in [
           (f "file-roller")
           (f "foot")
