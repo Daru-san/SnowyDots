@@ -87,7 +87,6 @@
       wifi.enable = true;
       bluetooth.enable = true;
     };
-    boot.enableEfiGrub = true;
   };
   time.timeZone = "Africa/Johannesburg";
   i18n.defaultLocale = "en_ZA.UTF-8";
