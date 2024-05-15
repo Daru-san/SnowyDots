@@ -1,6 +1,6 @@
 {
   imports = [
-    ./desktop
+    ./wayland
     ./shell
     ./services
     ./git

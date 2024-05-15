@@ -21,9 +21,6 @@
       batman
       batdiff
       batgrep
-      batwatch
-      prettybat
-      batpipe
     ];
   };
 }

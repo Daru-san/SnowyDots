@@ -23,7 +23,7 @@ in {
     };
     programs = {
       kitty.enable = true;
-      ags.enable = true;
+      ags.enable = false;
       hyprlock.enable = true;
       anyrun.enable = true;
     };
@@ -37,8 +37,6 @@ in {
           "systemctl --user start hypridle.service"
           "systemctl --user start swayosd.service"
           "systemctl --user start wlsunset.service"
-          "systemctl --user start network-manager-applet.service"
-          "systemctl --user start blueman-applet"
           "systemctl --user start lxpolkit"
           "systemctl --user start hyprpaper"
         ];

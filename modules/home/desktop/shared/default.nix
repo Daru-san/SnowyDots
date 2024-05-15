@@ -1,3 +1,0 @@
-{
-  imports = [./kitty ./alacritty ./rofi];
-}

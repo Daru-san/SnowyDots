@@ -33,12 +33,5 @@
       enableZshIntegration = true;
       enableBashIntegration = true;
     };
-
-    # Shell completions
-    carapace = {
-      enable = true;
-      enableBashIntegration = true;
-      enableNushellIntegration = true;
-    };
   };
 }

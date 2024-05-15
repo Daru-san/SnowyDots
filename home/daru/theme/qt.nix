@@ -1,7 +1,7 @@
 {
   qt = {
     enable = true;
-    platformTheme.name = "gtk";
-    style = {name = "Adwaita-dark";};
+    platformTheme.name = "gtk3";
+    style = {name = "adwaita-dark";};
   };
 }
