@@ -18,7 +18,6 @@
     spicetify-nix.url = "github:Daru-san/spicetify-nix";
     trashy.url = "github:Daru-san/trashy";
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-    grub-themes.url = "github:jeslie0/nixos-grub-themes";
 
     # My own repos
     snowyvim.url = "sourcehut:~darumaka/SnowyVim";
