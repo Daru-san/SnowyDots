@@ -28,6 +28,6 @@ in {
       wlogout.enable = true;
       waybar.enable = true;
     };
-    home.packages = [pkgs.wl-clipboard-rs clipse];
+    home.packages = [pkgs.wl-clipboard-rs pkgs.clipse];
   };
 }
