@@ -12,9 +12,10 @@
   environment = {
     pathsToLink = ["/share/zsh" "/share/fish"];
     shellAliases = let
-      # yazi = "${pkgs.}/bin/yazi";
+      yazi = "${pkgs.yazi}/bin/yazi";
       rsync = "${pkgs.rsync}/bin/rsync";
     in {
+      y = yazi;
       ll = "ls -l";
       ex = "exit";
       r = "reset";
@@ -25,6 +26,7 @@
       logout = "loginctl terminate-user $USER";
       rsync-copy = "${rsync} -avzhe --progress";
       rsync-move = "${rsync} --remove-source-files -zvh --progress";
+      nix-list = "nix profile history --profile /nix/var/nix/profiles/system";
       v = "vi";
       ".." = "cd ..";
       "..." = "cd ../..";
