@@ -127,12 +127,9 @@ in {
         foot-config = iniFormat.generate "foot.ini" {
           main.font = "JetbrainsMono Nerd Font:size=14";
         };
-        clipse = getExe pkgs.clipse;
+        iw = getExe pkgs.iwgtk;
         bluetuith = getExe pkgs.bluetuith;
-        nmtui = getExe' pkgs.networkmanager "nmtui";
         foot = getExe pkgs.foot;
-        clip-ui = "${foot} -c ${foot-config} --title clipboard-tui -e ${clipse}";
-        net-ui = "${foot} -c ${foot-config} --title network-tui -e ${nmtui}";
         blue-ui = "${foot} -c ${foot-config} --title bluetooth-tui -e ${bluetuith}";
 
         sc = getExe' pkgs.swaynotificationcenter "swaync-client";
@@ -163,7 +160,7 @@ in {
         "superalt,n, ${e}, ${sc} -C"
 
         # TUI
-        "super,i,${e},${net-ui}"
+        "super,i,${e},${pk} iwgtk || ${iw}"
         "supershift,i,${e},${blue-ui}"
       ];
     };
