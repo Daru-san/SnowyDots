@@ -12,6 +12,7 @@
         in [
           (f "file-roller")
           (f "foot")
+          (f "iwgtk")
           (f "nm-connection-editor")
           (f "org.kde.kdeconnect.daemon")
           (f ".blueman-manager-wrapped")
@@ -19,12 +20,13 @@
           (s "tui")
           (c "file-roller")
           (c "foot")
-          (s "tui")
+          (c "iwgtk")
           (c "org.twosheds.iwgtk")
           (c "nm-connection-editor")
           (c ".blueman-manager-wrapped")
           (c "org.kde.kdeconnect.daemon")
-          (s "tui")
+          (s "foot")
+          (s "org.twosheds.iwgtk")
         ])
         [
           "workspace name:7,^(krita)$"

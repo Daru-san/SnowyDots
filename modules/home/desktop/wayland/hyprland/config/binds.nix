@@ -7,6 +7,7 @@
   ...
 }: let
   inherit (lib) getExe getExe';
+  inherit (pkgs) formats;
   focusmode = pkgs.writeShellScriptBin "focusmode" ''
     HYPRFOCUSMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
     if [ "$HYPRFOCUSMODE" = 1 ] ; then
@@ -37,6 +38,7 @@ in {
         yazi = getExe config.programs.yazi.package;
         hyprlock = getExe config.programs.hyprlock.package;
         btop = getExe config.programs.btop.package;
+        copyq = getExe pkgs.copyq;
         swayosd = getExe' config.services.swayosd.package "swayosd-client";
       in [
         # Launching programs
@@ -48,6 +50,9 @@ in {
         "SUPER, r, ${e}, ${terminal} --hold ${yazi}"
         "SUPER, z, ${e}, ${terminal} --hold ${editor}"
         "SUPER, m, ${e}, ${terminal} --hold ${btop}"
+
+        # Clipboard menu
+        "supershift,v,${e},${copyq} menu"
 
         #Window bings
         "alt,q,killactive"
@@ -118,9 +123,17 @@ in {
 
         mx = getExe pkgs.mixxc;
 
-        blue-ui = getExe pkgs.bluetooth-tui;
-        net-ui = getExe pkgs.network-tui;
-        clip-ui = getExe pkgs.clipboard-tui;
+        iniFormat = formats.ini {};
+        foot-config = iniFormat.generate "foot.ini" {
+          main.font = "JetbrainsMono Nerd Font:size=14";
+        };
+        clipse = getExe pkgs.clipse;
+        bluetuith = getExe pkgs.bluetuith;
+        nmtui = getExe' pkgs.networkmanager "nmtui";
+        foot = getExe pkgs.foot;
+        clip-ui = "${foot} -c ${foot-config} --title clipboard-tui -e ${clipse}";
+        net-ui = "${foot} -c ${foot-config} --title network-tui -e ${nmtui}";
+        blue-ui = "${foot} -c ${foot-config} --title bluetooth-tui -e ${bluetuith}";
 
         sc = getExe' pkgs.swaynotificationcenter "swaync-client";
       in [
@@ -150,9 +163,8 @@ in {
         "superalt,n, ${e}, ${sc} -C"
 
         # TUI
-        "super,i,${e},${pk} -f network-tui || ${net-ui}"
-        "supershift,i,${e},${pk} -f bluetooth-tui || ${blue-ui}"
-        "supershift,v,${e},${pk} -f clipboard-tui || ${clip-ui}"
+        "super,i,${e},${net-ui}"
+        "supershift,i,${e},${blue-ui}"
       ];
     };
 }
