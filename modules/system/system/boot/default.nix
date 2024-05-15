@@ -8,6 +8,7 @@
     loader.efi.canTouchEfiVariables = true;
     loader.systemd-boot = {
       enable = true;
+      editor = false;
       configurationLimit = 7;
     };
   };
