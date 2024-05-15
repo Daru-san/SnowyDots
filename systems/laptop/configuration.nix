@@ -1,7 +1,6 @@
 {
   pkgs,
   lib,
-  inputs,
   ...
 }: {
   imports = [./hardware-configuration.nix];
@@ -80,13 +79,12 @@
   ];
 
   os = {
-    system.laptop = true;
-    system.ssdTweaks = true;
+    system = {
+      laptop = true;
+      ssdTweaks = true;
+    };
     networking = {
-      wifi = {
-        enable = true;
-        iwd.enable = true;
-      };
+      wifi.enable = true;
       bluetooth.enable = true;
     };
     boot.enableEfiGrub = true;
