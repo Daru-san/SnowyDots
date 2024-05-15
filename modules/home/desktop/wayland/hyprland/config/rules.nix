@@ -8,6 +8,7 @@
         (let
           f = regex: "float,^(${regex})$";
           c = regex: "center,^(${regex})$";
+          s = regex: "size,^(${regex})$";
         in [
           (f "file-roller")
           (f "foot")
@@ -15,12 +16,15 @@
           (f "org.kde.kdeconnect.daemon")
           (f ".blueman-manager-wrapped")
           (f "org.twosheds.iwgtk")
+          (s "tui")
           (c "file-roller")
           (c "foot")
+          (s "tui")
           (c "org.twosheds.iwgtk")
           (c "nm-connection-editor")
           (c ".blueman-manager-wrapped")
           (c "org.kde.kdeconnect.daemon")
+          (s "tui")
         ])
         [
           "workspace name:7,^(krita)$"

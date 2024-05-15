@@ -12,5 +12,5 @@ in
   writeShellApplication {
     name = "clipboard-tui";
     runtimeInputs = [foot clipse];
-    text = ''foot -c ${foot-config} --app-id tui --title clipboard-tui -e clipse'';
+    text = ''foot -c ${foot-config} --title clipboard-tui -e clipse'';
   }
