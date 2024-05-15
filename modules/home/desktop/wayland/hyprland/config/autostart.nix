@@ -11,6 +11,7 @@
     ];
     exec = [
       "systemctl --user restart kanshi.service"
+      "systemctl --user restart hyprpaper.service"
     ];
   };
 }
