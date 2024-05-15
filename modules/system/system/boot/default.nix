@@ -9,7 +9,7 @@
     loader.systemd-boot = {
       enable = true;
       editor = false;
-      configurationLimit = 7;
+      configurationLimit = 4;
     };
   };
 }
