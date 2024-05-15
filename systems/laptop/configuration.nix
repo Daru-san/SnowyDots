@@ -23,20 +23,7 @@
       enable = true;
       package = lib.mkDefault pkgs.kdePackages.kdeconnect-kde;
     };
-    yazi = {
-      enable = false;
-      settings.yazi = {
-        manager = {
-          ratio = [1 3 4];
-          sort_by = "natural";
-          sort_dir_first = true;
-          show_hidden = true;
-          show_symlink = true;
-          linemode = "size";
-        };
-        log = {enabled = false;};
-      };
-    };
+    yazi.enable = true;
   };
 
   services = {
