@@ -11,7 +11,7 @@
         sort_by = "natural";
         sort_dir_first = true;
         show_hidden = false;
-        show_symlink = true;
+        show_symlink = false;
         linemode = "size";
       };
       opener = {
