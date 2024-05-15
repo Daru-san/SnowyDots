@@ -3,7 +3,6 @@
   writeShellApplication,
   formats,
   clipse,
-  toybox,
 }: let
   iniFormat = formats.ini {};
   foot-config = iniFormat.generate "foot.ini" {
@@ -12,13 +11,6 @@
 in
   writeShellApplication {
     name = "clipboard-tui";
-    runtimeInputs = [foot clipse toybox];
-    text = ''
-      if [[ ! $(pgrep -f clipboard-tui) ]]
-      then
-        foot -c ${foot-config} --title clipboard-tui -e clipse
-      else
-        pkill -f clipboard-tui
-      fi
-    '';
+    runtimeInputs = [foot clipse];
+    text = ''foot -c ${foot-config} --app-id tui --title clipboard-tui -e clipse'';
   }

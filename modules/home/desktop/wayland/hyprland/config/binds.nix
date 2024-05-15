@@ -38,10 +38,6 @@ in {
         hyprlock = getExe config.programs.hyprlock.package;
         btop = getExe config.programs.btop.package;
         swayosd = getExe' config.services.swayosd.package "swayosd-client";
-
-        blue-ui = getExe pkgs.bluetooth-tui;
-        net-ui = getExe pkgs.network-tui;
-        clip-ui = getExe pkgs.clipboard-tui;
       in [
         # Launching programs
         "SUPER, e, ${e}, ${h} '${file-manager}'"
@@ -52,9 +48,6 @@ in {
         "SUPER, r, ${e}, ${terminal} --hold ${yazi}"
         "SUPER, z, ${e}, ${terminal} --hold ${editor}"
         "SUPER, m, ${e}, ${terminal} --hold ${btop}"
-
-        "super,i,${e},${net-ui}"
-        "supershift,i,${e},${blue-ui}"
 
         #Window bings
         "alt,q,killactive"
@@ -69,14 +62,8 @@ in {
         #Lock screen
         "SUPER, l ,${e} , ${hyprlock} --immediate"
 
-        #Clipboard menu
-        "SUPERSHIFT, v, ${e},${clip-ui}"
-
         # Show when caps lock is pressed
         ",caps_lock,${e},${swayosd} --caps-lock"
-
-        # Switch the wallpaper from a list of wallpapers in a repo
-        # "CTRLSHIFT,F12,${e},swww-switch"
 
         "SUPER, w, ${e}, hyprctl notify -1 2000 0 `hyprctl activeworkspace | head -n 1`"
       ];
@@ -128,12 +115,12 @@ in {
 
         # Screenshots
         gb = getExe inputs.hyprland-contrib.packages.${system}.grimblast;
-        hs = getExe pkgs.hyprshot;
-        scr-dir = "${config.home.homeDirectory}/Pictures/Screenshots";
-        r = "region";
-        o = "output";
 
         mx = getExe pkgs.mixxc;
+
+        blue-ui = getExe pkgs.bluetooth-tui;
+        net-ui = getExe pkgs.network-tui;
+        clip-ui = getExe pkgs.clipboard-tui;
 
         sc = getExe' pkgs.swaynotificationcenter "swaync-client";
       in [
@@ -161,6 +148,11 @@ in {
         "super,n, ${e}, ${sc} -t"
         "supershift,n, ${e}, ${sc} -d"
         "superalt,n, ${e}, ${sc} -C"
+
+        # TUI
+        "super,i,${e},${pk} -f network-tui || ${net-ui}"
+        "supershift,i,${e},${pk} -f bluetooth-tui || ${blue-ui}"
+        "supershift,v,${e},${pk} -f clipboard-tui || ${clip-ui}"
       ];
     };
 }

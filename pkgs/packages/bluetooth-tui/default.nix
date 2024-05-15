@@ -3,7 +3,6 @@
   writeShellApplication,
   formats,
   bluetuith,
-  toybox,
 }: let
   iniFormat = formats.ini {};
   foot-config = iniFormat.generate "foot.ini" {
@@ -12,13 +11,6 @@
 in
   writeShellApplication {
     name = "bluetooth-tui";
-    runtimeInputs = [foot bluetuith toybox];
-    text = ''
-      if [[ ! $(pgrep -f bluetooth-tui) ]]
-      then
-        foot -c ${foot-config} --title bluetooth-tui -e bluetuith
-      else
-        pkill -f buetooth-tui
-      fi
-    '';
+    runtimeInputs = [foot bluetuith];
+    text = ''foot -c ${foot-config} --app-id tui --title bluetooth-tui -e bluetuith'';
   }

@@ -3,7 +3,6 @@
   writeShellApplication,
   formats,
   networkmanager,
-  toybox,
 }: let
   iniFormat = formats.ini {};
   foot-config = iniFormat.generate "foot.ini" {
@@ -12,13 +11,6 @@
 in
   writeShellApplication {
     name = "network-tui";
-    runtimeInputs = [foot networkmanager toybox];
-    text = ''
-      if [[ ! $(pgrep -f network-tui) ]]
-      then
-        foot -c ${foot-config} --title network-tui -e nmtui
-      else
-        pkill -f network-tui
-      fi
-    '';
+    runtimeInputs = [foot networkmanager];
+    text = ''foot -c ${foot-config} --app-id tui --title network-tui -e nmtui'';
   }
