@@ -13,6 +13,7 @@ in {
     ./swaync
     ./swayosd
     ./waybar
+    ./kitty
     ./wlogout
     ./wlsunset
   ];
