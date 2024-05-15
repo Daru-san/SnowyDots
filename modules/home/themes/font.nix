@@ -1,4 +1,9 @@
-{config, ...}: let
+{
+  config,
+  lib,
+  ...
+}: let
+  inherit (lib.lists) flatten;
   cfg = config.fonts;
 in {
   imports = [./font-opts.nix];
@@ -11,11 +16,11 @@ in {
         serif = [serif.name];
       };
     };
-    home.packages = with cfg; [
+    home.packages = flatten (with cfg; [
       monospace.package
       serif.package
       sansSerif.package
       extraFonts
-    ];
+    ]);
   };
 }
