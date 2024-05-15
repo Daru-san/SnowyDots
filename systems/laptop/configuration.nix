@@ -24,7 +24,7 @@
       package = lib.mkDefault pkgs.kdePackages.kdeconnect-kde;
     };
     yazi = {
-      enable = true;
+      enable = false;
       settings.yazi = {
         manager = {
           ratio = [1 3 4];
@@ -34,7 +34,7 @@
           show_symlink = true;
           linemode = "size";
         };
-        log.enabled = false;
+        log = {enabled = false;};
       };
     };
   };
