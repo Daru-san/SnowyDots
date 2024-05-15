@@ -60,6 +60,7 @@
       asciinema-scenario
       xdragon
       nix-output-monitor
+      manix
       zaread
     ])
     (with pkgs.gnome; [dconf-editor gnome-clocks file-roller cheese])
