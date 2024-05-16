@@ -40,11 +40,11 @@
     y = yazi;
     jtp = ''find $1 -name "*.jpg" -exec mogrify -format png {} \;'';
     man = "${pkgs.bat-extras.batman}/bin/batman";
-    grep = "${pkgs.bat-extras.batgrep}/bin/batgrep";
+    bgrep = "${pkgs.bat-extras.batgrep}/bin/batgrep";
     cat = bat;
     trashy-empty = "${trashy} list | ${fzf} --multi | awk '{$1=$1;print}' | rev | cut -d ' ' -f1 | rev | xargs ${trashy} empty --match=exact --force";
     trashy-restore = "${trashy} list | ${fzf} --multi | awk '{$1=$1;print}' | rev | cut -d ' ' -f1 | rev | xargs ${trashy} restore --match=exact --force";
     inherit firefox;
-    zc = "z && clear";
+    zc = "clear && z";
   };
 }
