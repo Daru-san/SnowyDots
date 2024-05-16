@@ -34,7 +34,7 @@
           on-scroll-up = "hyprctl dispatch workspace e+1";
           on-scroll-down = "hyprctl dispatch workspace e-1";
         };
-        "tray" = {
+        tray = {
           spacing = 10;
           icon-size = 21;
         };
@@ -45,9 +45,10 @@
             deactivated = "";
           };
         };
-        "clock" = {
+        clock = {
           format-alt = " {:%X}";
           format = " {:%a, %e %b, %R}";
+          interval = 1;
           tooltip-format = "<tt><small>{calendar}</small></tt>";
           on-click-right = "mode";
           calendar = {
@@ -65,23 +66,23 @@
             };
           };
         };
-        "cpu" = {
+        cpu = {
           format = " {usage}%";
           format-alt = " {load}";
           tooltip = false;
           interval = 2;
         };
-        "memory" = {
+        memory = {
           format = " {}%";
           format-alt = "{used:0.1f}G/{total:0.1f}G";
           interval = 2;
           tooltip = false;
         };
-        "backlight" = {
+        backlight = {
           format = "{percent}% {icon}";
           format-icons = ["" "" "" "" "" "" "" "" ""];
         };
-        "battery" = {
+        battery = {
           states = {
             good = 95;
             warning = 30;
@@ -99,7 +100,7 @@
             ""
           ];
         };
-        "pulseaudio" = {
+        pulseaudio = {
           ignored-sinks = ["Easy Effects Sink"];
           format = "{icon} {volume}%";
           format-muted = "󰝟 {format_source}";
@@ -120,7 +121,7 @@
           max = 100;
           orientation = "horizontal";
         };
-        "network" = {
+        network = {
           format-wifi = "󰖩";
           format-ethernet = "󰈀";
           tooltip-format = "{essid}({signalStrength}%)";
@@ -128,7 +129,7 @@
           format-disconnected = "󰖪";
           on-click = lib.getExe pkgs.iwgtk;
         };
-        "bluetooth" = {
+        bluetooth = {
           format-on = "󰂯";
           format-off = "󰂲";
           format-disabled = "(󰂲)";
