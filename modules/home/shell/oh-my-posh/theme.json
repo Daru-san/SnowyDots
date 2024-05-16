@@ -53,11 +53,6 @@
       ]
     }
   ],
-  "transient_prompt": {
-    "background": "transparent",
-    "foreground": "#ffffff",
-    "template": "{{ .Shell }} \uf105 "
-  },
   "secondary_prompt": {
     "style": "plain",
     "foreground": "#62EDAB",

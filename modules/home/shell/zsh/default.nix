@@ -51,7 +51,6 @@
         npg = "nix-prefetch-git";
         npgh = "nix-prefetch-github";
         npu = "nix-prefetch-url";
-        zc = "cd ~ && clear";
         bs = "bash";
         nflkdl = "nix flake update --commit-lock-file";
         nflkd = "nix flake update";
