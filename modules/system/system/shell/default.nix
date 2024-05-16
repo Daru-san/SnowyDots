@@ -7,10 +7,13 @@
     autosuggestions = {enable = true;};
     enableBashCompletion = true;
   };
-  programs.nix-index = {
-    enable = true;
-    enableZshIntegration = true;
-    enableBashIntegration = true;
+  programs = {
+    command-not-found.enable = false;
+    nix-index = {
+      enable = true;
+      enableZshIntegration = true;
+      enableBashIntegration = true;
+    };
   };
   environment = {
     pathsToLink = ["/share/zsh" "/share/fish"];
