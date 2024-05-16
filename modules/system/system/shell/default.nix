@@ -7,8 +7,11 @@
     autosuggestions = {enable = true;};
     enableBashCompletion = true;
   };
-  programs.fish.enable = false;
-
+  programs.nix-index = {
+    enable = true;
+    enableZshIntegration = true;
+    enableBashIntegration = true;
+  };
   environment = {
     pathsToLink = ["/share/zsh" "/share/fish"];
     shellAliases = let
