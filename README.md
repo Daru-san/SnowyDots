@@ -14,7 +14,7 @@ My beautiful, functional, focused nix flake with Hyprland and Sway, written comp
 
 ### Hyprland
 
-![Image](https://i.imgur.com/4c7idYL.png 'I use Nix by the way')
+![Image](https://i.imgur.com/4svyKaE.png 'I use Nix by the way')
 ![Image](https://i.imgur.com/JnzkFhK.png 'Java > everything else')
 ![image](https://i.imgur.com/vGkkXsx.png 'Study with me?')
 ![image](https://i.imgur.com/Q0cOgNT.png 'Firefox looking amazing')
@@ -24,7 +24,7 @@ My beautiful, functional, focused nix flake with Hyprland and Sway, written comp
 
 ### Aurorus (Acer Laptop)
 
-- Kernel: [Linux-xanmod](https://xanmod.org/ 'xanmod')
+- Kernel: [Linux](https://kernel.org/ 'Stock kernel')
 - Shell: [zsh](http://zsh.sourceforge.net/ 'zsh') configured with [oh-my-posh](https://ohmyposh.dev/), [antidote](https://getantidote.github.io/) and [prezto](https://github.com/sorin-ionescu/prezto)
 - Editor: [SnowyVim](https://git.sr.ht/~darumaka/SnowyVim), my custom [Neovim](https://github.com/neovim/neovim) configuration made with [nixvim](https://github.com/nix-community/nixvim)
 - Window Manager: [Hyprland](https://github.com/hyprwm/Hyprland 'hyprland')
