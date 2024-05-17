@@ -99,10 +99,7 @@
           {
             system = {inherit (laptop) stateVersion;};
             networking = {inherit (laptop) hostName;};
-            wayland = {
-              hyprland.enable = true;
-              enable = true;
-            };
+            wayland.enable = true;
           }
         ];
       };
@@ -120,10 +117,7 @@
           modules.home
           {
             home = {inherit (laptop) stateVersion;};
-            wayland = {
-              enable = true;
-              compositor = "hyprland";
-            };
+            wayland.enable = true;
           }
         ];
       };
