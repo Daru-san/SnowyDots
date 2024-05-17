@@ -1,8 +1,7 @@
-{pkgs, ...}: {
+{
   boot = {
-    consoleLogLevel = 0;
+    consoleLogLevel = 1;
     kernelParams = ["quiet"];
-    kernelPackages = pkgs.linuxPackages_xanmod_stable;
     initrd.verbose = false;
     initrd.systemd.enable = true;
     loader.efi.canTouchEfiVariables = true;
