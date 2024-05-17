@@ -4,35 +4,14 @@
   config,
   ...
 }: let
-  inherit (lib) mkEnableOption mkOption types mkIf mkMerge mkForce getExe;
+  inherit (lib) mkIf mkEnableOption;
   cfg = config.wayland;
-in {
-  options = {
-    wayland = {
-      enable = mkEnableOption "Enable wayland compositors";
-      sway.enable = mkEnableOption "Enable sway";
-      hyprland.enable = mkEnableOption "Enable hyprland";
-      compositor = mkOption {
-        type = with types; nullOr str;
-        default = null;
-      };
-    };
-  };
-  config = mkIf cfg.enable (mkMerge [
-    (mkIf cfg.sway.enable {
-      programs.sway = {
-        enable = true;
-        extraPackages = [];
-      };
-      security.pam.services.gtklock.text = builtins.readFile "${pkgs.gtklock}/etc/pam.d/gtklock";
-      wayland.compositor = mkForce "sway";
-    })
-    (mkIf cfg.hyprland.enable {
+in
+  mkIf cfg.enable {
+    options.wayland.enable = mkEnableOption;
+    config = mkIf cfg.enable {
       programs.hyprland.enable = true;
       security.pam.services.hyprlock = {};
-      wayland.compositor = mkForce "Hyprland";
-    })
-    {
       programs = {
         dconf.enable = true;
         file-roller.enable = true;
@@ -65,6 +44,5 @@ in {
           };
         };
       };
-    }
-  ]);
-}
+    };
+  }

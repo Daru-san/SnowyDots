@@ -4,12 +4,14 @@
   pkgs,
   ...
 }: let
+  inherit (lib) mkEnableOption mkIf;
   cfg = config.wayland;
 in {
+  options.wayland.enable = mkEnableOption "Enable wayland using Hyprland";
   imports = [
     ./kanshi
+    ./anyrun
     ./hypridle
-    ./compositor
     ./swaync
     ./swayosd
     ./waybar
@@ -17,7 +19,7 @@ in {
     ./wlogout
     ./wlsunset
   ];
-  config = lib.mkIf cfg.enable {
+  config = mkIf cfg.enable {
     services = {
       kanshi.enable = true;
       hypridle.enable = true;
@@ -29,6 +31,6 @@ in {
       wlogout.enable = true;
       waybar.enable = true;
     };
-    home.packages = [pkgs.wl-clipboard-rs pkgs.clipse];
+    home.packages = [pkgs.wl-clipboard-rs];
   };
 }

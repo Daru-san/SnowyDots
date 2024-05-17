@@ -1,19 +1,14 @@
 {
   pkgs,
-  config,
-  lib,
   inputs,
+  lib,
+  config,
   ...
 }: let
-  inherit (lib) mkIf;
   cfg = config.wayland;
 in {
-  imports = [
-    ./ags
-    ./config
-    ./anyrun
-  ];
-  config = mkIf cfg.enable (mkIf (cfg.compositor == "hyprland") {
+  imports = [./config];
+  config = lib.mkIf cfg.enable {
     services = let
       systemdTarget = "hyprland-session.target";
     in {
@@ -23,7 +18,6 @@ in {
     };
     programs = {
       kitty.enable = true;
-      ags.enable = false;
       hyprlock.enable = true;
       anyrun.enable = true;
     };
@@ -43,5 +37,5 @@ in {
       };
       settings = {source = ["extra.conf"];};
     };
-  });
+  };
 }
