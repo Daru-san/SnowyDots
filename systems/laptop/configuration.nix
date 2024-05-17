@@ -23,7 +23,7 @@
       enable = true;
       package = lib.mkDefault pkgs.kdePackages.kdeconnect-kde;
     };
-    yazi.enable = true;
+    yazi.enable = false;
   };
 
   services = {
