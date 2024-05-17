@@ -5,7 +5,7 @@
   ...
 }: {
   imports =
-    [./home.nix ./theme ./packages.nix]
+    [./home.nix ./theme ./packages.nix ./misc.nix]
     ++ (with inputs; [
       nix-colors.homeManagerModules.default
       chaotic.homeManagerModules.default
