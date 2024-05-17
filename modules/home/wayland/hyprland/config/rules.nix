@@ -50,6 +50,9 @@
           "workspace name:F7,^(FreeTube)$"
           "workspace name:F8,title:^(Spotify)(.*)$"
 
+          "group,^(virt-manager)$"
+          "workspace name:F9,^(virt-manager)$"
+
           "group,^(org.pwmt.zathura)$"
           "workspace name:F10,^(org.pwmt.zathura)$"
 
