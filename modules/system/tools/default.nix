@@ -5,5 +5,6 @@
     ./android.nix
     ./nh.nix
     ./misc.nix
+    ./virtualization.nix
   ];
 }
