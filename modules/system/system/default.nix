@@ -2,7 +2,7 @@
   imports = [
     ./boot
     ./network
-    ./hardware
+    ./optimizations
     ./fonts
     ./shell
     ./security

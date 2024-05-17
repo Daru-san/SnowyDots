@@ -66,15 +66,13 @@
   ];
 
   os = {
-    system = {
-      laptop = true;
-      ssdTweaks = true;
-    };
+    system.laptop = true;
     networking = {
       wifi.enable = true;
       bluetooth.enable = true;
     };
   };
+  boot.kernelParams = ["video=eDP-1:d"];
   time.timeZone = "Africa/Johannesburg";
   i18n.defaultLocale = "en_ZA.UTF-8";
 }

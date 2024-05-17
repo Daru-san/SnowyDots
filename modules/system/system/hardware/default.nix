@@ -1,1 +1,1 @@
-{...}: {imports = [./drivers.nix ./optimizations.nix ./audio.nix];}
+{imports = [./drivers.nix ./audio.nix];}
