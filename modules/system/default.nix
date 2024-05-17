@@ -1,3 +1,3 @@
 {
-  imports = [./tools ./system ./wayland ./xsession];
+  imports = [./tools ./system ./wayland];
 }
