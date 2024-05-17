@@ -66,7 +66,6 @@
   ];
 
   os = {
-    system.laptop = true;
     networking = {
       wifi.enable = true;
       bluetooth.enable = true;
