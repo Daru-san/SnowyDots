@@ -16,7 +16,7 @@
       newsflash
       archiver
       oculante
-      pavucontrol
+      pwvucontrol
       libreoffice-qt-fresh
       iwgtk
       prismlauncher
