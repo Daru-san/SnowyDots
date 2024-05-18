@@ -102,7 +102,7 @@
         };
         pulseaudio = {
           ignored-sinks = ["Easy Effects Sink"];
-          format = "{icon} {volume}%";
+          format = "{icon}  {volume}%";
           format-muted = "󰝟 {format_source}";
           format-icons = {
             headphone = "󰋋";
