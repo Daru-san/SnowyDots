@@ -1,11 +1,14 @@
-# # My home configuration file ##
+# Home manager configuratiob file #
 {
   home = {
     username = "daru";
     homeDirectory = "/home/daru";
     enableNixpkgsReleaseCheck = false;
   };
+
+  # Make neovim the default editor
   home.sessionVariables.EDITOR = "nvim";
+
   # Enable home-manager
   programs.home-manager.enable = true;
 

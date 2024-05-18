@@ -5,12 +5,13 @@
   lib,
   ...
 }: {
-  imports =
+  imports = lib.flatten [
     [./home.nix ./theme ./packages.nix ./misc.nix]
-    ++ (with inputs; [
+    (with inputs; [
       nix-colors.homeManagerModules.default
       chaotic.homeManagerModules.default
-    ]);
+    ])
+  ];
 
   nixpkgs = {
     overlays = lib.flatten [
