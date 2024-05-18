@@ -10,7 +10,6 @@
     ./freetube
     ./yt-dlp
     ./nautilus
-    ./neovim
     ./spotify
     ./firefox
     ./thunderbird
