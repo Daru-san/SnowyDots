@@ -12,7 +12,7 @@
       obsidian
       scrcpy
       keepassxc
-      bridge-core
+      bridge-editor
       newsflash
       archiver
       oculante
@@ -28,6 +28,7 @@
       tgpt
       tty-clock
       adbtuifm
+      neovim
       libnotify
       speedtest-cli
       hydra-check

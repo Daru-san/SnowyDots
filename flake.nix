@@ -67,14 +67,11 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
-    systems = ["x86_64-linux"];
-    forAllSystems = nixpkgs.lib.genAttrs systems;
-
     modules = {
       home = import ./modules/home;
       system = import ./modules/system;
       specialisations = import ./systems/specialise;
-      pkgs = import ./pkgs;
+      overlays = import ./overlays;
     };
     laptop = {
       hostName = "Aurorus";
@@ -83,9 +80,7 @@
       stateVersion = "24.05";
     };
   in {
-    overlays = modules.pkgs.overlays {inherit inputs;};
-    packages =
-      forAllSystems (system: modules.pkgs.packages nixpkgs.legacyPackages.${system});
+    overlays = modules.overlays {inherit inputs;};
 
     nixosConfigurations = {
       ${laptop.hostName} = nixpkgs.lib.nixosSystem {

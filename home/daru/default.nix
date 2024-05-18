@@ -2,6 +2,7 @@
   inputs,
   outputs,
   pkgs,
+  lib,
   ...
 }: {
   imports =
@@ -12,15 +13,19 @@
     ]);
 
   nixpkgs = {
-    overlays = with outputs.overlays; [
-      stable-packages
-      unstable-packages
-      packages
+    overlays = lib.flatten [
+      (with inputs; [
+        snowpkgs.overlays.default
+        snowyvim.overlays.default
+      ])
+      (with outputs.overlays; [
+        stable-packages
+        unstable-packages
+      ])
     ];
     config = {
       allowUnfree = true;
       allowUnfreePredicate = _: true;
-      permittedInsecurePackages = ["electron-25.9.0"];
     };
   };
   nix.package = pkgs.nix;

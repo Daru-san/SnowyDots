@@ -31,15 +31,6 @@ My functional, advanced NixOS configuration flake using <a href="https://github.
 - Launcher: [anyrun](https://github.com/Kirottu/anyrun 'anyrun')
 - Bar: [waybar](https://github.com/Alexays/Waybar 'waybar')
 
-## Flake Info
-
-### Packages provided by my flake
-
-- [gh-s](https://github.com/gennaro-tedesco/gh-s), a Github extension for searching through Github repositories
-- [zaread](https://github.com/paolop/zaread), a script that can open different files like docx files in zathura
-- [bridge-core](https://github.com/bridge-core/editor), a Minecraft add-on creator for Minecraft Bedrock Edition
-- [gh-download](https://github.com/yuler/gh-download), a Github extension for downloading any file from a Github repo without cloning it
-
 ## Installing NixOS
 
 I use my own custom nixos iso to install NixOS on my systems, the flake is at [SnowISO](https://git.sr.ht/~darumaka/SnowISO) on sr.ht. It has plenty of useful tools and has sway as a desktop for graphical installs.
