@@ -1,5 +1,5 @@
 {
-  description = "❄ My chilly NixOS flake for snowy nights and chilly afternoons ❆";
+  description = "❄ A NixOS flake for all who love winter ❆";
 
   inputs = {
     # Nixpkgs repos
