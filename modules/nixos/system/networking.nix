@@ -2,10 +2,10 @@
   networking = {
     nameservers = ["1.1.1.1" "1.0.0.1"];
     dhcpcd.extraConfig = "nohook resolv.conf";
-    networkmanager.dns = "none";
   };
   networking = {
     networkmanager = {
+      dns = "none";
       enable = true;
       wifi = {
         macAddress = "random";
@@ -37,6 +37,6 @@
   services.blueman.enable = true;
   hardware.bluetooth = {
     enable = true;
-    settings.Experimental = true;
+    settings.General.Experimental = true;
   };
 }
