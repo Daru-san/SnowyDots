@@ -18,6 +18,7 @@
       turbo = "auto";
     };
   };
+  boot.kernelParams = ["snd-intel-dspcfg.dsp_driver=1"];
   boot.extraModulePackages = with config.boot.kernelPackages; [cpupower];
   powerManagement.resumeCommands = ''
     ${config.boot.kernelPackages.cpupower}/bin/cpupower frequency-set -g powersave
