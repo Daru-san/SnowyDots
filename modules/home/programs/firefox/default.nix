@@ -7,7 +7,6 @@
 }: {
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox-beta;
 
     profiles.${config.home.username} = {
       isDefault = true;
