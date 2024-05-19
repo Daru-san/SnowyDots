@@ -65,7 +65,7 @@
     inherit (self) outputs;
     modules = {
       home = import ./modules/home;
-      system = import ./modules/system;
+      system = import ./modules/nixos;
       specialisations = import ./systems/specialise;
       overlays = import ./overlays;
     };

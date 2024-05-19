@@ -1,5 +1,13 @@
-{
-  boot.kernelParams = ["cgroup_no_v1=all" "systemd.unified_cgroup_hierarchy=yes"];
+{config, ...}: {
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    kernelParams = [
+      "cgroup_no_v1=all"
+      "systemd.unified_cgroup_hierarchy=yes"
+      "nowatchdog"
+      "modprobe.blacklist=iTCO_wdt"
+    ];
+  };
   boot.kernel.sysctl = {
     "vm.swappiness" = 90;
     "vm.vfs_cache_pressure" = 50;
@@ -11,18 +19,5 @@
     "kernel.sched_migration_cost_ns" = 250000;
     "kernel.sched_cfs_bandwidth_slice_us" = 3000;
     "kernel.sched_nr_migrate" = 128;
-  };
-  systemd = {
-    extraConfig = ''
-      DefaultCPUAccounting=yes
-      DefaultMemoryAccounting=yes
-      DefaultIOAccounting=yes
-    '';
-    user.extraConfig = ''
-      DefaultCPUAccounting=yes
-      DefaultMemoryAccounting=yes
-      DefaultIOAccounting=yes
-    '';
-    services."user@".serviceConfig.Delegate = true;
   };
 }
