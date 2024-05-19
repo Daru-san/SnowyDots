@@ -106,11 +106,11 @@
         "yafas": "yafas"
       },
       "locked": {
-        "lastModified": 1716063211,
-        "narHash": "sha256-mPvD/V5Ta2hx/vvo+A05760w+lIyjGfsOpWjH63Gczw=",
+        "lastModified": 1716070036,
+        "narHash": "sha256-zeFRZkJVQinXX4DTmUUiII/pDRJ3XF9UwQVu+2oL/cQ=",
         "owner": "chaotic-cx",
         "repo": "nyx",
-        "rev": "4830345090a9fa62ade226c85a75c01f01638757",
+        "rev": "7ec4baa165ae85c93dcf371fd2a98a06fc8a5e20",
         "type": "github"
       },
       "original": {
@@ -269,11 +269,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1716005012,
-        "narHash": "sha256-nEwl1PkJyIX8gcKfdCfQT+WEGN8CEx0G0b+Bz3aiL14=",
+        "lastModified": 1716091392,
+        "narHash": "sha256-TBfmY5MNJr7yc0VNKO+bXjxVspUa8QNXsMgF7j6dDhk=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "34845a218eeb2aa85b83c9299bf0651f3f647595",
+        "rev": "6f9aa31fb6e3d154fa8558f1b4b583ff40c3f928",
         "type": "gitlab"
       },
       "original": {
