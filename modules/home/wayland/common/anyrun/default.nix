@@ -15,7 +15,6 @@ in {
         shell
         applications
         dictionary
-        websearch
       ];
 
       width.fraction = 0.3;
@@ -36,16 +35,6 @@ in {
         Config(
           desktop_actions: false,
           max_entries: 5,
-        )
-      '';
-      "websearch.ron".text = ''
-        Config(
-          prefix: "?",
-          Custom(
-            name: "Brave",
-            url: "search.brave.com/search?q={}",
-          )
-          engines: [Brave]
         )
       '';
     };
