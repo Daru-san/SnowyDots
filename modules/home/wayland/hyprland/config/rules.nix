@@ -2,7 +2,7 @@
   wayland.windowManager.hyprland = {
     settings = {
       windowrulev2 = [
-        "float,class:(firefox-nightly),title:(Library)"
+        "float,class:(firefox)(.*),title:(Library)"
       ];
       windowrule = lib.mkMerge [
         (let
@@ -38,7 +38,7 @@
 
           "workspace name:9,^(com.github.wwmm.easyeffects)$"
 
-          "workspace name:F1,^(firefox-nightly)$"
+          "workspace name:F1,^(firefox)(.*)$"
           "workspace name:F2,^(osidian)$"
           "workspace name:F3,^(libreoffice)(.*)$"
           "workspace name:F4,^(org.gnome.Nautilus)$"
