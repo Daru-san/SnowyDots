@@ -5,7 +5,6 @@
     # Nixpkgs repos
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/release-23.11";
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     # Home manager
     home-manager = {
@@ -46,7 +45,6 @@
   nixConfig = {
     extra-substituters = [
       "https://anyrun.cachix.org"
-      "https://nyx.chaotic.cx/"
       "https://hyprland.cachix.org"
       "https://nix-community.cachix.org"
       "https://snowy-cache.cachix.org"
@@ -54,7 +52,6 @@
     extra-trusted-public-keys = [
       "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-      "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "snowy-cache.cachix.org-1:okWl5IF/yzdZ+p/eRhDFvcanQo/y0ta80dvfdGgy28U="
     ];

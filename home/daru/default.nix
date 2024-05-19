@@ -7,10 +7,7 @@
 }: {
   imports = lib.flatten [
     [./home.nix ./theme ./packages.nix ./misc.nix]
-    (with inputs; [
-      nix-colors.homeManagerModules.default
-      chaotic.homeManagerModules.default
-    ])
+    (with inputs; [nix-colors.homeManagerModules.default])
   ];
 
   nixpkgs = {
