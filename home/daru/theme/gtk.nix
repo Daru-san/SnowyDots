@@ -29,8 +29,21 @@ in {
     };
 
     iconTheme = {
-      name = "Qogir";
-      package = pkgs.qogir-icon-theme;
+      name = "Flat-Remix-Blue-Dark";
+      package = pkgs.flat-remix-icon-theme.overrideAttrs (finalAttrs: {
+        version = "20240201";
+        src = pkgs.fetchFromGitHub {
+          owner = "daniruiz";
+          repo = "flat-remix";
+          rev = finalAttrs.version;
+          sha256 = "sha256-3TkBRgoT2AW0Sb0CrXdxh53/jYARAMFC/TIj/r/zruo=";
+        };
+        dontFixup = true;
+        postInstall = ''
+          symlinkParentIconThemes
+          recordPropagatedDependencies
+        '';
+      });
     };
 
     gtk3 = {inherit extraCss extraConfig;};
