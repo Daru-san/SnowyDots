@@ -1,4 +1,8 @@
 {pkgs, ...}: {
+  # Android emulation
+  virtualisation.waydroid.enable = true;
+
+  # Desktop emulation
   environment.systemPackages = with pkgs; [
     virt-viewer
     spice

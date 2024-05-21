@@ -16,7 +16,6 @@
     };
   };
   programs = {
-    git.enable = true;
     nix-ld.enable = true;
     gnome-disks = {enable = true;};
     kdeconnect = {
@@ -38,7 +37,6 @@
 
   environment.systemPackages = with pkgs; [
     htop
-    wget2
     nix-prefetch-git
     nix-prefetch-github
     unzip
@@ -46,11 +44,11 @@
     unrar
     p7zip
     commonsCompress
-    iw
     clinfo
     glxinfo
     exfatprogs
     nurl
+    jmtpfs
     nix-melt
     ncdu
     busybox
