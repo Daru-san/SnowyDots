@@ -62,6 +62,10 @@
       asciinema-scenario
       xdragon
       nix-output-monitor
+      nix-init
+      nix-update
+      nixfmt-rfc-style
+      lexido
       manix
       zaread
     ])
