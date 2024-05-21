@@ -20,6 +20,7 @@
     shellAliases = let
       yazi = "${pkgs.yazi}/bin/yazi";
       rsync = "${pkgs.rsync}/bin/rsync";
+      wget2 = "${pkgs.wget2}/bin/wget2";
     in {
       y = yazi;
       ll = "ls -l";
@@ -33,6 +34,7 @@
       rsync-copy = "${rsync} -avzhe --progress";
       rsync-move = "${rsync} --remove-source-files -zvh --progress";
       nix-list = "nix profile history --profile /nix/var/nix/profiles/system";
+      wget = wget2;
       v = "vi";
       ".." = "cd ..";
       "..." = "cd ../..";
