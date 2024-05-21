@@ -7,11 +7,11 @@
 }: {
   programs.firefox = {
     enable = true;
+    nativeMessagingHosts = with pkgs; [ff2mpv-rust uget-integrator];
 
     profiles.${config.home.username} = {
       isDefault = true;
       userChrome = builtins.readFile ./userChrome.css;
-      nativeMessagingHosts = with pkgs; [ff2mpv-rust uget-integrator];
       extensions = with inputs.firefox-addons.packages.${system}; [
         disable-javascript
         don-t-fuck-with-paste
@@ -303,6 +303,10 @@
         "{4f391a9e-8717-4ba6-a5b1-488a34931fcb}" = {
           installation_mode = "force_installed";
           install_url = "http://addons.mozilla.org/firefox/downloads/latest/bonjourr-startpage/latest.xpi";
+        };
+        "uget-integration@slgobinath" = {
+          installation_mode = "normal_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/ugetintegration/latest.xpi";
         };
         "bing@search.mozilla.org".installation_mode = "blocked";
       };
