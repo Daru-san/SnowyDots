@@ -1,6 +1,7 @@
 {...}: {
   imports = [
     ./mpv
+    ./aria2
     ./btop
     ./translate-shell
     ./bat

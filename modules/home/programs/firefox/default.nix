@@ -11,7 +11,7 @@
     profiles.${config.home.username} = {
       isDefault = true;
       userChrome = builtins.readFile ./userChrome.css;
-
+      nativeMessagingHosts = with pkgs; [ff2mpv-rust uget-integrator];
       extensions = with inputs.firefox-addons.packages.${system}; [
         disable-javascript
         don-t-fuck-with-paste
@@ -31,6 +31,7 @@
         dark-mode-webextension
         lovely-forks
         vimium-c
+        ff2mpv
       ];
 
       containersForce = true;
