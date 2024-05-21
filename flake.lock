@@ -969,11 +969,11 @@
         "nixpkgs": "nixpkgs_7"
       },
       "locked": {
-        "lastModified": 1716314464,
-        "narHash": "sha256-pciNFumFhI/YxOJzczBvBoWUNGqm3y/YurSpEJdxde4=",
+        "lastModified": 1716315034,
+        "narHash": "sha256-sw/DbMHeVrDgnvedB87exq4QaxHJ1NiIt+TdvPHWgh0=",
         "owner": "~darumaka",
         "repo": "Snowpkgs",
-        "rev": "16d36085d4b64ff54660e88bccdba9ec9b64c8b9",
+        "rev": "93395bbae55aa773fc6009cadf8ab1eacc1c90e9",
         "type": "sourcehut"
       },
       "original": {
