@@ -9,6 +9,7 @@
 in {
   options.wayland.enable = mkEnableOption "Enable wayland using Hyprland";
   imports = [
+    ./ags
     ./kanshi
     ./anyrun
     ./hypridle
