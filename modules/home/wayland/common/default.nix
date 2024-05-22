@@ -28,6 +28,7 @@ in {
       wlsunset.enable = true;
     };
     programs = {
+      ags.enable = true;
       wlogout.enable = true;
       waybar.enable = true;
     };
