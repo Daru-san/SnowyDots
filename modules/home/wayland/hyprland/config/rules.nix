@@ -1,7 +1,10 @@
 {lib, ...}: {
   wayland.windowManager.hyprland = {
     settings = {
-      windowrulev2 = ["float,class:(firefox)(.*),title:(Library)"];
+      windowrulev2 = [
+        "float,class:(firefox)(.*),title:(Library)"
+        "float,class:(firefox)(.*),title:(About Mozilla Firefox)"
+      ];
       windowrule = lib.flatten [
         (let
           f = x: "float,^(${x})(.*)$";
