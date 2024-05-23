@@ -1,6 +1,5 @@
-{pkgs, ...}: {
+{
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [
       "cgroup_no_v1=all"
       "systemd.unified_cgroup_hierarchy=yes"

@@ -61,6 +61,7 @@
     cachix
     file
     v4l-utils
+    bandwhich
   ];
 
   boot.kernelParams = ["video=eDP-1:d"];
