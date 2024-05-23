@@ -50,7 +50,7 @@
           (g "mpv")
           (wf 6 "mpv")
 
-          (wf 7 "freetube")
+          (wf 7 "FreeTube")
           (wf 8 "Spotify")
 
           (g "virt-manager")
