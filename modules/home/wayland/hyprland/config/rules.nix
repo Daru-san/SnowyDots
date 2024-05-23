@@ -57,7 +57,7 @@
           (wf 9 "virt-manager")
 
           (g "org.pwmt.zathura")
-          (wf 10 "zathura")
+          (wf 10 "org.pwmt.zathura")
 
           (g "org.prismlauncher.PrismLauncher")
           (g "Minecraft")
