@@ -253,6 +253,23 @@
         "privacy.donottrackheader.enabled" = true;
         "svg.context-properties.content.enabled" = true;
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+
+        "general.smoothScroll.lines.durationMaxMS" = 125;
+        "general.smoothScroll.lines.durationMinMS" = 125;
+        "general.smoothScroll.mouseWheel.durationMaxMS" = 200;
+        "general.smoothScroll.mouseWheel.durationMinMS" = 100;
+        "general.smoothScroll.msdPhysics.enabled" = true;
+        "general.smoothScroll.other.durationMaxMS" = 125;
+        "general.smoothScroll.other.durationMinMS" = 125;
+        "general.smoothScroll.pages.durationMaxMS" = 125;
+        "general.smoothScroll.pages.durationMinMS" = 125;
+
+        "mousewheel.min_line_scroll_amount" = 30;
+        "mousewheel.system_scroll_override_on_root_content.enabled" = true;
+        "mousewheel.system_scroll_override_on_root_content.horizontal.factor" = 175;
+        "mousewheel.system_scroll_override_on_root_content.vertical.factor" = 175;
+        "toolkit.scrollbox.horizontalScrollDistance" = 6;
+        "toolkit.scrollbox.verticalScrollDistance" = 2;
       };
     };
     policies = {
@@ -285,6 +302,13 @@
       PopupBlocking = {Default = true;};
       Preferences = {
         "browser.backspace_action" = 0;
+        "privacy.trackingprotection.enabled" = true;
+        "media.peerconnection.ice.default_address_only" = true;
+        "network.captive-portal-service.enabled" = false;
+        "network.dns.echconfig.enabled" = true;
+        "network.dns.http3_echconfig.enabled" = true;
+        "geo.enabled" = false;
+        "webgl.disabled" = true;
       };
 
       ExtensionSettings = {
