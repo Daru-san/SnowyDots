@@ -36,7 +36,7 @@ in {
           owner = "daniruiz";
           repo = "flat-remix";
           rev = finalAttrs.version;
-          sha256 = "sha256-3TkBRgoT2AW0Sb0CrXdxh53/jYARAMFC/TIj/r/zruo=";
+          sha256 = "sha256-JpUa2nxZxrLTd80qdiGpob4Trq41ONthsPA4zFj/6nk=";
         };
         dontFixup = true;
         postInstall = ''
