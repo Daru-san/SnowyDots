@@ -3,10 +3,10 @@
   config,
   inputs,
   outputs,
+  pkgs,
   ...
 }: {
   imports = [./configuration.nix];
-
   nixpkgs = {
     overlays = with outputs.overlays; [
       stable-packages
@@ -15,6 +15,7 @@
   };
 
   nix = {
+    package = pkgs.lix;
     registry =
       (lib.mapAttrs (_: flake: {inherit flake;}))
       ((lib.filterAttrs (_: lib.isType "flake")) inputs);
