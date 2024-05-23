@@ -1,14 +1,12 @@
 {lib, ...}: {
   wayland.windowManager.hyprland = {
     settings = {
-      windowrulev2 = [
-        "float,class:(firefox)(.*),title:(Library)"
-      ];
-      windowrule = lib.mkMerge [
+      windowrulev2 = ["float,class:(firefox)(.*),title:(Library)"];
+      windowrule = lib.flatten [
         (let
-          f = regex: "float,^(${regex})$";
-          c = regex: "center,^(${regex})$";
-          s = regex: "size 60%,^(${regex})$";
+          f = x: "float,^(${x})(.*)$";
+          c = x: "center,^(${x})(.*)$";
+          s = x: "size 60%,^(${x})(.*)$";
         in [
           (f "file-roller")
           (f "foot")
@@ -18,7 +16,6 @@
           (f ".blueman-manager-wrapped")
           (f "org.twosheds.iwgtk")
           (f "com.github.hluk.copyq")
-          (s "tui")
           (c "file-roller")
           (c "foot")
           (c "com.github.hluk.copyq")
@@ -30,53 +27,47 @@
           (s "foot")
           (s "org.twosheds.iwgtk")
         ])
-        [
-          "workspace name:7,^(krita)$"
-
-          "group,^(oculante)$"
-          "workspace name:8,^(oculante)$"
-
-          "workspace name:9,^(com.github.wwmm.easyeffects)$"
-
-          "workspace name:F1,^(firefox)(.*)$"
-          "workspace name:F2,^(osidian)$"
-          "workspace name:F3,^(libreoffice)(.*)$"
-          "workspace name:F4,^(org.gnome.Nautilus)$"
-          "workspace name:F5,^(io.bassi.Amberol)$"
-
-          "group,(mpv)$"
-          "workspace name:F6,^(mpv)$"
-
-          "workspace name:F7,^(FreeTube)$"
-          "workspace name:F8,title:^(Spotify)(.*)$"
-
-          "group,^(virt-manager)$"
-          "workspace name:F9,^(virt-manager)$"
-
-          "group,^(org.pwmt.zathura)$"
-          "workspace name:F10,^(org.pwmt.zathura)$"
-
-          "group,^(org.prismlauncher.PrismLauncher)$"
-          "workspace name:F12,^(org.prismlauncher.PrismLauncher)$"
-          "group,^(Minecraft)(.*)$"
-          "workspace name:F12,(Minecraft)(.*)$"
-        ]
         (let
-          t = regex: "${regex},^(wlogout)$";
+          w = x: y: "workspace name:${toString x},^(${y})(.*)$";
+          wf = x: y: "workspace name:F${toString x},^(${y})(.*)$";
+          g = x: "group,^(${x})$";
         in [
-          (t "fullscreen")
-          (t "noanim")
-          (t "stayfocused")
-          (t "pin")
-          (t "dimaround")
+          (g "oculante")
+          (w 8 "oculante")
+
+          (w 9 "com.github.wwmm.easyeffects")
+
+          (wf 1 "firefox")
+          (wf 2 "obsidian")
+          (wf 3 "libreoffice")
+          (wf 4 "org.gnome.Nautilus")
+
+          (wf 5 "io.bassi.Amberol")
+
+          (g "mpv")
+          (wf 6 "mpv")
+
+          (wf 7 "freetube")
+          (wf 8 "Spotify")
+
+          (g "virt-manager")
+          (wf 9 "virt-manager")
+
+          (g "org.pwmt.zathura")
+          (wf 10 "zathura")
+
+          (g "org.prismlauncher.PrismLauncher")
+          (g "Minecraft")
+          (wf 12 "org.prismlauncher.PrismLauncher")
+          (wf 12 "Minecraft")
         ])
+        (let
+          t = x: "${x},^(wlogout)$";
+        in [(t "fullscreen") (t "noanim") (t "stayfocused") (t "pin") (t "dimaround")])
       ];
-      workspace = [
-        "name:F9, rounding:false, decorate:false, gapsin:0, gapsout:0, border:false"
-        "name:F10, rounding:false, decorate:false, gapsin:0, gapsout:0, border:false"
-        "name:F11, rounding:false, decorate:false, gapsin:0, gapsout:0, border:false"
-        "name:F12, rounding:false, decorate:false, gapsin:0, gapsout:0, border:false"
-      ];
+      workspace = let
+        s = x: "name:F${toString x}, rounding:false, decorate:false, gapsin:0, gapsout:0, border:false";
+      in [(s 9) (s 10) (s 11) (s 12)];
     };
   };
 }
