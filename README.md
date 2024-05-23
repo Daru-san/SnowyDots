@@ -24,7 +24,7 @@ My functional, advanced NixOS configuration flake using <a href="https://github.
 
 ### Aurorus (Acer Laptop)
 
-- Kernel: [Linux](https://kernel.org/ 'Stock kernel') with custom tweaks
+- Kernel: [Linux hardened](https://kernel.org/ 'Stock kernel') with custom tweaks
 - Shell: [zsh](http://zsh.sourceforge.net/ 'zsh') configured with [oh-my-posh](https://ohmyposh.dev/), [antidote](https://getantidote.github.io/) and [prezto](https://github.com/sorin-ionescu/prezto)
 - Editor: [SnowyVim](https://git.sr.ht/~darumaka/SnowyVim), my custom [Neovim](https://github.com/neovim/neovim) configuration made with [nixvim](https://github.com/nix-community/nixvim)
 - Window Manager: [Hyprland](https://github.com/hyprwm/Hyprland 'hyprland')
@@ -104,9 +104,9 @@ nix shell nixpkgs#home-manager
 home-manager switch --flake .#daru@Aurorus
 ```
 
-## Thanks to
+## Resources
 
-### For their useful information on NixOS and Nix
+### Nix and NixOS information
 
 - [NixOS Manual](https://nixos.org/manual/nixos/unstable/ 'nix')
 - [Nix best practices](https://nix.dev/guides/best-practices.html)
@@ -114,9 +114,15 @@ home-manager switch --flake .#daru@Aurorus
 - [MyNixOS](https://mynixos.com 'Best nix resource')
 - [NixOS install guide](https://nixos.wiki/wiki/NixOS_Installation_Guide)
 
-### For their inspiration
+### Inspiration
 
 - [fufexan/dotfiles](https://github.com/fufexan/dotfiles/ 'fufexan dots')
 - [misterio's dotfiles](https://git.sr.ht/~misterio/nix-config 'dots')
-  [Misterio77's nix-starter-configs](https://github.com/Misterio77/nix-starter-configs 'nix-starter-configs')
-- Plenty of others that I cannot remember
+- [Misterio77's nix-starter-configs](https://github.com/Misterio77/nix-starter-configs 'nix-starter-configs')
+
+### On hardening Linux and NixOS and general security
+
+- [ArchWiki on Linux security](https://wiki.archlinux.org/title/security)
+- [sioodmy's dotfiles](https://github.com/sioodmy/dotfiles/blob/1e8a972bfbefeeb4150f5707001ce243dce1f6ea/system/core/schizo.nix)
+- [Guide on firefox privacy](https://restoreprivacy.com/firefox-privacy/)
+- [Comprehensive guide on Linux hardening](https://madaidans-insecurities.github.io/guides/linux-hardening.html)
