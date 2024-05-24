@@ -20,6 +20,6 @@
     };
   };
   swapDevices = [];
-  networking.useDHCP = lib.mkDefaul true;
+  networking.useDHCP = lib.mkDefault true;
   hardware.cpu.intel.updateMicrocode = true;
 }
