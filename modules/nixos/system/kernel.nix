@@ -1,4 +1,6 @@
-{
+{pkgs, ...}: {
+  chaotic.nyx.cache.enable = true;
+  # boot.kernelPackages = pkgs.linuxPackages_cachyos;
   boot = {
     kernelParams = [
       "cgroup_no_v1=all"

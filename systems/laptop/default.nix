@@ -6,7 +6,10 @@
   pkgs,
   ...
 }: {
-  imports = [./configuration.nix];
+  imports = [
+    ./configuration.nix
+    inputs.nyx.nixosModules.default
+  ];
   nixpkgs = {
     overlays = with outputs.overlays; [
       stable-packages
@@ -15,7 +18,7 @@
   };
 
   nix = {
-    package = pkgs.lix;
+    package = pkgs.nixVersions.latest;
     registry =
       (lib.mapAttrs (_: flake: {inherit flake;}))
       ((lib.filterAttrs (_: lib.isType "flake")) inputs);

@@ -26,7 +26,7 @@
       allowUnfreePredicate = _: true;
     };
   };
-  nix.package = pkgs.lix;
+  nix.package = pkgs.nixVersions.latest;
   nix.gc = {
     automatic = true;
     frequency = "daily";
