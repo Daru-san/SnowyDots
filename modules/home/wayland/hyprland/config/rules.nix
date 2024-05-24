@@ -33,7 +33,7 @@
         (let
           w = x: y: "workspace name:${toString x},^(${y})(.*)$";
           wf = x: y: "workspace name:F${toString x},^(${y})(.*)$";
-          wtf = x: y: "workspace name: F${toString x},title:(${y})(.*)$";
+          wtf = x: y: "workspace name:F${toString x},title:(${y})(.*)$";
           g = x: "group,^(${x})$";
         in [
           (g "oculante")
