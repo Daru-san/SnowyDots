@@ -21,5 +21,8 @@
   };
   swapDevices = [];
   networking.useDHCP = lib.mkDefault true;
-  hardware.cpu.intel.updateMicrocode = true;
+  hardware = {
+    cpu.intel.updateMicrocode = true;
+    enableRedistributableFirmware = true;
+  };
 }
