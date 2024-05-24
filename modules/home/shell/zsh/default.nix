@@ -44,6 +44,7 @@
         yz = "yazi";
         ntc = "nitch";
         lzg = "lazygit";
+        syst = "systemctl-tui";
         g = "git";
         v = "vi";
         nl = "nurl";
