@@ -9,6 +9,7 @@ in {
   programs.spicetify = {
     enable = true;
     theme = spicePkgs.themes.text;
+    windowManagerPatch = true;
     enabledExtensions = with spicePkgs.extensions; [
       fullAppDisplay
       powerBar
