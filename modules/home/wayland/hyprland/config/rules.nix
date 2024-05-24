@@ -33,6 +33,7 @@
         (let
           w = x: y: "workspace name:${toString x},^(${y})(.*)$";
           wf = x: y: "workspace name:F${toString x},^(${y})(.*)$";
+          wtf = x: y: "workspace name: F${toString x},title:(${y})(.*)$";
           g = x: "group,^(${x})$";
         in [
           (g "oculante")
@@ -51,7 +52,7 @@
           (wf 6 "mpv")
 
           (wf 7 "FreeTube")
-          (wf 8 "Spotify")
+          (wtf 8 "Spotify")
 
           (g "virt-manager")
           (wf 9 "virt-manager")
