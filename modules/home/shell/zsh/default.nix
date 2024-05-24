@@ -53,6 +53,14 @@
         bs = "bash";
         nfdl = "nix flake update --commit-lock-file";
         nfd = "nix flake update";
+        nbld = "nix build";
+        nsh = "nix shell";
+        nfl = "nix flake";
+        nup = "nix-update";
+        nrv = "nixpkgs-review";
+        nit = "nix-init";
+        nmt = "nix-fmt";
+        nhc = "nh clean";
         ff = "fastfetch";
         nhu = "nh-home-upgrade";
         nsu = "nh-system-upgrade";
