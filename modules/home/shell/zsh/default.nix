@@ -57,6 +57,7 @@
         ff = "fastfetch";
         nhu = "nh-home-update";
         nsu = "nh-system-update";
+        nfp = "nix-flake-push";
       };
     };
 

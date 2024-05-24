@@ -1,11 +1,11 @@
 {pkgs, ...}: let
   inherit (pkgs) writeShellApplication;
-  runtimeDependencies = with pkgs; [nh git lix bash];
+  runtimeInputs = with pkgs; [nh git lix bash];
 in {
   home.packages = [
     (writeShellApplication {
       name = "nh-home-update";
-      inherit runtimeDependencies;
+      inherit runtimeInputs;
       text = ''
         nix flake update --commit-lock-file
         git push
@@ -14,11 +14,19 @@ in {
     })
     (writeShellApplication {
       name = "nh-system-update";
-      inherit runtimeDependencies;
+      inherit runtimeInputs;
       text = ''
         nix flake update --commit-lock-file
         git push
         nh os switch -- -j 6 --cores 4
+      '';
+    })
+    (writeShellApplication {
+      name = "nix-flake-push";
+      inherit runtimeInputs;
+      text = ''
+        nix flake update --commit-lock-file
+        git push
       '';
     })
   ];
