@@ -7,31 +7,38 @@
 }: {
   programs.firefox = {
     enable = true;
-    nativeMessagingHosts = with pkgs; [ff2mpv-rust uget-integrator];
+    nativeMessagingHosts = with pkgs; [tridactyl-native uget-integrator];
 
     profiles.${config.home.username} = {
       isDefault = true;
       userChrome = builtins.readFile ./userChrome.css;
       extensions = with inputs.firefox-addons.packages.${system}; [
         disable-javascript
-        don-t-fuck-with-paste
         enhanced-github
-        violentmonkey
         github-file-icons
         gitako-github-file-tree
+        widegithub
         hover-zoom-plus
         keepassxc-browser
         multi-account-containers
-        re-enable-right-click
-        simplelogin
         skip-redirect
-        temporary-containers
-        widegithub
         auto-tab-discard
         dark-mode-webextension
-        lovely-forks
-        vimium-c
-        ff2mpv
+      ];
+
+      bookmarks = [
+        {
+          name = "Dev Docs";
+          tags = ["docs"];
+          keyword = "devdocs";
+          url = "https://devdocs.io";
+        }
+        {
+          name = "Linux Kernel";
+          tags = ["kernel"];
+          keyword = "kernel";
+          url = "https://kernel.org";
+        }
       ];
 
       containersForce = true;
@@ -225,6 +232,7 @@
       };
 
       settings = {
+        "general.config.sandbox_enabled" = false;
         "browser.disableResetPrompt" = true;
         "browser.bookmarks.showMobileBookmarks" = false;
         "browser.download.panel.shown" = false;
@@ -238,6 +246,9 @@
         "browser.urlbar.suggest.bookmark" = false;
         "browser.urlbar.suggest.history" = false;
         "browser.urlbar.suggest.topsites" = false;
+        "browser.urlbar.trimHttps" = true;
+        "browser.urlbar.trimURLs" = true;
+        "browser.urlbar.formatting.enabled" = true;
 
         "extensions.autoDisableScope" = false;
 
@@ -324,9 +335,9 @@
           installation_mode = "force_installed";
           install_url = "http://addons.mozilla.org/firefox/downloads/latest/sidebery/latest.xpi";
         };
-        "{4f391a9e-8717-4ba6-a5b1-488a34931fcb}" = {
+        "{47bf427e-c83d-457d-9b3d-3db4118574bd}" = {
           installation_mode = "force_installed";
-          install_url = "http://addons.mozilla.org/firefox/downloads/latest/bonjourr-startpage/latest.xpi";
+          install_url = "http://addons.mozilla.org/firefox/downloads/latest/nighttab/latest.xpi";
         };
         "uget-integration@slgobinath" = {
           installation_mode = "normal_installed";
