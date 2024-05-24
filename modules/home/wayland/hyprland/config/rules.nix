@@ -36,6 +36,7 @@
           wtf = x: y: "workspace name:F${toString x},title:(${y})(.*)$";
           g = x: "group,^(${x})$";
         in [
+          (w 7 "uget-gtk")
           (g "oculante")
           (w 8 "oculante")
 
