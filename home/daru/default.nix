@@ -1,7 +1,6 @@
 {
   inputs,
   outputs,
-  pkgs,
   lib,
   ...
 }: {
@@ -26,7 +25,6 @@
       allowUnfreePredicate = _: true;
     };
   };
-  nix.package = pkgs.nixVersions.latest;
   nix.gc = {
     automatic = true;
     frequency = "daily";
