@@ -1,24 +1,45 @@
 {pkgs, ...}: let
   inherit (pkgs) writeShellApplication;
   runtimeInputs = with pkgs; [nh git nix bash];
+  home-switch = "nh home switch -- -j 6 --cores 4";
+  os-switch = "nh os switch -- -j 6 --cores 4";
 in {
   home.packages = [
     (writeShellApplication {
-      name = "nh-home-update";
+      name = "nh-home-upgrade";
       inherit runtimeInputs;
       text = ''
         nix flake update --commit-lock-file
         git push
-        nh home switch -- -j 6 --cores 4
+        ${home-switch}
       '';
     })
     (writeShellApplication {
-      name = "nh-system-update";
+      name = "nh-system-upgrade";
       inherit runtimeInputs;
       text = ''
         nix flake update --commit-lock-file
         git push
-        nh os switch -- -j 6 --cores 4
+        ${os-switch}
+      '';
+    })
+    (writeShellApplication {
+      name = "nh-full-upgrade";
+      inherit runtimeInputs;
+      text = ''
+        nix flake update --commit-lock-file
+        git push
+        ${os-switch}
+        ${home-switch}
+      '';
+    })
+    (writeShellApplication {
+      name = "nh-full-switch";
+      inherit runtimeInputs;
+      text = ''
+        git push
+        ${os-switch}
+        ${home-switch}
       '';
     })
     (writeShellApplication {

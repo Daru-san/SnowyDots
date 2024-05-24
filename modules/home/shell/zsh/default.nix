@@ -30,7 +30,6 @@
         c = "clear";
         r = "reset";
         nhp = "nohup";
-        dtc = "detach";
         hycl = "hyprctl";
         hyprv = "hyprctl version";
         hypr = "Hyprland";
@@ -52,14 +51,16 @@
         npgh = "nix-prefetch-github";
         npu = "nix-prefetch-url";
         bs = "bash";
-        nflkdl = "nix flake update --commit-lock-file";
-        nflkd = "nix flake update";
+        nfdl = "nix flake update --commit-lock-file";
+        nfd = "nix flake update";
         ff = "fastfetch";
-        nhu = "nh-home-update";
-        nsu = "nh-system-update";
+        nhu = "nh-home-upgrade";
+        nsu = "nh-system-upgrade";
+        nfu = "nh-full-upgrade";
         nfp = "nix-flake-push";
         nos = "nh os switch";
         nhs = "nh home switch";
+        nfs = "nh-full-switch";
         nob = "nh os boot";
       };
     };
