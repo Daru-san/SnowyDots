@@ -59,7 +59,7 @@
       hostName = "Aurorus";
       config = ./systems/laptop;
       system = "x86_64-linux";
-      stateVersion = "24.05";
+      stateVersion = "24.11";
     };
   in {
     overlays = modules.overlays {inherit inputs;};
