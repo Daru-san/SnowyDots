@@ -58,6 +58,9 @@
         nhu = "nh-home-update";
         nsu = "nh-system-update";
         nfp = "nix-flake-push";
+        nos = "nh os switch";
+        nhs = "nh home switch";
+        nob = "nh os boot";
       };
     };
 
