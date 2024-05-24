@@ -55,6 +55,8 @@
         nflkdl = "nix flake update --commit-lock-file";
         nflkd = "nix flake update";
         ff = "fastfetch";
+        nhu = "nh-home-update";
+        nsu = "nh-system-update";
       };
     };
 
