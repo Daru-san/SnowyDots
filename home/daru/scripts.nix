@@ -9,7 +9,7 @@ in {
       text = ''
         nix flake update --commit-lock-file
         git push
-        nh home switch
+        nh home switch -- -j 6 --cores 4
       '';
     })
     (writeShellApplication {
@@ -18,7 +18,7 @@ in {
       text = ''
         nix flake update --commit-lock-file
         git push
-        nh os switch
+        nh os switch -- -j 6 --cores 4
       '';
     })
   ];
