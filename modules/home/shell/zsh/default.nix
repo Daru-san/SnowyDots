@@ -88,7 +88,6 @@
       pmodules = [
         "rsync"
         "archive"
-        "command-not-found"
         "completion"
         "directory"
         "git"
