@@ -6,10 +6,7 @@
   pkgs,
   ...
 }: {
-  imports = [
-    ./configuration.nix
-    inputs.nyx.nixosModules.default
-  ];
+  imports = [./configuration.nix];
   nixpkgs = {
     overlays = with outputs.overlays; [
       stable-packages

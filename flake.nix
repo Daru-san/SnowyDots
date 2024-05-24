@@ -5,7 +5,6 @@
     # Nixpkgs repos
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable-small";
     nixpkgs-stable.url = "github:nixos/nixpkgs/release-24.05";
-    nyx.url = "https://flakehub.com/f/chaotic-cx/nyx/*.tar.gz";
 
     # Home manager
     home-manager = {
