@@ -6,7 +6,7 @@
   ...
 }: {
   imports = lib.flatten [
-    [./home.nix ./theme ./packages.nix ./misc.nix]
+    [./home.nix ./theme ./packages.nix ./misc.nix ./scripts.nix]
     (with inputs; [nix-colors.homeManagerModules.default])
   ];
 
