@@ -6,7 +6,7 @@ My functional, advanced NixOS configuration flake using <a href="https://github.
 
 <div style="text-align: center;" align="center">
     <img src="https://img.shields.io/static/v1?label=Hyprland&message=v0.40.0&style=flat&logo=hyprland&colorA=24273A&colorB=8AADF4&logoColor=CAD3F5"/>
-    <img src="https://img.shields.io/static/v1?label=NixOS&message=24.05(unstable)&style=flat&logo=nixos&colorA=24273A&colorB=9173ff&logoColor=CAD3F5"/>
+    <img src="https://img.shields.io/static/v1?label=NixOS&message=24.11(unstable)&style=flat&logo=nixos&colorA=24273A&colorB=9173ff&logoColor=CAD3F5"/>
     <img src="https://img.shields.io/static/v1?label=Sourcehut&message=SnowyDots&style=flat&logo=sourcehut&colorA=24273A&colorB=9173ff&logoColor=CAD3F5" alt="https://git.sr.ht/~darumaka/SnowyDots"/>
 </div>
 
