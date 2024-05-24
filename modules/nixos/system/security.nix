@@ -26,8 +26,10 @@
     };
 
     # Use sudo-rs over sudo
+    sudo.enable = false;
     sudo-rs = {
       enable = true;
+      execWheelOnly = true;
       extraRules = [
         {
           commands =

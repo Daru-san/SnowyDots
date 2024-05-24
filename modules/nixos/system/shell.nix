@@ -21,6 +21,8 @@
       yazi = "${pkgs.yazi}/bin/yazi";
       rsync = "${pkgs.rsync}/bin/rsync";
       wget2 = "${pkgs.wget2}/bin/wget2";
+      gparted = "${pkgs.gparted}/bin/gparted";
+      xhost = "${pkgs.xorg.xhost}/bin/xhost";
     in {
       y = yazi;
       ll = "ls -l";
@@ -44,6 +46,7 @@
       "......." = "cd ../../../../../..";
       "........" = "cd ../../../../../../..";
       "~" = "cd ~";
+      gparted = "${xhost} +SI:localuser:root && ${gparted}";
     };
   };
 }
