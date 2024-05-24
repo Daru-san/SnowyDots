@@ -24,6 +24,7 @@
         skip-redirect
         auto-tab-discard
         dark-mode-webextension
+        tridactyl
       ];
 
       bookmarks = [
