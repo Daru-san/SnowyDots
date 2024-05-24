@@ -74,6 +74,7 @@
           laptop.config
           modules.system
           {
+            nixpkgs.hostPlatform = laptop.system;
             system = {inherit (laptop) stateVersion;};
             networking = {inherit (laptop) hostName;};
             wayland.enable = true;
