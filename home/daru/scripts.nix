@@ -1,6 +1,6 @@
 {pkgs, ...}: let
   inherit (pkgs) writeShellApplication;
-  runtimeInputs = with pkgs; [nh git lix bash];
+  runtimeInputs = with pkgs; [nh git nix bash];
 in {
   home.packages = [
     (writeShellApplication {
