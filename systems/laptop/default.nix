@@ -15,7 +15,7 @@
   };
 
   nix = {
-    package = pkgs.nixVersions.latest;
+    package = pkgs.lix;
     registry =
       (lib.mapAttrs (_: flake: {inherit flake;}))
       ((lib.filterAttrs (_: lib.isType "flake")) inputs);
