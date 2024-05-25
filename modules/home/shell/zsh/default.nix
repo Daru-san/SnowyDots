@@ -67,10 +67,10 @@
         nsu = "nh-system-upgrade";
         nfu = "nh-full-upgrade";
         nfp = "nix-flake-push";
-        nos = "nh os switch";
-        nhs = "nh home switch";
+        nos = "nh os switch -- -j 8 --keep-going --cores 6";
+        nhs = "nh home switch -- -j 8 --keep-going --cores 6";
         nfs = "nh-full-switch";
-        nob = "nh os boot";
+        nob = "nh os boot -- -k8 --keep-going --cores 6";
       };
     };
 

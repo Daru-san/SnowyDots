@@ -1,8 +1,8 @@
 {pkgs, ...}: let
   inherit (pkgs) writeShellApplication;
   runtimeInputs = with pkgs; [nh git nix bash];
-  home-switch = "nh home switch -- -j 6 --cores 4";
-  os-switch = "nh os switch -- -j 6 --cores 4";
+  home-switch = "nh home switch -- -j 6 --cores 4 --keep-going";
+  os-switch = "nh os switch -- -j 6 --cores 4 --keep-going";
 in {
   home.packages = [
     (writeShellApplication {
