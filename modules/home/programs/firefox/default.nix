@@ -7,7 +7,7 @@
 }: {
   programs.firefox = {
     enable = true;
-    nativeMessagingHosts = with pkgs; [tridactyl-native uget-integrator];
+    nativeMessagingHosts = [pkgs.tridactyl-native];
 
     profiles.${config.home.username} = {
       isDefault = true;
@@ -24,7 +24,10 @@
         skip-redirect
         auto-tab-discard
         dark-mode-webextension
+        ublock-origin
         tridactyl
+        nighttab
+        sidebery
       ];
 
       bookmarks = [
@@ -323,26 +326,29 @@
         "webgl.disabled" = true;
       };
 
-      ExtensionSettings = {
+      ExtensionSettings = let
+        installation_mode = "force_installed";
+        urlPrefix = x: "http://addons.mozilla.org/firefox/downloads/latest/${x}/latest.xpi";
+      in {
         "uBlock0@raymondhill.net" = {
-          installation_mode = "force_installed";
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+          install_url = urlPrefix "ublock-origin";
+          inherit installation_mode;
         };
         "{e0de5ee2-4619-413a-8300-a43a90196a6d}" = {
-          installation_mode = "normal_installed";
-          install_url = "http://addons.mozilla.org/firefox/downloads/latest/simplerentfox/latest.xpi";
+          install_url = urlPrefix "simplerentfox";
+          inherit installation_mode;
         };
         "{3c078156-979c-498b-8990-85f7987dd929}" = {
-          installation_mode = "force_installed";
-          install_url = "http://addons.mozilla.org/firefox/downloads/latest/sidebery/latest.xpi";
+          install_url = urlPrefix "sidebery";
+          inherit installation_mode;
         };
         "{47bf427e-c83d-457d-9b3d-3db4118574bd}" = {
-          installation_mode = "force_installed";
-          install_url = "http://addons.mozilla.org/firefox/downloads/latest/nighttab/latest.xpi";
+          install_url = urlPrefix "nighttab";
+          inherit installation_mode;
         };
-        "uget-integration@slgobinath" = {
-          installation_mode = "normal_installed";
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/ugetintegration/latest.xpi";
+        "tridactyl.vim@cmcaine.co.uk" = {
+          install_url = urlPrefix "tridactyl-vim";
+          inherit installation_mode;
         };
         "bing@search.mozilla.org".installation_mode = "blocked";
       };

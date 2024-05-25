@@ -25,7 +25,6 @@
 
       # CLI
       tree
-      uget
       tgpt
       tty-clock
       adbtuifm
