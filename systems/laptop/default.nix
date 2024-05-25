@@ -19,7 +19,10 @@
     registry =
       (lib.mapAttrs (_: flake: {inherit flake;}))
       ((lib.filterAttrs (_: lib.isType "flake")) inputs);
-    nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+    nixPath = [
+      "nixpkgs=${inputs.nixpkgs}"
+      "nixos-config=${./configuration.nix}"
+    ];
   };
   environment.etc =
     lib.mapAttrs' (name: value: {
