@@ -20,5 +20,10 @@
       run = ''shell "$SHELL" --block --confirm'';
       desc = "Open shell here";
     }
+    {
+      on = ["<C-g>"];
+      run = ''shell "lazygit" --block --confirm'';
+      desc = "Open lazygit";
+    }
   ];
 }
