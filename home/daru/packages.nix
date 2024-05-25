@@ -49,7 +49,7 @@
       ani-cli
       maven
       manga-cli
-      transmission
+      stable.transmission
       du-dust
       fzf
       musikcube
