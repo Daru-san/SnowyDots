@@ -25,9 +25,7 @@
       packages = with pkgs; [apparmor-profiles];
     };
 
-    # Use sudo-rs over sudo
-    sudo.enable = false;
-    sudo-rs = {
+    sudo = {
       enable = true;
       execWheelOnly = true;
       extraRules = [
