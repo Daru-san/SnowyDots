@@ -33,8 +33,10 @@
       enableZshIntegration = true;
       enableBashIntegration = true;
     };
+
+    # Query nix databases when a command isn't found
     nix-index = {
-      enable = true;
+      enable = false;
       enableZshIntegration = true;
       enableBashIntegration = true;
     };

@@ -10,7 +10,7 @@
   programs = {
     command-not-found.enable = false;
     nix-index = {
-      enable = true;
+      enable = false;
       enableZshIntegration = true;
       enableBashIntegration = true;
     };
