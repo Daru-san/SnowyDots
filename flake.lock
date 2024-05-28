@@ -1297,7 +1297,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-7kL1PkmboGxjhj6P7IHZKVCr+BsrbKDszXKjXi/qxcs=",
+        "narHash": "sha256-zZgumLwy8/FJP1EiUguVr+uwEYGz2pQF841OlIJfx2k=",
         "path": "./modules/home/programs/yazi/flake",
         "type": "path"
       },
