@@ -1,30 +1,29 @@
 {
-  inputs = let
-    flake = false;
-  in {
+  inputs = {
     tokyo-night = {
       url = "github:BennyOe/tokyo-night.yazi";
-      inherit flake;
+      flake = false;
     };
     exifaudio = {
       url = "github:Sonico98/exifaudio.yazi";
-      inherit flake;
+      flake = false;
     };
     glow = {
       url = "github:Reledia/glow.yazi";
-      inherit flake;
+      flake = false;
     };
     mime = {
       url = "github:DreamMaoMao/mime.yazi";
-      inherit flake;
+      flake = false;
     };
     bat = {
       url = "github:mgumz/yazi-plugin-bat";
-      inherit flake;
+      flake = false;
     };
     fg = {
       url = "github:DreamMaoMao/fg.yazi";
-      inherit flake;
+      flake = false;
     };
   };
+  outputs = {}: {};
 }
