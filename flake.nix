@@ -17,6 +17,7 @@
     spicetify-nix.url = "github:Daru-san/spicetify-nix";
     trashy.url = "github:Daru-san/trashy";
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+    yazi-plugins.url = ./modules/home/programs/yazi;
 
     # My own repos
     snowyvim.url = "sourcehut:~darumaka/SnowyVim";

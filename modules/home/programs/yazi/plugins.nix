@@ -1,44 +1,14 @@
-{pkgs, ...}: let
-  inherit (pkgs) fetchFromGitHub;
+{inputs, ...}: let
+  yazi-plugins = inputs.yazi-plugins.inputs;
+  getPlugin = x: "${yazi-plugins.${x}.url}";
+  setPlugin = x: "yazi/plugins/${x}.yazi";
 in {
   xdg.configFile = {
-    "yazi/theme.toml".source =
-      fetchFromGitHub {
-        owner = "BennyOe";
-        repo = "tokyo-night.yazi";
-        rev = "024fb096821e7d2f9d09a338f088918d8cfadf34";
-        hash = "sha256-IhCwP5v0qbuanjfMRbk/Uatu31rPNVChJn5Y9c5KWYQ=";
-      }
-      + "/flavor.toml";
-    "yazi/plugins/exifaudio.yazi".source = fetchFromGitHub {
-      owner = "Sonico98";
-      repo = "exifaudio.yazi";
-      rev = "94329ead8b3a6d3faa2d4975930a3d0378980c7a";
-      hash = "sha256-jz6fVtcLHw9lsxFWECbuxE7tEBttE08Fl4oJSTifaEc=";
-    };
-    "yazi/plugins/glow.yazi".source = fetchFromGitHub {
-      owner = "Reledia";
-      repo = "glow.yazi";
-      rev = "cf1f1f0a36a0411fcc99d3666692a543fc626f3d";
-      hash = "sha256-U4ullcOwN6TCaZ8gXCPMk/fGbtZLe4e1Y0RhRKLZKng=";
-    };
-    "yazi/plugins/mime.yazi".source = fetchFromGitHub {
-      owner = "DreamMaoMao";
-      repo = "mime.yazi";
-      rev = "4afd840b8380edd5be145b0562934cd9ef300916";
-      hash = "sha256-zLirGpcF2ygCnxUU9vrGB3zBzZbDyc4DdJlGTHD7lRI=";
-    };
-    "yazi/plugins/bat.yazi".source = fetchFromGitHub {
-      owner = "mgumz";
-      repo = "yazi-plugin-bat";
-      rev = "1925c200632f017119dd685601b5f2d7d4ab266b";
-      hash = "sha256-gfJdXhumrWthAsK6xo6sYEHZrXM0FFyS1ad8GgHHwQ8=";
-    };
-    "yazi/plugins/fg.yazi".source = fetchFromGitHub {
-      owner = "DreamMaoMao";
-      repo = "fg.yazi";
-      rev = "cc53d56a673e5ec2cf48a6f18bc76d83aa61d52d";
-      hash = "sha256-xUZdmDZhbUzX5Ka2xogRQJI52EL81n9ZLrcxDacgfN0=";
-    };
+    "yazi/theme.toml".source = "${getPlugin "tokyo-night"}/flavor.toml";
+    "${setPlugin "exifaudio"}".source = getPlugin "exifaudio";
+    "${setPlugin "glow"}".source = getPlugin "yazi";
+    "${setPlugin "mime"}".source = getPlugin "mime";
+    "${setPlugin "bat"}".source = getPlugin "bat";
+    "${setPlugin "fg"}".source = getPlugin "fg";
   };
 }
