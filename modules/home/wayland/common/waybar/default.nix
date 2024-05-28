@@ -5,7 +5,10 @@
   system,
   lib,
   ...
-}: {
+}: let
+  inherit (lib) getExe getExe';
+  matcha = getExe inputs.matcha.packages.${system}.default;
+in {
   programs.waybar = {
     style = builtins.concatStringsSep "\n" [
       config.colorSchemeCss
@@ -40,18 +43,13 @@
           spacing = 10;
           icon-size = 21;
         };
-        "custom/idle_inhibitor" = let
-          matcha = lib.getExe inputs.matcha.packages.${system}.default;
-        in {
-          format = "{}";
+        idle_inhibitor = {
+          format = "{icon}";
+          on-click = "${matcha} --toggle -- bar=waybar";
           format-icons = {
-            on = "";
-            off = "";
+            activated = "";
+            deactivated = "";
           };
-          exec = ''
-            ${matcha} --toggle -- bar=waybar
-          '';
-          on-click = "${matcha} --toggle";
         };
         clock = {
           format-alt = " {:%X}";
