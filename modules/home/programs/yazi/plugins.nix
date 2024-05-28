@@ -4,12 +4,12 @@ in {
   xdg.configFile = {
     "yazi/theme.toml".source =
       fetchFromGitHub {
-        owner = "catppuccin";
-        repo = "yazi";
-        rev = "0846aed69b2a62d29c98e100af0cf55ca729723d";
-        hash = "sha256-2T41qWMe++3Qxl9veRNHMeRI3eU4+LAueKTss02gYNk=";
+        owner = "BennyOe";
+        repo = "tokyo-night.yazi";
+        rev = "024fb096821e7d2f9d09a338f088918d8cfadf34";
+        hash = "sha256-IhCwP5v0qbuanjfMRbk/Uatu31rPNVChJn5Y9c5KWYQ=";
       }
-      + "/themes/mocha.toml";
+      + "/flavor.toml";
     "yazi/plugins/exifaudio.yazi".source = fetchFromGitHub {
       owner = "Sonico98";
       repo = "exifaudio.yazi";
