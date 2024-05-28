@@ -656,16 +656,17 @@
     "mime": {
       "flake": false,
       "locked": {
-        "lastModified": 1716909460,
-        "narHash": "sha256-MEfD9mE3PPUmw5HsSRaCWbknc/wYGwHRyHV+0S1ux5E=",
+        "lastModified": 1715213790,
+        "narHash": "sha256-ydO7IieSQM1lsxS04Zk+GrdBgsmMVYMBHQ0DF8tqyAA=",
         "owner": "DreamMaoMao",
         "repo": "mime.yazi",
-        "rev": "49303d8fb60f61e91dfe355febe59332e813a6da",
+        "rev": "e910658a9fd200404a1b8d613cb65b509b7cda1c",
         "type": "github"
       },
       "original": {
         "owner": "DreamMaoMao",
         "repo": "mime.yazi",
+        "rev": "e910658a9fd200404a1b8d613cb65b509b7cda1c",
         "type": "github"
       }
     },
@@ -1297,7 +1298,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-zZgumLwy8/FJP1EiUguVr+uwEYGz2pQF841OlIJfx2k=",
+        "narHash": "sha256-VgKbv9cIfnz/fNxgtCwa5qDcvFPbg930Mv7V+S9YHeM=",
         "path": "./modules/home/programs/yazi/flake",
         "type": "path"
       },
