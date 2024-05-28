@@ -8,6 +8,10 @@
 }: let
   inherit (lib) getExe getExe';
   matcha = getExe inputs.matcha.packages.${system}.default;
+  mixxc = getExe pkgs.mixxc;
+  iwgtk = getExe pkgs.iwgtk;
+  playerctl = getExe' config.services.playerctld.package "playerctl";
+  swaync-client = getExe' config.services.swaync.package "swaync-client";
 in {
   programs.waybar = {
     style = builtins.concatStringsSep "\n" [
@@ -117,7 +121,7 @@ in {
             car = "";
             default = ["" "" ""];
           };
-          on-click = "${pkgs.mixxc}/bin/mixxc --anchor right --anchor top --margin 20 --margin 30 -M";
+          on-click = "${mixxc} --anchor right --anchor top --margin 20 --margin 30 -M";
           on-click-right = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
           tooltip = false;
         };
@@ -133,7 +137,7 @@ in {
           tooltip-format = "{essid}({signalStrength}%)";
           format-linked = "{ifname} (No IP)";
           format-disconnected = "󰖪";
-          on-click = lib.getExe pkgs.iwgtk;
+          on-click = iwgtk;
         };
         bluetooth = {
           format-on = "󰂯";
@@ -149,9 +153,9 @@ in {
           return-type = "json";
           max-length = 40;
           exec = ''
-            ${config.services.playerctld.package}/bin/playerctl -a metadata --format '{"text": "{{artist}} - {{markup_escape(title)}}", "tooltip": "{{playerName}} : {{markup_escape(title)}}", "alt": "{{status}}", "class": "{{status}}"}' -F
+            ${playerctl} -a metadata --format '{"text": "{{artist}} - {{markup_escape(title)}}", "tooltip": "{{playerName}} : {{markup_escape(title)}}", "alt": "{{status}}", "class": "{{status}}"}' -F
           '';
-          on-click-right = "${config.services.playerctld.package}/bin/playerctl play-pause";
+          on-click-right = "${playerctl} play-pause";
         };
         "custom/notification" = {
           format = "{icon}";
@@ -166,9 +170,9 @@ in {
             dnd-inhibited-none = "";
           };
           return-type = "json";
-          exec = "swaync-client -swb";
-          on-click = "swaync-client -t -sw";
-          on-click-right = "swaync-client -d -sw";
+          exec = "${swaync-client} -swb";
+          on-click = "${swaync-client} -t -sw";
+          on-click-right = "${swaync-client} -d -sw";
           escape = true;
         };
       }
