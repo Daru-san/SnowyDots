@@ -7,7 +7,17 @@
   ...
 }: let
   inherit (lib) getExe getExe';
-  inherit (pkgs) formats;
+  inherit (pkgs) formats writeShellScriptBin;
+  idle-inhibit = getExe (writeShellScriptBin ''
+    if pgrep 'hypridle'; then
+    	systemctl --user stop hypridle.service
+      inhibited=off
+    else
+    	systemctl --user start hypridle.service
+      inhibited=on
+    fi
+    hyprctl notify -1 6000 0 'Idle inhibiting is now $inhibited'
+  '');
   focusmode = pkgs.writeShellScriptBin "focusmode" ''
     HYPRFOCUSMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
     if [ "$HYPRFOCUSMODE" = 1 ] ; then
@@ -70,7 +80,11 @@ in {
         # Show when caps lock is pressed
         ",caps_lock,${e},${swayosd} --caps-lock"
 
+        # Show active workspace
         "SUPER, w, ${e}, hyprctl notify -1 2000 0 `hyprctl activeworkspace | head -n 1`"
+
+        # Prevent idling
+        "superalt,F4,${e},${idle-inhibit}"
       ];
 
       bindle = let

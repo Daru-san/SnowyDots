@@ -13,9 +13,12 @@
   idle-inhibit = getExe (writeShellScriptBin ''
     if pgrep 'hypridle'; then
     	systemctl --user stop hypridle.service
+      inhibited=off
     else
     	systemctl --user start hypridle.service
+      inhibited=on
     fi
+    hyprctl notify -1 6000 0 'Idle inhibiting is now $inhibited'
   '');
 in {
   programs.waybar = {
