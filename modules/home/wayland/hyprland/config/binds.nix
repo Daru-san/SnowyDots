@@ -8,12 +8,12 @@
 }: let
   inherit (lib) getExe getExe';
   inherit (pkgs) formats writeShellScriptBin;
-  idle-inhibit = getExe (writeShellScriptBin ''
+  idle-inhibit = getExe (writeShellScriptBin "idle-inhibit" ''
     if pgrep 'hypridle'; then
-    	systemctl --user stop hypridle.service
+      systemctl --user stop hypridle.service
       inhibited=off
     else
-    	systemctl --user start hypridle.service
+      systemctl --user start hypridle.service
       inhibited=on
     fi
     hyprctl notify -1 6000 0 'Idle inhibiting is now $inhibited'
