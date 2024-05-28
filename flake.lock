@@ -83,11 +83,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1716868991,
-        "narHash": "sha256-2z11aN7JZ2aV8VR8JViKPC4mFz4duCd1fuD2U+ZPfxM=",
+        "lastModified": 1716909762,
+        "narHash": "sha256-4x85qOYW7mdhVBZKaEpFmab0XLwLhqgdPL0ZatCsiQ8=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "9a784e9dbfe48ea0880ea1c529aaa7267da606cd",
+        "rev": "befbf6436c4b2f834e938056d67be151c4c42ec4",
         "type": "gitlab"
       },
       "original": {
@@ -383,11 +383,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1716847642,
-        "narHash": "sha256-rjEswRV0o23eBBils8lJXyIGha+l/VjV73IPg+ztxgk=",
+        "lastModified": 1716908526,
+        "narHash": "sha256-Zl6e/sEVDh07K47XxDGPsXTYT4nI6llUDbQ4xMIwp7k=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "10c7c219b7dae5795fb67f465a0d86cbe29f25fa",
+        "rev": "373ead20606efa9181cd15ba19a5deac7ead1492",
         "type": "github"
       },
       "original": {
@@ -735,11 +735,11 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1716542732,
-        "narHash": "sha256-0Y9fRr0CUqWT4KgBITmaGwlnNIGMYuydu2L8iLTfHU4=",
+        "lastModified": 1716793392,
+        "narHash": "sha256-ex3nO87EEQhshXd19QSVW5UIXL0pbPuew4q8TdEJQBY=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "d12251ef6e8e6a46e05689eeccd595bdbd3c9e60",
+        "rev": "67a8b308bae9c26be660ccceff3e53a65e01afe1",
         "type": "github"
       },
       "original": {
@@ -1010,11 +1010,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1716895223,
-        "narHash": "sha256-aIN5q4QtSKV3UthwuxELbJTN747qHoOPyfBkR2fwtGg=",
+        "lastModified": 1716914475,
+        "narHash": "sha256-oDxjAsjBX435j3P9V/D3G1nwefUpJnLp2+fKK2ZrPdc=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "b17e2d02dca6c243bddbd6820b9e0b93deaac163",
+        "rev": "d623d5a1ca1bb0eb82ad589e269e72593ca35ea8",
         "type": "sourcehut"
       },
       "original": {
