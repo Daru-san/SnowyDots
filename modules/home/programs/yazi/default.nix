@@ -1,5 +1,5 @@
 {
-  imports = [./lua.nix ./plugins.nix];
+  imports = [./plugins.nix];
   programs.yazi = {
     enable = true;
     enableZshIntegration = true;
