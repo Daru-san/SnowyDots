@@ -25,5 +25,5 @@
       flake = false;
     };
   };
-  outputs = {self}: {};
+  outputs = {self, ...} @ inputs: {};
 }
