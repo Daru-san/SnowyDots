@@ -25,5 +25,5 @@
       flake = false;
     };
   };
-  outputs = {}: {};
+  outputs = {self}: {};
 }
