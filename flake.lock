@@ -1297,12 +1297,12 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-TeDGw4A6QsGmLPTvSgyBzN/vGJ8iz1/7d38yHMLb8JA=",
-        "path": "./modules/home/programs/yazi",
+        "narHash": "sha256-7kL1PkmboGxjhj6P7IHZKVCr+BsrbKDszXKjXi/qxcs=",
+        "path": "./modules/home/programs/yazi/flake",
         "type": "path"
       },
       "original": {
-        "path": "./modules/home/programs/yazi",
+        "path": "./modules/home/programs/yazi/flake",
         "type": "path"
       }
     }
