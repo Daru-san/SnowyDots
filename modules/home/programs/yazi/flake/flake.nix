@@ -13,7 +13,7 @@
       flake = false;
     };
     mime = {
-      url = "github:DreamMaoMao/mime.yazi";
+      url = "github:DreamMaoMao/mime.yazi/e910658a9fd200404a1b8d613cb65b509b7cda1c";
       flake = false;
     };
     bat = {
