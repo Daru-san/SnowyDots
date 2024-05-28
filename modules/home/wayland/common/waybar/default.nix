@@ -1,17 +1,22 @@
 {
   config,
   pkgs,
-  inputs,
-  system,
   lib,
   ...
 }: let
   inherit (lib) getExe getExe';
-  matcha = getExe inputs.matcha.packages.${system}.default;
+  inherit (pkgs) writeShellScriptBin;
   mixxc = getExe pkgs.mixxc;
   iwgtk = getExe pkgs.iwgtk;
   playerctl = getExe' config.services.playerctld.package "playerctl";
   swaync-client = getExe' config.services.swaync.package "swaync-client";
+  idle-inhibit = getExe (writeShellScriptBin ''
+    if pgrep 'hypridle'; then
+    	systemctl --user stop hypridle.service
+    else
+    	systemctl --user start hypridle.service
+    fi
+  '');
 in {
   programs.waybar = {
     style = builtins.concatStringsSep "\n" [
@@ -49,7 +54,7 @@ in {
         };
         idle_inhibitor = {
           format = "{icon}";
-          on-click = "${matcha} --toggle -- bar=waybar";
+          on-click = idle-inhibit;
           format-icons = {
             activated = "";
             deactivated = "";

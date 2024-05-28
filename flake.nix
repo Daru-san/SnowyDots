@@ -41,10 +41,6 @@
     # Wayland stuff
     anyrun.url = "github:Kirottu/anyrun";
     ags.url = "github:Aylur/ags";
-    matcha = {
-      url = "git+https://codeberg.org/QuincePie/matcha";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
   outputs = {
     self,
