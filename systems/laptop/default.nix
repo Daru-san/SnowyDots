@@ -17,13 +17,7 @@
   nix = {
     package = pkgs.nixVersions.latest;
     registry =
-      {
-        nixpkgs.to = {
-          type = "path";
-          inherit (pkgs) path narHash;
-        };
-      }
-      // (lib.mapAttrs (_: flake: {inherit flake;}))
+      (lib.mapAttrs (_: flake: {inherit flake;}))
       ((lib.filterAttrs (_: lib.isType "flake")) inputs);
     nixPath = [
       "nixpkgs=${inputs.nixpkgs}"
