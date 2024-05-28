@@ -1,6 +1,8 @@
 {
   config,
   pkgs,
+  inputs,
+  system,
   lib,
   ...
 }: {
@@ -38,12 +40,18 @@
           spacing = 10;
           icon-size = 21;
         };
-        idle_inhibitor = {
-          format = "{icon}";
+        "custom/idle_inhibitor" = let
+          matcha = lib.getExe inputs.matcha.packages.${system}.default;
+        in {
+          format = "{}";
           format-icons = {
-            activated = "";
-            deactivated = "";
+            on = "";
+            off = "";
           };
+          exec = ''
+            ${matcha} --toggle -- bar=waybar
+          '';
+          on-click = "${matcha} --toggle";
         };
         clock = {
           format-alt = " {:%X}";
