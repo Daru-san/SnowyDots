@@ -9,14 +9,15 @@
   inherit (lib) getExe getExe';
   inherit (pkgs) formats writeShellScriptBin;
   idle-inhibit = getExe (writeShellScriptBin "idle-inhibit" ''
+    inhibited=off
     if pgrep 'hypridle'; then
       systemctl --user stop hypridle.service
-      inhibited=off
+      inhibited=on
     else
       systemctl --user start hypridle.service
-      inhibited=on
+      inhibited=off
     fi
-    hyprctl notify -1 6000 0 'Idle inhibiting is now $inhibited'
+    hyprctl notify -1 6000 0 "Idle inhibiting is now ''${inhibited}"
   '');
   focusmode = pkgs.writeShellScriptBin "focusmode" ''
     HYPRFOCUSMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')

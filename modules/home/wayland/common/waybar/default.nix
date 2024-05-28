@@ -11,14 +11,15 @@
   playerctl = getExe' config.services.playerctld.package "playerctl";
   swaync-client = getExe' config.services.swaync.package "swaync-client";
   idle-inhibit = getExe (writeShellScriptBin "idle-inhibit" ''
+    inhibited=off
     if pgrep 'hypridle'; then
       systemctl --user stop hypridle.service
-      inhibited=off
+      inhibited=on
     else
       systemctl --user start hypridle.service
-      inhibited=on
+      inhibited=off
     fi
-    hyprctl notify -1 6000 0 'Idle inhibiting is now $inhibited'
+    hyprctl notify -1 6000 0 "Idle inhibiting is now ''${inhibited}"
   '');
 in {
   programs.waybar = {
