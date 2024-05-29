@@ -39,9 +39,14 @@ in {
   wayland.windowManager.hyprland.settings = let
     h = getExe pkgs.hdrop;
     e = "exec";
+
+    # Normal (hyprland) binds
     mkBind = x: y: z: "${x},${y},${z}";
+    # Binds that execute programs
     mkBindE = x: y: z: "${x},${y},${e},${z}";
+    # Binds with singular keys
     mkBindSE = y: z: ",${y},${e},${z}";
+    # Binds which use `hdrop` to only launch one instance
     mkBindH = x: y: z: "${x},${y},${e},${h} '${z}'";
   in
     lib.mkIf config.wayland.windowManager.hyprland.enable {
