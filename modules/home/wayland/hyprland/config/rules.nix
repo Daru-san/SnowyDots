@@ -15,11 +15,16 @@
             "org.kde.kdeconnect.daemon"
             ".blueman-manager-wrapped"
             "org.twosheds.iwgtk"
-            "com/github.hluk.copyq"
+            "com.github.hluk.copyq"
+          ];
+          resized-windows = [
+            "foot"
+            "com.twosheds.iwgtk"
           ];
         in [
           (map (x: "float,^(${x})(.*)$") window)
           (map (x: "center,^(${x})(.*)$") window)
+          (map (c: "size 60%,^(${c})(.*)$") resized-windows)
         ])
         (let
           w = x: y: "workspace name:${toString x},^(${y})(.*)$";
@@ -65,7 +70,7 @@
       workspace = let
         inherit (lib) range;
         workspaces =
-          (map toString (range 7 9))
+          (map toString (range 8 9))
           ++ (map (n: "F${toString n}") (range 9 12));
       in
         map (x: "name:${x},rounding:false, decorate:false, gapsin:0, gapsout:0, border:false") workspaces;
