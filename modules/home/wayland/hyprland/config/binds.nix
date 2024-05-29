@@ -39,6 +39,10 @@ in {
   wayland.windowManager.hyprland.settings = let
     h = getExe pkgs.hdrop;
     e = "exec";
+    mkBind = x: y: z: "${x},${y},${z}";
+    mkBindE = x: y: z: "${x},${y},${e},${z}";
+    mkBindSE = y: z: ",${y},${e},${z}";
+    mkBindH = x: y: z: "${x},${y},${e},${h} '${z}'";
   in
     lib.mkIf config.wayland.windowManager.hyprland.enable {
       bind = let
@@ -53,88 +57,88 @@ in {
         swayosd = getExe' config.services.swayosd.package "swayosd-client";
       in [
         # Launching programs
-        "SUPER, e, ${e}, ${h} '${file-manager}'"
-        "SUPERSHIFT, f, ${e}, ${h} '${browser}'"
+        (mkBindH "super" "e" file-manager)
+        (mkBindH "super" "f" browser)
 
         # Terminal stuff
-        "SUPER, Return, ${e}, ${terminal}"
-        "SUPER, r, ${e}, ${terminal} --hold ${yazi}"
-        "SUPER, z, ${e}, ${terminal} --hold ${editor}"
-        "SUPER, m, ${e}, ${terminal} --hold ${btop}"
+        (mkBindE "super" "return" terminal)
+        (mkBindE "super" "r" "${terminal} --hold ${yazi}")
+        (mkBindE "super" "z" "${terminal} --hold ${editor}")
+        (mkBindE "super" "m" "${terminal} --hold ${btop}")
 
         # Clipboard menu
-        "supershift,v,${e},${copyq} menu"
+        (mkBindE "supershift" "v" "${copyq} menu")
 
         #Window bings
-        "alt,q,killactive"
-        "SUPERSHIFT,e,exit"
-        "SUPER,s,togglesplit"
-        "SUPER,f,fullscreen"
-        "SUPER,v,togglefloating"
+        (mkBind "alt" "q" "killactive")
+        (mkBind "supershift" "e" "exit")
+        (mkBind "super" "s" "togglesplit")
+        (mkBind "super" "f" "fullscreen")
+        (mkBind "super" "v" "togglefloating")
 
         # Toggle focus mode
-        "SUPERALT,F12,exec,${getExe focusmode}"
+        (mkBindE "supershift" "F12" (getExe focusmode))
 
         #Lock screen
-        "SUPER, l ,${e} , ${hyprlock} --immediate"
+        (mkBindE "super" "l" "${hyprlock} --immediate")
 
         # Show when caps lock is pressed
-        ",caps_lock,${e},${swayosd} --caps-lock"
+        (mkBindSE "caps_lock" "${swayosd} --caps-lock")
 
         # Show active workspace
-        "SUPER, w, ${e}, hyprctl notify -1 2000 0 `hyprctl activeworkspace | head -n 1`"
+        (mkBindE "super" "w" "hyprctl notify -1 2000 0 `hyprctl activeworkspace | head -n 1`")
 
         # Prevent idling
-        "superalt,F4,${e},${idle-inhibit}"
+        (mkBindE "superalt" "F4" idle-inhibit)
       ];
 
       bindle = let
         s = getExe' config.services.swayosd.package "swayosd-client";
-        volup = "--output-volume raise";
-        voldown = "--output-volume lower";
-        volmute = "--output-volume mute-toggle";
-        brightup = "--brightness raise";
-        brightdown = "--brightness lower";
+        mute = "${s} --output-volume mute-toggle";
+        raise-volume = "${s} --output-volume raise";
+        lower-volume = "${s} --output-volume lower";
+        raise-brightness = "${s} --brightness raise";
+        lower-brightness = "${s} --brightness lower";
       in [
-        ",XF86MonBrightnessUp, ${e},${s} ${brightup}"
-        ",XF86MonBrightnessDown, ${e},${s} ${brightdown}"
+        (mkBindSE "XF86MonBrightnessUp" raise-brightness)
+        (mkBindSE "XF86MonBrightnessDown" lower-brightness)
 
-        ",XF86AudioRaiseVolume, ${e}, ${s} ${volup}"
-        ",XF86AudioLowerVolume, ${e}, ${s} ${voldown}"
-        ",XF86AudioMute, ${e}, ${s} ${volmute}"
+        (mkBindSE "XF86AudioRaiseVolume" raise-volume)
+        (mkBindSE "XF86AudioLowerVolume" lower-volume)
+        (mkBindSE "XF86AudioMute" mute)
 
-        "ALT,F8, ${e}, ${s} ${volup}"
-        "ALT,F6, ${e}, ${s} ${voldown}"
-        "ALT,F7, ${e}, ${s} ${volmute}"
+        (mkBindE "alt" "F8" raise-volume)
+        (mkBindE "alt" "F6" lower-volume)
+        (mkBindE "alt" "F7" mute)
       ];
 
       bindl = let
         p = getExe config.services.playerctld.package;
-        nx = "next";
-        pv = "previous";
-        pl = "play-pause";
-        st = "stop";
+        next = "${p} next";
+        prev = "${p} previous";
+        toggle-play = "${p} play-pause";
+        stop = "${p} stop";
       in [
-        ",XF86AudioNext,${e},${p} ${nx}"
-        ",XF86AudioPrev,${e},${p} ${pv}"
-        ",XF86AudioPlay,${e},${p} ${pl}"
-        ",XF86AudioStop,${e},${p} ${st}"
+        (mkBindSE "XF86AudioNext" next)
+        (mkBindSE "XF86AudioPrev" prev)
+        (mkBindSE "XF86AudioPlay" toggle-play)
+        (mkBindSE "XF86AudioStop" stop)
 
-        "ALT,F12,${e},${p} ${nx}"
-        "ALT,F9,${e},${p} ${pv}"
-        "ALT,F10,${e},${p} ${pl}"
-        "ALT,F11,${e},${p} ${st}"
+        (mkBindE "alt" "F12" next)
+        (mkBindE "alt" "F9" prev)
+        (mkBindE "alt" "F10" toggle-play)
+        (mkBindE "alt" "F11" stop)
       ];
 
       bindr = let
-        any = getExe' config.programs.anyrun.package "anyrun";
-        easy = getExe config.services.easyeffects.package;
-        cl = getExe inputs.scripts.packages.${system}.color-picker;
-        wl = getExe config.programs.wlogout.package;
+        anyrun = getExe' config.programs.anyrun.package "anyrun";
+        easyeffects = getExe config.services.easyeffects.package;
+        color-picker = getExe inputs.scripts.packages.${system}.color-picker;
+        wlogout = getExe config.programs.wlogout.package;
         pk = getExe' pkgs.busybox "pkill";
 
         # Screenshots
-        gb = getExe inputs.hyprland-contrib.packages.${system}.grimblast;
+        grimblast = getExe inputs.hyprland-contrib.packages.${system}.grimblast;
 
         mx = getExe pkgs.mixxc;
 
@@ -142,41 +146,41 @@ in {
         foot-config = iniFormat.generate "foot.ini" {
           main.font = "JetbrainsMono Nerd Font:size=14";
         };
-        iw = getExe pkgs.iwgtk;
+        iwgtk = getExe pkgs.iwgtk;
         bluetuith = getExe pkgs.bluetuith;
         foot = getExe pkgs.foot;
         blue-ui = "${foot} -c ${foot-config} --title bluetooth-tui -e ${bluetuith}";
 
-        sc = getExe' pkgs.swaynotificationcenter "swaync-client";
+        swaync = getExe' pkgs.swaynotificationcenter "swaync-client";
       in [
         # Launch the launcher - anyrun
-        "super, space, ${e}, ${pk} anyrun || ${any}"
+        (mkBindE "super" "space" "${pk} anyrun || ${anyrun}")
 
         # Launch easyeffects
-        "super, a, ${e}, ${h} '${easy}'"
+        (mkBindH "super" "a" easyeffects)
 
         # Color picker
-        "supershift, c, ${e}, ${pk} color-picker || ${cl}"
+        (mkBindE "supershift" "c" "${pk} color-picker || ${color-picker}")
 
         # wlogout
-        "super, x, ${e}, ${pk} wlogout || ${wl}"
+        (mkBindE "super" "x" "${pk} wlogout || ${wlogout}")
 
         # Audio mixer
-        "altshift,F7,${e},${pk} mixxc || ${mx} --anchor right --anchor top --margin 20 --margin 30 -M"
+        (mkBindE "altshift" "F7" "${pk} mixxc || ${mx} --anchor right --anchor top --margin 20 --margin 30 -M")
 
         # Screenshotting
-        ", print, ${e}, ${pk} grimblast || ${gb} -n -f save area"
-        "shift, print, ${e}, ${pk} grimblast || ${gb} -n -f save active"
-        "alt, print, ${e}, ${pk} grimblast || ${gb} -n -f save output"
+        (mkBindSE "print" "${pk} grimblast || ${grimblast} -n -f save area")
+        (mkBindE "shift" "print" "${pk} grimblast || ${grimblast} -n -f save active")
+        (mkBindE "alt" "print" "${pk} grimblast || ${grimblast} -n -f save output")
 
         # Notifcations
-        "super,n, ${e}, ${sc} -t"
-        "supershift,n, ${e}, ${sc} -d"
-        "superalt,n, ${e}, ${sc} -C"
+        (mkBindE "super" "n" "${swaync} -t")
+        (mkBindE "supershift" "n" "${swaync} -d")
+        (mkBindE "superalt" "n" "${swaync} -C")
 
-        # TUI
-        "super,i,${e},${pk} iwgtk || ${iw}"
-        "supershift,i,${e},${blue-ui}"
+        # Lauch useful stuff
+        (mkBindE "super" "i" "${pk} iwgtk || ${iwgtk}")
+        (mkBindE "supershift" "i" blue-ui)
       ];
     };
 }
