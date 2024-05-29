@@ -63,7 +63,7 @@ in {
       in [
         # Launching programs
         (mkBindH "super" "e" file-manager)
-        (mkBindH "super" "f" browser)
+        (mkBindH "super" "b" browser)
 
         # Terminal stuff
         (mkBindE "super" "return" terminal)
