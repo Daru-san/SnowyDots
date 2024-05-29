@@ -4,13 +4,13 @@
     "/" = {
       device = "/dev/disk/by-uuid/4865efd3-d132-42da-bd9c-c7ba12859995";
       fsType = "ext4";
-      options = ["noatime"];
+      options = ["noatime" "nodiratime" "discard"];
     };
 
     "/home" = {
       device = "/dev/disk/by-uuid/f67337aa-703f-453c-945c-a7fb062da185";
       fsType = "ext4";
-      options = ["noatime"];
+      options = ["discard"];
     };
 
     "/boot" = {
