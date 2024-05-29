@@ -131,11 +131,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1716909762,
-        "narHash": "sha256-4x85qOYW7mdhVBZKaEpFmab0XLwLhqgdPL0ZatCsiQ8=",
+        "lastModified": 1716955393,
+        "narHash": "sha256-bLnqWy5TN9NAuc4cP6kFkQleNUx/W2zIokECfAoT64g=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "befbf6436c4b2f834e938056d67be151c4c42ec4",
+        "rev": "836d7e911ac3c11017ccf23eac8b49ad60ebab1d",
         "type": "gitlab"
       },
       "original": {
@@ -447,11 +447,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1716908526,
-        "narHash": "sha256-Zl6e/sEVDh07K47XxDGPsXTYT4nI6llUDbQ4xMIwp7k=",
+        "lastModified": 1716930911,
+        "narHash": "sha256-t4HT5j3Jy7skRB5PINnxcEBCkgE89rGBpwTI7YS4Ffo=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "373ead20606efa9181cd15ba19a5deac7ead1492",
+        "rev": "a9b36cbe9292a649222b89fdb9ae9907e9c74086",
         "type": "github"
       },
       "original": {
@@ -796,11 +796,11 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1716793392,
-        "narHash": "sha256-ex3nO87EEQhshXd19QSVW5UIXL0pbPuew4q8TdEJQBY=",
+        "lastModified": 1716931900,
+        "narHash": "sha256-vdd2MO7W+LxK9JP0cD7R83aoZm8ciq5evmm2/gaS9jo=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "67a8b308bae9c26be660ccceff3e53a65e01afe1",
+        "rev": "9b2aab3301ca64840d82f6f79ed113597918ce62",
         "type": "github"
       },
       "original": {
@@ -970,11 +970,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1716833970,
-        "narHash": "sha256-K3tVrTna4EN86GW9IeOQJkbj57zT2xNGJg1hh26xy5c=",
+        "lastModified": 1716961281,
+        "narHash": "sha256-rUSuwmGdd5yLJc1RHDR3mXGTJJ/fKRtqr26MU78Lnvc=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "a2afa5634495ee739e682e5ccb743c5c6dd90ec1",
+        "rev": "cf037458ddc16f1b0d037630546760ecad0231c3",
         "type": "github"
       },
       "original": {
@@ -1071,11 +1071,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1716914475,
-        "narHash": "sha256-oDxjAsjBX435j3P9V/D3G1nwefUpJnLp2+fKK2ZrPdc=",
+        "lastModified": 1716965988,
+        "narHash": "sha256-NYjUpvqKABE8jfDwa9bQAiiNo4UZIcQRe1DmrZq9PUs=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "d623d5a1ca1bb0eb82ad589e269e72593ca35ea8",
+        "rev": "6e15cfc889f2509b84852a416861b08254a40fcf",
         "type": "sourcehut"
       },
       "original": {
@@ -1299,11 +1299,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-VgKbv9cIfnz/fNxgtCwa5qDcvFPbg930Mv7V+S9YHeM=",
-        "path": "./modules/home/programs/yazi/flake",
+        "path": "modules/home/programs/yazi/flake",
         "type": "path"
       },
       "original": {
-        "path": "./modules/home/programs/yazi/flake",
+        "path": "modules/home/programs/yazi/flake",
         "type": "path"
       }
     }
