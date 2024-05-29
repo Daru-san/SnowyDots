@@ -18,6 +18,8 @@ My functional, advanced NixOS configuration flake using <a href="https://github.
 
 ### Hyprland
 
+> [Wallpapers](https://git.sr.ht/~darumaka/Wallpapers 'My wallpaper repo on sourcehut')
+
 ![Image](https://i.imgur.com/4svyKaE.png 'I use Nix by the way')
 ![Image](https://i.imgur.com/JnzkFhK.png 'Java > everything else')
 ![image](https://i.imgur.com/vGkkXsx.png 'Study with me?')
