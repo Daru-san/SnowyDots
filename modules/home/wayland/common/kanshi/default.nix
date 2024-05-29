@@ -1,17 +1,19 @@
 {
   services.kanshi = {
-    profiles = {
-      Laptop = {
-        outputs = [
+    settings = [
+      {
+        profile.name = "laptop";
+        profile.outputs = [
           {
             criteria = "eDP-1";
             scale = 1.0;
             status = "enable";
           }
         ];
-      };
-      Laptop-DP = {
-        outputs = [
+      }
+      {
+        profile.name = "laptop-DP";
+        profile.outputs = [
           {
             criteria = "Samsung Electric Company SyncMaster HVJZB00655";
             mode = "1920x1080@60";
@@ -23,9 +25,10 @@
             status = "disable";
           }
         ];
-      };
-      Laptop-HDMI = {
-        outputs = [
+      }
+      {
+        profile.name = "laptop-HDMI";
+        profile.outputs = [
           {
             criteria = "Samsung Electric Company SyncMaster 0x45463233";
             mode = "1920x1080@60";
@@ -37,27 +40,7 @@
             status = "disable";
           }
         ];
-      };
-      Desktop-DP = {
-        outputs = [
-          {
-            criteria = "Samsung Electric Company SyncMaster HVJZB00655";
-            mode = "1920x1080@60";
-            position = "0,0";
-            scale = 1.0;
-          }
-        ];
-      };
-      Desktop-HDMI = {
-        outputs = [
-          {
-            criteria = "Samsung Electric Company SyncMaster 0x45463233";
-            mode = "1920x1080@60";
-            position = "0,0";
-            scale = 1.0;
-          }
-        ];
-      };
-    };
+      }
+    ];
   };
 }
