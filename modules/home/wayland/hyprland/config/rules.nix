@@ -69,9 +69,7 @@
       ];
       workspace = let
         inherit (lib) range;
-        workspaces =
-          (map toString (range 8 9))
-          ++ (map (n: "F${toString n}") (range 9 12));
+        workspaces = map (n: "F${toString n}") (range 9 12);
       in
         map (x: "name:${x},rounding:false, decorate:false, gapsin:0, gapsout:0, border:false") workspaces;
     };
