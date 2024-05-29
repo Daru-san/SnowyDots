@@ -19,7 +19,7 @@
           ];
           resized-windows = [
             "foot"
-            "com.twosheds.iwgtk"
+            "org.twosheds.iwgtk"
           ];
         in [
           (map (x: "float,^(${x})(.*)$") window)
