@@ -7,28 +7,19 @@
       ];
       windowrule = lib.flatten [
         (let
-          f = x: "float,^(${x})(.*)$";
-          c = x: "center,^(${x})(.*)$";
-          s = x: "size 60%,^(${x})(.*)$";
+          window = [
+            "file-roller"
+            "foot"
+            "iwgtk"
+            "nm-connection-editor"
+            "org.kde.kdeconnect.daemon"
+            ".blueman-manager-wrapped"
+            "org.twosheds.iwgtk"
+            "com/github.hluk.copyq"
+          ];
         in [
-          (f "file-roller")
-          (f "foot")
-          (f "iwgtk")
-          (f "nm-connection-editor")
-          (f "org.kde.kdeconnect.daemon")
-          (f ".blueman-manager-wrapped")
-          (f "org.twosheds.iwgtk")
-          (f "com.github.hluk.copyq")
-          (c "file-roller")
-          (c "foot")
-          (c "com.github.hluk.copyq")
-          (c "iwgtk")
-          (c "org.twosheds.iwgtk")
-          (c "nm-connection-editor")
-          (c ".blueman-manager-wrapped")
-          (c "org.kde.kdeconnect.daemon")
-          (s "foot")
-          (s "org.twosheds.iwgtk")
+          (map (x: "float,^(${x})(.*)$") window)
+          (map (x: "center,^(${x})(.*)$") window)
         ])
         (let
           w = x: y: "workspace name:${toString x},^(${y})(.*)$";
@@ -67,12 +58,17 @@
           (wf 12 "Minecraft")
         ])
         (let
-          t = x: "${x},^(wlogout)$";
-        in [(t "fullscreen") (t "noanim") (t "stayfocused") (t "pin") (t "dimaround")])
+          rules = ["fullscreen" "noanim" "stayfocused" "pin" "dimaround"];
+        in
+          map (x: "${x},^(wlogout)$") rules)
       ];
       workspace = let
-        s = x: "name:F${toString x}, rounding:false, decorate:false, gapsin:0, gapsout:0, border:false";
-      in [(s 9) (s 10) (s 11) (s 12)];
+        inherit (lib) range;
+        workspaces =
+          (map toString (range 7 9))
+          ++ (map (n: "F${toString n}") (range 9 12));
+      in
+        map (x: "name:${x},rounding:false, decorate:false, gapsin:0, gapsout:0, border:false") workspaces;
     };
   };
 }
