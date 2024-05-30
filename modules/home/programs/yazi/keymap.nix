@@ -11,6 +11,11 @@
       desc = "find file by file name";
     }
     {
+      on = ["E"];
+      run = "plugin eza-preview";
+      desc = "Toggle tree/list dir preview";
+    }
+    {
       on = ["l"];
       run = "plugin --sync smart-enter";
       desc = "Enter the child directory, or open the file";

@@ -1,0 +1,110 @@
+{
+    "exifaudio.yazi": {
+        "branch": "master",
+        "description": "Preview audio files metadata on yazi",
+        "homepage": null,
+        "owner": "Sonico98",
+        "repo": "exifaudio.yazi",
+        "rev": "94329ead8b3a6d3faa2d4975930a3d0378980c7a",
+        "sha256": "0iv8kww4j2cajw2ly4vd3c8fskn4xqk10mhindjhy7qbsxb9yglg",
+        "type": "tarball",
+        "url": "https://github.com/Sonico98/exifaudio.yazi/archive/94329ead8b3a6d3faa2d4975930a3d0378980c7a.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "eza-preview.yazi": {
+        "branch": "master",
+        "description": "yazi plugin to preview directories using eza, list and tree modes",
+        "homepage": null,
+        "owner": "sharklasers996",
+        "repo": "eza-preview.yazi",
+        "rev": "9a5fa8316ee441858f8423ee66a6cccef386289c",
+        "sha256": "0c28bgc6wq6jk68hc58qhx6k17nlg15nw8c58kj6w5gv7mlprvji",
+        "type": "tarball",
+        "url": "https://github.com/sharklasers996/eza-preview.yazi/archive/9a5fa8316ee441858f8423ee66a6cccef386289c.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "fg.yazi": {
+        "branch": "main",
+        "description": "yazi plugin for rg search with fzf file preview",
+        "homepage": "",
+        "owner": "DreamMaoMao",
+        "repo": "fg.yazi",
+        "rev": "677688ad48fbcb89578d7fd66ad4205f458be6d2",
+        "sha256": "0g7blgvf0xx9bqfjmidmgjlyqnc743h6adzwc65vi0j9zb50i6rd",
+        "type": "tarball",
+        "url": "https://github.com/DreamMaoMao/fg.yazi/archive/677688ad48fbcb89578d7fd66ad4205f458be6d2.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "glow.yazi": {
+        "branch": "main",
+        "description": "Glow preview plugin for yazi",
+        "homepage": "",
+        "owner": "Reledia",
+        "repo": "glow.yazi",
+        "rev": "536185a4e60ac0adc11d238881e78678fdf084ff",
+        "sha256": "1ck5nxzw0q3fl5z6x1imb7qzgzcfpi7nspjrb3hdbxx46xi1phrm",
+        "type": "tarball",
+        "url": "https://github.com/Reledia/glow.yazi/archive/536185a4e60ac0adc11d238881e78678fdf084ff.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "mime.yazi": {
+        "branch": "main",
+        "description": "A Yazi plugin that quickly get file mime-type by filename suffix to improved theme rendering speed",
+        "homepage": "",
+        "owner": "DreamMaoMao",
+        "repo": "mime.yazi",
+        "rev": "e910658a9fd200404a1b8d613cb65b509b7cda1c",
+        "sha256": "0068db5if0qd3l0q6mccr6143dqs7scy3d0lndjwsh4j4wibply9",
+        "type": "tarball",
+        "url": "https://github.com/DreamMaoMao/mime.yazi/archive/e910658a9fd200404a1b8d613cb65b509b7cda1c.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "ouch.yazi": {
+        "branch": "main",
+        "description": "A Yazi plugin to preview archives.",
+        "homepage": "",
+        "owner": "ndtoan96",
+        "repo": "ouch.yazi",
+        "rev": "694d149be5f96eaa0af68d677c17d11d2017c976",
+        "sha256": "1rg01jwp1384ic3byfybbcqycnphkkgpvrd9wxnk47iimvvd2yr7",
+        "type": "tarball",
+        "url": "https://github.com/ndtoan96/ouch.yazi/archive/694d149be5f96eaa0af68d677c17d11d2017c976.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "tokyo-night.yazi": {
+        "branch": "main",
+        "description": "Yazi flavor with the Tokyo Night colors",
+        "homepage": null,
+        "owner": "BennyOe",
+        "repo": "tokyo-night.yazi",
+        "rev": "024fb096821e7d2f9d09a338f088918d8cfadf34",
+        "sha256": "112r9b7gan3y4shm0dfgbbgnxasi7ywlbk1pksdbpaglkczv0412",
+        "type": "tarball",
+        "url": "https://github.com/BennyOe/tokyo-night.yazi/archive/024fb096821e7d2f9d09a338f088918d8cfadf34.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "torrent-preview.yazi": {
+        "branch": "main",
+        "description": "yazi plugin to preview bittorrent files",
+        "homepage": "",
+        "owner": "kirasok",
+        "repo": "torrent-preview.yazi",
+        "rev": "76970b6f9d6f3031e9cd57c8595a53e9f9f48c18",
+        "sha256": "1r89vnq4idigpd92rz80cg2lvz8yrmhs0nhxnfxj82rv4nh6vxs0",
+        "type": "tarball",
+        "url": "https://github.com/kirasok/torrent-preview.yazi/archive/76970b6f9d6f3031e9cd57c8595a53e9f9f48c18.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "yazi-plugin-bat": {
+        "branch": "main",
+        "description": "A previewer for Yazi powered by Bat",
+        "homepage": "",
+        "owner": "mgumz",
+        "repo": "yazi-plugin-bat",
+        "rev": "1925c200632f017119dd685601b5f2d7d4ab266b",
+        "sha256": "03y1qw0ilz57sn95q51lffnxjhb0mj7cdfn209hnpbd63dg5vwl1",
+        "type": "tarball",
+        "url": "https://github.com/mgumz/yazi-plugin-bat/archive/1925c200632f017119dd685601b5f2d7d4ab266b.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    }
+}

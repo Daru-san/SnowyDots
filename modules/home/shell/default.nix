@@ -27,7 +27,6 @@
     lazygit = "${config.programs.lazygit.package}/bin/lazygit";
     tty-clock = "${pkgs.tty-clock}/bin/tty-clock";
     trashy = "${inputs.trashy.packages.${system}.trashy}/bin/trashy";
-    yazi = "${config.programs.yazi.package}/bin/yazi";
     fzf = "${config.programs.fzf.package}/bin/fzf";
   in {
     g = git;
@@ -37,7 +36,6 @@
     hb = "hm-build";
     tp = "${trashy} put";
     te = "${trashy} empty";
-    y = yazi;
     jtp = ''find $1 -name "*.jpg" -exec mogrify -format png {} \;'';
     man = "${pkgs.bat-extras.batman}/bin/batman";
     bgrep = "${pkgs.bat-extras.batgrep}/bin/batgrep";

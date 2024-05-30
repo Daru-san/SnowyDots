@@ -24,6 +24,8 @@
       mixxc
 
       # CLI
+      ouch
+      niv
       tree
       tgpt
       tty-clock
