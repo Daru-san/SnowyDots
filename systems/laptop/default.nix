@@ -18,10 +18,7 @@
     package = pkgs.nixVersions.latest;
     registry =
       (lib.mapAttrs (_: flake: {inherit flake;}))
-      (
-        (lib.filterAttrs (_: lib.isType "flake"))
-        (builtins.removeAttrs inputs ["yazi-plugins"])
-      );
+      (lib.filterAttrs (_: lib.isType "flake"));
     nixPath = [
       "nixpkgs=${inputs.nixpkgs}"
       "nixos-config=${./configuration.nix}"

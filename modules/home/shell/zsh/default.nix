@@ -81,7 +81,6 @@
         [
           "jimhester/per-directory-history"
           "chisui/zsh-nix-shell"
-          "fdw/yazi-zoxide-zsh"
           "hlissner/zsh-autopair"
           "mollifier/cd-gitroot"
           "Atlas34/fzf-plugin"
