@@ -7,15 +7,18 @@
     criticalPowerAction = "HybridSleep";
     ignoreLid = true;
   };
-  services.auto-cpufreq = {
-    enable = true;
-    settings.charger = {
-      governor = "performance";
-      turbo = "always";
-    };
-    settings.battery = {
-      governor = "powersave";
-      turbo = "auto";
+  services = {
+    cpupower-gui.enable = true;
+    auto-cpufreq.enable = true;
+    auto-cpufreq = {
+      settings.charger = {
+        governor = "performance";
+        turbo = "always";
+      };
+      settings.battery = {
+        governor = "powersave";
+        turbo = "auto";
+      };
     };
   };
   boot.kernelParams = ["snd-intel-dspcfg.dsp_driver=1"];

@@ -24,5 +24,6 @@
   hardware = {
     cpu.intel.updateMicrocode = true;
     enableRedistributableFirmware = true;
+    enableAllFirmware = true;
   };
 }
