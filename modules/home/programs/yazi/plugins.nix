@@ -14,5 +14,6 @@ in {
     ${setPlugin "fg"}.source = getPlugin "fg.yazi";
     ${setPlugin "ouch"}.source = getPlugin "ouch.yazi";
     ${setPlugin "eza-preview"}.source = getPlugin "eza-preview.yazi";
+    ${setPlugin "torrent-preview"}.source = getPlugin "torrent-preview.yazi";
   };
 }

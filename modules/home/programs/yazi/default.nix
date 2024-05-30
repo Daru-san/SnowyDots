@@ -38,6 +38,10 @@
       plugin = {
         prepend_previewers = [
           {
+            mime = "application/x-bittorrent";
+            run = "torrent-preview";
+          }
+          {
             name = "*/";
             run = "eza-preview";
           }
@@ -70,7 +74,7 @@
             run = "exifaudio";
           }
           {
-            mime = "*.md";
+            name = "*.md";
             run = "glow";
           }
           {
