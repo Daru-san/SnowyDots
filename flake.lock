@@ -53,22 +53,6 @@
         "type": "github"
       }
     },
-    "bat": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1708715598,
-        "narHash": "sha256-gfJdXhumrWthAsK6xo6sYEHZrXM0FFyS1ad8GgHHwQ8=",
-        "owner": "mgumz",
-        "repo": "yazi-plugin-bat",
-        "rev": "1925c200632f017119dd685601b5f2d7d4ab266b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "mgumz",
-        "repo": "yazi-plugin-bat",
-        "type": "github"
-      }
-    },
     "devshell": {
       "inputs": {
         "flake-utils": "flake-utils_3",
@@ -92,38 +76,6 @@
         "type": "github"
       }
     },
-    "exifaudio": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1709145193,
-        "narHash": "sha256-jz6fVtcLHw9lsxFWECbuxE7tEBttE08Fl4oJSTifaEc=",
-        "owner": "Sonico98",
-        "repo": "exifaudio.yazi",
-        "rev": "94329ead8b3a6d3faa2d4975930a3d0378980c7a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Sonico98",
-        "repo": "exifaudio.yazi",
-        "type": "github"
-      }
-    },
-    "fg": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1715641971,
-        "narHash": "sha256-LZsIyvpJgriLYfw3ZeAgh1nsqXy1xSodXql34Paj6zw=",
-        "owner": "DreamMaoMao",
-        "repo": "fg.yazi",
-        "rev": "677688ad48fbcb89578d7fd66ad4205f458be6d2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "DreamMaoMao",
-        "repo": "fg.yazi",
-        "type": "github"
-      }
-    },
     "firefox-addons": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -131,11 +83,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1716955393,
-        "narHash": "sha256-bLnqWy5TN9NAuc4cP6kFkQleNUx/W2zIokECfAoT64g=",
+        "lastModified": 1717050378,
+        "narHash": "sha256-H+3Eqj+BQbqStGMFVFrcmfK0c+ocLqMOxYBghPghaZI=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "836d7e911ac3c11017ccf23eac8b49ad60ebab1d",
+        "rev": "984d03b48bff391f054e1676a97181d79ae309db",
         "type": "gitlab"
       },
       "original": {
@@ -424,22 +376,6 @@
         "type": "github"
       }
     },
-    "glow": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1714603187,
-        "narHash": "sha256-NcMbYjek99XgWFlebU+8jv338Vk1hm5+oW5gwH+3ZbI=",
-        "owner": "Reledia",
-        "repo": "glow.yazi",
-        "rev": "536185a4e60ac0adc11d238881e78678fdf084ff",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Reledia",
-        "repo": "glow.yazi",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -447,11 +383,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1716930911,
-        "narHash": "sha256-t4HT5j3Jy7skRB5PINnxcEBCkgE89rGBpwTI7YS4Ffo=",
+        "lastModified": 1717052710,
+        "narHash": "sha256-LRhOxzXmOza5SymhOgnEzA8EAQp+94kkeUYWKKpLJ/U=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "a9b36cbe9292a649222b89fdb9ae9907e9c74086",
+        "rev": "29c69d9a466e41d46fd3a7a9d0591ef9c113c2ae",
         "type": "github"
       },
       "original": {
@@ -650,23 +586,6 @@
       "original": {
         "owner": "hyprwm",
         "repo": "hyprwayland-scanner",
-        "type": "github"
-      }
-    },
-    "mime": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1715213790,
-        "narHash": "sha256-ydO7IieSQM1lsxS04Zk+GrdBgsmMVYMBHQ0DF8tqyAA=",
-        "owner": "DreamMaoMao",
-        "repo": "mime.yazi",
-        "rev": "e910658a9fd200404a1b8d613cb65b509b7cda1c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "DreamMaoMao",
-        "repo": "mime.yazi",
-        "rev": "e910658a9fd200404a1b8d613cb65b509b7cda1c",
         "type": "github"
       }
     },
@@ -876,11 +795,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1716769173,
-        "narHash": "sha256-7EXDb5WBw+d004Agt+JHC/Oyh/KTUglOaQ4MNjBbo5w=",
+        "lastModified": 1716948383,
+        "narHash": "sha256-SzDKxseEcHR5KzPXLwsemyTR/kaM9whxeiJohbL04rs=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "9ca3f649614213b2aaf5f1e16ec06952fe4c2632",
+        "rev": "ad57eef4ef0659193044870c731987a6df5cf56b",
         "type": "github"
       },
       "original": {
@@ -970,11 +889,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1716972603,
-        "narHash": "sha256-rfOOyiBW42bI+Nj3Cs7H3dZL4vdRelUWL5YSDniVcYM=",
+        "lastModified": 1717012327,
+        "narHash": "sha256-hmm9DA0+7RSbxudrscrjKJ3EGSwxvrkpjpCEAa+GtT8=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "b113bc69ea5c04c37020a63afa687abfb2d43474",
+        "rev": "2031a09b36c19526aa82d27167942edf62915b66",
         "type": "github"
       },
       "original": {
@@ -1000,8 +919,7 @@
         "snowyvim": "snowyvim",
         "spicetify-nix": "spicetify-nix",
         "trashy": "trashy",
-        "wallpapers": "wallpapers",
-        "yazi-plugins": "yazi-plugins"
+        "wallpapers": "wallpapers"
       }
     },
     "scripts": {
@@ -1071,11 +989,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1717001700,
-        "narHash": "sha256-idHWo+Q6tNeg8lICuRUUuImKZjw1bvURnrDRqpA+W0A=",
+        "lastModified": 1717045278,
+        "narHash": "sha256-LC4c6nSwtHUFk3F2Idwv0rBG/48IdX48knstbiYV96o=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "c8b8478f18f2e6c7a913e1861e829c46380eb7bd",
+        "rev": "2ddd30808b78680146f041fdd5f9eafafff012d7",
         "type": "sourcehut"
       },
       "original": {
@@ -1090,11 +1008,11 @@
         "nixpkgs": "nixpkgs_9"
       },
       "locked": {
-        "lastModified": 1716921440,
-        "narHash": "sha256-nDmpZbPQyBdcdonCQlRS+Ml0PfRqnmGMyVtJlX+Qxpw=",
+        "lastModified": 1717007753,
+        "narHash": "sha256-XCQBLBiu27GdUKGvaV3c/xbaOM/O8C4MNj0A2cqwJwo=",
         "owner": "Daru-san",
         "repo": "spicetify-nix",
-        "rev": "6fec0a5ec124a2cff65e0c802a4e7917da0fef13",
+        "rev": "c771c87cdf51b40cab1f19913d5da698e7addd54",
         "type": "github"
       },
       "original": {
@@ -1160,22 +1078,6 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
-        "type": "github"
-      }
-    },
-    "tokyo-night": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1715338875,
-        "narHash": "sha256-IhCwP5v0qbuanjfMRbk/Uatu31rPNVChJn5Y9c5KWYQ=",
-        "owner": "BennyOe",
-        "repo": "tokyo-night.yazi",
-        "rev": "024fb096821e7d2f9d09a338f088918d8cfadf34",
-        "type": "github"
-      },
-      "original": {
-        "owner": "BennyOe",
-        "repo": "tokyo-night.yazi",
         "type": "github"
       }
     },
@@ -1285,26 +1187,6 @@
         "owner": "hyprwm",
         "repo": "xdg-desktop-portal-hyprland",
         "type": "github"
-      }
-    },
-    "yazi-plugins": {
-      "inputs": {
-        "bat": "bat",
-        "exifaudio": "exifaudio",
-        "fg": "fg",
-        "glow": "glow",
-        "mime": "mime",
-        "tokyo-night": "tokyo-night"
-      },
-      "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-VgKbv9cIfnz/fNxgtCwa5qDcvFPbg930Mv7V+S9YHeM=",
-        "path": "modules/home/programs/yazi/flake",
-        "type": "path"
-      },
-      "original": {
-        "path": "modules/home/programs/yazi/flake",
-        "type": "path"
       }
     }
   },
