@@ -17,7 +17,7 @@
       decoration = {
         rounding = 6;
         blur = {
-          enabled = false;
+          enabled = true;
           size = 7;
           passes = 1;
           ignore_opacity = true;
