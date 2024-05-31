@@ -26,7 +26,6 @@ in {
       package = inputs.hyprland.packages.${pkgs.system}.hyprland;
       systemd = {
         enable = true;
-        enableXdgAutostart = true;
         extraCommands = [
           "systemctl --user start easyeffects.service"
           "systemctl --user start hypridle.service"
