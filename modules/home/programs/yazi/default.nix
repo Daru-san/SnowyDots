@@ -6,6 +6,7 @@
     enableNushellIntegration = true;
     initLua = ./init.lua;
     keymap = import ./keymap.nix;
+    theme.flavor.use = "tokyo-night.yazi";
     settings = {
       manager = {
         ratio = [1 3 4];
