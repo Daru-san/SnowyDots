@@ -33,8 +33,8 @@
           g = x: "group,^(${x})$";
         in [
           (w 7 "uget-gtk")
-          (g "oculante")
-          (w 8 "oculante")
+          (g "swayimg")
+          (w 8 "swayimg")
 
           (w 9 "com.github.wwmm.easyeffects")
 

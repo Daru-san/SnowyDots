@@ -16,6 +16,7 @@
       newsflash
       archiver
       oculante
+      swayimg
       pwvucontrol
       libreoffice-qt-fresh
       iwgtk
