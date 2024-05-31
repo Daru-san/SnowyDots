@@ -3,7 +3,7 @@ let
   getPlugin = x: yazi-plugins.${x}.outPath;
 in {
   programs.yazi.flavors = {
-    "tokyo-night.yazi" = "tokyo-night.yazi";
+    "tokyo-night.yazi" = getPlugin "tokyo-night.yazi";
   };
   programs.yazi.plugins = {
     "smart-enter.yazi" = ./smart-enter;
