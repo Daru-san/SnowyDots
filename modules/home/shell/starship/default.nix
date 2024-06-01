@@ -22,11 +22,11 @@
         "$cmd_duration"
       ];
       java = {
-        format = ''java:[(''${version} )]($style)'';
+        format = ''[java:v((''$version)) ]($style)'';
         symbol = "";
       };
       git_branch = {
-        format = ''git:([$branch(:$remote_branch)])($style)'';
+        format = ''[git:($branch(:$remote_branch )) ]($style)'';
         symbol = "";
       };
       character = {
@@ -39,7 +39,7 @@
         impure_msg = "[impure shell](bold red)";
         pure_msg = "[pure shell](bold green)";
         unknown_msg = "[unknown shell](bold yellow)";
-        format = "nix:([$state( \($name\))])(bold blue) ";
+        format = "[nix-shell:($state( \($name\))](bold blue) ";
       };
     };
   };
