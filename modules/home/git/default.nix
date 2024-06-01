@@ -6,6 +6,9 @@
     userName = "Daru";
     userEmail = "mica.tui@proton.me";
 
+    extraConfig = {
+      core.editor = "vi";
+    };
     # Git highlighting
     diff-so-fancy.enable = true;
 
