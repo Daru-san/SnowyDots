@@ -9,6 +9,7 @@
     mutableUsers = true;
     users.root.hashedPassword = "!";
     users.daru = {
+      shell = pkgs.fish;
       isNormalUser = true;
       useDefaultShell = true;
       description = "Daru";
