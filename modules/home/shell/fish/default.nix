@@ -4,10 +4,8 @@ in {
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
-      fish_vi_key_binding
+      fish_vi_key_bindings
       set fish_greeting
-    '';
-    promptInit = ''
       ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
     '';
     shellAbbrs = {
@@ -38,7 +36,6 @@ in {
       ntc = "nitch";
       lzg = "lazygit";
       syst = "systemctl-tui";
-      g = "git";
       v = "vi";
       nl = "nurl";
       npg = "nix-prefetch-git";
@@ -64,12 +61,9 @@ in {
       nhs = "nh home switch -- -j 8 --keep-going --cores 6";
       nfs = "nh-full-switch";
       nob = "nh os boot -- -k8 --keep-going --cores 6";
+      su = "sudo";
     };
     plugins = [
-      {
-        name = "autopair";
-        inherit (fishPlugins.autopair) src;
-      }
       {
         name = "transient-fish";
         inherit (fishPlugins.transient-fish) src;
@@ -77,10 +71,6 @@ in {
       {
         name = "sponge";
         inherit (fishPlugins.sponge) src;
-      }
-      {
-        name = "git-abbr";
-        inherit (fishPlugins.git-abbr) src;
       }
       {
         name = "done";
@@ -93,6 +83,22 @@ in {
       {
         name = "fzf-fish";
         inherit (fishPlugins.fzf-fish) src;
+      }
+      {
+        name = "fzf";
+        inherit (fishPlugins.fzf) src;
+      }
+      {
+        name = "async-prompt";
+        inherit (fishPlugins.async-prompt) src;
+      }
+      {
+        name = "puffer";
+        inherit (fishPlugins.puffer) src;
+      }
+      {
+        name = "pisces";
+        inherit (fishPlugins.pisces) src;
       }
     ];
   };
