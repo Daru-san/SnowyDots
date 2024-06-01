@@ -12,7 +12,6 @@
 
     # Shell integration
     shellIntegration = {
-      enableZshIntegration = true;
       enableBashIntegration = true;
       enableFishIntegration = true;
     };

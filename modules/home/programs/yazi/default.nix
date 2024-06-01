@@ -2,7 +2,6 @@
   imports = [./plugins.nix];
   programs.yazi = {
     enable = true;
-    enableZshIntegration = true;
     enableNushellIntegration = true;
     enableFishIntegration = true;
     initLua = ./init.lua;
