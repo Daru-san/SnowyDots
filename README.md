@@ -20,8 +20,8 @@ My functional, advanced NixOS configuration flake using <a href="https://github.
 
 > [Wallpapers](https://git.sr.ht/~darumaka/Wallpapers 'My wallpaper repo on sourcehut')
 
-![Image](https://i.imgur.com/4svyKaE.png 'I use Nix by the way')
-![Image](https://i.imgur.com/JnzkFhK.png 'Java > everything else')
+![Image](https://i.imgur.com/EIkdtlk.png 'I use Nix by the way')
+![Image](https://i.imgur.com/jxUHhj7.png 'Java > everything else')
 ![image](https://i.imgur.com/vGkkXsx.png 'Study with me?')
 ![image](https://i.imgur.com/Q0cOgNT.png 'Firefox looking amazing')
 ![Image](https://i.imgur.com/lMwQ1qy.png 'Read with me?')
@@ -31,15 +31,13 @@ My functional, advanced NixOS configuration flake using <a href="https://github.
 ### Aurorus (Acer Laptop)
 
 - Kernel: [Linux hardened](https://kernel.org/ 'Stock kernel') with custom tweaks
-- Shell: [zsh](http://zsh.sourceforge.net/ 'zsh') configured with [oh-my-posh](https://ohmyposh.dev/), [antidote](https://getantidote.github.io/) and [prezto](https://github.com/sorin-ionescu/prezto)
-- Editor: [SnowyVim](https://git.sr.ht/~darumaka/SnowyVim), my custom [Neovim](https://github.com/neovim/neovim) configuration made with [nixvim](https://github.com/nix-community/nixvim)
+- Shell: [Fish](https://github.com/fish-shell/fish-shell) with [Starship](https://github.com/starship/starship)
+- Editor: [SnowyVim](https://git.sr.ht/~darumaka/SnowyVim)
 - Window Manager: [Hyprland](https://github.com/hyprwm/Hyprland 'hyprland')
 - Launcher: [anyrun](https://github.com/Kirottu/anyrun 'anyrun')
 - Bar: [waybar](https://github.com/Alexays/Waybar 'waybar')
 
 ## Installing NixOS
-
-I use my own custom nixos iso to install NixOS on my systems, the flake is at [SnowISO](https://git.sr.ht/~darumaka/SnowISO) on sr.ht. It has plenty of useful tools and has sway as a desktop for graphical installs.
 
 ### Installation
 
@@ -119,6 +117,11 @@ home-manager switch --flake .#daru@Aurorus
 - [NixOS wiki](https://nixos.wiki 'nix-wiki')
 - [MyNixOS](https://mynixos.com 'Best nix resource')
 - [NixOS install guide](https://nixos.wiki/wiki/NixOS_Installation_Guide)
+
+### Really useful
+
+- [Nixvim github](https://github.com/nix-community/nixvim)
+- [Nix on devdocs](https://devdocs.io/nix/)
 
 ### Inspiration
 
