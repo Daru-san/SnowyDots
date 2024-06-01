@@ -22,7 +22,7 @@
         "$cmd_duration"
       ];
       java = {
-        format = ''[java:v((''$version)) ]($style)'';
+        format = ''[java:((''$version)) ]($style)'';
         symbol = "";
       };
       git_branch = {
