@@ -29,6 +29,12 @@
       settings.modal = true;
     };
 
+    thefuck = {
+      enable = true;
+      enableZshIntegration = true;
+      enableFishIntegration = true;
+    };
+
     # Find files fuzzily
     fzf = {
       enable = true;
