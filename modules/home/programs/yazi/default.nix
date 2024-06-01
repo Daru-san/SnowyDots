@@ -4,6 +4,7 @@
     enable = true;
     enableZshIntegration = true;
     enableNushellIntegration = true;
+    enableFishIntegration = true;
     initLua = ./init.lua;
     keymap = import ./keymap.nix;
     theme.flavor.use = "tokyo-night";

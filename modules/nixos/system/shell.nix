@@ -7,6 +7,10 @@
     autosuggestions = {enable = true;};
     enableBashCompletion = true;
   };
+  programs.fish = {
+    enable = true;
+    useBabelfish = true;
+  };
   programs = {
     command-not-found.enable = false;
     nix-index = {

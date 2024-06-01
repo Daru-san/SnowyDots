@@ -14,6 +14,7 @@
     shellIntegration = {
       enableZshIntegration = true;
       enableBashIntegration = true;
+      enableFishIntegration = true;
     };
 
     # Kitty font

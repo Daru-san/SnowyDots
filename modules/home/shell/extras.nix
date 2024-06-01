@@ -8,12 +8,14 @@
       extraOptions = ["--group-directories-first"];
       enableZshIntegration = true;
       enableBashIntegration = true;
+      enableFishIntegration = true;
     };
 
     # cd on steriods
     zoxide = {
       enable = true;
       enableZshIntegration = true;
+      enableFishIntegration = true;
       enableNushellIntegration = true;
       enableBashIntegration = true;
     };
@@ -32,6 +34,7 @@
       enable = true;
       enableZshIntegration = true;
       enableBashIntegration = true;
+      enableFishIntegration = true;
     };
 
     # Query nix databases when a command isn't found

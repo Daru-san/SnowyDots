@@ -5,7 +5,9 @@
     autosuggestion.enable = true;
     autocd = true;
     dotDir = ".config/zsh";
-
+    initExtra = ''
+      autoload zcalc
+    '';
     historySubstringSearch.enable = true;
     history = {
       size = 10000;
@@ -88,22 +90,9 @@
           "romkatv/zsh-bench kind:path"
         ]
         ++ (let
-          o = regex: "ohmyzsh/ohmyzsh path:plugins/${regex}";
-        in [(o "sudo") (o "extract") (o "cp") (o "adb kind:fpath") (o "vi-mode")]);
-    };
-
-    prezto = {
-      enable = true;
-      caseSensitive = true;
-      pmodules = [
-        "rsync"
-        "archive"
-        "completion"
-        "directory"
-        "git"
-        "utility"
-      ];
-      extraFunctions = ["zcalc"];
+          omz-plugins = ["sudo" "adb kind:fpath" "vi-mode"];
+        in
+          map (x: "ohmyzsh/ohmyzsh path:plugins/${x}") omz-plugins);
     };
   };
 }
