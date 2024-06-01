@@ -4,10 +4,17 @@ in {
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
-      fish_vi_key_bindings
-      set fish_greeting
+        fish_vi_key_bindings
+        set fish_greeting
       ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
     '';
+    functions = {
+      zcalc = ''${pkgs.zsh}/bin/zsh -c 'autoload zcalc && zcalc "$@"' zcalc "$argv"'';
+      cd-gitroot = ''cd "$(git rev-parse --show-toplevel)"'';
+      git-root = ''echo "Git root is $(git rev-parse --show-toplevel)"'';
+      zc = ''z "$1" && clear'';
+      zmv = ''${pkgs.zsh}/bin/zsh -c 'autoload zmv && zmv "$@"' zmv "$argv"'';
+    };
     shellAbbrs = {
       gcl = "git clone";
       gbr = "git branch";
@@ -87,10 +94,6 @@ in {
       {
         name = "fzf";
         inherit (fishPlugins.fzf) src;
-      }
-      {
-        name = "async-prompt";
-        inherit (fishPlugins.async-prompt) src;
       }
       {
         name = "puffer";
