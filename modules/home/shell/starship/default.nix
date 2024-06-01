@@ -6,17 +6,17 @@
     settings = {
       add_newline = false;
       format = lib.concatStrings [
-        "directory"
-        "git_branch"
-        "git_commit"
-        "git_state"
-        "git_metrics"
-        "git_status"
-        "java"
-        "nix_shell"
-        "sudo"
-        "character"
-        "shell"
+        "$directory"
+        "$git_branch"
+        "$git_commit"
+        "$git_state"
+        "$git_metrics"
+        "$git_status"
+        "$java"
+        "$nix_shell"
+        "$sudo"
+        "$character"
+        "$shell"
       ];
       right_format = lib.concatStrings [
         "$cmd_duration"
