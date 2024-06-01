@@ -14,6 +14,7 @@
       (with inputs; [
         snowpkgs.overlays.default
         snowyvim.overlays.default
+        trashy.overlays.default
       ])
       (with outputs.overlays; [
         stable-packages

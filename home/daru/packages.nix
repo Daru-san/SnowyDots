@@ -70,8 +70,8 @@
       lexido
       manix
       zaread
+      trashy
     ])
     (with pkgs.gnome; [dconf-editor gnome-clocks file-roller cheese])
-    [inputs.trashy.packages.${system}.trashy]
   ];
 }
