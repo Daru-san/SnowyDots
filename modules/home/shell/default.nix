@@ -7,7 +7,7 @@
   inputs,
   ...
 }: {
-  imports = [./zsh ./fish ./extras.nix ./tmux ./nushell ./oh-my-posh];
+  imports = [./zsh ./fish ./extras.nix ./tmux ./nushell ./starship];
 
   programs.bash = {
     enable = true;
