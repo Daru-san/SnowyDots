@@ -48,7 +48,7 @@
 
       sync_to_monitor = true;
       mouse_hide_wait = 20;
-      cursor_shape = "block";
+      cursor_shape = "beam";
       cursor_blink_interval = 1;
       cursor_stop_blinking_after = 15;
 
