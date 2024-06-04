@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   # Enable neovim and set as main editor
+  programs.nano.enable = false;
   programs.neovim = {
     enable = true;
     defaultEditor = true;

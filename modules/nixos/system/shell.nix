@@ -30,6 +30,7 @@
       wget2 = "${pkgs.wget2}/bin/wget2";
       gparted = "${pkgs.gparted}/bin/gparted";
       xhost = "${pkgs.xorg.xhost}/bin/xhost";
+      vim = "${pkgs.neovim}/bin/nvim";
     in {
       y = yazi;
       ll = "ls -l";
@@ -49,6 +50,9 @@
       bandwhich = "sudo bandwhich";
       usbtop = "sudo usbtop";
       systemctl = "sudo systemctl";
+      rv = vim;
+      rvi = vim;
+      rvim = vim;
       v = "vi";
       ".." = "cd ..";
       "..." = "cd ../..";
