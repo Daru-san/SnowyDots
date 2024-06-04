@@ -15,6 +15,10 @@ in {
       git-root = ''echo "Git root is $(git rev-parse --show-toplevel)"'';
       zc = ''z "$1" && clear'';
       zmv = ''${pkgs.zsh}/bin/zsh -c 'autoload zmv && zmv "$@"' zmv "$argv"'';
+      zy = ''
+        z $1
+        yazi
+      '';
     };
     shellAbbrs = {
       gcl = "git clone";
