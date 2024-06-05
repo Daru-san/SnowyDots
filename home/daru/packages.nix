@@ -33,6 +33,7 @@
       adbtuifm
       neovim
       libnotify
+      fd
       speedtest-cli
       hydra-check
       glow

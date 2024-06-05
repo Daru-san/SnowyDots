@@ -36,6 +36,16 @@
       enable = true;
       enableBashIntegration = true;
       enableFishIntegration = true;
+      defaultOptions = [
+        "--border"
+        "--highlight-line"
+        "--ansi"
+      ];
+      defaultCommand = "fd --type f";
+      historyWidgetOptions = [
+        "--sort"
+        "--exact"
+      ];
     };
 
     # Query nix databases when a command isn't found
