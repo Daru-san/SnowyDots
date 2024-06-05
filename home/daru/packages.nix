@@ -1,8 +1,6 @@
 # Home packages shared between users
 {
   pkgs,
-  system,
-  inputs,
   lib,
   ...
 }: {
