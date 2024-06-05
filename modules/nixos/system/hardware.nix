@@ -11,8 +11,8 @@
   '';
   services.undervolt = {
     enable = true;
-    tempAc = 71;
-    tempBat = 55;
+    tempAc = 77;
+    tempBat = 64;
     turbo = 0;
     useTimer = true;
     p1 = {
