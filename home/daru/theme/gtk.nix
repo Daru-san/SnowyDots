@@ -30,20 +30,7 @@ in {
 
     iconTheme = {
       name = "Flat-Remix-Blue-Dark";
-      package = pkgs.flat-remix-icon-theme.overrideAttrs (finalAttrs: {
-        version = "20240201";
-        src = pkgs.fetchFromGitHub {
-          owner = "daniruiz";
-          repo = "flat-remix";
-          rev = finalAttrs.version;
-          sha256 = "sha256-JpUa2nxZxrLTd80qdiGpob4Trq41ONthsPA4zFj/6nk=";
-        };
-        dontFixup = true;
-        postInstall = ''
-          symlinkParentIconThemes
-          recordPropagatedDependencies
-        '';
-      });
+      package = pkgs.flat-remix-icon-theme;
     };
 
     gtk3 = {inherit extraCss extraConfig;};
