@@ -5,7 +5,7 @@
     ./fonts.nix
     ./shell.nix
     ./kernel.nix
-#    ./laptop.nix
+    ./laptop.nix
     ./graphics.nix
     ./hardware.nix
     ./security.nix
