@@ -10,7 +10,7 @@
     ACTION=="add|change", KERNEL=="[sv]d[a-z]", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="none"
   '';
   services.undervolt = {
-    enable = true;
+    enable = false;
     tempAc = 77;
     tempBat = 64;
     turbo = 0;
