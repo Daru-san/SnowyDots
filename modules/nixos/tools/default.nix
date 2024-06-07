@@ -5,5 +5,6 @@
     ./virtualization.nix
     ./services.nix
     ./programs.nix
+    ./nix-index.nix
   ];
 }

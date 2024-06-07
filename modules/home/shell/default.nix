@@ -7,7 +7,7 @@
   inputs,
   ...
 }: {
-  imports = [./fish ./extras.nix ./starship];
+  imports = [./fish ./extras.nix ./starship ./nix-index];
 
   programs.bash = {
     enable = true;

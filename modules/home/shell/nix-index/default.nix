@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  imports = [inputs.nix-index-database.hmModules.default];
+  imports = [inputs.nix-index-database.hmModules.nix-index];
   nix-index-database = {
     comma.enable = true;
   };
