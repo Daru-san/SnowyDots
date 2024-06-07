@@ -140,6 +140,7 @@ in {
         easyeffects = getExe config.services.easyeffects.package;
         color-picker = getExe inputs.scripts.packages.${system}.color-picker;
         wlogout = getExe config.programs.wlogout.package;
+        waybar = getExe config.programs.waybar.package;
         pk = getExe' pkgs.busybox "pkill";
 
         # Screenshots
@@ -160,6 +161,9 @@ in {
       in [
         # Launch the launcher - anyrun
         (mkBindE "super" "space" "${pk} anyrun || ${anyrun}")
+
+        # Waybar
+        (mkBindE "superalt" "b" "${pk} waybar || ${waybar}")
 
         # Launch easyeffects
         (mkBindH "super" "a" easyeffects)
