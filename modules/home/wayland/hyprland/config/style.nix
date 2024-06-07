@@ -5,8 +5,11 @@
         gaps_in = 1;
         gaps_out = 3;
         border_size = 0;
-        cursor_inactive_timeout = 30;
         layout = "master";
+      };
+      binds = {
+        allow_workspace_cycles = true;
+        workspace_back_and_forth = true;
       };
       master = {
         new_is_master = false;
@@ -29,13 +32,17 @@
         dim_inactive = true;
         dim_strength = 0.34;
       };
+      cursor = {
+        inactive_timeout = 30;
+      };
       misc = {
         vrr = 1;
         animate_mouse_windowdragging = false;
         enable_swallow = true;
+        mouse_move_enables_dpms = true;
       };
       animations = {
-        enabled = false;
+        enabled = true;
         bezier = [
           "linear, 0.0, 0.0, 1.0, 1.0"
           "def, 0.05, 0.9, 0.1, 1.05"

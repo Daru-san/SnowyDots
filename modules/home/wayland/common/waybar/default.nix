@@ -34,7 +34,7 @@ in {
         layer = "top";
         position = "top";
         height = 16;
-        output = "HDMI-A-1";
+        output = "HDMI-A-2";
 
         modules-left = ["hyprland/workspaces" "custom/playerctl"];
         modules-center = ["clock" "custom/notification"];
