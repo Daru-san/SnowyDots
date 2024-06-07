@@ -8,5 +8,6 @@
     ./themes
     ./programs
     ./languages
+    ./misc
   ];
 }
