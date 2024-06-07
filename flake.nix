@@ -17,6 +17,10 @@
     spicetify-nix.url = "github:Daru-san/spicetify-nix";
     trashy.url = "github:Daru-san/trashy";
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # My own repos
     snowyvim.url = "sourcehut:~darumaka/SnowyVim";
@@ -36,7 +40,7 @@
     hyprland-contrib = {
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
-     };
+    };
     hycov = {
       url = "github:DreamMaoMao/hycov";
       inputs.hyprland.follows = "hyprland";
@@ -58,6 +62,8 @@
       system = import ./modules/nixos;
       specialisations = import ./systems/specialise;
       overlays = import ./overlays;
+      systemShared = [inputs.nix-index-database.nixosModules.default];
+      homeShared = [inputs.nix-index-database.hmModules.default];
     };
     desktop = {
       hostName = "Articuno";
@@ -82,7 +88,7 @@
         };
         modules = [
           laptop.config
-          modules.system
+          (with modules; system systemShared)
           {
             nixpkgs.hostPlatform = laptop.system;
             system = {inherit (laptop) stateVersion;};
@@ -98,7 +104,7 @@
         };
         modules = [
           desktop.config
-          modules.system
+          (with modules; system systemShared)
           {
             nixpkgs.hostPlatform = desktop.system;
             system = {inherit (desktop) stateVersion;};
@@ -118,7 +124,7 @@
         };
         modules = [
           ./home/daru
-          modules.home
+          (with modules; home homeShared)
           {
             home = {inherit (laptop) stateVersion;};
             wayland.enable = true;
@@ -133,7 +139,7 @@
         };
         modules = [
           ./home/daru
-          modules.home
+          (with modules; home homeShared)
           {
             home = {inherit (desktop) stateVersion;};
             wayland.enable = true;

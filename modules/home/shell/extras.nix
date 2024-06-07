@@ -47,12 +47,5 @@
         "--exact"
       ];
     };
-
-    # Query nix databases when a command isn't found
-    nix-index = {
-      enable = true;
-      enableBashIntegration = true;
-      enableFishIntegration = true;
-    };
   };
 }
