@@ -62,8 +62,6 @@
       system = import ./modules/nixos;
       specialisations = import ./systems/specialise;
       overlays = import ./overlays;
-      systemShared = [inputs.nix-index-database.nixosModules.default];
-      homeShared = [inputs.nix-index-database.hmModules.default];
     };
     desktop = {
       hostName = "Articuno";
@@ -88,7 +86,7 @@
         };
         modules = [
           laptop.config
-          (with modules; system systemShared)
+          modules.system
           {
             nixpkgs.hostPlatform = laptop.system;
             system = {inherit (laptop) stateVersion;};
@@ -104,7 +102,7 @@
         };
         modules = [
           desktop.config
-          (with modules; system systemShared)
+          modules.system
           {
             nixpkgs.hostPlatform = desktop.system;
             system = {inherit (desktop) stateVersion;};
@@ -124,7 +122,7 @@
         };
         modules = [
           ./home/daru
-          (with modules; home homeShared)
+          modules.home
           {
             home = {inherit (laptop) stateVersion;};
             wayland.enable = true;
@@ -139,7 +137,7 @@
         };
         modules = [
           ./home/daru
-          (with modules; home homeShared)
+          modules.home
           {
             home = {inherit (desktop) stateVersion;};
             wayland.enable = true;
