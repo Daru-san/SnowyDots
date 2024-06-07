@@ -17,7 +17,7 @@
   };
 
   # Enable command-not-found
-  programs.command-not-found.enable = false;
+  programs.command-not-found.enable = true;
 
   # Global shell aliases
   home.shellAliases = let

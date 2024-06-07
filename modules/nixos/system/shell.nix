@@ -15,9 +15,9 @@
     '';
   };
   programs = {
-    command-not-found.enable = false;
+    command-not-found.enable = true;
     nix-index = {
-      enable = true;
+      enable = false;
       enableFishIntegration = true;
       enableZshIntegration = true;
       enableBashIntegration = true;

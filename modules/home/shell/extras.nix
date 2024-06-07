@@ -50,7 +50,7 @@
 
     # Query nix databases when a command isn't found
     nix-index = {
-      enable = true;
+      enable = false;
       enableBashIntegration = true;
       enableFishIntegration = true;
     };
