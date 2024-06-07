@@ -16,9 +16,6 @@
     historyControl = ["erasedups" "ignorespace"];
   };
 
-  # Enable command-not-found
-  programs.command-not-found.enable = false;
-
   # Global shell aliases
   home.shellAliases = let
     bat = "${config.programs.bat.package}/bin/bat";

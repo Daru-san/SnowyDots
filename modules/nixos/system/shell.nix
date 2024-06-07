@@ -14,15 +14,6 @@
       ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
     '';
   };
-  programs = {
-    command-not-found.enable = false;
-    nix-index = {
-      enable = true;
-      enableFishIntegration = true;
-      enableZshIntegration = true;
-      enableBashIntegration = true;
-    };
-  };
   environment = {
     pathsToLink = ["/share/zsh" "/share/fish"];
     shellAliases = let
