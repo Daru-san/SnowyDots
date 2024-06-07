@@ -14,6 +14,7 @@
       userChrome = builtins.readFile ./userChrome.css;
       extensions = with inputs.firefox-addons.packages.${system}; [
         disable-javascript
+        clearurls
         enhanced-github
         github-file-icons
         gitako-github-file-tree
@@ -28,6 +29,7 @@
         tridactyl
         nighttab
         sidebery
+        buster-captcha-solver
       ];
 
       bookmarks = [
