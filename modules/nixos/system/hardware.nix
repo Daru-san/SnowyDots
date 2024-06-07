@@ -2,6 +2,7 @@
   environment.systemPackages = with pkgs; [
     linuxPackages.cpupower
   ];
+  services.fwupd.enable = true;
   programs.tuxclocker.enable = true;
   services = {
     fstrim.enable = true;
