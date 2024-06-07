@@ -18,24 +18,24 @@ My functional, advanced NixOS configuration flake using <a href="https://github.
 
 ### Hyprland
 
-> [Wallpapers](https://git.sr.ht/~darumaka/Wallpapers 'My wallpaper repo on sourcehut')
+> [Wallpapers](https://git.sr.ht/~darumaka/Wallpapers "My wallpaper repo on sourcehut")
 
-![Image](https://i.imgur.com/EIkdtlk.png 'I use Nix by the way')
-![Image](https://i.imgur.com/jxUHhj7.png 'Java > everything else')
-![image](https://i.imgur.com/vGkkXsx.png 'Study with me?')
-![image](https://i.imgur.com/Q0cOgNT.png 'Firefox looking amazing')
-![Image](https://i.imgur.com/lMwQ1qy.png 'Read with me?')
+![Image](https://i.imgur.com/JFG3WXL.png "I use Nix by the way")
+![Image](https://i.imgur.com/jxUHhj7.png "Java > everything else")
+![image](https://i.imgur.com/vGkkXsx.png "Study with me?")
+![image](https://i.imgur.com/MJFsa7E.png "Firefox looking amazing")
+![Image](https://i.imgur.com/lMwQ1qy.png "Read with me?")
 
 ## Systems
 
 ### Aurorus (Acer Laptop)
 
-- Kernel: [Linux hardened](https://kernel.org/ 'Stock kernel') with custom tweaks
+- Kernel: [Linux hardened](https://kernel.org/ "Stock kernel") with custom tweaks
 - Shell: [Fish](https://github.com/fish-shell/fish-shell) with [Starship](https://github.com/starship/starship)
 - Editor: [SnowyVim](https://git.sr.ht/~darumaka/SnowyVim)
-- Window Manager: [Hyprland](https://github.com/hyprwm/Hyprland 'hyprland')
-- Launcher: [anyrun](https://github.com/Kirottu/anyrun 'anyrun')
-- Bar: [waybar](https://github.com/Alexays/Waybar 'waybar')
+- Window Manager: [Hyprland](https://github.com/hyprwm/Hyprland "hyprland")
+- Launcher: [anyrun](https://github.com/Kirottu/anyrun "anyrun")
+- Bar: [waybar](https://github.com/Alexays/Waybar "waybar")
 
 ## Installing NixOS
 
@@ -112,10 +112,10 @@ home-manager switch --flake .#daru@Aurorus
 
 ### Nix and NixOS information
 
-- [NixOS Manual](https://nixos.org/manual/nixos/unstable/ 'nix')
+- [NixOS Manual](https://nixos.org/manual/nixos/unstable/ "nix")
 - [Nix best practices](https://nix.dev/guides/best-practices.html)
-- [NixOS wiki](https://nixos.wiki 'nix-wiki')
-- [MyNixOS](https://mynixos.com 'Best nix resource')
+- [NixOS wiki](https://nixos.wiki "nix-wiki")
+- [MyNixOS](https://mynixos.com "Best nix resource")
 - [NixOS install guide](https://nixos.wiki/wiki/NixOS_Installation_Guide)
 
 ### Really useful
@@ -125,9 +125,9 @@ home-manager switch --flake .#daru@Aurorus
 
 ### Inspiration
 
-- [fufexan/dotfiles](https://github.com/fufexan/dotfiles/ 'fufexan dots')
-- [misterio's dotfiles](https://git.sr.ht/~misterio/nix-config 'dots')
-- [Misterio77's nix-starter-configs](https://github.com/Misterio77/nix-starter-configs 'nix-starter-configs')
+- [fufexan/dotfiles](https://github.com/fufexan/dotfiles/ "fufexan dots")
+- [misterio's dotfiles](https://git.sr.ht/~misterio/nix-config "dots")
+- [Misterio77's nix-starter-configs](https://github.com/Misterio77/nix-starter-configs "nix-starter-configs")
 
 ### On hardening Linux and NixOS and general security
 
