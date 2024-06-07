@@ -72,10 +72,10 @@ in {
       nsu = "nh-system-upgrade";
       nfu = "nh-full-upgrade";
       nfp = "nix-flake-push";
-      nos = "nh os switch -- -j 8 --keep-going --cores 6";
-      nhs = "nh home switch -- -j 8 --keep-going --cores 6";
+      nos = "nh os switch -- -j 12 --keep-going --cores 12";
+      nhs = "nh home switch -- -j 12 --keep-going --cores 12";
       nfs = "nh-full-switch";
-      nob = "nh os boot -- -k8 --keep-going --cores 6";
+      nob = "nh os boot -- -j 12 --keep-going --cores 12";
       su = "sudo";
     };
     plugins = [
