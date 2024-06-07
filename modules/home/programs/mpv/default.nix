@@ -7,7 +7,7 @@
       vo = "gpu";
       taskbar-progress = false;
       keep-open = "always";
-      # profile = "gpu-hq";
+      profile = "gpu-hq";
       force-window = true;
       save-position-on-quit = true;
       deband = false;
