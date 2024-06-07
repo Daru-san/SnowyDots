@@ -1,4 +1,7 @@
-{
+{pkgs, ...}: {
+  environment.systemPackages = with pkgs; [
+    linuxPackages.cpupower
+  ];
   programs.tuxclocker.enable = true;
   services = {
     fstrim.enable = true;
