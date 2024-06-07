@@ -22,6 +22,12 @@
       blanket
       mixxc
       kdePackages.kalzium
+      (retroarch.override {
+        cores = with libretro; [
+          citra
+          melonds
+        ];
+      })
 
       # CLI
       ouch
