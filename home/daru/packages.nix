@@ -21,9 +21,11 @@
       prismlauncher
       blanket
       mixxc
+      kdePackages.kalzium
 
       # CLI
       ouch
+      element
       niv
       tree
       tgpt
