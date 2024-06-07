@@ -28,11 +28,15 @@
     };
 
     # Hyprland stuff
-    hyprland.url = "github:hyprwm/Hyprland/v0.40.0";
+    hyprland = {
+      type = "git";
+      url = "https://github.com/hyprwm/Hyprland";
+      submodules = true;
+    };
     hyprland-contrib = {
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
+     };
     hycov = {
       url = "github:DreamMaoMao/hycov";
       inputs.hyprland.follows = "hyprland";
@@ -54,6 +58,12 @@
       system = import ./modules/nixos;
       specialisations = import ./systems/specialise;
       overlays = import ./overlays;
+    };
+    desktop = {
+      hostName = "Articuno";
+      config = ./systems/desktop;
+      system = "x86_64-linux";
+      stateVersion = "24.11";
     };
     laptop = {
       hostName = "Aurorus";
@@ -81,6 +91,22 @@
           }
         ];
       };
+      ${desktop.hostName} = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs outputs;
+          inherit (desktop) system;
+        };
+        modules = [
+          desktop.config
+          modules.system
+          {
+            nixpkgs.hostPlatform = desktop.system;
+            system = {inherit (desktop) stateVersion;};
+            networking = {inherit (desktop) hostName;};
+            wayland.enable = true;
+          }
+        ];
+      };
     };
 
     homeConfigurations = {
@@ -95,6 +121,21 @@
           modules.home
           {
             home = {inherit (laptop) stateVersion;};
+            wayland.enable = true;
+          }
+        ];
+      };
+      "daru@${desktop.hostName}" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${desktop.system};
+        extraSpecialArgs = {
+          inherit inputs outputs;
+          inherit (desktop) system;
+        };
+        modules = [
+          ./home/daru
+          modules.home
+          {
+            home = {inherit (desktop) stateVersion;};
             wayland.enable = true;
           }
         ];
