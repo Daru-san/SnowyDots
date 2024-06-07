@@ -6,10 +6,8 @@
   inherit (lib) mkEnableOption mkIf;
   cfg = config.system.laptop;
 in {
-  options = {
-    system.laptop = mkEnableOption "Enable laptop configuration";
-  };
-  config = mkIf cfg.enable {
+  options.system.laptop = mkEnableOption "Enable laptop configuration";
+  config = mkIf cfg {
     services.upower = {
       enable = true;
       percentageCritical = 20;
