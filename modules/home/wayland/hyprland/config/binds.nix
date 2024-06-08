@@ -60,10 +60,12 @@ in {
         btop = getExe config.programs.btop.package;
         copyq = getExe pkgs.copyq;
         swayosd = getExe' config.services.swayosd.package "swayosd-client";
+        g4music = getExe pkgs.g4music;
       in [
         # Launching programs
         (mkBindH "super" "e" file-manager)
         (mkBindH "super" "b" browser)
+        (mkBindH "altshift" "m" g4music)
 
         # Terminal stuff
         (mkBindE "super" "return" terminal)
