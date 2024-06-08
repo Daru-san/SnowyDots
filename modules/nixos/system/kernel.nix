@@ -1,5 +1,6 @@
-{
+{pkgs, ...}: {
   boot = {
+    kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [
       "cgroup_no_v1=all"
       "systemd.unified_cgroup_hierarchy=yes"

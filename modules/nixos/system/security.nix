@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  boot.kernelPackages = pkgs.linuxPackages_6_9_hardened;
+  # boot.kernelPackages = pkgs.linuxPackages_6_9_hardened;
   # Start the ssh agent at boot time
   programs.ssh.startAgent = true;
 
