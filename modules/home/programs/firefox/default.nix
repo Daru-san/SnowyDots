@@ -169,7 +169,7 @@
           };
 
           "ArchLinux Wiki" = {
-            urls = [{template = "wiki.archlinux.org/index.php?search={searchTerms}";}];
+            urls = [{template = "https://wiki.archlinux.org/index.php?search={searchTerms}";}];
             iconUpdateURL = "https://wiki.archlinux.org/favicon.ico";
             updateInterval = 24 * 60 * 60 * 1000;
             definedAliases = ["@archwiki" "@arch" "@aw"];
