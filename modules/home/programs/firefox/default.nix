@@ -138,18 +138,21 @@
           "Amazon.com" = {inherit (disabled) metaData;};
           "Wikipedia (en)" = {inherit (disabled) metaData;};
           "DuckDuckGo" = {metaData.alias = "@dg";};
+
           "Brave Search" = {
             urls = [{template = "https://search.brave.com/search?q={searchTerms}";}];
             iconUpdateURL = "https://brave.com/static-assets/images/brave-logo-sans-text.svg";
             updateInterval = 24 * 60 * 60 * 1000;
             definedAliases = ["@br" "@b" "@brave"];
           };
+
           "StartPage" = {
             urls = [{template = "https://www.startpage.com/sp/search?query={searchTerms}";}];
             iconUpdateURL = "https://www.startpage.com/sp/cdn/favicons/favicon-gradient.ico";
             updateInterval = 24 * 60 * 60 * 1000;
             definedAliases = ["@sp" "@s" "@start"];
           };
+
           "Reddit" = {
             urls = [{template = "https://www.reddit.com/search/?q={searchTerms}";}];
             iconUpdateURL = "https://www.redditstatic.com/shreddit/assets/favicon/favicon.ico";
@@ -164,18 +167,27 @@
             definedAliases = ["@gh" "@g" "@git"];
           };
 
+          "ArchLinux Wiki" = {
+            urls = [{template = "wiki.archlinux.org/index.php?search={searchTerms}";}];
+            iconUpdateURL = "https://wiki.archlinux.org/favicon.ico";
+            updateInterval = 24 * 60 * 60 * 1000;
+            definedAliases = ["@archwiki" "@arch" "@aw"];
+          };
+
           "NixOS Wiki" = {
             urls = [{template = "https://nixos.wiki/index.php?search={searchTerms}";}];
             iconUpdateURL = "https://nixos.wiki/favicon.png";
             updateInterval = 24 * 60 * 60 * 1000;
             definedAliases = ["@nw" "@nixwiki"];
           };
+
           "Noogle" = {
             urls = [{template = "https://noogle.dev/q?term={searchTerms}";}];
             iconUpdateUrl = "https://noogle.dev/favicon.png";
             updateInterval = 24 * 60 * 60 * 1000;
             definedAliases = ["@noogle" "@ng"];
           };
+
           "Nix Packages" = {
             urls = [
               {
@@ -199,6 +211,7 @@
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = ["@np" "@nixpkgs"];
           };
+
           "Nix Options" = {
             urls = [
               {
