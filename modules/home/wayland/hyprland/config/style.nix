@@ -44,7 +44,7 @@
         allow_session_lock_restore = true;
       };
       animations = {
-        enabled = true;
+        enabled = false;
         bezier = [
           "linear, 0.0, 0.0, 1.0, 1.0"
           "def, 0.05, 0.9, 0.1, 1.05"
@@ -57,7 +57,7 @@
           "easeInOutCirc, 0.85, 0, 0.15, 1"
         ];
         animation = [
-          "workspaces, 1, 8, myBezier, slidefadevert"
+          "workspaces, 1, 8, myBezier, slidefade"
           "borderangle, 1, 100, linear, loop"
           "windowsOut, 1, 5, easeInOutBack, popin 80%"
           "windowsIn, 1 ,8, myBezier, popin 20%"
