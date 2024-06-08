@@ -43,7 +43,7 @@
           (wf 3 "libreoffice")
           (wf 4 "org.gnome.Nautilus")
 
-          (wf 5 "io.bassi.Amberol")
+          (wf 5 "com.github.neithern.g4music")
 
           (g "mpv")
           (wf 6 "mpv")

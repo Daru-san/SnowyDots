@@ -20,6 +20,7 @@
       iwgtk
       prismlauncher
       blanket
+      g4music
       mixxc
       kdePackages.kalzium
       (retroarch.override {
