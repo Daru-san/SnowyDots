@@ -124,6 +124,7 @@
           "Reddit"
           "My NixOS"
           "Noogle"
+          "ArchLinux Wiki"
           "NixOS Wiki"
           "Nix Packages"
           "Nix Options"
