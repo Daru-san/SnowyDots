@@ -7,6 +7,7 @@
     "/" = {
       device = "/dev/disk/by-uuid/30ccfaac-4d6a-4c46-82f6-074a297dddd1";
       fsType = "ext4";
+      options = ["noatime" "nodiratime"];
     };
 
     "/nix" = {
