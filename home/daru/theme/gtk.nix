@@ -29,8 +29,8 @@ in {
     };
 
     iconTheme = {
-      name = "Flat-Remix-Blue-Dark";
-      package = pkgs.flat-remix-icon-theme;
+      name = "Papirus-dark";
+      package = pkgs.papirus-icon-theme;
     };
 
     gtk3 = {inherit extraCss extraConfig;};
