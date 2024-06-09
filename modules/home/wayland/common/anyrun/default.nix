@@ -17,8 +17,8 @@ in {
         dictionary
       ];
 
-      width.fraction = 0.3;
-      y.absolute = 70;
+      width.fraction = 0.7;
+      y.absolute = 310;
       hidePluginInfo = true;
       closeOnClick = true;
     };
