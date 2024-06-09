@@ -2,9 +2,10 @@
   # boot.kernelPackages = pkgs.linuxPackages_6_9_hardened;
   # Start the ssh agent at boot time
   programs.ssh.startAgent = true;
-
+  programs.seahorse.enable = true;
   services = {
     # Completely lock the system after suspend or reboot
+    gnome.gnome-keyring.enable = true;
     physlock = {
       enable = true;
       allowAnyUser = true;
@@ -18,7 +19,7 @@
     protectKernelImage = false;
     lockKernelModules = false;
     forcePageTableIsolation = true;
-
+    pam.services.login.enableGnomeKeyring = true;
     apparmor = {
       enable = true;
       killUnconfinedConfinables = true;

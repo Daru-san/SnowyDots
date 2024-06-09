@@ -45,6 +45,8 @@
       hydra-check
       glow
       gping
+      obexftp
+      obexfs
       hut
       unstable.nvtopPackages.intel
       sysz

@@ -16,8 +16,8 @@ in {
       file-roller.enable = true;
     };
     services.gnome = {
-      gnome-keyring.enable = true;
       sushi.enable = true;
+      gnome-user-share.enable = true;
     };
     services.greetd = {
       package = pkgs.greetd;
