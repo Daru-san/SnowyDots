@@ -1,14 +1,20 @@
 {
   config,
   pkgs,
+  lib,
   ...
-}: {
+}: let
+  inherit (lib) getExe;
+  kitty = getExe config.programs.kitty.package;
+in {
   wayland.windowManager.hyprland.settings = {
     exec-once = [
-      "[workspace name:1] ${config.programs.kitty.package}/bin/kitty -T Terminal"
-      "[workspace name:2] ${config.programs.kitty.package}/bin/kitty -T btop --hold ${config.programs.btop.package}/bin/btop"
-      "${config.programs.waybar.package}/bin/waybar"
-      "${pkgs.copyq}/bin/copyq"
+      "[workspace name:1] ${kitty} -T Terminal"
+      "[workspace name:2] ${kitty} -T btop --hold ${getExe config.programs.btop.package}"
+      "[workspace name:4;group] ${kitty} --hold ${getExe pkgs.vnstat}"
+      "[workspace name:4,group] ${kitty} --hold ${getExe pkgs.bandwhich}"
+      (getExe config.programs.waybar.package)
+      (getExe pkgs.copyq)
     ];
     exec = [
       "systemctl --user restart kanshi.service"
