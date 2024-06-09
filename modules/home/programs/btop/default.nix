@@ -45,7 +45,7 @@
       show_cpu_freq = true;
 
       # Disks and memeory
-      disks_filter = "exclude=/boot /var/log /etc /var /tmp /";
+      disks_filter = "exclude=/boot /var/log /etc /var /tmp";
       mem_graphs = true;
       mem_below_net = true;
       fs_arc_cached = true;
