@@ -22,7 +22,7 @@ in {
       file-manager = getExe pkgs.gnome.nautilus;
       shotman = getExe pkgs.shotman;
       editor = "vi";
-      gtklock = getExe pkgs.gtklock;
+      hyprlock = getExe config.programs.hyprlock.package;
       hdrop = getExe pkgs.unstable.hdrop;
       copyq = getExe config.services.copyq.package;
       wlogout = getExe config.programs.wlogout.package;
@@ -46,7 +46,7 @@ in {
       "${mod}+f" = "fullscreen";
 
       #Lock screen
-      "${mod}+l" = "exec ${gtklock}";
+      "${mod}+l" = "exec ${hyprlock}";
 
       #Clipboard menu
       "${mod}+shift+v" = "exec ${copyq} menu";

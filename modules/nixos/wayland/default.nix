@@ -25,6 +25,7 @@ in {
     };
     programs = {
       dconf.enable = true;
+      hyprlock.enable = true;
       file-roller.enable = true;
     };
     services.gnome = {
