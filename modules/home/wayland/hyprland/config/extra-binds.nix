@@ -37,8 +37,8 @@ in {
         "SUPER,TAB,workspace, m+1"
         "SUPERSHIFT,TAB,workspace, m-1"
 
-        "super,o,cyclenext"
-        "supershift,o,changegroupactive"
+        "supershift,o,cyclenext"
+        "super,o,changegroupactive"
 
         # "ALT,tab,hycov:toggleoverview"
         # "ALTSHIFT,tab,hycov:toggleoverview,forceall"

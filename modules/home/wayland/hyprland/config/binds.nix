@@ -19,21 +19,6 @@
     fi
     hyprctl notify -1 6000 0 "Idle inhibiting is now ''${inhibited}"
   '');
-  focusmode = pkgs.writeShellScriptBin "focusmode" ''
-    HYPRFOCUSMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
-    if [ "$HYPRFOCUSMODE" = 1 ] ; then
-      hyprctl --batch "\
-        keyword animations:enabled 0;\
-        keyword decoration:drop_shadow 0;\
-        keyword decoration:blur:enabled 0;\
-        keyword general:gaps_in 0;\
-        keyword general:gaps_out 0;\
-        keyword general:border_size 1;\
-        keyword decoration:rounding 0"
-      exit
-    fi
-    hyprctl reload
-  '';
 in {
   imports = [./extra-binds.nix];
   wayland.windowManager.hyprland.settings = let
@@ -84,9 +69,6 @@ in {
         (mkBind "super" "v" "togglefloating")
         (mkBindE "supershift" "x" "hyprctl reload")
 
-        # Toggle focus mode
-        (mkBindE "supershift" "F12" (getExe focusmode))
-
         #Lock screen
         (mkBindE "super" "l" "${hyprlock} --immediate")
 
@@ -97,7 +79,7 @@ in {
         (mkBindE "super" "w" "hyprctl notify -1 2000 0 `hyprctl activeworkspace | head -n 1`")
 
         # Prevent idling
-        (mkBindE "superalt" "F4" idle-inhibit)
+        (mkBindE "super" "grave" idle-inhibit)
       ];
 
       bindle = let
@@ -115,9 +97,9 @@ in {
         (mkBindSE "XF86AudioLowerVolume" lower-volume)
         (mkBindSE "XF86AudioMute" mute)
 
-        (mkBindE "alt" "F8" raise-volume)
-        (mkBindE "alt" "F6" lower-volume)
-        (mkBindE "alt" "F7" mute)
+        (mkBindE "shift" "F8" raise-volume)
+        (mkBindE "shift" "F6" lower-volume)
+        (mkBindE "shift" "F7" mute)
       ];
 
       bindl = let
@@ -132,10 +114,10 @@ in {
         (mkBindSE "XF86AudioPlay" toggle-play)
         (mkBindSE "XF86AudioStop" stop)
 
-        (mkBindE "alt" "F12" next)
-        (mkBindE "alt" "F9" prev)
-        (mkBindE "alt" "F10" toggle-play)
-        (mkBindE "alt" "F11" stop)
+        (mkBindE "shift" "F12" next)
+        (mkBindE "shift" "F9" prev)
+        (mkBindE "shift" "F10" toggle-play)
+        (mkBindE "shift" "F11" stop)
       ];
 
       bindr = let
