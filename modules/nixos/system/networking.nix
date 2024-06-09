@@ -1,25 +1,13 @@
 {
   networking = {
     nameservers = ["1.1.1.1" "1.0.0.1"];
-    dhcpcd.enable = false;
+    dhcpcd.extraConfig = "nohook resolv.conf";
   };
   networking = {
-    wireless.iwd = {
+    networkmanager = {
       enable = true;
-      settings = {
-        General = {
-          EnableNetworkConfiguration = true;
-        };
-        Network = {
-          RoutePriorityOffset = 300;
-          EnableIPv6 = false;
-        };
-        Settings = {
-          AutoConnect = true;
-          Hidden = true;
-          AlwaysRandomizeAddress = true;
-        };
-      };
+      dns = "none";
+      wifi.macAddress = "random";
     };
   };
 
