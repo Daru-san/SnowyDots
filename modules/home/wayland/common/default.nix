@@ -29,7 +29,6 @@ in {
       wlsunset.enable = true;
     };
     programs = {
-      ags.enable = true;
       wlogout.enable = true;
       hyprlock.enable = true;
       fuzzel.enable = true;
