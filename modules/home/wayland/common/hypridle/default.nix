@@ -6,7 +6,6 @@
 }: let
   inherit (lib) getExe getExe';
   hyprlock = getExe config.programs.hyprlock.package;
-  hyprctl = getExe' config.wayland.windowManager.hyprland.package "hyprctl";
   lock_cmd = "pidof hyprlock || ${hyprlock}";
   pausemusic = getExe (pkgs.writeShellScriptBin "music-pause" ''
     ${getExe' config.services.playerctld.package "playerctl"} pause
@@ -17,13 +16,13 @@ in {
       general = {
         before_sleep_cmd = "${pausemusic} && ${hyprlock}";
         inherit lock_cmd;
-        after_sleep_cmd = "${hyprctl} dispatch dpms on";
+        after_sleep_cmd = "swaymsg output HDMI-A-2 dpms on";
       };
       listener = [
         {
           timeout = 1200;
-          on-timeout = "${hyprctl} dispatch dpms off";
-          on-resume = "${hyprctl} dispatch dpms on";
+          on-timeout = "swaymsg output HDMI-A-2 dpms off";
+          on-resume = "swaymsg output HDMI-A-2 dpms on";
         }
         {
           timeout = 1800;
