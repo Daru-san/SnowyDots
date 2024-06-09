@@ -1,9 +1,6 @@
 {
   networking = {
     nameservers = ["1.1.1.1" "1.0.0.1"];
-    dhcpcd.enable = false;
-  };
-  networking = {
     wireless.iwd = {
       enable = true;
       settings = {
