@@ -22,7 +22,7 @@
         "$cmd_duration"
       ];
       java = {
-        format = ''[java:((''$version)) ]($style)'';
+        format = ''[java:(($version)) ]($style)'';
         symbol = "";
       };
       git_branch = {
@@ -36,10 +36,10 @@
       package.disabled = true;
 
       nix_shell = {
-        impure_msg = "[impure shell](bold red)";
-        pure_msg = "[pure shell](bold green)";
-        unknown_msg = "[unknown shell](bold yellow)";
-        format = "[nix-shell:($state( \($name\))](bold blue) ";
+        impure_msg = "[impure](bold red)";
+        pure_msg = "[pure](bold green)";
+        unknown_msg = "[unknown](bold yellow)";
+        format = "[nix-shell:($state(( $name))) ](bold blue) ";
       };
     };
   };
