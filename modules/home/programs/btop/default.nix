@@ -46,11 +46,11 @@
 
       # Disks and memeory
       disks_filter = "exclude=/boot /var/log /etc /var /tmp";
-      mem_graphs = true;
+      mem_graphs = false;
       mem_below_net = true;
       fs_arc_cached = true;
       show_swap = true;
-      swap_disk = true;
+      swap_disk = false;
       show_disks = true;
       only_physical = true;
       use_fstab = true;
