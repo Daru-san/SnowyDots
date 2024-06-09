@@ -9,11 +9,11 @@
       enable = true;
       wifi = {
         macAddress = "random";
-        # backend = "iwd";
+        backend = "iwd";
       };
     };
     wireless.iwd = {
-      enable = false;
+      enable = true;
       settings.Settings.AutoConnect = false;
     };
   };
