@@ -23,6 +23,7 @@
       g4music
       mixxc
       kdePackages.kalzium
+      ryujinx
       (retroarch.override {
         cores = with libretro; [
           citra
