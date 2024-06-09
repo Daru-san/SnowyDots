@@ -11,8 +11,8 @@ in {
   imports = [
     ./ags
     ./kanshi
-    ./anyrun
     ./hypridle
+    ./hyprlock
     ./swaync
     ./swayosd
     ./waybar
@@ -31,6 +31,8 @@ in {
     programs = {
       ags.enable = true;
       wlogout.enable = true;
+      hyprlock.enable = true;
+      fuzzel.enable = true;
       waybar.enable = true;
     };
     home.packages = [pkgs.wl-clipboard-rs];
