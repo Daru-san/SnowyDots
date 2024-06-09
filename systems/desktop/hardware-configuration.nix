@@ -1,6 +1,7 @@
 {lib, ...}: {
   boot = {
     kernelParams = ["intel_pstate=passive"];
+    kernelModules = ["coretemp"];
     initrd.availableKernelModules = ["xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "sr_mod" "rtsx_usb_sdmmc"];
   };
   fileSystems = {
@@ -34,5 +35,6 @@
   hardware = {
     cpu.intel.updateMicrocode = true;
     enableRedistributableFirmware = true;
+    enableAllFirmware = true;
   };
 }
