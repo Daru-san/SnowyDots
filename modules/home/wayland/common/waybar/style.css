@@ -49,6 +49,8 @@ window#waybar {
 #network,
 #battery,
 #bluetooth,
+#keyboard-state,
+#pulseaudio-slider slider,
 #pulseaudio-slider slider,
 #pulseaudio-slider trough,
 #pulseaudio-slider,
@@ -68,7 +70,8 @@ window#waybar {
 #pulseaudio-slider,
 #idle_inhibitor,
 #custom-playerctl,
-#bluetooth {
+#bluetooth,
+#keyboard-state {
   background-color: shade(@base00, 1.5);
   font-weight: bold;
   margin: 0px 0px;
@@ -79,7 +82,8 @@ window#waybar {
 /**/
 
 /* Custom */
-#bluetooth {
+#bluetooth,
+#keyboard-state {
   border-radius: 0px;
   padding-left: 5px;
   margin-left: 0;

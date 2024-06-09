@@ -41,7 +41,8 @@ in {
         modules-right = [
           "idle_inhibitor"
           "network"
-          "bluetooth"
+          # "bluetooth"
+          "keyboard-state"
           "battery"
           "pulseaudio"
           "pulseaudio/slider"
@@ -51,6 +52,15 @@ in {
           format = "{name}";
           on-scroll-up = "hyprctl dispatch workspace e+1";
           on-scroll-down = "hyprctl dispatch workspace e-1";
+        };
+        keyboard-state = {
+          numlock = false;
+          capslock = true;
+          format = "{name} {icon}";
+          format-icons = {
+            locked = "";
+            unlocked = "";
+          };
         };
         tray = {
           spacing = 10;
@@ -141,8 +151,8 @@ in {
           orientation = "horizontal";
         };
         network = {
-          format-wifi = "󰖩";
-          format-ethernet = "󰈀";
+          format-wifi = "󰖩 {essid}";
+          format-ethernet = "󰈀 Ethernet";
           tooltip-format = "{essid}({signalStrength}%)";
           format-linked = "{ifname} (No IP)";
           format-disconnected = "󰖪";
