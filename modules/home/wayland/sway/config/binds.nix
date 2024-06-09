@@ -32,7 +32,7 @@ in {
       #Basic binds
       "${mod}+space" = "exec ${launcher}";
       "${mod}+return" = "exec ${terminal}";
-      "${mod}+e" = "exec ${hdrop} '${file-manager}'}";
+      "${mod}+e" = "exec ${hdrop} '${file-manager}'";
       "${mod}+b" = "exec ${hdrop} '${browser}'";
       "${mod}+x" = "exec ${hdrop} '${wlogout}'";
       "${mod}+r" = "exec ${terminal} -e ${yazi}";
@@ -46,7 +46,7 @@ in {
       "${mod}+f" = "fullscreen";
 
       #Lock screen
-      "${mod}+l" = "exec ${hyprlock}";
+      "${mod}+l" = "exec ${hyprlock} --immediate";
 
       #Clipboard menu
       "${mod}+shift+v" = "exec ${copyq} menu";
