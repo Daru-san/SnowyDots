@@ -2,8 +2,8 @@
   wayland.windowManager.hyprland = {
     settings = {
       general = {
-        gaps_in = 1;
-        gaps_out = 3;
+        gaps_in = 0;
+        gaps_out = 0;
         border_size = 0;
         layout = "master";
       };
@@ -17,6 +17,7 @@
         allow_small_split = true;
         no_gaps_when_only = false;
       };
+      group.groupbar.enabled = false;
       decoration = {
         rounding = 6;
         blur.enabled = false;
