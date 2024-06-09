@@ -4,17 +4,22 @@
     dhcpcd.extraConfig = "nohook resolv.conf";
   };
   networking = {
-    networkmanager = {
-      dns = "none";
-      enable = true;
-      wifi = {
-        macAddress = "random";
-        backend = "iwd";
-      };
-    };
     wireless.iwd = {
       enable = true;
-      settings.Settings.AutoConnect = false;
+      settings = {
+        General = {
+          EnableNetworkConfiguration = true;
+        };
+        Network = {
+          RoutePriorityOffset = 300;
+          EnableIPv6 = true;
+        };
+        Settings = {
+          AutoConnect = true;
+          Hidden = true;
+          AlwaysRandomizeAddress = true;
+        };
+      };
     };
   };
 
