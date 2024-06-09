@@ -9,7 +9,10 @@
 in {
   options.wayland.enable = mkEnableOption "Enable wayland";
   config = mkIf cfg.enable {
-    programs.hyprland.enable = true;
+    programs.sway = {
+      enable = true;
+      extraPackages = [];
+    };
     security.pam.services.hyprlock = {};
     programs = {
       dconf.enable = true;
@@ -24,7 +27,14 @@ in {
       enable = true;
       settings = rec {
         initial_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet -t --window-padding 1 -g 'Welcome to ${config.networking.hostName}' -c Hyprland";
+          command = let
+            flags = lib.cli.toGNUCommandLineShell {} {
+              t = "";
+              window-padding = 1;
+              g = "Hello, Daru";
+              c = "sway";
+            };
+          in "${pkgs.greetd.tuigreet}/bin/tuigreet ${flags}";
           user = "daru";
         };
         default_session = initial_session;
