@@ -5,22 +5,24 @@
         inherit (config.wayland.windowManager.sway.config) terminal;
         layer = "overlay";
         # anchor = "center";
-        font = config.fonts.monospace.name;
-        width = 60;
-        lines = 8;
+        font = config.fonts.monospace.name + ":size=16";
+        width = 70;
+        lines = 7;
         line-height = 24;
         icon-theme = config.gtk.iconTheme.name;
         tabs = 10;
       };
       border = {
-        width = 3;
+        width = 1;
         radius = 4;
       };
-      colors = {
-        background = "1E2127FF";
-        border = "2F343FFF";
-        selection = "7FBBB3FF";
-        text = "FFFFFFFF";
+      colors = let
+        color = x: "${config.colorScheme.palette.${x}}FF";
+      in {
+        background = color "base01";
+        border = color "base0B";
+        selection = color "base0D";
+        text = color "base05";
       };
     };
   };

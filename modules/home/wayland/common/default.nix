@@ -13,11 +13,12 @@ in {
     ./kanshi
     ./hypridle
     ./hyprlock
+    ./fuzzel
     ./swaync
     ./swayosd
     ./waybar
     ./kitty
-    ./wlogout
+    # ./wlogout
     ./wlsunset
   ];
   config = mkIf cfg.enable {
