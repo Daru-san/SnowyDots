@@ -11,14 +11,6 @@ in {
   config = mkIf cfg.enable {
     programs.hyprland.enable = true;
     security.pam.services.hyprlock = {};
-    security.pam.loginLimits = [
-      {
-        domain = "@users";
-        item = "rtprio";
-        type = "-";
-        value = 1;
-      }
-    ];
     programs = {
       dconf.enable = true;
       file-roller.enable = true;
