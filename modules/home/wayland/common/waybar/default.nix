@@ -36,7 +36,7 @@ in {
         height = 16;
         output = "HDMI-A-2";
 
-        modules-left = ["hyprland/workspaces" "custom/playerctl"];
+        modules-left = ["sway/workspaces" "custom/playerctl"];
         modules-center = ["clock" "custom/notification"];
         modules-right = [
           "idle_inhibitor"
@@ -47,10 +47,8 @@ in {
           "pulseaudio/slider"
           "tray"
         ];
-        "hyprland/workspaces" = {
+        "sway/workspaces" = {
           format = "{name}";
-          on-scroll-up = "hyprctl dispatch workspace e+1";
-          on-scroll-down = "hyprctl dispatch workspace e-1";
         };
         keyboard-state = {
           numlock = false;

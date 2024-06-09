@@ -27,7 +27,7 @@ window#waybar {
   transition: 0;
 }
 
-#workspaces button.active {
+#workspaces button.focused {
   background: shade(@base0D, 0.6);
   color: alpha(@base00, 1);
   border-radius: 4px;
