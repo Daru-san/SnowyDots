@@ -30,25 +30,6 @@
       url = "sourcehut:~darumaka/Wallpapers";
       flake = false;
     };
-
-    # Hyprland stuff
-    hyprland = {
-      type = "git";
-      url = "https://github.com/hyprwm/Hyprland";
-      submodules = true;
-    };
-    hyprland-contrib = {
-      url = "github:hyprwm/contrib";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hycov = {
-      url = "github:DreamMaoMao/hycov";
-      inputs.hyprland.follows = "hyprland";
-    };
-
-    # Wayland stuff
-    anyrun.url = "github:Kirottu/anyrun";
-    ags.url = "github:Aylur/ags";
   };
   outputs = {
     self,
