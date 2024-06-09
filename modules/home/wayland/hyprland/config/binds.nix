@@ -68,7 +68,7 @@ in {
         (mkBindH "altshift" "m" g4music)
 
         # Terminal stuff
-        (mkBindE "super" "return" terminal)
+        (mkBindE "super" "q" terminal)
         (mkBindE "super" "r" "${terminal} --hold ${yazi}")
         (mkBindE "super" "z" "${terminal} --hold ${editor}")
         (mkBindE "super" "m" "${terminal} --hold ${btop}")
@@ -77,11 +77,12 @@ in {
         (mkBindE "supershift" "v" "${copyq} menu")
 
         #Window bings
-        (mkBind "alt" "q" "killactive")
+        (mkBind "supershift" "q" "killactive")
         (mkBind "supershift" "e" "exit")
         (mkBind "super" "s" "togglesplit")
         (mkBind "super" "f" "fullscreen")
         (mkBind "super" "v" "togglefloating")
+        (mkBindE "supershift" "x" "hyprctl reload")
 
         # Toggle focus mode
         (mkBindE "supershift" "F12" (getExe focusmode))
@@ -162,7 +163,7 @@ in {
         swaync = getExe' pkgs.swaynotificationcenter "swaync-client";
       in [
         # Launch the launcher - anyrun
-        (mkBindE "super" "space" "${pk} anyrun || ${anyrun}")
+        (mkBindE "super" "d" "${pk} anyrun || ${anyrun}")
 
         # Waybar
         (mkBindE "superalt" "b" "${pk} waybar || ${waybar}")
