@@ -28,13 +28,13 @@
       }
       {
         profile.name = "Samsung Overclock";
+        profile.exec = "hyprctl keyword monitor HDMI-A-2,1920x1080@70,0x0,1";
         profile.outputs = [
           {
             criteria = "Samsung Electric Company S24E390 0x30303342";
             mode = "1920x1080@60";
             position = "0,0";
             scale = 1.0;
-            exec = "hyprctl keyword monitor HDMI-A-2,1920x1080@70,0x0,1";
           }
         ];
       }
