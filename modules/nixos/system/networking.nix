@@ -1,7 +1,7 @@
 {
   networking = {
     nameservers = ["1.1.1.1" "1.0.0.1"];
-    dhcpcd.extraConfig = "nohook resolv.conf";
+    dhcpcd.enable = false;
   };
   networking = {
     wireless.iwd = {
@@ -12,7 +12,7 @@
         };
         Network = {
           RoutePriorityOffset = 300;
-          EnableIPv6 = true;
+          EnableIPv6 = false;
         };
         Settings = {
           AutoConnect = true;
