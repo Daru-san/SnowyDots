@@ -5,7 +5,7 @@
         inherit (config.wayland.windowManager.sway.config) terminal;
         layer = "overlay";
         # anchor = "center";
-        font = config.fonts.monospace.name + ":size=16";
+        font = config.fonts.monospace.name + ":size=18";
         width = 70;
         lines = 7;
         line-height = 24;
