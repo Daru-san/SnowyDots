@@ -14,5 +14,6 @@
     ./spotify
     ./firefox
     ./thunderbird
+    ./obs-studio
   ];
 }
