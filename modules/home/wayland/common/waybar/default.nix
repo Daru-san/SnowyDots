@@ -42,7 +42,6 @@ in {
           "idle_inhibitor"
           "network"
           # "bluetooth"
-          "keyboard-state"
           "battery"
           "pulseaudio"
           "pulseaudio/slider"

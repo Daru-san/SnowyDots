@@ -97,10 +97,10 @@ window#waybar {
   margin-left: 0;
 }
 #network {
-  border-radius: 5px 0px 0px 5px;
+  border-radius: 5px 5px 5px 5px;
   padding: 0px;
   padding-left: 10px;
-  padding-right: 5px;
+  padding-right: 10px;
 }
 #custom-notification {
   border-radius: 0 5px 5px 0;
