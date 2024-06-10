@@ -20,4 +20,7 @@
       (map (x: ''@define-color base0${n} #${colorScheme.palette."base0${n}"}''))
       (map (x: ''@define-color base0${l} #${colorScheme.palette."base0${l}"}''))
     ];
+
+  # Symlink the colorscheme to a file in the home directory
+  home.file."color-scheme.css".source = colorSchemeCss;
 }
