@@ -16,7 +16,7 @@ in {
     enable = true;
 
     theme = {
-      name = "Colloid-Grey-Dark";
+      name = "Colloid-Green-Dark";
       package = pkgs.colloid-gtk-theme.override {
         colorVariants = ["dark"];
         themeVariants = ["green" "default" "grey"];
