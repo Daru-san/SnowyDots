@@ -11,8 +11,8 @@
         newWindow = "smart";
       };
       gaps = {
-        outer = 6;
-        inner = 4;
+        outer = 2;
+        inner = 1;
       };
       window = {
         titlebar = false;
@@ -25,7 +25,7 @@
     extraConfig = ''
       blur true
       blur_passes 1
-      blur_radius 1
+      blur_radius 3
 
       corner_radius 7
 
