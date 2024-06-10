@@ -14,6 +14,5 @@
     {command = "systemctl --user start hypridle";}
     {command = "systemctl --user start swayosd";}
     {command = "systemctl --user start wlsunset";}
-    {command = "systemctl --user start lxpolkit";}
   ];
 }
