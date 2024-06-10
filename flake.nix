@@ -23,7 +23,7 @@
     };
 
     # My own repos
-    r-pg = "github:Daru-san/r-pg";
+    r-pg.url = "github:Daru-san/r-pg";
     snowyvim.url = "sourcehut:~darumaka/SnowyVim";
     scripts.url = "sourcehut:~darumaka/Nix-Scripts";
     snowpkgs.url = "sourcehut:~darumaka/Snowpkgs";
