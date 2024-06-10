@@ -3,7 +3,9 @@
   config,
   ...
 }: {
-  imports = [./qt.nix ./fonts.nix ./gtk.nix ./wallpaper.nix];
+  imports = [./qt.nix ./fonts.nix ./gtk.nix];
+  # Wallpaper
+  wallpaperImage = "${inputs.wallpapers}/images/bright-leaves.png";
 
   # Colorscheme from nix-colors
   colorScheme = inputs.nix-colors.colorSchemes.oxocarbon-dark;

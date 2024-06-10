@@ -34,6 +34,7 @@
       # CLI
       ouch
       element
+      swww
       niv
       tree
       tgpt
