@@ -1,6 +1,7 @@
 # Home packages shared between users
 {
   pkgs,
+  inputs,
   lib,
   ...
 }: {
@@ -70,5 +71,6 @@
       trashy
     ])
     (with pkgs.gnome; [dconf-editor gnome-clocks file-roller cheese])
+    inputs.r-pg.packages.default
   ];
 }
