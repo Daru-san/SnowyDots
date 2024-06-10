@@ -19,10 +19,11 @@
       systemd = {
         enable = true;
         extraCommands = [
-          "systemctl --user start easyeffects.service"
-          "systemctl --user start hypridle.service"
-          "systemctl --user start swayosd.service"
-          "systemctl --user start wlsunset.service"
+          "systemctl --user start easyeffects"
+          "systemctl --user start hypridle"
+          "systemctl --user start swayosd"
+          "systemctl --user start swaync"
+          "systemctl --user start wlsunset"
           "systemctl --user start hyprpaper"
           "systemctl --user start polkit-gnome-authentication-agent-1"
         ];
