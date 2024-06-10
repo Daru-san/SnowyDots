@@ -8,7 +8,7 @@
     enable = true;
 
     #Kitty theme
-    theme = "Wryan";
+    theme = "Wizzy Muted";
 
     # Shell integration
     shellIntegration = {
@@ -35,7 +35,7 @@
 
       hide_window_decorations = true;
 
-      background_opacity = "100";
+      background_opacity = "0";
       dynamic_background_opacity = true;
 
       sync_to_monitor = true;
