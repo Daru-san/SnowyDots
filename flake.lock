@@ -46,11 +46,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1717931498,
-        "narHash": "sha256-8j6h9gZmAngPXLFRRtd8ySRb0I43f0rRW0puU8IBwKA=",
+        "lastModified": 1717992197,
+        "narHash": "sha256-5eg5849XpRlMoMn/1N7SAxcA4UX/XQOTlEdUvCK/fVM=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "3b7b7d83b3561269c2d8f20b5d4d4496bb36b2e6",
+        "rev": "7fba052f2d4b13dc1bd5c361e1ef966217f77d1b",
         "type": "gitlab"
       },
       "original": {
@@ -416,11 +416,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1717919703,
-        "narHash": "sha256-4i/c31+dnpv6KdUA3BhbMDS9Lvg/CDin78caYJlq0bY=",
+        "lastModified": 1717995391,
+        "narHash": "sha256-lcJ7McLYCOZGmoUqWubg739iFIqVtPD+qDNQx6GPWCY=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "a157a81d0a4bc909b2b6666dd71909bcdc8cd0d6",
+        "rev": "ab78ec24f803bab7a18370220ae3db92d6d33c94",
         "type": "github"
       },
       "original": {
@@ -829,11 +829,11 @@
     "wallpapers": {
       "flake": false,
       "locked": {
-        "lastModified": 1714328341,
-        "narHash": "sha256-nbBDGh95SEn5TmLsOU4Yh+VKHrKrX4evGl1PsoBKPws=",
+        "lastModified": 1718008353,
+        "narHash": "sha256-TZq7GqMSHDkP6wXEc3EhgSyqgqKJAYZ6SGKFb42XUmY=",
         "owner": "~darumaka",
         "repo": "Wallpapers",
-        "rev": "9fc7ce98b7451201767be54511d1e5133020fa6a",
+        "rev": "44435a0100fef37b581a7acfd8136acc173683ae",
         "type": "sourcehut"
       },
       "original": {
