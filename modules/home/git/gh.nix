@@ -1,8 +1,4 @@
-{
-  pkgs,
-  stdenv,
-  ...
-}: {
+{pkgs, ...}: {
   programs = {
     gh-dash.enable = true;
     gh = {
