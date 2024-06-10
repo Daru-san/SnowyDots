@@ -1,4 +1,15 @@
 {
+  zaread = {
+    name = "zaread";
+    exec = "zaread %U";
+    noDisplay = true;
+    type = "Application";
+    mimeType = [
+      "application/pdf"
+      "application/msword"
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    ];
+  };
   swayimg = {
     name = "swayimg";
     exec = "swayimg %U";
