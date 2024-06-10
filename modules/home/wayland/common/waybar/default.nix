@@ -72,8 +72,8 @@ in {
           };
         };
         clock = {
-          format-alt = " {:%X}";
-          format = " {:%a, %e %b, %R}";
+          format-alt = "  {:%X}";
+          format = "  {:%a, %e %b, %R}";
           interval = 1;
           tooltip-format = "<tt><small>{calendar}</small></tt>";
           on-click-right = "mode";
