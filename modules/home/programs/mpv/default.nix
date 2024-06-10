@@ -13,11 +13,12 @@
       sid = 1;
       slang = "en";
       fs = true;
-      ytdl-raw-options = "ignore-config";
+      ytdl-raw-options = "ignore-config=,sub-lang=en,write-auto-sub=";
       deband = false;
       osd-bar = false;
       border = false;
       osc = false;
+      sub-auto = "fuzzy";
       osd-font = "NotoMono Nerd Font";
     };
     scriptOpts = {
