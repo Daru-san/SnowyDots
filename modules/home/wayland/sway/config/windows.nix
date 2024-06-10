@@ -2,14 +2,14 @@
   wayland.windowManager.sway.config = {
     workspaceAutoBackAndForth = true;
     assigns = {
-      "8" = [{class = "oculante";}];
-      "F1" = [{class = "^firefox$";}];
-      "F2" = [{class = "bridge";}];
-      "F4" = [{class = "^Nautilus$";}];
-      "F6" = [{class = "mpv";}];
-      "F7" = [{class = "^FreeTube$";}];
-      "F8" = [{title = "^Spotify$";}];
-      "F11" = [{class = "^Zathura$";}];
+      "8" = [{app_id = "oculante";}];
+      "F1" = [{app_id = "^firefox$";}];
+      "F2" = [{app_id = "bridge";}];
+      "F4" = [{app_id = "^org.gnome.Nautilus$";}];
+      "F6" = [{app_id = "^mpv$";}];
+      "F7" = [{app_id = "^FreeTube$";}];
+      "F8" = [{title = "^Spotify Free$";}];
+      "F11" = [{app_id = "^org.pwmt.zathura$";}];
     };
     window.commands = let
       stacks = [
@@ -22,15 +22,21 @@
         "oculante"
       ];
     in
-      map (x: {
+      [
+        {
+          command = "resize set 70ppt 70ppt";
+          criteria.app_id = "^easyeffects$";
+        }
+      ]
+      ++ map (x: {
         command = "layout stacking";
-        criteria.class = "^${x}$";
+        criteria.app_id = "^${x}$";
       })
       stacks;
     floating = {
       border = 6;
       criteria = let
-        classes = [
+        app_ids = [
           "file-roller"
           "foot"
           "iwgtk"
@@ -42,6 +48,7 @@
           "copyq"
           "pwvucontrol"
           "org.kde.kdeconnect-indicator"
+          "swaymux"
         ];
         titles = [
           "CopyQ"
@@ -50,11 +57,13 @@
         ];
       in
         lib.flatten [
-          (map (x: {class = "^${x}$";}) classes)
+          (map (x: {app_id = "^${x}$";}) app_ids)
           (map (x: {title = "^${x}$";}) titles)
+          {window_type = "dialog";}
+          {window_role = "dialog";}
           {
             title = "Library";
-            class = "firefox";
+            app_id = "firefox";
           }
         ];
       titlebar = false;
