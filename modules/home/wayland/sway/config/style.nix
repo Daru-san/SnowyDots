@@ -23,17 +23,15 @@
     };
 
     extraConfig = ''
-      blur false
-      blur_passes 4
-      blur_radius 4
+      blur true
+      blur_passes 1
+      blur_radius 1
 
       corner_radius 7
 
       shadows false
       shadow_blur_radius 70
       shadow_color #202020
-
-      layer_effects "waybar" corner_radius 20
     '';
   };
 }
