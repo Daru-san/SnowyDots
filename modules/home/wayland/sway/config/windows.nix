@@ -2,15 +2,14 @@
   wayland.windowManager.sway.config = {
     workspaceAutoBackAndForth = true;
     assigns = {
-      "2" = [{app_id = "btop";}];
+      "0" = [{app_id = "btop";}];
+      "2" = [{app_id = "^firefox$";}];
+      "3" = [{app_id = "^org.gnome.Nautilus$";}];
+      "4" = [{title = "^Spotify Free$";} {app_id = "^g4music$";}];
+      "5" = [{app_id = "^FreeTube$";} {app_id = "^mpv$";}];
+      "6" = [{app_id = "^Minecraft$";} {add_id = "^org.prismlauncher.PrismLauncher";}];
       "8" = [{app_id = "oculante";}];
-      "F1" = [{app_id = "^firefox$";}];
-      "F2" = [{app_id = "bridge";}];
-      "F4" = [{app_id = "^org.gnome.Nautilus$";}];
-      "F6" = [{app_id = "^mpv$";}];
-      "F7" = [{app_id = "^FreeTube$";}];
-      "F8" = [{title = "^Spotify Free$";}];
-      "F11" = [{app_id = "^org.pwmt.zathura$";}];
+      "9" = [{app_id = "^org.pwmt.zathura$";}];
     };
     window.commands = let
       stacks = [

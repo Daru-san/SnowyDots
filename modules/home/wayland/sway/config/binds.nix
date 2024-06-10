@@ -5,15 +5,14 @@
   lib,
   ...
 }: let
-  inherit (lib) getExe getExe';
+  inherit (lib) getExe getExe' range concatLines;
+  mod = config.wayland.windowManager.sway.config.modifier;
 in {
-  imports = [./workspaces.nix];
   wayland.windowManager.sway.config = {
     modifier = "Mod4";
     bindkeysToCode = true;
     keybindings = let
       inherit (config.wayland.windowManager.sway.config) terminal;
-      mod = config.wayland.windowManager.sway.config.modifier;
       yazi = getExe config.programs.yazi.package;
       playerctl = getExe config.services.playerctld.package;
       browser = getExe config.programs.firefox.package;
@@ -111,6 +110,13 @@ in {
         };
         foot = getExe pkgs.foot;
         netman = "exec ${foot} -c ${foot-config} -e nmtui";
-      in {"${mod}+i" = netman;});
+      in {"${mod}+i" = netman;})
+      // (let
+        workspaces = map toString (range 0 9);
+      in
+        lib.flatten [
+          (map (n: {"${mod}+${n}" = "workspace number ${n}";}) workspaces)
+          (map (n: {"${mod}+shift+${n}" = "move container to workspace number ${n}";}))
+        ]);
   };
 }
