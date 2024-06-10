@@ -12,5 +12,6 @@
     ./nautilus
     ./spotify
     ./firefox
+    ./obs-studio
   ];
 }
