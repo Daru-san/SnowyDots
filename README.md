@@ -23,13 +23,13 @@ My functional, advanced NixOS configuration flake using <a href="https://github.
 
 ## Systems
 
-### Aurorus (Acer Laptop)
+### Articuno (Lenovo Desktop)
 
-- Kernel: [Linux hardened](https://kernel.org/ "Stock kernel") with custom tweaks
+- Kernel: [Linux zen](https://github.com/zen-kernel/zen-kernel "Stock kernel")
 - Shell: [Fish](https://github.com/fish-shell/fish-shell) with [Starship](https://github.com/starship/starship)
 - Editor: [SnowyVim](https://git.sr.ht/~darumaka/SnowyVim)
 - Window Manager: [Swayfx](https://github.com/WillPower3309/swayfx "Swayfx")
-- Launcher: [anyrun](https://github.com/Kirottu/anyrun "anyrun")
+- Launcher: [fuzzel](https://codeberg.org/dnkl/fuzzel)
 - Bar: [waybar](https://github.com/Alexays/Waybar "waybar")
 
 ## Installing NixOS
