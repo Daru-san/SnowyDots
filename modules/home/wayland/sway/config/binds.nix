@@ -8,6 +8,17 @@
   inherit (lib) getExe getExe' range concatLines;
   mod = config.wayland.windowManager.sway.config.modifier;
 in {
+  wayland.windowManager.sway.extraConfig = let
+    workspaces = map toString (range 0 9);
+  in
+    concatLines [
+      (concatLines (map
+        (n: "bindsym --to-code ${mod}+${n} workspace number ${n}")
+        workspaces))
+      (concatLines (map
+        (n: "bindsym --to-code ${mod}+Shift+${n} move container to workspace number ${n}")
+        workspaces))
+    ];
   wayland.windowManager.sway.config = {
     modifier = "Mod4";
     bindkeysToCode = true;
@@ -110,13 +121,6 @@ in {
         };
         foot = getExe pkgs.foot;
         netman = "exec ${foot} -c ${foot-config} -e nmtui";
-      in {"${mod}+i" = netman;})
-      // (let
-        workspaces = map toString (range 0 9);
-      in
-        lib.flatten [
-          (map (n: {"${mod}+${n}" = "workspace number ${n}";}) workspaces)
-          (map (n: {"${mod}+shift+${n}" = "move container to workspace number ${n}";}))
-        ]);
+      in {"${mod}+i" = netman;});
   };
 }
