@@ -15,6 +15,7 @@
       archiver
       oculante
       swayimg
+      krita
       pwvucontrol
       libreoffice-qt-fresh
       iwgtk
