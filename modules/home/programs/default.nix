@@ -1,7 +1,6 @@
 {...}: {
   imports = [
     ./mpv
-    ./aria2
     ./btop
     ./translate-shell
     ./bat
@@ -13,7 +12,5 @@
     ./nautilus
     ./spotify
     ./firefox
-    ./thunderbird
-    ./obs-studio
   ];
 }

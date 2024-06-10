@@ -11,14 +11,12 @@
       scrcpy
       keepassxc
       bridge-editor
-      newsflash
       archiver
       oculante
       swayimg
       krita
       pwvucontrol
       libreoffice-qt-fresh
-      iwgtk
       prismlauncher
       blanket
       g4music
@@ -39,13 +37,11 @@
       niv
       tree
       tgpt
-      tty-clock
       adbtuifm
       neovim
       libnotify
       fd
       speedtest-cli
-      hydra-check
       glow
       gping
       obexftp
@@ -54,34 +50,22 @@
       unstable.nvtopPackages.intel
       sysz
       systemctl-tui
-      bluetuith
-      ghfetch
-      charm-freeze
       exiftool
       xdg-utils
       nitch
       pulsemixer
       ani-cli
       maven
-      manga-cli
       transmission
-      du-dust
-      fzf
       musikcube
       qmmp
       mediainfo
       unrar
       onefetch
-      asciinema
-      asciinema-agg
-      asciinema-scenario
-      xdragon
       nix-output-monitor
       nix-init
       nix-update
       nixfmt-rfc-style
-      lexido
-      manix
       zaread
       trashy
     ])
