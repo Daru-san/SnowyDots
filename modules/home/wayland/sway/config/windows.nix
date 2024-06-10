@@ -2,6 +2,7 @@
   wayland.windowManager.sway.config = {
     workspaceAutoBackAndForth = true;
     assigns = {
+      "2" = [{app_id = "btop";}];
       "8" = [{app_id = "oculante";}];
       "F1" = [{app_id = "^firefox$";}];
       "F2" = [{app_id = "bridge";}];
