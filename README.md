@@ -19,11 +19,7 @@ My functional, advanced NixOS configuration flake using <a href="https://github.
 
 > [Wallpapers](https://git.sr.ht/~darumaka/Wallpapers "My wallpaper repo on sourcehut")
 
-![Image](https://i.imgur.com/JFG3WXL.png "I use Nix by the way")
-![Image](https://i.imgur.com/jxUHhj7.png "Java > everything else")
-![image](https://i.imgur.com/vGkkXsx.png "Study with me?")
-![image](https://i.imgur.com/MJFsa7E.png "Firefox looking amazing")
-![Image](https://i.imgur.com/lMwQ1qy.png "Read with me?")
+![Image](https://i.imgur.com/6ACw4yR.png "I use Nix by the way")
 
 ## Systems
 
