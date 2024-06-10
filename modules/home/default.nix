@@ -7,7 +7,6 @@
     ./xdg
     ./themes
     ./programs
-    ./languages
     ./misc
   ];
 }
