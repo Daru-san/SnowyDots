@@ -10,12 +10,15 @@
       profile = "gpu-hq";
       force-window = true;
       save-position-on-quit = true;
+      sid = 1;
+      slang = "en";
+      fs = true;
+      ytdl-raw-options = "ignore-config";
       deband = false;
       osd-bar = false;
       border = false;
       osc = false;
       osd-font = "NotoMono Nerd Font";
-      sub-auto = "fuzzy";
     };
     scriptOpts = {
       osc = {
