@@ -28,6 +28,7 @@ in {
       easyeffects = getExe config.services.easyeffects.package;
       color-picker = getExe inputs.scripts.packages.${pkgs.system}.color-picker;
       swaync = getExe' pkgs.swaynotificationcenter "swaync-client";
+      swaymux = getExe pkgs.swaymux;
     in
       {
         #Basic binds
@@ -40,7 +41,9 @@ in {
         "${mod}+z" = "exec ${terminal} -e ${editor}";
         "${mod}+a" = "exec swaymsg -t get_tree | grep 'easyeffects' || ${easyeffects}";
         "${mod}+alt+b" = "exec pkill waybar || ${waybar}";
+
         #Window bings
+        "alt+tab" = "exec pkill swaymux || ${swaymux}";
         "alt+q" = "kill";
         "${mod}+shift+e" = "exit";
         "${mod}+shift+r" = "exec swaymsg reload";
