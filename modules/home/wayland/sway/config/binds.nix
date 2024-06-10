@@ -5,7 +5,7 @@
   lib,
   ...
 }: let
-  inherit (lib) getExe;
+  inherit (lib) getExe getExe';
 in {
   imports = [./workspaces.nix];
   wayland.windowManager.sway.config = {
@@ -15,86 +15,99 @@ in {
       inherit (config.wayland.windowManager.sway.config) terminal;
       mod = config.wayland.windowManager.sway.config.modifier;
       yazi = getExe config.programs.yazi.package;
-      swayosd = getExe config.services.swayosd.package;
       playerctl = getExe config.services.playerctld.package;
       browser = getExe config.programs.firefox.package;
       launcher = config.wayland.windowManager.sway.config.menu;
       file-manager = getExe pkgs.gnome.nautilus;
       shotman = getExe pkgs.shotman;
-      editor = "vi";
+      waybar = getExe config.programs.waybar.package;
+      editor = getExe pkgs.neovim;
       hyprlock = getExe config.programs.hyprlock.package;
-      hdrop = getExe pkgs.unstable.hdrop;
       copyq = getExe config.services.copyq.package;
       wlogout = getExe config.programs.wlogout.package;
       easyeffects = getExe config.services.easyeffects.package;
       color-picker = getExe inputs.scripts.packages.${pkgs.system}.color-picker;
-    in {
-      #Basic binds
-      "${mod}+space" = "exec ${launcher}";
-      "${mod}+return" = "exec ${terminal}";
-      "${mod}+e" = "exec ${hdrop} '${file-manager}'";
-      "${mod}+b" = "exec ${hdrop} '${browser}'";
-      "${mod}+x" = "exec ${hdrop} '${wlogout}'";
-      "${mod}+r" = "exec ${terminal} -e ${yazi}";
-      "${mod}+z" = "exec ${terminal} -e ${editor}";
-      "${mod}+a" = "exec ${hdrop} '${easyeffects}'";
+      swaync = getExe' pkgs.swaynotificationcenter "swaync-client";
+    in
+      {
+        #Basic binds
+        "${mod}+d" = "exec pkill fuzzel || ${launcher}";
+        "${mod}+q" = "exec ${terminal}";
+        "${mod}+e" = "exec swaymsg -t get_tree | grep 'Nautilus' || ${file-manager}'";
+        "${mod}+b" = "exec pidof firefox || ${browser}";
+        "${mod}+x" = "exec pkill wlogout || ${wlogout}";
+        "${mod}+r" = "exec ${terminal} -e ${yazi}";
+        "${mod}+z" = "exec ${terminal} -e ${editor}";
+        "${mod}+a" = "exec swaymsg -t get_tree | grep 'easyeffects' || ${easyeffects}";
+        "${mod}+alt+b" = "exec pkill waybar || ${waybar}";
+        #Window bings
+        "alt+q" = "kill";
+        "${mod}+shift+e" = "exit";
+        "${mod}+shift+r" = "exec swaymsg reload";
+        "${mod}+v" = "floating toggle";
+        "${mod}+f" = "fullscreen";
 
-      #Window bings
-      "alt+q" = "kill";
-      "${mod}+shift+e" = "exit";
-      "${mod}+v" = "floating toggle";
-      "${mod}+f" = "fullscreen";
+        #Lock screen
+        "${mod}+l" = "exec ${hyprlock} --immediate";
 
-      #Lock screen
-      "${mod}+l" = "exec ${hyprlock} --immediate";
+        #Clipboard menu
+        "${mod}+shift+v" = "exec ${copyq} menu";
 
-      #Clipboard menu
-      "${mod}+shift+v" = "exec ${copyq} menu";
+        #Suspend
+        "${mod}+alt+F12" = "exec systemctl suspend";
 
-      #Suspend
-      "${mod}+alt+F12" = "exec systemctl suspend";
+        #Color picker
+        "${mod}+shift+c" = "exec ${color-picker}";
 
-      #Color picker
-      "${mod}+shift+c" = "exec ${color-picker}";
+        # Screenshotting
+        "Print" = "exec ${shotman} --capture region";
+        "shift+print" = "exec ${shotman} --capture output";
 
-      ##Controls##
-      ############
+        # Media control
+        "XF86AudioNext" = "exec${playerctl} next";
+        "XF86AudioPrev" = "exec${playerctl} previous";
+        "XF86AudioPlay" = "exec${playerctl} play-pause";
+        "XF86AudioStop" = "exec${playerctl} stop";
 
-      #Brightness controll#
+        #Same but for keyboards without media keys
+        "shift+F12" = "exec ${playerctl} next";
+        "shift+F9" = "exec ${playerctl} previous";
+        "shift+F10" = "exec ${playerctl} play-pause";
+        "shift+F11" = "exec ${playerctl} stop";
 
-      # Brightness control using swayosd
-      "XF86MonBrightnessUp" = "exec,${swayosd} --brightness=raise 5";
-      "XF86MonBrightnessDown" = "exec,${swayosd} --brightness=lower 5";
+        "${mod}+n" = "exec ${swaync} -t";
+        "${mod}+shift+n" = "exec ${swaync} -d";
+        "${mod}+alt+n" = "exec ${swaync} -C";
+      }
+      // (let
+        s = getExe' config.services.swayosd.package "swayosd-client";
+        caps-lock = "exec ${s} --caps-lock";
+        mute = "exec ${s} --output-volume mute-toggle";
+        raise-volume = "exec ${s} --output-volume raise";
+        lower-volume = "exec ${s} --output-volume lower";
+        raise-brightness = "exec ${s} --brightness raise";
+        lower-brightness = "exec ${s} --brightness lower";
+      in {
+        "XF86MonBrightnessUp" = raise-brightness;
+        "XF86MonBrightnessDown" = lower-brightness;
 
-      ##Volume Control##
-      # Volume using swayosd
-      "XF86AudioRaiseVolume" = "exec ${swayosd} --output-volume=raise 5";
-      "XF86AudioLowerVolume" = "exec ${swayosd} --output-volume=lower 5";
-      "XF86AudioMute" = "exec ${swayosd} --output-volume=mute-toggle";
+        "XF86AudioRaiseVolume" = raise-volume;
+        "XF86AudioLowerVolume" = lower-volume;
+        "XF86AudioMute" = mute;
 
-      #Same but for keyboards without media keys
-      "alt+F8" = "exec ${swayosd} --output-volume=raise 5";
-      "alt+F6" = "exec ${swayosd} --output-volume=lower 5";
-      "alt+F7" = "exec ${swayosd} --output-volume=mute-toggle";
-
-      #Show when caps lock is pressed
-      "caps_lock" = "exec,${swayosd} --caps-lock";
-
-      # Screenshotting
-      "Print" = "exec ${shotman} --capture region";
-      "shift+print" = "exec, ${shotman} --capture output";
-
-      # Media control
-      "XF86AudioNext" = "exec,${playerctl} next";
-      "XF86AudioPrev" = "exec,${playerctl} previous";
-      "XF86AudioPlay" = "exec,${playerctl} play-pause";
-      "XF86AudioStop" = "exec,${playerctl} stop";
-
-      #Same but for keyboards without media keys
-      "alt+F12" = "exec,${playerctl} next";
-      "alt+F9" = "exec,${playerctl} previous";
-      "alt+F10" = "exec,${playerctl} play-pause";
-      "alt+F11" = "exec,${playerctl} stop";
-    };
+        "shift+F8" = raise-volume;
+        "shift+F6" = lower-volume;
+        "shift+F7" = mute;
+        "caps_lock" = caps-lock;
+      })
+      // (let
+        inherit (pkgs) formats;
+        iniFormat = formats.ini {};
+        foot-config = iniFormat.generate "foot.ini" {
+          main.font = "JetbrainsMono Nerd Font:size=14";
+        };
+        foot = getExe pkgs.foot;
+        netman = "exec ${foot} -c ${foot-config} -e nmtui";
+      in {"${mod}+i" = netman;});
   };
 }
