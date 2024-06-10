@@ -26,6 +26,9 @@
     settings = {
       active_tab_font_style = "bold";
       inactive_tab_font_style = "italics";
+      tab_bar_edge = "top";
+      tab_bar_style = "powerline";
+      tab_powerline_style = "round";
       input_delay = 0;
       repaint_delay = 4;
       window_margin_width = 9;
@@ -53,12 +56,10 @@
     keybindings = let
       c = "ctrl";
       a = "alt";
-      s = "shift";
     in {
       "${c}+c" = "copy_or_interrupt";
       "${c}+${a}+minus" = "set_background_opacity -0.1";
       "${c}+${a}+plus" = "set_background_opacity +0.1";
-      "${c}+${s}+t" = "no_op";
     };
   };
 }
