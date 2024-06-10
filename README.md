@@ -3,7 +3,7 @@
 ---
 
 <p style="text-align: center;" align="center">
-My functional, advanced NixOS configuration flake using [Swayfx](https://github.com/WillPower3309/swayfx).
+My functional, advanced NixOS configuration flake using <a href="https://github.com/WillPower3309/swayfx">Swayfx</a>.
 </p>
 
 <div style="text-align: center;" align="center">
