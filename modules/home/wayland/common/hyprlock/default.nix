@@ -19,7 +19,7 @@ in {
       background = [
         {
           path = toString config.wallpaperImage;
-          blur_size = 9;
+          blur_size = 5;
           blur_passes = 1;
         }
       ];
@@ -35,7 +35,7 @@ in {
           font_color = "rgb(200, 200, 200)";
           fade_on_empty = false;
           placeholder_text = "<i>Input Password...</i>";
-          hide_input = false;
+          hide_input = true;
           position = "0, -185";
           halign = "center";
           valign = "center";
