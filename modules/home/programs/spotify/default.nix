@@ -5,16 +5,14 @@
 }: let
   spicePkgs = inputs.spicetify-nix.packages.${system}.default;
 in {
-  imports = with inputs.spicetify-nix.homeManagerModules; [spicetify ./spotify-player.nix];
+  imports = [inputs.spicetify-nix.homeManagerModules.spicetify];
   programs.spicetify = {
     enable = true;
     theme = spicePkgs.themes.text;
     enabledExtensions = with spicePkgs.extensions; [
       fullAppDisplay
       powerBar
-      bookmark
       autoVolume
-      keyboardShortcut
       copyToClipboard
       volumePercentage
       adblock
@@ -25,10 +23,7 @@ in {
       new-releases
       lyrics-plus
       library
-      statistics
       history-in-sidebar
-      betterLocalFiles
-      playlistTags
     ];
   };
 }
