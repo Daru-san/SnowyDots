@@ -55,6 +55,7 @@ in {
         #Window bings
         "alt+tab" = "exec pkill swaymux || ${swaymux}";
         "${mod}+shift+q" = "kill";
+        "${mod}+grave" = "layout stacking";
         "${mod}+shift+e" = "exit";
         "${mod}+shift+r" = "exec swaymsg reload";
         "${mod}+v" = "floating toggle";
