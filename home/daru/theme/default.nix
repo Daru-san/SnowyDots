@@ -13,14 +13,15 @@
 
   # Converting the colorscheme to css
   colorSchemeCss = let
-    n = map toString (lib.range 0 9);
-    l = ["A" "B" "C" "D" "E" "F"];
+    num = map toString (lib.range 0 9);
+    char = ["A" "B" "C" "D" "E" "F"];
   in
     lib.concatLines [
-      (map (x: ''@define-color base0${n} #${colorScheme.palette."base0${n}"}''))
-      (map (x: ''@define-color base0${l} #${colorScheme.palette."base0${l}"}''))
+      "/* Definitions of my current color scheme */"
+      (lib.concatLines (map (x: ''@define-color base0${x} #${colorScheme.palette."base0${x}"};'') num))
+      (lib.concatLines (map (x: ''@define-color base0${x} #${colorScheme.palette."base0${x}"};'') char))
     ];
 
   # Symlink the colorscheme to a file in the home directory
-  home.file."color-scheme.css".source = colorSchemeCss;
+  home.file."color-scheme.css".text = colorSchemeCss;
 }
