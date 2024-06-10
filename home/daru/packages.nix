@@ -2,6 +2,7 @@
 {
   pkgs,
   inputs,
+  system,
   lib,
   ...
 }: {
@@ -71,6 +72,6 @@
       trashy
     ])
     (with pkgs.gnome; [dconf-editor gnome-clocks file-roller cheese])
-    inputs.r-pg.packages.default
+    [inputs.r-pg.packages.${system}.default]
   ];
 }
