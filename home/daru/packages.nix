@@ -56,7 +56,6 @@
       xdg-utils
       nitch
       pulsemixer
-      ani-cli
       maven
       transmission
       musikcube
