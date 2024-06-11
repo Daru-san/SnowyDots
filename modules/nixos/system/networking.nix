@@ -7,10 +7,6 @@
         General = {
           EnableNetworkConfiguration = true;
         };
-        Network = {
-          RoutePriorityOffset = 300;
-          EnableIPv6 = false;
-        };
         Settings = {
           AutoConnect = true;
           Hidden = true;

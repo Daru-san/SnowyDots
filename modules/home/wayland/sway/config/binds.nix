@@ -39,6 +39,7 @@ in {
       color-picker = getExe inputs.scripts.packages.${pkgs.system}.color-picker;
       swaync = getExe' pkgs.swaynotificationcenter "swaync-client";
       swaymux = getExe pkgs.swaymux;
+      iwgtk = getExe pkgs.iwgtk;
     in
       {
         #Basic binds
@@ -51,6 +52,7 @@ in {
         "${mod}+z" = "exec ${terminal} -e ${editor}";
         "${mod}+a" = "exec swaymsg -t get_tree | grep 'easyeffects' || ${easyeffects}";
         "${mod}+alt+b" = "exec pkill waybar || ${waybar}";
+        "${mod}+i" = "exec ${iwgtk}";
 
         #Window bings
         "alt+tab" = "exec pkill swaymux || ${swaymux}";
@@ -113,15 +115,6 @@ in {
         "shift+F6" = lower-volume;
         "shift+F7" = mute;
         "caps_lock" = caps-lock;
-      })
-      // (let
-        inherit (pkgs) formats;
-        iniFormat = formats.ini {};
-        foot-config = iniFormat.generate "foot.ini" {
-          main.font = "JetbrainsMono Nerd Font:size=14";
-        };
-        foot = getExe pkgs.foot;
-        netman = "exec ${foot} -c ${foot-config} -e nmtui";
-      in {"${mod}+i" = netman;});
+      });
   };
 }
