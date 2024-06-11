@@ -17,6 +17,7 @@
     spicetify-nix.url = "github:Daru-san/spicetify-nix";
     trashy.url = "github:Daru-san/trashy";
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+    anipy-cli.url = "github:sdaqo/anipy-cli";
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";

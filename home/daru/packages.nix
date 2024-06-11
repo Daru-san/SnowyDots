@@ -72,6 +72,6 @@
       trashy
     ])
     (with pkgs.gnome; [dconf-editor gnome-clocks file-roller cheese])
-    [inputs.r-pg.packages.${system}.default]
+    [inputs.r-pg.packages.${system}.default inputs.anipy-cli.packages.${system}.default]
   ];
 }
