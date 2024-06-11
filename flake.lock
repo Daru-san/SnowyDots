@@ -41,11 +41,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1718137857,
-        "narHash": "sha256-Z4mTTGreM3HCzyORNqMk2Cm+XJocNs5vfl1Og2Jf5PI=",
+        "lastModified": 1718138822,
+        "narHash": "sha256-P5xE43NMyYlHilj2Ce8UAxyT+6HeemgGTgFY+8QBtJM=",
         "owner": "Daru-san",
         "repo": "color-picker-rs",
-        "rev": "6ecf209d7fdd5e8b7a7b6bdf1d055fe6cbb8f7a1",
+        "rev": "2c71f7896d77bac92ab6e0533724cbbf0a4e7122",
         "type": "github"
       },
       "original": {
