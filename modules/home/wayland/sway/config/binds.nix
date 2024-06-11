@@ -36,7 +36,7 @@ in {
       copyq = getExe config.services.copyq.package;
       wlogout = getExe config.programs.wlogout.package;
       easyeffects = getExe config.services.easyeffects.package;
-      color-picker = getExe inputs.scripts.packages.${pkgs.system}.color-picker;
+      color-picker = getExe inputs.color-picker.packages.${pkgs.system}.default;
       swaync = getExe' pkgs.swaynotificationcenter "swaync-client";
       swaymux = getExe pkgs.swaymux;
       iwgtk = getExe pkgs.iwgtk;
