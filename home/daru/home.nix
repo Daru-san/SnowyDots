@@ -1,8 +1,8 @@
 # Home manager configuratiob file #
 {
-  home = {
+  home = rec {
     username = "daru";
-    homeDirectory = "/home/daru";
+    homeDirectory = "/home/${username}";
     enableNixpkgsReleaseCheck = false;
   };
 
