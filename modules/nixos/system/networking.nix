@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   networking = {
     nameservers = ["1.1.1.1" "1.0.0.1"];
     wireless.iwd = {
@@ -15,7 +15,10 @@
       };
     };
   };
-
+  environment.systemPackages = [pkgs.iw];
+  services.udev.extraRules = ''
+    ACTION=="add", SUBSYSTEM=="net", KERNEL=="wlan*" RUN+="${pkgs.iw}/bin/iw dev %k set power_save off"
+  '';
   networking.firewall = {
     enable = true;
     allowedUDPPorts = [51413];
