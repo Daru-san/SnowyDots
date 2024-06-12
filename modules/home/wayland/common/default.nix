@@ -16,6 +16,7 @@ in {
     ./swaync
     ./swayosd
     ./waybar
+    ./ags
     ./kitty
     # ./wlogout
     ./wlsunset
