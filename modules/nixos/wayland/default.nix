@@ -13,12 +13,9 @@ in {
       enable = true;
       extraPackages = [];
     };
-    services = {
-      desktopManager.plasma6.enable = true;
-      gnome = {
-        sushi.enable = true;
-        gnome-user-share.enable = true;
-      };
+    services.gnome = {
+      sushi.enable = true;
+      gnome-user-share.enable = true;
     };
     security.pam.services.hyprlock = {};
     xdg.portal = {
@@ -46,6 +43,16 @@ in {
               window-padding = 1;
               g = "Hello, Daru";
               c = "sway";
+              theme = lib.concatStringSep ";" [
+                "border=magenta"
+                "text=gray"
+                "prompt=green"
+                "time=red"
+                "action=blue"
+                "button=yellow"
+                "container=black"
+                "input=red"
+              ];
             };
           in "${pkgs.greetd.tuigreet}/bin/tuigreet ${flags}";
           user = "daru";
