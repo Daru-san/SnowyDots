@@ -13,7 +13,6 @@
     kanshi = {inherit systemdTarget;};
   };
   wayland.windowManager.sway = {
-    enable = true;
     checkConfig = false;
     package = pkgs.swayfx;
     systemd = {

@@ -22,6 +22,7 @@ in {
     ./wlsunset
   ];
   config = mkIf cfg.enable {
+    wayland.windowManager.sway.enable = true;
     services = {
       kanshi.enable = true;
       hypridle.enable = true;
