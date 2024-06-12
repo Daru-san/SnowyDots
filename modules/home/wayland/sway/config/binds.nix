@@ -80,10 +80,10 @@ in {
         "shift+print" = "exec ${shotman} --capture output";
 
         # Media control
-        "XF86AudioNext" = "exec${playerctl} next";
-        "XF86AudioPrev" = "exec${playerctl} previous";
-        "XF86AudioPlay" = "exec${playerctl} play-pause";
-        "XF86AudioStop" = "exec${playerctl} stop";
+        "XF86AudioNext" = "exec ${playerctl} next";
+        "XF86AudioPrev" = "exec ${playerctl} previous";
+        "XF86AudioPlay" = "exec ${playerctl} play-pause";
+        "XF86AudioStop" = "exec ${playerctl} stop";
 
         #Same but for keyboards without media keys
         "shift+F12" = "exec ${playerctl} next";

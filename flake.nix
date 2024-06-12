@@ -33,6 +33,22 @@
       url = "sourcehut:~darumaka/Wallpapers";
       flake = false;
     };
+
+    # hyprland
+    hyprland = {
+      type = "git";
+      url = "https://github.com/hyprwm/hyprland";
+      rev = "ea2501d4556f84d3de86a4ae2f4b22a474555b9f";
+      submodules = true;
+    };
+    hycov = {
+      url = "github:DreamMaoMao/hycov";
+      inputs.hyprland.follows = "hyprland";
+    };
+    hy3 = {
+      url = "github:outfoxxed/hy3";
+      inputs.hyprland.follows = "hyprland";
+    };
   };
   outputs = {
     self,

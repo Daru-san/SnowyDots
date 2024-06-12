@@ -18,7 +18,7 @@ in {
     ./waybar
     ./ags
     ./kitty
-    # ./wlogout
+    ./wlogout
     ./wlsunset
   ];
   config = mkIf cfg.enable {

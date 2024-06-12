@@ -6,12 +6,6 @@
 }: {
   imports = [./config];
   home.packages = with pkgs; [swaytools];
-  services = let
-    systemdTarget = "sway-session.target";
-  in {
-    wlsunset = {inherit systemdTarget;};
-    kanshi = {inherit systemdTarget;};
-  };
   wayland.windowManager.sway = {
     checkConfig = false;
     package = pkgs.swayfx;
