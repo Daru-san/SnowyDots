@@ -43,7 +43,7 @@ in {
               window-padding = 1;
               g = "Hello, Daru";
               c = "sway";
-              theme = lib.concatStringSep ";" [
+              theme = lib.concatStringsSep ";" [
                 "border=magenta"
                 "text=gray"
                 "prompt=green"
