@@ -52,7 +52,7 @@ in {
         "${mod}+z" = "exec ${terminal} -e ${editor}";
         "${mod}+a" = "exec swaymsg -t get_tree | grep 'easyeffects' || ${easyeffects}";
         "${mod}+alt+b" = "exec pkill waybar || ${waybar}";
-        "${mod}+i" = "exec ${iwgtk}";
+        "${mod}+i" = "exec pkill iwgtk || ${iwgtk}";
 
         #Window bings
         "alt+tab" = "exec pkill swaymux || ${swaymux}";
