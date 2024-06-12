@@ -13,6 +13,7 @@
     };
 
     # Custom stuff
+    plasma-manager.url = "github:pjones/plasma-manager";
     nix-colors.url = "github:Misterio77/nix-colors";
     spicetify-nix.url = "github:Daru-san/spicetify-nix";
     trashy.url = "github:Daru-san/trashy";

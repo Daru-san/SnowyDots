@@ -13,6 +13,13 @@ in {
       enable = true;
       extraPackages = [];
     };
+    services = {
+      desktopManager.plasma6.enable = true;
+      gnome = {
+        sushi.enable = true;
+        gnome-user-share.enable = true;
+      };
+    };
     security.pam.services.hyprlock = {};
     xdg.portal = {
       enable = lib.mkDefault true;
@@ -27,10 +34,6 @@ in {
       dconf.enable = true;
       hyprlock.enable = true;
       file-roller.enable = true;
-    };
-    services.gnome = {
-      sushi.enable = true;
-      gnome-user-share.enable = true;
     };
     services.greetd = {
       package = pkgs.greetd;
