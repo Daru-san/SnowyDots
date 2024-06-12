@@ -27,6 +27,10 @@
           command = "resize set 70ppt 70ppt";
           criteria.app_id = "^easyeffects$";
         }
+        {
+          command = "resize set 60ppt 60 ppt";
+          criteria.app_id = "^org.twosheds.iwgtk$";
+        }
       ]
       ++ map (x: {
         command = "layout stacking";
