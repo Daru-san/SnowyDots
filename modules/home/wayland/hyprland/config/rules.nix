@@ -17,6 +17,7 @@
             "org.twosheds.iwgtk"
             "com.github.hluk.copyq"
             "com.github.wwmm.easyeffects"
+            "Generate Password"
           ];
           resized-windows = [
             "foot"
