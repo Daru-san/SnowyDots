@@ -22,17 +22,14 @@
 in {
   imports = [./extra-binds.nix];
   wayland.windowManager.hyprland.settings = let
-    h = getExe pkgs.hdrop;
     e = "exec";
 
     # Normal (hyprland) binds
-    mkBind = x: y: z: "${x},${y},${z}";
+    mkBind = key1: key2: action: desc: "${key1},${key2},${desc},${action}";
     # Binds that execute programs
-    mkBindE = x: y: z: "${x},${y},${e},${z}";
+    mkBindE = key1: key2: action: desc: "${key1},${key2},${desc},${e},${action}";
     # Binds with singular keys
-    mkBindSE = y: z: ",${y},${e},${z}";
-    # Binds which use `hdrop` to only launch one instance
-    mkBindH = x: y: z: "${x},${y},${e},${h} '${z}'";
+    mkBindSE = key: action: desc: ",${key},${desc},${desc},${e},${action}";
   in
     lib.mkIf config.wayland.windowManager.hyprland.enable {
       bind = let
@@ -47,39 +44,33 @@ in {
         swayosd = getExe' config.services.swayosd.package "swayosd-client";
         g4music = getExe pkgs.g4music;
       in [
-        # Launching programs
-        (mkBindH "super" "e" "hyprctl clients | grep 'nautilus' || ${file-manager}")
-        (mkBindH "super" "b" browser)
-        (mkBindH "altshift" "m" g4music)
+        (mkBindE "super" "e" "hyprctl clients | grep 'nautilus' || ${file-manager}" "Launch file manager")
+        (mkBindE "super" "b" browser "Launch the browser")
+        (mkBindE "altshift" "m" g4music "Open a music player")
 
-        # Terminal stuff
-        (mkBindE "super" "q" terminal)
-        (mkBindE "super" "r" "${terminal} --hold ${yazi}")
-        (mkBindE "super" "z" "${terminal} --hold ${editor}")
-        (mkBindE "super" "m" "${terminal} --hold ${btop}")
+        (mkBindE "super" "q" terminal "Launch a terminal")
+        (mkBindE "super" "r" "${terminal} --hold ${yazi}" "Launch yazi")
+        (mkBindE "super" "z" "${terminal} --hold ${editor}" "Launch a text editor")
+        (mkBindE "super" "m" "${terminal} --hold ${btop}" "Launch a system monitor")
 
-        # Clipboard menu
-        (mkBindE "supershift" "v" "${copyq} menu")
+        (mkBindE "supershift" "v" "${copyq} menu" "Launch the clipboard menu")
 
-        #Window bings
-        (mkBind "supershift" "q" "killactive")
-        (mkBind "supershift" "e" "exit")
-        (mkBind "super" "s" "togglesplit")
-        (mkBind "super" "f" "fullscreen")
-        (mkBind "super" "v" "togglefloating")
-        (mkBindE "supershift" "x" "hyprctl reload")
+        (mkBind "supershift" "q" "killactive" "Kill active window")
+        (mkBind "supershift" "e" "exit" "Exit hyprland session")
+        (mkBind "super" "s" "togglesplit" "Toggle split layout")
+        (mkBind "super" "f" "fullscreen" "Toggle fullscreen")
+        (mkBind "super" "v" "togglefloating" "Toggle floating")
+        (mkBindE "supershift" "x" "hyprctl reload" "Reload hyprland")
 
-        #Lock screen
-        (mkBindE "super" "l" "${hyprlock} --immediate")
+        (mkBindE "super" "l" "${hyprlock} --immediate" "Lock the screen")
 
-        # Show when caps lock is pressed
-        (mkBindSE "caps_lock" "${swayosd} --caps-lock")
+        (mkBindSE "caps_lock" "${swayosd} --caps-lock" "Show caps lock")
 
-        # Show active workspace
-        (mkBindE "super" "w" "hyprctl notify -1 2000 0 `hyprctl activeworkspace | head -n 1`")
+        (mkBindE "super" "w"
+          "hyprctl notify -1 2000 0 `hyprctl activeworkspace | head -n 1`"
+          "Show the active workspace")
 
-        # Prevent idling
-        (mkBindE "super" "grave" idle-inhibit)
+        (mkBindE "super" "grave" idle-inhibit "Turn on the idle inhibitor")
       ];
 
       bindle = let
@@ -90,16 +81,16 @@ in {
         raise-brightness = "${s} --brightness raise";
         lower-brightness = "${s} --brightness lower";
       in [
-        (mkBindSE "XF86MonBrightnessUp" raise-brightness)
-        (mkBindSE "XF86MonBrightnessDown" lower-brightness)
+        (mkBindSE "XF86MonBrightnessUp" raise-brightness "Raise brightness")
+        (mkBindSE "XF86MonBrightnessDown" lower-brightness "Lower brightness")
 
-        (mkBindSE "XF86AudioRaiseVolume" raise-volume)
-        (mkBindSE "XF86AudioLowerVolume" lower-volume)
-        (mkBindSE "XF86AudioMute" mute)
+        (mkBindSE "XF86AudioRaiseVolume" raise-volume "Raise volume")
+        (mkBindSE "XF86AudioLowerVolume" lower-volume "Lower volume")
+        (mkBindSE "XF86AudioMute" mute "Mute audio")
 
-        (mkBindE "shift" "F8" raise-volume)
-        (mkBindE "shift" "F6" lower-volume)
-        (mkBindE "shift" "F7" mute)
+        (mkBindE "shift" "F8" raise-volume "Raise volume")
+        (mkBindE "shift" "F6" lower-volume "Lower volume")
+        (mkBindE "shift" "F7" mute "Mute audio")
       ];
 
       bindl = let
@@ -109,15 +100,15 @@ in {
         toggle-play = "${p} play-pause";
         stop = "${p} stop";
       in [
-        (mkBindSE "XF86AudioNext" next)
-        (mkBindSE "XF86AudioPrev" prev)
-        (mkBindSE "XF86AudioPlay" toggle-play)
-        (mkBindSE "XF86AudioStop" stop)
+        (mkBindSE "XF86AudioNext" next "Move to next track")
+        (mkBindSE "XF86AudioPrev" prev "Move to previous track")
+        (mkBindSE "XF86AudioPlay" toggle-play "Pause-play current track")
+        (mkBindSE "XF86AudioStop" stop "Stop current track")
 
-        (mkBindE "shift" "F12" next)
-        (mkBindE "shift" "F9" prev)
-        (mkBindE "shift" "F10" toggle-play)
-        (mkBindE "shift" "F11" stop)
+        (mkBindE "shift" "F12" next "Move to next track")
+        (mkBindE "shift" "F9" prev "Move to previous track")
+        (mkBindE "shift" "F10" toggle-play "Pause-play current track")
+        (mkBindE "shift" "F11" stop "Stop current track")
       ];
 
       bindr = let
@@ -125,7 +116,6 @@ in {
         easyeffects = getExe config.services.easyeffects.package;
         color-picker = getExe inputs.color-picker.packages.${system}.default;
         wlogout = getExe config.programs.wlogout.package;
-        waybar = getExe config.programs.waybar.package;
         pk = getExe' pkgs.busybox "pkill";
 
         # Screenshots
@@ -133,49 +123,32 @@ in {
 
         mx = getExe pkgs.mixxc;
 
-        iniFormat = formats.ini {};
-        foot-config = iniFormat.generate "foot.ini" {
-          main.font = "JetbrainsMono Nerd Font:size=14";
-        };
-        iwgtk = getExe pkgs.iwgtk;
-        bluetuith = getExe pkgs.bluetuith;
-        foot = getExe pkgs.foot;
-        blue-ui = "${foot} -c ${foot-config} --title bluetooth-tui -e ${bluetuith}";
-
-        swaync = getExe' pkgs.swaynotificationcenter "swaync-client";
-
         ags = getExe config.programs.ags.package;
       in [
-        # Launch the launcher - fuzzel
-        (mkBindE "super" "d" "${pk} fuzzel || ${fuzzel}")
+        (mkBindE "super" "d" "${pk} fuzzel || ${fuzzel}" "Launch app launcher")
 
-        # Waybar
-        (mkBindE "superalt" "b" "${pk} ags || ${ags}")
+        (mkBindE "superalt" "b" "pgrep ags | ${pk} ags || ${ags}" "Toggle the bar")
 
-        # Launch easyeffects
-        (mkBindH "super" "a" "hyprctl clients | grep 'easyeffects' || ${easyeffects}")
+        (mkBindE "super" "a"
+          "hyprctl clients | grep 'easyeffects' || ${easyeffects}"
+          "Launch easyeffects audio mixer")
 
         # Color picker
-        (mkBindE "supershift" "c" "${pk} color-picker || ${color-picker}")
+        (mkBindE "supershift" "c" "${pk} color-picker || ${color-picker}" "Launch the color picker")
 
         # wlogout
-        (mkBindE "super" "x" "${pk} wlogout || ${wlogout}")
+        (mkBindE "super" "x" "${pk} wlogout || ${wlogout}" "Show login menu")
 
         # Audio mixer
-        (mkBindE "altshift" "F7" "${pk} mixxc || ${mx} --anchor right --anchor top --margin 20 --margin 30 -M")
+        (mkBindE "altshift" "F7"
+          "${pk} mixxc || ${mx} --anchor right --anchor top --margin 20 --margin 30 -M"
+          "Launch mixxc")
 
         # Screenshotting
-        (mkBindSE "print" "${pk} shotman || ${shotman} --capure region")
-        (mkBindE "alt" "print" "${pk} shotman || ${shotman} --capture output")
-
-        # Notifcations
-        (mkBindE "super" "n" "${swaync} -t")
-        (mkBindE "supershift" "n" "${swaync} -d")
-        (mkBindE "superalt" "n" "${swaync} -C")
-
-        # Lauch useful stuff
-        (mkBindE "super" "i" "${pk} iwgtk || ${iwgtk}")
-        (mkBindE "supershift" "i" blue-ui)
+        (mkBindSE "print" "${pk} shotman || ${shotman} --capure region"
+          "Take a screenshot of a selected region")
+        (mkBindE "alt" "print" "${pk} shotman || ${shotman} --capture output"
+          "Take a screenshot of the entire screen")
       ];
     };
 }
