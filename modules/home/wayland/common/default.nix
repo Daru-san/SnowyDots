@@ -26,7 +26,7 @@ in {
     services = {
       kanshi.enable = true;
       hypridle.enable = true;
-      swaync.enable = true;
+      # swaync.enable = true;
       swayosd.enable = true;
       wlsunset.enable = true;
     };
