@@ -10,9 +10,7 @@ in {
   wayland.windowManager.hyprland.settings = {
     exec-once = [
       "[workspace 1] ${kitty} -T Terminal"
-      "[workspace 0] ${kitty} -T btop --hold ${getExe config.programs.btop.package}"
-      "[workspace 4;group] ${kitty} --hold ${getExe pkgs.vnstat}"
-      "[workspace 4,group] ${kitty} --hold ${getExe pkgs.bandwhich}"
+      "[workspace 3] ${kitty} -T btop --hold ${getExe config.programs.btop.package}"
       (getExe config.programs.ags.package)
       (getExe pkgs.copyq)
     ];
