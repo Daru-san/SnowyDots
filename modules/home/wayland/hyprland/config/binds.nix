@@ -7,7 +7,7 @@
   ...
 }: let
   inherit (lib) getExe getExe';
-  inherit (pkgs) formats writeShellScriptBin;
+  inherit (pkgs) writeShellScriptBin;
   idle-inhibit = getExe (writeShellScriptBin "idle-inhibit" ''
     inhibited=off
     if pgrep 'hypridle'; then
@@ -25,14 +25,14 @@ in {
     e = "exec";
 
     # Normal (hyprland) binds
-    mkBind = key1: key2: action: desc: "${key1},${key2},${desc},${action}";
+    mkBind = mods: key: action: desc: "${mods},${key},${desc},${action}";
     # Binds that execute programs
-    mkBindE = key1: key2: action: desc: "${key1},${key2},${desc},${e},${action}";
+    mkBindE = mods: key: action: desc: "${mods},${key},${desc},${e},${action}";
     # Binds with singular keys
-    mkBindSE = key: action: desc: ",${key},${desc},${desc},${e},${action}";
+    mkBindSE = key: action: desc: ",${key},${desc},${e},${action}";
   in
     lib.mkIf config.wayland.windowManager.hyprland.enable {
-      bind = let
+      bindd = let
         terminal = getExe config.programs.kitty.package;
         browser = getExe config.programs.firefox.package;
         file-manager = getExe pkgs.gnome.nautilus;
@@ -73,7 +73,7 @@ in {
         (mkBindE "super" "grave" idle-inhibit "Turn on the idle inhibitor")
       ];
 
-      bindle = let
+      binddle = let
         s = getExe' config.services.swayosd.package "swayosd-client";
         mute = "${s} --output-volume mute-toggle";
         raise-volume = "${s} --output-volume raise";
@@ -93,7 +93,7 @@ in {
         (mkBindE "shift" "F7" mute "Mute audio")
       ];
 
-      bindl = let
+      binddl = let
         p = getExe config.services.playerctld.package;
         next = "${p} next";
         prev = "${p} previous";
@@ -111,7 +111,7 @@ in {
         (mkBindE "shift" "F11" stop "Stop current track")
       ];
 
-      bindr = let
+      binddr = let
         fuzzel = getExe config.programs.fuzzel.package;
         easyeffects = getExe config.services.easyeffects.package;
         color-picker = getExe inputs.color-picker.packages.${system}.default;
@@ -119,7 +119,7 @@ in {
         pk = getExe' pkgs.busybox "pkill";
 
         # Screenshots
-        shotman = getExe pkgs.shotman;
+        hyprshot = getExe pkgs.hyprshot;
 
         mx = getExe pkgs.mixxc;
 
@@ -145,9 +145,9 @@ in {
           "Launch mixxc")
 
         # Screenshotting
-        (mkBindSE "print" "${pk} shotman || ${shotman} --capure region"
+        (mkBindSE "print" "${pk} hyprshot || ${hyprshot} -m region -z -o ~/Pictures/Screenshots"
           "Take a screenshot of a selected region")
-        (mkBindE "alt" "print" "${pk} shotman || ${shotman} --capture output"
+        (mkBindE "alt" "print" "${pk} hyprshot || ${hyprshot} -m active -z -o ~/Pictures/Screenshots"
           "Take a screenshot of the entire screen")
       ];
     };
