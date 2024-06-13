@@ -9,9 +9,12 @@
 in {
   options.wayland.enable = mkEnableOption "Enable wayland";
   config = mkIf cfg.enable {
-    programs.sway = {
-      enable = true;
-      extraPackages = [];
+    programs = {
+      sway = {
+        enable = true;
+        extraPackages = [];
+      };
+      hyprland.enable = true;
     };
     services.gnome = {
       sushi.enable = true;
@@ -42,7 +45,7 @@ in {
               t = "";
               window-padding = 1;
               g = "Hello, Daru";
-              c = "sway";
+              c = "Hyprland";
               theme = lib.concatStringsSep ";" [
                 "border=magenta"
                 "text=gray"
