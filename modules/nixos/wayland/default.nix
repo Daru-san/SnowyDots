@@ -11,7 +11,7 @@ in {
   config = mkIf cfg.enable {
     programs = {
       sway = {
-        enable = true;
+        enable = false;
         extraPackages = [];
       };
       hyprland.enable = true;
@@ -25,9 +25,9 @@ in {
       enable = lib.mkDefault true;
       xdgOpenUsePortal = true;
       extraPortals = with pkgs; [
-        xdg-desktop-portal-wlr
-        xdg-desktop-portal-kde
-        xdg-desktop-portal-gtk
+        # xdg-desktop-portal-wlr
+        # xdg-desktop-portal-kde
+        # xdg-desktop-portal-gtk
       ];
     };
     programs = {
