@@ -38,7 +38,7 @@
     hyprland = {
       type = "git";
       url = "https://github.com/hyprwm/hyprland";
-      rev = "ea2501d4556f84d3de86a4ae2f4b22a474555b9f";
+      rev = "9e781040d9067c2711ec2e9f5b47b76ef70762b3";
       submodules = true;
     };
     hycov = {
