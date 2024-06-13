@@ -21,6 +21,7 @@ in {
           "systemctl --user start swayosd.service"
           "systemctl --user start wlsunset.service"
           "systemctl --user start hyprpaper"
+          "systemctl --user stop swaync"
           "systemctl --user start polkit-gnome-authentication-agent-1"
         ];
       };
