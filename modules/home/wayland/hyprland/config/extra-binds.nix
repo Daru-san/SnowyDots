@@ -38,8 +38,7 @@ in {
         "supershift,o,cyclenext"
         "super,o,changegroupactive"
 
-        "ALT,tab,hycov:toggleoverview"
-        "ALTSHIFT,tab,hycov:toggleoverview,forceall"
+        # "ALT,tab,hyprexpo:expo, toggle"
       ]
       ++
       # Change workspace

@@ -41,6 +41,10 @@
       rev = "9e781040d9067c2711ec2e9f5b47b76ef70762b3";
       submodules = true;
     };
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
     hycov = {
       url = "github:DreamMaoMao/hycov";
       inputs.hyprland.follows = "hyprland";
