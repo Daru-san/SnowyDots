@@ -1,7 +1,6 @@
 {
   boot = {
-    consoleLogLevel = 1;
-    kernelParams = ["quiet"];
+    consoleLogLevel = 2;
     initrd.verbose = false;
     supportedFilesystems = ["ntfs"];
     initrd.systemd.enable = true;
