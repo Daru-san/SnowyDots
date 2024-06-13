@@ -3,11 +3,12 @@
 ---
 
 <p style="text-align: center;" align="center">
-My functional, advanced NixOS configuration flake using <a href="https://github.com/WillPower3309/swayfx">Swayfx</a>.
+My functional, advanced NixOS configuration.
 </p>
 
 <div style="text-align: center;" align="center">
     <img src="https://img.shields.io/static/v1?label=NixOS&message=24.11(unstable)&style=flat&logo=nixos&colorA=24273A&colorB=9173ff&logoColor=CAD3F5"/>
+    <img src="https://img.shields.io/static/v1?label=Hyprland&message=0.40.1&style=flat&logo=Hyprland&colorA=24273A&colorB=9173ff&logoColor=CAD3F5"/>
     <img src="https://img.shields.io/static/v1?label=Sourcehut&message=SnowyDots&style=flat&logo=sourcehut&colorA=24273A&colorB=9173ff&logoColor=CAD3F5" alt="https://git.sr.ht/~darumaka/SnowyDots"/>
 </div>
 
@@ -15,9 +16,13 @@ My functional, advanced NixOS configuration flake using <a href="https://github.
 
 ## Showcase
 
-### Sway
-
 > [Wallpapers](https://git.sr.ht/~darumaka/Wallpapers "My wallpaper repo on sourcehut")
+
+### Hyprland
+
+![image](https://i.imgur.com/1Mo4OUn.png "Hyprland")
+
+### Sway
 
 ![Image](https://i.imgur.com/6ACw4yR.png "I use Nix by the way")
 
@@ -28,7 +33,7 @@ My functional, advanced NixOS configuration flake using <a href="https://github.
 - Kernel: [Linux zen](https://github.com/zen-kernel/zen-kernel "Stock kernel")
 - Shell: [Fish](https://github.com/fish-shell/fish-shell) with [Starship](https://github.com/starship/starship)
 - Editor: [SnowyVim](https://git.sr.ht/~darumaka/SnowyVim)
-- Window Manager: [Swayfx](https://github.com/WillPower3309/swayfx "Swayfx")
+- Window Manager: [Hyprland](https://github.com/hyprwm/hyprland "Hyprland")
 - Launcher: [fuzzel](https://codeberg.org/dnkl/fuzzel)
 - Bar: [waybar](https://github.com/Alexays/Waybar "waybar")
 
