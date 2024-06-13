@@ -2,9 +2,8 @@ import Clock from './widgets/Clock.js'
 import Workspaces from './widgets/Workspaces.js'
 import NetworkIndicator from './widgets/NetworkIndicator.js'
 import Media from './widgets/mpris.js'
-import Volume from './widgets/volume.js'
+import VolumeSlider from './widgets/volumeSlider.js'
 import SysTray from './widgets/SysTray.js'
-
 const Left = () =>
   Widget.Box({
     spacing: 8,
@@ -21,7 +20,7 @@ const Right = () =>
   Widget.Box({
     hpack: 'end',
     spacing: 8,
-    children: [Volume(), NetworkIndicator(), SysTray()],
+    children: [VolumeSlider(), NetworkIndicator(), SysTray()],
   })
 
 const Bar = (monitor = 0) => {
