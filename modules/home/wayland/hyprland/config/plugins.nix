@@ -1,6 +1,5 @@
 {
   inputs,
-  pkgs,
   system,
   ...
 }: {
@@ -10,6 +9,7 @@
       inputs.hy3.packages.${system}.hy3
       # pkgs.hyprlandPlugins.hyprexpo
     ];
+
     settings.plugin = {
       hyprexpo = {
         columns = 3;
@@ -48,34 +48,16 @@
         no_gaps_when_only = 0;
         node_collapse_policy = 2;
 
-        # offset from group split direction when only one window is in a group
-        group_inset = 10; # default: 10
+        group_inset = 10;
 
         tab_first_window = true;
 
         tabs = {
-          height = 15; # default: 15
-
-          padding = 5; # default: 5
-
-          # the tab bar should animate in/out from the top instead of below the window
-          from_top = false; # default: false
-
-          # rounding of tab bar corners
-          rounding = 3; # default: 3
-
-          # render the window title on the bar
-          render_text = false; # default: true
-
-          # center the window title
-          text_center = true; # default: false
-
-          # font to render the window title with
-          text_font = "JetbrainsMono Nerd Font"; # default: Sans
-
-          text_height = 8;
-          text_padding = 3;
-
+          height = 15;
+          padding = 5;
+          from_top = true;
+          rounding = 3;
+          render_text = true;
           # col.active
           # col.urgent
           # col.inactive =
@@ -86,11 +68,6 @@
 
         autotile = {
           enable = true;
-
-          trigger_width = 0;
-
-          trigger_height = 0;
-
           workspaces = "all";
         };
       };
