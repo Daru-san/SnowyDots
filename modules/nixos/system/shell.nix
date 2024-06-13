@@ -41,7 +41,6 @@
       powertop = "sudo powertop";
       bandwhich = "sudo bandwhich";
       usbtop = "sudo usbtop";
-      systemctl = "sudo systemctl";
       rv = vim;
       rvi = vim;
       rvim = vim;
