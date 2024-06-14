@@ -9,7 +9,6 @@
     ./fastfetch
     ./freetube
     ./yt-dlp
-    ./nautilus
     ./spotify
     ./firefox
     ./obs-studio

@@ -35,7 +35,7 @@ in {
       bindd = let
         terminal = getExe config.programs.kitty.package;
         browser = getExe config.programs.firefox.package;
-        file-manager = getExe pkgs.gnome.nautilus;
+        file-manager = getExe pkgs.pcmanfm-qt;
         editor = "nvim";
         yazi = getExe config.programs.yazi.package;
         hyprlock = getExe config.programs.hyprlock.package;
@@ -45,7 +45,7 @@ in {
         g4music = getExe pkgs.g4music;
         dooit = getExe pkgs.dooit;
       in [
-        (mkBindE "super" "e" "hyprctl clients | grep 'nautilus' || ${file-manager}" "Launch file manager")
+        (mkBindE "super" "e" "hyprctl clients | grep 'pcmanfm-qt' || ${file-manager}" "Launch file manager")
         (mkBindE "super" "b" browser "Launch the browser")
         (mkBindE "altshift" "m" g4music "Open a music player")
 
