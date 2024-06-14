@@ -268,6 +268,7 @@
         "browser.urlbar.trimHttps" = true;
         "browser.urlbar.trimURLs" = true;
         "browser.urlbar.formatting.enabled" = true;
+        "browser.autofocus" = true;
 
         "extensions.autoDisableScope" = false;
 
