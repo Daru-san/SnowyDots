@@ -13,7 +13,6 @@
       isDefault = true;
       userChrome = builtins.readFile ./userChrome.css;
       extensions = with inputs.firefox-addons.packages.${system}; [
-        disable-javascript
         clearurls
         enhanced-github
         github-file-icons
