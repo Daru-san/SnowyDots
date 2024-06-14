@@ -37,6 +37,7 @@ in {
         "supershift,o,cyclenext"
         "superalt,q,hy3:killactive"
         "super,c,hy3:makegroup,tab"
+        "super,g,hy3:changegroup,untab"
 
         "ALT,tab,hycov:toggleoverview"
         "ALTSHIFT,tab,hycov:toggleoverview,forceall"
