@@ -40,10 +40,10 @@
         show_special = 0;
       };
       hy3 = {
-        no_gaps_when_only = 0;
+        no_gaps_when_only = 1;
         node_collapse_policy = 2;
 
-        group_inset = 10;
+        group_inset = 1;
 
         tab_first_window = true;
 
