@@ -21,7 +21,7 @@
       };
     };
   };
-  environment.systemPackages = [pkgs.iw];
+  environment.systemPackages = with pkgs; [iw networkmanagerapplet];
   services.udev.extraRules = ''
     ACTION=="add", SUBSYSTEM=="net", KERNEL=="wlan*" RUN+="${pkgs.iw}/bin/iw dev %k set power_save off"
   '';
