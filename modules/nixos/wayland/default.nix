@@ -16,19 +16,10 @@ in {
       };
       hyprland.enable = true;
     };
+    xdg.portal.enable = true;
     services.gnome = {
       sushi.enable = true;
       gnome-user-share.enable = true;
-    };
-    security.pam.services.hyprlock = {};
-    xdg.portal = {
-      enable = lib.mkDefault true;
-      xdgOpenUsePortal = true;
-      extraPortals = with pkgs; [
-        # xdg-desktop-portal-wlr
-        # xdg-desktop-portal-kde
-        # xdg-desktop-portal-gtk
-      ];
     };
     programs = {
       dconf.enable = true;
