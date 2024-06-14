@@ -39,6 +39,7 @@
       niv
       tree
       tgpt
+      dooit
       adbtuifm
       neovim
       libnotify
