@@ -10,7 +10,8 @@ in {
   wayland.windowManager.hyprland.settings = {
     exec-once = [
       "[workspace 1] ${kitty} -T Terminal"
-      "[workspace 3] ${kitty} -T btop --hold ${getExe config.programs.btop.package}"
+      "[workspace 3] ${kitty} -T btop --detach ${getExe config.programs.btop.package}"
+      "[workspace 8] ${kitty} --detach ${getExe pkgs.dooit}"
       (getExe config.programs.ags.package)
       (getExe pkgs.copyq)
     ];

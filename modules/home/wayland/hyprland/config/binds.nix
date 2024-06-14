@@ -43,15 +43,17 @@ in {
         copyq = getExe pkgs.copyq;
         swayosd = getExe' config.services.swayosd.package "swayosd-client";
         g4music = getExe pkgs.g4music;
+        dooit = getExe pkgs.dooit;
       in [
         (mkBindE "super" "e" "hyprctl clients | grep 'nautilus' || ${file-manager}" "Launch file manager")
         (mkBindE "super" "b" browser "Launch the browser")
         (mkBindE "altshift" "m" g4music "Open a music player")
 
         (mkBindE "super" "q" terminal "Launch a terminal")
-        (mkBindE "super" "r" "${terminal} --hold ${yazi}" "Launch yazi")
-        (mkBindE "super" "z" "${terminal} --hold ${editor}" "Launch a text editor")
-        (mkBindE "super" "m" "${terminal} --hold ${btop}" "Launch a system monitor")
+        (mkBindE "super" "r" "${terminal} --detach ${yazi}" "Launch yazi")
+        (mkBindE "super" "z" "${terminal} --detach ${editor}" "Launch a text editor")
+        (mkBindE "super" "m" "${terminal} --detach ${btop}" "Launch a system monitor")
+        (mkBindE "super" "," "${terminal} --detach ${dooit}")
 
         (mkBindE "supershift" "v" "${copyq} menu" "Launch the clipboard menu")
 
