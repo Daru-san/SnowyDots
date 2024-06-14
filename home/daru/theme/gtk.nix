@@ -29,8 +29,8 @@ in {
     };
 
     iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
+      name = "Fluent-dark";
+      package = pkgs.fluent-icon-theme;
     };
 
     gtk3 = {inherit extraCss extraConfig;};
