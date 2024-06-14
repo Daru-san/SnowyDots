@@ -37,6 +37,9 @@ in {
         "supershift,o,cyclenext"
         "superalt,q,hy3:killactive"
         "super,c,hy3:makegroup,tab"
+
+        "ALT,tab,hycov:toggleoverview"
+        "ALTSHIFT,tab,hycov:toggleoverview,forceall"
         # "ALT,tab,hyprexpo:expo, toggle"
       ]
       ++
