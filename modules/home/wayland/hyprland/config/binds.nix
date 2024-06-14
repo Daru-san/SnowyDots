@@ -123,11 +123,15 @@ in {
 
         mx = getExe pkgs.mixxc;
 
+        iwgtk = getExe pkgs.iwgtk;
+
         ags = getExe config.programs.ags.package;
       in [
         (mkBindE "super" "d" "${pk} fuzzel || ${fuzzel}" "Launch app launcher")
 
         (mkBindE "superalt" "b" "pgrep ags | ${pk} ags || ${ags}" "Toggle the bar")
+
+        (mkBindE "super" "i" "${pk} iwgtk || ${iwgtk}" "Launch the iwgtk wifi menu")
 
         (mkBindE "super" "a"
           "hyprctl clients | grep 'easyeffects' || ${easyeffects}"
