@@ -23,7 +23,6 @@
       blanket
       ungoogled-chromium
       g4music
-      pcmanfm-qt
       mixxc
       kdePackages.kalzium
       ryujinx
