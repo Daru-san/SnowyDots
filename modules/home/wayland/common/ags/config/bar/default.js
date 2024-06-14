@@ -1,13 +1,13 @@
 import Clock from './widgets/Clock.js'
 import Workspaces from './widgets/Workspaces.js'
 import NetworkIndicator from './widgets/NetworkIndicator.js'
-import Media from './widgets/mpris.js'
+import Music from './widgets/music.js'
 import VolumeSlider from './widgets/volumeSlider.js'
 import SysTray from './widgets/SysTray.js'
 const Left = () =>
   Widget.Box({
     spacing: 8,
-    children: [Workspaces(), Media()],
+    children: [Workspaces(), Music()],
   })
 
 const Center = () =>
