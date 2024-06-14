@@ -35,7 +35,7 @@ My functional, advanced NixOS configuration.
 - Editor: [SnowyVim](https://git.sr.ht/~darumaka/SnowyVim)
 - Window Manager: [Hyprland](https://github.com/hyprwm/hyprland "Hyprland")
 - Launcher: [fuzzel](https://codeberg.org/dnkl/fuzzel)
-- Bar: [waybar](https://github.com/Alexays/Waybar "waybar")
+- Bar: [ags](https://github.com/Aylur/ags "Widgets in javascript")
 
 ## Installing NixOS
 
