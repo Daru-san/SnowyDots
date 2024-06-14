@@ -2,6 +2,7 @@
   boot = {
     consoleLogLevel = 2;
     initrd.verbose = false;
+    kernelParams = ["quiet"];
     supportedFilesystems = ["ntfs"];
     initrd.systemd.enable = true;
     loader.efi.canTouchEfiVariables = true;
