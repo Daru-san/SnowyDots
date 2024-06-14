@@ -4,27 +4,17 @@
     networkmanager = {
       enable = true;
       dns = "none";
+      settings = {
+        wifi.iwd.autoconnect = false;
+      };
       wifi = {
         backend = "iwd";
         macAddress = "random";
         powersave = false;
       };
     };
-    wireless.iwd = {
-      enable = true;
-      settings = {
-        Settings = {
-          AutoConnect = false;
-          Hidden = true;
-          AlwaysRandomizeAddress = true;
-        };
-      };
-    };
   };
-  environment.systemPackages = with pkgs; [iw networkmanagerapplet];
-  services.udev.extraRules = ''
-    ACTION=="add", SUBSYSTEM=="net", KERNEL=="wlan*" RUN+="${pkgs.iw}/bin/iw dev %k set power_save off"
-  '';
+  environment.systemPackages = [pkgs.networkmanagerapplet];
   networking.firewall = {
     enable = true;
     allowedUDPPorts = [51413];
