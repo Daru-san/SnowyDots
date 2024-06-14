@@ -1,8 +1,10 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: {
+  hardware.firmware = [pkgs.rtw88-firmware];
   boot.extraModprobeConfig = lib.concatLines [
     "options rtw88_8822bu rtw_switch_usb_mode=1 "
   ];
