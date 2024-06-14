@@ -1,6 +1,13 @@
-{pkgs, ...}: {
-  environment.systemPackages = with pkgs; [
-    linuxPackages.cpupower
+{
+  config,
+  lib,
+  ...
+}: {
+  boot.extraModprobeConfig = lib.concatLines [
+    "options rtw88_8822bu rtw_switch_usb_mode=1 "
+  ];
+  environment.systemPackages = [
+    config.boot.kernelPackages.cpupower
   ];
   programs.tuxclocker.enable = true;
   services = {
