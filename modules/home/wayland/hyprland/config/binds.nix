@@ -53,7 +53,7 @@ in {
         (mkBindE "super" "r" "${terminal} --detach ${yazi}" "Launch yazi")
         (mkBindE "super" "z" "${terminal} --detach ${editor}" "Launch a text editor")
         (mkBindE "super" "m" "${terminal} --detach ${btop}" "Launch a system monitor")
-        (mkBindE "super" "," "${terminal} --detach ${dooit}" "Open your todo list")
+        (mkBindE "super" "comma" "${terminal} --detach ${dooit}" "Open your todo list")
 
         (mkBindE "supershift" "v" "${copyq} menu" "Launch the clipboard menu")
 
