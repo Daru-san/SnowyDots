@@ -5,7 +5,7 @@
       enable = true;
       dns = "none";
       settings.wifi = {
-        "iwd.autoconnect" = false;
+        "iwd.autoconnect" = true;
       };
       wifi = {
         backend = "iwd";
