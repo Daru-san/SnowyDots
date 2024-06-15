@@ -17,6 +17,10 @@
         multi-account-containers
         auto-tab-discard
         buster-captcha-solver
+        violentmonkey
+        github-file-icons
+        widegithub
+        hover-zoom-plus
       ];
 
       bookmarks = [
