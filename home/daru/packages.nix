@@ -47,7 +47,6 @@
       xdg-utils
       pulsemixer
       maven
-      transmission
       musikcube
       qmmp
       mediainfo
@@ -59,6 +58,7 @@
       nixfmt-rfc-style
       zaread
       trashy
+      rqbit
     ])
     (with pkgs.gnome; [dconf-editor gnome-clocks file-roller cheese])
     (with inputs; [

@@ -8,6 +8,7 @@ in {
       set fish_greeting
       ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
       ${pkgs.trashy}/bin/trashy completions fish | source
+      ${pkgs.rqbit}/bin/rqbit -v error completions fish | source
     '';
     functions = {
       zcalc = ''${pkgs.zsh}/bin/zsh -c 'autoload zcalc && zcalc "$@"' zcalc "$argv"'';
@@ -77,6 +78,7 @@ in {
       nfs = "nh-full-switch";
       nob = "nh os boot -- -j 12 --keep-going --cores 12";
       su = "sudo";
+      rqd = "rqbit download";
     };
     plugins = [
       {
