@@ -1,5 +1,9 @@
 {
   services = {
+    psd = {
+      enable = true;
+      resyncTimer = "1hr";
+    };
     playerctld.enable = true;
     easyeffects.enable = true;
     kdeconnect.enable = true;
