@@ -42,7 +42,6 @@
       tgpt
       dooit
       adbtuifm
-      neovim
       libnotify
       fd
       speedtest-cli
@@ -73,10 +72,11 @@
       trashy
     ])
     (with pkgs.gnome; [dconf-editor gnome-clocks file-roller cheese])
-    [
-      inputs.r-pg.packages.${system}.default
-      inputs.anipy-cli.packages.${system}.default
-      inputs.color-picker.packages.${system}.default
-    ]
+    (with inputs; [
+      r-pg.packages.${system}.default
+      anipy-cli.packages.${system}.default
+      color-picker.packages.${system}.default
+      snowyvim.packages.${system}.neovim
+    ])
   ];
 }

@@ -14,7 +14,6 @@
       (with inputs; [
         snowpkgs.overlays.default
         hyprland-plugins.overlays.default
-        snowyvim.overlays.default
         trashy.overlays.default
       ])
       (with outputs.overlays; [
