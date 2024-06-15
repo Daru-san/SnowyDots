@@ -9,7 +9,6 @@
   home.packages = lib.mkMerge [
     (with pkgs; [
       # GUI
-      obsidian
       scrcpy
       keepassxc
       bridge-editor
@@ -22,15 +21,7 @@
       prismlauncher
       blanket
       g4music
-      mixxc
       kdePackages.kalzium
-      ryujinx
-      (retroarch.override {
-        cores = with libretro; [
-          citra
-          melonds
-        ];
-      })
 
       # CLI
       ouch
@@ -54,7 +45,6 @@
       systemctl-tui
       exiftool
       xdg-utils
-      nitch
       pulsemixer
       maven
       transmission

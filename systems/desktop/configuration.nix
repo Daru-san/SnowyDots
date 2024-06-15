@@ -19,21 +19,16 @@
   programs = {
     nix-ld.enable = true;
     gnome-disks = {enable = true;};
-    kdeconnect = {
-      enable = true;
-      package = lib.mkDefault pkgs.kdePackages.kdeconnect-kde;
-    };
+    kdeconnect.enable = true;
     yazi.enable = false;
   };
 
-  services = {
-    syncthing = {
-      enable = true;
-      dataDir = "/home/daru";
-      user = "daru";
-      configDir = "/home/daru/.sync";
-      settings = {gui = {theme = "black";};};
-    };
+  services.syncthing = {
+    enable = true;
+    dataDir = "/home/daru";
+    user = "daru";
+    configDir = "/home/daru/.sync";
+    settings = {gui = {theme = "black";};};
   };
 
   environment.systemPackages = with pkgs; [
@@ -44,7 +39,6 @@
     zip
     unrar
     p7zip
-    commonsCompress
     clinfo
     glxinfo
     exfatprogs
@@ -64,8 +58,6 @@
     v4l-utils
     bandwhich
   ];
-
-  boot.kernelParams = ["video=eDP-1:d"];
   time.timeZone = "Africa/Johannesburg";
   i18n.defaultLocale = "en_ZA.UTF-8";
 }

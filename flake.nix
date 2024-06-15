@@ -14,7 +14,10 @@
 
     # Custom stuff
     nix-colors.url = "github:Misterio77/nix-colors";
-    spicetify-nix.url = "github:Daru-san/spicetify-nix";
+    spicetify-nix = {
+      url = "github:Daru-san/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     trashy.url = "github:Daru-san/trashy";
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
     anipy-cli.url = "github:sdaqo/anipy-cli";
@@ -28,7 +31,10 @@
     r-pg.url = "github:Daru-san/r-pg";
     color-picker.url = "github:Daru-san/color-picker-rs";
     snowyvim.url = "sourcehut:~darumaka/SnowyVim";
-    snowpkgs.url = "sourcehut:~darumaka/Snowpkgs";
+    snowpkgs = {
+      url = "sourcehut:~darumaka/Snowpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     wallpapers = {
       url = "sourcehut:~darumaka/Wallpapers";
       flake = false;

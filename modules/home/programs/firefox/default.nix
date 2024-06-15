@@ -13,21 +13,9 @@
       isDefault = true;
       userChrome = builtins.readFile ./userChrome.css;
       extensions = with inputs.firefox-addons.packages.${system}; [
-        clearurls
-        enhanced-github
-        github-file-icons
-        gitako-github-file-tree
-        widegithub
-        hover-zoom-plus
         keepassxc-browser
         multi-account-containers
-        skip-redirect
         auto-tab-discard
-        dark-mode-webextension
-        ublock-origin
-        tridactyl
-        nighttab
-        sidebery
         buster-captcha-solver
       ];
 

@@ -5,7 +5,7 @@
       enable = true;
       dns = "none";
       settings.wifi = {
-        "iwd.autoconnect" = true;
+        "iwd.autoconnect" = false;
       };
       wifi = {
         backend = "iwd";
@@ -33,10 +33,5 @@
         to = 1764;
       }
     ];
-  };
-  services.blueman.enable = true;
-  hardware.bluetooth = {
-    enable = true;
-    settings.General.Experimental = true;
   };
 }

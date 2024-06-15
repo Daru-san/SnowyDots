@@ -25,7 +25,7 @@ in {
           "systemctl --user start kdeconnect"
           "systemctl --user start kdeconnect-indicator"
           "systemctl --user stop swaync"
-          "systemctl --user start polkit-gnome-authentication-agent-1"
+          "systemctl --user start polkit-gnome"
         ];
       };
       settings = {source = ["extra.conf"];};

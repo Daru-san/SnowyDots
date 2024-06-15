@@ -55,7 +55,7 @@ in {
       };
     };
     systemd = {
-      user.services.polkit-gnome-authentication-agent-1 = {
+      user.services.polkit-gnome = {
         description = "polkit-gnome-authentication-agent-1";
         after = ["graphical-session.target"];
         serviceConfig = {

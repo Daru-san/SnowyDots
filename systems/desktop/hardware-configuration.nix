@@ -1,4 +1,8 @@
-{lib, ...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   boot = {
     kernelParams = ["intel_pstate=passive"];
     kernelModules = ["coretemp"];
@@ -35,6 +39,6 @@
   hardware = {
     cpu.intel.updateMicrocode = true;
     enableRedistributableFirmware = true;
-    enableAllFirmware = true;
+    firmware = [pkgs.rtw88-firmware];
   };
 }
