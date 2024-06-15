@@ -14,6 +14,9 @@
       };
     };
   };
+  services.udev.extraRules = ''
+    ACTION=="add", SUBSYSTEM=="net", KERNEL=="wlan*" RUN+="${pkgs.iw}/bin/iw dev %k set power_save off"
+  '';
   environment.systemPackages = [pkgs.networkmanagerapplet];
   networking.firewall = {
     enable = true;
