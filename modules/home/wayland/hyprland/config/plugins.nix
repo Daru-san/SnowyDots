@@ -43,22 +43,11 @@
         no_gaps_when_only = 1;
         node_collapse_policy = 2;
 
-        group_inset = 1;
-
         tab_first_window = true;
 
         tabs = {
-          height = 15;
-          padding = 5;
-          from_top = true;
-          rounding = 3;
-          render_text = true;
-          # col.active
-          # col.urgent
-          # col.inactive =
-          # col.text.active =
-          # col.text.urgent =
-          # col.text.inactive =
+          padding = 2;
+          render_text = false;
         };
 
         autotile = {

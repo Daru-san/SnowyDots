@@ -24,8 +24,8 @@ in {
           "systemctl --user start udiskie"
           "systemctl --user start kdeconnect"
           "systemctl --user start kdeconnect-indicator"
-          "systemctl --user stop swaync"
           "systemctl --user start polkit-gnome"
+          "systemctl --user start rqbit-server"
         ];
       };
       settings = {source = ["extra.conf"];};
