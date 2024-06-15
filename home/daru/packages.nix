@@ -21,7 +21,6 @@
       libreoffice-qt-fresh
       prismlauncher
       blanket
-      ungoogled-chromium
       g4music
       mixxc
       kdePackages.kalzium
