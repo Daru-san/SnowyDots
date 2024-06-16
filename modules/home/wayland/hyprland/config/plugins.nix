@@ -47,6 +47,7 @@
 
         tabs = {
           padding = 2;
+          height = 9;
           render_text = false;
         };
 
