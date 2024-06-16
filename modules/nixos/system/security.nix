@@ -1,5 +1,4 @@
 {
-  # boot.kernelPackages = pkgs.linuxPackages_6_9_hardened;
   programs.ssh.startAgent = true;
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.login.enableGnomeKeyring = true;

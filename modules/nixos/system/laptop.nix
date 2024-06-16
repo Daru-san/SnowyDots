@@ -8,7 +8,9 @@
 in {
   options.system.laptop = mkEnableOption "Enable laptop configuration";
   config = mkIf cfg {
+    hardware.bluetooth.enable = true;
     services = {
+      blueman.enable = true;
       upower = {
         enable = true;
         percentageCritical = 20;

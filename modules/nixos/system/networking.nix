@@ -20,18 +20,5 @@
   environment.systemPackages = [pkgs.networkmanagerapplet];
   networking.firewall = {
     enable = true;
-    allowedUDPPorts = [51413];
-    allowedUDPPortRanges = [
-      {
-        from = 1714;
-        to = 1764;
-      }
-    ];
-    allowedTCPPortRanges = [
-      {
-        from = 1714;
-        to = 1764;
-      }
-    ];
   };
 }
