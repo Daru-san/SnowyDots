@@ -15,17 +15,13 @@
       fs = true;
       ytdl-raw-options = "ignore-config=,sub-lang=en,write-auto-sub=";
       deband = false;
-      osd-bar = false;
-      border = false;
-      osc = false;
-      sub-auto = "fuzzy";
+
       osd-font = "NotoMono Nerd Font";
     };
     scriptOpts = {
       osc = {
         scalewindowed = 0.8;
         hidetimeout = 300;
-        showonpause = false;
       };
       thumbfast = {
         hwdec = true;
@@ -40,8 +36,8 @@
       uosc
       mpv-cheatsheet
       quality-menu
-      quack
       mpris
+      reload
       thumbfast
     ];
   };
