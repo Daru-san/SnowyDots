@@ -2,6 +2,7 @@
 
 ---
 
+<!--markdownlint-disable-->
 <p style="text-align: center;" align="center">
 My functional, advanced NixOS configuration.
 </p>
@@ -11,7 +12,7 @@ My functional, advanced NixOS configuration.
     <img src="https://img.shields.io/static/v1?label=Hyprland&message=0.40.1&style=flat&logo=Hyprland&colorA=24273A&colorB=9173ff&logoColor=CAD3F5"/>
     <img src="https://img.shields.io/static/v1?label=Sourcehut&message=SnowyDots&style=flat&logo=sourcehut&colorA=24273A&colorB=9173ff&logoColor=CAD3F5" alt="https://git.sr.ht/~darumaka/SnowyDots"/>
 </div>
-
+<!--markdownlint-enable-->
 ---
 
 ## Showcase
