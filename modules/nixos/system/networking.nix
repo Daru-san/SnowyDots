@@ -4,9 +4,6 @@
     networkmanager = {
       enable = true;
       dns = "none";
-      settings.wifi = {
-        "iwd.autoconnect" = false;
-      };
       wifi = {
         backend = "iwd";
         macAddress = "random";
