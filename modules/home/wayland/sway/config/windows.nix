@@ -2,12 +2,12 @@
   wayland.windowManager.sway.config = {
     workspaceAutoBackAndForth = true;
     assigns = {
-      "0" = [{app_id = "btop";}];
       "2" = [{app_id = "^firefox$";}];
-      "3" = [{app_id = "^org.gnome.Nautilus$";}];
-      "4" = [{title = "^Spotify Free$";} {app_id = "^com.github.neithern.g4music$";}];
-      "5" = [{app_id = "^FreeTube$";} {app_id = "^mpv$";}];
-      "6" = [{app_id = "^Minecraft$";} {app_id = "^org.prismlauncher.PrismLauncher";}];
+      "3" = [{app_id = "btop";}];
+      "4" = [{app_id = "^org.gnome.Nautilus$";}];
+      "5" = [{title = "^Spotify Free$";} {app_id = "^com.github.neithern.g4music$";}];
+      "6" = [{app_id = "^FreeTube$";} {app_id = "^mpv$";}];
+      "7" = [{app_id = "^Minecraft$";} {app_id = "^org.prismlauncher.PrismLauncher";}];
       "8" = [{app_id = "oculante";}];
       "9" = [{app_id = "^org.pwmt.zathura$";}];
     };
