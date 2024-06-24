@@ -4,20 +4,20 @@
   lib,
   ...
 }: let
-  inherit (lib) getExe;
+  inherit (lib) getExe getExe';
   kitty = getExe config.programs.kitty.package;
 in {
   wayland.windowManager.hyprland.settings = {
     exec-once = [
       "[workspace 1] ${kitty} -T Terminal"
-      "[workspace 3] ${kitty} -T btop --detach ${getExe config.programs.btop.package}"
-      "[workspace 8] ${kitty} --detach ${getExe pkgs.dooit}"
+      "[workspace 3] ${kitty} -T btop --hold ${getExe config.programs.btop.package}"
+      "[workspace 8] ${kitty} --hold ${getExe pkgs.dooit}"
       (getExe config.programs.ags.package)
       (getExe pkgs.copyq)
+      (getExe' pkgs.swww "swww-daemon")
     ];
     exec = [
       "systemctl --user restart kanshi.service"
-      "systemctl --user restart hyprpaper.service"
     ];
   };
 }

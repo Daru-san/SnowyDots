@@ -6,6 +6,5 @@
     ./style.nix
     ./autostart.nix
     ./hyprlock.nix
-    ./hyprpaper.nix
   ];
 }
