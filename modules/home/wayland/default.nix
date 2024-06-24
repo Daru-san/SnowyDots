@@ -2,6 +2,6 @@
   imports = [./sway ./common ./hyprland];
   home.sessionVariables = {
     NIXOS_OZONE_WL = "1";
-    QT_QPA_PLATFORM = "wayland";
+    GTK_USE_PORTAL = 1;
   };
 }
