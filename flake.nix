@@ -13,6 +13,7 @@
     };
 
     # Custom stuff
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
     nix-colors.url = "github:Misterio77/nix-colors";
     spicetify-nix = {
       url = "github:Daru-san/spicetify-nix";
@@ -35,11 +36,6 @@
       url = "sourcehut:~darumaka/Snowpkgs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    wallpapers = {
-      url = "sourcehut:~darumaka/Wallpapers";
-      flake = false;
-    };
-
   };
   outputs = {
     self,
@@ -55,7 +51,7 @@
       overlays = import ./overlays;
     };
     desktop = {
-      hostName = "Articuno";
+      hostName = "Aggron";
       config = ./systems/desktop;
       system = "x86_64-linux";
       stateVersion = "24.11";
