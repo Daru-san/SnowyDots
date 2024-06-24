@@ -71,6 +71,18 @@
         "url": "https://github.com/ndtoan96/ouch.yazi/archive/694d149be5f96eaa0af68d677c17d11d2017c976.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "starship.yazi": {
+        "branch": "main",
+        "description": "Starship prompt plugin for yazi",
+        "homepage": null,
+        "owner": "Rolv-Apneseth",
+        "repo": "starship.yazi",
+        "rev": "6197e4cca4caed0121654079151632f6abcdcae9",
+        "sha256": "1nv67h2c6p5sfhkxc28613r7nxadfhxrr0f65ag32jj4n2mh2ym0",
+        "type": "tarball",
+        "url": "https://github.com/Rolv-Apneseth/starship.yazi/archive/6197e4cca4caed0121654079151632f6abcdcae9.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "tokyo-night.yazi": {
         "branch": "main",
         "description": "Yazi flavor with the Tokyo Night colors",
