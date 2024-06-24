@@ -1,4 +1,5 @@
 {
+  services.flatpak.enable = true;
   programs = {
     usbtop.enable = true;
     adb.enable = true;
