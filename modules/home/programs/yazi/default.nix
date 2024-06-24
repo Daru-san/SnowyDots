@@ -44,10 +44,6 @@
             run = "torrent-preview";
           }
           {
-            name = "*/";
-            run = "eza-preview";
-          }
-          {
             mime = "application/*zip";
             run = "ouch";
           }

@@ -13,7 +13,6 @@ in {
     "bat" = getPlugin "yazi-plugin-bat";
     "fg" = getPlugin "fg.yazi";
     "ouch" = getPlugin "ouch.yazi";
-    "eza-preview" = getPlugin "eza-preview.yazi";
     "torrent-preview" = getPlugin "torrent-preview.yazi";
     "starship" = getPlugin "starship.yazi";
   };

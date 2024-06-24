@@ -11,18 +11,6 @@
         "url": "https://github.com/Sonico98/exifaudio.yazi/archive/94329ead8b3a6d3faa2d4975930a3d0378980c7a.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "eza-preview.yazi": {
-        "branch": "master",
-        "description": "yazi plugin to preview directories using eza, list and tree modes",
-        "homepage": null,
-        "owner": "sharklasers996",
-        "repo": "eza-preview.yazi",
-        "rev": "9a5fa8316ee441858f8423ee66a6cccef386289c",
-        "sha256": "0c28bgc6wq6jk68hc58qhx6k17nlg15nw8c58kj6w5gv7mlprvji",
-        "type": "tarball",
-        "url": "https://github.com/sharklasers996/eza-preview.yazi/archive/9a5fa8316ee441858f8423ee66a6cccef386289c.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "fg.yazi": {
         "branch": "main",
         "description": "yazi plugin for rg search with fzf file preview",
