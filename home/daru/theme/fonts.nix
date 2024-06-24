@@ -14,9 +14,9 @@
       name = "JetbrainsMono Nerd Font";
     };
     sizes = {
-      desktop = 15;
-      applications = 15;
-      terminal = 16;
+      desktop = 14;
+      applications = 14;
+      terminal = 14;
     };
     extraFonts = with pkgs; [monocraft noto-fonts];
   };
