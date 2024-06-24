@@ -1,6 +1,5 @@
 {
   pkgs,
-  inputs,
   lib,
   config,
   ...
@@ -9,24 +8,13 @@
 in {
   imports = [./config];
   config = lib.mkIf cfg.enable {
-    services.hyprpaper.enable = true;
     wayland.windowManager.hyprland = {
+      settings.env = lib.mapAttrsToList (name: value: "${name},${builtins.toString value}") config.home.sessionVariables;
       enable = true;
-      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+      package = pkgs.hyprland;
       systemd = {
         enable = true;
-        extraCommands = [
-          "systemctl --user start easyeffects.service"
-          "systemctl --user start hypridle.service"
-          "systemctl --user start swayosd.service"
-          "systemctl --user start wlsunset.service"
-          "systemctl --user start hyprpaper"
-          "systemctl --user start udiskie"
-          "systemctl --user start kdeconnect"
-          "systemctl --user start kdeconnect-indicator"
-          "systemctl --user start polkit-gnome"
-          "systemctl --user start rqbit-server"
-        ];
+        variables = ["--all"];
       };
       settings = {source = ["extra.conf"];};
     };
