@@ -37,8 +37,20 @@
           }
         ];
       };
+      open = {
+        prepend_rules = [
+          {
+            name = "*.ts";
+            use = "edit";
+          }
+        ];
+      };
       plugin = {
         prepend_previewers = [
+          {
+            name = "*.ts";
+            run = "bat";
+          }
           {
             mime = "application/x-bittorrent";
             run = "torrent-preview";
