@@ -1,13 +1,10 @@
 {config, ...}: {
   boot = {
+    extraModprobeConfig = ''
+      options 88x2bu rtw_switch_usb_mode=1 rtw_power_mgnt=0
+    '';
     extraModulePackages = [
-      (config.boot.kernelPackages.rtl88x2bu.overrideAttrs (old: {
-        prePatch =
-          old.prePatch
-          + ''
-            substituteInPlace Makefile --replace "CONFIG_CONCURRENT_MODE = n" "CONFIG_CONCURRENT_MODE = y"
-          '';
-      }))
+      config.boot.kernelPackages.rtl88x2bu
     ];
     kernelModules = ["88x2bu"];
     blacklistedKernelModules = [
