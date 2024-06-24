@@ -6,5 +6,14 @@
       };
       Install = {WantedBy = ["default.target"];};
     };
+    swww-daemon = {
+      Service = {
+        ConditionEnvironment = "WAYLAND_DISPLAY";
+        ExecStart = "${pkgs.swww}/bin/swww-daemon";
+        After = ["graphical-session-pre.target"];
+        PartOf = ["graphical-session.target"];
+      };
+      Install = {WantedBy = ["graphical-session.target"];};
+    };
   };
 }
