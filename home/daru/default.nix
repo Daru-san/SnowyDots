@@ -13,7 +13,6 @@
     overlays = lib.flatten [
       (with inputs; [
         snowpkgs.overlays.default
-        hyprland-plugins.overlays.default
         trashy.overlays.default
       ])
       (with outputs.overlays; [
