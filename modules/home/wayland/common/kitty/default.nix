@@ -40,7 +40,7 @@
 
       background_opacity = "0.6";
       dynamic_background_opacity = true;
-
+      enable_audio_bell = false;
       sync_to_monitor = true;
       mouse_hide_wait = 20;
       cursor_shape = "beam";
