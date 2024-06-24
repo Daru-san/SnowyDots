@@ -5,6 +5,5 @@
     ./devices.nix
     ./style.nix
     ./autostart.nix
-    ./hyprlock.nix
   ];
 }

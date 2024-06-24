@@ -17,7 +17,6 @@ in {
       "SUPER,mouse:272,movewindow"
       "SUPER,mouse:273,resizewindow"
     ];
-    bindn = [", mouse:272, hy3:focustab, mouse"];
     bind =
       [
         "SUPER,minus,splitratio,-0.25"
@@ -35,13 +34,6 @@ in {
         "SUPERSHIFT,TAB,workspace, m-1"
 
         "supershift,o,cyclenext"
-        "superalt,q,hy3:killactive"
-        "super,c,hy3:makegroup,tab"
-        "super,g,hy3:changegroup,untab"
-
-        "ALT,tab,hycov:toggleoverview"
-        "ALTSHIFT,tab,hycov:toggleoverview,forceall"
-        # "ALT,tab,hyprexpo:expo, toggle"
       ]
       ++
       # Change workspace
@@ -52,7 +44,7 @@ in {
       ++
       # Move focus
       (mapAttrsToList
-        (key: direction: "SUPER,${key},hy3:movefocus,${direction}")
+        (key: direction: "SUPER,${key},movefocus,${direction}")
         directions)
       ++
       # Swap windows
