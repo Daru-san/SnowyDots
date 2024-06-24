@@ -9,23 +9,11 @@ My functional, advanced NixOS configuration.
 
 <div style="text-align: center;" align="center">
     <img src="https://img.shields.io/static/v1?label=NixOS&message=24.11(unstable)&style=flat&logo=nixos&colorA=24273A&colorB=9173ff&logoColor=CAD3F5"/>
-    <img src="https://img.shields.io/static/v1?label=Hyprland&message=0.40.1&style=flat&logo=Hyprland&colorA=24273A&colorB=9173ff&logoColor=CAD3F5"/>
+    <img src="https://img.shields.io/static/v1?label=Hyprland&message=0.41.1&style=flat&logo=Hyprland&colorA=24273A&colorB=9173ff&logoColor=CAD3F5"/>
     <img src="https://img.shields.io/static/v1?label=Sourcehut&message=SnowyDots&style=flat&logo=sourcehut&colorA=24273A&colorB=9173ff&logoColor=CAD3F5" alt="https://git.sr.ht/~darumaka/SnowyDots"/>
 </div>
 <!--markdownlint-enable-->
 ---
-
-## Showcase
-
-> [Wallpapers](https://git.sr.ht/~darumaka/Wallpapers "My wallpaper repo on sourcehut")
-
-### Hyprland
-
-![image](https://i.imgur.com/1Mo4OUn.png "Hyprland")
-
-### Sway
-
-![Image](https://i.imgur.com/6ACw4yR.png "I use Nix by the way")
 
 ## Systems
 
