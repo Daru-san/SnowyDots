@@ -20,18 +20,22 @@
             "Generate Password"
             "org.gnome.FileRoller"
             "org.freedesktop.impl.portal.desktop.kde"
+            "nmtui"
+            "pulsemixer"
           ];
           resized-windows = [
             "foot"
+            "nmtui"
+            "pulsemixer"
             "org.freedesktop.impl.portal.desktop.kde"
             "org.gnome.FileRoller"
             "org.twosheds.iwgtk"
             "com.github.wwmm.easyeffects"
           ];
         in [
-          (map (x: "float,^(${x})(.*)$") window)
-          (map (x: "center,^(${x})(.*)$") window)
-          (map (c: "size 60%,^(${c})(.*)$") resized-windows)
+          (map (c: "float,^(${c})(.*)$") window)
+          (map (d: "center,^(${d})(.*)$") window)
+          (map (e: "size 60%,^(${e})(.*)$") resized-windows)
         ])
         (let
           w = x: y: "workspace ${toString x},^(${y})(.*)$";

@@ -123,9 +123,7 @@ in {
         # Screenshots
         hyprshot = getExe pkgs.hyprshot;
 
-        mx = getExe pkgs.mixxc;
-
-        iwgtk = getExe pkgs.iwgtk;
+        kitty = getExe pkgs.kitty;
 
         ags = getExe config.programs.ags.package;
       in [
@@ -133,7 +131,7 @@ in {
 
         (mkBindE "superalt" "b" "pgrep ags | ${pk} ags || ${ags}" "Toggle the bar")
 
-        (mkBindE "super" "i" "${pk} iwgtk || ${iwgtk}" "Launch the iwgtk wifi menu")
+        (mkBindE "super" "i" "${pk} nmtui || ${kitty} --class nmtui --detach nmtui" "Launch the nmtui wifi menu")
 
         (mkBindE "super" "a"
           "hyprctl clients | grep 'easyeffects' || ${easyeffects}"
@@ -146,9 +144,7 @@ in {
         (mkBindE "super" "x" "${pk} wlogout || ${wlogout}" "Show login menu")
 
         # Audio mixer
-        (mkBindE "altshift" "F7"
-          "${pk} mixxc || ${mx} --anchor right --anchor top --margin 20 --margin 30 -M"
-          "Launch mixxc")
+        (mkBindE "super" "p" "${pk} pulsemixer || ${kitty} --class pulsemixer --detach pulsemixer" "Launch pulsemixer")
 
         # Screenshotting
         (mkBindSE "print" "${pk} hyprshot || ${hyprshot} -m region -z -o ~/Pictures/Screenshots"

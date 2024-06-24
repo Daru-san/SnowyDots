@@ -53,9 +53,13 @@
           "pwvucontrol"
           "org.kde.kdeconnect-indicator"
           "swaymux"
+          "nmtui"
+          "pulsemixer"
         ];
         titles = [
           "CopyQ"
+          "nmtui"
+          "pulsemixer"
           "Bluetooth Devices"
           "Easy Effects"
         ];

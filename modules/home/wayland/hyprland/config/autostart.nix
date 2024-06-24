@@ -14,7 +14,6 @@ in {
       "[workspace 8] ${kitty} --hold ${getExe pkgs.dooit}"
       (getExe config.programs.ags.package)
       (getExe pkgs.copyq)
-      (getExe' pkgs.swww "swww-daemon")
     ];
     exec = [
       "systemctl --user restart kanshi.service"

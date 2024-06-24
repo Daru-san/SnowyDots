@@ -19,8 +19,7 @@
         titlebar = false;
         border = 0;
       };
-      bars = [{command = "${config.programs.waybar.package}/bin/waybar";}];
-      output."*".bg = "${config.wallpaperImage} fill";
+      bars = [{mode = "invisible";}];
     };
 
     extraConfig = ''

@@ -39,7 +39,6 @@ in {
       color-picker = getExe inputs.color-picker.packages.${pkgs.system}.default;
       swaync = getExe' pkgs.swaynotificationcenter "swaync-client";
       swaymux = getExe pkgs.swaymux;
-      iwgtk = getExe pkgs.iwgtk;
     in
       {
         #Basic binds
@@ -52,7 +51,8 @@ in {
         "${mod}+z" = "exec ${terminal} -e ${editor}";
         "${mod}+a" = "exec swaymsg -t get_tree | grep 'easyeffects' || ${easyeffects}";
         "${mod}+alt+b" = "exec pkill waybar || ${waybar}";
-        "${mod}+i" = "exec pkill iwgtk || ${iwgtk}";
+        "${mod}+i" = "exec pkill nmtui || ${terminal} --class nmtui --detach nmtui";
+        "${mod}+p" = "exec pkill pulsemixer || ${terminal} --class pulsemixer --detach pulsemixer";
 
         #Window bings
         "alt+tab" = "exec pkill swaymux || ${swaymux}";
