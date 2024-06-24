@@ -16,10 +16,11 @@ in {
     enable = true;
 
     theme = {
-      name = "Colloid-Green-Dark";
+      name = "Colloid-Dark-Compact";
       package = pkgs.colloid-gtk-theme.override {
         colorVariants = ["dark"];
         themeVariants = ["green" "default" "grey"];
+        sizeVariants = ["compact"];
       };
     };
 
@@ -29,8 +30,8 @@ in {
     };
 
     iconTheme = {
-      name = "Fluent-dark";
-      package = pkgs.fluent-icon-theme;
+      name = "WhiteSur-dark";
+      package = with pkgs; whitesur-icon-theme;
     };
 
     gtk3 = {inherit extraCss extraConfig;};
@@ -38,7 +39,10 @@ in {
   };
   dconf.settings = {
     # Make gtk apps follow a dark theme
-    "org/gnome/desktop/interface" = {color-scheme = "prefer-dark";};
+    "org/gnome/desktop/interface" = {
+      gtk-theme = "Colloid-Dark-Compact";
+      color-scheme = "prefer-dark";
+    };
     # Remove buttons in gtk apps
     "org/gnome/desktop/wm/preferences" = {button-layout = "appmenu";};
   };
@@ -49,7 +53,6 @@ in {
       size = 23;
       gtk.enable = true;
     };
-    sessionVariables = {GTK_THEME = "Colloid-Green-Dark";};
     file.".icons/default".source = "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Ice";
   };
 }
