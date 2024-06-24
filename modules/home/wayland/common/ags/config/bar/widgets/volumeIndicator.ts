@@ -5,20 +5,22 @@ export default () => {
     icon: Utils.watch(getIcon(), audio.speaker, getIcon),
   })
 
-  const slider = Widget.Slider({
-    hexpand: true,
-    draw_value: false,
-    on_change: ({ value }) => (audio.speaker.volume = value),
-    setup: (self) =>
-      self.hook(audio.speaker, () => {
-        self.value = audio.speaker.volume || 0
-      }),
-  })
-
-  return Widget.Box({
-    css: `opacity: 1; min-width: 180px;`,
-    class_name: 'volume',
-    children: [icon, slider],
+  return Widget.EventBox({
+    onScrollUp: Utils.subprocess([
+      'swayosd-client',
+      '--output-volume',
+      'raise',
+    ]),
+    onScrollDown: Utils.subprocess([
+      'swayosd-client',
+      '--output-volume',
+      'lower',
+    ]),
+    child: Widget.Button({
+      css: `opacity: 1; min-width: 10px;`,
+      class_name: 'volume',
+      child: icon,
+    }),
   })
 }
 

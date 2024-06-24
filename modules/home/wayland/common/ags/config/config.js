@@ -1,9 +1,21 @@
-import Bar from './bar/default.js'
-import NotificationPopups from './modules/notificationPopups.js'
+const main = '/tmp/ags/main.js'
 
-App.config({
-  style: './scss/style.scss',
-  windows: [Bar(), NotificationPopups()],
-})
-
-export {}
+try {
+  await Utils.execAsync([
+    'bun',
+    'build',
+    `${App.configDir}/main.ts`,
+    '--outfile',
+    main,
+    '--external',
+    'resource://*',
+    '--external',
+    'gi://*',
+    '--external',
+    'file://*',
+  ])
+  await import(`file://${main}`)
+} catch (error) {
+  console.error(error)
+  App.quit()
+}

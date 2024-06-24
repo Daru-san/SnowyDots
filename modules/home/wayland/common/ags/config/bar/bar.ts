@@ -1,9 +1,9 @@
-import Clock from './widgets/Clock.js'
-import Workspaces from './widgets/Workspaces.js'
-import NetworkIndicator from './widgets/NetworkIndicator.js'
-import Music from './widgets/music.js'
-import VolumeSlider from './widgets/volumeSlider.js'
-import SysTray from './widgets/SysTray.js'
+import Clock from './widgets/Clock'
+import Workspaces from './widgets/Workspaces'
+import Music from './widgets/music'
+import SysTray from './widgets/SysTray'
+import SysIndicators from './widgets/SysIndicators'
+
 const Left = () =>
   Widget.Box({
     spacing: 8,
@@ -20,7 +20,7 @@ const Right = () =>
   Widget.Box({
     hpack: 'end',
     spacing: 8,
-    children: [VolumeSlider(), NetworkIndicator(), SysTray()],
+    children: [SysIndicators(), SysTray()],
   })
 
 const Bar = (monitor = 0) => {
