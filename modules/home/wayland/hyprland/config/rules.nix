@@ -18,9 +18,13 @@
             "com.github.hluk.copyq"
             "com.github.wwmm.easyeffects"
             "Generate Password"
+            "org.gnome.FileRoller"
+            "org.freedesktop.impl.portal.desktop.kde"
           ];
           resized-windows = [
             "foot"
+            "org.freedesktop.impl.portal.desktop.kde"
+            "org.gnome.FileRoller"
             "org.twosheds.iwgtk"
             "com.github.wwmm.easyeffects"
           ];
