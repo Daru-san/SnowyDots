@@ -1,12 +1,20 @@
 {
   inputs,
   lib,
+  pkgs,
   ...
 }: rec {
   imports = [./qt.nix ./fonts.nix ./gtk.nix];
 
   # Wallpaper
-  wallpaperImage = "${inputs.wallpapers}/images/bright-leaves.png";
+  wallpaperImage =
+    pkgs.fetchFromGitHub {
+      owner = "KDE";
+      repo = "plasma-workspace-wallpapers";
+      rev = "c091e7df788e17a6f8ca4c8917a8e09c9d6bdef0";
+      hash = "sha256-l4bHVIkkkTXGcXQPpJGRByZGQxn+5IcG0g5iF8Lcwq0=";
+    }
+    + "/Mountain/contents/images_dark/5120x2880.png";
 
   # Colorscheme from nix-colors
   colorScheme = inputs.nix-colors.colorSchemes.oxocarbon-dark;
