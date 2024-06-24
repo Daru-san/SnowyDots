@@ -1,6 +1,6 @@
 {pkgs, ...}: let
   inherit (pkgs) writeShellApplication;
-  runtimeInputs = with pkgs; [nh git nix bash];
+  runtimeInputs = with pkgs; [nh git nixVersions.latest bash];
   home-switch = "nh home switch -- -j 12 --cores 12 --keep-going";
   os-switch = "nh os switch -- -j 12 --cores 12 --keep-going";
 in {
