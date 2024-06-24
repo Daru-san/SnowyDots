@@ -22,7 +22,7 @@
     trashy.url = "github:Daru-san/trashy";
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
     anipy-cli.url = "github:sdaqo/anipy-cli";
-    ags.url = "github:Aylur/ags";
+    ags.url = "github:ozwaldorf/ags?ref=feature/sway";
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";

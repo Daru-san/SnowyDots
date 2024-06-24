@@ -30,7 +30,7 @@ in {
       launcher = config.wayland.windowManager.sway.config.menu;
       file-manager = getExe pkgs.gnome.nautilus;
       shotman = getExe pkgs.shotman;
-      waybar = getExe config.programs.waybar.package;
+      ags = getExe config.programs.ags.package;
       editor = getExe pkgs.neovim;
       hyprlock = getExe config.programs.hyprlock.package;
       copyq = getExe config.services.copyq.package;
@@ -44,13 +44,13 @@ in {
         #Basic binds
         "${mod}+d" = "exec pkill fuzzel || ${launcher}";
         "${mod}+q" = "exec ${terminal}";
-        "${mod}+e" = "exec swaymsg -t get_tree | grep 'Nautilus' || ${file-manager}'";
+        "${mod}+e" = "exec ${file-manager}'";
         "${mod}+b" = "exec pidof firefox || ${browser}";
         "${mod}+x" = "exec pkill wlogout || ${wlogout}";
         "${mod}+r" = "exec ${terminal} -e ${yazi}";
         "${mod}+z" = "exec ${terminal} -e ${editor}";
         "${mod}+a" = "exec swaymsg -t get_tree | grep 'easyeffects' || ${easyeffects}";
-        "${mod}+alt+b" = "exec pkill waybar || ${waybar}";
+        "${mod}+alt+b" = "exec ags -q || ${ags}";
         "${mod}+i" = "exec pkill nmtui || ${terminal} --class nmtui --detach nmtui";
         "${mod}+p" = "exec pkill pulsemixer || ${terminal} --class pulsemixer --detach pulsemixer";
 

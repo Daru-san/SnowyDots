@@ -28,6 +28,14 @@
           criteria.app_id = "^easyeffects$";
         }
         {
+          command = "resize set 60ppt 60ppt";
+          criteria.app_id = "nmtui";
+        }
+        {
+          command = "resize set 60ppt 60ppt";
+          criteria.app_id = "pulsemixer";
+        }
+        {
           command = "resize set 60ppt 60 ppt";
           criteria.app_id = "^org.twosheds.iwgtk$";
         }
