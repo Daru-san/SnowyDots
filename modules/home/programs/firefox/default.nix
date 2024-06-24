@@ -293,6 +293,11 @@
         "mousewheel.system_scroll_override_on_root_content.vertical.factor" = 175;
         "toolkit.scrollbox.horizontalScrollDistance" = 6;
         "toolkit.scrollbox.verticalScrollDistance" = 2;
+
+        "widget.use-xdg-desktop-portal" = 1;
+        "widget.use-xdg-desktop-portal.file-picker" = 1;
+        "widget.use-xdg-desktop-portal.kde" = 1;
+        "GTK_USE_PORTAL" = 1;
       };
     };
     policies = {
