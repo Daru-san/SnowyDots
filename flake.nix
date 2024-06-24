@@ -16,7 +16,7 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
     nix-colors.url = "github:Misterio77/nix-colors";
     spicetify-nix = {
-      url = "github:Daru-san/spicetify-nix";
+      url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     trashy.url = "github:Daru-san/trashy";
