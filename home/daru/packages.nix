@@ -12,13 +12,9 @@
       scrcpy
       keepassxc
       bridge-editor
-      archiver
       oculante
-      swayimg
-      krita
       pwvucontrol
-      libreoffice-qt-fresh
-      prismlauncher
+      gnome.gnome-software
       blanket
       g4music
       kdePackages.kalzium
@@ -37,8 +33,6 @@
       speedtest-cli
       glow
       gping
-      obexftp
-      obexfs
       hut
       unstable.nvtopPackages.intel
       sysz
@@ -56,7 +50,6 @@
       nix-init
       nix-update
       nixfmt-rfc-style
-      zaread
       trashy
       rqbit
     ])
