@@ -6,6 +6,7 @@
       "systemd.unified_cgroup_hierarchy=yes"
       "nowatchdog"
       "modprobe.blacklist=iTCO_wdt"
+      "usbcore.autosuspend=-1"
     ];
   };
   boot.kernel.sysctl = {
