@@ -13,6 +13,7 @@ My functional, advanced NixOS configuration.
     <img src="https://img.shields.io/static/v1?label=Sourcehut&message=SnowyDots&style=flat&logo=sourcehut&colorA=24273A&colorB=9173ff&logoColor=CAD3F5" alt="https://git.sr.ht/~darumaka/SnowyDots"/>
 </div>
 <!--markdownlint-enable-->
+
 ---
 
 ## Systems
