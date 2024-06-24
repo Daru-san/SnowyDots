@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   services = {
     psd = {
       enable = true;
@@ -10,7 +10,11 @@
     udiskie.enable = true;
     syncthing = {
       enable = true;
-      tray.enable = true;
+      tray = {
+        enable = true;
+        package = pkgs.qsyncthingtray;
+        command = "qsyncthingtray";
+      };
     };
   };
 }
