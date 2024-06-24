@@ -18,9 +18,18 @@ in {
         z "$1"
         clear
       '';
+      # From https://github.com/fdw/yazi-zoxide-zsh
       zy = ''
-        z "$1"
-        ${pkgs.yazi}/bin/yazi
+        if [ "$1" != "" ]; then
+          if [ -d "$1" ]; then
+            yazi "$1"
+          else
+            yazi "$(zoxide query $1)"
+          fi
+        else
+          yazi
+        fi
+        return $?
       '';
       zmv = ''${pkgs.zsh}/bin/zsh -c 'autoload zmv && zmv "$@"' zmv "$argv"'';
     };
