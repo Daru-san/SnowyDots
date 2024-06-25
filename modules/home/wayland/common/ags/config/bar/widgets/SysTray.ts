@@ -1,17 +1,14 @@
 const systemtray = await Service.import('systemtray')
 
-const items = systemtray.bind('items').as((items) =>
-  items.map((item) =>
-    Widget.Button({
-      child: Widget.Icon({ icon: item.bind('icon') }),
-      on_primary_click: (_, event) => item.activate(event),
-      on_secondary_click: (_, event) => item.openMenu(event),
-      tooltip_markup: item.bind('tooltip_markup'),
-    }),
-  ),
-)
+const SysTrayItem = (item) =>
+  Widget.Button({
+    child: Widget.Icon().bind('icon', item, 'icon'),
+    tooltipMarkup: item.bind('tooltip_markup'),
+    onPrimaryClick: (_, event) => item.activate(event),
+    onSecondaryClick: (_, event) => item.openMenu(event),
+  })
 
 export default () =>
   Widget.Box({
-    children: items,
+    children: systemtray.bind('items').as((i) => i.map(SysTrayItem)),
   })

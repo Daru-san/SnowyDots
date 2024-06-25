@@ -19,7 +19,12 @@
         titlebar = false;
         border = 0;
       };
-      bars = [{mode = "invisible";}];
+      bars = [
+        {
+          mode = "invisible";
+          command = "echo bar > /dev/null";
+        }
+      ];
     };
 
     extraConfig = ''
