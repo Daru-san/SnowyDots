@@ -12,17 +12,33 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Custom stuff
+    # Flatpak management
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
+
+    # Colors
     nix-colors.url = "github:Misterio77/nix-colors";
-    spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+
+    # Spiced spotify
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+
+    # Trash can
     trashy.url = "github:Daru-san/trashy";
+
+    # Firefox addons
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+
+    # Reall nice anime cli tool
     anipy-cli.url = "github:sdaqo/anipy-cli";
+
+    # Wayland shell
     ags.url = "github:ozwaldorf/ags?ref=feature/sway";
+
+    # Featureful wayland launcher
+    anyrun.url = "github:anyrun-org/anyrun";
+    anyrun-shortcuts.url = "github:micha4w/anyrun-shell-shortcuts";
+    anyrun-powermenu.url = "github:Daru-san/anyrun-powermenu";
+
+    # Indexing for packages
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
