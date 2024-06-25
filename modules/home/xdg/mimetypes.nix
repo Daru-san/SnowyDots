@@ -1,6 +1,6 @@
 {
   defaultApplications = {
-    "application/pdf" = ["zaread.desktop"];
+    "application/pdf" = ["zathura.desktop"];
     "image/*" = ["oculante.desktop"];
     "video/*" = ["mpv.desktop"];
     "audio/*" = ["qmmp.desktop"];

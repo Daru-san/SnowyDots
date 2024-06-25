@@ -33,6 +33,10 @@
         }
         {
           command = "resize set 60ppt 60ppt";
+          criteria.app_id = "org.freedesktop.impl.portal.desktop.kde";
+        }
+        {
+          command = "resize set 60ppt 60ppt";
           criteria.app_id = "pulsemixer";
         }
         {
@@ -55,6 +59,7 @@
           "nm-connection-editor"
           "org.kde.kdeconnect.daemon"
           ".blueman-manager-wrapped"
+          "org.freedesktop.impl.portal.desktop.kde"
           "org.twosheds.iwgtk"
           "com.github.hluk.copyq"
           "copyq"

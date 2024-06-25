@@ -9,10 +9,10 @@
 in {
   options.wayland.enable = mkEnableOption "Enable wayland";
   config = mkIf cfg.enable {
-    programs.hyprland.enable = true;
     programs = {
+      sway.enable = true;
+      sway.extraPackages = [];
       dconf.enable = true;
-      hyprlock.enable = true;
       file-roller.enable = true;
     };
     services.greetd = {
@@ -25,7 +25,7 @@ in {
               t = "";
               window-padding = 1;
               g = "Hello, Daru";
-              c = "Hyprland";
+              c = "sway";
             };
           in "${pkgs.greetd.tuigreet}/bin/tuigreet ${flags}";
           user = "daru";
@@ -44,6 +44,7 @@ in {
           RestartSec = 1;
           TimeoutStopSec = 10;
         };
+        Install.WantedBy = ["graphical-session.target"];
       };
     };
   };
