@@ -44,7 +44,6 @@ in {
           RestartSec = 1;
           TimeoutStopSec = 10;
         };
-        Install.WantedBy = ["graphical-session.target"];
       };
     };
   };
