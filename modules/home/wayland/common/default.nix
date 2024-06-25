@@ -7,15 +7,12 @@
   inherit (lib) mkEnableOption mkIf;
   cfg = config.wayland;
 in {
-  options.wayland.enable = mkEnableOption "Enable wayland using Hyprland";
+  options.wayland.enable = mkEnableOption "Enable wayland using SwayFx";
   imports = [
     ./kanshi
     ./hypridle
     ./hyprlock
-    ./fuzzel
-    ./swaync
     ./swayosd
-    ./waybar
     ./ags
     ./kitty
     ./wlogout
@@ -36,8 +33,6 @@ in {
       ags.enable = true;
       wlogout.enable = true;
       hyprlock.enable = true;
-      fuzzel.enable = true;
-      waybar.enable = true;
     };
     home.packages = [pkgs.wl-clipboard-rs];
   };
