@@ -16,17 +16,6 @@ My functional, advanced NixOS configuration.
 
 ---
 
-## Systems
-
-### Articuno (Lenovo Desktop)
-
-- Kernel: [Linux zen](https://github.com/zen-kernel/zen-kernel "Stock kernel")
-- Shell: [Fish](https://github.com/fish-shell/fish-shell) with [Starship](https://github.com/starship/starship)
-- Editor: [SnowyVim](https://git.sr.ht/~darumaka/SnowyVim)
-- Window Manager: [Hyprland](https://github.com/hyprwm/hyprland "Hyprland")
-- Launcher: [fuzzel](https://codeberg.org/dnkl/fuzzel)
-- Bar: [ags](https://github.com/Aylur/ags "Widgets in javascript")
-
 ## Installing NixOS
 
 ### Installation
