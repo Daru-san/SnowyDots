@@ -20,6 +20,7 @@ in {
     ./kitty
     ./wlogout
     ./wlsunset
+    ./anyrun
   ];
   config = mkIf cfg.enable {
     wayland.windowManager.sway.enable = true;
@@ -31,6 +32,7 @@ in {
       wlsunset.enable = true;
     };
     programs = {
+      anyrun.enable = true;
       ags.enable = true;
       wlogout.enable = true;
       hyprlock.enable = true;

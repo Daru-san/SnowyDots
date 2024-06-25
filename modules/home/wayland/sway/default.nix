@@ -27,7 +27,7 @@
       wrapperFeatures = {gtk = true;};
       config = {
         terminal = lib.getExe config.programs.kitty.package;
-        menu = lib.getExe config.programs.fuzzel.package;
+        menu = lib.getExe config.programs.anyrun.package;
       };
     };
   };

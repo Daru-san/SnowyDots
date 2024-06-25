@@ -42,7 +42,7 @@ in {
     in
       {
         #Basic binds
-        "${mod}+d" = "exec pkill fuzzel || ${launcher}";
+        "${mod}+d" = "exec pkill anyrun || ${launcher}";
         "${mod}+q" = "exec ${terminal}";
         "${mod}+e" = "exec ${file-manager}";
         "${mod}+b" = "exec pidof firefox || ${browser}";
