@@ -18,6 +18,7 @@
         "$character"
         "$shell"
       ];
+      command_timeout = 5000;
       right_format = lib.concatStrings [
         "$cmd_duration"
       ];
