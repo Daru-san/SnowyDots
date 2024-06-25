@@ -7,7 +7,7 @@
   inherit (lib) mkEnableOption mkIf;
   cfg = config.wayland;
 in {
-  options.wayland.enable = mkEnableOption "Enable wayland using SwayFx";
+  options.wayland.enable = mkEnableOption "Enable wayland using SwayFX";
   imports = [
     ./kanshi
     ./hypridle
@@ -24,7 +24,6 @@ in {
     services = {
       kanshi.enable = true;
       hypridle.enable = true;
-      # swaync.enable = true;
       swayosd.enable = true;
       wlsunset.enable = true;
     };
