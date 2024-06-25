@@ -44,7 +44,7 @@ in {
         #Basic binds
         "${mod}+d" = "exec pkill fuzzel || ${launcher}";
         "${mod}+q" = "exec ${terminal}";
-        "${mod}+e" = "exec ${file-manager}'";
+        "${mod}+e" = "exec ${file-manager}";
         "${mod}+b" = "exec pidof firefox || ${browser}";
         "${mod}+x" = "exec pkill wlogout || ${wlogout}";
         "${mod}+r" = "exec ${terminal} -e ${yazi}";
