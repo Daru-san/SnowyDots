@@ -23,10 +23,11 @@ in {
         initial_session = {
           command = let
             flags = lib.cli.toGNUCommandLineShell {} {
-              t = "";
+              t = true;
               window-padding = 1;
-              g = "Hello, Daru";
+              g = "Access is restricted to authorized personnel only.";
               c = "Hyprland";
+              r = true;
             };
           in "${pkgs.greetd.tuigreet}/bin/tuigreet ${flags}";
           user = "daru";

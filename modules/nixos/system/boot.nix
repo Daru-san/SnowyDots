@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   boot = {
     consoleLogLevel = 2;
     initrd.verbose = false;
@@ -10,6 +10,14 @@
       enable = true;
       editor = false;
       configurationLimit = 7;
+      consoleMode = "auto";
+    };
+    plymouth = {
+      enable = true;
+      theme = "nixos-bgrt";
+      themePackages = with pkgs; [
+        nixos-bgrt-plymouth
+      ];
     };
   };
 }
