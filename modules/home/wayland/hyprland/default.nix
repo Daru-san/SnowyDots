@@ -14,6 +14,7 @@ in {
       package = pkgs.hyprland;
       systemd = {
         enable = true;
+        enableXdgAutostart = true;
         variables = ["--all"];
       };
       settings = {source = ["extra.conf"];};
