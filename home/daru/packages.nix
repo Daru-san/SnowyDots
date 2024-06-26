@@ -16,6 +16,7 @@
       pwvucontrol
       gnome.gnome-software
       blanket
+      mission-center
       g4music
       kdePackages.kalzium
 
