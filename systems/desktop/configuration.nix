@@ -19,7 +19,10 @@
   programs = {
     nix-ld.enable = true;
     gnome-disks = {enable = true;};
-    kdeconnect.enable = true;
+    kdeconnect = {
+      enable = true;
+      package = pkgs.valent;
+    };
     yazi.enable = false;
   };
 

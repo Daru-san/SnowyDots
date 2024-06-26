@@ -13,6 +13,7 @@
       package = pkgs.swayfx;
       systemd = {
         enable = true;
+        xdgAutostart = true;
         extraCommands = [
           "systemctl --user start easyeffects"
           "systemctl --user start hypridle"
