@@ -6,12 +6,15 @@
       recolor-keephue = true;
       font = "${config.fonts.monospace.name} ${toString config.fonts.sizes.terminal}";
       page-padding = 3;
-      selection-notification = true;
-      selection-clipboard = "clipboard";
+      selection-notification = false;
       scroll-page-aware = true;
       guioptions = "none";
       statusbar-home-tilde = true;
       window-title-basename = true;
+    };
+    mappings = {
+      "<C-c>" = "set selection-clipboard clipboard";
+      "<C-v>" = "set selection-clipboard primary";
     };
     extraConfig = with config.colorScheme.palette; ''
       set notification-error-bg       "#${base03}" #525252
