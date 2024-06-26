@@ -1,8 +1,8 @@
-import Widget from 'resource:///com/github/Aylur/ags/widget.js'
-import Sway from 'resource:///com/github/Aylur/ags/service/sway.js'
+const hyprland = await Service.import('hyprland')
 
 const windowClass = Widget.Label({
-  label: Sway.active.client.bind('class'),
+  label: hyprland.active.client.bind('class'),
+  visible: hyprland.active.client.bind('address').as((addr) => !!addr),
 })
 
 const ActiveWindow = () => {

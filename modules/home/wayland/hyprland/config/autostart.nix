@@ -14,6 +14,7 @@ in {
       "[workspace 8] ${kitty} --hold ${getExe pkgs.dooit}"
       (getExe config.programs.ags.package)
       (getExe pkgs.copyq)
+      (getExe pkgs.swww + " img ${config.wallpaperImage}")
     ];
     exec = [
       "systemctl --user restart kanshi.service"

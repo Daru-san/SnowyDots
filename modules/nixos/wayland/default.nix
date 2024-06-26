@@ -10,8 +10,9 @@ in {
   options.wayland.enable = mkEnableOption "Enable wayland";
   config = mkIf cfg.enable {
     programs = {
-      sway.enable = true;
+      sway.enable = false;
       sway.extraPackages = [];
+      hyprland.enable = true;
       dconf.enable = true;
       file-roller.enable = true;
     };
@@ -25,7 +26,7 @@ in {
               t = "";
               window-padding = 1;
               g = "Hello, Daru";
-              c = "sway";
+              c = "Hyprland";
             };
           in "${pkgs.greetd.tuigreet}/bin/tuigreet ${flags}";
           user = "daru";

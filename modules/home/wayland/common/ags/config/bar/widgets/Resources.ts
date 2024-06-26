@@ -12,6 +12,10 @@ const ramUsedPercent = Variable('', {
   ],
 })
 
+const mkUsedCpuPercentString = (usedPercent: string) => {
+  return `${usedPercent}%`
+}
+
 const ResourceButton = () =>
   Widget.Button({
     className: 'transparent-button',
@@ -28,7 +32,7 @@ const ResourceButton = () =>
             }),
             Widget.Label({
               css: `margin-left: 10px; font-size: 12px;`,
-              label: cpuUsagePercent.bind(),
+              label: cpuUsagePercent.bind().as(mkUsedCpuPercentString),
             }),
           ],
         }),

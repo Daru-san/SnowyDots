@@ -114,7 +114,7 @@ in {
       ];
 
       binddr = let
-        fuzzel = getExe config.programs.fuzzel.package;
+        anyrun = getExe config.programs.anyrun.package;
         easyeffects = getExe config.services.easyeffects.package;
         color-picker = getExe inputs.color-picker.packages.${system}.default;
         wlogout = getExe config.programs.wlogout.package;
@@ -127,7 +127,7 @@ in {
 
         ags = getExe config.programs.ags.package;
       in [
-        (mkBindE "super" "d" "${pk} fuzzel || ${fuzzel}" "Launch app launcher")
+        (mkBindE "super" "d" "${pk} anyrun || ${anyrun}" "Launch app launcher")
 
         (mkBindE "superalt" "b" "pgrep ags | ${pk} ags || ${ags}" "Toggle the bar")
 

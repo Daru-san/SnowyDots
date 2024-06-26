@@ -34,6 +34,7 @@ in {
         "SUPERSHIFT,TAB,workspace, m-1"
 
         "supershift,o,cyclenext"
+        "super,o,changegroupactive"
       ]
       ++
       # Change workspace

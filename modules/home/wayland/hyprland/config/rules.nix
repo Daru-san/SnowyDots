@@ -42,8 +42,10 @@
           wt = x: y: "workspace ${toString x},title:(${y})(.*)$";
           g = x: "group,^(${x})$";
         in [
-          (g "swayimg")
-          (w 8 "swayimg")
+          (g "oculante")
+          (w 8 "oculante")
+
+          (w 7 "libreoffice")
 
           (w 2 "firefox")
           (w 4 "org.gnome.Nautilus")
@@ -51,10 +53,10 @@
           (w 5 "com.github.neithern.g4music")
 
           (g "mpv")
-          (w 5 "mpv")
+          (w 6 "mpv")
 
-          (w 5 "FreeTube")
-          (wt 4 "Spotify")
+          (w 6 "FreeTube")
+          (wt 5 "Spotify")
 
           (g "virt-manager")
           (w 9 "virt-manager")
@@ -64,8 +66,8 @@
 
           (g "org.prismlauncher.PrismLauncher")
           (g "Minecraft")
-          (w 6 "org.prismlauncher.PrismLauncher")
-          (w 6 "Minecraft")
+          (w 7 "org.prismlauncher.PrismLauncher")
+          (w 7 "Minecraft")
         ])
         (let
           rules = ["fullscreen" "noanim" "stayfocused" "pin" "dimaround"];
