@@ -1,12 +1,9 @@
 import Bar from './bar/bar.ts'
 import notificationPopups from './windows/notificationPopups.js'
-import MusicWidget from './windows/MusicWidget.ts'
+import NotificationWindow from './windows/NotificationWindow.ts'
+import MusicPlayer from './windows/MusicPlayer.ts'
 
 App.config({
   style: './style/style.scss',
-  windows: [
-    Bar(0),
-    notificationPopups(),
-    // MusicWidget() //TODO: Make this not show up by default
-  ],
+  windows: [Bar(0), notificationPopups(), MusicPlayer(), NotificationWindow],
 })

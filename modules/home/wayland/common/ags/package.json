@@ -1,0 +1,14 @@
+{
+  "name": "SnowyDots",
+  "author": "Daru-san",
+  "repository": {
+    "type": "git",
+    "url": "git+https://git.sr.ht:~darumaka/SnowyDots"
+  },
+  "dependencies": {
+    "ags-ts": "^1.0.6"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

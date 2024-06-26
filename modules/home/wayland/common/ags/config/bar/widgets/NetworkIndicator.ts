@@ -6,13 +6,10 @@ const wifiWidget = Widget.Button({
   onPrimaryClickRelease: () => Utils.execAsync('kitty --detach nmtui'),
   onSecondaryClickRelease: () => Utils.execAsync('nm-connection-editor'),
   child: Widget.Box({
+    tooltipText: network.wifi.bind('ssid').as((ssid) => ssid || ''),
     children: [
       Widget.Icon({
         icon: network.wifi.bind('icon_name'),
-      }),
-      Widget.Label({
-        css: `margin-left: 6px;`,
-        label: network.wifi.bind('ssid').as((ssid) => ssid || ''),
       }),
     ],
   }),
@@ -26,12 +23,10 @@ const wiredWidget = Widget.Button({
   child: Widget.Icon({
     icon: network.wired.bind('icon_name'),
   }),
-  visible: network.bind('primary').as((p) => p == 'wired'),
+  tooltipText: network.bind('primary').as((p) => p == 'wired'),
 })
 
 export default () =>
   Widget.Box({
-    children: [
-      Widget.Box({ css: `opacity: 1;`, children: [wifiWidget, wiredWidget] }),
-    ],
+    children: [Widget.Box({ css: `opacity: 1;`, children: [wifiWidget] })],
   })

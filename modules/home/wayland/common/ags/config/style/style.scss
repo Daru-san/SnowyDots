@@ -2,9 +2,13 @@
   font-size: 15.5px;
 }
 
-window.bar {
-  background-color: @theme_bg_color;
-  color: @theme_fg_color;
+window {
+  background-color: transparent;
+}
+
+.bar {
+  background-color: @base00;
+  color: @base04;
 }
 
 button {
@@ -12,11 +16,11 @@ button {
   padding-top: 0;
   padding-bottom: 0;
   background-color: transparent;
-  border: 3px solid @theme_bg_color;
+  border: 3px solid transparent;
 }
 
 button:active {
-  border: 3px solid @theme_fg_color;
+  border: 3px solid @base0D;
 }
 
 button:hover {
@@ -28,7 +32,7 @@ label {
 }
 
 .workspaces button.active {
-  border: 3px solid @theme_fg_color;
+  border: 3px solid @base02;
 }
 
 .client-title {
@@ -42,6 +46,7 @@ label {
 levelbar block,
 highlight {
   min-height: 2px;
+  min-width: 5px;
 }
 
 slider {
@@ -104,4 +109,62 @@ window.notification-popups box.notifications {
 
 .actions .action-button:last-child {
   margin-right: 0;
+}
+
+.player {
+  padding: 10px;
+  background-color: shade(@base0F, 0.25);
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 6px solid shade(@base0B, 0.2);
+  min-width: 350px;
+}
+
+.player .img {
+  min-width: 100px;
+  min-height: 100px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 13px;
+  margin-right: 1em;
+}
+
+.player .title {
+  font-size: 1.2em;
+}
+
+.player .artist {
+  font-size: 1.1em;
+  color: @insensitive_fg_color;
+}
+
+.player scale.position {
+  padding: 0;
+  margin-bottom: 0.3em;
+}
+
+.player scale.position trough {
+  min-height: 8px;
+}
+
+.player scale.position highlight {
+  background-color: @theme_fg_color;
+}
+
+.player scale.position slider {
+  all: unset;
+}
+
+.player button {
+  min-height: 1em;
+  min-width: 1em;
+  padding: 0.3em;
+}
+
+.player button.play-pause {
+  margin: 0 0.3em;
+}
+
+.volume label .muted {
+  color: @base0E;
 }

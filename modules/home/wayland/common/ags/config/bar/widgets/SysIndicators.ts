@@ -1,7 +1,7 @@
-import volumeIndicator from './volumeIndicator'
 import NetworkIndicator from './NetworkIndicator'
+import Volume from './Volume'
 
 export default () =>
   Widget.Box({
-    children: [NetworkIndicator(), volumeIndicator()],
+    children: [NetworkIndicator(), Volume()],
   })

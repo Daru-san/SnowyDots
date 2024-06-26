@@ -127,7 +127,7 @@ function Player(player) {
         vertical: true,
         hexpand: true,
       },
-      Widget.Box([title, icon]),
+      Widget.Box([title]),
       artist,
       Widget.Box({ vexpand: true }),
       positionSlider,
@@ -143,17 +143,21 @@ function Player(player) {
 function Media() {
   return Widget.Box({
     vertical: true,
-    css: 'min-height: 2px; min-width: 2px;', // small hack to make it visible
+    css: 'min-height: 2px; min-width: 500px;', // small hack to make it visible
     visible: players.as((p) => p.length > 0),
     children: players.as((p) => p.map(Player)),
   })
 }
-const MusicWidget = () => {
+const MusicPlayer = () => {
   return Widget.Window({
     name: 'mpris',
+    visible: false,
+    keymode: 'exclusive',
     anchor: ['top', 'middle'],
+    setup: (w) => w.keybind('Escape', () => App.closeWindow('mpris')),
+    layer: 'overlay',
     child: Media(),
   })
 }
 
-export default MusicWidget
+export default MusicPlayer
