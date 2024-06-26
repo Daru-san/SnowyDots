@@ -45,7 +45,7 @@
         }
       ]
       ++ map (x: {
-        command = "layout stacking";
+        command = "layout tabbed";
         criteria.app_id = "^${x}$";
       })
       stacks;
