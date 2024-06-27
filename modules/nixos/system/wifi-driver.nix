@@ -5,7 +5,7 @@
 }: {
   boot = {
     extraModprobeConfig = ''
-      options 88x2bu rtw_power_mgnt=0 rtw_led_ctrl=1
+      options 88x2bu rtw_power_mgnt=0 rtw_led_ctrl=1 rtw_ips_mode=0 rtw_enusbss=0
     '';
     extraModulePackages = [
       (config.boot.kernelPackages.rtl88x2bu.overrideAttrs
