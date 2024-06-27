@@ -10,7 +10,8 @@
       default = ["wlr" "kde"];
     };
     hyprland = {
-      default = ["hyprland" "kde"];
+      default = ["hyprland" "gtk"];
+      "org.freedesktop.impl.portal.FileChooser" = ["kde"];
     };
   };
 }
