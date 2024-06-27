@@ -6,7 +6,7 @@
   home.sessionVariables.QT_QPA_PLATFORM = "wayland";
   qt = {
     enable = true;
-    platformTheme.name = "gnome";
+    platformTheme.name = "gtk3";
     style.name = "Adwaita-Dark";
   };
 }

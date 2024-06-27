@@ -11,7 +11,7 @@
   extraConfig = {
     gtk-decoration-layout = "";
   };
-in {
+in rec {
   gtk = {
     enable = true;
 
@@ -40,13 +40,14 @@ in {
   dconf.settings = {
     # Make gtk apps follow a dark theme
     "org/gnome/desktop/interface" = {
-      gtk-theme = "Colloid-Dark-Compact";
+      gtk-theme = gtk.theme.name;
       color-scheme = "prefer-dark";
     };
     # Remove buttons in gtk apps
     "org/gnome/desktop/wm/preferences" = {button-layout = "appmenu";};
   };
   home = {
+    sessionVariables.GTK_THEME = gtk.theme.name;
     pointerCursor = {
       name = "Bibata-Modern-Ice";
       package = pkgs.bibata-cursors;
