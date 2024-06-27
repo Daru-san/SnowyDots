@@ -4,13 +4,10 @@
     networkmanager = {
       enable = true;
       dns = "none";
-      wifi = {
-        macAddress = "random";
-        powersave = false;
-      };
+      wifi.powersave = false;
     };
   };
-  environment.systemPackages = [pkgs.networkmanagerapplet];
+  environment.systemPackages = with pkgs; [networkmanagerapplet iw];
   networking.firewall = {
     enable = true;
   };
