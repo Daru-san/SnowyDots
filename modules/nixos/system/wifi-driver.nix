@@ -5,7 +5,7 @@
 }: {
   boot = {
     extraModprobeConfig = ''
-      options 88x2bu rtw_power_mgnt=0
+      options 88x2bu rtw_power_mgnt=0 rtw_led_ctrl=1
     '';
     extraModulePackages = [
       (config.boot.kernelPackages.rtl88x2bu.overrideAttrs
@@ -16,6 +16,11 @@
             rev = "620b1a12c8822ee7d340465fbdc9d5150b193189";
             hash = "sha256-InpU6HFoa1vPzP88HdQo76i1s6zAHPQ05pzGiaQKgEw=";
           };
+          prePatch =
+            oldAttrs.prePatch
+            + ''
+              substituteInPlace Makefile --replace "CONFIG_POWER_SAVING = n" "CONFIG_POWER_SAVING = y"
+            '';
         }))
     ];
     kernelModules = ["88x2bu"];
