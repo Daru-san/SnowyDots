@@ -15,7 +15,6 @@ in {
       systemd = {
         enable = true;
         enableXdgAutostart = true;
-        variables = ["--all"];
       };
       settings = {source = ["extra.conf"];};
     };
