@@ -8,14 +8,16 @@
 }: {
   imports = [./configuration.nix];
   nixpkgs = {
-    overlays = with outputs.overlays; [
-      stable-packages
-    ];
+    overlays = [inputs.nix-src.overlays.default];
     config.allowUnfree = true;
   };
 
+  # Evaluate using all 6 cores
+  environment.variables = {
+    NR_CORES = 6;
+  };
   nix = {
-    package = pkgs.nixVersions.latest;
+    # package = pkgs.;
     registry =
       (lib.mapAttrs (_: flake: {inherit flake;}))
       (lib.filterAttrs (_: lib.isType "flake") inputs);
