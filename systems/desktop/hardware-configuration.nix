@@ -3,21 +3,15 @@
 
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-uuid/38d10da5-6c7c-4eb2-b614-ad20a1a795e8";
-      fsType = "btrfs";
-      options = ["subvol=root" "compress=zstd"];
+      device = "none";
+      fsType = "tmpfs";
+      options = ["size=7G" "mode=775"];
     };
 
     "/etc" = {
       device = "/dev/disk/by-uuid/38d10da5-6c7c-4eb2-b614-ad20a1a795e8";
       fsType = "btrfs";
       options = ["subvol=etc" "compress=zstd"];
-    };
-
-    "/tmp" = {
-      device = "/dev/disk/by-uuid/38d10da5-6c7c-4eb2-b614-ad20a1a795e8";
-      fsType = "btrfs";
-      options = ["subvol=tmp" "compress=zstd"];
     };
 
     "/persist" = {
