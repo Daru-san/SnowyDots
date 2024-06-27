@@ -28,7 +28,7 @@
     trashy.url = "github:Daru-san/trashy";
 
     # Firefox addons
-    firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+    firefox-addons.url = "git+https://gitlab.com/rycee/nur-expressions?dir=pkgs/firefox-addons";
 
     # Reall nice anime cli tool
     anipy-cli.url = "github:sdaqo/anipy-cli";
