@@ -29,6 +29,7 @@
       };
       cursor = {
         inactive_timeout = 30;
+        hide_on_key_press = true;
       };
       misc = {
         vrr = 1;

@@ -16,13 +16,13 @@ in {
       general = {
         before_sleep_cmd = "${pausemusic} && ${hyprlock}";
         inherit lock_cmd;
-        after_sleep_cmd = "swaymsg output HDMI-A-2 dpms on";
+        after_sleep_cmd = "hyprctl dispatch dpms on";
       };
       listener = [
         {
           timeout = 1200;
-          on-timeout = "swaymsg output HDMI-A-2 dpms off";
-          on-resume = "swaymsg output HDMI-A-2 dpms on";
+          on-timeout = "hyprctl dispatch dpms off";
+          on-resume = "hyprctl dispatch dpms on";
         }
         {
           timeout = 1800;
