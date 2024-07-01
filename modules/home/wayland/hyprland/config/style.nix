@@ -12,7 +12,6 @@
         workspace_back_and_forth = true;
       };
       master = {
-        new_is_master = false;
         mfact = 0.55;
         allow_small_split = true;
         no_gaps_when_only = false;

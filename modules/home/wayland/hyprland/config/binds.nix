@@ -44,10 +44,12 @@ in {
         swayosd = getExe' config.services.swayosd.package "swayosd-client";
         g4music = getExe pkgs.g4music;
         dooit = getExe pkgs.dooit;
+        valent = getExe pkgs.valent;
       in [
         (mkBindE "super" "e" "hyprctl clients | grep 'nautilus' || ${file-manager}" "Launch file manager")
         (mkBindE "super" "b" browser "Launch the browser")
         (mkBindE "altshift" "m" g4music "Open a music player")
+        (mkBindE "Super" "n" valent "Launch valent")
 
         (mkBindE "super" "q" terminal "Launch a terminal")
         (mkBindE "super" "r" "${terminal} --detach ${yazi}" "Launch yazi")

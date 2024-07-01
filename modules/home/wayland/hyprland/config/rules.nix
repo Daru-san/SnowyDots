@@ -22,6 +22,8 @@
             "org.freedesktop.impl.portal.desktop.kde"
             "nmtui"
             "pulsemixer"
+            "valent"
+            "org.kde.rsibreak"
           ];
           resized-windows = [
             "foot"
@@ -30,6 +32,7 @@
             "org.freedesktop.impl.portal.desktop.kde"
             "org.gnome.FileRoller"
             "org.twosheds.iwgtk"
+            "valent"
             "com.github.wwmm.easyeffects"
           ];
         in [
