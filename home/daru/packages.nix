@@ -22,7 +22,7 @@
 
       ryujinx
       lime3ds
-      prismlauncher
+      mgba
 
       # CLI
       ouch
