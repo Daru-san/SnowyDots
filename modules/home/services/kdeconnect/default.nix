@@ -1,5 +1,7 @@
 {pkgs, ...}: {
   services.kdeconnect = {
-    package = pkgs.valent;
+    package = pkgs.valent.override {
+      stdenv = pkgs.clangStdenv;
+    };
   };
 }
