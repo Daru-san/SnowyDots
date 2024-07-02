@@ -1,13 +1,7 @@
 {pkgs, ...}: {
   boot = {
-    kernelPackages = pkgs.linuxPackages_zen;
-    kernelParams = [
-      "cgroup_no_v1=all"
-      "systemd.unified_cgroup_hierarchy=yes"
-      "nowatchdog"
-      "modprobe.blacklist=iTCO_wdt"
-      "usbcore.autosuspend=-1"
-    ];
+    kernelPackages = pkgs.linuxPackages_cachyos-hardened;
+    kernelParams = ["usbcore.autosuspend=-1"];
   };
   boot.kernel.sysctl = {
     "vm.swappiness" = 90;
