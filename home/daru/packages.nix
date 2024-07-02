@@ -20,6 +20,10 @@
       g4music
       kdePackages.kalzium
 
+      ryujinx
+      lime3ds
+      prismlauncher
+
       # CLI
       ouch
       element
