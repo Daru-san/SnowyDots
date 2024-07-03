@@ -19,6 +19,7 @@
       mission-center
       g4music
       kdePackages.kalzium
+      prismlauncher
 
       ryujinx
       lime3ds
