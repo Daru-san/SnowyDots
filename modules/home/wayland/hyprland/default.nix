@@ -1,7 +1,8 @@
 {
-  pkgs,
   lib,
   config,
+  inputs,
+  system,
   ...
 }: let
   cfg = config.wayland;
@@ -11,7 +12,7 @@ in {
     wayland.windowManager.hyprland = {
       settings.env = lib.mapAttrsToList (name: value: "${name},${builtins.toString value}") config.home.sessionVariables;
       enable = true;
-      package = pkgs.hyprland;
+      package = inputs.hyprland.packages.${system}.default;
       systemd = {
         enable = true;
         enableXdgAutostart = true;

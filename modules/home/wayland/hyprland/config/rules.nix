@@ -55,20 +55,15 @@
 
           (w 5 "com.github.neithern.g4music")
 
-          (g "mpv")
           (w 6 "mpv")
 
           (w 6 "FreeTube")
           (wt 5 "Spotify")
 
-          (g "virt-manager")
           (w 9 "virt-manager")
 
-          (g "org.pwmt.zathura")
           (w 9 "org.pwmt.zathura")
 
-          (g "org.prismlauncher.PrismLauncher")
-          (g "Minecraft")
           (w 7 "org.prismlauncher.PrismLauncher")
           (w 7 "Minecraft")
         ])

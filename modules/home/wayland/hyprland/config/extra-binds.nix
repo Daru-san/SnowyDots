@@ -12,6 +12,46 @@
     j = down;
   };
 in {
+  wayland.windowManager.hyprland.extraConfig = ''
+    bind = super alt, R, submap, resize
+    submap = resize
+    binde = , right, resizeactive, 100 0
+    binde = , left, resizeactive, -100 0
+    binde = , up, resizeactive, 0 -100
+    binde = , down, resizeactive, 0 100
+    bind = , escape, submap, reset
+    submap = reset
+
+    bind = super, tab, scroller:toggleoverview
+    bind = super, tab, submap, overview
+    submap = overview
+    bind = , right, scroller:movefocus, right
+    bind = , left, scroller:movefocus, left
+    bind = , up, scroller:movefocus, up
+    bind = , down, scroller:movefocus, down
+    bind = , escape, scroller:toggleoverview,
+    bind = , escape, submap, reset
+    bind = , return, scroller:toggleoverview,
+    bind = , return, submap, reset
+    bind = super, tab, scroller:toggleoverview,
+    bind = super, tab, submap, reset
+    submap = reset
+
+    bind = super, W, submap, fitsize
+    submap = fitsize
+    bind = , W, scroller:fitsize, visible
+    bind = , W, submap, reset
+    bind = , right, scroller:fitsize, toend
+    bind = , right, submap, reset
+    bind = , left, scroller:fitsize, tobeg
+    bind = , left, submap, reset
+    bind = , up, scroller:fitsize, active
+    bind = , up, submap, reset
+    bind = , down, scroller:fitsize, all
+    bind = , down, submap, reset
+    bind = , escape, submap, reset
+    submap = reset
+  '';
   wayland.windowManager.hyprland.settings = {
     bindm = [
       "SUPER,mouse:272,movewindow"
@@ -30,11 +70,11 @@ in {
 
         "SUPER,u,togglespecialworkspace,stash"
 
-        "SUPER,TAB,workspace, m+1"
-        "SUPERSHIFT,TAB,workspace, m-1"
-
         "supershift,o,cyclenext"
         "super,o,changegroupactive"
+
+        "super,equal,scroller:cyclesize,next"
+        "super,minus,scroller:cyclesize,prev"
       ]
       ++
       # Change workspace
@@ -45,12 +85,12 @@ in {
       ++
       # Move focus
       (mapAttrsToList
-        (key: direction: "SUPER,${key},movefocus,${direction}")
+        (key: direction: "SUPER,${key},scroller:movefocus,${direction}")
         directions)
       ++
       # Swap windows
       (mapAttrsToList
-        (key: direction: "SUPERSHIFT,${key},swapwindow,${direction}")
+        (key: direction: "SUPERSHIFT,${key},scroller:movewindow,${direction}")
         directions)
       ++
       # Move windows

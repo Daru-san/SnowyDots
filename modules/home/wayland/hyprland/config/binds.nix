@@ -70,10 +70,6 @@ in {
 
         (mkBindSE "caps_lock" "${swayosd} --caps-lock" "Show caps lock")
 
-        (mkBindE "super" "w"
-          "hyprctl notify -1 2000 0 `hyprctl activeworkspace | head -n 1`"
-          "Show the active workspace")
-
         (mkBindE "super" "grave" idle-inhibit "Turn on the idle inhibitor")
       ];
 
