@@ -2,22 +2,16 @@
   lib,
   config,
   inputs,
-  outputs,
   pkgs,
   ...
 }: {
   imports = [./configuration.nix];
   nixpkgs = {
-    overlays = [inputs.nix-src.overlays.default];
     config.allowUnfree = true;
   };
 
-  # Evaluate using all 6 cores
-  environment.variables = {
-    NR_CORES = 6;
-  };
   nix = {
-    # package = pkgs.;
+    package = pkgs.nixVersions.latest;
     registry =
       (lib.mapAttrs (_: flake: {inherit flake;}))
       (lib.filterAttrs (_: lib.isType "flake") inputs);

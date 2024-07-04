@@ -13,9 +13,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # A nix binary with parallel evaluation
-    nix-src.url = "github:DeterminateSystems/nix-src/?ref=multithreaded-eval";
-
     # Flatpak management
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
 
