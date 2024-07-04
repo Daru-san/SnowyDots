@@ -38,6 +38,13 @@
     direnv = {
       enable = true;
       nix-direnv.enable = true;
+      silent = true;
+      config = {
+        whitelist.prefix = [
+          "~/Development/Repos"
+        ];
+        global.disable_stdin = true;
+      };
     };
   };
 }
