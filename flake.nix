@@ -65,6 +65,12 @@
       url = "sourcehut:~darumaka/Snowpkgs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # rtw88_driver
+    rtw-driver = {
+      url = "github:lwfinger/rtw88";
+      flake = false;
+    };
   };
   outputs = {
     self,

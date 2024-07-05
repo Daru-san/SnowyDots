@@ -1,21 +1,17 @@
 {
   config,
-  pkgs,
+  inputs,
   ...
 }: {
   boot = {
     extraModprobeConfig = ''
-      options rtw_core disable_lps_deep=1 support_bf=1
-      options rtw_pci disable_msi=1 disable_aspm=1
+      options rtw_core disable_lps_deep=y support_bf=y
+      options rtw88_core disable_lps_deep=y
+      options rtw_pci disable_msi=y disable_aspm=y
     '';
     extraModulePackages = [
       (config.boot.kernelPackages.rtw88.overrideAttrs (oldAttrs: {
-        src = pkgs.fetchFromGitHub {
-          owner = "lwfinger";
-          repo = "rtw88";
-          rev = "95983ffd7fd914b228299fcfcf1b7b51df97badc";
-          hash = "sha256-fT6Yp0unvtL+DiRz5qrS4jNuCM2TdjK05wuXUro2W58=";
-        };
+        src = inputs.rtw-driver;
       }))
     ];
     blacklistedKernelModules = [
