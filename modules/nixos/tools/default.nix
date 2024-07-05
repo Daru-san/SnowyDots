@@ -6,5 +6,6 @@
     ./programs.nix
     ./nix-index.nix
     ./virtualisation.nix
+    ./syncthing.nix
   ];
 }

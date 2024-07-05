@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [./hardware-configuration.nix];
   users = {
     defaultUserShell = pkgs.zsh;
@@ -25,15 +21,6 @@
     };
     yazi.enable = false;
   };
-
-  services.syncthing = {
-    enable = true;
-    dataDir = "/home/daru";
-    user = "daru";
-    configDir = "/home/daru/.sync";
-    settings = {gui = {theme = "black";};};
-  };
-
   environment.systemPackages = with pkgs; [
     htop
     nix-prefetch-git
