@@ -13,7 +13,7 @@
       isNormalUser = true;
       useDefaultShell = true;
       description = "Daru";
-      extraGroups = ["networkmanager" "wheel" "video" "adbusers" "input"];
+      extraGroups = ["networkmanager" "wheel" "video" "adbusers" "input" "uinput"];
     };
   };
   programs = {

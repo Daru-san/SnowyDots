@@ -24,6 +24,7 @@
       ryujinx
       lime3ds
       mgba
+      yoke
 
       # CLI
       ouch
