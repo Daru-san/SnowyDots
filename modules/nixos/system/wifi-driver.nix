@@ -5,25 +5,19 @@
 }: {
   boot = {
     extraModprobeConfig = ''
-      options 88x2bu rtw_power_mgnt=0 rtw_led_ctrl=1
+      options rtw_core disable_lps_deep=1 support_bf=1
+      options rtw_pci disable_msi=1 disable_aspm=1
     '';
     extraModulePackages = [
-      (config.boot.kernelPackages.rtl88x2bu.overrideAttrs
-        (oldAttrs: {
-          src = pkgs.fetchFromGitHub {
-            owner = "cilynx";
-            repo = "rtl88x2bu";
-            rev = "620b1a12c8822ee7d340465fbdc9d5150b193189";
-            hash = "sha256-InpU6HFoa1vPzP88HdQo76i1s6zAHPQ05pzGiaQKgEw=";
-          };
-          prePatch =
-            oldAttrs.prePatch
-            + ''
-              substituteInPlace Makefile --replace "CONFIG_POWER_SAVING = n" "CONFIG_POWER_SAVING = y"
-            '';
-        }))
+      (config.boot.kernelPackages.rtw88.overrideAttrs (oldAttrs: {
+        src = pkgs.fetchFromGitHub {
+          owner = "lwfinger";
+          repo = "rtw88";
+          rev = "95983ffd7fd914b228299fcfcf1b7b51df97badc";
+          hash = "sha256-fT6Yp0unvtL+DiRz5qrS4jNuCM2TdjK05wuXUro2W58=";
+        };
+      }))
     ];
-    kernelModules = ["88x2bu"];
     blacklistedKernelModules = [
       "rtw88_usb"
       "rtw88_core"
