@@ -20,7 +20,7 @@
     nix-colors.url = "github:Misterio77/nix-colors";
 
     # Spiced spotify
-    spicetify-nix.url = "github:Daru-san/spicetify-nix";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     # Trash can
     trashy.url = "github:Daru-san/trashy";
