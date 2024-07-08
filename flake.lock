@@ -1339,15 +1339,15 @@
         "nixpkgs": "nixpkgs_14"
       },
       "locked": {
-        "lastModified": 1720432485,
-        "narHash": "sha256-UGigNW0I90UtPRMyqEKE/4NOCALZJgztw2GkdSFJ7o4=",
-        "owner": "Daru-san",
+        "lastModified": 1720440314,
+        "narHash": "sha256-SddhDFFoU8gHCdI9IJ2rmf6FOUleDTwN4qtOXm2QaW8=",
+        "owner": "Gerg-L",
         "repo": "spicetify-nix",
-        "rev": "76d07c3cc0e8363cd3a9033d506484fbe700d811",
+        "rev": "3823c630dd5b3c145541669d7334f999cab12736",
         "type": "github"
       },
       "original": {
-        "owner": "Daru-san",
+        "owner": "Gerg-L",
         "repo": "spicetify-nix",
         "type": "github"
       }
