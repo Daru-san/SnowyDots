@@ -27,7 +27,8 @@
       cp = "cherry-pick";
       rs = "reset";
       df = "diff";
-      ini = "init";
+      "in" = "init";
+      sw = "switch";
     };
   };
 }

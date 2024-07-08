@@ -40,6 +40,8 @@ in {
       gst = "git status";
       gps = "git push";
       gpl = "git pull";
+      gsw = "git switch";
+      gin = "git init";
       gft = "git fetch";
       grt = "git-root";
       cgrt = "cd-gitroot";
