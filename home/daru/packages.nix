@@ -20,6 +20,15 @@
       g4music
       kdePackages.kalzium
       prismlauncher
+      (symlinkJoin {
+        name = "pascal-development";
+        paths = [
+          lazarus-qt
+          fpc
+          gnumake
+          gcc
+        ];
+      })
 
       ryujinx
       lime3ds
