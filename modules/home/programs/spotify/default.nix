@@ -40,15 +40,6 @@ in {
       lyricsPlus
       betterLibrary
       historyInSidebar
-      {
-        src = pkgs.fetchFromGitHub {
-          owner = "Bergbok";
-          repo = "Spicetify-Creations";
-          rev = "035ee40be7705f5a292db4967c2b9f92e9bb503f";
-          hash = "sha256-tS/jkq1A5wkVOXHE9RtyWwn5iKlGCEJAuiLYoWiOZzM=";
-        };
-        name = "Tags";
-      }
     ];
   };
 }
