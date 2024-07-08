@@ -24,11 +24,11 @@
         "poetry2nix": "poetry2nix"
       },
       "locked": {
-        "lastModified": 1719747138,
-        "narHash": "sha256-quTew0B6E0LAECCnykt6UKyjtw7NTjXvOW4n1E1nQgY=",
+        "lastModified": 1720358794,
+        "narHash": "sha256-Yg59qrTtm2sPhCMKfeN36B6nLUhYcvI2cP9U2T/K4no=",
         "owner": "sdaqo",
         "repo": "anipy-cli",
-        "rev": "be450847706c5238fc9cbbde5f8f5742e2127814",
+        "rev": "33439549040f2db622872fc5f79c35f29f30bedd",
         "type": "github"
       },
       "original": {
@@ -174,11 +174,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1720167363,
-        "narHash": "sha256-GIQZdHXLC2u7QyXAtb9WsOqwmRpeCqcqX/AR7INiiXY=",
+        "lastModified": 1720411406,
+        "narHash": "sha256-Z3tMBbMeYQKz1YYmSnbLglG9lm1l/EU+h3CFPJCli4I=",
         "ref": "refs/heads/master",
-        "rev": "cea36a02a4619e009d7fac7df1bc2acba825c5a4",
-        "revCount": 3672,
+        "rev": "a2a2d880d5ec199ee333c9bf929865d65f92a1d4",
+        "revCount": 3677,
         "type": "git",
         "url": "https://gitlab.com/rycee/nur-expressions?dir=pkgs/firefox-addons"
       },
@@ -456,11 +456,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1720167120,
-        "narHash": "sha256-K9JYdlPiyaXp33JRg7CT8rMwH56e4ncXSsXW/YKnNXc=",
+        "lastModified": 1720327769,
+        "narHash": "sha256-kAsg3Lg4YKKpGw+f1W2s5hzjP8B0y/juowvjK8utIag=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "bbe6e94737289c8cb92d4d8f9199fbfe4f11c0ba",
+        "rev": "6b7ce96f34b324e4e104abc30d06955d216bac71",
         "type": "github"
       },
       "original": {
@@ -848,11 +848,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1719832725,
-        "narHash": "sha256-dr8DkeS74KVNTgi8BE0BiUKALb+EKlMIV86G2xPYO64=",
+        "lastModified": 1720334033,
+        "narHash": "sha256-X9pEvvHTVWJphhbUYqXvlLedOndNqGB7rvhSvL2CIgU=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "2917972ed34ce292309b3a4976286f8b5c08db27",
+        "rev": "685e40e1348007d2cf76747a201bab43d86b38cb",
         "type": "github"
       },
       "original": {
@@ -924,11 +924,11 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1719956923,
-        "narHash": "sha256-nNJHJ9kfPdzYsCOlHOnbiiyKjZUW5sWbwx3cakg3/C4=",
+        "lastModified": 1720244366,
+        "narHash": "sha256-WrDV0FPMVd2Sq9hkR5LNHudS3OSMmUrs90JUTN+MXpA=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "706eef542dec88cc0ed25b9075d3037564b2d164",
+        "rev": "49ee0e94463abada1de470c9c07bfc12b36dcf40",
         "type": "github"
       },
       "original": {
@@ -1196,11 +1196,11 @@
         "yafas": "yafas"
       },
       "locked": {
-        "lastModified": 1720162329,
-        "narHash": "sha256-iB9PZYreHYjp9t8BNMgmyfXA9ed5lFRayKsx03L2yQo=",
+        "lastModified": 1720277930,
+        "narHash": "sha256-A1D2H6FQotrpbfq+ge1jpCScFiLYrwKCK8If2qsvmTM=",
         "owner": "chaotic-cx",
         "repo": "nyx",
-        "rev": "793fa1b40c4dec81ee8eb7104fdd35aed7b96ab1",
+        "rev": "d30a5f8d5414996f587679dc4fb4e29b4b02830b",
         "type": "github"
       },
       "original": {
@@ -1339,11 +1339,11 @@
         "nixpkgs": "nixpkgs_14"
       },
       "locked": {
-        "lastModified": 1720152808,
-        "narHash": "sha256-bvWgpdHWjeIL8iw+NUoSi1OzKfr33ef+gHodivmiRPE=",
+        "lastModified": 1720411993,
+        "narHash": "sha256-s4PQp1qnGRuRg3JnWSgoF1Qg5xHVknMf+Uq4cy8bxrA=",
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
-        "rev": "28cf3d4dc0c4d725863646b9ec84a08e59aebb8b",
+        "rev": "92db0391a25d42a774c48faccce3b8e036e3b359",
         "type": "github"
       },
       "original": {
