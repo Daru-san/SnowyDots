@@ -8,6 +8,7 @@
   cfg = config.wayland;
 in {
   options.wayland.enable = mkEnableOption "Enable wayland";
+  imports = [./polkit];
   config = mkIf cfg.enable {
     programs = {
       sway.enable = false;
@@ -33,19 +34,6 @@ in {
           user = "daru";
         };
         default_session = initial_session;
-      };
-    };
-    systemd = {
-      user.services.polkit-gnome = {
-        description = "polkit-gnome-authentication-agent-1";
-        after = ["graphical-session.target"];
-        serviceConfig = {
-          Type = "simple";
-          ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-          Restart = "on-failure";
-          RestartSec = 1;
-          TimeoutStopSec = 10;
-        };
       };
     };
   };

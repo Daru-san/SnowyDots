@@ -7,6 +7,7 @@
 }: {
   imports = [./configuration.nix];
   nixpkgs = {
+    overlays = [inputs.snowpkgs.overlays.default];
     config.allowUnfree = true;
   };
 
