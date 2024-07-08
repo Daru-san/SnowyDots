@@ -1,64 +1,54 @@
 {
   system,
+  pkgs,
   inputs,
   ...
 }: let
   spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
-  sources = import ./nix/sources.nix;
 in {
   imports = [inputs.spicetify-nix.homeManagerModules.spicetify];
   programs.spicetify = {
     enable = true;
-    theme = {
-      name = "Dribbblish";
-      src = "${sources.spicetify-themes}/Dribbblish";
-      requiredExtensions = [
-        {
-          src = "${sources.spicetify-themes}/Dribbblish";
-          name = "theme.js";
-        }
-      ];
-      patches = {
-        "xpui.js_find_8008" = ",(\\w+=)32";
-        "xpui.js_repl_8008" = ",\${1}56";
-      };
-      overwriteAssets = true;
-      additionalCss = ''
-        .Root {
-          padding-top: 0px;
-        }
-        .main-shelf-shelf:has([href="/genre/recently-played"]) {
+    theme = spicePkgs.themes.text;
+    enabledSnippets = with spicePkgs.snippets; [
+      auto-hide-friends
+      hide-friends-activity-button
+      remove-popular
+      Hide-Made-For-YOU
+      remove-connect-bar
+      fix-liked-button
+      fix-liked-icon
+      hide-download-button
+      hide-now-playing-view-button
+      hide-profile-username
+      ''
+        section[data-testid='home-page'] .main-shelf-shelf:not([aria-label='Recently played'], [aria-label='Your playlists']) {
           display: none !important;
         }
-        .main-shelf-shelf.Shelf:has(
-            [href="/section/0JQ5DAuChZYPe9iDhh2mJz"],
-            [href="/section/0JQ5DAnM3wGh0gz1MXnu4h"],
-            [href="/section/0JQ5DAnM3wGh0gz1MXnu3B"],
-            [href="/section/0JQ5DAnM3wGh0gz1MXnu3D"]
-          ) {
-          display: none !important;
-        }
-        [data-testid="home-page"]
-          .main-home-content
-          > *:not(
-            .view-homeShortcutsGrid-shortcuts,
-            .main-shelf-shelf:has(
-                [href="/genre/recently-played"],
-                [href="/section/0JQ5DAnM3wGh0gz1MXnu3z"]
-              )
-          ) {
-          display: none !important;
-        }
-      '';
-    };
-    colorScheme = "Lunar";
+      ''
+    ];
     enabledExtensions = with spicePkgs.extensions; [
-      fullAppDisplay
       adblock
+      powerBar
+      oldSidebar
+      history
+      shuffle
+      fullAppDisplay
     ];
     enabledCustomApps = with spicePkgs.apps; [
       newReleases
       lyricsPlus
+      betterLibrary
+      historyInSidebar
+      {
+        src = pkgs.fetchFromGitHub {
+          owner = "Bergbok";
+          repo = "Spicetify-Creations";
+          rev = "035ee40be7705f5a292db4967c2b9f92e9bb503f";
+          hash = "sha256-tS/jkq1A5wkVOXHE9RtyWwn5iKlGCEJAuiLYoWiOZzM=";
+        };
+        name = "Tags";
+      }
     ];
   };
 }
