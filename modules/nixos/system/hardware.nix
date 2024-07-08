@@ -3,6 +3,7 @@
     config.boot.kernelPackages.cpupower
   ];
   services = {
+    logind.powerKey = "ignore";
     fwupd.enable = true;
     fstrim.enable = true;
     earlyoom.enable = true;
