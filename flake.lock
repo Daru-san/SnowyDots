@@ -1339,11 +1339,11 @@
         "nixpkgs": "nixpkgs_14"
       },
       "locked": {
-        "lastModified": 1720426159,
-        "narHash": "sha256-dGLGgepoV43ICSaV+cWc0fNHJKhVdGl/41P5XTtkqyU=",
+        "lastModified": 1720427170,
+        "narHash": "sha256-4ck5NcQEwgnyq3aMhERkPAit5mOtGngNaZAgmkFwTP4=",
         "owner": "Daru-san",
         "repo": "spicetify-nix",
-        "rev": "69c6e0cb4da2e1ae4deb85dc06200f601c484dfc",
+        "rev": "87d911bf8647fde379358671ae36beff05dd3796",
         "type": "github"
       },
       "original": {
