@@ -3,7 +3,9 @@
     consoleLogLevel = 2;
     initrd.verbose = false;
     kernelParams = ["quiet"];
-    supportedFilesystems = ["ntfs"];
+    supportedFilesystems = {
+      ntfs = true;
+    };
     initrd.systemd.enable = true;
     loader.efi.canTouchEfiVariables = true;
     loader.systemd-boot = {
