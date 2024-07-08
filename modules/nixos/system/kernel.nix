@@ -14,5 +14,6 @@
     "kernel.sched_migration_cost_ns" = 250000;
     "kernel.sched_cfs_bandwidth_slice_us" = 3000;
     "kernel.sched_nr_migrate" = 128;
+    "kernel.unprivileged_userns_clone" = 1;
   };
 }
