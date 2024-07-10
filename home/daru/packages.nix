@@ -18,17 +18,9 @@
       blanket
       mission-center
       g4music
-      kdePackages.kalzium
+      stable.kdePackages.kalzium
       prismlauncher
-      (symlinkJoin {
-        name = "pascal-development";
-        paths = [
-          lazarus-qt
-          fpc
-          gnumake
-          gcc
-        ];
-      })
+      lazarus-qt
 
       ryujinx
       lime3ds
