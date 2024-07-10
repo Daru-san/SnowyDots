@@ -4,19 +4,17 @@
   ...
 }: {
   wayland.windowManager.hyprland = {
-    plugins = [
-      inputs.hyprscroller.packages.${system}.default
-    ];
+    plugins = [inputs.hyprscroller.packages.${system}.default];
     settings = {
       general.layout = "scroller";
       plugin.scroller.column_default_width = "maximized";
+      bind = [
+        "super,equal,scroller:cyclesize,next"
+        "super,minus,scroller:cyclesize,prev"
+        "super, bracketleft, scroller:setmode, row"
+        "super, bracketright, scroller:setmode, col"
+      ];
     };
-    bind = [
-      "super,equal,scroller:cyclesize,next"
-      "super,minus,scroller:cyclesize,prev"
-      "super, bracketleft, scroller:setmode, row"
-      "super, bracketright, scroller:setmode, col"
-    ];
     extraConfig = ''
       bind = super alt, R, submap, resize
       submap = resize
