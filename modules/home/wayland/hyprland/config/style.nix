@@ -5,7 +5,6 @@
         gaps_in = 1;
         gaps_out = 1;
         border_size = 0;
-        layout = "scroller";
       };
       binds = {
         allow_workspace_cycles = true;
