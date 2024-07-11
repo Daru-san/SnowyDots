@@ -25,6 +25,7 @@
       ryujinx
       lime3ds
       mgba
+      melonDS
       yoke
 
       # CLI
