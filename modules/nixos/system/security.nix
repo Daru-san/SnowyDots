@@ -19,7 +19,17 @@
               command = "/run/current-system/sw/bin/${command}";
               options = ["NOPASSWD"];
             })
-            ["poweroff" "reboot" "systemctl" "nixos-rebuild" "nix-env" "bandwhich" "usbtop" "powertop" "tlp-stat"];
+            [
+              "poweroff"
+              "reboot"
+              "systemctl"
+              "nix-env"
+              "bandwhich"
+              "usbtop"
+              "powertop"
+              "tlp-stat"
+              "dmesg"
+            ];
           groups = ["wheel"];
         }
       ];
