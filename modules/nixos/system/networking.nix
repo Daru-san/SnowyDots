@@ -7,7 +7,11 @@
       wifi.powersave = false;
     };
   };
-  environment.systemPackages = with pkgs; [networkmanagerapplet iw];
+  environment.systemPackages = with pkgs; [
+    networkmanagerapplet
+    iw
+    wirelesstools
+  ];
   networking.firewall = {
     enable = true;
   };
