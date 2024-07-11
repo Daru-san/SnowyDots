@@ -13,6 +13,10 @@
         "super,minus,scroller:cyclesize,prev"
         "super, bracketleft, scroller:setmode, row"
         "super, bracketright, scroller:setmode, col"
+        "super, mouse_up,scroller:movefocus, up"
+        "super,mouse_down,scroller:movefocus, down"
+        "supershift,mouse_up,scroller:movefocus,right"
+        "supershift,mouse_down,scroller:movefocus,left"
       ];
     };
     extraConfig = ''
