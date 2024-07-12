@@ -14,7 +14,6 @@ in {
       "${kitty} --hold ${getExe pkgs.dooit}"
       (getExe config.programs.ags.package)
       (getExe pkgs.copyq)
-      (getExe' pkgs.turtle "turtle_service")
       (getExe pkgs.rsibreak)
       (getExe pkgs.swww + " img ${config.wallpaperImage}")
     ];
