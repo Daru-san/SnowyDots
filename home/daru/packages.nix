@@ -60,9 +60,13 @@
       nix-update
       nixfmt-rfc-style
       trashy
+      turtle
       rqbit
+      dconf-editor
+      file-roller
+      cheese
     ])
-    (with pkgs.gnome; [dconf-editor gnome-clocks file-roller cheese])
+    (with pkgs.gnome; [gnome-clocks])
     (with inputs; [
       r-pg.packages.${system}.default
       anipy-cli.packages.${system}.default

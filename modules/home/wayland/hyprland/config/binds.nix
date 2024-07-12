@@ -35,7 +35,7 @@ in {
       bindd = let
         terminal = getExe config.programs.kitty.package;
         browser = getExe config.programs.firefox.package;
-        file-manager = getExe pkgs.gnome.nautilus;
+        file-manager = getExe pkgs.nautilus;
         editor = "nvim";
         yazi = getExe config.programs.yazi.package;
         hyprlock = getExe config.programs.hyprlock.package;
