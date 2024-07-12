@@ -15,6 +15,7 @@ in {
       sway.extraPackages = [];
       hyprland.enable = true;
       dconf.enable = true;
+      seahorse.enable = true;
       file-roller.enable = true;
     };
     services.greetd = {
