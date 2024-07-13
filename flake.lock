@@ -1196,11 +1196,11 @@
         "yafas": "yafas"
       },
       "locked": {
-        "lastModified": 1720691878,
-        "narHash": "sha256-+PkWnJ0FSmsHMHuBBdAeHHsUKmmKQ40vJ6sY6n4Xug0=",
+        "lastModified": 1720870957,
+        "narHash": "sha256-YF3mqAfK7JN8doy3+nibtPklgfSJs6q9wm5FUpdJ9NE=",
         "owner": "chaotic-cx",
         "repo": "nyx",
-        "rev": "47ee77fc9acb0ddb4721463e3afe3327af081ba0",
+        "rev": "e92e0f50e2c5dd404011c29ff0468c7d6ab4e184",
         "type": "github"
       },
       "original": {
