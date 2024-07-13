@@ -7,7 +7,10 @@
     plugins = [inputs.hyprscroller.packages.${system}.default];
     settings = {
       general.layout = "scroller";
-      plugin.scroller.column_default_width = "maximized";
+      plugin.scroller = {
+        column_default_width = "maximized";
+        focus_wrap = false;
+      };
       bind = [
         "super,equal,scroller:cyclesize,next"
         "super,minus,scroller:cyclesize,prev"
