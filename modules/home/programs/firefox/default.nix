@@ -298,6 +298,12 @@
         "widget.use-xdg-desktop-portal.file-picker" = 1;
         "widget.use-xdg-desktop-portal.kde" = 1;
         "GTK_USE_PORTAL" = 1;
+
+        "userContent.page.proton_color.system_accent" = true;
+        "widget.non-native-theme.use-theme-accent" = true;
+
+        "cookiebanners.service.mode" = 2;
+        "cookiebanners.service.mode.privateBrowsing" = 2;
       };
     };
     policies = {
