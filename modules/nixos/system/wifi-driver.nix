@@ -1,8 +1,10 @@
 {
   config,
   inputs,
+  pkgs,
   ...
 }: {
+  hardware.firmware = with pkgs; [rtw88-firmware];
   boot = {
     extraModprobeConfig = ''
       options rtw_core disable_lps_deep=y support_bf=y
