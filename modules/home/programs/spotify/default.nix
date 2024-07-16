@@ -34,6 +34,8 @@ in {
       history
       shuffle
       fullAppDisplay
+      playNext
+      volumePercentage
     ];
     enabledCustomApps = with spicePkgs.apps; [
       newReleases
