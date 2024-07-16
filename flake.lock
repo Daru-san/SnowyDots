@@ -44,11 +44,11 @@
         "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1717576207,
-        "narHash": "sha256-LU6d1xX7jN1zt10YU7Oym07MtzVfziSmUEznGFdbuaw=",
+        "lastModified": 1721135360,
+        "narHash": "sha256-ZhSA0e45UxiOAjEVqkym/aULh0Dt+KHJLNda7bjx9UI=",
         "owner": "anyrun-org",
         "repo": "anyrun",
-        "rev": "7aabad8d5bb7d1bffae903ce86427b888ab824b4",
+        "rev": "c6101a31a80b51e32e96f6a77616b609770172e0",
         "type": "github"
       },
       "original": {
@@ -174,11 +174,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1721102596,
-        "narHash": "sha256-NwkxySooO4c+0AmWz+199HKB7cyZAOuzdqwDyYYJrow=",
+        "lastModified": 1721138223,
+        "narHash": "sha256-NH2EeCX6Vph3KT0kOelDriPSAuLi8Ml4DjUY4Jsj5HU=",
         "ref": "refs/heads/master",
-        "rev": "2004d4c0218505901d8fad29948f1a1191f658f6",
-        "revCount": 3686,
+        "rev": "a9250ac868999a4ddd4c709859a9eb1d2075c8fd",
+        "revCount": 3687,
         "type": "git",
         "url": "https://gitlab.com/rycee/nur-expressions?dir=pkgs/firefox-addons"
       },
@@ -456,11 +456,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1720734513,
-        "narHash": "sha256-neWQ8eNtLTd+YMesb7WjKl1SVCbDyCm46LUgP/g/hdo=",
+        "lastModified": 1721135958,
+        "narHash": "sha256-H548rpPMsn25LDKn1PCFmPxmWlClJJGnvdzImHkqjuY=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "90ae324e2c56af10f20549ab72014804a3064c7f",
+        "rev": "afd2021bedff2de92dfce0e257a3d03ae65c603d",
         "type": "github"
       },
       "original": {
@@ -1196,11 +1196,11 @@
         "yafas": "yafas"
       },
       "locked": {
-        "lastModified": 1721082386,
-        "narHash": "sha256-LA4kcRbsMSOcORRelQzhBhA8PvyfdbaoXGYXY8H1P4I=",
+        "lastModified": 1721134628,
+        "narHash": "sha256-hUYnfPwlDfrmAHNdzRBaXeEnxpfAKYyyfJo3AFie5u8=",
         "owner": "chaotic-cx",
         "repo": "nyx",
-        "rev": "b1ecb501161bae54fbc9fd27200bd34d40c4a47a",
+        "rev": "7eeff58148cf73cbe7d56120e244f354537f0e56",
         "type": "github"
       },
       "original": {
@@ -1280,11 +1280,11 @@
     "rtw-driver": {
       "flake": false,
       "locked": {
-        "lastModified": 1720813252,
-        "narHash": "sha256-SwAH1UZsHdJcz3szkXDKSu134gH98XkB/qI+Lrh95hQ=",
+        "lastModified": 1721113350,
+        "narHash": "sha256-Sk7/0/szVXPxHunNy76yk5HK4HOlLUYKFFMmCFVvtDY=",
         "owner": "lwfinger",
         "repo": "rtw88",
-        "rev": "5db150854a0d4dde0c121ad10486c3854b5139d1",
+        "rev": "a7f1e8762486381427a3bf8d9ee1f59a8b12dcba",
         "type": "github"
       },
       "original": {
