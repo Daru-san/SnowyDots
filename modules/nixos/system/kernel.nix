@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   boot = {
-    kernelPackages = pkgs.linuxPackages_cachyos-hardened;
+    kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = ["usbcore.autosuspend=-1"];
   };
   boot.kernel.sysctl = {
