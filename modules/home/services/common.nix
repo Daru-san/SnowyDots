@@ -16,8 +16,7 @@
       enable = true;
       tray = {
         enable = true;
-        package = pkgs.qsyncthingtray;
-        command = "qsyncthingtray";
+        package = pkgs.syncthingtray;
       };
     };
   };
