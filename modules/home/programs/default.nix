@@ -5,6 +5,7 @@
     ./translate-shell
     ./bat
     ./zathura
+    ./obs-studio
     ./yazi
     ./freetube
     ./yt-dlp
