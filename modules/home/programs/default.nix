@@ -11,6 +11,5 @@
     ./nautilus
     ./spotify
     ./firefox
-    ./flatpak
   ];
 }
