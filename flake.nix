@@ -68,7 +68,7 @@
 
     # rtw88_driver
     rtw-driver = {
-      url = "github:lwfinger/rtw88";
+      url = "github:morrownr/88x2bu-20210702";
       flake = false;
     };
   };
