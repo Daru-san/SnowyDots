@@ -44,7 +44,6 @@
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";
       submodules = true;
-      rev = "918d8340afd652b011b937d29d5eea0be08467f5";
     };
     hyprscroller = {
       url = "github:dawsers/hyprscroller";
@@ -68,7 +67,7 @@
 
     # rtw88_driver
     rtw-driver = {
-      url = "github:morrownr/88x2bu-20210702";
+      url = "github:lwfinger/rtw88";
       flake = false;
     };
   };

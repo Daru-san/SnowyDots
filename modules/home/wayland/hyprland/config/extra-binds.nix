@@ -42,12 +42,12 @@ in {
       ++
       # Move focus
       (mapAttrsToList
-        (key: direction: "SUPER,${key},scroller:movefocus,${direction}")
+        (key: direction: "SUPER,${key},movefocus,${direction}")
         directions)
       ++
       # Swap windows
       (mapAttrsToList
-        (key: direction: "SUPERSHIFT,${key},scroller:movewindow,${direction}")
+        (key: direction: "SUPERSHIFT,${key},movewindow,${direction}")
         directions)
       ++
       # Move windows
