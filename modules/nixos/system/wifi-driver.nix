@@ -4,7 +4,17 @@
   pkgs,
   ...
 }: {
-  hardware.firmware = with pkgs; [rtw88-firmware];
+  hardware.firmware = [
+    (pkgs.rtw88-firmware.overrideAttrs (oldAttrs: {
+      src = inputs.rtw-driver;
+      installPhase = ''
+        runHook preInstall
+        mkdir -p $out/lib/firmware/rtw88
+        cp firmware/*.bin $out/lib/firmware/rtw88
+        runHook postInstall
+      '';
+    }))
+  ];
   boot = {
     extraModprobeConfig = ''
       options rtw_core disable_lps_deep=y support_bf=y
