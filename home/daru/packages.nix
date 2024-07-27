@@ -27,6 +27,7 @@
       mgba
       melonDS
       yoke
+      poketex
 
       # CLI
       ouch
