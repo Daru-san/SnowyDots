@@ -1334,11 +1334,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1721671800,
-        "narHash": "sha256-1gxwAZ0pWG34oCEJW2LSy84v6jp6tdq4/Feiutt19tY=",
+        "lastModified": 1722059780,
+        "narHash": "sha256-HwKjzCcAPHv+mM1tr0GZd0d9AY2b/OmISL0RQ1SY67g=",
         "owner": "~darumaka",
         "repo": "Snowpkgs",
-        "rev": "eea9347e8d5f84a0cae6ccd4ca3c17b5532ce567",
+        "rev": "efe61871ffb4fc7b6ee564721863768a02f6740b",
         "type": "sourcehut"
       },
       "original": {
