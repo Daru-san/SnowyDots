@@ -11,7 +11,6 @@ in {
     exec-once = [
       "${kitty} -T Terminal"
       "${kitty} -T btop --hold ${getExe config.programs.btop.package}"
-      "${kitty} --hold ${getExe pkgs.dooit}"
       (getExe config.programs.ags.package)
       (getExe pkgs.copyq)
       (getExe pkgs.rsibreak)

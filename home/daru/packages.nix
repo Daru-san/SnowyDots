@@ -36,7 +36,6 @@
       niv
       tree
       tgpt
-      dooit
       adbtuifm
       libnotify
       fd
