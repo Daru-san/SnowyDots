@@ -1,10 +1,16 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  system,
+  ...
+}: {
   enable = true;
-  extraPortals = with pkgs; [
-    xdg-desktop-portal-kde
-    xdg-desktop-portal-hyprland
-    xdg-desktop-portal-gtk
-  ];
+  extraPortals =
+    [inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland]
+    ++ (with pkgs; [
+      xdg-desktop-portal-kde
+      xdg-desktop-portal-gtk
+    ]);
   config = {
     sway = {
       default = ["wlr" "kde"];
