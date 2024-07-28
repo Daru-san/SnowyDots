@@ -14,6 +14,7 @@
       (with inputs; [
         snowpkgs.overlays.default
         trashy.overlays.default
+        hyprland.overlays.default
       ])
       (with outputs.overlays; [
         stable-packages
