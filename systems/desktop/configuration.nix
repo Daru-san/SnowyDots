@@ -27,7 +27,6 @@
     nix-prefetch-github
     unzip
     zip
-    darling
     unrar
     p7zip
     clinfo

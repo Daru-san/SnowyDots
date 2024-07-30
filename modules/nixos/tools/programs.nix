@@ -1,7 +1,6 @@
 {
   services.flatpak.enable = true;
   programs = {
-    darling.enable = true;
     usbtop.enable = true;
     adb.enable = true;
     git.enable = true;
