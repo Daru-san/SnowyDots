@@ -4,13 +4,8 @@
   ...
 }: {
   boot = {
-    extraModprobeConfig = ''
-      options rtw_core disable_lps_deep=y support_bf=y
-      options rtw88_core disable_lps_deep=y
-      options rtw_pci disable_msi=y disable_aspm=y
-    '';
     extraModulePackages = [
-      (config.boot.kernelPackages.rtw88.overrideAttrs (oldAttrs: {
+      (config.boot.kernelPackages.rtl88x2bu.overrideAttrs (oldAttrs: {
         src = inputs.rtw-driver;
       }))
     ];
