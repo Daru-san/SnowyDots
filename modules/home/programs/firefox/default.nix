@@ -239,6 +239,13 @@
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = ["@hm" "@home" "@homeman"];
           };
+
+          "Nixvim Options" = {
+            urls = [{template = "https://nix-community.github.io/nixvim/search/?query={searchTerms}";}];
+            iconUpdateURL = "https://nix-community.github.io/nixvim/search/favicon.ico";
+            updateInterval = 24 * 60 * 60 * 1000;
+            definedAliases = ["@nxv" "@nv" "@nvo"];
+          };
         };
       };
 
