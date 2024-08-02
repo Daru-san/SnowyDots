@@ -120,6 +120,7 @@
           "Nix Packages"
           "Nix Options"
           "Home Manager"
+          "Nixvim Options"
         ];
 
         engines = let
