@@ -21,6 +21,7 @@
       stable.kdePackages.kalzium
       prismlauncher
       lazarus-qt
+      kdenlive
 
       ryujinx
       lime3ds
