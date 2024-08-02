@@ -13,9 +13,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Flatpak management
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
-
     # Colors
     nix-colors.url = "github:Misterio77/nix-colors";
 
