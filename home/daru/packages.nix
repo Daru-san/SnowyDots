@@ -22,6 +22,7 @@
       prismlauncher
       lazarus-qt
       kdenlive
+      waydroid-script
 
       ryujinx
       lime3ds
