@@ -90,6 +90,9 @@ in {
       nob = "nh os boot -- -j 12 --keep-going --cores 12";
       su = "sudo";
       rqd = "rqbit download";
+      md = "mkdir";
+      tch = "touch";
+      cd = "z";
     };
     plugins = [
       {
