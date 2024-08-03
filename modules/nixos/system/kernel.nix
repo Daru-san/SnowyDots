@@ -3,6 +3,10 @@
     kernelPackages = pkgs.linuxPackages_cachyos;
     kernelParams = ["usbcore.autosuspend=-1"];
   };
+  chaotic.scx = {
+    enable = true;
+    scheduler = "scx_rustland";
+  };
   boot.kernel.sysctl = {
     "vm.swappiness" = 90;
     "vm.vfs_cache_pressure" = 50;
