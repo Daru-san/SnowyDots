@@ -11,9 +11,7 @@ function Status:name()
 	return ui.Span(" " .. h.name .. linked)
 end
 
-require("zoxide"):setup({
-	update_db = true,
-})
+require("zoxide"):setup({ update_db = true })
 require("full-border"):setup()
 
 require("yatline"):setup({
@@ -93,6 +91,4 @@ require("yatline"):setup({
 		},
 	},
 })
-require("yatline-githead"):setup()
-require("starship"):setup()
-starship:setup({ config_file = "/home/daru/.config/starship.toml" })
+require("starship"):setup({ config_file = "/home/daru/.config/starship.toml" })
