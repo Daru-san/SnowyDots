@@ -25,5 +25,20 @@
       run = ''shell "lazygit" --block --confirm'';
       desc = "Open lazygit";
     }
+    {
+      on = ["t"];
+      run = "plugin --sync hide-preview";
+      desc = "Hide or show preview";
+    }
+    {
+      on = ["T"];
+      run = "plugin --sync max-preview";
+      desc = "Maximize or restore preview";
+    }
+    {
+      on = ["c" "m"];
+      run = "plugin chmod";
+      desc = "Chmod on selected files";
+    }
   ];
 }

@@ -35,7 +35,7 @@
       ouch
       element
       swww
-      niv
+      npins
       tree
       tgpt
       adbtuifm

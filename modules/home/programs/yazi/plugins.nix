@@ -1,5 +1,5 @@
 let
-  yazi-plugins = import ./nix/sources.nix;
+  yazi-plugins = import ./npins/default.nix;
   getPlugin = x: yazi-plugins.${x}.outPath;
 in {
   programs.yazi.flavors = {
@@ -9,11 +9,16 @@ in {
     "smart-enter" = ./smart-enter;
     "exifaudio" = getPlugin "exifaudio.yazi";
     "glow" = getPlugin "glow.yazi";
-    "mime" = getPlugin "mime.yazi";
     "bat" = getPlugin "yazi-plugin-bat";
     "fg" = getPlugin "fg.yazi";
     "ouch" = getPlugin "ouch.yazi";
     "torrent-preview" = getPlugin "torrent-preview.yazi";
+    "full-border" = (getPlugin "plugins") + "/full-border.yazi";
+    "max-preview" = (getPlugin "plugins") + "/max-preview.yazi";
+    "hide-preview" = (getPlugin "plugins") + "/hide-preview.yazi";
+    "yatline" = getPlugin "yatline.yazi";
+    "yatline-githead" = getPlugin "yatline-githead.yazi";
     "starship" = getPlugin "starship.yazi";
+    "open-with-cmd" = getPlugin "open-with-cmd.yazi";
   };
 }

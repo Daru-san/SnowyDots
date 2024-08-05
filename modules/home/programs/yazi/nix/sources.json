@@ -59,6 +59,18 @@
         "url": "https://github.com/ndtoan96/ouch.yazi/archive/694d149be5f96eaa0af68d677c17d11d2017c976.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "plugins": {
+        "branch": "main",
+        "description": "Place code snippets from docs into this monorepo, so that users can update more easily via package manager.",
+        "homepage": "",
+        "owner": "yazi-rs",
+        "repo": "plugins",
+        "rev": "39f275382e5087610ba97312eaa5f7d10286302f",
+        "sha256": "0qkyl8907a6v1dns6dcvhwz4d7wsjh7kyxdw933z5n1wkbdqnai9",
+        "type": "tarball",
+        "url": "https://github.com/yazi-rs/plugins/archive/39f275382e5087610ba97312eaa5f7d10286302f.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "starship.yazi": {
         "branch": "main",
         "description": "Starship prompt plugin for yazi",
@@ -93,6 +105,18 @@
         "sha256": "1r89vnq4idigpd92rz80cg2lvz8yrmhs0nhxnfxj82rv4nh6vxs0",
         "type": "tarball",
         "url": "https://github.com/kirasok/torrent-preview.yazi/archive/76970b6f9d6f3031e9cd57c8595a53e9f9f48c18.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "yatline.yazi": {
+        "branch": "main",
+        "description": "The first Yazi plugin for customizing both header-line and status-line.",
+        "homepage": "",
+        "owner": "imsi32",
+        "repo": "yatline.yazi",
+        "rev": "439b9d097e5dd87a39d22adf01521f0cf72d254c",
+        "sha256": "1zhpgiar9rzi7gk7r3pfqbw2vs394m0v7s23jsf4nndyanskgdim",
+        "type": "tarball",
+        "url": "https://github.com/imsi32/yatline.yazi/archive/439b9d097e5dd87a39d22adf01521f0cf72d254c.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "yazi-plugin-bat": {
