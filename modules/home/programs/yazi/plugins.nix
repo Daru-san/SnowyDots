@@ -17,6 +17,7 @@ in {
     "max-preview" = (getPlugin "plugins") + "/max-preview.yazi";
     "hide-preview" = (getPlugin "plugins") + "/hide-preview.yazi";
     "yatline" = getPlugin "yatline.yazi";
+    "yatline-catppuccin" = getPlugin "yatline-catppuccin.yazi";
     "starship" = getPlugin "starship.yazi";
     "open-with-cmd" = getPlugin "open-with-cmd.yazi";
   };

@@ -14,7 +14,9 @@ end
 require("zoxide"):setup({ update_db = true })
 require("full-border"):setup()
 
+local catppuccin_theme = require("yatline-catppuccin"):setup("mocha")
 require("yatline"):setup({
+	theme = catppuccin_theme,
 	section_separator = { open = "", close = "" },
 	part_separator = { open = "", close = "" },
 	inverse_separator = { open = "", close = "" },
@@ -76,13 +78,15 @@ require("yatline"):setup({
 			},
 			section_c = {
 				{ type = "string", custom = false, name = "hovered_name" },
+				{ type = "string", custom = false, name = "hovered_mime" },
 			},
 		},
 		right = {
 			section_a = {
-				{ type = "string", custom = false, name = "cursor_position" },
+				{ type = "coloreds", custom = false, name = "count" },
 			},
 			section_b = {
+				{ type = "string", custom = false, name = "cursor_position" },
 				{ type = "string", custom = false, name = "cursor_percentage" },
 			},
 			section_c = {

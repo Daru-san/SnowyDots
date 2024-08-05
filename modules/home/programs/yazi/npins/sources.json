@@ -108,6 +108,18 @@
       "url": "https://github.com/kirasok/torrent-preview.yazi/archive/76970b6f9d6f3031e9cd57c8595a53e9f9f48c18.tar.gz",
       "hash": "1r89vnq4idigpd92rz80cg2lvz8yrmhs0nhxnfxj82rv4nh6vxs0"
     },
+    "yatline-catppuccin.yazi": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "imsi32",
+        "repo": "yatline-catppuccin.yazi"
+      },
+      "branch": "main",
+      "revision": "a1f2c05982ed67602b3c2cdcf2c0ae2c7ca7d0f8",
+      "url": "https://github.com/imsi32/yatline-catppuccin.yazi/archive/a1f2c05982ed67602b3c2cdcf2c0ae2c7ca7d0f8.tar.gz",
+      "hash": "1slg4w4kjjd8q7xs5svsgidwya1c1g2plqcq8162im4v7acv5nyf"
+    },
     "yatline.yazi": {
       "type": "Git",
       "repository": {
