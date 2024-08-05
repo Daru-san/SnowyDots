@@ -67,6 +67,8 @@
       dconf-editor
       file-roller
       cheese
+      mediainfo
+      hexyl
     ])
     (with pkgs.gnome; [gnome-clocks])
     (with inputs; [

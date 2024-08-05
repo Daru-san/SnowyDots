@@ -7,7 +7,6 @@ in {
   };
   programs.yazi.plugins = {
     "smart-enter" = ./smart-enter;
-    "exifaudio" = getPlugin "exifaudio.yazi";
     "glow" = getPlugin "glow.yazi";
     "bat" = getPlugin "yazi-plugin-bat";
     "fg" = getPlugin "fg.yazi";
@@ -20,5 +19,7 @@ in {
     "yatline-catppuccin" = getPlugin "yatline-catppuccin.yazi";
     "starship" = getPlugin "starship.yazi";
     "open-with-cmd" = getPlugin "open-with-cmd.yazi";
+    "mediainfo" = getPlugin "mediainfo.yazi";
+    "hexyl" = getPlugin "hexyl.yazi";
   };
 }

@@ -1,17 +1,5 @@
 {
   "pins": {
-    "exifaudio.yazi": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "Sonico98",
-        "repo": "exifaudio.yazi"
-      },
-      "branch": "master",
-      "revision": "92366cf0b024a05cb80c9e245408026dcabe94f2",
-      "url": "https://github.com/Sonico98/exifaudio.yazi/archive/92366cf0b024a05cb80c9e245408026dcabe94f2.tar.gz",
-      "hash": "1c98wzsj1sh0rh52xc6ykbc48kdfyq70xmql97qz8cnx1b0180j0"
-    },
     "fg.yazi": {
       "type": "Git",
       "repository": {
@@ -35,6 +23,30 @@
       "revision": "536185a4e60ac0adc11d238881e78678fdf084ff",
       "url": "https://github.com/Reledia/glow.yazi/archive/536185a4e60ac0adc11d238881e78678fdf084ff.tar.gz",
       "hash": "1ck5nxzw0q3fl5z6x1imb7qzgzcfpi7nspjrb3hdbxx46xi1phrm"
+    },
+    "hexyl.yazi": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Reledia",
+        "repo": "hexyl.yazi"
+      },
+      "branch": "main",
+      "revision": "64daf93a67d75eff871befe52d9013687171ffad",
+      "url": "https://github.com/Reledia/hexyl.yazi/archive/64daf93a67d75eff871befe52d9013687171ffad.tar.gz",
+      "hash": "1ckjk1rqj8f3d1dml1b0nfshiz0bh70j033ix67d7l301pyzfqh7"
+    },
+    "mediainfo.yazi": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Ape",
+        "repo": "mediainfo.yazi"
+      },
+      "branch": "master",
+      "revision": "c69314e80f5b45fe87a0e06a10d064ed54110439",
+      "url": "https://github.com/Ape/mediainfo.yazi/archive/c69314e80f5b45fe87a0e06a10d064ed54110439.tar.gz",
+      "hash": "0blb9pdjyhsvr5np23vxyj6q33qxafbhqg0mi5xh12wjs8yl25zk"
     },
     "open-with-cmd.yazi": {
       "type": "Git",

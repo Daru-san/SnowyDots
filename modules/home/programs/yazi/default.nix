@@ -46,6 +46,12 @@
         ];
       };
       plugin = {
+        append_previewers = [
+          {
+            name = "*";
+            run = "hexyl";
+          }
+        ];
         prepend_previewers = [
           {
             name = "*.ts";
@@ -80,8 +86,12 @@
             run = "ouch";
           }
           {
-            mime = "audio/*";
-            run = "exifaudio";
+            mime = "{image,audio,video}/*";
+            run = "mediainfo";
+          }
+          {
+            mime = "application/x-subrip";
+            run = "mediainfo";
           }
           {
             name = "*.md";
