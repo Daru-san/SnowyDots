@@ -40,5 +40,15 @@
       run = "plugin chmod";
       desc = "Chmod on selected files";
     }
+    {
+      on = ["o"];
+      run = "plugin open-with-cmd --args=block";
+      desc = "Open with command in the terminal";
+    }
+    {
+      on = ["O"];
+      run = "plugin open-with-cmd";
+      desc = "Open with command";
+    }
   ];
 }
