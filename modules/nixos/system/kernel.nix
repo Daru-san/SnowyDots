@@ -5,7 +5,7 @@
   };
   chaotic.scx = {
     enable = true;
-    scheduler = "scx_rustland";
+    scheduler = "scx_rusty";
   };
   boot.kernel.sysctl = {
     "vm.swappiness" = 90;
