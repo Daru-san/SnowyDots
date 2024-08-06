@@ -45,7 +45,7 @@
       glow
       gping
       hut
-      unstable.nvtopPackages.intel
+      nvtopPackages.intel
       sysz
       systemctl-tui
       exiftool
