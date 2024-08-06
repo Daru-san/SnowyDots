@@ -18,7 +18,7 @@
       blanket
       mission-center
       g4music
-      kdePackages.kalzium
+      stable.kdePackages.kalzium
       prismlauncher
       lazarus-qt
       kdenlive
