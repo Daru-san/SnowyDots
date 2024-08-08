@@ -29,6 +29,7 @@
               "powertop"
               "tlp-stat"
               "dmesg"
+              "waydroid"
             ];
           groups = ["wheel"];
         }
