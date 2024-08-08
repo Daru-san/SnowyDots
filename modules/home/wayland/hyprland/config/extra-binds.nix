@@ -32,6 +32,7 @@ in {
 
         "supershift,o,cyclenext"
         "super,o,changegroupactive"
+        "super,tab,hyprexpo:expo,toggle"
       ]
       ++
       # Change workspace
