@@ -7,7 +7,7 @@
 }: {
   programs.firefox = {
     enable = true;
-    nativeMessagingHosts = [pkgs.tridactyl-native];
+    nativeMessagingHosts = with pkgs; [ff2mpv tridactyl-native];
 
     profiles.${config.home.username} = {
       isDefault = true;
@@ -20,6 +20,7 @@
         violentmonkey
         github-file-icons
         widegithub
+        ff2mpv
         hover-zoom-plus
       ];
 
