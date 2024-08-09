@@ -1044,6 +1044,22 @@
     },
     "nixpkgs_13": {
       "locked": {
+        "lastModified": 1722421184,
+        "narHash": "sha256-/DJBI6trCeVnasdjUo9pbnodCLZcFqnVZiLUfqLH4jA=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "9f918d616c5321ad374ae6cb5ea89c9e04bf3e58",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_14": {
+      "locked": {
         "lastModified": 1722813957,
         "narHash": "sha256-IAoYyYnED7P8zrBFMnmp7ydaJfwTnwcnqxUElC1I26Y=",
         "owner": "NixOS",
@@ -1057,7 +1073,7 @@
         "type": "indirect"
       }
     },
-    "nixpkgs_14": {
+    "nixpkgs_15": {
       "locked": {
         "lastModified": 1722813957,
         "narHash": "sha256-IAoYyYnED7P8zrBFMnmp7ydaJfwTnwcnqxUElC1I26Y=",
@@ -1073,7 +1089,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_15": {
+    "nixpkgs_16": {
       "locked": {
         "lastModified": 1716948383,
         "narHash": "sha256-SzDKxseEcHR5KzPXLwsemyTR/kaM9whxeiJohbL04rs=",
@@ -1395,16 +1411,14 @@
     },
     "snowpkgs": {
       "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs": "nixpkgs_13"
       },
       "locked": {
-        "lastModified": 1723196653,
-        "narHash": "sha256-KxYXXQZcmPJ/eRUAvQFs3ThGVTfgZg9mYguQ3/bG45Y=",
+        "lastModified": 1723240494,
+        "narHash": "sha256-ivl9oQJZCD0BU2heNN4KV/fx3NvVwOQW3nLzqdhfQ9w=",
         "owner": "~darumaka",
         "repo": "Snowpkgs",
-        "rev": "63cc44e506a5c346de3ec4071eab89e6d8dc0c90",
+        "rev": "d73f28cd42ba17b0cbf257ca0fefccfe0efd5df2",
         "type": "sourcehut"
       },
       "original": {
@@ -1416,7 +1430,7 @@
     "snowyvim": {
       "inputs": {
         "flake-parts": "flake-parts_2",
-        "nixpkgs": "nixpkgs_13",
+        "nixpkgs": "nixpkgs_14",
         "nixvim": "nixvim"
       },
       "locked": {
@@ -1436,7 +1450,7 @@
     "spicetify-nix": {
       "inputs": {
         "flake-compat": "flake-compat_2",
-        "nixpkgs": "nixpkgs_14"
+        "nixpkgs": "nixpkgs_15"
       },
       "locked": {
         "lastModified": 1723176741,
@@ -1620,7 +1634,7 @@
       "inputs": {
         "flake-parts": "flake-parts_4",
         "naersk": "naersk",
-        "nixpkgs": "nixpkgs_15"
+        "nixpkgs": "nixpkgs_16"
       },
       "locked": {
         "lastModified": 1717258294,
