@@ -151,11 +151,11 @@
         "utils": "utils_2"
       },
       "locked": {
-        "lastModified": 1719991006,
-        "narHash": "sha256-tgPbXXexGEGe8md9Cinj1ATwgxsgzO33ignfv9bmCJc=",
+        "lastModified": 1723238440,
+        "narHash": "sha256-URObY/Ct/OttjaGj5MmENPBP1NGg9Klv/T2ebXCqf40=",
         "owner": "Daru-san",
         "repo": "color-picker-rs",
-        "rev": "4a138fb059045c379907b09ea2ce49f12166bed1",
+        "rev": "57caa46648267970e08bd62aa1787696ef8329be",
         "type": "github"
       },
       "original": {
@@ -1170,11 +1170,11 @@
     },
     "nixpkgs_7": {
       "locked": {
-        "lastModified": 1719690277,
-        "narHash": "sha256-0xSej1g7eP2kaUF+JQp8jdyNmpmCJKRpO12mKl/36Kc=",
+        "lastModified": 1722813957,
+        "narHash": "sha256-IAoYyYnED7P8zrBFMnmp7ydaJfwTnwcnqxUElC1I26Y=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "2741b4b489b55df32afac57bc4bfd220e8bf617e",
+        "rev": "cb9a96f23c491c081b38eab96d22fa958043c9fa",
         "type": "github"
       },
       "original": {
