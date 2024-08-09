@@ -25,6 +25,7 @@
             "pulsemixer"
             "valent"
             "org.kde.rsibreak"
+            "xdg-desktop-portal-kde"
           ];
           resized-windows = [
             "foot"
