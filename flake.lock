@@ -1399,11 +1399,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1722962831,
-        "narHash": "sha256-I2/ABSkMzai3gGkB9BzJH/eLG34vYrJ3RgEEuygjRss=",
+        "lastModified": 1723196653,
+        "narHash": "sha256-KxYXXQZcmPJ/eRUAvQFs3ThGVTfgZg9mYguQ3/bG45Y=",
         "owner": "~darumaka",
         "repo": "Snowpkgs",
-        "rev": "d0a4631e7191bf8f5fd69c0fae809ea23cc0f5c0",
+        "rev": "63cc44e506a5c346de3ec4071eab89e6d8dc0c90",
         "type": "sourcehut"
       },
       "original": {
