@@ -62,10 +62,7 @@
     r-pg.url = "github:Daru-san/r-pg";
     color-picker.url = "github:Daru-san/color-picker-rs";
     snowyvim.url = "sourcehut:~darumaka/SnowyVim";
-    snowpkgs = {
-      url = "sourcehut:~darumaka/Snowpkgs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    snowpkgs.url = "sourcehut:~darumaka/Snowpkgs";
 
     # rtw88_driver
     rtw-driver = {
