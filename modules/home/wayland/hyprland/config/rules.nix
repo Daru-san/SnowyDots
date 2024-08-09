@@ -31,6 +31,7 @@
             "nmtui"
             "pulsemixer"
             "org.freedesktop.impl.portal.desktop.kde"
+            "xdg-desktop-portal-kde"
             "org.gnome.FileRoller"
             "org.twosheds.iwgtk"
             "valent"
