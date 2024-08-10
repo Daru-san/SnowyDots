@@ -3,7 +3,7 @@
     settings = {
       general = {
         gaps_in = 1;
-        gaps_out = 1;
+        gaps_out = 3;
         border_size = 0;
       };
       binds = {
