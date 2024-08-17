@@ -14,7 +14,7 @@
     };
 
     # Colors
-    nix-colors.url = "github:Misterio77/nix-colors";
+    nix-colors.url = "github:Misterio77/nix-colors/b01f024090d2c4fc3152cd0cf12027a7b8453ba1";
 
     # Spiced spotify
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
@@ -63,12 +63,6 @@
     color-picker.url = "github:Daru-san/color-picker-rs";
     snowyvim.url = "sourcehut:~darumaka/SnowyVim";
     snowpkgs.url = "sourcehut:~darumaka/Snowpkgs";
-
-    # rtw88_driver
-    rtw-driver = {
-      url = "github:felipealfonsog/rtl-88x2bu";
-      flake = false;
-    };
   };
   outputs = {
     self,
