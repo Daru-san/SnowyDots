@@ -4,11 +4,7 @@
   pkgs,
   ...
 }: rec {
-  imports = [
-    # ./qt.nix
-    ./fonts.nix
-    ./gtk.nix
-  ];
+  imports = [./qt.nix ./fonts.nix ./gtk.nix];
 
   # Wallpaper
   wallpaperImage =
