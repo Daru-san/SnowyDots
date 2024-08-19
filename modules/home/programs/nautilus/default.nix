@@ -5,7 +5,7 @@
     paths = with pkgs; [
       nautilus
       nautilus-python
-      turtle
+      stable.turtle
       nautilus-open-any-terminal
     ];
   };

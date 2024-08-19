@@ -58,11 +58,11 @@
       unrar
       onefetch
       nix-output-monitor
-      nix-init
+      stable.nix-init
       nix-update
       nixfmt-rfc-style
       trashy
-      turtle
+      stable.turtle
       rqbit
       dconf-editor
       file-roller

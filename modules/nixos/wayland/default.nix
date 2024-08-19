@@ -5,22 +5,22 @@
   ...
 }: let
   inherit (lib) mkIf mkEnableOption;
-  cfg = config.wayland;
+  cfg = config.wayland.hyprland;
 in {
-  options.wayland.enable = mkEnableOption "Enable wayland";
-  imports = [./polkit];
+  options.wayland.hyprland.enable = mkEnableOption "Enable wayland";
+  imports = [./polkit ./plasma.nix];
   config = mkIf cfg.enable {
     programs = {
       sway.enable = false;
       sway.extraPackages = [];
-      hyprland.enable = true;
+      hyprland.enable = false;
       dconf.enable = true;
       seahorse.enable = true;
-      file-roller.enable = true;
+      file-roller.enable = false;
     };
     services.greetd = {
       package = pkgs.greetd;
-      enable = true;
+      enable = false;
       settings = rec {
         initial_session = {
           command = let
