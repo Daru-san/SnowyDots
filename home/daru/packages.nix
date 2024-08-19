@@ -14,11 +14,11 @@
       bridge-editor
       oculante
       pwvucontrol
-      gnome.gnome-software
       blanket
       mission-center
       g4music
-      stable.kdePackages.kalzium
+      kdePackages.kalzium
+      discover
       prismlauncher
       lazarus-qt
       kdenlive
