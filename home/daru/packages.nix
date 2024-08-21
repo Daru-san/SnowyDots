@@ -62,7 +62,6 @@
       nix-update
       nixfmt-rfc-style
       trashy
-      stable.turtle
       rqbit
       dconf-editor
       file-roller
