@@ -32,7 +32,7 @@
     nurl
     uutils-coreutils-noprefix
     jmtpfs
-    nix-melt
+    stable.nix-melt
     ncdu
     busybox
     usbutils
