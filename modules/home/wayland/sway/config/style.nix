@@ -1,9 +1,12 @@
 {config, ...}: {
   wayland.windowManager.sway = {
     config = {
-      defaultWorkspace = "workspace number 1";
+      defaultWorkspace = "workspace number 2";
       fonts = {
-        names = ["JetbrainsMono Nerd Font" "UbuntuMono Nerd Font"];
+        names = [
+          "JetbrainsMono Nerd Font"
+          "UbuntuMono Nerd Font"
+        ];
         style = "Semi-Bold";
         size = 13.4;
       };
@@ -19,12 +22,7 @@
         titlebar = false;
         border = 0;
       };
-      bars = [
-        {
-          mode = "invisible";
-          command = "echo bar > /dev/null";
-        }
-      ];
+      bars = [{command = "${config.programs.waybar.package}/bin/waybar";}];
     };
 
     extraConfig = ''

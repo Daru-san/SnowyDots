@@ -18,9 +18,11 @@ in {
     ./wlogout
     ./wlsunset
     ./anyrun
+    ./waybar
+    ./swaync
   ];
   config = mkIf cfg.enable {
-    # wayland.windowManager.sway.enable = true;
+    wayland.windowManager.sway.enable = true;
     services = {
       kanshi.enable = true;
       hypridle.enable = true;
@@ -29,7 +31,7 @@ in {
     };
     programs = {
       anyrun.enable = true;
-      ags.enable = true;
+      ags.enable = false;
       wlogout.enable = true;
       hyprlock.enable = true;
     };
