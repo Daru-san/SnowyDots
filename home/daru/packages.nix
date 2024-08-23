@@ -19,17 +19,9 @@
       g4music
       kdePackages.kalzium
       discover
-      prismlauncher
       lazarus-qt
       kdenlive
       waydroid-script
-
-      ryujinx
-      lime3ds
-      mgba
-      melonDS
-      yoke
-      poketex
 
       # CLI
       ouch
