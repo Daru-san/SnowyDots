@@ -8,19 +8,19 @@
   cfg = config.wayland.hyprland;
 in {
   options.wayland.hyprland.enable = mkEnableOption "Enable wayland";
-  imports = [./polkit ./plasma.nix];
+  imports = [./polkit];
   config = mkIf cfg.enable {
     programs = {
-      sway.enable = false;
+      sway.enable = true;
       sway.extraPackages = [];
-      hyprland.enable = false;
+      sway.package = pkgs.swayfx;
       dconf.enable = true;
       seahorse.enable = true;
-      file-roller.enable = false;
+      file-roller.enable = true;
     };
     services.greetd = {
       package = pkgs.greetd;
-      enable = false;
+      enable = true;
       settings = rec {
         initial_session = {
           command = let
@@ -28,7 +28,7 @@ in {
               t = true;
               window-padding = 1;
               g = "Access is restricted to authorized personnel only.";
-              c = "Hyprland";
+              c = "sway";
               r = true;
             };
           in "${pkgs.greetd.tuigreet}/bin/tuigreet ${flags}";
