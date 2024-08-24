@@ -5,19 +5,23 @@
   lib,
   ...
 }: let
-  inherit (lib) getExe getExe' range concatLines;
+  inherit
+    (lib)
+    getExe
+    getExe'
+    range
+    concatLines
+    ;
   mod = config.wayland.windowManager.sway.config.modifier;
 in {
   wayland.windowManager.sway.extraConfig = let
     workspaces = map toString (range 0 9);
   in
     concatLines [
-      (concatLines (map
-        (n: "bindsym --to-code ${mod}+${n} workspace number ${n}")
-        workspaces))
-      (concatLines (map
-        (n: "bindsym --to-code ${mod}+Shift+${n} move container to workspace number ${n}")
-        workspaces))
+      (concatLines (map (n: "bindsym --to-code ${mod}+${n} workspace number ${n}") workspaces))
+      (concatLines (
+        map (n: "bindsym --to-code ${mod}+Shift+${n} move container to workspace number ${n}") workspaces
+      ))
     ];
   wayland.windowManager.sway.config = {
     modifier = "Mod4";
@@ -28,7 +32,7 @@ in {
       playerctl = getExe config.services.playerctld.package;
       browser = getExe config.programs.firefox.package;
       launcher = config.wayland.windowManager.sway.config.menu;
-      file-manager = getExe pkgs.gnome.nautilus;
+      file-manager = getExe pkgs.nautilus;
       shotman = getExe pkgs.shotman;
       ags = getExe config.programs.ags.package;
       editor = getExe pkgs.neovim;
@@ -95,26 +99,28 @@ in {
         "${mod}+shift+n" = "exec ${swaync} -d";
         "${mod}+alt+n" = "exec ${swaync} -C";
       }
-      // (let
-        s = getExe' config.services.swayosd.package "swayosd-client";
-        caps-lock = "exec ${s} --caps-lock";
-        mute = "exec ${s} --output-volume mute-toggle";
-        raise-volume = "exec ${s} --output-volume raise";
-        lower-volume = "exec ${s} --output-volume lower";
-        raise-brightness = "exec ${s} --brightness raise";
-        lower-brightness = "exec ${s} --brightness lower";
-      in {
-        "XF86MonBrightnessUp" = raise-brightness;
-        "XF86MonBrightnessDown" = lower-brightness;
+      // (
+        let
+          s = getExe' config.services.swayosd.package "swayosd-client";
+          caps-lock = "exec ${s} --caps-lock";
+          mute = "exec ${s} --output-volume mute-toggle";
+          raise-volume = "exec ${s} --output-volume raise";
+          lower-volume = "exec ${s} --output-volume lower";
+          raise-brightness = "exec ${s} --brightness raise";
+          lower-brightness = "exec ${s} --brightness lower";
+        in {
+          "XF86MonBrightnessUp" = raise-brightness;
+          "XF86MonBrightnessDown" = lower-brightness;
 
-        "XF86AudioRaiseVolume" = raise-volume;
-        "XF86AudioLowerVolume" = lower-volume;
-        "XF86AudioMute" = mute;
+          "XF86AudioRaiseVolume" = raise-volume;
+          "XF86AudioLowerVolume" = lower-volume;
+          "XF86AudioMute" = mute;
 
-        "shift+F8" = raise-volume;
-        "shift+F6" = lower-volume;
-        "shift+F7" = mute;
-        "caps_lock" = caps-lock;
-      });
+          "shift+F8" = raise-volume;
+          "shift+F6" = lower-volume;
+          "shift+F7" = mute;
+          "caps_lock" = caps-lock;
+        }
+      );
   };
 }
