@@ -4,6 +4,7 @@
     usbtop.enable = true;
     adb.enable = true;
     git.enable = true;
+    localsend.enable = true;
     nh = {
       enable = true;
       clean = {
