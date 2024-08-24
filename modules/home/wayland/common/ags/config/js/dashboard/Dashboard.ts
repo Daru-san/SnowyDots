@@ -8,6 +8,6 @@ const Dashboard = PopupWindow({
   margins: 4,
   child: Widget.Box({
     className: 'Dashboard',
-    children: 
-})
+    children: [],
+}),
 export default Dashboard
