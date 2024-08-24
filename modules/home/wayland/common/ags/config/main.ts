@@ -5,5 +5,5 @@ import NotificationWindow from './js/NotifWindow/NotificationWindow'
 
 App.config({
   style: './style/style.scss',
-  windows: [Bar(0), notificationPopups(), NotificationWindow()],
+  windows: [Bar(0), notificationPopups(), NotificationWindow],
 })
