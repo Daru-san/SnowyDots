@@ -22,7 +22,12 @@
         titlebar = false;
         border = 0;
       };
-      bars = [{command = "${config.programs.waybar.package}/bin/waybar";}];
+      bars = [
+        {
+          command = "echo bar > /dev/null";
+          mode = "invisible";
+        }
+      ];
     };
 
     extraConfig = ''
