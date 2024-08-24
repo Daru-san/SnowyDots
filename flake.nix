@@ -103,8 +103,12 @@
           modules.system
           {
             nixpkgs.hostPlatform = laptop.system;
-            system = {inherit (laptop) stateVersion;};
-            networking = {inherit (laptop) hostName;};
+            system = {
+              inherit (laptop) stateVersion;
+            };
+            networking = {
+              inherit (laptop) hostName;
+            };
             wayland.hyprland.enable = true;
           }
         ];
@@ -119,8 +123,12 @@
           modules.system
           {
             nixpkgs.hostPlatform = desktop.system;
-            system = {inherit (desktop) stateVersion;};
-            networking = {inherit (desktop) hostName;};
+            system = {
+              inherit (desktop) stateVersion;
+            };
+            networking = {
+              inherit (desktop) hostName;
+            };
             wayland.enable = true;
           }
         ];
@@ -138,7 +146,9 @@
           ./home/daru
           modules.home
           {
-            home = {inherit (laptop) stateVersion;};
+            home = {
+              inherit (laptop) stateVersion;
+            };
             wayland.enable = true;
           }
         ];
@@ -153,7 +163,9 @@
           ./home/daru
           modules.home
           {
-            home = {inherit (desktop) stateVersion;};
+            home = {
+              inherit (desktop) stateVersion;
+            };
             wayland.enable = true;
           }
         ];
