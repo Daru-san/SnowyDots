@@ -1,9 +1,9 @@
-import Bar from './bar/bar.ts'
-import notificationPopups from './windows/notificationPopups.js'
-import NotificationWindow from './windows/NotificationWindow.ts'
-import MusicPlayer from './windows/MusicPlayer.ts'
+import Bar from './js/bar/bar'
+import notificationPopups from './js/notifications/notificationPopups'
+import NotificationWindow from './js/NotifWindow/NotificationWindow'
+import DashBoard from './js/dashboard/Dashboard'
 
 App.config({
   style: './style/style.scss',
-  windows: [Bar(0), notificationPopups(), MusicPlayer(), NotificationWindow],
+  windows: [Bar(0), notificationPopups(), NotificationWindow()],
 })

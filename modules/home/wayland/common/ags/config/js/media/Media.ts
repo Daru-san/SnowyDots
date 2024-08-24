@@ -7,7 +7,6 @@ const PAUSE_ICON = 'media-playback-pause-symbolic'
 const PREV_ICON = 'media-skip-backward-symbolic'
 const NEXT_ICON = 'media-skip-forward-symbolic'
 
-/** @param {number} length */
 function lengthStr(length) {
   const min = Math.floor(length / 60)
   const sec = Math.floor(length % 60)
@@ -15,14 +14,20 @@ function lengthStr(length) {
   return `${min}:${sec0}${sec}`
 }
 
-/** @param {import('types/service/mpris').MprisPlayer} player */
-function Player(player) {
+const Player = (player) => {
   const img = Widget.Box({
     class_name: 'img',
     vpack: 'start',
     css: player.bind('cover_path').transform(
       (p) => `
             background-image: url('${p}');
+            background-size: cover; 
+            background-position: center; 
+            min-height: 100px;
+            min-width: 100px; 
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 10px;
         `,
     ),
   })
@@ -30,6 +35,8 @@ function Player(player) {
   const title = Widget.Label({
     class_name: 'title',
     wrap: true,
+    max_width_chars: 20,
+    truncate: 'end',
     hpack: 'start',
     label: player.bind('track_title'),
   })
@@ -46,6 +53,7 @@ function Player(player) {
     draw_value: false,
     on_change: ({ value }) => (player.position = value * player.length),
     visible: player.bind('length').as((l) => l > 0),
+    hexpand: false,
     setup: (self) => {
       function update() {
         const value = player.position / player.length
@@ -120,14 +128,14 @@ function Player(player) {
   })
 
   return Widget.Box(
-    { class_name: 'player' },
+    { class_names: ['player', 'window-content'] },
     img,
     Widget.Box(
       {
         vertical: true,
         hexpand: true,
       },
-      Widget.Box([title]),
+      Widget.Box([title, icon]),
       artist,
       Widget.Box({ vexpand: true }),
       positionSlider,
@@ -140,24 +148,13 @@ function Player(player) {
   )
 }
 
-function Media() {
-  return Widget.Box({
+export function Media() {
+  const mediaContainer = Widget.Box({
     vertical: true,
-    css: 'min-height: 2px; min-width: 500px;', // small hack to make it visible
-    visible: players.as((p) => p.length > 0),
+    class_name: 'media__container',
+    css: 'min-height: 2px; min-width: 2px;', // small hack to make it visible
+    vexpand: false,
     children: players.as((p) => p.map(Player)),
   })
+  return mediaContainer
 }
-const MusicPlayer = () => {
-  return Widget.Window({
-    name: 'mpris',
-    visible: false,
-    keymode: 'exclusive',
-    anchor: ['top', 'middle'],
-    setup: (w) => w.keybind('Escape', () => App.closeWindow('mpris')),
-    layer: 'overlay',
-    child: Media(),
-  })
-}
-
-export default MusicPlayer

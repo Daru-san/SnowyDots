@@ -45,7 +45,7 @@ const NotificationIcon = ({ app_entry, app_icon, image }) => {
   })
 }
 
-const NotificationWidget = (notification) => {
+export default (notification) => {
   const content = Widget.Box({
     class_name: 'content',
     children: [
@@ -137,18 +137,3 @@ const NotificationWidget = (notification) => {
     child: eventbox,
   })
 }
-
-const NotificationWindow = () => {
-  return Widget.Window({
-    name: 'NotificationWindow',
-    visible: false,
-    keymode: 'exclusive',
-    anchor: ['top', 'middle'],
-    setup: (w) =>
-      w.keybind('Escape', () => App.closeWindow('NotificationWindow')),
-    layer: 'overlay',
-    child: NotificationWidget(),
-  })
-}
-
-export default NotificationWindow
