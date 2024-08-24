@@ -3,14 +3,17 @@ import Workspaces from './widgets/Workspaces'
 import Music from './widgets/music'
 import SysTray from './widgets/SysTray'
 import SysIndicators from './widgets/SysIndicators'
-import ActiveWindow from './widgets/ActiveWindow'
+// import ActiveWindow from './widgets/ActiveWindow'
 import SysResources from './widgets/Resources'
 // import NotificationButton from './widgets/NotificationButton'
 
 const Left = () =>
   Widget.Box({
     spacing: 8,
-    children: [Workspaces(), ActiveWindow()],
+    children: [
+      Workspaces(),
+      // ActiveWindow()
+    ],
   })
 
 const Center = () =>
