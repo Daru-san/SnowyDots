@@ -5,9 +5,18 @@
       "2" = [{app_id = "^firefox$";}];
       "3" = [{app_id = "btop";}];
       "4" = [{app_id = "^org.gnome.Nautilus$";}];
-      "5" = [{title = "^Spotify Free$";} {app_id = "^com.github.neithern.g4music$";}];
-      "6" = [{app_id = "^FreeTube$";} {app_id = "^mpv$";}];
-      "7" = [{app_id = "^Minecraft$";} {app_id = "^org.prismlauncher.PrismLauncher";}];
+      "5" = [
+        {title = "^Spotify Free$";}
+        {app_id = "^com.github.neithern.g4music$";}
+      ];
+      "6" = [
+        {app_id = "^FreeTube$";}
+        {app_id = "^mpv$";}
+      ];
+      "7" = [
+        {app_id = "^Minecraft$";}
+        {app_id = "^org.prismlauncher.PrismLauncher";}
+      ];
       "8" = [{app_id = "oculante";}];
       "9" = [{app_id = "^org.pwmt.zathura$";}];
     };
@@ -23,6 +32,10 @@
       ];
     in
       [
+        {
+          command = "resize set 60ppt 60ppt";
+          criteria.app_id = "^valent$";
+        }
         {
           command = "resize set 70ppt 70ppt";
           criteria.app_id = "^easyeffects$";
@@ -64,6 +77,7 @@
           "com.github.hluk.copyq"
           "copyq"
           "pwvucontrol"
+          "valent"
           "org.kde.kdeconnect-indicator"
           "swaymux"
           "nmtui"

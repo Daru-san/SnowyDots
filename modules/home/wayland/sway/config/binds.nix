@@ -41,7 +41,6 @@ in {
       wlogout = getExe config.programs.wlogout.package;
       easyeffects = getExe config.services.easyeffects.package;
       color-picker = getExe inputs.color-picker.packages.${pkgs.system}.default;
-      swaync = getExe' pkgs.swaynotificationcenter "swaync-client";
       swaymux = getExe pkgs.swaymux;
       valent = getExe pkgs.valent;
     in
@@ -96,9 +95,7 @@ in {
         "shift+F10" = "exec ${playerctl} play-pause";
         "shift+F11" = "exec ${playerctl} stop";
 
-        "${mod}+n" = "exec ${swaync} -t";
-        "${mod}+shift+n" = "exec ${swaync} -d";
-        "${mod}+alt+n" = "exec ${swaync} -C";
+        "${mod}+n" = "exec ${ags} -t NotificationMenu";
       }
       // (
         let
