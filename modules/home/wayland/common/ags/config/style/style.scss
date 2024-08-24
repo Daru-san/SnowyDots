@@ -31,8 +31,12 @@ label {
   font-weight: bold;
 }
 
-.workspaces button.focused {
+.workspaces button.active {
   border: 3px solid @base02;
+}
+
+.workspaces button.occupied {
+  border: 3px solid @base01;
 }
 
 .client-title {
