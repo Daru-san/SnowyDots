@@ -14,12 +14,12 @@ const NotificationMenu = PopupWindow({
   name: 'NotificationMenu',
   transition: 'slide_up',
   transition_duration: 300,
-  anchor: ['top', 'right'],
+  anchor: ['top', 'middle'],
   margins: [4],
 
   keymode: 'on-demand',
   child: Widget.Box({
-    className: 'noti-box',
+    className: 'notif-window',
     spacing: 12,
     vertical: true,
     children: [BottomBox()],

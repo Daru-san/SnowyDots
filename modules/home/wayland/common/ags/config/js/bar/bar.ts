@@ -5,7 +5,7 @@ import SysTray from './widgets/SysTray'
 import SysIndicators from './widgets/SysIndicators'
 // import ActiveWindow from './widgets/ActiveWindow'
 import SysResources from './widgets/Resources'
-// import NotificationButton from './widgets/NotificationButton'
+import NotificationButton from './widgets/NotificationButton'
 
 const Left = () =>
   Widget.Box({
@@ -19,7 +19,7 @@ const Left = () =>
 const Center = () =>
   Widget.Box({
     spacing: 8,
-    children: [Clock(), Music()],
+    children: [Clock(), NotificationButton()],
   })
 
 const Right = () =>
