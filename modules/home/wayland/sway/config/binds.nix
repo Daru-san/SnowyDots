@@ -43,6 +43,7 @@ in {
       color-picker = getExe inputs.color-picker.packages.${pkgs.system}.default;
       swaync = getExe' pkgs.swaynotificationcenter "swaync-client";
       swaymux = getExe pkgs.swaymux;
+      valent = getExe pkgs.valent;
     in
       {
         #Basic binds
@@ -57,7 +58,7 @@ in {
         "${mod}+alt+b" = "exec ags -q || ${ags}";
         "${mod}+i" = "exec pkill nmtui || ${terminal} --class nmtui --detach nmtui";
         "${mod}+p" = "exec pkill pulsemixer || ${terminal} --class pulsemixer --detach pulsemixer";
-
+        "${mod}+m" = "exec ${valent}";
         #Window bings
         "alt+tab" = "exec pkill swaymux || ${swaymux}";
         "${mod}+shift+q" = "kill";
