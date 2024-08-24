@@ -32,7 +32,7 @@ in {
     };
     programs = {
       anyrun.enable = true;
-      ags.enable = false;
+      ags.enable = true;
       wlogout.enable = true;
       hyprlock.enable = true;
       waybar.enable = true;
