@@ -121,7 +121,7 @@
             nixpkgs.hostPlatform = desktop.system;
             system = {inherit (desktop) stateVersion;};
             networking = {inherit (desktop) hostName;};
-            wayland.plasma.enable = true;
+            wayland.enable = true;
           }
         ];
       };
@@ -154,7 +154,7 @@
           modules.home
           {
             home = {inherit (desktop) stateVersion;};
-            wayland.enable = false;
+            wayland.enable = true;
           }
         ];
       };

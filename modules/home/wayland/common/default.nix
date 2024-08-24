@@ -28,12 +28,14 @@ in {
       hypridle.enable = true;
       swayosd.enable = true;
       wlsunset.enable = true;
+      swaync.enable = true;
     };
     programs = {
       anyrun.enable = true;
       ags.enable = false;
       wlogout.enable = true;
       hyprlock.enable = true;
+      waybar.enable = true;
     };
     home.packages = [pkgs.wl-clipboard-rs];
   };

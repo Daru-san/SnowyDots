@@ -5,9 +5,9 @@
   ...
 }: let
   inherit (lib) mkIf mkEnableOption;
-  cfg = config.wayland.hyprland;
+  cfg = config.wayland;
 in {
-  options.wayland.hyprland.enable = mkEnableOption "Enable wayland";
+  options.wayland.enable = mkEnableOption "Enable wayland";
   imports = [./polkit];
   config = mkIf cfg.enable {
     programs = {
