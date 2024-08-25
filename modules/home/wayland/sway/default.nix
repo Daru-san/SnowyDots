@@ -20,12 +20,14 @@
           "systemctl --user start swayosd"
           "systemctl --user start wlsunset"
           "systemctl --user import-environment"
-          "systemctl --user start polkit-gnome"
           "systemctl --user start xdg-desktop-portal-wlr"
+          "systemctl --user start xdg-desktop-portal-gtk"
           "systemctl --user start plasma-xdg-desktop-portal-kde"
         ];
       };
-      wrapperFeatures = {gtk = true;};
+      wrapperFeatures = {
+        gtk = true;
+      };
       config = {
         terminal = lib.getExe config.programs.kitty.package;
         menu = lib.getExe config.programs.anyrun.package;
