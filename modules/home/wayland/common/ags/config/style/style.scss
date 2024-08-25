@@ -115,13 +115,18 @@ window.notification-popups box.notifications {
   margin-right: 0;
 }
 
-.player {
+.player,
+.notif-window {
   padding: 10px;
   background-color: shade(@base0F, 0.25);
   margin-top: 10px;
   border-radius: 10px;
   border: 6px solid shade(@base0B, 0.2);
-  min-width: 350px;
+  min-width: 450px;
+}
+
+.notif-window {
+  min-height: 600px;
 }
 
 .player .img {
