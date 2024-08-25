@@ -21,7 +21,10 @@
       discover
       lazarus-qt
       kdenlive
+      ffmpeg
+      pandoc
       waydroid-script
+      prismlauncher
 
       # CLI
       ouch
