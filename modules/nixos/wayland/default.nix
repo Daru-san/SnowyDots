@@ -10,13 +10,33 @@ in {
   options.wayland.enable = mkEnableOption "Enable wayland";
   imports = [./polkit];
   config = mkIf cfg.enable {
+    programs.sway = {
+      enable = true;
+      extraPackages = [];
+      package = pkgs.swayfx;
+    };
     programs = {
-      sway.enable = true;
-      sway.extraPackages = [];
-      sway.package = pkgs.swayfx;
       dconf.enable = true;
       seahorse.enable = true;
       file-roller.enable = true;
+    };
+    xdg.portal = {
+      enable = true;
+      wlr.enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gtk
+        xdg-desktop-portal-kde
+      ];
+      config = {
+        sway = {
+          default = [
+            "wlr"
+            "gtk"
+          ];
+          "org.freedesktop.impl.portal.FileChooser" = ["kde"];
+          "org.freedesktop.impl.portal.Secret" = ["gnome-keyring"];
+        };
+      };
     };
     services.greetd = {
       package = pkgs.greetd;
