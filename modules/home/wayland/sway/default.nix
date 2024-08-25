@@ -20,6 +20,7 @@
           "systemctl --user start swayosd"
           "systemctl --user start wlsunset"
           "systemctl --user import-environment"
+          "systemctl --user start xdg-desktop-portal"
           "systemctl --user start xdg-desktop-portal-wlr"
           "systemctl --user start xdg-desktop-portal-gtk"
           "systemctl --user start plasma-xdg-desktop-portal-kde"
