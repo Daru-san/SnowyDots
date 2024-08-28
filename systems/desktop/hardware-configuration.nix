@@ -5,67 +5,127 @@
     "/" = {
       device = "none";
       fsType = "tmpfs";
-      options = ["size=7G" "mode=775"];
-    };
-
-    "/etc" = {
-      device = "/dev/disk/by-uuid/38d10da5-6c7c-4eb2-b614-ad20a1a795e8";
-      fsType = "btrfs";
-      options = ["subvol=etc" "compress=zstd" "discard"];
-    };
-
-    "/var" = {
-      device = "/dev/disk/by-uuid/38d10da5-6c7c-4eb2-b614-ad20a1a795e8";
-      fsType = "btrfs";
-      options = ["subvol=tmp" "compress=zstd" "discard"];
-    };
-
-    "/persist" = {
-      device = "/dev/disk/by-uuid/38d10da5-6c7c-4eb2-b614-ad20a1a795e8";
-      fsType = "btrfs";
-      options = ["subvol=persist" "compress=zstd" "discard"];
-    };
-
-    "/nix" = {
-      device = "/dev/disk/by-uuid/dbd1df32-d4d5-4e20-8da7-aa8df227c6ac";
-      fsType = "ext4";
-      options = ["noatime" "nodiratime" "discard"];
-    };
-
-    "/home" = {
-      device = "/dev/disk/by-uuid/5bbf8784-92a9-4959-97a5-a7baec021d1c";
-      fsType = "btrfs";
-      options = ["subvol=home" "compress=zstd" "discard"];
-    };
-
-    "/home/daru/Music" = {
-      device = "/dev/disk/by-uuid/5bbf8784-92a9-4959-97a5-a7baec021d1c";
-      fsType = "btrfs";
-      options = ["subvol=music" "rw" "compress=zstd" "discard"];
-    };
-
-    "/home/daru/Documents" = {
-      device = "/dev/disk/by-uuid/5bbf8784-92a9-4959-97a5-a7baec021d1c";
-      fsType = "btrfs";
-      options = ["subvol=documents" "rw" "compress=zstd" "discard"];
-    };
-
-    "/home/daru/Development" = {
-      device = "/dev/disk/by-uuid/5bbf8784-92a9-4959-97a5-a7baec021d1c";
-      fsType = "btrfs";
-      options = ["subvol=repos" "rw" "compress=zstd" "discard"];
-    };
-
-    "/home/daru/Pictures" = {
-      device = "/dev/disk/by-uuid/5bbf8784-92a9-4959-97a5-a7baec021d1c";
-      fsType = "btrfs";
-      options = ["subvol=pictures" "rw" "compress=zstd" "discard"];
     };
 
     "/boot" = {
       device = "/dev/disk/by-uuid/7ED4-6E7F";
       fsType = "vfat";
-      options = ["fmask=0022" "dmask=0022"];
+      options = [
+        "fmask=0022"
+        "dmask=0022"
+      ];
+    };
+
+    "/nix" = {
+      device = "/dev/disk/by-uuid/1de88fe7-5fe8-4e0b-ad00-fdc3cb452408";
+      fsType = "btrfs";
+      options = ["subvol=nix"];
+    };
+
+    "/etc" = {
+      device = "/dev/disk/by-uuid/1de88fe7-5fe8-4e0b-ad00-fdc3cb452408";
+      fsType = "btrfs";
+      options = ["subvol=etc"];
+    };
+
+    "/var" = {
+      device = "/dev/disk/by-uuid/1de88fe7-5fe8-4e0b-ad00-fdc3cb452408";
+      fsType = "btrfs";
+      options = ["subvol=var"];
+    };
+
+    "/home" = {
+      device = "/dev/disk/by-uuid/5bbf8784-92a9-4959-97a5-a7baec021d1c";
+      fsType = "btrfs";
+      options = ["subvol=home"];
+    };
+
+    "/home/daru/Music" = {
+      device = "/dev/disk/by-uuid/5bbf8784-92a9-4959-97a5-a7baec021d1c";
+      fsType = "btrfs";
+      options = [
+        "subvol=music"
+        "rw"
+        "compress=zstd"
+        "discard"
+      ];
+    };
+
+    "/home/daru/snow" = {
+      device = "/dev/disk/by-uuid/5bbf8784-92a9-4959-97a5-a7baec021d1c";
+      fsType = "btrfs";
+      options = [
+        "subvol=snow"
+        "rw"
+        "compress=zstd"
+        "discard"
+      ];
+    };
+
+    "/home/daru/Videos" = {
+      device = "/dev/disk/by-uuid/5bbf8784-92a9-4959-97a5-a7baec021d1c";
+      fsType = "btrfs";
+      options = [
+        "subvol=Videos"
+        "rw"
+        "compress=zstd"
+        "discard"
+      ];
+    };
+
+    "/home/daru/Wallpapers" = {
+      device = "/dev/disk/by-uuid/5bbf8784-92a9-4959-97a5-a7baec021d1c";
+      fsType = "btrfs";
+      options = [
+        "subvol=Wallpapers"
+        "rw"
+        "compress=zstd"
+        "discard"
+      ];
+    };
+
+    "/home/daru/Misc" = {
+      device = "/dev/disk/by-uuid/5bbf8784-92a9-4959-97a5-a7baec021d1c";
+      fsType = "btrfs";
+      options = [
+        "subvol=Misc"
+        "rw"
+        "compress=zstd"
+        "discard"
+      ];
+    };
+
+    "/home/daru/Development" = {
+      device = "/dev/disk/by-uuid/5bbf8784-92a9-4959-97a5-a7baec021d1c";
+      fsType = "btrfs";
+      options = [
+        "subvol=repos"
+        "rw"
+        "compress=zstd"
+        "discard"
+      ];
+    };
+
+    "/home/daru/Documents" = {
+      device = "/dev/disk/by-uuid/5bbf8784-92a9-4959-97a5-a7baec021d1c";
+      fsType = "btrfs";
+      options = [
+        "subvol=documents"
+        "rw"
+        "compress=zstd"
+        "discard"
+      ];
+    };
+
+    "/home/daru/Pictures" = {
+      device = "/dev/disk/by-uuid/5bbf8784-92a9-4959-97a5-a7baec021d1c";
+      fsType = "btrfs";
+      options = [
+        "subvol=pictures"
+        "rw"
+        "compress=zstd"
+        "discard"
+      ];
     };
   };
 
