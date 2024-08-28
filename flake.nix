@@ -36,22 +36,6 @@
     anyrun-shortcuts.url = "github:micha4w/anyrun-shell-shortcuts";
     anyrun-powermenu.url = "github:Daru-san/anyrun-powermenu";
 
-    # hyprland
-    hyprland = {
-      type = "git";
-      url = "https://github.com/hyprwm/Hyprland";
-      submodules = true;
-      rev = "9a09eac79b85c846e3a865a9078a3f8ff65a9259";
-    };
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
-    hyprscroller = {
-      url = "github:dawsers/hyprscroller";
-      inputs.hyprland.follows = "hyprland";
-    };
-
     # Indexing for packages
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
