@@ -12,7 +12,7 @@
         extraArgs = "-k 4 -K 7d";
         dates = "03:50";
       };
-      flake = "/home/daru/snow/";
+      flake = "/home/daru/snow/dots/";
     };
   };
 }
