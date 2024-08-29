@@ -1,4 +1,6 @@
-{
+{lib, ...}: let
+  inherit (lib) flatten concatStringsSep;
+in {
   programs.btop = {
     enable = true;
     settings = {
@@ -45,7 +47,28 @@
       show_cpu_freq = true;
 
       # Disks and memeory
-      disks_filter = "exclude=/boot /var/log /etc /var /tmp /persist /home/daru/Music /home/daru/Pictures /home/daru/Documents /home/daru/Development";
+      disks_filter = let
+        home-dirs = [
+          "Music"
+          "Pictures"
+          "Documents"
+          "Development"
+          "snow"
+          "Misc"
+          "Videos"
+          "Wallpapers"
+        ];
+      in
+        "exclude="
+        + concatStringsSep " " (flatten [
+          "/boot"
+          "/var/log"
+          "/etc"
+          "/var"
+          "/tmp"
+          "/persist"
+          (map (x: "/home/daru/${x}") home-dirs)
+        ]);
       mem_graphs = false;
       mem_below_net = true;
       fs_arc_cached = true;
