@@ -1,5 +1,13 @@
 {lib, ...}: {
-  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "sr_mod" "rtsx_usb_sdmmc"];
+  boot.initrd.availableKernelModules = [
+    "xhci_pci"
+    "ahci"
+    "usbhid"
+    "usb_storage"
+    "sd_mod"
+    "sr_mod"
+    "rtsx_usb_sdmmc"
+  ];
 
   fileSystems = {
     "/" = {
@@ -19,7 +27,11 @@
     "/nix" = {
       device = "/dev/disk/by-uuid/1de88fe7-5fe8-4e0b-ad00-fdc3cb452408";
       fsType = "btrfs";
-      options = ["subvol=nix"];
+      options = [
+        "subvol=nix"
+        "noatime"
+        "nodiratime"
+      ];
     };
 
     "/etc" = {
