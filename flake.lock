@@ -1109,7 +1109,8 @@
         "snowpkgs": "snowpkgs",
         "snowyvim": "snowyvim",
         "spicetify-nix": "spicetify-nix",
-        "trashy": "trashy"
+        "trashy": "trashy",
+        "walls": "walls"
       }
     },
     "rust-analyzer-src": {
@@ -1451,6 +1452,22 @@
         "owner": "numtide",
         "repo": "flake-utils",
         "type": "github"
+      }
+    },
+    "walls": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1725035711,
+        "narHash": "sha256-uwmxgUXzKXsJDnJLgYxR8l/FyQ+8/5kIAScIWRfmDhE=",
+        "owner": "~darumaka",
+        "repo": "Wallpapers",
+        "rev": "f4a6ae5209b6df2f5aaaa81748e474f43473dead",
+        "type": "sourcehut"
+      },
+      "original": {
+        "owner": "~darumaka",
+        "repo": "Wallpapers",
+        "type": "sourcehut"
       }
     },
     "yafas": {
