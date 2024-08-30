@@ -47,6 +47,10 @@
     color-picker.url = "github:Daru-san/color-picker-rs";
     snowyvim.url = "sourcehut:~darumaka/SnowyVim";
     snowpkgs.url = "sourcehut:~darumaka/Snowpkgs";
+    walls = {
+      url = "sourcehut:~darumaka/Wallpapers";
+      flake = false;
+    };
   };
   outputs = {
     self,

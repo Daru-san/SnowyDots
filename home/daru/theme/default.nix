@@ -1,20 +1,16 @@
 {
   inputs,
   lib,
-  pkgs,
   ...
 }: rec {
-  imports = [./qt.nix ./fonts.nix ./gtk.nix];
+  imports = [
+    ./qt.nix
+    ./fonts.nix
+    ./gtk.nix
+  ];
 
   # Wallpaper
-  wallpaperImage =
-    pkgs.fetchFromGitHub {
-      owner = "KDE";
-      repo = "plasma-workspace-wallpapers";
-      rev = "c091e7df788e17a6f8ca4c8917a8e09c9d6bdef0";
-      hash = "sha256-l4bHVIkkkTXGcXQPpJGRByZGQxn+5IcG0g5iF8Lcwq0=";
-    }
-    + "/Mountain/contents/images_dark/5120x2880.png";
+  wallpaperImage = inputs.walls + "/images/anime-landscape.png";
 
   # Colorscheme from nix-colors
   colorScheme = inputs.nix-colors.colorSchemes.oxocarbon-dark;
@@ -22,7 +18,14 @@
   # Converting the colorscheme to css
   colorSchemeCss = let
     num = map toString (lib.range 0 9);
-    char = ["A" "B" "C" "D" "E" "F"];
+    char = [
+      "A"
+      "B"
+      "C"
+      "D"
+      "E"
+      "F"
+    ];
   in
     lib.concatLines [
       "/* Definitions of my current color scheme */"
