@@ -23,20 +23,6 @@ in {
     xdg.portal = {
       enable = true;
       wlr.enable = true;
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-gtk
-        xdg-desktop-portal-kde
-      ];
-      config = {
-        sway = {
-          default = [
-            "wlr"
-            "gtk"
-          ];
-          "org.freedesktop.impl.portal.FileChooser" = ["kde"];
-          "org.freedesktop.impl.portal.Secret" = ["gnome-keyring"];
-        };
-      };
     };
     services.greetd = {
       package = pkgs.greetd;
