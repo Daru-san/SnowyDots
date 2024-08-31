@@ -64,8 +64,8 @@
       cheese
       mediainfo
       hexyl
+      gnome-clocks
     ])
-    (with pkgs.gnome; [gnome-clocks])
     (with inputs; [
       r-pg.packages.${system}.default
       anipy-cli.packages.${system}.default
