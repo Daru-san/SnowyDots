@@ -35,7 +35,7 @@ in {
       file-manager = getExe pkgs.nautilus;
       shotman = getExe pkgs.shotman;
       ags = getExe config.programs.ags.package;
-      editor = getExe pkgs.neovim;
+      editor = getExe inputs.snowyvim.packages.${pkgs.system}.default;
       hyprlock = getExe config.programs.hyprlock.package;
       copyq = getExe config.services.copyq.package;
       wlogout = getExe config.programs.wlogout.package;
