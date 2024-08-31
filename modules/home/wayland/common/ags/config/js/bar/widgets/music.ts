@@ -1,4 +1,3 @@
-import MusicPlayer from '../../windows/MusicPlayer'
 const mpris = await Service.import('mpris')
 
 const label = Utils.watch('', mpris, 'player-changed', () => {
