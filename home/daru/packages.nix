@@ -5,11 +5,13 @@
   system,
   lib,
   ...
-}: {
+}:
+{
   home.packages = lib.mkMerge [
     (with pkgs; [
       # GUI
       scrcpy
+      qt-scrcpy
       keepassxc
       bridge-editor
       oculante
