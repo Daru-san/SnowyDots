@@ -46,7 +46,7 @@
     r-pg.url = "github:Daru-san/r-pg";
     color-picker.url = "github:Daru-san/color-picker-rs";
     snowyvim.url = "sourcehut:~darumaka/SnowyVim";
-    snowpkgs.url = "sourcehut:~darumaka/Snowpkgs";
+    snowpkgs.url = "github:Daru-san/Snowpkgs";
     walls = {
       url = "sourcehut:~darumaka/Wallpapers";
       flake = false;
