@@ -1,13 +1,21 @@
 {
-  imports = [./lazygit.nix ./gh.nix];
-  programs.git-cliff = {enable = true;};
+  imports = [
+    ./lazygit.nix
+    ./gh.nix
+  ];
+  programs.git-cliff = {
+    enable = true;
+  };
   programs.git = {
     enable = true;
     userName = "Daru";
     userEmail = "mica.tui@proton.me";
 
     extraConfig = {
-      core.editor = "vi";
+      core = {
+        editor = "vi";
+        fileMode = false;
+      };
     };
     # Git highlighting
     diff-so-fancy.enable = true;
