@@ -29,7 +29,7 @@
     anipy-cli.url = "github:sdaqo/anipy-cli";
 
     # Wayland shell
-    ags.url = "github:ozwaldorf/ags/feature/sway";
+    ags.url = "github:Daru-san/ags/feature/sway";
 
     # Featureful wayland launcher
     anyrun.url = "github:anyrun-org/anyrun";
