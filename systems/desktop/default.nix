@@ -5,29 +5,31 @@
   pkgs,
   outputs,
   ...
-}: {
-  imports = [./configuration.nix];
+}:
+{
+  imports = [ ./configuration.nix ];
   nixpkgs = {
-    overlays = [inputs.snowpkgs.overlays.default outputs.overlays.stable-packages];
+    overlays = [
+      inputs.snowpkgs.overlays.default
+      outputs.overlays.stable-packages
+    ];
     config.allowUnfree = true;
   };
 
   nix = {
-    registry =
-      (lib.mapAttrs (_: flake: {inherit flake;}))
-      (lib.filterAttrs (_: lib.isType "flake") inputs);
     # package = pkgs.nixVersions.latest;
+    registry = (lib.mapAttrs (_: flake: { inherit flake; })) (
+      lib.filterAttrs (_: lib.isType "flake") inputs
+    );
     nixPath = [
       "nixpkgs=${inputs.nixpkgs}"
       "nixos-config=${./configuration.nix}"
     ];
   };
-  environment.etc =
-    lib.mapAttrs' (name: value: {
-      name = "nix/path/${name}";
-      value.source = value.flake;
-    })
-    config.nix.registry;
+  environment.etc = lib.mapAttrs' (name: value: {
+    name = "nix/path/${name}";
+    value.source = value.flake;
+  }) config.nix.registry;
 
   nix.settings = {
     experimental-features = "nix-command flakes";
@@ -54,7 +56,11 @@
   system.autoUpgrade = {
     enable = true;
     flake = inputs.self.outPath;
-    flags = ["--update-input" "nixpkgs" "-L"];
+    flags = [
+      "--update-input"
+      "nixpkgs"
+      "-L"
+    ];
     operation = "boot";
     dates = "00:00";
     persistent = true;
