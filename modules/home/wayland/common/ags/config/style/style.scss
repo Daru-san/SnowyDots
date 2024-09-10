@@ -9,6 +9,7 @@ window {
 .bar {
   background-color: @base00;
   color: @base04;
+  border-radius: 10px;
 }
 
 button {
@@ -17,6 +18,7 @@ button {
   padding-bottom: 0;
   background-color: transparent;
   border: 3px solid transparent;
+  border-radius: 10px;
 }
 
 button:active {
@@ -31,12 +33,14 @@ label {
   font-weight: bold;
 }
 
-.workspaces button.active {
-  border: 3px solid @base02;
+.workspaces button.occupied {
+  border: 3px transparent;
+  background-color: Shade(@base03, 0.2);
 }
 
-.workspaces button.occupied {
-  border: 3px solid @base01;
+.workspaces button.active {
+  border: 3px solid @base0F;
+  background-color: Shade(@base0D, 0.5);
 }
 
 .client-title {
@@ -118,10 +122,10 @@ window.notification-popups box.notifications {
 .player,
 .notif-window {
   padding: 10px;
-  background-color: shade(@base0F, 0.25);
+  background-color: shade(@base02, 0.7);
   margin-top: 10px;
   border-radius: 10px;
-  border: 6px solid shade(@base0B, 0.2);
+  border: 6px solid shade(@base01, 0.2);
   min-width: 450px;
 }
 
