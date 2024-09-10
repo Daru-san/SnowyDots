@@ -13,10 +13,10 @@
   };
 
   nix = {
-    package = pkgs.nixVersions.latest;
     registry =
       (lib.mapAttrs (_: flake: {inherit flake;}))
       (lib.filterAttrs (_: lib.isType "flake") inputs);
+    # package = pkgs.nixVersions.latest;
     nixPath = [
       "nixpkgs=${inputs.nixpkgs}"
       "nixos-config=${./configuration.nix}"
