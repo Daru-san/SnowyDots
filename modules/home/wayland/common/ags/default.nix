@@ -2,11 +2,16 @@
   inputs,
   pkgs,
   ...
-}: {
-  imports = [inputs.ags.homeManagerModules.default];
-  home.packages = with pkgs; [bun];
+}:
+{
+  imports = [ inputs.ags.homeManagerModules.default ];
+  home.packages = with pkgs; [ bun ];
   programs.ags = {
-    extraPackages = with pkgs; [sassc bun];
+    extraPackages = with pkgs; [
+      sassc
+      bun
+    ];
     configDir = ./config;
+    systemd.enable = true;
   };
 }
