@@ -52,112 +52,115 @@
       flake = false;
     };
   };
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    ...
-  } @ inputs: let
-    inherit (self) outputs;
-    modules = {
-      home = import ./modules/home;
-      system = import ./modules/nixos;
-      specialisations = import ./systems/specialise;
-      overlays = import ./overlays;
-    };
-    desktop = {
-      hostName = "Aggron";
-      config = ./systems/desktop;
-      system = "x86_64-linux";
-      stateVersion = "24.11";
-    };
-    laptop = {
-      hostName = "Aurorus";
-      config = ./systems/laptop;
-      system = "x86_64-linux";
-      stateVersion = "24.11";
-    };
-  in {
-    overlays = modules.overlays {inherit inputs;};
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
+    let
+      inherit (self) outputs;
+      modules = {
+        home = import ./modules/home;
+        system = import ./modules/nixos;
+        specialisations = import ./systems/specialise;
+        overlays = import ./overlays;
+      };
+      desktop = {
+        hostName = "Aggron";
+        config = ./systems/desktop;
+        system = "x86_64-linux";
+        stateVersion = "24.11";
+      };
+      laptop = {
+        hostName = "Aurorus";
+        config = ./systems/laptop;
+        system = "x86_64-linux";
+        stateVersion = "24.11";
+      };
+    in
+    {
+      overlays = modules.overlays { inherit inputs; };
 
-    nixosConfigurations = {
-      ${laptop.hostName} = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs outputs;
-          inherit (laptop) system;
+      nixosConfigurations = {
+        ${laptop.hostName} = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs;
+            inherit (laptop) system;
+          };
+          modules = [
+            laptop.config
+            modules.system
+            {
+              nixpkgs.hostPlatform = laptop.system;
+              system = {
+                inherit (laptop) stateVersion;
+              };
+              networking = {
+                inherit (laptop) hostName;
+              };
+              wayland.hyprland.enable = true;
+            }
+          ];
         };
-        modules = [
-          laptop.config
-          modules.system
-          {
-            nixpkgs.hostPlatform = laptop.system;
-            system = {
-              inherit (laptop) stateVersion;
-            };
-            networking = {
-              inherit (laptop) hostName;
-            };
-            wayland.hyprland.enable = true;
-          }
-        ];
-      };
-      ${desktop.hostName} = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs outputs;
-          inherit (desktop) system;
+        ${desktop.hostName} = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs;
+            inherit (desktop) system;
+          };
+          modules = [
+            desktop.config
+            modules.system
+            {
+              nixpkgs.hostPlatform = desktop.system;
+              system = {
+                inherit (desktop) stateVersion;
+              };
+              networking = {
+                inherit (desktop) hostName;
+              };
+              wayland.enable = true;
+            }
+          ];
         };
-        modules = [
-          desktop.config
-          modules.system
-          {
-            nixpkgs.hostPlatform = desktop.system;
-            system = {
-              inherit (desktop) stateVersion;
-            };
-            networking = {
-              inherit (desktop) hostName;
-            };
-            wayland.enable = true;
-          }
-        ];
       };
-    };
 
-    homeConfigurations = {
-      "daru@${laptop.hostName}" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${laptop.system};
-        extraSpecialArgs = {
-          inherit inputs outputs;
-          inherit (laptop) system;
+      homeConfigurations = {
+        "daru@${laptop.hostName}" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.${laptop.system};
+          extraSpecialArgs = {
+            inherit inputs outputs;
+            inherit (laptop) system;
+          };
+          modules = [
+            ./home/daru
+            modules.home
+            {
+              home = {
+                inherit (laptop) stateVersion;
+              };
+              wayland.enable = true;
+            }
+          ];
         };
-        modules = [
-          ./home/daru
-          modules.home
-          {
-            home = {
-              inherit (laptop) stateVersion;
-            };
-            wayland.enable = true;
-          }
-        ];
-      };
-      "daru@${desktop.hostName}" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${desktop.system};
-        extraSpecialArgs = {
-          inherit inputs outputs;
-          inherit (desktop) system;
+        "daru@${desktop.hostName}" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.${desktop.system};
+          extraSpecialArgs = {
+            inherit inputs outputs;
+            inherit (desktop) system;
+          };
+          modules = [
+            ./home/daru
+            modules.home
+            {
+              home = {
+                inherit (desktop) stateVersion;
+              };
+              wayland.enable = true;
+            }
+          ];
         };
-        modules = [
-          ./home/daru
-          modules.home
-          {
-            home = {
-              inherit (desktop) stateVersion;
-            };
-            wayland.enable = true;
-          }
-        ];
       };
     };
-  };
 }
