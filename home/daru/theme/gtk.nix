@@ -3,7 +3,8 @@
   config,
   lib,
   ...
-}: let
+}:
+let
   extraCss = lib.concatStringsSep "\n" [
     config.colorSchemeCss
     (builtins.readFile ./gtk.css)
@@ -11,16 +12,21 @@
   extraConfig = {
     gtk-decoration-layout = "";
   };
-in rec {
+in
+rec {
   gtk = {
     enable = true;
 
     theme = {
-      name = "Colloid-Dark-Compact";
-      package = pkgs.colloid-gtk-theme.override {
-        colorVariants = ["dark"];
-        themeVariants = ["green" "default" "grey"];
-        sizeVariants = ["compact"];
+      name = "WhiteSur-Dark-alt-green";
+      package = pkgs.whitesur-gtk-theme.override {
+        colorVariants = [ "Dark" ];
+        themeVariants = [ "green" ];
+        roundedMaxWindow = true;
+        nautilusSize = "180";
+        nautilusStyle = "glassy"; # glassy
+        altVariants = [ "alt" ];
+        opacityVariants = [ "normal" ];
       };
     };
 
@@ -31,11 +37,22 @@ in rec {
 
     iconTheme = {
       name = "WhiteSur-dark";
-      package = with pkgs; whitesur-icon-theme;
+      package = pkgs.whitesur-icon-theme.override {
+        boldPanelIcons = true;
+        alternativeIcons = true;
+        themeVariants = [
+          "green"
+          "default"
+        ];
+      };
     };
 
-    gtk3 = {inherit extraCss extraConfig;};
-    gtk4 = {inherit extraCss extraConfig;};
+    gtk3 = {
+      inherit extraCss extraConfig;
+    };
+    gtk4 = {
+      inherit extraCss extraConfig;
+    };
   };
   dconf.settings = {
     # Make gtk apps follow a dark theme
@@ -44,7 +61,9 @@ in rec {
       color-scheme = "prefer-dark";
     };
     # Remove buttons in gtk apps
-    "org/gnome/desktop/wm/preferences" = {button-layout = "appmenu";};
+    "org/gnome/desktop/wm/preferences" = {
+      button-layout = "appmenu";
+    };
   };
   home = {
     sessionVariables.GTK_THEME = gtk.theme.name;
