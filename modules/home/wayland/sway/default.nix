@@ -3,11 +3,12 @@
   config,
   lib,
   ...
-}: {
-  imports = [./config];
+}:
+{
+  imports = [ ./config ];
   config = lib.mkIf config.wayland.windowManager.sway.enable {
     systemd.user.sessionVariables = config.home.sessionVariables;
-    home.packages = with pkgs; [swaytools];
+    home.packages = with pkgs; [ swaytools ];
     wayland.windowManager.sway = {
       checkConfig = false;
       package = pkgs.swayfx;
@@ -19,11 +20,19 @@
           "systemctl --user start hypridle"
           "systemctl --user start swayosd"
           "systemctl --user start wlsunset"
-          "systemctl --user import-environment"
-          "systemctl --user start xdg-desktop-portal"
-          "systemctl --user start xdg-desktop-portal-wlr"
-          "systemctl --user start xdg-desktop-portal-gtk"
-          "systemctl --user start plasma-xdg-desktop-portal-kde"
+          "systemctl --user start swww-daemon"
+          "systemctl --user start ags"
+        ];
+        variables = [
+          "DISPLAY"
+          "WAYLAND_DISPLAY"
+          "SWAYSOCK"
+          "XDG_CURRENT_DESKTOP"
+          "XDG_SESSION_TYPE"
+          "NIXOS_OZONE_WL"
+          "XCURSOR_THEME"
+          "XCURSOR_SIZE"
+          "GTK_USE_PORTAL"
         ];
       };
       wrapperFeatures = {

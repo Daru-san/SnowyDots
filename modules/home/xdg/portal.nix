@@ -6,7 +6,11 @@
     xdg-desktop-portal-gtk
   ];
   config = {
-    preferred = {
+    sway = {
+      default = [
+        "wlr"
+        "gtk"
+      ];
       "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
     };
   };
