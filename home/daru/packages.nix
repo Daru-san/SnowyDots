@@ -11,7 +11,7 @@
     (with pkgs; [
       # GUI
       scrcpy
-      qt-scrcpy
+      qtscrcpy
       keepassxc
       bridge-editor
       oculante
