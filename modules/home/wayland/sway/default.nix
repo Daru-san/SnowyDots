@@ -23,17 +23,6 @@
           "systemctl --user start swww-daemon"
           "systemctl --user start ags"
         ];
-        variables = [
-          "DISPLAY"
-          "WAYLAND_DISPLAY"
-          "SWAYSOCK"
-          "XDG_CURRENT_DESKTOP"
-          "XDG_SESSION_TYPE"
-          "NIXOS_OZONE_WL"
-          "XCURSOR_THEME"
-          "XCURSOR_SIZE"
-          "GTK_USE_PORTAL"
-        ];
       };
       wrapperFeatures = {
         gtk = true;
