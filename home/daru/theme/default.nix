@@ -2,7 +2,8 @@
   inputs,
   lib,
   ...
-}: rec {
+}:
+rec {
   imports = [
     ./qt.nix
     ./fonts.nix
@@ -10,23 +11,24 @@
   ];
 
   # Wallpaper
-  wallpaperImage = inputs.walls + "/images/anime-landscape.png";
+  wallpaperImage = inputs.walls + "/images/bright-leaves.png";
 
   # Colorscheme from nix-colors
   colorScheme = inputs.nix-colors.colorSchemes.oxocarbon-dark;
 
   # Converting the colorscheme to css
-  colorSchemeCss = let
-    num = map toString (lib.range 0 9);
-    char = [
-      "A"
-      "B"
-      "C"
-      "D"
-      "E"
-      "F"
-    ];
-  in
+  colorSchemeCss =
+    let
+      num = map toString (lib.range 0 9);
+      char = [
+        "A"
+        "B"
+        "C"
+        "D"
+        "E"
+        "F"
+      ];
+    in
     lib.concatLines [
       "/* Definitions of my current color scheme */"
       (lib.concatLines (map (x: ''@define-color base0${x} #${colorScheme.palette."base0${x}"};'') num))
