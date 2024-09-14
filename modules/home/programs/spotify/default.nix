@@ -1,12 +1,13 @@
 {
   system,
-  pkgs,
   inputs,
   ...
-}: let
+}:
+let
   spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
-in {
-  imports = [inputs.spicetify-nix.homeManagerModules.spicetify];
+in
+{
+  imports = [ inputs.spicetify-nix.homeManagerModules.spicetify ];
   programs.spicetify = {
     enable = true;
     theme = spicePkgs.themes.text;
@@ -28,7 +29,7 @@ in {
       ''
     ];
     enabledExtensions = with spicePkgs.extensions; [
-      adblock
+      adblockify
       powerBar
       oldSidebar
       history
@@ -36,6 +37,7 @@ in {
       fullAppDisplay
       playNext
       volumePercentage
+      writeify
     ];
     enabledCustomApps = with spicePkgs.apps; [
       newReleases
