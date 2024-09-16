@@ -130,8 +130,8 @@ in
           r = "recording";
         in
         {
-          "super+F2" = "exec ${o} ${r} start";
-          "super+F3" = "exec ${o} ${r} stop";
+          "${mod}+F2" = "exec ${o} ${r} start";
+          "${mod}+F3" = "exec ${o} ${r} stop";
         }
       );
   };
