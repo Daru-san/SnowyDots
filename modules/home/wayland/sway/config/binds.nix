@@ -119,6 +119,15 @@ in {
           "shift+F7" = mute;
           "caps_lock" = caps-lock;
         }
+      // (
+        let
+          o = getExe pkgs.obs-cmd;
+          r = "recording";
+        in
+        {
+          "super+F2" = "exec ${o} ${r} start";
+          "super+F3" = "exec ${o} ${r} stop";
+        }
       );
   };
 }
