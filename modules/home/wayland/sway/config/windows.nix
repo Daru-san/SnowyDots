@@ -1,36 +1,43 @@
-{lib, ...}: {
+{ lib, ... }:
+{
   wayland.windowManager.sway.config = {
     workspaceAutoBackAndForth = true;
     assigns = {
-      "2" = [{app_id = "^firefox$";}];
-      "3" = [{app_id = "btop";}];
-      "4" = [{app_id = "^org.gnome.Nautilus$";}];
+      "2" = [ { app_id = "^firefox$"; } ];
+      "3" = [ { app_id = "btop"; } ];
+      "4" = [ { app_id = "^org.gnome.Nautilus$"; } ];
       "5" = [
-        {title = "^Spotify Free$";}
-        {app_id = "^com.github.neithern.g4music$";}
+        { title = "^Spotify Free$"; }
+        { app_id = "^com.github.neithern.g4music$"; }
       ];
       "6" = [
-        {app_id = "^FreeTube$";}
-        {app_id = "^mpv$";}
+        { app_id = "^FreeTube$"; }
+        { app_id = "^mpv$"; }
       ];
       "7" = [
-        {app_id = "^Minecraft$";}
-        {app_id = "^org.prismlauncher.PrismLauncher";}
+        { app_id = "^Minecraft$"; }
+        { app_id = "^org.prismlauncher.PrismLauncher"; }
+        { app_id = "com.obsproject.Studio"; }
       ];
-      "8" = [{app_id = "oculante";}];
-      "9" = [{app_id = "^org.pwmt.zathura$";}];
+      "8" = [
+        { app_id = "oculante"; }
+        { app_id = "org.kde.kdenlive"; }
+      ];
+      "9" = [ { app_id = "^org.pwmt.zathura$"; } ];
     };
-    window.commands = let
-      stacks = [
-        "mpv"
-        "zathura"
-        "Minecraft"
-        "org.prismlauncher.PrismLauncher"
-        "org.pwmt.zathura"
-        "virt-manager"
-        "oculante"
-      ];
-    in
+    window.commands =
+      let
+        stacks = [
+          "mpv"
+          "zathura"
+          "Minecraft"
+          "org.prismlauncher.PrismLauncher"
+          "org.pwmt.zathura"
+          "virt-manager"
+          "oculante"
+          "org.kde.kdenlive"
+        ];
+      in
       [
         {
           command = "resize set 60ppt 60ppt";
@@ -60,42 +67,42 @@
       ++ map (x: {
         command = "layout tabbed";
         criteria.app_id = "^${x}$";
-      })
-      stacks;
+      }) stacks;
     floating = {
       border = 6;
-      criteria = let
-        app_ids = [
-          "file-roller"
-          "foot"
-          "iwgtk"
-          "nm-connection-editor"
-          "org.kde.kdeconnect.daemon"
-          ".blueman-manager-wrapped"
-          "org.freedesktop.impl.portal.desktop.kde"
-          "org.twosheds.iwgtk"
-          "com.github.hluk.copyq"
-          "copyq"
-          "pwvucontrol"
-          "valent"
-          "org.kde.kdeconnect-indicator"
-          "swaymux"
-          "nmtui"
-          "pulsemixer"
-        ];
-        titles = [
-          "CopyQ"
-          "nmtui"
-          "pulsemixer"
-          "Bluetooth Devices"
-          "Easy Effects"
-        ];
-      in
+      criteria =
+        let
+          app_ids = [
+            "file-roller"
+            "foot"
+            "iwgtk"
+            "nm-connection-editor"
+            "org.kde.kdeconnect.daemon"
+            ".blueman-manager-wrapped"
+            "org.freedesktop.impl.portal.desktop.kde"
+            "org.twosheds.iwgtk"
+            "com.github.hluk.copyq"
+            "copyq"
+            "pwvucontrol"
+            "valent"
+            "org.kde.kdeconnect-indicator"
+            "swaymux"
+            "nmtui"
+            "pulsemixer"
+          ];
+          titles = [
+            "CopyQ"
+            "nmtui"
+            "pulsemixer"
+            "Bluetooth Devices"
+            "Easy Effects"
+          ];
+        in
         lib.flatten [
-          (map (x: {app_id = "^${x}$";}) app_ids)
-          (map (x: {title = "^${x}$";}) titles)
-          {window_type = "dialog";}
-          {window_role = "dialog";}
+          (map (x: { app_id = "^${x}$"; }) app_ids)
+          (map (x: { title = "^${x}$"; }) titles)
+          { window_type = "dialog"; }
+          { window_role = "dialog"; }
           {
             title = "Library";
             app_id = "firefox";
