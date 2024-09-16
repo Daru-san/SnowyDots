@@ -4,19 +4,21 @@
   inputs,
   lib,
   ...
-}: let
-  inherit
-    (lib)
+}:
+let
+  inherit (lib)
     getExe
     getExe'
     range
     concatLines
     ;
   mod = config.wayland.windowManager.sway.config.modifier;
-in {
-  wayland.windowManager.sway.extraConfig = let
-    workspaces = map toString (range 0 9);
-  in
+in
+{
+  wayland.windowManager.sway.extraConfig =
+    let
+      workspaces = map toString (range 0 9);
+    in
     concatLines [
       (concatLines (map (n: "bindsym --to-code ${mod}+${n} workspace number ${n}") workspaces))
       (concatLines (
@@ -26,24 +28,25 @@ in {
   wayland.windowManager.sway.config = {
     modifier = "Mod4";
     bindkeysToCode = true;
-    keybindings = let
-      inherit (config.wayland.windowManager.sway.config) terminal;
-      yazi = getExe config.programs.yazi.package;
-      playerctl = getExe config.services.playerctld.package;
-      browser = getExe config.programs.firefox.package;
-      launcher = config.wayland.windowManager.sway.config.menu;
-      file-manager = getExe pkgs.nautilus;
-      shotman = getExe pkgs.shotman;
-      ags = getExe config.programs.ags.package;
-      editor = getExe inputs.snowyvim.packages.${pkgs.system}.default;
-      hyprlock = getExe config.programs.hyprlock.package;
-      copyq = getExe config.services.copyq.package;
-      wlogout = getExe config.programs.wlogout.package;
-      easyeffects = getExe config.services.easyeffects.package;
-      color-picker = getExe inputs.color-picker.packages.${pkgs.system}.default;
-      swaymux = getExe pkgs.swaymux;
-      valent = getExe pkgs.valent;
-    in
+    keybindings =
+      let
+        inherit (config.wayland.windowManager.sway.config) terminal;
+        yazi = getExe config.programs.yazi.package;
+        playerctl = getExe config.services.playerctld.package;
+        browser = getExe config.programs.firefox.package;
+        launcher = config.wayland.windowManager.sway.config.menu;
+        file-manager = getExe pkgs.nautilus;
+        shotman = getExe pkgs.shotman;
+        ags = getExe config.programs.ags.package;
+        editor = getExe inputs.snowyvim.packages.${pkgs.system}.default;
+        hyprlock = getExe config.programs.hyprlock.package;
+        copyq = getExe config.services.copyq.package;
+        wlogout = getExe config.programs.wlogout.package;
+        easyeffects = getExe config.services.easyeffects.package;
+        color-picker = getExe inputs.color-picker.packages.${pkgs.system}.default;
+        swaymux = getExe pkgs.swaymux;
+        valent = getExe pkgs.valent;
+      in
       {
         #Basic binds
         "${mod}+d" = "exec pkill anyrun || ${launcher}";
@@ -106,7 +109,8 @@ in {
           lower-volume = "exec ${s} --output-volume lower";
           raise-brightness = "exec ${s} --brightness raise";
           lower-brightness = "exec ${s} --brightness lower";
-        in {
+        in
+        {
           "XF86MonBrightnessUp" = raise-brightness;
           "XF86MonBrightnessDown" = lower-brightness;
 
@@ -119,6 +123,7 @@ in {
           "shift+F7" = mute;
           "caps_lock" = caps-lock;
         }
+      )
       // (
         let
           o = getExe pkgs.obs-cmd;
