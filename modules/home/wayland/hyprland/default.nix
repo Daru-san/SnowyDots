@@ -1,8 +1,6 @@
 {
   lib,
   config,
-  inputs,
-  system,
   ...
 }: let
   cfg = config.wayland;
@@ -15,8 +13,7 @@ in {
           name: value: "${name},${builtins.toString value}"
         )
         config.home.sessionVariables;
-      enable = false;
-      package = inputs.hyprland.packages.${system}.default;
+      enable = true;
       systemd = {
         enable = true;
         enableXdgAutostart = true;

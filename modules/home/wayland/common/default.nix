@@ -20,9 +20,8 @@ in {
     ./anyrun
   ];
   config = mkIf cfg.enable {
-    wayland.windowManager.sway.enable = true;
     services = {
-      kanshi.enable = true;
+      kanshi.enable = false;
       hypridle.enable = true;
       swayosd.enable = true;
       wlsunset.enable = true;
