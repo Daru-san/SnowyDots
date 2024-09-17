@@ -38,7 +38,7 @@ label {
   background-color: Shade(@base03, 0.2);
 }
 
-.workspaces button.active {
+.workspaces button.focused {
   border: 3px solid @base0F;
   background-color: Shade(@base0D, 0.5);
 }
