@@ -1,18 +1,17 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   enable = true;
   extraPortals = with pkgs; [
     xdg-desktop-portal-kde
     xdg-desktop-portal-gtk
-    xdg-desktop-portal-wlr
+    xdg-desktop-portal-hyprland
   ];
   config = {
-    sway = {
+    hyprland = {
       default = [
-        "wlr"
         "gtk"
+        "hyprland"
       ];
-      "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
+      "org.freedesktop.impl.portal.FileChooser" = ["kde"];
     };
   };
 }
