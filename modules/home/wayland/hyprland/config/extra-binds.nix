@@ -13,10 +13,7 @@
   };
 in {
   wayland.windowManager.hyprland.settings = {
-    bindm = [
-      "SUPER,mouse:272,movewindow"
-      "SUPER,mouse:273,resizewindow"
-    ];
+    bindm = ["SUPER,mouse:272,movewindow" "SUPER,mouse:273,resizewindow"];
     bind =
       [
         "SUPER,minus,splitratio,-0.25"
@@ -32,7 +29,6 @@ in {
 
         "supershift,o,cyclenext"
         "super,o,changegroupactive"
-        "super,tab,hyprexpo:expo,toggle"
       ]
       ++
       # Change workspace
@@ -42,8 +38,7 @@ in {
       (map (n: "SUPERSHIFT,${n},movetoworkspace,${n}") workspaces)
       ++
       # Move focus
-      (mapAttrsToList
-        (key: direction: "SUPER,${key},movefocus,${direction}")
+      (mapAttrsToList (key: direction: "SUPER,${key},movefocus,${direction}")
         directions)
       ++
       # Swap windows
