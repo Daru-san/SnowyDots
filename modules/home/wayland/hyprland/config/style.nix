@@ -5,6 +5,7 @@
         gaps_in = 1;
         gaps_out = 3;
         border_size = 0;
+        layout = "master";
       };
       binds = {
         allow_workspace_cycles = true;
@@ -30,8 +31,7 @@
         hide_on_key_press = true;
       };
       misc = {
-        vrr = 1;
-        vfr = true;
+        vfr = false;
         animate_mouse_windowdragging = false;
         enable_swallow = true;
         mouse_move_enables_dpms = true;
