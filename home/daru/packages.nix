@@ -5,8 +5,7 @@
   system,
   lib,
   ...
-}:
-{
+}: {
   home.packages = lib.mkMerge [
     (with pkgs; [
       # GUI

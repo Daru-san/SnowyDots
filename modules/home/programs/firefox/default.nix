@@ -7,7 +7,10 @@
 }: {
   programs.firefox = {
     enable = true;
-    nativeMessagingHosts = with pkgs; [ff2mpv tridactyl-native];
+    nativeMessagingHosts = with pkgs; [
+      ff2mpv
+      tridactyl-native
+    ];
 
     profiles.${config.home.username} = {
       isDefault = true;
@@ -127,59 +130,94 @@
         engines = let
           disabled.metaData.hidden = true;
         in {
-          "Google" = {inherit (disabled) metaData;};
-          "Bing" = {inherit (disabled) metaData;};
-          "Amazon.com" = {inherit (disabled) metaData;};
-          "Wikipedia (en)" = {inherit (disabled) metaData;};
-          "DuckDuckGo" = {metaData.alias = "@dg";};
+          "Google" = {
+            inherit (disabled) metaData;
+          };
+          "Bing" = {
+            inherit (disabled) metaData;
+          };
+          "Amazon.com" = {
+            inherit (disabled) metaData;
+          };
+          "Wikipedia (en)" = {
+            inherit (disabled) metaData;
+          };
+          "DuckDuckGo" = {
+            metaData.alias = "@dg";
+          };
 
           "Brave Search" = {
             urls = [{template = "https://search.brave.com/search?q={searchTerms}";}];
             iconUpdateURL = "https://brave.com/static-assets/images/brave-logo-sans-text.svg";
             updateInterval = 24 * 60 * 60 * 1000;
-            definedAliases = ["@br" "@b" "@brave"];
+            definedAliases = [
+              "@br"
+              "@b"
+              "@brave"
+            ];
           };
 
           "StartPage" = {
             urls = [{template = "https://www.startpage.com/sp/search?query={searchTerms}";}];
             iconUpdateURL = "https://www.startpage.com/sp/cdn/favicons/favicon-gradient.ico";
             updateInterval = 24 * 60 * 60 * 1000;
-            definedAliases = ["@sp" "@s" "@start"];
+            definedAliases = [
+              "@sp"
+              "@s"
+              "@start"
+            ];
           };
 
           "Reddit" = {
             urls = [{template = "https://www.reddit.com/search/?q={searchTerms}";}];
             iconUpdateURL = "https://www.redditstatic.com/shreddit/assets/favicon/favicon.ico";
             updateInterval = 24 * 60 * 60 * 1000;
-            definedAliases = ["@r" "@reddit"];
+            definedAliases = [
+              "@r"
+              "@reddit"
+            ];
           };
 
           "Github" = {
             urls = [{template = "https://github.com/search?q={searchTerms}";}];
             iconUpdateURL = "https://github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg";
             updateInterval = 24 * 60 * 60 * 1000;
-            definedAliases = ["@gh" "@g" "@git"];
+            definedAliases = [
+              "@gh"
+              "@g"
+              "@git"
+            ];
           };
 
           "ArchLinux Wiki" = {
             urls = [{template = "https://wiki.archlinux.org/index.php?search={searchTerms}";}];
             iconUpdateURL = "https://wiki.archlinux.org/favicon.ico";
             updateInterval = 24 * 60 * 60 * 1000;
-            definedAliases = ["@archwiki" "@arch" "@aw"];
+            definedAliases = [
+              "@archwiki"
+              "@arch"
+              "@aw"
+            ];
           };
 
           "NixOS Wiki" = {
             urls = [{template = "https://wiki.nixos.org/w/index.php?search={searchTerms}";}];
             iconUpdateURL = "https://wiki.nixos.org/favicon.ico";
             updateInterval = 24 * 60 * 60 * 1000;
-            definedAliases = ["@nw" "@nixwiki"];
+            definedAliases = [
+              "@nw"
+              "@nixwiki"
+            ];
           };
 
           "Noogle" = {
             urls = [{template = "https://noogle.dev/q?term={searchTerms}";}];
             iconUpdateUrl = "https://noogle.dev/favicon.png";
             updateInterval = 24 * 60 * 60 * 1000;
-            definedAliases = ["@noogle" "@ng"];
+            definedAliases = [
+              "@noogle"
+              "@ng"
+            ];
           };
 
           "Nix Packages" = {
@@ -203,7 +241,10 @@
               }
             ];
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-            definedAliases = ["@np" "@nixpkgs"];
+            definedAliases = [
+              "@np"
+              "@nixpkgs"
+            ];
           };
 
           "Nix Options" = {
@@ -227,26 +268,41 @@
               }
             ];
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-            definedAliases = ["@no" "@nixopts"];
+            definedAliases = [
+              "@no"
+              "@nixopts"
+            ];
           };
 
           "My NixOS" = {
             urls = [{template = "https://mynixos.com/search?q={searchTerms}";}];
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake-white.svg";
-            definedAliases = ["@mn" "@nx" "@mynixos"];
+            definedAliases = [
+              "@mn"
+              "@nx"
+              "@mynixos"
+            ];
           };
 
           "Home Manager" = {
             urls = [{template = "https://home-manager-options.extranix.com/?query={searchTerms}";}];
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-            definedAliases = ["@hm" "@home" "@homeman"];
+            definedAliases = [
+              "@hm"
+              "@home"
+              "@homeman"
+            ];
           };
 
           "Nixvim Options" = {
             urls = [{template = "https://nix-community.github.io/nixvim/search/?query={searchTerms}";}];
             iconUpdateURL = "https://nix-community.github.io/nixvim/search/favicon.ico";
             updateInterval = 24 * 60 * 60 * 1000;
-            definedAliases = ["@nxv" "@nv" "@nvo"];
+            definedAliases = [
+              "@nxv"
+              "@nv"
+              "@nvo"
+            ];
           };
         };
       };
@@ -342,7 +398,9 @@
       HardwareAcceleration = true;
       NoDefaultBookmarks = true;
       OverrideFirstRunPage = "";
-      PopupBlocking = {Default = true;};
+      PopupBlocking = {
+        Default = true;
+      };
       Preferences = {
         "browser.backspace_action" = 0;
         "privacy.trackingprotection.enabled" = true;

@@ -2,12 +2,10 @@
   system,
   inputs,
   ...
-}:
-let
+}: let
   spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
-in
-{
-  imports = [ inputs.spicetify-nix.homeManagerModules.spicetify ];
+in {
+  imports = [inputs.spicetify-nix.homeManagerModules.spicetify];
   programs.spicetify = {
     enable = true;
     theme = spicePkgs.themes.text;

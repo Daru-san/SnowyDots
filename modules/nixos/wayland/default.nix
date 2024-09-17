@@ -11,18 +11,15 @@ in {
   imports = [./polkit];
   config = mkIf cfg.enable {
     programs.sway = {
-      enable = true;
+      enable = false;
       extraPackages = [];
       package = pkgs.swayfx;
     };
     programs = {
+      hyprland.enable = true;
       dconf.enable = true;
       seahorse.enable = true;
       file-roller.enable = true;
-    };
-    xdg.portal = {
-      enable = true;
-      wlr.enable = true;
     };
     services.greetd = {
       package = pkgs.greetd;
@@ -34,7 +31,7 @@ in {
               t = true;
               window-padding = 1;
               g = "Access is restricted to authorized personnel only.";
-              c = "sway";
+              c = "hyprland";
               r = true;
             };
           in "${pkgs.greetd.tuigreet}/bin/tuigreet ${flags}";
