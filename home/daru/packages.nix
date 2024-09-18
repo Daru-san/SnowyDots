@@ -5,7 +5,8 @@
   system,
   lib,
   ...
-}: {
+}:
+{
   home.packages = lib.mkMerge [
     (with pkgs; [
       # GUI
@@ -72,6 +73,7 @@
       anipy-cli.packages.${system}.default
       color-picker.packages.${system}.default
       snowyvim.packages.${system}.neovim
+      zen-browser.packages.${system}.zen-browser
     ])
   ];
 }

@@ -25,6 +25,8 @@
     # Firefox addons
     firefox-addons.url = "git+https://gitlab.com/rycee/nur-expressions?dir=pkgs/firefox-addons";
 
+    # A nice alternative to firefox 
+    zen-browser.url = "github:heywoodlh/flakes/main?dir=zen-browser";
     # Reall nice anime cli tool
     anipy-cli.url = "github:sdaqo/anipy-cli";
 
