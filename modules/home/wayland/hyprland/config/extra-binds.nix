@@ -1,4 +1,5 @@
-{lib, ...}: let
+{ lib, ... }:
+let
   inherit (lib) range mapAttrsToList;
   workspaces = map toString (range 0 9);
   directions = rec {
@@ -11,9 +12,13 @@
     k = up;
     j = down;
   };
-in {
+in
+{
   wayland.windowManager.hyprland.settings = {
-    bindm = ["SUPER,mouse:272,movewindow" "SUPER,mouse:273,resizewindow"];
+    bindm = [
+      "SUPER,mouse:272,movewindow"
+      "SUPER,mouse:273,resizewindow"
+    ];
     bind =
       [
         "SUPER,minus,splitratio,-0.25"
@@ -29,35 +34,33 @@ in {
 
         "supershift,o,cyclenext"
         "super,o,changegroupactive"
+        "alt, tab, hyprexpo:expo, toggle"
+
+        "super, tab,workspace,+1"
+        "supershift,tab,workspace,-1"
       ]
       ++
       # Change workspace
       (map (n: "SUPER,${n},workspace,${n}") workspaces)
       ++
-      # Move window to workspace
-      (map (n: "SUPERSHIFT,${n},movetoworkspace,${n}") workspaces)
+        # Move window to workspace
+        (map (n: "SUPERSHIFT,${n},movetoworkspace,${n}") workspaces)
       ++
-      # Move focus
-      (mapAttrsToList (key: direction: "SUPER,${key},movefocus,${direction}")
-        directions)
+        # Move focus
+        (mapAttrsToList (key: direction: "SUPER,${key},movefocus,${direction}") directions)
       ++
-      # Swap windows
-      (mapAttrsToList
-        (key: direction: "SUPERSHIFT,${key},movewindow,${direction}")
-        directions)
+        # Swap windows
+        (mapAttrsToList (key: direction: "SUPERSHIFT,${key},movewindow,${direction}") directions)
       ++
-      # Move windows
-      (mapAttrsToList
-        (key: direction: "SUPERCONTROL,${key},movewindoworgroup,${direction}")
-        directions)
+        # Move windows
+        (mapAttrsToList (key: direction: "SUPERCONTROL,${key},movewindoworgroup,${direction}") directions)
       ++
-      # Move monitor focus
-      (mapAttrsToList
-        (key: direction: "SUPERALT,${key},focusmonitor,${direction}")
-        directions)
+        # Move monitor focus
+        (mapAttrsToList (key: direction: "SUPERALT,${key},focusmonitor,${direction}") directions)
       ++
-      # Move workspace to other monitor
-      (mapAttrsToList (key: direction: "SUPERALTSHIFT,${key},movecurrentworkspacetomonitor,${direction}")
-        directions);
+        # Move workspace to other monitor
+        (mapAttrsToList (
+          key: direction: "SUPERALTSHIFT,${key},movecurrentworkspacetomonitor,${direction}"
+        ) directions);
   };
 }
