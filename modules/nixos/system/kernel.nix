@@ -1,7 +1,8 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   boot = {
-    kernelPackages = pkgs.linuxPackages_cachyos;
-    kernelParams = ["usbcore.autosuspend=-1"];
+    kernelPackages = pkgs.linuxPackages_latest-libre;
+    kernelParams = [ "usbcore.autosuspend=-1" ];
   };
   boot.kernel.sysctl = {
     "vm.swappiness" = 90;
