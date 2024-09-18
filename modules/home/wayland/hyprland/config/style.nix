@@ -31,7 +31,7 @@
         hide_on_key_press = true;
       };
       misc = {
-        vfr = false;
+        vfr = true;
         animate_mouse_windowdragging = false;
         enable_swallow = true;
         mouse_move_enables_dpms = true;
