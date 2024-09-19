@@ -52,7 +52,6 @@ label {
   border-radius: 15px;
   border: 0px;
   color: #fff;
-  /* background-color: #1e1e1e; */
   background-color: rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease-in-out;
   opacity: 1;
@@ -61,6 +60,7 @@ label {
 
 .workspaces button:hover {
   min-width: 35px;
+  background: shade(@base0F, 0.4);
 }
 
 .workspaces button.focused {
