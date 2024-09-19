@@ -36,8 +36,8 @@ in
         "super,o,changegroupactive"
         "alt, tab, hyprexpo:expo, toggle"
 
-        "super, tab,workspace,+1"
-        "supershift,tab,workspace,-1"
+        "super, tab,workspace,e+1"
+        "supershift,tab,workspace,e-1"
       ]
       ++
       # Change workspace
