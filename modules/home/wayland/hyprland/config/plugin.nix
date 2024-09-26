@@ -3,7 +3,7 @@
   wayland.windowManager.hyprland = {
     plugins = with pkgs.hyprlandPlugins; [
       hyprbars
-      hyprexpo
+      hyprscroller
     ];
     settings.plugin = {
       hyprexpo = {
