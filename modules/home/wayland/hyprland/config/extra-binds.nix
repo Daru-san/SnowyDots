@@ -34,10 +34,6 @@ in
 
         "supershift,o,cyclenext"
         "super,o,changegroupactive"
-        "alt, tab, hyprexpo:expo, toggle"
-
-        "super, tab,workspace,e+1"
-        "supershift,tab,workspace,e-1"
       ]
       ++
       # Change workspace
@@ -47,10 +43,10 @@ in
         (map (n: "SUPERSHIFT,${n},movetoworkspace,${n}") workspaces)
       ++
         # Move focus
-        (mapAttrsToList (key: direction: "SUPER,${key},movefocus,${direction}") directions)
+        (mapAttrsToList (key: direction: "SUPER,${key},scroller:movefocus,${direction}") directions)
       ++
         # Swap windows
-        (mapAttrsToList (key: direction: "SUPERSHIFT,${key},movewindow,${direction}") directions)
+        (mapAttrsToList (key: direction: "SUPERSHIFT,${key},scroller:movewindow,${direction}") directions)
       ++
         # Move windows
         (mapAttrsToList (key: direction: "SUPERCONTROL,${key},movewindoworgroup,${direction}") directions)
