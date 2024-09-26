@@ -27,6 +27,10 @@
       pandoc
       waydroid-script
       prismlauncher
+      libreoffice-qt6-fresh
+      krita
+      alpaca
+      ollama
 
       # CLI
       ouch
