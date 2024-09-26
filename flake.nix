@@ -70,20 +70,35 @@
         specialisations = import ./systems/specialise;
         overlays = import ./overlays;
       };
+
       desktop = {
         hostName = "Aggron";
         config = ./systems/desktop;
         system = "x86_64-linux";
         stateVersion = "24.11";
       };
+
       laptop = {
         hostName = "Aurorus";
         config = ./systems/laptop;
         system = "x86_64-linux";
         stateVersion = "24.11";
       };
+      systems = [
+        "x86_64-linux"
+      ];
+      genSystems = nixpkgs.lib.genAttrs systems;
+      pkgsFor = nixpkgs.legacyPackages;
     in
     {
+      formatter = genSystems (
+        system:
+        let
+          pkgs = pkgsFor."${system}";
+        in
+        pkgs.nixfmt-rfc-style
+      );
+
       overlays = modules.overlays { inherit inputs; };
 
       nixosConfigurations = {
