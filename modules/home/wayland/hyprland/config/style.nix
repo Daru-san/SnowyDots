@@ -5,7 +5,6 @@
         gaps_in = 1;
         gaps_out = 3;
         border_size = 0;
-        layout = "master";
       };
       binds = {
         allow_workspace_cycles = true;
