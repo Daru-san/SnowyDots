@@ -3,13 +3,15 @@
   pkgs,
   lib,
   ...
-}: let
+}:
+let
   font = "NotoMono Nerd Font";
   now-playing = pkgs.writeShellScriptBin "now-playing" ''
     songstats=$(${lib.getExe pkgs.playerctl} metadata --format '󰎈 {{title}} - {{artist}} 󰎈')
     ${lib.getExe' pkgs.coreutils "echo"} "$songstats"
   '';
-in {
+in
+{
   programs.hyprlock = {
     settings = {
       general = {

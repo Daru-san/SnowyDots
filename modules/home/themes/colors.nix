@@ -1,6 +1,8 @@
-{lib, ...}: let
+{ lib, ... }:
+let
   inherit (lib) types mkOption;
-in {
+in
+{
   options.colorSchemeCss = mkOption {
     type = with types; (either path str);
     default = null;

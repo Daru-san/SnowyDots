@@ -1,5 +1,5 @@
 {
-  imports = [./plugins.nix];
+  imports = [ ./plugins.nix ];
   programs.yazi = {
     enable = true;
     enableNushellIntegration = true;
@@ -9,7 +9,11 @@
     theme.flavor.use = "tokyo-night";
     settings = {
       manager = {
-        ratio = [1 3 4];
+        ratio = [
+          1
+          3
+          4
+        ];
         sort_by = "natural";
         sort_dir_first = true;
         show_hidden = false;
@@ -103,7 +107,9 @@
           }
         ];
       };
-      log = {enabled = false;};
+      log = {
+        enabled = false;
+      };
     };
   };
 }

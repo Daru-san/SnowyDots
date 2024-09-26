@@ -1,7 +1,8 @@
 let
   yazi-plugins = import ./npins/default.nix;
   getPlugin = x: yazi-plugins.${x}.outPath;
-in {
+in
+{
   programs.yazi.flavors = {
     "tokyo-night" = getPlugin "tokyo-night.yazi";
   };

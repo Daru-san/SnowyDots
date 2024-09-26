@@ -19,7 +19,10 @@
         autoFetch = true;
         autoRefresh = true;
         fetchAll = false;
-        mainBranches = ["master" "main"];
+        mainBranches = [
+          "master"
+          "main"
+        ];
         paging = {
           colorArg = "always";
           pager = "diff-so-fancy";

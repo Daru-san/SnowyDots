@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: let
+}:
+let
   inherit (lib) types mdDoc mkOption;
   fontType = types.submodule {
     options = {
@@ -18,7 +19,8 @@
       };
     };
   };
-in {
+in
+{
   options.fonts = {
     serif = mkOption {
       description = mdDoc "Serif font.";
@@ -50,7 +52,7 @@ in {
     extraFonts = mkOption {
       description = mdDoc "Extra font packages to install";
       type = with types; listOf package;
-      default = [];
+      default = [ ];
       defaultText = lib.literalExpression "[ ]";
     };
 

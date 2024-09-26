@@ -2,24 +2,24 @@
   lib,
   config,
   ...
-}: let
+}:
+let
   cfg = config.wayland;
-in {
-  imports = [./config];
+in
+{
+  imports = [ ./config ];
   config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland = {
-      settings.env =
-        lib.mapAttrsToList (
-          name: value: "${name},${builtins.toString value}"
-        )
-        config.home.sessionVariables;
+      settings.env = lib.mapAttrsToList (
+        name: value: "${name},${builtins.toString value}"
+      ) config.home.sessionVariables;
       enable = true;
       systemd = {
         enable = true;
         enableXdgAutostart = true;
       };
       settings = {
-        source = ["extra.conf"];
+        source = [ "extra.conf" ];
       };
     };
   };

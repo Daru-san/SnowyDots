@@ -5,7 +5,7 @@
       enable = true;
       git = true;
       icons = true;
-      extraOptions = ["--group-directories-first"];
+      extraOptions = [ "--group-directories-first" ];
       enableBashIntegration = true;
       enableFishIntegration = true;
     };

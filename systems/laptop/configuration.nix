@@ -2,8 +2,9 @@
   pkgs,
   lib,
   ...
-}: {
-  imports = [./hardware-configuration.nix];
+}:
+{
+  imports = [ ./hardware-configuration.nix ];
   users = {
     defaultUserShell = pkgs.zsh;
     mutableUsers = true;
@@ -13,12 +14,20 @@
       isNormalUser = true;
       useDefaultShell = true;
       description = "Daru";
-      extraGroups = ["networkmanager" "wheel" "video" "adbusers" "input"];
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "video"
+        "adbusers"
+        "input"
+      ];
     };
   };
   programs = {
     nix-ld.enable = true;
-    gnome-disks = {enable = true;};
+    gnome-disks = {
+      enable = true;
+    };
     kdeconnect = {
       enable = true;
       package = lib.mkDefault pkgs.kdePackages.kdeconnect-kde;
@@ -32,7 +41,11 @@
       dataDir = "/home/daru";
       user = "daru";
       configDir = "/home/daru/.sync";
-      settings = {gui = {theme = "black";};};
+      settings = {
+        gui = {
+          theme = "black";
+        };
+      };
     };
   };
 
@@ -65,7 +78,7 @@
     bandwhich
   ];
   system.laptop = true;
-  boot.kernelParams = ["video=eDP-1:d"];
+  boot.kernelParams = [ "video=eDP-1:d" ];
   time.timeZone = "Africa/Johannesburg";
   i18n.defaultLocale = "en_ZA.UTF-8";
 }

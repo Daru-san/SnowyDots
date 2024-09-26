@@ -4,7 +4,8 @@
   system,
   inputs,
   ...
-}: {
+}:
+{
   programs.firefox = {
     enable = true;
     nativeMessagingHosts = with pkgs; [
@@ -30,13 +31,13 @@
       bookmarks = [
         {
           name = "Dev Docs";
-          tags = ["docs"];
+          tags = [ "docs" ];
           keyword = "devdocs";
           url = "https://devdocs.io";
         }
         {
           name = "Linux Kernel";
-          tags = ["kernel"];
+          tags = [ "kernel" ];
           keyword = "kernel";
           url = "https://kernel.org";
         }
@@ -127,184 +128,186 @@
           "Nixvim Options"
         ];
 
-        engines = let
-          disabled.metaData.hidden = true;
-        in {
-          "Google" = {
-            inherit (disabled) metaData;
-          };
-          "Bing" = {
-            inherit (disabled) metaData;
-          };
-          "Amazon.com" = {
-            inherit (disabled) metaData;
-          };
-          "Wikipedia (en)" = {
-            inherit (disabled) metaData;
-          };
-          "DuckDuckGo" = {
-            metaData.alias = "@dg";
-          };
+        engines =
+          let
+            disabled.metaData.hidden = true;
+          in
+          {
+            "Google" = {
+              inherit (disabled) metaData;
+            };
+            "Bing" = {
+              inherit (disabled) metaData;
+            };
+            "Amazon.com" = {
+              inherit (disabled) metaData;
+            };
+            "Wikipedia (en)" = {
+              inherit (disabled) metaData;
+            };
+            "DuckDuckGo" = {
+              metaData.alias = "@dg";
+            };
 
-          "Brave Search" = {
-            urls = [{template = "https://search.brave.com/search?q={searchTerms}";}];
-            iconUpdateURL = "https://brave.com/static-assets/images/brave-logo-sans-text.svg";
-            updateInterval = 24 * 60 * 60 * 1000;
-            definedAliases = [
-              "@br"
-              "@b"
-              "@brave"
-            ];
-          };
+            "Brave Search" = {
+              urls = [ { template = "https://search.brave.com/search?q={searchTerms}"; } ];
+              iconUpdateURL = "https://brave.com/static-assets/images/brave-logo-sans-text.svg";
+              updateInterval = 24 * 60 * 60 * 1000;
+              definedAliases = [
+                "@br"
+                "@b"
+                "@brave"
+              ];
+            };
 
-          "StartPage" = {
-            urls = [{template = "https://www.startpage.com/sp/search?query={searchTerms}";}];
-            iconUpdateURL = "https://www.startpage.com/sp/cdn/favicons/favicon-gradient.ico";
-            updateInterval = 24 * 60 * 60 * 1000;
-            definedAliases = [
-              "@sp"
-              "@s"
-              "@start"
-            ];
-          };
+            "StartPage" = {
+              urls = [ { template = "https://www.startpage.com/sp/search?query={searchTerms}"; } ];
+              iconUpdateURL = "https://www.startpage.com/sp/cdn/favicons/favicon-gradient.ico";
+              updateInterval = 24 * 60 * 60 * 1000;
+              definedAliases = [
+                "@sp"
+                "@s"
+                "@start"
+              ];
+            };
 
-          "Reddit" = {
-            urls = [{template = "https://www.reddit.com/search/?q={searchTerms}";}];
-            iconUpdateURL = "https://www.redditstatic.com/shreddit/assets/favicon/favicon.ico";
-            updateInterval = 24 * 60 * 60 * 1000;
-            definedAliases = [
-              "@r"
-              "@reddit"
-            ];
-          };
+            "Reddit" = {
+              urls = [ { template = "https://www.reddit.com/search/?q={searchTerms}"; } ];
+              iconUpdateURL = "https://www.redditstatic.com/shreddit/assets/favicon/favicon.ico";
+              updateInterval = 24 * 60 * 60 * 1000;
+              definedAliases = [
+                "@r"
+                "@reddit"
+              ];
+            };
 
-          "Github" = {
-            urls = [{template = "https://github.com/search?q={searchTerms}";}];
-            iconUpdateURL = "https://github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg";
-            updateInterval = 24 * 60 * 60 * 1000;
-            definedAliases = [
-              "@gh"
-              "@g"
-              "@git"
-            ];
-          };
+            "Github" = {
+              urls = [ { template = "https://github.com/search?q={searchTerms}"; } ];
+              iconUpdateURL = "https://github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg";
+              updateInterval = 24 * 60 * 60 * 1000;
+              definedAliases = [
+                "@gh"
+                "@g"
+                "@git"
+              ];
+            };
 
-          "ArchLinux Wiki" = {
-            urls = [{template = "https://wiki.archlinux.org/index.php?search={searchTerms}";}];
-            iconUpdateURL = "https://wiki.archlinux.org/favicon.ico";
-            updateInterval = 24 * 60 * 60 * 1000;
-            definedAliases = [
-              "@archwiki"
-              "@arch"
-              "@aw"
-            ];
-          };
+            "ArchLinux Wiki" = {
+              urls = [ { template = "https://wiki.archlinux.org/index.php?search={searchTerms}"; } ];
+              iconUpdateURL = "https://wiki.archlinux.org/favicon.ico";
+              updateInterval = 24 * 60 * 60 * 1000;
+              definedAliases = [
+                "@archwiki"
+                "@arch"
+                "@aw"
+              ];
+            };
 
-          "NixOS Wiki" = {
-            urls = [{template = "https://wiki.nixos.org/w/index.php?search={searchTerms}";}];
-            iconUpdateURL = "https://wiki.nixos.org/favicon.ico";
-            updateInterval = 24 * 60 * 60 * 1000;
-            definedAliases = [
-              "@nw"
-              "@nixwiki"
-            ];
-          };
+            "NixOS Wiki" = {
+              urls = [ { template = "https://wiki.nixos.org/w/index.php?search={searchTerms}"; } ];
+              iconUpdateURL = "https://wiki.nixos.org/favicon.ico";
+              updateInterval = 24 * 60 * 60 * 1000;
+              definedAliases = [
+                "@nw"
+                "@nixwiki"
+              ];
+            };
 
-          "Noogle" = {
-            urls = [{template = "https://noogle.dev/q?term={searchTerms}";}];
-            iconUpdateUrl = "https://noogle.dev/favicon.png";
-            updateInterval = 24 * 60 * 60 * 1000;
-            definedAliases = [
-              "@noogle"
-              "@ng"
-            ];
-          };
+            "Noogle" = {
+              urls = [ { template = "https://noogle.dev/q?term={searchTerms}"; } ];
+              iconUpdateUrl = "https://noogle.dev/favicon.png";
+              updateInterval = 24 * 60 * 60 * 1000;
+              definedAliases = [
+                "@noogle"
+                "@ng"
+              ];
+            };
 
-          "Nix Packages" = {
-            urls = [
-              {
-                template = "https://search.nixos.org/packages";
-                params = [
-                  {
-                    name = "channel";
-                    value = "unstable";
-                  }
-                  {
-                    name = "type";
-                    value = "packages";
-                  }
-                  {
-                    name = "query";
-                    value = "{searchTerms}";
-                  }
-                ];
-              }
-            ];
-            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-            definedAliases = [
-              "@np"
-              "@nixpkgs"
-            ];
-          };
+            "Nix Packages" = {
+              urls = [
+                {
+                  template = "https://search.nixos.org/packages";
+                  params = [
+                    {
+                      name = "channel";
+                      value = "unstable";
+                    }
+                    {
+                      name = "type";
+                      value = "packages";
+                    }
+                    {
+                      name = "query";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+              definedAliases = [
+                "@np"
+                "@nixpkgs"
+              ];
+            };
 
-          "Nix Options" = {
-            urls = [
-              {
-                template = "https://search.nixos.org/options";
-                params = [
-                  {
-                    name = "channel";
-                    value = "unstable";
-                  }
-                  {
-                    name = "type";
-                    value = "options";
-                  }
-                  {
-                    name = "query";
-                    value = "{searchTerms}";
-                  }
-                ];
-              }
-            ];
-            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-            definedAliases = [
-              "@no"
-              "@nixopts"
-            ];
-          };
+            "Nix Options" = {
+              urls = [
+                {
+                  template = "https://search.nixos.org/options";
+                  params = [
+                    {
+                      name = "channel";
+                      value = "unstable";
+                    }
+                    {
+                      name = "type";
+                      value = "options";
+                    }
+                    {
+                      name = "query";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+              definedAliases = [
+                "@no"
+                "@nixopts"
+              ];
+            };
 
-          "My NixOS" = {
-            urls = [{template = "https://mynixos.com/search?q={searchTerms}";}];
-            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake-white.svg";
-            definedAliases = [
-              "@mn"
-              "@nx"
-              "@mynixos"
-            ];
-          };
+            "My NixOS" = {
+              urls = [ { template = "https://mynixos.com/search?q={searchTerms}"; } ];
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake-white.svg";
+              definedAliases = [
+                "@mn"
+                "@nx"
+                "@mynixos"
+              ];
+            };
 
-          "Home Manager" = {
-            urls = [{template = "https://home-manager-options.extranix.com/?query={searchTerms}";}];
-            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-            definedAliases = [
-              "@hm"
-              "@home"
-              "@homeman"
-            ];
-          };
+            "Home Manager" = {
+              urls = [ { template = "https://home-manager-options.extranix.com/?query={searchTerms}"; } ];
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+              definedAliases = [
+                "@hm"
+                "@home"
+                "@homeman"
+              ];
+            };
 
-          "Nixvim Options" = {
-            urls = [{template = "https://nix-community.github.io/nixvim/search/?query={searchTerms}";}];
-            iconUpdateURL = "https://nix-community.github.io/nixvim/search/favicon.ico";
-            updateInterval = 24 * 60 * 60 * 1000;
-            definedAliases = [
-              "@nxv"
-              "@nv"
-              "@nvo"
-            ];
+            "Nixvim Options" = {
+              urls = [ { template = "https://nix-community.github.io/nixvim/search/?query={searchTerms}"; } ];
+              iconUpdateURL = "https://nix-community.github.io/nixvim/search/favicon.ico";
+              updateInterval = 24 * 60 * 60 * 1000;
+              definedAliases = [
+                "@nxv"
+                "@nv"
+                "@nvo"
+              ];
+            };
           };
-        };
       };
 
       settings = {
@@ -412,32 +415,34 @@
         "webgl.disabled" = true;
       };
 
-      ExtensionSettings = let
-        installation_mode = "force_installed";
-        urlPrefix = x: "http://addons.mozilla.org/firefox/downloads/latest/${x}/latest.xpi";
-      in {
-        "uBlock0@raymondhill.net" = {
-          install_url = urlPrefix "ublock-origin";
-          inherit installation_mode;
+      ExtensionSettings =
+        let
+          installation_mode = "force_installed";
+          urlPrefix = x: "http://addons.mozilla.org/firefox/downloads/latest/${x}/latest.xpi";
+        in
+        {
+          "uBlock0@raymondhill.net" = {
+            install_url = urlPrefix "ublock-origin";
+            inherit installation_mode;
+          };
+          "{e0de5ee2-4619-413a-8300-a43a90196a6d}" = {
+            install_url = urlPrefix "simplerentfox";
+            inherit installation_mode;
+          };
+          "{3c078156-979c-498b-8990-85f7987dd929}" = {
+            install_url = urlPrefix "sidebery";
+            inherit installation_mode;
+          };
+          "{47bf427e-c83d-457d-9b3d-3db4118574bd}" = {
+            install_url = urlPrefix "nighttab";
+            inherit installation_mode;
+          };
+          "tridactyl.vim@cmcaine.co.uk" = {
+            install_url = urlPrefix "tridactyl-vim";
+            inherit installation_mode;
+          };
+          "bing@search.mozilla.org".installation_mode = "blocked";
         };
-        "{e0de5ee2-4619-413a-8300-a43a90196a6d}" = {
-          install_url = urlPrefix "simplerentfox";
-          inherit installation_mode;
-        };
-        "{3c078156-979c-498b-8990-85f7987dd929}" = {
-          install_url = urlPrefix "sidebery";
-          inherit installation_mode;
-        };
-        "{47bf427e-c83d-457d-9b3d-3db4118574bd}" = {
-          install_url = urlPrefix "nighttab";
-          inherit installation_mode;
-        };
-        "tridactyl.vim@cmcaine.co.uk" = {
-          install_url = urlPrefix "tridactyl-vim";
-          inherit installation_mode;
-        };
-        "bing@search.mozilla.org".installation_mode = "blocked";
-      };
     };
   };
 }

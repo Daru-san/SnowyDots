@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   home.packages = with pkgs; [
     kdePackages.qtwayland
     libsForQt5.qt5.qtwayland

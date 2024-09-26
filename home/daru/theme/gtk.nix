@@ -3,7 +3,8 @@
   config,
   lib,
   ...
-}: let
+}:
+let
   extraCss = lib.concatStringsSep "\n" [
     config.colorSchemeCss
     (builtins.readFile ./gtk.css)
@@ -11,20 +12,21 @@
   extraConfig = {
     gtk-decoration-layout = "";
   };
-in rec {
+in
+rec {
   gtk = {
     enable = true;
 
     theme = {
       name = "WhiteSur-Dark-alt-green";
       package = pkgs.whitesur-gtk-theme.override {
-        colorVariants = ["Dark"];
-        themeVariants = ["green"];
+        colorVariants = [ "Dark" ];
+        themeVariants = [ "green" ];
         roundedMaxWindow = true;
         nautilusSize = "180";
         nautilusStyle = "glassy"; # glassy
-        altVariants = ["alt"];
-        opacityVariants = ["normal"];
+        altVariants = [ "alt" ];
+        opacityVariants = [ "normal" ];
       };
     };
 

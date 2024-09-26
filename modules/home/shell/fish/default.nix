@@ -1,6 +1,8 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   inherit (pkgs) fishPlugins;
-in {
+in
+{
   programs.fish = {
     enable = true;
     interactiveShellInit = ''

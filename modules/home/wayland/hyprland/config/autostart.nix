@@ -3,10 +3,12 @@
   pkgs,
   lib,
   ...
-}: let
+}:
+let
   inherit (lib) getExe getExe';
   kitty = getExe config.programs.kitty.package;
-in {
+in
+{
   wayland.windowManager.hyprland.settings = {
     exec-once = [
       "[workspace 1] ${kitty} -T Terminal"

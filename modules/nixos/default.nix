@@ -1,3 +1,7 @@
 {
-  imports = [./tools ./system ./wayland];
+  imports = [
+    ./tools
+    ./system
+    ./wayland
+  ];
 }

@@ -15,23 +15,24 @@
       extraRules = [
         {
           commands =
-            builtins.map (command: {
-              command = "/run/current-system/sw/bin/${command}";
-              options = ["NOPASSWD"];
-            })
-            [
-              "poweroff"
-              "reboot"
-              "systemctl"
-              "nix-env"
-              "bandwhich"
-              "usbtop"
-              "powertop"
-              "tlp-stat"
-              "dmesg"
-              "waydroid"
-            ];
-          groups = ["wheel"];
+            builtins.map
+              (command: {
+                command = "/run/current-system/sw/bin/${command}";
+                options = [ "NOPASSWD" ];
+              })
+              [
+                "poweroff"
+                "reboot"
+                "systemctl"
+                "nix-env"
+                "bandwhich"
+                "usbtop"
+                "powertop"
+                "tlp-stat"
+                "dmesg"
+                "waydroid"
+              ];
+          groups = [ "wheel" ];
         }
       ];
     };

@@ -1,8 +1,9 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   console = {
     earlySetup = true;
     font = "${pkgs.terminus_font}/share/consolefonts/ter-124n.psf.gz";
-    packages = [pkgs.terminus_font];
+    packages = [ pkgs.terminus_font ];
     keyMap = "us";
   };
 
@@ -11,7 +12,11 @@
     fontDir.enable = true;
     packages = [
       (pkgs.nerdfonts.override {
-        fonts = ["JetBrainsMono" "RobotoMono" "Noto"];
+        fonts = [
+          "JetBrainsMono"
+          "RobotoMono"
+          "Noto"
+        ];
       })
     ];
   };

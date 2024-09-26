@@ -3,14 +3,18 @@
   config,
   pkgs,
   ...
-}: let
+}:
+let
   inherit (lib) getExe getExe';
   hyprlock = getExe config.programs.hyprlock.package;
   lock_cmd = "pidof hyprlock || ${hyprlock}";
-  pausemusic = getExe (pkgs.writeShellScriptBin "music-pause" ''
-    ${getExe' config.services.playerctld.package "playerctl"} pause
-  '');
-in {
+  pausemusic = getExe (
+    pkgs.writeShellScriptBin "music-pause" ''
+      ${getExe' config.services.playerctld.package "playerctl"} pause
+    ''
+  );
+in
+{
   services.hypridle = {
     settings = {
       general = {

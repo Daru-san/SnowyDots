@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.mercurial = {
     enable = true;
     package = pkgs.mercurialFull;

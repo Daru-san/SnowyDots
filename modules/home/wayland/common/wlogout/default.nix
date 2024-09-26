@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: let
+}:
+let
   icons =
     pkgs.fetchFromGitHub {
       owner = "ArtsyMacaw";
@@ -11,7 +12,8 @@
       hash = "sha256-cTscfx+erHVFHwwYpN7pADQWt5sq75sQSyXSP/H8kOs=";
     }
     + "/icons";
-in {
+in
+{
   programs.wlogout = {
     layout = [
       {
@@ -70,14 +72,8 @@ in {
        button:hover {
        }
        button:focus {
-           border: ${
-        toString
-        config.wayland.windowManager.hyprland.settings.general.border_size
-      }px;
-           border-radius: ${
-        toString
-        config.wayland.windowManager.hyprland.settings.decoration.rounding
-      }px;
+           border: ${toString config.wayland.windowManager.hyprland.settings.general.border_size}px;
+           border-radius: ${toString config.wayland.windowManager.hyprland.settings.decoration.rounding}px;
        }
        /** ********** Icons ********** **/
        #lock {

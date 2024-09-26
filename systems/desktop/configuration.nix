@@ -1,5 +1,6 @@
-{pkgs, ...}: {
-  imports = [./hardware-configuration.nix];
+{ pkgs, ... }:
+{
+  imports = [ ./hardware-configuration.nix ];
   users = {
     defaultUserShell = pkgs.zsh;
     mutableUsers = true;

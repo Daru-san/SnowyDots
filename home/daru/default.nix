@@ -3,10 +3,16 @@
   outputs,
   lib,
   ...
-}: {
+}:
+{
   imports = lib.flatten [
-    [./home.nix ./theme ./packages.nix ./scripts.nix]
-    (with inputs; [nix-colors.homeManagerModules.default])
+    [
+      ./home.nix
+      ./theme
+      ./packages.nix
+      ./scripts.nix
+    ]
+    (with inputs; [ nix-colors.homeManagerModules.default ])
   ];
 
   nixpkgs = {

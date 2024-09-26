@@ -1,4 +1,5 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   nautEnv = pkgs.buildEnv {
     name = "nautilus-env";
 
@@ -9,9 +10,10 @@
       nautilus-open-any-terminal
     ];
   };
-in {
+in
+{
   home = {
-    packages = [nautEnv];
+    packages = [ nautEnv ];
     sessionVariables.NAUTILUS_4_EXTENSION_DIR = "${nautEnv}/lib/nautilus/extensions-4";
   };
 

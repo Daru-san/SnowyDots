@@ -1,8 +1,9 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   boot = {
     consoleLogLevel = 2;
     initrd.verbose = false;
-    kernelParams = ["quiet"];
+    kernelParams = [ "quiet" ];
     supportedFilesystems = {
       ntfs = true;
     };

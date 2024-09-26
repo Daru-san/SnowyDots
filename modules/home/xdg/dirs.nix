@@ -1,6 +1,8 @@
-{config, ...}: let
+{ config, ... }:
+let
   hm = config.home.homeDirectory;
-in rec {
+in
+rec {
   enable = true;
   createDirectories = true;
 

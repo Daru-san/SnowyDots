@@ -2,10 +2,12 @@
   config,
   lib,
   ...
-}: let
+}:
+let
   inherit (lib) mkEnableOption mkIf;
   cfg = config.system.laptop;
-in {
+in
+{
   options.system.laptop = mkEnableOption "Enable laptop configuration";
   config = mkIf cfg {
     hardware.bluetooth.enable = true;
@@ -55,6 +57,6 @@ in {
       };
     };
     powerManagement.powertop.enable = true;
-    boot.kernelParams = ["snd-intel-dspcfg.dsp_driver=1"];
+    boot.kernelParams = [ "snd-intel-dspcfg.dsp_driver=1" ];
   };
 }

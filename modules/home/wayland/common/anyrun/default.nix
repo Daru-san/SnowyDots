@@ -3,11 +3,13 @@
   inputs,
   system,
   ...
-}: let
+}:
+let
   plugins = inputs.anyrun.packages.${system};
   inherit (inputs.anyrun-powermenu.packages.${system}) anyrun-powermenu;
-in {
-  imports = [inputs.anyrun.homeManagerModules.default];
+in
+{
+  imports = [ inputs.anyrun.homeManagerModules.default ];
   programs.anyrun = {
     package = pkgs.anyrun;
     config = {

@@ -1,5 +1,5 @@
 {
-  boot.kernelModules = ["kvm-intel"];
+  boot.kernelModules = [ "kvm-intel" ];
   virtualisation.waydroid.enable = false;
   virtualisation.virtualbox = {
     host = {

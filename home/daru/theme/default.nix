@@ -2,7 +2,8 @@
   inputs,
   lib,
   ...
-}: rec {
+}:
+rec {
   imports = [
     ./qt.nix
     ./fonts.nix
@@ -16,17 +17,18 @@
   colorScheme = inputs.nix-colors.colorSchemes.oxocarbon-dark;
 
   # Converting the colorscheme to css
-  colorSchemeCss = let
-    num = map toString (lib.range 0 9);
-    char = [
-      "A"
-      "B"
-      "C"
-      "D"
-      "E"
-      "F"
-    ];
-  in
+  colorSchemeCss =
+    let
+      num = map toString (lib.range 0 9);
+      char = [
+        "A"
+        "B"
+        "C"
+        "D"
+        "E"
+        "F"
+      ];
+    in
     lib.concatLines [
       "/* Definitions of my current color scheme */"
       (lib.concatLines (map (x: ''@define-color base0${x} #${colorScheme.palette."base0${x}"};'') num))

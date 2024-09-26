@@ -1,6 +1,8 @@
-{lib, ...}: let
+{ lib, ... }:
+let
   inherit (lib) flatten concatStringsSep;
-in {
+in
+{
   programs.btop = {
     enable = true;
     settings = {
@@ -47,18 +49,19 @@ in {
       show_cpu_freq = true;
 
       # Disks and memeory
-      disks_filter = let
-        home-dirs = [
-          "Music"
-          "Pictures"
-          "Documents"
-          "Development"
-          "snow"
-          "Misc"
-          "Videos"
-          "Wallpapers"
-        ];
-      in
+      disks_filter =
+        let
+          home-dirs = [
+            "Music"
+            "Pictures"
+            "Documents"
+            "Development"
+            "snow"
+            "Misc"
+            "Videos"
+            "Wallpapers"
+          ];
+        in
         "exclude="
         + concatStringsSep " " (flatten [
           "/boot"

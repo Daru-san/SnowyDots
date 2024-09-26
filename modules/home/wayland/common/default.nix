@@ -3,10 +3,12 @@
   lib,
   pkgs,
   ...
-}: let
+}:
+let
   inherit (lib) mkEnableOption mkIf;
   cfg = config.wayland;
-in {
+in
+{
   options.wayland.enable = mkEnableOption "Enable wayland using Hyprland";
   imports = [
     ./kanshi
@@ -32,6 +34,6 @@ in {
       wlogout.enable = true;
       hyprlock.enable = true;
     };
-    home.packages = [pkgs.wl-clipboard-rs];
+    home.packages = [ pkgs.wl-clipboard-rs ];
   };
 }

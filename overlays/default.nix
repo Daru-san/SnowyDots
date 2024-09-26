@@ -1,4 +1,5 @@
-{inputs}: {
+{ inputs }:
+{
   stable-packages = final: _prev: {
     stable = import inputs.nixpkgs-stable {
       inherit (final) system;

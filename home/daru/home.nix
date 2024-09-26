@@ -17,7 +17,11 @@
 
   # Home option pages
   manual = {
-    json = {enable = true;};
-    html = {enable = true;};
+    json = {
+      enable = true;
+    };
+    html = {
+      enable = true;
+    };
   };
 }

@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   enable = true;
   extraPortals = with pkgs; [
     xdg-desktop-portal-kde
@@ -11,7 +12,7 @@
         "gtk"
         "hyprland"
       ];
-      "org.freedesktop.impl.portal.FileChooser" = ["kde"];
+      "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
     };
   };
 }

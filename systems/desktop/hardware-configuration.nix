@@ -1,4 +1,5 @@
-{lib, ...}: {
+{ lib, ... }:
+{
   boot.initrd.availableKernelModules = [
     "xhci_pci"
     "ahci"
@@ -37,19 +38,19 @@
     "/etc" = {
       device = "/dev/disk/by-uuid/1de88fe7-5fe8-4e0b-ad00-fdc3cb452408";
       fsType = "btrfs";
-      options = ["subvol=etc"];
+      options = [ "subvol=etc" ];
     };
 
     "/var" = {
       device = "/dev/disk/by-uuid/1de88fe7-5fe8-4e0b-ad00-fdc3cb452408";
       fsType = "btrfs";
-      options = ["subvol=var"];
+      options = [ "subvol=var" ];
     };
 
     "/home" = {
       device = "/dev/disk/by-uuid/5bbf8784-92a9-4959-97a5-a7baec021d1c";
       fsType = "btrfs";
-      options = ["subvol=home"];
+      options = [ "subvol=home" ];
     };
 
     "/home/daru/Music" = {
@@ -141,7 +142,7 @@
     };
   };
 
-  swapDevices = [];
+  swapDevices = [ ];
 
   networking.useDHCP = lib.mkDefault true;
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
