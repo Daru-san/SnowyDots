@@ -433,8 +433,8 @@
             install_url = urlPrefix "sidebery";
             inherit installation_mode;
           };
-          "{47bf427e-c83d-457d-9b3d-3db4118574bd}" = {
-            install_url = urlPrefix "nighttab";
+          "contact@maxhu.dev" = {
+            install_url = urlPrefix "mtab";
             inherit installation_mode;
           };
           "tridactyl.vim@cmcaine.co.uk" = {
