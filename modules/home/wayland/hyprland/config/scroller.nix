@@ -27,8 +27,8 @@
       bind = , escape, submap, reset
       submap = reset
 
-      bind = super, tab, scroller:toggleoverview
-      bind = super, tab, submap, overview
+      bind = alt, tab, scroller:toggleoverview
+      bind = alt, tab, submap, overview
       submap = overview
       bind = , right, scroller:movefocus, right
       bind = , left, scroller:movefocus, left
