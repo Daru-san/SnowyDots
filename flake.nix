@@ -31,6 +31,9 @@
     # Reall nice anime cli tool
     anipy-cli.url = "github:sdaqo/anipy-cli";
 
+    # A nice idle inhibitor for hyprland 
+    vigiland.url = "github:jappie3/vigiland";
+
     # Wayland shell
     ags.url = "github:Daru-san/ags/feature/sway";
 

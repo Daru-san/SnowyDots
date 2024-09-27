@@ -9,19 +9,23 @@
 let
   inherit (lib) getExe getExe';
   inherit (pkgs) writeShellScriptBin;
-  idle-inhibit = getExe (
-    writeShellScriptBin "idle-inhibit" ''
-      inhibited=off
-      if pgrep 'hypridle'; then
-        systemctl --user stop hypridle.service
-        inhibited=on
-      else
-        systemctl --user start hypridle.service
+  idle-inhibit =
+    let
+      vigiland = getExe inputs.vigiland.packages.${pkgs.system}.default;
+    in
+    getExe (
+      writeShellScriptBin "idle-inhibit" ''
         inhibited=off
-      fi
-      hyprctl notify -1 6000 0 "Idle inhibiting is now ''${inhibited}"
-    ''
-  );
+        if pgrep 'vigiland'; then
+          ${pkgs.killall}/bin/killall vigiland
+          inhibited=off
+        else
+          ${vigiland} &
+          inhibited=on
+        fi
+        hyprctl notify -1 6000 0 "Idle inhibiting is now ''${inhibited}"
+      ''
+    );
 in
 {
   imports = [ ./extra-binds.nix ];
