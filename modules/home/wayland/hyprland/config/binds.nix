@@ -11,7 +11,11 @@ let
   inherit (pkgs) writeShellScriptBin;
   idle-inhibit =
     let
-      vigiland = getExe inputs.vigiland.packages.${pkgs.system}.default;
+      vigiland = getExe (
+        inputs.vigiland.packages.${pkgs.system}.default.overrideAttrs {
+          meta.mainProgram = "vigiland";
+        }
+      );
     in
     getExe (
       writeShellScriptBin "idle-inhibit" ''
@@ -60,7 +64,11 @@ in
           g4music = getExe pkgs.g4music;
           valent = getExe pkgs.valent;
           obs = getExe pkgs.obs-cmd;
-          syncthingtray = getExe pkgs.syncthingtray;
+          syncthingtray = getExe (
+            pkgs.syncthingtray.overrideAttrs {
+              meta.mainProgram = "syncthingtray";
+            }
+          );
         in
         [
           (mkBindE "super" "e" "hyprctl clients | grep 'nautilus' || ${file-manager}" "Launch file manager")
