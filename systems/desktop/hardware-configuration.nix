@@ -140,6 +140,15 @@
         "discard"
       ];
     };
+
+    "/home/daru/Documents/comp-sci" = {
+      device = "/dev/disk/by-label/work";
+      fsType = "ntfs-3g";
+      options = [
+        "rw"
+        "uid=1000"
+      ];
+    };
   };
 
   swapDevices = [ ];
