@@ -11,7 +11,7 @@ rec {
   pictures = "${hm}/Pictures";
   videos = "${hm}/Videos";
   download = "${hm}/Downloads";
-  publicShare = null;
+  publicShare = "${hm}/Share";
   templates = null;
 
   extraConfig = rec {
