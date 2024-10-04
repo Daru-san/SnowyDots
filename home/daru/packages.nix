@@ -31,6 +31,7 @@
       krita
       alpaca
       ollama
+      jq
 
       # CLI
       ouch
@@ -71,6 +72,7 @@
       mediainfo
       hexyl
       gnome-clocks
+      xdg-user-dirs
     ])
     (with inputs; [
       r-pg.packages.${system}.default
