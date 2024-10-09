@@ -8,5 +8,6 @@
     ./xdg
     ./themes
     ./programs
+    ./languages/java.nix
   ];
 }

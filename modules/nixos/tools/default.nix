@@ -8,5 +8,6 @@
     ./virtualisation.nix
     ./syncthing.nix
     ./env.nix
+    ./java.nix
   ];
 }
