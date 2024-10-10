@@ -14,7 +14,6 @@
   };
   programs.fish = {
     enable = true;
-    useBabelfish = true;
     promptInit = ''
       ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
     '';
