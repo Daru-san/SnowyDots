@@ -11,21 +11,27 @@
       "vfio-iommu-type1"
       "kvm-intel"
     ];
-    extraModprobeConfig = lib.concatLines [ "i915 enable_gvt=1" ];
+    extraModprobeConfig = lib.concatLines [ "options i915 enable_gvt=1" ];
   };
-  services.samba = {
-    enable = true;
-    smbd.enable = true;
-    openFirewall = true;
-  };
-  virtualisation.waydroid.enable = false;
-  environment.systemPackages = [ pkgs.quickemu ];
-  services.spice-vdagentd.enable = true;
-  virtualisation.kvmgt = {
-    enable = true;
-    vgpus = {
-      i915-GVTg_V5_4 = {
-        uuid = [ "371badd6-8017-11ef-b809-57641e8f4eb1" ];
+  programs.virt-manager.enable = true;
+  virtualisation = {
+    waydroid.enable = false;
+    libvirtd = {
+      enable = true;
+      qemu = {
+        vhostUserPackages = [ pkgs.virtiofsd ];
+        verbatimConfig = ''
+          capability_filters = [ "device.json" ]
+        '';
+      };
+    };
+    spiceUSBRedirection.enable = true;
+    kvmgt = {
+      enable = true;
+      vgpus = {
+        i915-GVTg_V5_4 = {
+          uuid = [ "371badd6-8017-11ef-b809-57641e8f4eb1" ];
+        };
       };
     };
   };
