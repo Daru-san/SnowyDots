@@ -17,6 +17,8 @@
         "adbusers"
         "input"
         "uinput"
+        "kvm"
+        "libvirtd"
       ];
     };
   };
