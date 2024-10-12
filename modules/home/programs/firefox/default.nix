@@ -41,6 +41,48 @@
           keyword = "kernel";
           url = "https://kernel.org";
         }
+        {
+          name = "Syncthing";
+          tags = [ "sync" ];
+          keyword = "sync";
+          url = "http://127.0.0.1:8384";
+        }
+        {
+          name = "Youtube Studio";
+          tags = [ "youtube" ];
+          keyword = "studio";
+          url = "https://studio.youtube.com";
+        }
+        {
+          name = "Github";
+          tags = [ "git" ];
+          keywords = "github";
+          url = "https://github.com";
+        }
+        {
+          name = "Sourcehut";
+          tags = [ "git" ];
+          keywords = "sr.ht";
+          url = "https://git.sr.ht";
+        }
+        {
+          name = "Proton Mail";
+          tags = [ "mail" ];
+          keywords = "proton";
+          url = "https://mail.proton.me";
+        }
+        {
+          name = "Hyprland Wiki";
+          tags = [ "wayland" ];
+          keywords = "hypr";
+          url = "https://wiki.hyprland.org";
+        }
+        {
+          name = "Khan Academy";
+          tags = [ "learn" ];
+          keywords = "khan";
+          url = "https://www.khanacademy.org";
+        }
       ];
 
       containersForce = true;
