@@ -56,31 +56,31 @@
         {
           name = "Github";
           tags = [ "git" ];
-          keywords = "github";
+          keyword = "github";
           url = "https://github.com";
         }
         {
           name = "Sourcehut";
           tags = [ "git" ];
-          keywords = "sr.ht";
+          keyword = "sr.ht";
           url = "https://git.sr.ht";
         }
         {
           name = "Proton Mail";
           tags = [ "mail" ];
-          keywords = "proton";
+          keyword = "proton";
           url = "https://mail.proton.me";
         }
         {
           name = "Hyprland Wiki";
           tags = [ "wayland" ];
-          keywords = "hypr";
+          keyword = "hypr";
           url = "https://wiki.hyprland.org";
         }
         {
           name = "Khan Academy";
           tags = [ "learn" ];
-          keywords = "khan";
+          keyword = "khan";
           url = "https://www.khanacademy.org";
         }
       ];
