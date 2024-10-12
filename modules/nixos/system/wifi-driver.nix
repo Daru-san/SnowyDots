@@ -8,10 +8,10 @@
     extraModulePackages = [
       (config.boot.kernelPackages.rtl88x2bu.overrideAttrs (oldAttrs: {
         src = pkgs.fetchFromGitHub {
-          owner = "felipealfonsog";
-          repo = "rtl-88x2bu";
-          rev = "70b9a417db1fe49ab6240252cc61073c9601bc58";
-          hash = "sha256-ltyBcotI9I5295z6s2u9PLpYAyYpMQKZSKrkpeczI84=";
+          owner = "morrownr";
+          repo = "88x2bu-20210702";
+          rev = "3c8f59b5b05e5090e8593da1940a8d3ccac3f878";
+          hash = "sha256-ELDo//qkoeJVsq9qQArfd6Jc8wb2c1b3x68t6rfLmPE=";
         };
       }))
     ];
