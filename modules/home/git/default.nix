@@ -15,6 +15,7 @@
       core = {
         editor = "vi";
         fileMode = false;
+        autocrlf = false;
       };
     };
     # Git highlighting
