@@ -1,6 +1,8 @@
 {
   lib,
   config,
+  inputs,
+  system,
   ...
 }:
 let
@@ -14,6 +16,7 @@ in
         name: value: "${name},${builtins.toString value}"
       ) config.home.sessionVariables;
       enable = true;
+      package = inputs.hyprland.packages.${system}.default;
       systemd = {
         enable = true;
         enableXdgAutostart = true;

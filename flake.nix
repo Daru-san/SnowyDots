@@ -25,13 +25,13 @@
     # Firefox addons
     firefox-addons.url = "git+https://gitlab.com/rycee/nur-expressions?dir=pkgs/firefox-addons";
 
-    # A nice alternative to firefox 
+    # A nice alternative to firefox
     zen-browser.url = "github:heywoodlh/flakes/main?dir=zen-browser";
 
     # Reall nice anime cli tool
     anipy-cli.url = "github:sdaqo/anipy-cli";
 
-    # A nice idle inhibitor for hyprland 
+    # A nice idle inhibitor for hyprland
     vigiland.url = "github:jappie3/vigiland";
 
     # Wayland shell
@@ -56,6 +56,17 @@
     walls = {
       url = "sourcehut:~darumaka/Wallpapers";
       flake = false;
+    };
+
+    # hyprland
+    hyprland.url = "github:hyprwm/Hyprland/v0.44.1";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
+    hyprscroller = {
+      url = "github:dawsers/hyprscroller";
+      inputs.hyprland.follows = "hyprland";
     };
   };
   outputs =

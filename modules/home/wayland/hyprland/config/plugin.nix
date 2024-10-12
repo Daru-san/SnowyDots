@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ inputs, system, ... }:
 {
   wayland.windowManager.hyprland = {
-    plugins = with pkgs.hyprlandPlugins; [
-      hyprbars
-      hyprscroller
+    plugins = [
+      inputs.hyprland-plugins.packages.${system}.hyprbars
+      inputs.hyprscroller.packages.${system}.default
     ];
     settings.plugin = {
       hyprexpo = {
