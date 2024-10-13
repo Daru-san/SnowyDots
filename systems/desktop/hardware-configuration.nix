@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 {
   boot.initrd.availableKernelModules = [
     "xhci_pci"
@@ -158,5 +158,6 @@
   hardware = {
     enableRedistributableFirmware = true;
     cpu.intel.updateMicrocode = true;
+    firmware = [ pkgs.linux-firmware ];
   };
 }

@@ -11,7 +11,6 @@
     ./security.nix
     ./services.nix
     ./networking.nix
-    ./wifi-driver.nix
     ./nyx-config.nix
   ];
 }

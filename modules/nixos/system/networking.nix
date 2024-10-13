@@ -8,7 +8,10 @@
     networkmanager = {
       enable = true;
       dns = "none";
-      wifi.powersave = false;
+      wifi = {
+        powersave = false;
+        backend = "iwd";
+      };
     };
   };
   environment.systemPackages = with pkgs; [
@@ -19,4 +22,6 @@
   networking.firewall = {
     enable = true;
   };
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
 }
