@@ -21,7 +21,6 @@
       g4music
       kdePackages.kalzium
       discover
-      lazarus-qt
       kdenlive
       ffmpeg
       pandoc
@@ -32,6 +31,10 @@
       alpaca
       ollama
       jq
+
+      # Developmentment
+      lazarus-qt
+      android-studio
 
       # CLI
       ouch
