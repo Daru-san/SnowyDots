@@ -153,6 +153,8 @@ in
           wlogout = getExe config.programs.wlogout.package;
           pk = getExe' pkgs.busybox "pkill";
 
+          iwgtk = getExe pkgs.iwgtk;
+
           # Screenshots
           hyprshot = getExe pkgs.hyprshot;
 
@@ -161,9 +163,7 @@ in
         [
           (mkBindE "super" "d" "${pk} anyrun || ${anyrun}" "Launch app launcher")
 
-          (mkBindE "super" "i" "${pk} nmtui || ${kitty} --class nmtui --detach nmtui"
-            "Launch the nmtui wifi menu"
-          )
+          (mkBindE "super" "i" "${pk} iwgtk || ${iwgtk}" "Launch the iwgtk wifi menu")
 
           (mkBindE "super" "a" "hyprctl clients | grep 'easyeffects' || ${easyeffects}"
             "Launch easyeffects audio mixer"
