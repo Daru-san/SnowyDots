@@ -34,7 +34,7 @@ in
                 t = true;
                 window-padding = 1;
                 g = "Access is restricted to authorized personnel only.";
-                c = "hyprland";
+                c = "Hyprland";
                 r = true;
               };
             in
