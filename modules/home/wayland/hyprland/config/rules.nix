@@ -88,6 +88,7 @@
 
             (w 9 "org.pwmt.zathura")
             (g "org.pwmt.zathura")
+            (w 9 "jetbrains-studio")
           ]
         )
         (
