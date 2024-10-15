@@ -11,7 +11,9 @@
       wifi = {
         powersave = false;
         backend = "iwd";
+        macAddress = "random";
       };
+      settings.wifi."iwd.autoconnect" = false;
     };
   };
   environment.systemPackages = with pkgs; [
