@@ -1494,11 +1494,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1729021088,
-        "narHash": "sha256-2Ef+KMELrOhk4TizcDAQqQaSQAzzPmISzGBM3QWWxQI=",
+        "lastModified": 1729051076,
+        "narHash": "sha256-dEQkd/wfp0IwwLbPI0uGS65Ch4nL9L2REIvOU+mndQs=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "8f7d603720e67fb3ddc26b170ce4978462e4d086",
+        "rev": "bcc3bf142e6c0368ad121c34503831b35c987db8",
         "type": "sourcehut"
       },
       "original": {
