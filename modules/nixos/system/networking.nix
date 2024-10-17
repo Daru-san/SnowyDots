@@ -13,7 +13,11 @@
         backend = "iwd";
         macAddress = "random";
       };
-      settings.wifi."iwd.autoconnect" = false;
+      settings = {
+        device = {
+          "wifi.iwd.autoconnect" = true;
+        };
+      };
     };
   };
   environment.systemPackages = with pkgs; [
