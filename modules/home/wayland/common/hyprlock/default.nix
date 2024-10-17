@@ -57,7 +57,7 @@ in
           text = ''cmd[update 1000] ${lib.getExe' pkgs.coreutils "date"} +"%A, %d %B %Y"'';
           font_size = 20;
           font_family = font;
-          position = "0, -250";
+          position = "0, -270";
           halign = "center";
           valign = "top";
         }
