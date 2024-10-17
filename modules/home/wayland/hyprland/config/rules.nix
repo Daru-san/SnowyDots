@@ -15,6 +15,9 @@
         [
           "size 65%,title:(Open Images — Krita)"
         ]
+        [
+          "size 75%,:(io.github.kaii_lb.Overskride)"
+        ]
         (
           let
             window = [
@@ -35,6 +38,7 @@
               "valent"
               "org.kde.rsibreak"
               "xdg-desktop-portal-kde"
+              "io.github.kaii_lb.Overskride"
             ];
             resized-windows = [
               "foot"

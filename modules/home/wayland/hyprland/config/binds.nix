@@ -167,6 +167,7 @@ in
           hyprshot = getExe pkgs.hyprshot;
 
           kitty = getExe pkgs.kitty;
+          overskride = getExe pkgs.overskride;
         in
         [
           (mkBindE "super" "d" "${pk} anyrun || ${anyrun}" "Launch app launcher")
@@ -186,6 +187,11 @@ in
           # Audio mixer
           (mkBindE "super" "p" "${pk} pulsemixer || ${kitty} --class pulsemixer --detach pulsemixer"
             "Launch pulsemixer"
+          )
+
+          # Bluetooth manager
+          (mkBindE "supershift" "i" "${pk} overskride || ${overskride}"
+            "Open the Overskride bluetooth manager"
           )
 
           # Screenshotting
