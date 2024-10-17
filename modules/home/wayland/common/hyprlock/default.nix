@@ -10,6 +10,7 @@ let
     songstats=$(${lib.getExe pkgs.playerctl} metadata --format '󰎈 {{title}} - {{artist}} 󰎈')
     ${lib.getExe' pkgs.coreutils "echo"} "$songstats"
   '';
+
 in
 {
   programs.hyprlock = {
@@ -37,7 +38,7 @@ in
           font_color = "rgb(200, 200, 200)";
           fade_on_empty = false;
           placeholder_text = "<i>Input Password...</i>";
-          hide_input = true;
+          hide_input = false;
           position = "0, -185";
           halign = "center";
           valign = "center";
@@ -49,15 +50,15 @@ in
           font_size = 90;
           font_family = font;
           position = "0, 10";
-          halign = "center";
+          halign = "top";
           valign = "center";
         }
         {
           text = ''cmd[update 1000] ${lib.getExe' pkgs.coreutils "date"} +"%A, %d %B %Y"'';
           font_size = 20;
           font_family = font;
-          position = "0, -20";
-          halign = "center";
+          position = "0, -50";
+          halign = "top";
           valign = "center";
         }
         {
