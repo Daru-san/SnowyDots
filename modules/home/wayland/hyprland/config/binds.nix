@@ -48,6 +48,10 @@ in
       mkBindSE =
         key: action: desc:
         ",${key},${desc},${e},${action}";
+      # Global shortcuts 
+      mkBindP =
+        mod: key: prog: desc:
+        "${mod},${key},${desc},pass,${prog}";
     in
     {
       bindd =
@@ -63,7 +67,7 @@ in
           swayosd = getExe' config.services.swayosd.package "swayosd-client";
           g4music = getExe pkgs.g4music;
           valent = getExe pkgs.valent;
-          obs = getExe pkgs.obs-cmd;
+          obs = "^(com\.obsproject\.Studio)$";
           syncthingtray = getExe (
             pkgs.syncthingtray.overrideAttrs {
               meta.mainProgram = "syncthingtray";
@@ -96,11 +100,15 @@ in
 
           (mkBindE "super" "grave" idle-inhibit "Turn on the idle inhibitor")
 
-          (mkBindE "super" "F2" "${obs} recording start" "Start recording")
-          (mkBindE "super" "F3" "${obs} recording stop" "Stop recording")
-          (mkBindE "super" "F4" "${obs} recording toggle" "Toggle recording(start/stop)")
-
           (mkBindE "supershift" "m" "${syncthingtray} -w" "Open syncthing tray")
+
+          # OBS Studio global keybindings
+          (mkBindP "altshift" "F6" obs "Start recording")
+          (mkBindP "altshift" "F8" obs "Stop recording")
+          (mkBindP "altshift" "F7" obs "Toggle recording(start/stop)")
+          (mkBindP "altshift" "F1" obs "Split recording file")
+          (mkBindP "altshift" "F2" obs "Mute microphone audio")
+          (mkBindP "altshift" "F4" obs "Mute desktop audio")
         ];
 
       binddle =
