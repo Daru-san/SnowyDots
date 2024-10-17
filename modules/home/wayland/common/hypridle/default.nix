@@ -18,7 +18,7 @@ in
   services.hypridle = {
     settings = {
       general = {
-        before_sleep_cmd = "${pausemusic} && ${hyprlock}";
+        before_sleep_cmd = "${pausemusic} && ${hyprlock} --immediate-render";
         inherit lock_cmd;
         after_sleep_cmd = "hyprctl dispatch dpms on";
       };
