@@ -49,17 +49,17 @@ in
           text = ''cmd[update:1000] ${lib.getExe' pkgs.coreutils "date"} +"%X"'';
           font_size = 90;
           font_family = font;
-          position = "0, 10";
-          halign = "top";
-          valign = "center";
+          position = "0, -120";
+          halign = "center";
+          valign = "top";
         }
         {
           text = ''cmd[update 1000] ${lib.getExe' pkgs.coreutils "date"} +"%A, %d %B %Y"'';
           font_size = 20;
           font_family = font;
-          position = "0, -50";
-          halign = "top";
-          valign = "center";
+          position = "0, -250";
+          halign = "center";
+          valign = "top";
         }
         {
           text = ''Welcome, $USER'';
