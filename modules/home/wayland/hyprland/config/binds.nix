@@ -127,10 +127,6 @@ in
           (mkBindSE "XF86AudioRaiseVolume" raise-volume "Raise volume")
           (mkBindSE "XF86AudioLowerVolume" lower-volume "Lower volume")
           (mkBindSE "XF86AudioMute" mute "Mute audio")
-
-          (mkBindE "shift" "F8" raise-volume "Raise volume")
-          (mkBindE "shift" "F6" lower-volume "Lower volume")
-          (mkBindE "shift" "F7" mute "Mute audio")
         ];
 
       binddl =
