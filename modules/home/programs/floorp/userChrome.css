@@ -1,9 +1,3 @@
-:root[tabsintitlebar] {
-  --uc-toolbar-height: 40px;
-}
-:root[tabsintitlebar][uidensity='compact'] {
-  --uc-toolbar-height: 32px;
-}
 #titlebar {
   will-change: unset !important;
   transition: none !important;
