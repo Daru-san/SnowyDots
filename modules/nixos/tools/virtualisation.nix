@@ -15,7 +15,7 @@
   };
   programs.virt-manager.enable = true;
   virtualisation = {
-    waydroid.enable = false;
+    waydroid.enable = true;
     libvirtd = {
       enable = true;
       qemu = {
