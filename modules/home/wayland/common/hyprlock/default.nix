@@ -26,6 +26,20 @@ in
           blur_passes = 1;
         }
       ];
+      image = [
+        {
+          path = "~/.face";
+          border_color = "0xffdddddd";
+          border_size = 0;
+          size = 170;
+          rounding = -1;
+          rotate = 0;
+          reload_time = -1;
+          position = "0, 10";
+          halign = "center";
+          valign = "center";
+        }
+      ];
       input-field = [
         {
           size = "220, 50";
@@ -73,7 +87,7 @@ in
           text = ''cmd[update 1000] ${lib.getExe now-playing}'';
           font_size = 16;
           font_family = font;
-          position = "0, -60";
+          position = "0, 0";
           halign = "center";
           valign = "bottom";
         }
