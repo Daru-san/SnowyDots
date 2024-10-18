@@ -8,9 +8,9 @@
         "repo": "fg.yazi"
       },
       "branch": "main",
-      "revision": "a9a79fc2be8622173aaab0daf90c0114d80e8347",
-      "url": "https://github.com/lpnh/fg.yazi/archive/a9a79fc2be8622173aaab0daf90c0114d80e8347.tar.gz",
-      "hash": "1l9fslvnj0hayrv1cdzf43jwjkpcga7327vvqm5607h4mpmab2w3"
+      "revision": "43fb7359d6de42982e2fd7c890ed5a72f2c84529",
+      "url": "https://github.com/lpnh/fg.yazi/archive/43fb7359d6de42982e2fd7c890ed5a72f2c84529.tar.gz",
+      "hash": "0k8pmfx152rnc7fkfkvff14w2fzk93rl6imny28g604j3a6xh6kv"
     },
     "glow.yazi": {
       "type": "Git",
@@ -20,9 +20,9 @@
         "repo": "glow.yazi"
       },
       "branch": "main",
-      "revision": "536185a4e60ac0adc11d238881e78678fdf084ff",
-      "url": "https://github.com/Reledia/glow.yazi/archive/536185a4e60ac0adc11d238881e78678fdf084ff.tar.gz",
-      "hash": "1ck5nxzw0q3fl5z6x1imb7qzgzcfpi7nspjrb3hdbxx46xi1phrm"
+      "revision": "f52b3822c98dfa84998cc3140803a0704faa515d",
+      "url": "https://github.com/Reledia/glow.yazi/archive/f52b3822c98dfa84998cc3140803a0704faa515d.tar.gz",
+      "hash": "1dwm64kkcafvh11yd367sh1j9hpi10qmd5fxfq65izah76m8b9kf"
     },
     "hexyl.yazi": {
       "type": "Git",
@@ -32,9 +32,9 @@
         "repo": "hexyl.yazi"
       },
       "branch": "main",
-      "revision": "64daf93a67d75eff871befe52d9013687171ffad",
-      "url": "https://github.com/Reledia/hexyl.yazi/archive/64daf93a67d75eff871befe52d9013687171ffad.tar.gz",
-      "hash": "1ckjk1rqj8f3d1dml1b0nfshiz0bh70j033ix67d7l301pyzfqh7"
+      "revision": "ccc0a4a959bea14dbe8f2b243793aacd697e34e2",
+      "url": "https://github.com/Reledia/hexyl.yazi/archive/ccc0a4a959bea14dbe8f2b243793aacd697e34e2.tar.gz",
+      "hash": "1j37zblqsaz3ss6id42lsc2qw5h2vffl5ic9jlwjdd8q0drckczn"
     },
     "mediainfo.yazi": {
       "type": "Git",
@@ -80,9 +80,9 @@
         "repo": "plugins"
       },
       "branch": "main",
-      "revision": "39f275382e5087610ba97312eaa5f7d10286302f",
-      "url": "https://github.com/yazi-rs/plugins/archive/39f275382e5087610ba97312eaa5f7d10286302f.tar.gz",
-      "hash": "0qkyl8907a6v1dns6dcvhwz4d7wsjh7kyxdw933z5n1wkbdqnai9"
+      "revision": "4f1d0ae0862f464e08f208f1807fcafcd8778e16",
+      "url": "https://github.com/yazi-rs/plugins/archive/4f1d0ae0862f464e08f208f1807fcafcd8778e16.tar.gz",
+      "hash": "1yr1p14xyfx4bj4dz7as1g2f8h1dwv0x1izvnbffr85zgbmc7ppr"
     },
     "starship.yazi": {
       "type": "Git",
@@ -92,9 +92,9 @@
         "repo": "starship.yazi"
       },
       "branch": "main",
-      "revision": "5abe29e7750eb98d5a3554925a7d8c242bd9f96d",
-      "url": "https://github.com/Rolv-Apneseth/starship.yazi/archive/5abe29e7750eb98d5a3554925a7d8c242bd9f96d.tar.gz",
-      "hash": "0qa0545f9bc20nn0n1m2fq1bkqf6fily32yh5pipm6wrc47qqnlc"
+      "revision": "77a65f5a367f833ad5e6687261494044006de9c3",
+      "url": "https://github.com/Rolv-Apneseth/starship.yazi/archive/77a65f5a367f833ad5e6687261494044006de9c3.tar.gz",
+      "hash": "0pv4qgqvbiaiv95q4qn9ydbwbcd82hdp2vjaqamdlb15kzvp805h"
     },
     "tokyo-night.yazi": {
       "type": "Git",
@@ -128,9 +128,9 @@
         "repo": "yatline-catppuccin.yazi"
       },
       "branch": "main",
-      "revision": "a1f2c05982ed67602b3c2cdcf2c0ae2c7ca7d0f8",
-      "url": "https://github.com/imsi32/yatline-catppuccin.yazi/archive/a1f2c05982ed67602b3c2cdcf2c0ae2c7ca7d0f8.tar.gz",
-      "hash": "1slg4w4kjjd8q7xs5svsgidwya1c1g2plqcq8162im4v7acv5nyf"
+      "revision": "5e4493906e077f89b94ecfc8b47318f5af8d1c53",
+      "url": "https://github.com/imsi32/yatline-catppuccin.yazi/archive/5e4493906e077f89b94ecfc8b47318f5af8d1c53.tar.gz",
+      "hash": "0ma6j8nd0fssrf2h65cahmrs5696wpy0hbxssxz50m9zz7in0xvz"
     },
     "yatline.yazi": {
       "type": "Git",
@@ -140,9 +140,9 @@
         "repo": "yatline.yazi"
       },
       "branch": "main",
-      "revision": "439b9d097e5dd87a39d22adf01521f0cf72d254c",
-      "url": "https://github.com/imsi32/yatline.yazi/archive/439b9d097e5dd87a39d22adf01521f0cf72d254c.tar.gz",
-      "hash": "1zhpgiar9rzi7gk7r3pfqbw2vs394m0v7s23jsf4nndyanskgdim"
+      "revision": "7b56434864d6a0b5d547fed2339b99346a018522",
+      "url": "https://github.com/imsi32/yatline.yazi/archive/7b56434864d6a0b5d547fed2339b99346a018522.tar.gz",
+      "hash": "0glcaby1hy2ah1ib1aq2xzjhq66fvyzc9f2d94hi8g3jf40l3b72"
     },
     "yazi-plugin-bat": {
       "type": "Git",
