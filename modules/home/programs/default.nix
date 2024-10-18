@@ -13,6 +13,6 @@
     ./yt-dlp
     ./nautilus
     ./spotify
-    ./firefox
+    ./floorp
   ];
 }

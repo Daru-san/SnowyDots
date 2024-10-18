@@ -6,7 +6,7 @@
   ...
 }:
 {
-  programs.firefox = {
+  programs.floorp = {
     enable = true;
     nativeMessagingHosts = with pkgs; [
       ff2mpv
