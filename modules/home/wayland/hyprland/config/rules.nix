@@ -62,7 +62,7 @@
             g = x: "group,^(${x})$";
           in
           [
-            (w 2 "firefox")
+            (w 2 "floorp")
             (w 4 "org.gnome.Nautilus")
 
             (wt 5 "Spotify")
