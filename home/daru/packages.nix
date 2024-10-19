@@ -11,70 +11,78 @@
     (with pkgs; [
       # GUI
       scrcpy
-      qtscrcpy
       keepassxc
-      bridge-editor
-      oculante
-      pwvucontrol
-      blanket
-      mission-center
-      g4music
+
+      # Science
       kdePackages.kalzium
-      discover
-      kdenlive
-      ffmpeg
-      pandoc
-      waydroid-script
-      prismlauncher
-      libreoffice-qt6-fresh
+      element
+
+      # Content creation
       krita
-      alpaca
-      ollama
-      jq
+      kdenlive
+
+      # Media
+      ffmpeg
+      oculante
+      exiftool
+      g4music
+      qmmp
+      pwvucontrol
+      mediainfo
+      musikcube
+      pulsemixer
 
       # Developmentment
-      lazarus-qt
       android-studio
-
-      # CLI
-      ouch
-      element
-      swww
-      npins
-      tree
-      tgpt
-      adbtuifm
-      libnotify
-      fd
-      speedtest-cli
-      glow
-      gping
+      bridge-editor
       hut
-      nvtopPackages.intel
-      sysz
-      systemctl-tui
-      exiftool
-      xdg-utils
-      pulsemixer
       maven
-      musikcube
-      qmmp
-      mediainfo
-      unrar
-      onefetch
+
+      # Desktop
+      swww
+
+      # GUI Util
+      file-roller
+      cheese
+
+      # Android
+      adbtuifm
+      waydroid-script
+
+      # Documents
+      libreoffice-qt6-fresh
+      pandoc
+      glow
+
+      # System monitoring
+      gping
+      speedtest-cli
+      sysz
+      nvtopPackages.intel
+      systemctl-tui
+
+      # Nix
+      nix-init
+      npins
       nix-output-monitor
-      stable.nix-init
       nix-update
       nixfmt-rfc-style
+
+      # CLI
+      jq
+      ouch
+      tree
+      tgpt
+      libnotify
+      fd
+      xdg-utils
+      unrar
+      onefetch
       trashy
       stable.turtle
       rqbit
       dconf-editor
-      file-roller
-      cheese
-      mediainfo
       hexyl
-      gnome-clocks
       xdg-user-dirs
     ])
     (with inputs; [
@@ -82,7 +90,6 @@
       anipy-cli.packages.${system}.default
       color-picker.packages.${system}.default
       snowyvim.packages.${system}.neovim
-      zen-browser.packages.${system}.zen-browser
     ])
   ];
 }
