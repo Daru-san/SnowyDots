@@ -86,14 +86,14 @@
 
       desktop = {
         hostName = "Aria";
-        config = ./systems/desktop;
+        config = ./systems/Aria;
         system = "x86_64-linux";
         stateVersion = "24.11";
       };
 
       laptop = {
         hostName = "Aurorus";
-        config = ./systems/laptop;
+        config = ./systems/Aurorus;
         system = "x86_64-linux";
         stateVersion = "24.11";
       };
