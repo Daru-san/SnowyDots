@@ -86,7 +86,7 @@
       };
 
       desktop = {
-        hostName = "Aggron";
+        hostName = "Aria";
         config = ./systems/desktop;
         system = "x86_64-linux";
         stateVersion = "24.11";
