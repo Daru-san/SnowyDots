@@ -34,7 +34,7 @@
     vigiland.url = "github:jappie3/vigiland";
 
     # Wayland shell
-    ags.url = "github:Daru-san/ags/feature/sway";
+    ags.url = "github:Aylur/ags";
 
     # Featureful wayland launcher
     anyrun.url = "github:anyrun-org/anyrun";
