@@ -21,6 +21,7 @@
     };
     extraFonts = with pkgs; [
       monocraft
+      comic-relief
       noto-fonts
     ];
   };
