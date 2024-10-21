@@ -385,6 +385,7 @@
         "svg.context-properties.content.enabled" = true;
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
 
+        "general.smoothScroll" = true;
         "general.smoothScroll.lines.durationMaxMS" = 125;
         "general.smoothScroll.lines.durationMinMS" = 125;
         "general.smoothScroll.mouseWheel.durationMaxMS" = 200;
@@ -412,6 +413,24 @@
 
         "cookiebanners.service.mode" = 2;
         "cookiebanners.service.mode.privateBrowsing" = 2;
+
+        "nglayout.initialpaint.delay" = 0;
+        "nglayout.initialpaint.delay_in_oopif" = 0;
+        "content.notify.interval" = 100000;
+        "browser.startup.preXulSkeletonUI" = false;
+
+        "gfx.webrender.precache-shaders" = true;
+        "layers.gpu-process.enabled" = true;
+        "gfx.canvas.accelerated" = true;
+        "gfx.canvas.accelerated.cache-items" = 32768;
+        "gfx.canvas.accelerated.cache-size" = 4096;
+        "dom.ipc.processCount" = 1;
+        "fission.autostart" = false;
+        "browser.cache.disk.capacity" = 0;
+        "browser.cache.disk.enable" = false;
+        "layers.mlgpu.enabled" = true;
+        "media.ffmpeg.vaapi.enabled" = true;
+        "dom.ipc.processCount.webIsolated" = 1;
       };
     };
     policies = {
