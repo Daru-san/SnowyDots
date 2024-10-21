@@ -9,7 +9,6 @@
   programs.floorp = {
     enable = true;
     nativeMessagingHosts = with pkgs; [
-      ff2mpv
       tridactyl-native
     ];
 
@@ -21,11 +20,10 @@
         multi-account-containers
         auto-tab-discard
         buster-captcha-solver
-        violentmonkey
         github-file-icons
         widegithub
-        ff2mpv
         hover-zoom-plus
+        reddit-enhancement-suite
       ];
 
       bookmarks = [
