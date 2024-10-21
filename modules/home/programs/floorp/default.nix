@@ -458,7 +458,6 @@
         EmailTracking = true;
       };
       HardwareAcceleration = true;
-      NoDefaultBookmarks = true;
       OverrideFirstRunPage = "";
       PopupBlocking = {
         Default = true;
