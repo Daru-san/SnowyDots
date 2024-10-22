@@ -10,6 +10,7 @@
     extraFlags = [ "--no-default-folder" ];
     relay.enable = true;
     systemService = false;
+    guiAddress = "0.0.0.0:8385";
     settings = {
       gui.theme = "black";
     };
