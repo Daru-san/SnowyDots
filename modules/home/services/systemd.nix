@@ -23,5 +23,19 @@
         WantedBy = [ "graphical-session.target" ];
       };
     };
+    syncthingtray = {
+      Unit = {
+        Requires = [ "tray.target" ];
+        After = [
+          "graphical-session-pre.target"
+          "tray.target"
+        ];
+        PartOf = [ "graphical-session.target" ];
+      };
+      Service.ExecStart = "${pkgs.syncthingtray}/bin/syncthingtray --wait";
+      Install = {
+        WantedBy = [ "graphical-session.target" ];
+      };
+    };
   };
 }

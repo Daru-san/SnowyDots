@@ -17,7 +17,7 @@
       ];
     };
     syncthing = {
-      enable = true;
+      enable = false;
       tray = {
         enable = true;
         package = pkgs.syncthingtray;

@@ -7,6 +7,8 @@
     overrideDevices = false;
     overrideFolders = false;
     openDefaultPorts = true;
+    relay.enable = true;
+    systemService = false;
     settings = {
       gui.theme = "black";
     };
