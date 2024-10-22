@@ -3,10 +3,11 @@
     enable = true;
     dataDir = "/home/daru";
     user = "daru";
-    configDir = "/home/daru/.sync";
+    configDir = "/home/daru/.local/state/syncthing";
     overrideDevices = false;
     overrideFolders = false;
     openDefaultPorts = true;
+    extraFlags = [ "--no-default-folder" ];
     relay.enable = true;
     systemService = false;
     settings = {

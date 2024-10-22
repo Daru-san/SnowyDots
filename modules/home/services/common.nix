@@ -19,8 +19,6 @@
     syncthing = {
       enable = true;
       extraOptions = [
-        "--data /home/daru"
-        "--config /home/daru/.sync"
         "--no-default-folder"
       ];
       tray = {
