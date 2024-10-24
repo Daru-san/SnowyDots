@@ -11,6 +11,7 @@
     (with pkgs; [
       # GUI
       scrcpy
+      whatsie
       keepassxc
 
       # Science
