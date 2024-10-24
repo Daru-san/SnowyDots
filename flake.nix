@@ -61,7 +61,7 @@
     # hyprland
     hyprland.url = "github:hyprwm/Hyprland/v0.44.1";
     hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
+      url = "github:hyprwm/hyprland-plugins/d05eb1ffba2ebffb5b4e1b407f134a4dcb411a88";
       inputs.hyprland.follows = "hyprland";
     };
     hyprscroller = {
