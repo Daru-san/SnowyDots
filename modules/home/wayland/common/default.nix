@@ -15,11 +15,11 @@ in
     ./hypridle
     ./hyprlock
     ./swayosd
-    ./ags
     ./kitty
     ./wlogout
     ./wlsunset
     ./anyrun
+    ./snowy-shell
   ];
   config = mkIf cfg.enable {
     services = {
@@ -30,9 +30,9 @@ in
     };
     programs = {
       anyrun.enable = true;
-      ags.enable = true;
       wlogout.enable = true;
       hyprlock.enable = true;
+      snowy-shell.enable = true;
     };
     home.packages = [ pkgs.wl-clipboard-rs ];
   };
