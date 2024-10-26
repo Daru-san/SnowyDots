@@ -1361,11 +1361,11 @@
         "nixpkgs": "nixpkgs_12"
       },
       "locked": {
-        "lastModified": 1729977449,
-        "narHash": "sha256-LyL5i3mxNVdN5exN8RS9MyesQbBNCPcRxfdqxMD0wb4=",
+        "lastModified": 1729977943,
+        "narHash": "sha256-2hJl6L2oF0ZU1jMgA0deuhbkSL117GSlM6R9cV/Px3A=",
         "owner": "Daru-san",
         "repo": "SnowyShell",
-        "rev": "3f093b2eb739e1e04d951934f698f620bdc17314",
+        "rev": "25a310c4f1bfbc6014f246c1db0d69f8b6ed2528",
         "type": "github"
       },
       "original": {
