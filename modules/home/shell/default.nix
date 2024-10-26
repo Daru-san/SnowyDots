@@ -1,10 +1,7 @@
-# #Global shell configuration##
 {
   config,
   pkgs,
-  system,
   lib,
-  inputs,
   ...
 }:
 {
@@ -33,7 +30,7 @@
       firefox = "${lib.getExe config.programs.firefox.package}";
       lazygit = "${config.programs.lazygit.package}/bin/lazygit";
       tty-clock = "${pkgs.tty-clock}/bin/tty-clock";
-      trashy = "${inputs.trashy.packages.${system}.trashy}/bin/trashy";
+      trashy = "${pkgs.trashy}/bin/trashy";
       fzf = "${config.programs.fzf.package}/bin/fzf";
     in
     {
