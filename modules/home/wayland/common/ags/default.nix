@@ -1,16 +1,24 @@
 {
   inputs,
   pkgs,
+  system,
   ...
 }:
 {
   imports = [ inputs.ags.homeManagerModules.default ];
-  home.packages = with pkgs; [ bun ];
   programs.ags = {
-    extraPackages = with pkgs; [
-      sassc
-      bun
-    ];
+    extraPackages =
+      (with pkgs; [
+        dart-sass
+      ])
+      ++ (with inputs.ags.packages.${system}; [
+        hyprland
+        network
+        tray
+        wireplumber
+        mpris
+        bluetooth
+      ]);
     configDir = ./config;
     systemd.enable = true;
   };

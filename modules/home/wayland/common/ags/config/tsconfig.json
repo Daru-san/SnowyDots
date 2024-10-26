@@ -1,14 +1,21 @@
 {
-  "compilerOptions": {
-    "allowJs": true,
-    "checkJs": true,
-    "strict": true,
-    "noImplicitAny": false,
-    "baseUrl": ".",
-    "typeRoots": [
-      "./types",
-      "./node_modules/@girs"
-    ],
-    "skipLibCheck": true
-  }
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "strict": true,
+        "target": "ES2023",
+        "moduleResolution": "Bundler",
+        // "checkJs": true,
+        // "allowJs": true,
+        "jsx": "react-jsx",
+        "jsxImportSource": "/nix/store/p65jkhnxaxb5cy8kwwzdl6br1pc442j0-astal-gjs/share/astal/gjs/gtk3",
+        "paths": {
+            "astal": [
+                "/nix/store/p65jkhnxaxb5cy8kwwzdl6br1pc442j0-astal-gjs/share/astal/gjs"
+            ],
+            "astal/*": [
+                "/nix/store/p65jkhnxaxb5cy8kwwzdl6br1pc442j0-astal-gjs/share/astal/gjs/*"
+            ]
+        },
+    }
 }
