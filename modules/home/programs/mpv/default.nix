@@ -16,7 +16,7 @@
       fs = true;
       ytdl-raw-options = "ignore-config=,sub-lang=en,write-auto-sub=";
       deband = false;
-
+      sub-font-size = 37;
       osd-font = "NotoMono Nerd Font";
     };
     scriptOpts = {
