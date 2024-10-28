@@ -10,6 +10,7 @@
     enable = true;
     nativeMessagingHosts = with pkgs; [
       tridactyl-native
+      ff2mpv-rust
     ];
 
     profiles.${config.home.username} = {
@@ -18,6 +19,7 @@
       extensions = with inputs.firefox-addons.packages.${system}; [
         keepassxc-browser
         multi-account-containers
+        ff2mpv
         auto-tab-discard
         buster-captcha-solver
         github-file-icons
