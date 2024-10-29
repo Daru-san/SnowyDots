@@ -57,7 +57,7 @@ in
       rf = "rm -rf";
       tp = "trashy put";
       tls = "trashy list | bat";
-      trs = "trashy-restore";
+      tres = "trashy-restore";
       tra = "trashy restore --all";
       te = "trashy-empty";
       tea = "trashy empty --all";
