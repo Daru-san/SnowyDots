@@ -232,11 +232,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1730088193,
-        "narHash": "sha256-bal4Z9FuMyOeDf9QKjq0BY/ftxas95yksZZjqz3erZo=",
+        "lastModified": 1730174598,
+        "narHash": "sha256-uJz8IpoUHOZTT6cmXMcJkS4qNya9Zaghq+01rgO/HE0=",
         "ref": "refs/heads/master",
-        "rev": "2e14b0705c0c510258864a9832832b89ca6628e9",
-        "revCount": 3881,
+        "rev": "adf8bc9d6e4799af716b8d3ecdaf661fbd51a3ce",
+        "revCount": 3882,
         "type": "git",
         "url": "https://gitlab.com/rycee/nur-expressions?dir=pkgs/firefox-addons"
       },
@@ -1412,11 +1412,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1730065931,
-        "narHash": "sha256-Wm9VowOYMJ1jTcqHOS/pSpXWhjAEhuQQRKoRvlnXH3g=",
+        "lastModified": 1730175291,
+        "narHash": "sha256-b4fmFqnJDYi0gyd/IqADmoDZiCwkvtDWxs9fU2XZhzA=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "46c3b66db958fc002108eb2a80d735f2dd0fa6c3",
+        "rev": "d6f3ac4301da26d856c9a7a9d741679e887824de",
         "type": "sourcehut"
       },
       "original": {
@@ -1604,11 +1604,11 @@
         "treefmt-nix": "treefmt-nix_3"
       },
       "locked": {
-        "lastModified": 1729527228,
-        "narHash": "sha256-79U7hNsvlIgF4yz1eyruqExjU5MtoquaD9oLgUXhK+E=",
+        "lastModified": 1730146750,
+        "narHash": "sha256-n7MRqhJJHkN2k32jq/+zau07rKaF5Xvn0mbEd+7SfMg=",
         "owner": "Daru-san",
         "repo": "timed-rs",
-        "rev": "b93c7e3566877f5f5bdcce3d088087ae3da84f4f",
+        "rev": "062aad930779bec0918cb7562a937a88f838937d",
         "type": "github"
       },
       "original": {
