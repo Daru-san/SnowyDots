@@ -22,5 +22,6 @@ in
     "open-with-cmd" = getPlugin "open-with-cmd.yazi";
     "mediainfo" = getPlugin "mediainfo.yazi";
     "hexyl" = getPlugin "hexyl.yazi";
+    "git" = getPlugin (getPlugin "plugins") + "/git.yazi";
   };
 }
