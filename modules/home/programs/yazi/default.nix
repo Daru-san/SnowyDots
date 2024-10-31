@@ -56,6 +56,18 @@
             run = "hexyl";
           }
         ];
+        prepend_fetchers = [
+          {
+            id = "git";
+            name = "*";
+            run = "git";
+          }
+          {
+            id = "git";
+            name = "*/";
+            run = "git";
+          }
+        ];
         prepend_previewers = [
           {
             name = "*.ts";
