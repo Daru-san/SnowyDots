@@ -232,11 +232,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1730260988,
-        "narHash": "sha256-efUTsfGAjbnZF/vvl1qWrU6eOAWa4ont+VZCvvWe6VY=",
+        "lastModified": 1730347395,
+        "narHash": "sha256-2i5/K7Vx8mN7o64ovH63EazDK5Puz7P8/rNQUjXYJ7A=",
         "ref": "refs/heads/master",
-        "rev": "00d101ac6899c9200698687e05ad4c5cbfa81868",
-        "revCount": 3883,
+        "rev": "5827bca9e6dc0dffad05ada5a82514186eb0ccd4",
+        "revCount": 3884,
         "type": "git",
         "url": "https://gitlab.com/rycee/nur-expressions?dir=pkgs/firefox-addons"
       },
@@ -702,11 +702,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1730253705,
-        "narHash": "sha256-TCWrBwlSkirN7HhVr8cGjvsn9OZ7Unig6yNK93QdR2c=",
+        "lastModified": 1730341822,
+        "narHash": "sha256-NBVTLpDvKYrFboF3KRR7qN6d6s7jaIwWnOmlHq8Y2zA=",
         "owner": "dawsers",
         "repo": "hyprscroller",
-        "rev": "ed725c5fd9c483372db44fb3414501e15cf5eab8",
+        "rev": "12df89a29289d47481da96e372e5cfd8dfd42726",
         "type": "github"
       },
       "original": {
@@ -1180,11 +1180,11 @@
     },
     "nixpkgs_9": {
       "locked": {
-        "lastModified": 1729880355,
-        "narHash": "sha256-RP+OQ6koQQLX5nw0NmcDrzvGL8HDLnyXt/jHhL1jwjM=",
+        "lastModified": 1730200266,
+        "narHash": "sha256-l253w0XMT8nWHGXuXqyiIC/bMvh1VRszGXgdpQlfhvU=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "18536bf04cd71abd345f9579158841376fdd0c5a",
+        "rev": "807e9154dcb16384b1b765ebe9cd2bba2ac287fd",
         "type": "github"
       },
       "original": {
@@ -1412,11 +1412,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1730308070,
-        "narHash": "sha256-k9zGwseUTyYDkhhGjDLnCY/DTjzcAur5aAlJtF87ZCs=",
+        "lastModified": 1730391383,
+        "narHash": "sha256-kRIYDTeMeX8KDoCk6LzRxPs0udW/RRpEBfuHLLB1lYc=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "7599bf838d1be9576c90453f4b4eaed119ffd721",
+        "rev": "11675b59172444759b9ab3e0d52adbfbdb79f2d9",
         "type": "sourcehut"
       },
       "original": {
@@ -1431,11 +1431,11 @@
         "nixpkgs": "nixpkgs_14"
       },
       "locked": {
-        "lastModified": 1730261837,
-        "narHash": "sha256-syeN2dLFxJ9bhsG1YnwWpwMgCttBY1S60KUrqLIrmMo=",
+        "lastModified": 1730348281,
+        "narHash": "sha256-c5lP7JFqWlrEScvPXKxg7Z2+f5wdlznYZPjEa5jmEkw=",
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
-        "rev": "1c482c8baffd494119b7f61735d35c62a0a22244",
+        "rev": "22d250d6a4dcc492a2d8836d3f2c901a09e7cb76",
         "type": "github"
       },
       "original": {
