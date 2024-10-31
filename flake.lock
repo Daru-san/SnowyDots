@@ -1413,11 +1413,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1730391383,
-        "narHash": "sha256-kRIYDTeMeX8KDoCk6LzRxPs0udW/RRpEBfuHLLB1lYc=",
+        "lastModified": 1730409305,
+        "narHash": "sha256-rpvbXY8CHfcvqM6NnlleEXHITHd8EBld0Nyo+MES3lQ=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "11675b59172444759b9ab3e0d52adbfbdb79f2d9",
+        "rev": "6d0fb1f52de1437b36be173e156c38a1ba72e11a",
         "type": "sourcehut"
       },
       "original": {
