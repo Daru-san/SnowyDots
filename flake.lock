@@ -702,16 +702,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1730341822,
-        "narHash": "sha256-NBVTLpDvKYrFboF3KRR7qN6d6s7jaIwWnOmlHq8Y2zA=",
+        "lastModified": 1730253705,
+        "narHash": "sha256-TCWrBwlSkirN7HhVr8cGjvsn9OZ7Unig6yNK93QdR2c=",
         "owner": "dawsers",
         "repo": "hyprscroller",
-        "rev": "12df89a29289d47481da96e372e5cfd8dfd42726",
+        "rev": "ed725c5fd9c483372db44fb3414501e15cf5eab8",
         "type": "github"
       },
       "original": {
         "owner": "dawsers",
         "repo": "hyprscroller",
+        "rev": "ed725c5fd9c483372db44fb3414501e15cf5eab8",
         "type": "github"
       }
     },
