@@ -20,9 +20,9 @@
         "repo": "glow.yazi"
       },
       "branch": "main",
-      "revision": "f52b3822c98dfa84998cc3140803a0704faa515d",
-      "url": "https://github.com/Reledia/glow.yazi/archive/f52b3822c98dfa84998cc3140803a0704faa515d.tar.gz",
-      "hash": "1dwm64kkcafvh11yd367sh1j9hpi10qmd5fxfq65izah76m8b9kf"
+      "revision": "388e847dca6497cf5903f26ca3b87485b2de4680",
+      "url": "https://github.com/Reledia/glow.yazi/archive/388e847dca6497cf5903f26ca3b87485b2de4680.tar.gz",
+      "hash": "1igmq0rp84p4nf10awz6g65pj400qsyqyygq6gna2wvivsapk8kw"
     },
     "hexyl.yazi": {
       "type": "Git",
@@ -68,9 +68,9 @@
         "repo": "ouch.yazi"
       },
       "branch": "main",
-      "revision": "251da6930ca8b7ee0384810086c3bf644caede3e",
-      "url": "https://github.com/ndtoan96/ouch.yazi/archive/251da6930ca8b7ee0384810086c3bf644caede3e.tar.gz",
-      "hash": "0h5j8aimhvzwk0j65pc3dhj0ampdmk832nwf0jfq6l51irlpvfy8"
+      "revision": "d13f7c08cdebcfaadf38c3eb9999639ddd89201c",
+      "url": "https://github.com/ndtoan96/ouch.yazi/archive/d13f7c08cdebcfaadf38c3eb9999639ddd89201c.tar.gz",
+      "hash": "0ra0v89kb3iphfpydml5cmmqm9kc80wbb3nn2jhggs9i1fij0b92"
     },
     "plugins": {
       "type": "Git",
@@ -80,9 +80,9 @@
         "repo": "plugins"
       },
       "branch": "main",
-      "revision": "4f1d0ae0862f464e08f208f1807fcafcd8778e16",
-      "url": "https://github.com/yazi-rs/plugins/archive/4f1d0ae0862f464e08f208f1807fcafcd8778e16.tar.gz",
-      "hash": "1yr1p14xyfx4bj4dz7as1g2f8h1dwv0x1izvnbffr85zgbmc7ppr"
+      "revision": "ad52adf917d6dd679dbc2dcefa3a9384654bd1c7",
+      "url": "https://github.com/yazi-rs/plugins/archive/ad52adf917d6dd679dbc2dcefa3a9384654bd1c7.tar.gz",
+      "hash": "1rb2wgmmazd9i56ij38v53q6chqm3l2nyy1dm885ks9y2gqqgr2h"
     },
     "starship.yazi": {
       "type": "Git",
