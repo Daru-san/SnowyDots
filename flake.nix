@@ -57,7 +57,7 @@
       inputs.hyprland.follows = "hyprland";
     };
     hyprscroller = {
-      url = "github:dawsers/hyprscroller";
+      url = "github:dawsers/hyprscroller/ed725c5fd9c483372db44fb3414501e15cf5eab8";
       inputs.hyprland.follows = "hyprland";
     };
   };
