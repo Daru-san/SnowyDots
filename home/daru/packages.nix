@@ -85,6 +85,7 @@
       dconf-editor
       hexyl
       xdg-user-dirs
+      rustc
     ])
     (with inputs; [
       r-pg.packages.${system}.default
