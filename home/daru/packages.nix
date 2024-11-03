@@ -34,10 +34,10 @@
       pulsemixer
 
       # Developmentment
-      android-studio
       bridge-editor
       hut
-      maven
+      rustc
+      clang
 
       # Desktop
       swww
@@ -85,7 +85,6 @@
       dconf-editor
       hexyl
       xdg-user-dirs
-      rustc
     ])
     (with inputs; [
       r-pg.packages.${system}.default
