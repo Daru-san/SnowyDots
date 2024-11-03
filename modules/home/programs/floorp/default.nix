@@ -42,12 +42,6 @@
           url = "https://kernel.org";
         }
         {
-          name = "Syncthing";
-          tags = [ "sync" ];
-          keyword = "sync";
-          url = "http://127.0.0.1:8384";
-        }
-        {
           name = "Youtube Studio";
           tags = [ "youtube" ];
           keyword = "studio";
@@ -70,12 +64,6 @@
           tags = [ "mail" ];
           keyword = "proton";
           url = "https://mail.proton.me";
-        }
-        {
-          name = "Hyprland Wiki";
-          tags = [ "wayland" ];
-          keyword = "hypr";
-          url = "https://wiki.hyprland.org";
         }
         {
           name = "Khan Academy";
