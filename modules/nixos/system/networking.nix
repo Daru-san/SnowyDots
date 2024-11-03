@@ -28,6 +28,18 @@
   networking.firewall = {
     enable = true;
   };
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    settings = {
+      General = {
+        ControllerMode = "bredr";
+      };
+    };
+    input = {
+      General = {
+        UserspaceHID = true;
+      };
+    };
+  };
   services.blueman.enable = true;
 }
