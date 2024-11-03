@@ -232,11 +232,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1730520198,
-        "narHash": "sha256-0G4QIsCmQyfwdWUws7UDZQYcCn5l9m42AE9c3Ak0+DY=",
+        "lastModified": 1730606623,
+        "narHash": "sha256-4Gd+Qh978An+18YnBUhVFyXnV3WgecHuJ/tlQD4tFrk=",
         "ref": "refs/heads/master",
-        "rev": "ca0f5e3fd8a37605a6960fee549f6b79d3f83c28",
-        "revCount": 3889,
+        "rev": "1694c25871e65ff9b203a0d81135df448b4fa3ab",
+        "revCount": 3890,
         "type": "git",
         "url": "https://gitlab.com/rycee/nur-expressions?dir=pkgs/firefox-addons"
       },
@@ -867,11 +867,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1729999765,
-        "narHash": "sha256-LYsavZXitFjjyETZoij8usXjTa7fa9AIF3Sk3MJSX+Y=",
+        "lastModified": 1730604744,
+        "narHash": "sha256-/MK6QU4iOozJ4oHTfZipGtOgaT/uy/Jm4foCqHQeYR4=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "0e3a8778c2ee218eff8de6aacf3d2fa6c33b2d4f",
+        "rev": "cc2ddbf2df8ef7cc933543b1b42b845ee4772318",
         "type": "github"
       },
       "original": {
@@ -1413,11 +1413,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1730567317,
-        "narHash": "sha256-WT23DPGy5f6YkKYWv4c4I+PU8uT/k6IH7nm6czObioY=",
+        "lastModified": 1730574788,
+        "narHash": "sha256-1Pe8KtFrhjqvUWH/MdJ5Lfv+VAd2wy2ZFWrbfV8hj3U=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "310ec603cddb7a3a5bfc9f6825216f928a11dd55",
+        "rev": "4d725d480981b0234f9cf7d01bb11f7c093fc170",
         "type": "sourcehut"
       },
       "original": {
@@ -1432,11 +1432,11 @@
         "nixpkgs": "nixpkgs_14"
       },
       "locked": {
-        "lastModified": 1730521028,
-        "narHash": "sha256-vZtg4J+jOADDKgS+s821PeJiTXfawan8mzX3JM3xjqc=",
+        "lastModified": 1730607408,
+        "narHash": "sha256-ae8GwT8uvakniK7izEPYypuBA0RHBmehVziIit3BxH0=",
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
-        "rev": "191323d81e19efa0be5071e17263851e62f35685",
+        "rev": "c29215e233ddd504d670d432095fbba7e541b880",
         "type": "github"
       },
       "original": {
