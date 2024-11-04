@@ -15,7 +15,7 @@ in
       settings.env = lib.mapAttrsToList (
         name: value: "${name},${builtins.toString value}"
       ) config.home.sessionVariables;
-      enable = true;
+      enable = false;
       package = inputs.hyprland.packages.${system}.default;
       systemd = {
         enable = true;
