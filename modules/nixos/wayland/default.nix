@@ -11,16 +11,16 @@ let
 in
 {
   options.wayland.enable = mkEnableOption "Enable wayland";
-  imports = [
-    # ./polkit
-    inputs.niri.nixosModules.default
-  ];
+  imports = [ inputs.niri.nixosModules.niri ];
   config = mkIf cfg.enable {
     niri-flake = {
       cache.enable = true;
     };
     programs = {
-      niri.enable = true;
+      niri = {
+        enable = true;
+        package = pkgs.niri;
+      };
       hyprland.enable = false;
       dconf.enable = true;
       seahorse.enable = true;

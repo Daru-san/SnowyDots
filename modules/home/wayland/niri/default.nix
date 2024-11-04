@@ -1,17 +1,18 @@
 {
   inputs,
-  lib,
-  config,
+  pkgs,
+  ...
 }:
 {
   imports = [
-    inputs.niri.homeModules.default
+    inputs.niri.homeModules.niri
   ];
   programs.niri = {
     enable = true;
-
-    settings.environment = lib.mapAttrsToList (
-      name: value: "${name},${builtins.toString value}"
-    ) config.home.sessionVariables;
+    package = pkgs.niri;
+    settings.environment = {
+      QT_QPA_PLATFORM = "wayland";
+      NIXOS_OZONE_WL = "true";
+    };
   };
 }
