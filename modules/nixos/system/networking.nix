@@ -32,12 +32,8 @@
     enable = true;
     settings = {
       General = {
-        ControllerMode = "bredr";
-      };
-    };
-    input = {
-      General = {
-        UserspaceHID = true;
+        ControllerMode = "dual";
+        FastConnectable = true;
       };
     };
   };
