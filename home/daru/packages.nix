@@ -80,7 +80,7 @@
       unrar
       onefetch
       trashy
-      stable.turtle
+      turtle
       rqbit
       dconf-editor
       hexyl

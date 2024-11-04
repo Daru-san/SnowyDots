@@ -18,7 +18,7 @@
       };
     };
     turtle-service = {
-      Service.ExecStart = "${pkgs.stable.turtle}/bin/turtle_service";
+      Service.ExecStart = "${pkgs.turtle}/bin/turtle_service";
       Install = {
         WantedBy = [ "graphical-session.target" ];
       };
