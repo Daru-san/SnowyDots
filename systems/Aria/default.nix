@@ -2,7 +2,6 @@
   lib,
   config,
   inputs,
-  pkgs,
   outputs,
   ...
 }:
@@ -12,6 +11,7 @@
     overlays = [
       inputs.snowpkgs.overlays.default
       outputs.overlays.stable-packages
+      outputs.overlays.small-packages
     ];
     config.allowUnfree = true;
   };
