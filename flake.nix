@@ -50,6 +50,9 @@
       flake = false;
     };
 
+    # niri
+    niri.url = "github:sodiboo/niri-flake";
+
     # hyprland
     hyprland.url = "github:hyprwm/Hyprland/v0.44.1";
     hyprland-plugins = {

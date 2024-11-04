@@ -2,6 +2,7 @@
   lib,
   pkgs,
   config,
+  inputs,
   ...
 }:
 let
@@ -10,15 +11,17 @@ let
 in
 {
   options.wayland.enable = mkEnableOption "Enable wayland";
-  imports = [ ./polkit ];
+  imports = [
+    # ./polkit
+    inputs.niri.nixosModules.default
+  ];
   config = mkIf cfg.enable {
-    programs.sway = {
-      enable = false;
-      extraPackages = [ ];
-      package = pkgs.swayfx;
+    niri-flake = {
+      cache.enable = true;
     };
     programs = {
-      hyprland.enable = true;
+      niri.enable = true;
+      hyprland.enable = false;
       dconf.enable = true;
       seahorse.enable = true;
       file-roller.enable = true;
@@ -34,7 +37,7 @@ in
                 t = true;
                 window-padding = 1;
                 g = "Access is restricted to authorized personnel only.";
-                c = "Hyprland";
+                c = "niri";
                 r = true;
               };
             in
