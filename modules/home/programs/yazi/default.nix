@@ -1,7 +1,9 @@
+{ pkgs, ... }:
 {
   imports = [ ./plugins.nix ];
   programs.yazi = {
     enable = true;
+    package = pkgs.small.yazi;
     enableNushellIntegration = true;
     enableFishIntegration = true;
     initLua = ./init.lua;
