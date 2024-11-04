@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   networking = {
     nameservers = [
@@ -20,11 +19,6 @@
       };
     };
   };
-  environment.systemPackages = with pkgs; [
-    networkmanagerapplet
-    iw
-    wirelesstools
-  ];
   networking.firewall = {
     enable = true;
   };
