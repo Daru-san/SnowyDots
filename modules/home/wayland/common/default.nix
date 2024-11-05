@@ -11,7 +11,6 @@ in
 {
   options.wayland.enable = mkEnableOption "Enable wayland using Hyprland";
   imports = [
-    ./kanshi
     ./hypridle
     ./hyprlock
     ./kitty
@@ -23,7 +22,6 @@ in
   ];
   config = mkIf cfg.enable {
     services = {
-      kanshi.enable = false;
       hypridle.enable = true;
       wlsunset.enable = true;
       avizo.enable = true;
