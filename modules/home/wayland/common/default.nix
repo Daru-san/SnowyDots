@@ -14,19 +14,19 @@ in
     ./kanshi
     ./hypridle
     ./hyprlock
-    ./swayosd
     ./kitty
     ./wlogout
     ./wlsunset
     ./anyrun
     ./snowy-shell
+    ./avizo
   ];
   config = mkIf cfg.enable {
     services = {
       kanshi.enable = false;
       hypridle.enable = true;
-      swayosd.enable = true;
       wlsunset.enable = true;
+      avizo.enable = true;
     };
     programs = {
       anyrun.enable = true;

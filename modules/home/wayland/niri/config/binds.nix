@@ -178,34 +178,33 @@
         )
         (
           let
-            swayosd = getExe' config.services.swayosd.package "swayosd-client";
-            mute = "--output-volume mute-toggle";
-            raise-volume = "--output-volume raise";
-            lower-volume = "--output-volume lower";
-            raise-brightness = "--brightness raise";
-            lower-brightness = "--brightness lower";
+            volumectl = getExe' config.services.avizo.package "volumectl";
+            lightctl = getExe' config.services.avizo.package "lightctl";
           in
           {
-            "XF86MonBrightnessUp".action = sh [
-              swayosd
-              raise-brightness
-            ];
-            "XF86MonBrightnessDown".action = sh [
-              swayosd
-              lower-brightness
+            "XF86MonBrightnessUp".action.spawn = [
+              lightctl
+              "up"
             ];
 
-            "XF86AudioRaiseVolume".action = sh [
-              swayosd
-              raise-volume
+            "XF86MonBrightnessDown".action.spawn = [
+              lightctl
+              "down"
             ];
-            "XF86AudioLowerVolume".action = sh [
-              swayosd
-              lower-volume
+
+            "XF86AudioRaiseVolume".action.spawn = [
+              volumectl
+              "up"
             ];
-            "XF86AudioMute".action = sh [
-              swayosd
-              mute
+
+            "XF86AudioLowerVolume".action.spawn = [
+              volumectl
+              "down"
+            ];
+
+            "XF86AudioMute".action.spawn = [
+              volumectl
+              "toggle-mute"
             ];
           }
         )
