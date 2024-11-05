@@ -14,6 +14,7 @@
     settings.environment = {
       QT_QPA_PLATFORM = "wayland";
       NIXOS_OZONE_WL = "true";
+      DISPLAY = ":0";
     };
   };
 }
