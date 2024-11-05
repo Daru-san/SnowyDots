@@ -22,6 +22,7 @@ in
         package = pkgs.niri;
       };
       hyprland.enable = false;
+      hyprlock.enable = true;
       dconf.enable = true;
       seahorse.enable = true;
       file-roller.enable = true;
