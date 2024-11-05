@@ -10,7 +10,7 @@
       };
       mouse = {
         accel-profile = "adaptive";
-        natural-scroll = true;
+        natural-scroll = false;
       };
     };
   };
