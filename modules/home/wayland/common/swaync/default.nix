@@ -7,7 +7,7 @@
       control-center-layer = "overlay";
       layer-shell = true;
       cssPriority = "application";
-      control-center-positionX = "center";
+      control-center-positionX = "right";
       control-center-positionY = "top";
       control-center-margin-top = 0;
       control-center-margin-bottom = 0;
