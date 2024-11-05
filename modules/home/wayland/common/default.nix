@@ -19,12 +19,14 @@ in
     ./anyrun
     ./snowy-shell
     ./avizo
+    ./swaync
   ];
   config = mkIf cfg.enable {
     services = {
       hypridle.enable = true;
       wlsunset.enable = true;
       avizo.enable = true;
+      swaync.enable = true;
     };
     programs = {
       anyrun.enable = true;

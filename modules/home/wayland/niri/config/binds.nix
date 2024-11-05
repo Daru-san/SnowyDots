@@ -136,6 +136,7 @@
             copyq = getExe pkgs.copyq;
             valent = getExe pkgs.valent;
             easyeffects = getExe config.services.easyeffects.package;
+            swaync = getExe' config.programs.swaync.package "swaync-client";
             syncthingtray = getExe (
               pkgs.syncthingtray.overrideAttrs {
                 meta.mainProgram = "syncthingtray";
@@ -159,11 +160,23 @@
               syncthingtray
               "-w"
             ];
-            "Mod+Shift+n".action.spawn = [
+
+            "Mod+Shift+period".action.spawn = [
               terminal
               "--detach"
               btop
             ];
+
+            "Mod+Shift+n".action.spawn = [
+              swaync
+              "-t"
+            ];
+
+            "Mod+Alt+n".action.spawn = [
+              swaync
+              "--close-all"
+            ];
+
             "Mod+z".action.spawn = [
               terminal
               "--detach"
