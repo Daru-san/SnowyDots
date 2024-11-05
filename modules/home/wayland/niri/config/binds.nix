@@ -136,7 +136,7 @@
             copyq = getExe pkgs.copyq;
             valent = getExe pkgs.valent;
             easyeffects = getExe config.services.easyeffects.package;
-            swaync = getExe' config.programs.swaync.package "swaync-client";
+            swaync = getExe' config.services.swaync.package "swaync-client";
             syncthingtray = getExe (
               pkgs.syncthingtray.overrideAttrs {
                 meta.mainProgram = "syncthingtray";
