@@ -6,8 +6,6 @@
 }:
 {
   programs.kitty = {
-    enable = true;
-
     #Kitty theme
     themeFile = "wizzy-muted";
 

@@ -30,6 +30,7 @@ in
     };
     programs = {
       anyrun.enable = true;
+      kitty.enable = true;
       wlogout.enable = true;
       hyprlock.enable = true;
       snowy-shell.enable = true;
