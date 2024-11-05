@@ -38,7 +38,7 @@ in
                 t = true;
                 window-padding = 1;
                 g = "Access is restricted to authorized personnel only.";
-                c = "niri";
+                c = "niri-session";
                 r = true;
               };
             in
