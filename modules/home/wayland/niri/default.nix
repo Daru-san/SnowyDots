@@ -6,6 +6,7 @@
 {
   imports = [
     inputs.niri.homeModules.niri
+    ./config
   ];
   programs.niri = {
     enable = true;
