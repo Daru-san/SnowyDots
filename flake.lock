@@ -118,11 +118,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1729936243,
-        "narHash": "sha256-yz6PLzP9uOE0zleP4nZwWs1FMGXxaXQVcVjIdh+JLZ0=",
+        "lastModified": 1730728844,
+        "narHash": "sha256-NZ/qowjz+KaiZLSW1Td6ERv8b/ZebvWT9RpVq9UTqCk=",
         "owner": "aylur",
         "repo": "astal",
-        "rev": "4a5308c82e0134f87b7e1ccc56e4fa2778b69fdd",
+        "rev": "8c6d2185a68e9f09d6780284d1b61fcfaefa655b",
         "type": "github"
       },
       "original": {
@@ -825,11 +825,11 @@
         "xwayland-satellite-unstable": "xwayland-satellite-unstable"
       },
       "locked": {
-        "lastModified": 1730759245,
-        "narHash": "sha256-EiQCrXz9/nmOhMeC7JWoBq7QEvnaSmXP3Lsyj1DHUpU=",
+        "lastModified": 1730792732,
+        "narHash": "sha256-xUxA+PeM6U1c3Ba2Y4mDmx0595Sqo3wSjB9x72EfuSs=",
         "owner": "sodiboo",
         "repo": "niri-flake",
-        "rev": "abf7d298df59cc594580f26203d4767f682dcddc",
+        "rev": "9a0a08c1e0257a7964bdea641528309ec40dda0d",
         "type": "github"
       },
       "original": {
@@ -858,11 +858,11 @@
     "niri-unstable": {
       "flake": false,
       "locked": {
-        "lastModified": 1730664018,
-        "narHash": "sha256-FBKtV07NQzb1l0UuxmKtW9wYTFWV9txjhrPMrZByTZ4=",
+        "lastModified": 1730790231,
+        "narHash": "sha256-haPQhTyFzHB8CNUbl4rGzObdh0898GgwM82LfCNi5Qs=",
         "owner": "YaLTeR",
         "repo": "niri",
-        "rev": "4c2f49d566579ee9a7f7528bde03c24ebaefd6fe",
+        "rev": "cd90dfc7be11147936c2b637ae822ff0adf5a7b7",
         "type": "github"
       },
       "original": {
@@ -1018,11 +1018,11 @@
     },
     "nixpkgs-small": {
       "locked": {
-        "lastModified": 1730729172,
-        "narHash": "sha256-RE6Fgw2FbVzWzRf5FD6LSIqSHTXq/hEm+GIqy7zcoe8=",
+        "lastModified": 1730772157,
+        "narHash": "sha256-VwttshWK0woZyNMVJI1nMEvyvayZzbfR6DH6HbBEkyw=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "eb36bf249929bfd7a94c5f9ee0f1972ded7b6931",
+        "rev": "1f9a6f48855c42698aed1b0e3b59767f97f779b0",
         "type": "github"
       },
       "original": {
@@ -1034,11 +1034,11 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1730602179,
-        "narHash": "sha256-efgLzQAWSzJuCLiCaQUCDu4NudNlHdg2NzGLX5GYaEY=",
+        "lastModified": 1730741070,
+        "narHash": "sha256-edm8WG19kWozJ/GqyYx2VjW99EdhjKwbY3ZwdlPAAlo=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "3c2f1c4ca372622cb2f9de8016c9a0b1cbd0f37c",
+        "rev": "d063c1dd113c91ab27959ba540c0d9753409edf3",
         "type": "github"
       },
       "original": {
@@ -1050,11 +1050,11 @@
     },
     "nixpkgs-stable_2": {
       "locked": {
-        "lastModified": 1730602179,
-        "narHash": "sha256-efgLzQAWSzJuCLiCaQUCDu4NudNlHdg2NzGLX5GYaEY=",
+        "lastModified": 1730741070,
+        "narHash": "sha256-edm8WG19kWozJ/GqyYx2VjW99EdhjKwbY3ZwdlPAAlo=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "3c2f1c4ca372622cb2f9de8016c9a0b1cbd0f37c",
+        "rev": "d063c1dd113c91ab27959ba540c0d9753409edf3",
         "type": "github"
       },
       "original": {
@@ -1111,11 +1111,11 @@
     },
     "nixpkgs_13": {
       "locked": {
-        "lastModified": 1729665710,
-        "narHash": "sha256-AlcmCXJZPIlO5dmFzV3V2XF6x/OpNWUV8Y/FMPGd8Z4=",
+        "lastModified": 1730531603,
+        "narHash": "sha256-Dqg6si5CqIzm87sp57j5nTaeBbWhHFaVyG7V6L8k3lY=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "2768c7d042a37de65bb1b5b3268fc987e534c49d",
+        "rev": "7ffd9ae656aec493492b44d0ddfb28e79a1ea25d",
         "type": "github"
       },
       "original": {
@@ -1530,11 +1530,11 @@
         "nixpkgs": "nixpkgs_13"
       },
       "locked": {
-        "lastModified": 1730789561,
-        "narHash": "sha256-bfXj5aqRdVBgeDYcjaC6CAmlabuIrA8d7Z6PoZaAdMw=",
+        "lastModified": 1730792985,
+        "narHash": "sha256-F3MV2u4ays3kLFueWS1mwrQ2mWzgpZnkSEtqSGjCNcE=",
         "owner": "Daru-san",
         "repo": "SnowyShell",
-        "rev": "4c1cf8bbf3e7e35e03929ffdefae87049de15328",
+        "rev": "3657fdc8948e8f37c0eb8a97faf8cc761adc2c78",
         "type": "github"
       },
       "original": {
