@@ -16,6 +16,14 @@
       in
       mkMerge [
         {
+          "Mod+Shift+E".action.quit = [ ];
+          "Mod+Ctrl+Shift+E".action.quit = {
+            skip-confirmation = true;
+          };
+          "Print".action.screenshot = [ ];
+          "Shift+Print".action.screenshot-screen = [ ];
+          "Mod+F".action.fullscreen-window = [ ];
+          "Mod+Shift+q".action.close-window = [ ];
           "Mod+Shift+Slash".action.show-hotkey-overlay = [ ];
 
           "Mod+Left".action.focus-column-left = [ ];
@@ -135,7 +143,6 @@
             );
           in
           {
-            "Mod+Shift+q".action.close-window = [ ];
             "Mod+q".action.spawn = [ terminal ];
             "Mod+e".action.spawn = [ file-manager ];
             "Mod+Shift+v".action.spawn = [
@@ -167,13 +174,6 @@
               "--detach"
               yazi
             ];
-            "Mod+Shift+E".action.quit = [ ];
-            "Mod+Ctrl+Shift+E".action.quit = {
-              skip-confirmation = true;
-            };
-            "Print".action.screenshot = [ ];
-            "Shift+Print".action.screenshot-screen = [ ];
-            "Mod+F".action.fullscreen-window = [ ];
           }
         )
         (
@@ -210,7 +210,7 @@
         )
         (
           let
-            p = getExe config.services.playerctld.package;
+            playerctl = getExe config.services.playerctld.package;
             next = "next";
             prev = "previous";
             toggle-play = "play-pause";
@@ -218,19 +218,22 @@
           in
           {
             "XF86AudioPlay".action.spawn = [
-              p
+              playerctl
               toggle-play
             ];
+
             "XF86AudioStop".action.spawn = [
-              p
+              playerctl
               stop
             ];
+
             "XF86AudioPrev".action.spawn = [
-              p
+              playerctl
               prev
             ];
+
             "XF86AudioNext".action.spawn = [
-              p
+              playerctl
               next
             ];
           }
