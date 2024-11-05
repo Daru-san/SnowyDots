@@ -4,6 +4,9 @@
       border = {
         enable = false;
       };
+      focus-ring = {
+        enable = false;
+      };
     };
     animations = {
       enable = true;
