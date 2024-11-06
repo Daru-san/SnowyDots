@@ -60,6 +60,7 @@
     file
     v4l-utils
     bandwhich
+    dmidecode
   ];
   time.timeZone = "Africa/Johannesburg";
   i18n.defaultLocale = "en_ZA.UTF-8";
