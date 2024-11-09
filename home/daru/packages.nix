@@ -70,6 +70,7 @@
 
       # CLI
       jq
+      spotdl
       ouch
       tree
       tgpt
