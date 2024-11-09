@@ -91,6 +91,7 @@
       color-picker.packages.${system}.default
       snowyvim.packages.${system}.neovim
       timed-rs.packages.${system}.default
+      ayugram.packages.${system}.ayugram-desktop
     ])
   ];
 }
