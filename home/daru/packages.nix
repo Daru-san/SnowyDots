@@ -20,6 +20,7 @@
       # Content creation
       krita
       kdenlive
+      gimp
 
       # Media
       ffmpeg
