@@ -251,11 +251,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1731124993,
-        "narHash": "sha256-LqjZV6YXv/2HxW5sIhmzdc/7xNSTYYBpXhUCyZhQk+Q=",
+        "lastModified": 1731211414,
+        "narHash": "sha256-9TKyNZ7OD/lbToi4iY3xONHC5lC0c2CKCCpU+eQT+Dg=",
         "ref": "refs/heads/master",
-        "rev": "60b01f389bb9b1caeb8a9633b189202e389cfda6",
-        "revCount": 3898,
+        "rev": "576dcf7f95fbb5f2846ff99c7200dd070cabe43d",
+        "revCount": 3899,
         "type": "git",
         "url": "https://gitlab.com/rycee/nur-expressions?dir=pkgs/firefox-addons"
       },
@@ -961,11 +961,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1730604744,
-        "narHash": "sha256-/MK6QU4iOozJ4oHTfZipGtOgaT/uy/Jm4foCqHQeYR4=",
+        "lastModified": 1731209121,
+        "narHash": "sha256-BF7FBh1hIYPDihdUlImHGsQzaJZVLLfYqfDx41wjuF0=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "cc2ddbf2df8ef7cc933543b1b42b845ee4772318",
+        "rev": "896019f04b22ce5db4c0ee4f89978694f44345c3",
         "type": "github"
       },
       "original": {
@@ -1037,11 +1037,11 @@
     },
     "nixpkgs-small": {
       "locked": {
-        "lastModified": 1731136819,
-        "narHash": "sha256-qGmBFnq3/9AiiLZUOVxDsU5j6ysL3PXA8KRp7muJWMs=",
+        "lastModified": 1731179382,
+        "narHash": "sha256-ABPtU6fetzaB93+qTUz2uSL3AO/qsqYiNzUSlrcVuKw=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "4a2c7def574d031cbf3d7110969f2ca5f38f8ed7",
+        "rev": "0927ff824cdebc46713d4d4770652fa5134c8d47",
         "type": "github"
       },
       "original": {
@@ -1606,11 +1606,11 @@
         "nixpkgs": "nixpkgs_16"
       },
       "locked": {
-        "lastModified": 1731125701,
-        "narHash": "sha256-m3elGanVuEG6d4LFk4YRqqOlVeQUFch/4mSkXlRg+do=",
+        "lastModified": 1731212123,
+        "narHash": "sha256-z7BcNt3Z6xozfRC+ldgMPFM4RmNjeCbJWZgcnQeAdRM=",
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
-        "rev": "5a3fb0482dbf4db2746f1c1274ce6ccd5d75f535",
+        "rev": "9c3f1ef622b7b82a01936bdbd75ea4c5891ee4d1",
         "type": "github"
       },
       "original": {
