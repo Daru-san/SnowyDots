@@ -17,11 +17,7 @@ in
       cache.enable = true;
     };
     programs = {
-      niri = {
-        enable = true;
-        package = pkgs.niri;
-      };
-      hyprland.enable = false;
+      niri.enable = true;
       hyprlock.enable = true;
       dconf.enable = true;
       seahorse.enable = true;
@@ -37,7 +33,7 @@ in
               flags = lib.cli.toGNUCommandLineShell { } {
                 t = true;
                 window-padding = 1;
-                g = "Access is restricted to authorized personnel only.";
+                g = "Be the key to this door.";
                 c = "niri-session";
                 r = true;
               };
