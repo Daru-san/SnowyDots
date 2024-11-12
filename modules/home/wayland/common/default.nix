@@ -9,7 +9,7 @@ let
   cfg = config.wayland;
 in
 {
-  options.wayland.enable = mkEnableOption "Enable wayland using Hyprland";
+  options.wayland.enable = mkEnableOption "Enable wayland using niri";
   imports = [
     ./hypridle
     ./hyprlock
