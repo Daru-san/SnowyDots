@@ -16,6 +16,14 @@
       in
       mkMerge [
         {
+          "Mod+F12" = {
+            action.spawn = [
+              "systemctl"
+              "suspend"
+            ];
+            allow-when-locked = true;
+            repeat = false;
+          };
           "Mod+Shift+E".action.quit = [ ];
           "Mod+Ctrl+Shift+E".action.quit = {
             skip-confirmation = true;
