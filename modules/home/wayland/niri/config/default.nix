@@ -5,5 +5,6 @@
     ./layout.nix
     ./monitors.nix
     ./startup.nix
+    ./systemd.nix
   ];
 }
