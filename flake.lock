@@ -136,11 +136,11 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1730143163,
-        "narHash": "sha256-AQkTDx/NdygkXYXMCoobkmm7dCMa0brLGm7HsilDSMs=",
+        "lastModified": 1731434367,
+        "narHash": "sha256-vF6jBnRhqSvxnlqCz3TG1ad9zOt3qTRneXpHdYq7LCU=",
         "owner": "ayugram-port",
         "repo": "ayugram-desktop",
-        "rev": "fe9d7b06e2d03cc8e8ab13290794882d11aff1d7",
+        "rev": "2f1c40afaab5f7e49d1d7d2d44602dec7b27b869",
         "type": "github"
       },
       "original": {
@@ -825,11 +825,11 @@
         "xwayland-satellite-unstable": "xwayland-satellite-unstable"
       },
       "locked": {
-        "lastModified": 1731397402,
-        "narHash": "sha256-oK3BrUc6EXl/06VYAJVHCvUHABaxeUER4l+fraZf3+g=",
+        "lastModified": 1731433447,
+        "narHash": "sha256-QnjiNdq9Ma6nfw6OeyEkt1DDdhAPeqYjAzi0ZvOiLQw=",
         "owner": "sodiboo",
         "repo": "niri-flake",
-        "rev": "19211cda822834ce06e47cc9afd231d6aa20b665",
+        "rev": "221350dc34dfc9fe6cea71397939ad5cfb8f3674",
         "type": "github"
       },
       "original": {
@@ -858,11 +858,11 @@
     "niri-unstable": {
       "flake": false,
       "locked": {
-        "lastModified": 1731395501,
-        "narHash": "sha256-Rvm4tj+Pl7UL8CLx+E0TQjGV1dKGyrizb2uzUSxtpVk=",
+        "lastModified": 1731428804,
+        "narHash": "sha256-V3h8abnSf7OrzHek/CYCf/31IM4WnT9GOSsOacAZVy8=",
         "owner": "YaLTeR",
         "repo": "niri",
-        "rev": "c2c415d2e8ab6f3cbe3a0efd5de727d47f7c9aca",
+        "rev": "db1faecc9522dd4751344d3aa4e1d1e987dffc0c",
         "type": "github"
       },
       "original": {
@@ -1273,11 +1273,11 @@
     },
     "nixpkgs_6": {
       "locked": {
-        "lastModified": 1729070438,
-        "narHash": "sha256-KOTTUfPkugH52avUvXGxvWy8ibKKj4genodIYUED+Kc=",
+        "lastModified": 1729880355,
+        "narHash": "sha256-RP+OQ6koQQLX5nw0NmcDrzvGL8HDLnyXt/jHhL1jwjM=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "5785b6bb5eaae44e627d541023034e1601455827",
+        "rev": "18536bf04cd71abd345f9579158841376fdd0c5a",
         "type": "github"
       },
       "original": {
@@ -1898,11 +1898,11 @@
     "walls": {
       "flake": false,
       "locked": {
-        "lastModified": 1725035711,
-        "narHash": "sha256-uwmxgUXzKXsJDnJLgYxR8l/FyQ+8/5kIAScIWRfmDhE=",
+        "lastModified": 1731434472,
+        "narHash": "sha256-yarC8sUiCqFxBphnS63eDlrNcskP1JTU/6dbYP9vQzQ=",
         "owner": "~darumaka",
         "repo": "Wallpapers",
-        "rev": "f4a6ae5209b6df2f5aaaa81748e474f43473dead",
+        "rev": "e84760c46f7bf79699fac805a71988543cbedca2",
         "type": "sourcehut"
       },
       "original": {
