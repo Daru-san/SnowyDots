@@ -34,7 +34,6 @@ in
                 t = true;
                 window-padding = 1;
                 g = "Be the key to this door.";
-                c = "niri-session";
                 r = true;
               };
             in
