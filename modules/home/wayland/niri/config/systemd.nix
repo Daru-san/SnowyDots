@@ -2,8 +2,15 @@
   systemd.user.targets = {
     niri-session = {
       Unit = {
+        Description = "niri session";
+        After = [ "graphical-session-pre.target" ];
+        Before = [ "xdg-desktop-autostart.target" ];
+        BindsTo = [ "graphical-session.target" ];
+        Documentation = [ "man:systemd.special(7)" ];
         Requires = [ "niri.service" ];
         Wants = [
+          "graphical-session-pre.target"
+          "xdg-desktop-autostart.target"
           "hypridle.service"
           "tray.target"
           "swww-daemon.service"
