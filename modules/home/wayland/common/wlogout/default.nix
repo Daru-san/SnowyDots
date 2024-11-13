@@ -69,12 +69,6 @@ in
            border-radius: 0px;
            transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
        }
-       button:hover {
-       }
-       button:focus {
-           border: ${toString config.wayland.windowManager.hyprland.settings.general.border_size}px;
-           border-radius: ${toString config.wayland.windowManager.hyprland.settings.decoration.rounding}px;
-       }
        /** ********** Icons ********** **/
        #lock {
            background-image: image(url("${icons}/lock.png"));
