@@ -54,17 +54,6 @@
 
     # niri
     niri.url = "github:sodiboo/niri-flake";
-
-    # hyprland
-    hyprland.url = "github:hyprwm/Hyprland/v0.44.1";
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins/d05eb1ffba2ebffb5b4e1b407f134a4dcb411a88";
-      inputs.hyprland.follows = "hyprland";
-    };
-    hyprscroller = {
-      url = "github:dawsers/hyprscroller/ed725c5fd9c483372db44fb3414501e15cf5eab8";
-      inputs.hyprland.follows = "hyprland";
-    };
   };
   outputs =
     {
