@@ -6,7 +6,6 @@
 }:
 let
   plugins = inputs.anyrun.packages.${system};
-  inherit (inputs.anyrun-powermenu.packages.${system}) anyrun-powermenu;
 in
 {
   imports = [ inputs.anyrun.homeManagerModules.default ];
@@ -14,7 +13,6 @@ in
     package = pkgs.anyrun;
     config = {
       plugins = with plugins; [
-        anyrun-powermenu
         rink
         shell
         applications
@@ -33,24 +31,6 @@ in
         Config(
           prefix: ":sh",
           shell: None,
-        )
-      '';
-      "powermenu.ron".text = ''
-        Config(
-          prefix: ":p ",
-          engines: [
-            Custom(
-              name: "Lock",
-              cmd: "hyprlock",
-              icon: "system-lock-screen",
-            ),
-            Logout,
-            Suspend,
-            Hibernate,
-            Reboot,
-            Shutdown,
-          ],
-          max_entries: 6,
         )
       '';
       "applications.ron".text = ''

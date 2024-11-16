@@ -30,8 +30,6 @@
 
     # Featureful wayland launcher
     anyrun.url = "github:anyrun-org/anyrun";
-    anyrun-shortcuts.url = "github:micha4w/anyrun-shell-shortcuts";
-    anyrun-powermenu.url = "github:Daru-san/anyrun-powermenu";
 
     # Indexing for packages
     nix-index-database = {
