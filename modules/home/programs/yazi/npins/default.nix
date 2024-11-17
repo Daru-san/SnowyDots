@@ -61,22 +61,14 @@ let
       };
 
   mkPyPiSource =
-    {
-      url,
-      hash,
-      ...
-    }:
+    { url, hash, ... }:
     builtins.fetchurl {
       inherit url;
       sha256 = hash;
     };
 
   mkChannelSource =
-    {
-      url,
-      hash,
-      ...
-    }:
+    { url, hash, ... }:
     builtins.fetchTarball {
       inherit url;
       sha256 = hash;

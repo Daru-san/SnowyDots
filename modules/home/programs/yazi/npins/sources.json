@@ -8,9 +8,9 @@
         "repo": "fg.yazi"
       },
       "branch": "main",
-      "revision": "43fb7359d6de42982e2fd7c890ed5a72f2c84529",
-      "url": "https://github.com/lpnh/fg.yazi/archive/43fb7359d6de42982e2fd7c890ed5a72f2c84529.tar.gz",
-      "hash": "0k8pmfx152rnc7fkfkvff14w2fzk93rl6imny28g604j3a6xh6kv"
+      "revision": "a7e1a828ef4dfb01ace5b03fe0691c909466a645",
+      "url": "https://github.com/lpnh/fg.yazi/archive/a7e1a828ef4dfb01ace5b03fe0691c909466a645.tar.gz",
+      "hash": "0sx78qp7iwr44xjvmp32izairxzcg12b967lz2ycapbmkz55c6s3"
     },
     "glow.yazi": {
       "type": "Git",
@@ -68,9 +68,9 @@
         "repo": "ouch.yazi"
       },
       "branch": "main",
-      "revision": "d13f7c08cdebcfaadf38c3eb9999639ddd89201c",
-      "url": "https://github.com/ndtoan96/ouch.yazi/archive/d13f7c08cdebcfaadf38c3eb9999639ddd89201c.tar.gz",
-      "hash": "0ra0v89kb3iphfpydml5cmmqm9kc80wbb3nn2jhggs9i1fij0b92"
+      "revision": "db1488358941a2bc9918fa91c304d6724a0bb608",
+      "url": "https://github.com/ndtoan96/ouch.yazi/archive/db1488358941a2bc9918fa91c304d6724a0bb608.tar.gz",
+      "hash": "1cbyxrv8qw2hszhaw889ynald5djd4x50f9zwghbcbsx8wffqivw"
     },
     "plugins": {
       "type": "Git",
@@ -80,9 +80,9 @@
         "repo": "plugins"
       },
       "branch": "main",
-      "revision": "ad52adf917d6dd679dbc2dcefa3a9384654bd1c7",
-      "url": "https://github.com/yazi-rs/plugins/archive/ad52adf917d6dd679dbc2dcefa3a9384654bd1c7.tar.gz",
-      "hash": "1rb2wgmmazd9i56ij38v53q6chqm3l2nyy1dm885ks9y2gqqgr2h"
+      "revision": "4a6edc3349a2a9850075363965d05b9063817df4",
+      "url": "https://github.com/yazi-rs/plugins/archive/4a6edc3349a2a9850075363965d05b9063817df4.tar.gz",
+      "hash": "0x36zbv08sg4fi0z6ll834cd8317b38if7c6nlidfrs6n70vp1j5"
     },
     "starship.yazi": {
       "type": "Git",
@@ -128,9 +128,9 @@
         "repo": "yatline-catppuccin.yazi"
       },
       "branch": "main",
-      "revision": "5e4493906e077f89b94ecfc8b47318f5af8d1c53",
-      "url": "https://github.com/imsi32/yatline-catppuccin.yazi/archive/5e4493906e077f89b94ecfc8b47318f5af8d1c53.tar.gz",
-      "hash": "0ma6j8nd0fssrf2h65cahmrs5696wpy0hbxssxz50m9zz7in0xvz"
+      "revision": "dc575da15e407bc8b904f005ade97aeafdb5971f",
+      "url": "https://github.com/imsi32/yatline-catppuccin.yazi/archive/dc575da15e407bc8b904f005ade97aeafdb5971f.tar.gz",
+      "hash": "1yjq7b38qlgbpclcadaflimcljjfxry2xaswxjx5apc6lbvlj008"
     },
     "yatline.yazi": {
       "type": "Git",
@@ -140,9 +140,9 @@
         "repo": "yatline.yazi"
       },
       "branch": "main",
-      "revision": "7b56434864d6a0b5d547fed2339b99346a018522",
-      "url": "https://github.com/imsi32/yatline.yazi/archive/7b56434864d6a0b5d547fed2339b99346a018522.tar.gz",
-      "hash": "0glcaby1hy2ah1ib1aq2xzjhq66fvyzc9f2d94hi8g3jf40l3b72"
+      "revision": "e255f5cb72106ec95b0fce4655041877a88bdfde",
+      "url": "https://github.com/imsi32/yatline.yazi/archive/e255f5cb72106ec95b0fce4655041877a88bdfde.tar.gz",
+      "hash": "1qs559ldap7bygzl36nj819sacvis7qllq6rnapgmcclhnk2kirk"
     },
     "yazi-plugin-bat": {
       "type": "Git",
