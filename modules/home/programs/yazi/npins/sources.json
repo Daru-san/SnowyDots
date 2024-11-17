@@ -1,5 +1,16 @@
 {
   "pins": {
+    "clipboard.yazi": {
+      "type": "Git",
+      "repository": {
+        "type": "Git",
+        "url": "https://gitee.com/DreamMaoMao/clipboard.yazi.git"
+      },
+      "branch": "master",
+      "revision": "e49a06c47654a42d369255a0a288f27283b293fb",
+      "url": null,
+      "hash": "1632nz92ydkan16z14ml1mldl207miz1kjmxpbzqlxcyqaqdsd00"
+    },
     "fg.yazi": {
       "type": "Git",
       "repository": {
@@ -119,6 +130,18 @@
       "revision": "76970b6f9d6f3031e9cd57c8595a53e9f9f48c18",
       "url": "https://github.com/kirasok/torrent-preview.yazi/archive/76970b6f9d6f3031e9cd57c8595a53e9f9f48c18.tar.gz",
       "hash": "1r89vnq4idigpd92rz80cg2lvz8yrmhs0nhxnfxj82rv4nh6vxs0"
+    },
+    "what-size.yazi": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "pirafrank",
+        "repo": "what-size.yazi"
+      },
+      "branch": "main",
+      "revision": "f08f7f2d5c94958ac4cb66c51a7c24b4319c6c93",
+      "url": "https://github.com/pirafrank/what-size.yazi/archive/f08f7f2d5c94958ac4cb66c51a7c24b4319c6c93.tar.gz",
+      "hash": "1ckihyf89qg12m69gf5w5viszwbpr77hhxr6hky0lclkqc1qlh5b"
     },
     "yatline-catppuccin.yazi": {
       "type": "Git",

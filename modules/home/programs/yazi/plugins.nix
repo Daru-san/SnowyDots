@@ -23,5 +23,7 @@ in
     "mediainfo" = getPlugin "mediainfo.yazi";
     "hexyl" = getPlugin "hexyl.yazi";
     "git" = (getPlugin "plugins") + "/git.yazi";
+    "what-size" = getPlugin "what-size.yazi";
+    "clipboard" = getPlugin "clipboard.yazi";
   };
 }
