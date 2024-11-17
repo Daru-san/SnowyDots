@@ -48,6 +48,7 @@
 
       # Android
       adbtuifm
+      qtscrcpy
       waydroid-script
 
       # Documents
