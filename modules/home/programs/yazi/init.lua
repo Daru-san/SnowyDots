@@ -92,6 +92,7 @@ require("yatline"):setup({
         { type = "string", custom = false, name = "cursor_percentage" },
       },
       section_c = {
+        { type = "coloreds", custom = false, name = "task_states" },
         { type = "coloreds", custom = false, name = "permissions" },
       },
     },
