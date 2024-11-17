@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   boot = {
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_latest;
     kernel.sysctl = {
       "vm.swappiness" = 90;
       "vm.vfs_cache_pressure" = 50;
