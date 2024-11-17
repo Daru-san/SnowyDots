@@ -14,5 +14,6 @@
     ./nautilus
     ./spotify
     ./floorp
+    ./elia
   ];
 }
