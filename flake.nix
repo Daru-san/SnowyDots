@@ -43,7 +43,10 @@
     # My own repos
     r-pg.url = "github:Daru-san/r-pg";
     color-picker.url = "github:Daru-san/color-picker-rs";
-    snowyvim.url = "sourcehut:~darumaka/SnowyVim";
+    snowyvim = {
+      url = "sourcehut:~darumaka/SnowyVim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     snowy-shell.url = "github:Daru-san/SnowyShell/niri";
     snowpkgs.url = "github:Daru-san/Snowpkgs";
     timed-rs.url = "github:Daru-san/timed-rs";
