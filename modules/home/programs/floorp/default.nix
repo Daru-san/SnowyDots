@@ -416,6 +416,29 @@
         "layers.mlgpu.enabled" = true;
         "media.ffmpeg.vaapi.enabled" = true;
         "dom.ipc.processCount.webIsolated" = 1;
+
+        "floorp.Tree-type.verticaltab.optimization" = true;
+        "floorp.browser.nora.csk.data" = "{}";
+        "floorp.browser.note.backup.latest.time" = "1731912540255";
+        "floorp.browser.sidebar.enable" = false;
+        "floorp.browser.sidebar.is.displayed" = false;
+        "floorp.browser.ssb.enabled" = true;
+        "floorp.browser.ssb.toolbars.disabled" = true;
+        "floorp.browser.tabbar.settings" = 2;
+        "floorp.browser.tabs.openNewTabPosition" = 1;
+        "floorp.browser.tabs.verticaltab" = true;
+        "floorp.browser.user.interface" = 8;
+        "floorp.browser.workspace.showWorkspaceName" = false;
+        "floorp.browser.workspaces.enabled" = false;
+        "floorp.downloading.red.color" = false;
+        "floorp.legacy.dlui.enable" = true;
+        "floorp.navbar.bottom" = true;
+        "floorp.search.top.mode" = false;
+        "floorp.startup.oldVersion" = "11.20.0";
+        "floorp.tabbar.style" = 2;
+        "floorp.tabsleep.enabled" = true;
+        "floorp.user.js.customize" = "Fastfox";
+        "floorp.verticaltab.paddingtop.enabled" = true;
       };
     };
     policies = {
