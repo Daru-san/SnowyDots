@@ -78,7 +78,7 @@
         hostName = "Aria";
         config = ./systems/Aria;
         system = "x86_64-linux";
-        stateVersion = "24.11";
+        stateVersion = "25.05";
       };
 
       laptop = {
