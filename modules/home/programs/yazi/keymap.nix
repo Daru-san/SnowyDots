@@ -61,7 +61,7 @@
     }
     {
       on = [
-        "."
+        "c"
         "s"
       ];
       run = "plugin what-size";
