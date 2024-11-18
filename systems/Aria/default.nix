@@ -37,6 +37,10 @@
   };
 
   nix.settings = {
+    trusted-users = [
+      "root"
+      "daru"
+    ];
     builders-use-substitutes = true;
     substituters = [
       "https://aseipp-nix-cache.global.ssl.fastly.net"
