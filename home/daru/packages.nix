@@ -87,6 +87,9 @@
       dconf-editor
       hexyl
       xdg-user-dirs
+
+      # The craft
+      prismlauncher
     ])
     (with inputs; [
       r-pg.packages.${system}.default
