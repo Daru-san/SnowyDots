@@ -12,6 +12,7 @@
       # GUI
       scrcpy
       keepassxc
+      obsidian
 
       # Science
       kdePackages.kalzium
