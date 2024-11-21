@@ -20,13 +20,4 @@
       uris = [ "qemu:///system" ];
     };
   };
-  # Home option pages
-  manual = {
-    json = {
-      enable = true;
-    };
-    html = {
-      enable = true;
-    };
-  };
 }

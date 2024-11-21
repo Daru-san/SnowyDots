@@ -35,7 +35,6 @@
       pulsemixer
 
       # Developmentment
-      bridge-editor
       hut
       rustc
       clang
@@ -53,7 +52,6 @@
       waydroid-script
 
       # Documents
-      libreoffice-qt6-fresh
       pandoc
       glow
 
