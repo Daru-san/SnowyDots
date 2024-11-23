@@ -37,9 +37,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Telegram but better
-    ayugram.url = "github:/ayugram-port/ayugram-desktop/release?submodules=1";
-
     # My own repos
     rimi.url = "github:Daru-san/rimi";
     color-picker.url = "github:Daru-san/color-picker-rs";
