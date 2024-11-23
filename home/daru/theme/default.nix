@@ -11,7 +11,7 @@ rec {
   ];
 
   # Wallpaper
-  wallpaperImage = inputs.walls + "/images/green-rails.png";
+  wallpaperImage = inputs.walls + "/images/dark-leaves.png";
 
   # Colorscheme from nix-colors
   colorScheme = inputs.nix-colors.colorSchemes.oxocarbon-dark;
