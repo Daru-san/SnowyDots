@@ -38,6 +38,8 @@
       hut
       rustc
       clang
+      license-go
+      yq-go
 
       # Desktop
       swww
