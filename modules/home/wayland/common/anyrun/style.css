@@ -1,6 +1,6 @@
 * {
   transition: 200ms ease;
-  font-family: Jetbrains Mono Nerd Font;
+  font-family: Rubik;
   font-size: 1.3rem;
 }
 
@@ -17,9 +17,11 @@
   padding: 0.3rem 0.9rem;
   margin-top: 0.01rem;
 }
+
 #match.activatable:first-child {
   margin-top: 0.7rem;
 }
+
 #match.activatable:last-child {
   margin-bottom: 0.6rem;
 }
@@ -45,19 +47,23 @@
   padding: 0.3rem 1rem;
 }
 
-list > #plugin {
+list>#plugin {
   border-radius: 10px;
   margin: 0 0.3rem;
 }
-list > #plugin:first-child {
+
+list>#plugin:first-child {
   margin-top: 0.3rem;
 }
-list > #plugin:last-child {
+
+list>#plugin:last-child {
   margin-bottom: 0.3rem;
 }
-list > #plugin:hover {
+
+list>#plugin:hover {
   padding: 0.6rem;
 }
+
 box#main {
   background: rgba(31, 31, 40, 0.5);
   box-shadow:
