@@ -5,10 +5,6 @@
   ...
 }:
 let
-  extraCss = lib.concatStringsSep "\n" [
-    config.colorSchemeCss
-    (builtins.readFile ./gtk.css)
-  ];
   extraConfig = {
     gtk-decoration-layout = "";
   };
@@ -48,10 +44,10 @@ rec {
     };
 
     gtk3 = {
-      inherit extraCss extraConfig;
+      inherit extraConfig;
     };
     gtk4 = {
-      inherit extraCss extraConfig;
+      inherit extraConfig;
     };
   };
   dconf.settings = {
@@ -68,11 +64,10 @@ rec {
   home = {
     sessionVariables.GTK_THEME = gtk.theme.name;
     pointerCursor = {
-      name = "Bibata-Modern-Ice";
-      package = pkgs.bibata-cursors;
-      size = 23;
+      name = "phinger-cursors-dark";
+      package = pkgs.phinger-cursors;
+      size = 26;
       gtk.enable = true;
     };
-    file.".icons/default".source = "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Ice";
   };
 }
