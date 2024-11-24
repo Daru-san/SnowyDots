@@ -40,6 +40,7 @@
       clang
       license-go
       yq-go
+      gdb
 
       # Desktop
       swww
