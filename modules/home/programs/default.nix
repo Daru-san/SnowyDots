@@ -15,5 +15,6 @@
     ./spotify
     ./floorp
     ./elia
+    ./vscode
   ];
 }
