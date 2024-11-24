@@ -41,6 +41,7 @@
       license-go
       yq-go
       gdb
+      seer
 
       # Desktop
       swww
