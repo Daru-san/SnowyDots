@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
-  boot = {
-    kernelPackages = pkgs.linuxPackages_cachyos-lto;
-    kernelParams = [ "retbleed=stuff" ];
+  boot.kernelPackages = pkgs.linuxPackages_cachyos-lto;
+  chaotic.scx = {
+    enable = true;
+    scheduler = "scx_simple";
   };
-  chaotic.scx.enable = true;
 }
