@@ -18,11 +18,11 @@ in
     };
     programs = {
       niri.enable = true;
-      hyprlock.enable = true;
       dconf.enable = true;
       seahorse.enable = true;
       file-roller.enable = true;
     };
+    security.pam.hyprlock = { };
     services.greetd = {
       package = pkgs.greetd;
       enable = true;
