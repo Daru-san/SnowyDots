@@ -20,8 +20,4 @@
     enable = true;
     memoryPercent = 200;
   };
-  services.system76-scheduler = {
-    enable = true;
-    useStockConfig = true;
-  };
 }
