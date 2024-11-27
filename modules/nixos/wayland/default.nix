@@ -22,7 +22,7 @@ in
       seahorse.enable = true;
       file-roller.enable = true;
     };
-    security.pam.hyprlock = { };
+    security.pam.services.hyprlock = { };
     services.greetd = {
       package = pkgs.greetd;
       enable = true;
