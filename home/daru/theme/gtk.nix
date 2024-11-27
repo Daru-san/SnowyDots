@@ -19,8 +19,6 @@ rec {
         colorVariants = [ "Dark" ];
         themeVariants = [ "green" ];
         roundedMaxWindow = true;
-        nautilusSize = "180";
-        nautilusStyle = "glassy"; # glassy
         altVariants = [ "alt" ];
         opacityVariants = [ "normal" ];
       };
