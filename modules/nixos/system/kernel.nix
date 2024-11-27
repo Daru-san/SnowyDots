@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
   boot.kernelPackages = pkgs.linuxPackages_cachyos-lto;
-  chaotic.scx = {
+  services.scx = {
     enable = true;
-    scheduler = "scx_simple";
+    scheduler = "scx_bpfland";
   };
 }
