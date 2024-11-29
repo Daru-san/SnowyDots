@@ -4,7 +4,7 @@
   inputs = {
     # Nixpkgs repos
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
     nyx.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
