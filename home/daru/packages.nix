@@ -38,6 +38,7 @@
       hut
       rustc
       clang
+      jq
       license-go
       yq-go
       gdb
@@ -74,7 +75,6 @@
       nixfmt-rfc-style
 
       # CLI
-      jq
       spotdl
       ouch
       tree
@@ -90,6 +90,7 @@
       dconf-editor
       hexyl
       xdg-user-dirs
+      tealdeer
 
       # The craft
       prismlauncher
