@@ -15,7 +15,7 @@ rec {
     theme = {
       name = "WhiteSur-Dark-alt-green";
       package = pkgs.whitesur-gtk-theme.override {
-        colorVariants = [ "Dark" ];
+        colorVariants = [ "dark" ];
         themeVariants = [ "green" ];
         roundedMaxWindow = true;
         altVariants = [ "alt" ];
