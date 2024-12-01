@@ -11,10 +11,8 @@
     };
     sansSerif = config.fonts.serif;
     monospace = {
-      package = pkgs.nerdfonts.override {
-        fonts = [ "CascadiaCode" ];
-      };
-      name = "CaskaydiaCove-NFP";
+      package = pkgs.nerd-fonts.zed-mono;
+      name = "ZedMono Nerd Font Propo";
     };
     sizes = {
       desktop = 14;
