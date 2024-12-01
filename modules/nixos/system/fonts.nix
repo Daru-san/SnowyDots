@@ -10,14 +10,9 @@
   fonts = {
     enableDefaultPackages = true;
     fontDir.enable = true;
-    packages = [
-      (pkgs.nerdfonts.override {
-        fonts = [
-          "JetBrainsMono"
-          "RobotoMono"
-          "Noto"
-        ];
-      })
+    packages = with pkgs.nerd-fonts; [
+      noto
+      roboto-mono
     ];
   };
 }
