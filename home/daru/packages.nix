@@ -38,6 +38,7 @@
       hut
       rustc
       clang
+      zig
       jq
       license-go
       yq-go
