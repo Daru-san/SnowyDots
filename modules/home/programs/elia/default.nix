@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       default_model = "gemini-main";
-      theme = "nautilus";
+      theme = "monokai";
       models = [
         {
           id = "gemini-main";
