@@ -8,6 +8,7 @@
       extraOptions = [ "--group-directories-first" ];
       enableBashIntegration = true;
       enableFishIntegration = true;
+      enableNushellIntegration = true;
     };
 
     # cd on steriods
@@ -15,6 +16,7 @@
       enable = true;
       enableFishIntegration = true;
       enableBashIntegration = true;
+      enableNushellIntegration = true;
     };
 
     # Find files fuzzily
@@ -45,6 +47,16 @@
         ];
         global.disable_stdin = true;
       };
+    };
+
+    nix-your-shell = {
+      enable = true;
+      enableNushellIntegration = true;
+    };
+
+    carapace = {
+      enable = true;
+      enableNushellIntegration = true;
     };
   };
 }

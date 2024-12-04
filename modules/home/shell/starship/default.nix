@@ -4,6 +4,7 @@
     enable = true;
     enableBashIntegration = true;
     enableFishIntegration = true;
+    enableNushellIntegration = true;
     settings = {
       add_newline = false;
       format = lib.concatStrings [

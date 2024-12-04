@@ -6,10 +6,10 @@
 }:
 {
   imports = [
-    ./fish
     ./extras.nix
     ./starship
     ./nix-index
+    ./nu
   ];
 
   programs.bash = {
@@ -20,6 +20,13 @@
       "erasedups"
       "ignorespace"
     ];
+  };
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      ${pkgs.trashy}/bin/trashy completions fish | source
+      ${pkgs.rqbit}/bin/rqbit -v error completions fish | source
+    '';
   };
 
   # Global shell aliases
@@ -34,9 +41,13 @@
       clock = "${tty-clock} -bscBrnS";
       tp = "${trashy} put";
       te = "${trashy} empty";
+      tls = "${trashy} list | fzf";
+      tres = "trashy-restore";
+      tra = "${trashy} restore --all";
+      tea = "${trashy} empty --all";
       cat = bat;
+      c = "clear";
       trashy-empty = "${trashy} list | ${fzf} --multi | awk '{$1=$1;print}' | rev | cut -d ' ' -f1 | rev | xargs ${trashy} empty --match=exact --force";
       trashy-restore = "${trashy} list | ${fzf} --multi | awk '{$1=$1;print}' | rev | cut -d ' ' -f1 | rev | xargs ${trashy} restore --match=exact --force";
-      zc = "clear && z";
     };
 }
