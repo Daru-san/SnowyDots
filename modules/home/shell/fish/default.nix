@@ -13,7 +13,7 @@ in
       ${pkgs.rqbit}/bin/rqbit -v error completions fish | source
     '';
     functions = {
-      zcalc = ''${pkgs.zsh}/bin/zsh -c 'autoload zcalc && zcalc "$@"' zcalc "$argv"'';
+      zcalc = ''${pkgs.zsh}/bin/zsh -c 'autoload zcalc && zcalc "$@"' zcalc 0'';
       cd-gitroot = ''cd "$(git rev-parse --show-toplevel)"'';
       git-root = ''echo "Git root is $(git rev-parse --show-toplevel)"'';
       zc = ''
