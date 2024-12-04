@@ -13,6 +13,7 @@
       scrcpy
       keepassxc
       obsidian
+      wike
 
       # Science
       kdePackages.kalzium
