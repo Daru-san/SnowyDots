@@ -78,7 +78,9 @@
           append /usr/bin/env
         )
 
-        if ("extra.nu" | path exists) { source extra.nu };
+        if ("${config.xdg.configHome}/nushell/extra.nu" | path exists) {
+          source ${config.xdg.configHome}/nushell/extra.nu
+        }
       '';
 
       shellAliases = {
