@@ -53,6 +53,7 @@
             adb => $fish_completer
             zig => $fish_completer
             rimi => $fish_completer
+            nix => $fish_completer
           } | do $in $spans
         }
 
