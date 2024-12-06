@@ -5,7 +5,8 @@
     enable = true;
     settings = {
       default_model = "gemini-main";
-      theme = "monokai";
+      theme = "textual";
+      message_code_theme = "github-dark";
       models = [
         {
           id = "gemini-main";
