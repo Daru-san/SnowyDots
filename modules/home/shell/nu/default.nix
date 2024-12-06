@@ -52,6 +52,7 @@
             git => $fish_completer
             adb => $fish_completer
             zig => $fish_completer
+            rimi => $fish_completer
           } | do $in $spans
         }
 

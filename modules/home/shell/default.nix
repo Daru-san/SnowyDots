@@ -1,7 +1,8 @@
 {
   config,
   pkgs,
-  lib,
+  inputs,
+  system,
   ...
 }:
 {
@@ -26,6 +27,7 @@
     interactiveShellInit = ''
       ${pkgs.trashy}/bin/trashy completions fish | source
       ${pkgs.rqbit}/bin/rqbit -v error completions fish | source
+      ${inputs.rimi.packages.${system}.rimi}/bin/rimi completions fish | source
     '';
   };
 
