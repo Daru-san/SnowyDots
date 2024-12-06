@@ -77,7 +77,10 @@
           prepend ${config.home.homeDirectory}/.apps |
           append /usr/bin/env
         )
+
+        if ("extra.nu" | path exists) { source extra.nu };
       '';
+
       shellAliases = {
         cd = "z";
         zc = "clear ; z";
