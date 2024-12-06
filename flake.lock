@@ -183,11 +183,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1733318736,
-        "narHash": "sha256-rZx3gJKSg8RkQIkcGcEKLMMKobZPFfgX4xbJb7acRYM=",
+        "lastModified": 1733457807,
+        "narHash": "sha256-o1x17M0MOTXnX26Q1vuKPOIrgHEdBgCXLNd0Jsnt6oc=",
         "ref": "refs/heads/master",
-        "rev": "71ebc2ee2764d5ca5e49189551fac1f1ffb7cb1a",
-        "revCount": 3951,
+        "rev": "a2c15a4676b2d3d3adc3a2dc8045b5af28dc5b65",
+        "revCount": 3956,
         "type": "git",
         "url": "https://gitlab.com/rycee/nur-expressions?dir=pkgs/firefox-addons"
       },
@@ -214,11 +214,11 @@
     "flake-compat_2": {
       "flake": false,
       "locked": {
-        "lastModified": 1732722421,
-        "narHash": "sha256-HRJ/18p+WoXpWJkcdsk9St5ZiukCqSDgbOGFa8Okehg=",
+        "lastModified": 1733328505,
+        "narHash": "sha256-NeCCThCEP3eCl2l/+27kNNK7QrwZB1IJCrXfrbv5oqU=",
         "owner": "edolstra",
         "repo": "flake-compat",
-        "rev": "9ed2ac151eada2306ca8c418ebd97807bb08f6ac",
+        "rev": "ff81ac966bb2cae68946d5ed5fc4994f96d0ffec",
         "type": "github"
       },
       "original": {
@@ -456,11 +456,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1733317578,
-        "narHash": "sha256-anN/LcP5IuqEARvhPETg1vnbyG3IQ0wdvSAYEJfIQzA=",
+        "lastModified": 1733389730,
+        "narHash": "sha256-KZMu4ddMll5khS0rYkJsVD0hVqjMNHlhTM3PCQar0Ag=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "ad48eb25cd0b00ce730da00fa1f8e6e6c27b397d",
+        "rev": "65912bc6841cf420eb8c0a20e03df7cbbff5963f",
         "type": "github"
       },
       "original": {
@@ -792,11 +792,11 @@
     },
     "nixpkgs-small": {
       "locked": {
-        "lastModified": 1733292033,
-        "narHash": "sha256-hddpR8T8aDx6GdsyEW8OUkhU6NkRsVS6KJ5MHAqf3Fc=",
+        "lastModified": 1733426878,
+        "narHash": "sha256-boWvvAttPEXJbi5TiRqRuLE78mic+asXrCpcEm9XIK8=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "1e536d5ebeac5e94701f4b4dbb1bd5da4af69efd",
+        "rev": "21e9e52183fd52452c26a1d7957b0299a37fa83a",
         "type": "github"
       },
       "original": {
@@ -1179,11 +1179,11 @@
         "utils": "utils_2"
       },
       "locked": {
-        "lastModified": 1733248876,
-        "narHash": "sha256-ESeIr6MEGQ6ShC/i/USpMgARD5/ltLUMc8Kmx5Zy5BU=",
+        "lastModified": 1733467611,
+        "narHash": "sha256-RHKm/oKHK/lxCqiim8+JAOWvAqNLZFV7DmSdg5M0QXc=",
         "owner": "Daru-san",
         "repo": "rimi",
-        "rev": "26fa73339258b1ac751288c2a449fb3adbf6f36c",
+        "rev": "42059124a665940b77086e473955d546c3cf6a84",
         "type": "github"
       },
       "original": {
@@ -1323,11 +1323,11 @@
         "nixpkgs": "nixpkgs_12"
       },
       "locked": {
-        "lastModified": 1733285820,
-        "narHash": "sha256-B6BME0Jl/5xpkC51OSOc7srtw/3o4g6TIym/YfhUZes=",
+        "lastModified": 1733458623,
+        "narHash": "sha256-52PZbQysGpULrOehi4+807Qj3jSa3fXGJw0wuRxQfvo=",
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
-        "rev": "41d44f790d8d53d4a54782edbf033d2d4783ad8a",
+        "rev": "ebe9e466f8eb5b1ae3079d9c44cb4d8a56f8e5c2",
         "type": "github"
       },
       "original": {
