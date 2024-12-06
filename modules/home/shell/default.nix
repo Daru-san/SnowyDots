@@ -49,6 +49,7 @@
       tea = "${trashy} empty --all";
       cat = bat;
       c = "clear";
+      cgrt = ''cd "$(git rev-parse --show-toplevel)"'';
       trashy-empty = "${trashy} list | ${fzf} --multi | awk '{$1=$1;print}' | rev | cut -d ' ' -f1 | rev | xargs ${trashy} empty --match=exact --force";
       trashy-restore = "${trashy} list | ${fzf} --multi | awk '{$1=$1;print}' | rev | cut -d ' ' -f1 | rev | xargs ${trashy} restore --match=exact --force";
     };
