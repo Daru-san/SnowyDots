@@ -15,10 +15,18 @@
     nushell = {
       enable = true;
       extraConfig = ''
+        let carapace_completer = {|spans: list<string>|
+          carapace $spans.0 nushell ...$spans
+          | from json
+          | if ($in | default [] | where value == $"($spans | last)ERR" | is-empty) { $in } else { null }
+        }
+
+        $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
+
         let fish_completer = {|spans|
           ${lib.getExe pkgs.fish} --command $'complete "--do-complete=($spans | str join " ")"'
-          | $"value(char tab)description(char newline)" + $in
-          | from tsv --flexible --no-infer
+          | from tsv --flexible --noheaders --no-infer
+          | rename value description
         }
 
         let zoxide_completer = {|spans|
@@ -40,11 +48,15 @@
 
           match $spans.0 {
             __zoxide_z | __zoxide_zi => $zoxide_completer
-            _ => $fish_completer
+            _ => $carapace_completer
+            git => $fish_completer
+            adb => $fish_completer
+            zig => $fish_completer
           } | do $in $spans
         }
 
         $env.config = {
+          edit_mode: vi,
           show_banner: false,
           completions: {
             case_sensitive: false
