@@ -1179,11 +1179,11 @@
         "utils": "utils_2"
       },
       "locked": {
-        "lastModified": 1733467611,
-        "narHash": "sha256-RHKm/oKHK/lxCqiim8+JAOWvAqNLZFV7DmSdg5M0QXc=",
+        "lastModified": 1733472916,
+        "narHash": "sha256-mbqSlY7YyMebyNSXbEp8FsTlaN5L/YPhWucr4zglu1s=",
         "owner": "Daru-san",
         "repo": "rimi",
-        "rev": "42059124a665940b77086e473955d546c3cf6a84",
+        "rev": "c51e537e495c679f37e09c6cbf723a50903b5134",
         "type": "github"
       },
       "original": {
