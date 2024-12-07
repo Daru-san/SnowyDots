@@ -7,7 +7,6 @@ in
     enable = true;
     settings = {
       # Colorscheming
-      color_theme = "flat-remix";
       theme_background = false;
       truecolor = true;
 

@@ -24,8 +24,8 @@ rec {
     };
 
     font = {
-      inherit (config.fonts.sansSerif) package name;
-      size = config.fonts.sizes.applications;
+      inherit (config.stylix.fonts.sansSerif) package name;
+      size = config.stylix.fonts.sizes.applications;
     };
 
     iconTheme = {
@@ -58,13 +58,12 @@ rec {
       button-layout = "appmenu";
     };
   };
-  home = {
-    sessionVariables.GTK_THEME = gtk.theme.name;
-    pointerCursor = {
+  home.sessionVariables.GTK_THEME = gtk.theme.name;
+  stylix = {
+    cursor = {
       name = "phinger-cursors-dark";
       package = pkgs.phinger-cursors;
       size = 26;
-      gtk.enable = true;
     };
   };
 }

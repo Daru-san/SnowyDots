@@ -5,7 +5,6 @@
     ./services
     ./git
     ./xdg
-    ./themes
     ./programs
   ];
 }

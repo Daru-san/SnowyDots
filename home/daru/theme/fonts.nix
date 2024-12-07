@@ -9,20 +9,20 @@
       package = pkgs.rubik;
       name = "Rubik";
     };
-    sansSerif = config.fonts.serif;
+    sansSerif = config.stylix.fonts.serif;
     monospace = {
       package = pkgs.nerd-fonts.zed-mono;
-      name = "ZedMono Nerd Font Propo";
+      name = "Zed Mono Nerd Font";
     };
     sizes = {
-      desktop = 14;
-      applications = 14;
+      desktop = 12;
+      applications = 12;
       terminal = 14;
     };
-    extraFonts = with pkgs; [
-      monocraft
-      comic-relief
-      noto-fonts
-    ];
   };
+  home.packages = with pkgs; [
+    monocraft
+    comic-relief
+    noto-fonts
+  ];
 }

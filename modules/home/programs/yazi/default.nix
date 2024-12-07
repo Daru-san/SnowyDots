@@ -8,7 +8,6 @@
     enableFishIntegration = true;
     initLua = ./init.lua;
     keymap = import ./keymap.nix;
-    theme.flavor.use = "tokyo-night";
     settings = {
       manager = {
         ratio = [

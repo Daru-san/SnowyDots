@@ -26,6 +26,9 @@
       url = "github:haozeke/base16-zathura";
       flake = false;
     };
+
+    stylix.url = "github:danth/stylix";
+
     # Spiced spotify
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 

@@ -1,7 +1,6 @@
 {
   pkgs,
   lib,
-  config,
   ...
 }:
 {
@@ -15,29 +14,26 @@
       enableFishIntegration = true;
     };
 
-    # Kitty font
-    font = {
-      inherit (config.fonts.monospace) package name;
-      size = config.fonts.sizes.terminal;
-    };
-
     #Settings
     settings = {
-      active_tab_font_style = "bold";
-      inactive_tab_font_style = "italics";
-      tab_bar_edge = "top";
-      tab_bar_style = "powerline";
-      tab_powerline_style = "round";
+      active_tab_font_style = "italic";
+      inactive_tab_font_style = "normal";
+      tab_bar_edge = "bottom";
+      tab_title_template = "{index}: {title}";
+      focus_follows_mouse = true;
+      active_tab_foreground = "#000";
+      active_tab_background = "#73D216";
+      inactive_tab_foreground = "#444";
+      inactive_tab_background = "#999";
+
       input_delay = 0;
       repaint_delay = 4;
       window_margin_width = 9;
-      window_margin_height = 9;
       term = "kitty";
       placement_strategy = "center";
 
       hide_window_decorations = true;
 
-      background_opacity = "0.6";
       dynamic_background_opacity = true;
       enable_audio_bell = false;
       sync_to_monitor = true;
