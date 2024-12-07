@@ -4,7 +4,7 @@
   ...
 }:
 {
-  fonts = {
+  stylix.fonts = {
     serif = {
       package = pkgs.rubik;
       name = "Rubik";

@@ -14,9 +14,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Colors
-    nix-colors.url = "github:Misterio77/nix-colors/b01f024090d2c4fc3152cd0cf12027a7b8453ba1";
+    base16.url = "github:SenchoPens/base16.nix";
 
+    # Theming
+    tinted-themes = {
+      url = "github:tinted-theming/schemes";
+      flake = false;
+    };
+
+    base16-zathura = {
+      url = "github:haozeke/base16-zathura";
+      flake = false;
+    };
     # Spiced spotify
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 

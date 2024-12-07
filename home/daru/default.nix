@@ -5,14 +5,11 @@
   ...
 }:
 {
-  imports = lib.flatten [
-    [
-      ./home.nix
-      ./theme
-      ./packages.nix
-      ./scripts.nix
-    ]
-    (with inputs; [ nix-colors.homeManagerModules.default ])
+  imports = [
+    ./home.nix
+    ./theme
+    ./packages.nix
+    ./scripts.nix
   ];
 
   nixpkgs = {
