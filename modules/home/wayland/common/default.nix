@@ -14,7 +14,6 @@ in
     ./hypridle
     ./hyprlock
     ./kitty
-    ./wlogout
     ./wlsunset
     ./anyrun
     ./snowy-shell
@@ -31,7 +30,6 @@ in
     programs = {
       anyrun.enable = true;
       kitty.enable = true;
-      wlogout.enable = true;
       hyprlock.enable = true;
       snowy-shell.enable = true;
     };

@@ -263,10 +263,10 @@
           let
             anyrun = getExe config.programs.anyrun.package;
             color-picker = getExe inputs.color-picker.packages.${system}.default;
-            wlogout = getExe config.programs.wlogout.package;
             iwgtk = getExe pkgs.iwgtk;
             kitty = getExe pkgs.kitty;
             overskride = getExe pkgs.overskride;
+            nwgbar = getExe pkgs.nwg-bar;
           in
           {
 
@@ -276,7 +276,7 @@
 
             "Mod+Shift+c".action = sh "pkill color-picker || ${color-picker}";
 
-            "Mod+x".action = sh "pkill wlogout || ${wlogout}";
+            "Mod+x".action = sh "pkill nwg-bat || ${nwgbar}";
 
             "Mod+p".action = sh "pkill pulsemixer || ${kitty} --class pulsemixer --detach pulsemixer";
 
