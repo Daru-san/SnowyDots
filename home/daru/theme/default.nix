@@ -15,9 +15,9 @@
       gtk.enable = false;
       spicetify.enable = false;
     };
-    image = inputs.walls + "/images/dark-leaves.png";
+    image = inputs.walls + "/images/mountain.png";
     opacity = {
-      terminal = 0.4;
+      terminal = 0.7;
     };
     polarity = "dark";
   };
