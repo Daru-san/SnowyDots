@@ -20,7 +20,7 @@
     };
     image = inputs.walls + "/images/mountain.png";
     opacity = {
-      terminal = 0.85;
+      terminal = 0.9;
     };
     polarity = "dark";
   };
