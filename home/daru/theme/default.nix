@@ -1,7 +1,10 @@
 { inputs, ... }:
 {
   imports =
-    [ inputs.stylix.homeManagerModules.stylix ]
+    (with inputs; [
+      niri.homeModules.stylix
+      stylix.homeManagerModules.stylix
+    ])
     ++ [
       ./qt.nix
       ./fonts.nix
@@ -17,7 +20,7 @@
     };
     image = inputs.walls + "/images/mountain.png";
     opacity = {
-      terminal = 0.7;
+      terminal = 0.85;
     };
     polarity = "dark";
   };
