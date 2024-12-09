@@ -25,7 +25,7 @@
     ];
     shellAliases =
       let
-        yazi = "${pkgs.small.yazi}/bin/yazi";
+        yazi = "${pkgs.yazi}/bin/yazi";
         rsync = "${pkgs.rsync}/bin/rsync";
         wget2 = "${pkgs.wget2}/bin/wget2";
         gparted = "${pkgs.gparted}/bin/gparted";

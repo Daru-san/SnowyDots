@@ -95,7 +95,7 @@
 
       # The craft
       prismlauncher
-      small.mangayomi
+      mangayomi
     ])
     (with inputs; [
       rimi.packages.${system}.default
