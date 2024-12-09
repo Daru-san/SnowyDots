@@ -8,6 +8,7 @@
       focus-ring = {
         enable = false;
       };
+      gaps = 6;
     };
     animations = {
       enable = true;
