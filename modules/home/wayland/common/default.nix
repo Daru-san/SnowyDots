@@ -28,6 +28,7 @@ in
       swaync.enable = true;
     };
     programs = {
+      wpaperd.enable = true;
       anyrun.enable = true;
       kitty.enable = true;
       hyprlock.enable = true;

@@ -9,14 +9,6 @@
         WantedBy = [ "default.target" ];
       };
     };
-    swww-daemon = {
-      Service = {
-        ExecStart = "${pkgs.swww}/bin/swww-daemon";
-      };
-      Install = {
-        WantedBy = [ "graphical-session.target" ];
-      };
-    };
     turtle-service = {
       Service.ExecStart = "${pkgs.turtle}/bin/turtle_service";
       Install = {

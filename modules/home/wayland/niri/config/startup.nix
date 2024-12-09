@@ -18,7 +18,7 @@
       { command = [ (lib.getExe pkgs.copyq) ]; }
       { command = [ (lib.getExe config.programs.kitty.package) ]; }
       { command = [ (lib.getExe pkgs.xwayland-satellite) ]; }
-      { command = [ (lib.getExe pkgs.swww + " img ${config.stylix.image}") ]; }
+      { command = [ (lib.getExe config.programs.wpaperd.package) ]; }
       {
         command = [
           "systemctl"

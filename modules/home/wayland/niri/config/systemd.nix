@@ -13,7 +13,6 @@
           "xdg-desktop-autostart.target"
           "hypridle.service"
           "tray.target"
-          "swww-daemon.service"
           "wlsunset.service"
           "avizo.service"
           "snowy-shell.service"
