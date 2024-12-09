@@ -8,6 +8,8 @@
     nixpkgs-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
     nyx.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
+    stackpkgs.url = "github:ryze312/stackpkgs";
+
     # Home manager
     home-manager = {
       url = "github:nix-community/home-manager/master";

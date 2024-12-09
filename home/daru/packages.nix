@@ -33,6 +33,7 @@
       mediainfo
       musikcube
       pulsemixer
+      stackpkgs.audiorelay
 
       # Developmentment
       hut
@@ -54,7 +55,6 @@
 
       # Android
       adbtuifm
-      qtscrcpy
       waydroid-script
 
       # Documents

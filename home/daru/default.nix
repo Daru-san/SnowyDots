@@ -16,6 +16,7 @@
     overlays = lib.flatten [
       (with inputs; [
         snowpkgs.overlays.default
+        stackpkgs.overlays.default
       ])
       (with outputs.overlays; [
         stable-packages
