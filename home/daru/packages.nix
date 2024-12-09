@@ -20,7 +20,6 @@
       element
 
       # Content creation
-      krita
       kdenlive
       gimp
 
@@ -96,6 +95,7 @@
 
       # The craft
       prismlauncher
+      small.mangayomi
     ])
     (with inputs; [
       rimi.packages.${system}.default
