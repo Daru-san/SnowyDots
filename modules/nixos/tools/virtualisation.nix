@@ -23,6 +23,7 @@
         vhostUserPackages = [ pkgs.virtiofsd ];
         verbatimConfig = ''
           capability_filters = [ "device.json" ]
+          seccomp_sandbox = 0
         '';
       };
     };
