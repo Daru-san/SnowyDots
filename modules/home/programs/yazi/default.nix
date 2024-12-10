@@ -75,7 +75,7 @@
             run = "bat";
           }
           {
-            mime = "application/x-bittorrent";
+            mime = "application/bittorrent";
             run = "torrent-preview";
           }
           {
@@ -83,23 +83,23 @@
             run = "ouch";
           }
           {
-            mime = "application/x-tar";
+            mime = "application/tar";
             run = "ouch";
           }
           {
-            mime = "application/x-bzip2";
+            mime = "application/bzip2";
             run = "ouch";
           }
           {
-            mime = "application/x-7z-compressed";
+            mime = "application/7z-compressed";
             run = "ouch";
           }
           {
-            mime = "application/x-rar";
+            mime = "application/rar";
             run = "ouch";
           }
           {
-            mime = "application/x-xz";
+            mime = "application/xz";
             run = "ouch";
           }
           {
@@ -107,7 +107,7 @@
             run = "mediainfo";
           }
           {
-            mime = "application/x-subrip";
+            mime = "application/subrip";
             run = "mediainfo";
           }
           {
