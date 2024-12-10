@@ -16,9 +16,9 @@ require("zoxide"):setup({ update_db = true })
 require("full-border"):setup()
 require("git"):setup()
 
-local catppuccin_theme = require("yatline-catppuccin"):setup("mocha")
+local tokyo_night_theme = require("yatline-tokyo-night"):setup("storm")
 require("yatline"):setup({
-  theme = catppuccin_theme,
+  theme = tokyo_night_theme,
   section_separator = { open = "", close = "" },
   part_separator = { open = "", close = "" },
   inverse_separator = { open = "", close = "" },
