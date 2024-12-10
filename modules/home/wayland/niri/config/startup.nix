@@ -16,7 +16,7 @@
         ];
       }
       { command = [ (lib.getExe pkgs.copyq) ]; }
-      { command = [ (lib.getExe config.programs.kitty.package) ]; }
+      { command = [ (lib.getExe config.programs.kitty.package ++ "--hold btop") ]; }
       { command = [ (lib.getExe pkgs.xwayland-satellite) ]; }
       { command = [ (lib.getExe config.programs.wpaperd.package) ]; }
       {
