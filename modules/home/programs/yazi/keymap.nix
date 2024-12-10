@@ -18,7 +18,7 @@
     }
     {
       on = [ "l" ];
-      run = "plugin --sync smart-enter";
+      run = "plugin smart-enter";
       desc = "Enter the child directory, or open the file";
     }
     {
@@ -33,12 +33,12 @@
     }
     {
       on = [ "t" ];
-      run = "plugin --sync hide-preview";
+      run = "plugin hide-preview";
       desc = "Hide or show preview";
     }
     {
       on = [ "T" ];
-      run = "plugin --sync max-preview";
+      run = "plugin max-preview";
       desc = "Maximize or restore preview";
     }
     {
