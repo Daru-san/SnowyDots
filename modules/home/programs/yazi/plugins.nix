@@ -14,7 +14,6 @@ in
     "max-preview" = (getPlugin "plugins") + "/max-preview.yazi";
     "hide-preview" = (getPlugin "plugins") + "/hide-preview.yazi";
     "yatline" = getPlugin "yatline.yazi";
-    "yatline-catppuccin" = getPlugin "yatline-catppuccin.yazi";
     "starship" = getPlugin "starship.yazi";
     "open-with-cmd" = getPlugin "open-with-cmd.yazi";
     "mediainfo" = getPlugin "mediainfo.yazi";
@@ -22,5 +21,6 @@ in
     "git" = (getPlugin "plugins") + "/git.yazi";
     "what-size" = getPlugin "what-size.yazi";
     "clipboard" = getPlugin "clipboard.yazi";
+    "yatline-tokyo-night" = getPlugin "yatline-tokyo-night.yazi";
   };
 }
