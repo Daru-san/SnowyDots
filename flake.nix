@@ -16,19 +16,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    base16.url = "github:SenchoPens/base16.nix";
-
-    # Theming
+    # Themes
     tinted-themes = {
       url = "github:tinted-theming/schemes";
       flake = false;
     };
 
-    base16-zathura = {
-      url = "github:haozeke/base16-zathura";
-      flake = false;
-    };
-
+    # Theme manager
     stylix.url = "github:danth/stylix";
 
     # Spiced spotify
