@@ -11,7 +11,7 @@
       plugins =
         with pkgs;
         [ nu-periodic-table ]
-        + (with nushellPlugins; [
+        ++ (with nushellPlugins; [
           net
           gstat
           units
