@@ -103,14 +103,6 @@
             run = "ouch";
           }
           {
-            mime = "{image,audio,video}/*";
-            run = "mediainfo";
-          }
-          {
-            mime = "application/subrip";
-            run = "mediainfo";
-          }
-          {
             name = "*.md";
             run = "glow";
           }

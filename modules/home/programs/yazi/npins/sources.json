@@ -47,18 +47,6 @@
       "url": "https://github.com/Reledia/hexyl.yazi/archive/39d3d4e23ad7cec8888f648ddf55af4386950ce7.tar.gz",
       "hash": "0v6ir87ddwri8dkfy1lk16a0y127gwv6al2plwzskf55f4pygjcy"
     },
-    "mediainfo.yazi": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "Ape",
-        "repo": "mediainfo.yazi"
-      },
-      "branch": "master",
-      "revision": "c69314e80f5b45fe87a0e06a10d064ed54110439",
-      "url": "https://github.com/Ape/mediainfo.yazi/archive/c69314e80f5b45fe87a0e06a10d064ed54110439.tar.gz",
-      "hash": "0blb9pdjyhsvr5np23vxyj6q33qxafbhqg0mi5xh12wjs8yl25zk"
-    },
     "open-with-cmd.yazi": {
       "type": "Git",
       "repository": {

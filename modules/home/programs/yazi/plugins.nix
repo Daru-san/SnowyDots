@@ -16,7 +16,6 @@ in
     "yatline" = getPlugin "yatline.yazi";
     "starship" = getPlugin "starship.yazi";
     "open-with-cmd" = getPlugin "open-with-cmd.yazi";
-    "mediainfo" = getPlugin "mediainfo.yazi";
     "hexyl" = getPlugin "hexyl.yazi";
     "git" = (getPlugin "plugins") + "/git.yazi";
     "what-size" = getPlugin "what-size.yazi";
