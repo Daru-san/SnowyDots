@@ -8,14 +8,6 @@
   programs = {
     nushell = {
       enable = true;
-      plugins =
-        with pkgs;
-        [ nu-periodic-table ]
-        ++ (with nushellPlugins; [
-          net
-          gstat
-          units
-        ]);
       extraConfig = ''
         let carapace_completer = {|spans: list<string>|
           carapace $spans.0 nushell ...$spans
