@@ -1401,11 +1401,11 @@
         "nixpkgs": "nixpkgs_10"
       },
       "locked": {
-        "lastModified": 1734011161,
-        "narHash": "sha256-ES4QwCGtENDpaTnpMgPOcQ5/2BlOul+r2a5vcAM1Xbs=",
+        "lastModified": 1734012147,
+        "narHash": "sha256-bqMHSnavnSOZtQV/FvKM/Dn7HWmUR4/RzKqJ5LbV41M=",
         "owner": "Daru-san",
         "repo": "Snowpkgs",
-        "rev": "f0cb9690d38da2b600a44cdd1ba421cc01345203",
+        "rev": "b833cc9f91098eae6aaad28c62fbf73b9c83c6cd",
         "type": "github"
       },
       "original": {
