@@ -91,9 +91,9 @@
         "repo": "plugins"
       },
       "branch": "main",
-      "revision": "ec97f8847feeb0307d240e7dc0f11d2d41ebd99d",
-      "url": "https://github.com/yazi-rs/plugins/archive/ec97f8847feeb0307d240e7dc0f11d2d41ebd99d.tar.gz",
-      "hash": "13sq7dlazfljdabfv61l1d2amha7pbwhvg7gsqw2zga9lnx1fbq7"
+      "revision": "62f078905b4de55f19e328452c8a1f889ff2f6f4",
+      "url": "https://github.com/yazi-rs/plugins/archive/62f078905b4de55f19e328452c8a1f889ff2f6f4.tar.gz",
+      "hash": "1nlij975hzz5yv6yv319ikqs8w4z4kpbsnmfnh7a4xbc5n67699x"
     },
     "starship.yazi": {
       "type": "Git",
