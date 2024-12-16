@@ -11,7 +11,7 @@
       gaps = 6;
     };
     animations = {
-      enable = true;
+      enable = false;
     };
   };
 }
