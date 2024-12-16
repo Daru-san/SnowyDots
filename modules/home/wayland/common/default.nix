@@ -17,7 +17,6 @@ in
     ./wlsunset
     ./anyrun
     ./snowy-shell
-    ./avizo
     ./swaync
   ];
   config = mkIf cfg.enable {
