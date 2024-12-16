@@ -45,6 +45,7 @@
       yq-go
       gdb
       seer
+      valgrind
 
       # Desktop
       swww
