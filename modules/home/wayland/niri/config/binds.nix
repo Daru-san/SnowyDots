@@ -199,7 +199,7 @@
         )
         (
           let
-            swayosd = getExe config.services.swayosd.package;
+            swayosd = getExe' config.services.swayosd.package "swayosd-client";
           in
           {
             "XF86MonBrightnessUp".action.spawn = [
