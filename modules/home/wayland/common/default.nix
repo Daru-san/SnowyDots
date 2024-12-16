@@ -24,8 +24,8 @@ in
     services = {
       hypridle.enable = true;
       wlsunset.enable = true;
-      avizo.enable = true;
       swaync.enable = true;
+      swayosd.enable = true;
     };
     programs = {
       wpaperd.enable = true;

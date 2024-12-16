@@ -14,7 +14,7 @@
           "hypridle.service"
           "tray.target"
           "wlsunset.service"
-          "avizo.service"
+          "swayosd.service"
           "snowy-shell.service"
           "xdg-desktop-portal-gnome.service"
         ];
