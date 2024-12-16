@@ -6,5 +6,6 @@
     ./monitors.nix
     ./startup.nix
     ./systemd.nix
+    ./rules.nix
   ];
 }
