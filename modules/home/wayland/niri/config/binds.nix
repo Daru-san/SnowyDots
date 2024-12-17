@@ -246,14 +246,6 @@
                 "mute-toggle"
               ];
             };
-
-            "caps_lock" = {
-              repeat = false;
-              action.spawn = [
-                swayosd
-                "--caps-lock"
-              ];
-            };
           }
         )
         (
