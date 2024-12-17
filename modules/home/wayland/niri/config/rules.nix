@@ -2,6 +2,7 @@
   programs.niri.settings = {
     window-rules = [
       {
+        variable-refresh-rate = true;
         draw-border-with-background = false;
         open-maximized = true;
         clip-to-geometry = true;
@@ -11,7 +12,6 @@
           bottom-left = 6.0;
           bottom-right = 6.0;
         };
-        variable-refresh-rate = false;
       }
       {
         matches = [
