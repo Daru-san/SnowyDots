@@ -249,7 +249,6 @@
 
             "caps_lock" = {
               repeat = false;
-              cooldown-ms = 100;
               action.spawn = [
                 swayosd
                 "--caps-lock"
