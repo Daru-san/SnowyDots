@@ -202,35 +202,59 @@
             swayosd = getExe' config.services.swayosd.package "swayosd-client";
           in
           {
-            "XF86MonBrightnessUp".action.spawn = [
-              swayosd
-              "--brightness"
-              "raise"
-            ];
+            "XF86MonBrightnessUp" = {
+              allow-when-locked = true;
+              action.spawn = [
+                swayosd
+                "--brightness"
+                "raise"
+              ];
+            };
 
-            "XF86MonBrightnessDown".action.spawn = [
-              swayosd
-              "--brightness"
-              "lower"
-            ];
+            "XF86MonBrightnessDown" = {
+              allow-when-locked = true;
+              action.spawn = [
+                swayosd
+                "--brightness"
+                "lower"
+              ];
+            };
 
-            "XF86AudioRaiseVolume".action.spawn = [
-              swayosd
-              "--output-volume"
-              "raise"
-            ];
+            "XF86AudioRaiseVolume" = {
+              allow-when-locked = true;
+              action.spawn = [
+                swayosd
+                "--output-volume"
+                "raise"
+              ];
+            };
 
-            "XF86AudioLowerVolume".action.spawn = [
-              swayosd
-              "--output-volume"
-              "lower"
-            ];
+            "XF86AudioLowerVolume" = {
+              allow-when-locked = true;
+              action.spawn = [
+                swayosd
+                "--output-volume"
+                "lower"
+              ];
+            };
 
-            "XF86AudioMute".action.spawn = [
-              swayosd
-              "--output-volume"
-              "mute-toggle"
-            ];
+            "XF86AudioMute" = {
+              allow-when-locked = true;
+              action.spawn = [
+                swayosd
+                "--output-volume"
+                "mute-toggle"
+              ];
+            };
+
+            "caps-lock" = {
+              repeat = false;
+              cooldown-ms = 100;
+              action.spawn = [
+                swayosd
+                "caps-lock"
+              ];
+            };
           }
         )
         (
@@ -242,25 +266,37 @@
             stop = "stop";
           in
           {
-            "XF86AudioPlay".action.spawn = [
-              playerctl
-              toggle-play
-            ];
+            "XF86AudioPlay" = {
+              allow-when-locked = true;
+              action.spawn = [
+                playerctl
+                toggle-play
+              ];
+            };
 
-            "XF86AudioStop".action.spawn = [
-              playerctl
-              stop
-            ];
+            "XF86AudioStop" = {
+              allow-when-locked = true;
+              action.spawn = [
+                playerctl
+                stop
+              ];
+            };
 
-            "XF86AudioPrev".action.spawn = [
-              playerctl
-              prev
-            ];
+            "XF86AudioPrev" = {
+              allow-when-locked = true;
+              action.spawn = [
+                playerctl
+                prev
+              ];
+            };
 
-            "XF86AudioNext".action.spawn = [
-              playerctl
-              next
-            ];
+            "XF86AudioNext" = {
+              allow-when-locked = true;
+              action.spawn = [
+                playerctl
+                next
+              ];
+            };
           }
         )
         (
@@ -273,14 +309,13 @@
             nwgbar = getExe pkgs.nwg-bar;
           in
           {
-
             "Mod+d".action = sh "pkill anyrun || ${anyrun}";
 
             "Mod+b".action = sh "pkill iwgtk || ${iwgtk}";
 
             "Mod+Shift+c".action = sh "pkill color-picker || ${color-picker}";
 
-            "Mod+x".action = sh "pkill nwg-bat || ${nwgbar}";
+            "Mod+x".action = sh "pkill nwg-bar || ${nwgbar}";
 
             "Mod+p".action = sh "pkill pulsemixer || ${kitty} --class pulsemixer --detach pulsemixer";
 
