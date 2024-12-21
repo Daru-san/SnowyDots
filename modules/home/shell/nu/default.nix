@@ -4,6 +4,18 @@
   config,
   ...
 }:
+let
+  atuin-completions = pkgs.stdenvNoCC.mkDerivation {
+    name = "atuin-nushell-completions";
+    version = pkgs.atuin.version;
+    dontUnpack = true;
+    nativeBuildInputs = [ config.programs.atuin.package ];
+    installPhase = ''
+      mkdir $out
+      atuin gen-completions --shell nushell > $out/atuin.nu
+    '';
+  };
+in
 {
   programs = {
     nushell = {
@@ -75,6 +87,8 @@
         if ("${config.xdg.configHome}/nushell/extra.nu" | path exists) {
           source ${config.xdg.configHome}/nushell/extra.nu
         }
+
+        source ${atuin-completions}/atuin.nu
       '';
 
       shellAliases = {

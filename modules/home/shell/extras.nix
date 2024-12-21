@@ -58,5 +58,27 @@
       enable = true;
       enableNushellIntegration = true;
     };
+
+    atuin = {
+      enable = true;
+      daemon.enable = true;
+      settings = {
+        workspaces = true;
+        store_failed = false;
+        secrets_filter = true;
+        keymap_mode = "vim-normal";
+        style = "compact";
+        show_help = false;
+        history_filter = [
+          "^$env"
+        ];
+        cwd_filter = [
+          "^secret"
+          "^project"
+          "^Documents"
+          "^Download"
+        ];
+      };
+    };
   };
 }
