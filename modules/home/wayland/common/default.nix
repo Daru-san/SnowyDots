@@ -21,12 +21,12 @@ in
   config = mkIf cfg.enable {
     services = {
       hypridle.enable = true;
+      hyprpaper.enable = true;
       wlsunset.enable = true;
       swaync.enable = true;
       swayosd.enable = true;
     };
     programs = {
-      wpaperd.enable = true;
       anyrun.enable = true;
       hyprlock.enable = true;
       foot.enable = true;
