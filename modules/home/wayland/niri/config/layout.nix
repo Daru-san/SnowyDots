@@ -8,10 +8,10 @@
         enable = false;
       };
       focus-ring = {
-        enable = true;
+        enable = false;
         width = 3;
       };
-      gaps = 6;
+      gaps = 3;
     };
     animations = {
       enable = false;
