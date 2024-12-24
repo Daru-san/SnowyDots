@@ -135,7 +135,7 @@
         }
         (
           let
-            terminal = getExe config.programs.kitty.package;
+            terminal = getExe config.programs.foot.package;
             file-manager = getExe pkgs.nautilus;
             editor = "nvim";
             yazi = getExe config.programs.yazi.package;
@@ -171,7 +171,7 @@
 
             "Mod+Shift+period".action.spawn = [
               terminal
-              "--detach"
+              "-e"
               btop
             ];
 
@@ -187,12 +187,12 @@
 
             "Mod+z".action.spawn = [
               terminal
-              "--detach"
+              "-e"
               editor
             ];
             "Mod+t".action.spawn = [
               terminal
-              "--detach"
+              "-e"
               yazi
             ];
           }

@@ -18,8 +18,8 @@
       { command = [ (lib.getExe pkgs.copyq) ]; }
       {
         command = [
-          (lib.getExe config.programs.kitty.package)
-          "--hold"
+          (lib.getExe config.programs.foot.package)
+          "-e"
           (lib.getExe config.programs.btop.package)
         ];
       }

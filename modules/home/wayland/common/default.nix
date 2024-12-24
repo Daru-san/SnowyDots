@@ -13,8 +13,8 @@ in
   imports = [
     ./hypridle
     ./hyprlock
-    ./kitty
     ./wlsunset
+    ./foot
     ./anyrun
     ./snowy-shell
     ./swaync
@@ -29,8 +29,8 @@ in
     programs = {
       wpaperd.enable = true;
       anyrun.enable = true;
-      kitty.enable = true;
       hyprlock.enable = true;
+      foot.enable = true;
       snowy-shell.enable = true;
     };
     home.packages = [ pkgs.wl-clipboard-rs ];
