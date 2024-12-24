@@ -46,6 +46,8 @@
       gdb
       seer
       valgrind
+      nasm
+      nasmfmt
 
       # Desktop
       swww
