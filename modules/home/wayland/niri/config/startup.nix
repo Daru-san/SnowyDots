@@ -25,7 +25,6 @@
       }
       { command = [ (lib.getExe pkgs.xwayland-satellite) ]; }
       { command = [ (lib.getExe' config.services.swayosd.package "swayosd-server") ]; }
-      { command = [ (lib.getExe config.programs.wpaperd.package) ]; }
       {
         command = [
           "systemctl"
