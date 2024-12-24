@@ -30,7 +30,6 @@
         open-maximized = false;
         matches = [
           { app-id = "file-roller"; }
-          { app-id = "foot"; }
           { app-id = "nm-connection-editor"; }
           { app-id = ".blueman-manager-wrapped"; }
           { app-id = "org.twosheds.iwgtk"; }
