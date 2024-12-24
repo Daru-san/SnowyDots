@@ -14,7 +14,6 @@ in
     ./hypridle
     ./hyprlock
     ./wlsunset
-    ./foot
     ./anyrun
     ./snowy-shell
     ./swaync
