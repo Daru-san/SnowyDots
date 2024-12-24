@@ -11,8 +11,8 @@
     };
     sansSerif = config.stylix.fonts.serif;
     monospace = {
-      package = pkgs.nerd-fonts.zed-mono;
-      name = "Zed Mono Nerd Font";
+      package = pkgs.nerd-fonts.iosevka;
+      name = "Iosevka Nerd Font";
     };
     sizes = {
       desktop = 12;
