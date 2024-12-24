@@ -18,9 +18,10 @@
       gtk.enable = false;
       spicetify.enable = false;
     };
-    image = inputs.walls + "/images/mountain.png";
+    image = inputs.walls + "/images/forest-bridge.png";
+    imageScalingMode = "stretch";
     opacity = {
-      terminal = 0.9;
+      terminal = 0.8;
     };
     polarity = "dark";
   };
