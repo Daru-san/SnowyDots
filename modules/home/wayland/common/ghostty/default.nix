@@ -6,6 +6,8 @@
     installVimSyntax = true;
     settings = {
       font-style = "Medium";
+      window-decoration = false;
+      gtk-titlebar = false;
     };
   };
 }
