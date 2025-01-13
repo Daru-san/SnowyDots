@@ -1,6 +1,5 @@
 { ... }:
 {
-  programs.kitty.enable = true;
   imports = [
     ./mpv
     ./btop

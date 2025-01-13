@@ -17,5 +17,5 @@ in
     sessionVariables.NAUTILUS_4_EXTENSION_DIR = "${nautEnv}/lib/nautilus/extensions-4";
   };
 
-  dconf.settings."com/github/stunkymonkey/nautilus-open-any-terminal".terminal = "kitty";
+  dconf.settings."com/github/stunkymonkey/nautilus-open-any-terminal".terminal = "ghostty";
 }
