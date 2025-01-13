@@ -30,7 +30,6 @@ in
     programs = {
       anyrun.enable = true;
       hyprlock.enable = true;
-      foot.enable = true;
       ghostty.enable = true;
       snowy-shell.enable = true;
     };
