@@ -33,9 +33,6 @@
     # Reall nice anime cli tool
     anipy-cli.url = "github:sdaqo/anipy-cli";
 
-    # A nice idle inhibitor for hyprland
-    vigiland.url = "github:jappie3/vigiland";
-
     # Featureful wayland launcher
     anyrun.url = "github:anyrun-org/anyrun";
 
@@ -52,9 +49,7 @@
       url = "sourcehut:~darumaka/SnowyVim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    snowy-shell.url = "github:Daru-san/SnowyShell/niri";
     snowpkgs.url = "github:Daru-san/Snowpkgs";
-    timed-rs.url = "github:Daru-san/timed-rs";
     walls = {
       url = "sourcehut:~darumaka/Wallpapers";
       flake = false;
