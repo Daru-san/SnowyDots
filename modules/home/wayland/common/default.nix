@@ -17,6 +17,7 @@ in
     ./anyrun
     ./snowy-shell
     ./swaync
+    ./ghostty
   ];
   config = mkIf cfg.enable {
     services = {
@@ -30,6 +31,7 @@ in
       anyrun.enable = true;
       hyprlock.enable = true;
       foot.enable = true;
+      ghostty.enable = true;
       snowy-shell.enable = true;
     };
     home.packages = [ pkgs.wl-clipboard-rs ];
