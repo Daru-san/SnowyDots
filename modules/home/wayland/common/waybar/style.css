@@ -1,0 +1,43 @@
+window#waybar {
+    all: unset;
+}
+
+#workspaces {
+    padding: 0px 5px;
+}
+
+#workspaces button {
+    all: unset;
+    padding: 0px 5px;
+    color: rgba(0, 0, 0, 0);
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, .4);
+}
+
+#workspaces button:hover {
+    color: rgba(0, 0, 0, 0);
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, .7);
+    transition: all 1s ease;
+}
+
+#workspaces button.active {
+    border: none;
+    transition: all 1s ease;
+}
+
+#workspaces button.empty {
+    color: rgba(0, 0, 0, 0);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
+}
+
+#workspaces button.empty:hover {
+    color: rgba(0, 0, 0, 0);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+    transition: all 1s ease;
+}
+
+#workspaces button.empty.active {
+    border: none;
+    transition: all 1s ease;
+}

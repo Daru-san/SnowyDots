@@ -15,9 +15,9 @@ in
     ./hyprlock
     ./wlsunset
     ./anyrun
-    ./snowy-shell
     ./swaync
     ./ghostty
+    ./waybar
   ];
   config = mkIf cfg.enable {
     services = {
@@ -28,10 +28,10 @@ in
       swayosd.enable = true;
     };
     programs = {
+      waybar.enable = true;
       anyrun.enable = true;
       hyprlock.enable = true;
       ghostty.enable = true;
-      snowy-shell.enable = true;
     };
     home.packages = [ pkgs.wl-clipboard-rs ];
   };

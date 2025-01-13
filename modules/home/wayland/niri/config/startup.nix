@@ -30,14 +30,6 @@
           "systemctl"
           "--user"
           "restart"
-          "snowy-shell.service"
-        ];
-      }
-      {
-        command = [
-          "systemctl"
-          "--user"
-          "restart"
           "syncthingtray.service"
         ];
       }
