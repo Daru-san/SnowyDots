@@ -135,7 +135,7 @@
         }
         (
           let
-            terminal = getExe config.programs.foot.package;
+            terminal = getExe config.programs.ghostty.package;
             file-manager = getExe pkgs.nautilus;
             editor = "nvim";
             yazi = getExe config.programs.yazi.package;
@@ -295,7 +295,7 @@
             anyrun = getExe config.programs.anyrun.package;
             color-picker = getExe inputs.color-picker.packages.${system}.default;
             iwgtk = getExe pkgs.iwgtk;
-            kitty = getExe pkgs.kitty;
+            ghostty = getExe pkgs.ghostty;
             overskride = getExe pkgs.overskride;
             nwgbar = getExe pkgs.nwg-bar;
           in
@@ -308,7 +308,7 @@
 
             "Mod+x".action = sh "pkill nwg-bar || ${nwgbar}";
 
-            "Mod+p".action = sh "pkill pulsemixer || ${kitty} --class pulsemixer --detach pulsemixer";
+            "Mod+p".action = sh "pkill pulsemixer || ${ghostty} --class pulsemixer --detach pulsemixer";
 
             "Mod+Shift+b".action = sh "pkill overskride || ${overskride}";
           }

@@ -18,7 +18,7 @@
       { command = [ (lib.getExe pkgs.copyq) ]; }
       {
         command = [
-          (lib.getExe config.programs.foot.package)
+          (lib.getExe config.programs.ghostty.package)
           "-e"
           (lib.getExe config.programs.btop.package)
         ];
