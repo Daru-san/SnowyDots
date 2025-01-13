@@ -1,7 +1,3 @@
-window#waybar {
-    all: unset;
-}
-
 #workspaces {
     padding: 0px 5px;
 }
@@ -9,35 +5,105 @@ window#waybar {
 #workspaces button {
     all: unset;
     padding: 0px 5px;
-    color: rgba(0, 0, 0, 0);
-    text-shadow: 0px 0px 1px rgba(0, 0, 0, .4);
+    color: @base04;
+    text-shadow: 0px 0px 1px alpha(@base04, .4);
 }
 
 #workspaces button:hover {
-    color: rgba(0, 0, 0, 0);
-    text-shadow: 0px 0px 1px rgba(0, 0, 0, .7);
+    color: @base04;
+    text-shadow: 0px 0px 1px alpha(@base04, .7);
     transition: all 1s ease;
 }
 
 #workspaces button.active {
+    color: @base0D;
     border: none;
     transition: all 1s ease;
 }
 
 #workspaces button.empty {
-    color: rgba(0, 0, 0, 0);
+    color: @base04;
     border: none;
-    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
+    text-shadow: 0px 0px 1.5px alpha(@base04, .2);
 }
 
 #workspaces button.empty:hover {
-    color: rgba(0, 0, 0, 0);
+    color: @base04;
     border: none;
-    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+    text-shadow: 0px 0px 1.5px alpha(@base04, .5);
     transition: all 1s ease;
 }
 
 #workspaces button.empty.active {
+    color: @base0C;
     border: none;
     transition: all 1s ease;
+}
+
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+    min-height: 10px;
+    min-width: 80px;
+    border-radius: 5px;
+    background-color: @base02;
+}
+
+#pulseaudio-slider highlight {
+    min-width: 10px;
+    border-radius: 5px;
+    background-color: @base0B;
+}
+
+#tray {
+    padding: 0 5px;
+}
+
+#custom-notification {
+    padding: 0 5px;
+    background-color: shade(@base0D, .4);
+    border-radius: 7px;
+}
+
+#network {
+    background-color: shade(@base0E, .4);
+    border-radius: 7px;
+    padding: 0 5px;
+}
+
+#system {
+    border-radius: 7px;
+    background-color: shade(@base0C, .4);
+    padding: 0 5px;
+}
+
+#audio {
+    border-radius: 7px;
+    background-color: shade(@base0D, .4);
+    padding: 0 5px;
+}
+
+#clock {
+    border-radius: 7px;
+    background-color: shade(@base0C, .4);
+    font-weight: bold;
+}
+
+#cava {
+    border-radius: 7px;
+    background-color: shade(@base0D, .4);
+    padding: 0 5px;
+}
+
+#idle_inhibitor {
+    border-radius: 7px;
+    background-color: shade(@base0E, .4);
+    padding: 0 5px;
 }
