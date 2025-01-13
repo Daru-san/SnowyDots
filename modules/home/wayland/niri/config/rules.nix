@@ -27,7 +27,7 @@
         block-out-from = "screencast";
       }
       {
-        open-maximized = false;
+        open-floating = true;
         matches = [
           { app-id = "file-roller"; }
           { app-id = "nm-connection-editor"; }
