@@ -15,6 +15,5 @@
     ./spotify
     ./floorp
     ./elia
-    ./zed
   ];
 }
