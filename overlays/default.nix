@@ -12,10 +12,4 @@
       config.allowUnfree = true;
     };
   };
-  small-packages = final: _prev: {
-    small = import inputs.nixpkgs-small {
-      inherit (final) system;
-      config.allowUnfree = true;
-    };
-  };
 }
