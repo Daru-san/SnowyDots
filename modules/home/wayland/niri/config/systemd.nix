@@ -11,11 +11,7 @@
         Wants = [
           "graphical-session-pre.target"
           "xdg-desktop-autostart.target"
-          "hypridle.service"
           "tray.target"
-          "wlsunset.service"
-          "swayosd.service"
-          "snowy-shell.service"
           "xdg-desktop-portal-gnome.service"
         ];
       };

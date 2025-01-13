@@ -4,6 +4,7 @@
     inputs.niri.homeModules.niri
     ./config
   ];
+  wayland.systemd.target = "niri-session.target";
   programs.niri = {
     enable = true;
     settings.environment = {
