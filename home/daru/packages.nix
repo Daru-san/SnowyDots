@@ -51,6 +51,7 @@
 
       # Desktop
       swww
+      ayugram-desktop
 
       # GUI Util
       file-roller
