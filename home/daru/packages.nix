@@ -64,6 +64,7 @@
       # Documents
       pandoc
       glow
+      texliveFull
 
       # System monitoring
       gping
