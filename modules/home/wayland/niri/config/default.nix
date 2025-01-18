@@ -7,5 +7,6 @@
     ./startup.nix
     ./systemd.nix
     ./rules.nix
+    ./workspaces.nix
   ];
 }
