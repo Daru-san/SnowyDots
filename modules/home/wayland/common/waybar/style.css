@@ -18,9 +18,11 @@
 
 #workspaces button.active {
     color: @base0D;
-    padding: 0 10px;
-    border: none;
+    padding: 0 7px;
     transition: all 1s ease;
+    background-color: shade(@base04, 0.3);
+    border-radius: 6px;
+    border: 0px transparent;
 }
 
 #workspaces button.empty {
