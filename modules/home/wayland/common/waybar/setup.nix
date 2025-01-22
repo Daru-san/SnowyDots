@@ -33,6 +33,22 @@
         deactivated = " ";
       };
     };
+    "niri/workspaces" = {
+      format = "{icon}";
+      format-icons = {
+        web = "󰈹";
+        sys = "󱄅";
+        chat = "󰍦";
+        media = "";
+        docs = "󱔗";
+        vm = "";
+        files = "";
+        content = "󱦹";
+        dev = "";
+        misc = "";
+        default = "";
+      };
+    };
 
     clock = {
       interval = 1;
