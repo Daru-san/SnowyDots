@@ -4,19 +4,21 @@
 
 #workspaces button {
     all: unset;
-    padding: 0px 5px;
+    padding: 0px 7px;
     color: @base04;
+    border: none;
     text-shadow: 0px 0px 1px alpha(@base04, .4);
 }
 
 #workspaces button:hover {
     color: @base04;
     text-shadow: 0px 0px 1px alpha(@base04, .7);
-    transition: all 1s ease;
+    transition: all .1s ease;
 }
 
 #workspaces button.active {
     color: @base0D;
+    padding: 0 10px;
     border: none;
     transition: all 1s ease;
 }
