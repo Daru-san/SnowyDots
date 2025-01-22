@@ -2,100 +2,102 @@
   programs.niri.settings = {
     workspaces = {
       "1" = {
-        name = "System Info";
+        name = "sys";
       };
       "2" = {
-        name = "Browser";
+        name = "web";
       };
       "3" = {
-        name = "Development";
-      };
-      "4" = {
-        name = "Media & Games";
+        name = "dev";
       };
       "5" = {
-        name = "Files";
+        name = "media";
+      };
+      "4" = {
+        name = "files";
       };
       "6" = {
-        name = "Content Creation";
+        name = "content";
       };
       "7" = {
-        name = "Communication";
+        name = "chat";
       };
       "8" = {
-        name = "Virtualisation";
+        name = "vm";
       };
       "9" = {
-        name = "Docs";
+        name = "docs";
       };
-      "0" = {
-        name = "Misc";
+      "10" = {
+        name = "misc";
       };
     };
     window-rules = [
       {
         matches = [
-          { app-id = "^firefox*"; }
-          { app-id = "^floorp*"; }
-          { app-id = "^zen-browser*"; }
-          { app-id = "^brave*"; }
-          { app-id = "^chromium*"; }
+          { app-id = "^firefox$"; }
+          { app-id = "floorp"; }
+          { app-id = "^zen-browser$"; }
+          { app-id = "^brave$"; }
+          { app-id = "^chromium$"; }
         ];
-        open-on-workspace = "2";
+        open-on-workspace = "web";
       }
       {
         matches = [
-          { title = "^spotify*"; }
-          { app-id = "^spotify*"; }
-          { app-id = "^freetube*"; }
-          { app-id = "^mpv*"; }
-          { app-id = "^prism*"; }
+          { title = "^spotify$"; }
+          { app-id = "^spotify$"; }
+          { app-id = "Freetube"; }
+          { app-id = "^mangayomi$"; }
+          { app-id = "^mpv$"; }
+          { app-id = "^prism$"; }
         ];
-        open-on-workspace = "4";
+        open-on-workspace = "media";
       }
       {
         matches = [
-          { app-id = "^nautilus*"; }
+          { app-id = "org.gnome.Nautilus"; }
+          { app-id = "oculante"; }
         ];
-        open-on-workspace = "5";
+        open-on-workspace = "files";
       }
       {
         matches = [
-          { title = "^btop*"; }
-          { title = "^nvtop*"; }
+          { title = "^btop$"; }
+          { title = "^nvtop$"; }
         ];
-        open-on-workspace = "1";
+        open-on-workspace = "sys";
       }
       {
         matches = [
-          { title = "^zathura*"; }
-          { title = "^obsidian*"; }
+          { title = "org.pwmt.zathura"; }
         ];
-        open-on-workspace = "9";
+        open-on-workspace = "docs";
       }
       {
         matches = [
-          { title = "^virt-manager*"; }
+          { app-id = ".virt-manager-wrapped"; }
+          { app-id = "^waydroid$"; }
         ];
-        open-on-workspace = "8";
+        open-on-workspace = "vm";
       }
       {
         matches = [
-          { app-id = "^telegram*"; }
-          { app-id = "^ayugram*"; }
-          { app-id = "^discord*"; }
-          { app-id = "^whatsie*"; }
+          { app-id = "^telegram$"; }
+          { app-id = "com.ayugram.desktop"; }
+          { app-id = "^discord$"; }
+          { app-id = "com.ktechpit.whatsie"; }
         ];
-        open-on-workspace = "7";
+        open-on-workspace = "chat";
       }
       {
         matches = [
-          { app-id = "^gimp*"; }
-          { app-id = "^krita*"; }
-          { app-id = "^kdenlive*"; }
-          { app-id = "^obs-studio*"; }
+          { app-id = "^Gimp$"; }
+          { app-id = "^krita$"; }
+          { app-id = "org.kde.kdenlive"; }
+          { app-id = "^com.obsproject.Studio"; }
         ];
-        open-on-workspace = "6";
+        open-on-workspace = "content";
       }
     ];
   };
