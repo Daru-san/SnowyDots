@@ -13,7 +13,6 @@
       scrcpy
       keepassxc
       obsidian
-      wike
 
       # Science
       kdePackages.kalzium
@@ -64,7 +63,7 @@
       # Documents
       pandoc
       glow
-      texliveFull
+      texliveSmall
 
       # System monitoring
       gping
