@@ -19,9 +19,9 @@
         "repo": "fg.yazi"
       },
       "branch": "main",
-      "revision": "a7e1a828ef4dfb01ace5b03fe0691c909466a645",
-      "url": "https://github.com/lpnh/fg.yazi/archive/a7e1a828ef4dfb01ace5b03fe0691c909466a645.tar.gz",
-      "hash": "0sx78qp7iwr44xjvmp32izairxzcg12b967lz2ycapbmkz55c6s3"
+      "revision": "9bba7430dbcd30995deea600499b069fe6067a3e",
+      "url": "https://github.com/lpnh/fg.yazi/archive/9bba7430dbcd30995deea600499b069fe6067a3e.tar.gz",
+      "hash": "02ndncicans6sjsazjanp1nvmz83211c3mr33z4210dqz8px6n6x"
     },
     "glow.yazi": {
       "type": "Git",
@@ -31,9 +31,9 @@
         "repo": "glow.yazi"
       },
       "branch": "main",
-      "revision": "c2ed51ed8c4ba965b793adab5868a307ab375c8a",
-      "url": "https://github.com/Reledia/glow.yazi/archive/c2ed51ed8c4ba965b793adab5868a307ab375c8a.tar.gz",
-      "hash": "1g8725vcadzilf09hi44yrfzxs4kyi4n91fxm0x48vmzbv8gv3c5"
+      "revision": "5ce76dc92ddd0dcef36e76c0986919fda3db3cf5",
+      "url": "https://github.com/Reledia/glow.yazi/archive/5ce76dc92ddd0dcef36e76c0986919fda3db3cf5.tar.gz",
+      "hash": "0gplq8f8vbhh8zsxswhdclh7gmc8ckq6lpzlp5dkdr6ffnnxqn2j"
     },
     "hexyl.yazi": {
       "type": "Git",
@@ -55,9 +55,9 @@
         "repo": "open-with-cmd.yazi"
       },
       "branch": "master",
-      "revision": "8d7abc8a347bfa065b6d339d26480f6fdcfac37e",
-      "url": "https://github.com/Ape/open-with-cmd.yazi/archive/8d7abc8a347bfa065b6d339d26480f6fdcfac37e.tar.gz",
-      "hash": "015abnfxjlx58nznsdnh5kfr8i90vb776sd4zj96s3inx725sk5m"
+      "revision": "a80d1cf41fc23f84fbdf0b8b26c5b13f06455472",
+      "url": "https://github.com/Ape/open-with-cmd.yazi/archive/a80d1cf41fc23f84fbdf0b8b26c5b13f06455472.tar.gz",
+      "hash": "1y4qdnr9ni4pgggwprxpmd02kf6y2xkvwm3r94il4n5s2dk540i0"
     },
     "ouch.yazi": {
       "type": "Git",
@@ -67,9 +67,9 @@
         "repo": "ouch.yazi"
       },
       "branch": "main",
-      "revision": "b8698865a0b1c7c1b65b91bcadf18441498768e6",
-      "url": "https://github.com/ndtoan96/ouch.yazi/archive/b8698865a0b1c7c1b65b91bcadf18441498768e6.tar.gz",
-      "hash": "0xl4yzqdx2mzlgzi17pn53qhax913iwk09q8dvdi3raq29qds63r"
+      "revision": "083d5647345c8d2119d50860aabca57d292ab672",
+      "url": "https://github.com/ndtoan96/ouch.yazi/archive/083d5647345c8d2119d50860aabca57d292ab672.tar.gz",
+      "hash": "1gjgfwmsizfk8rvbj63y0dj0kvz29ndv3qv13fjxa60rnwk1mc6c"
     },
     "plugins": {
       "type": "Git",
@@ -79,9 +79,9 @@
         "repo": "plugins"
       },
       "branch": "main",
-      "revision": "7afba3a73cdd69f346408b77ea5aac26fe09e551",
-      "url": "https://github.com/yazi-rs/plugins/archive/7afba3a73cdd69f346408b77ea5aac26fe09e551.tar.gz",
-      "hash": "0i11cn9mp6f544bkwdar3b4q5m4lfgxjyrbh9q7079hddmfm5my3"
+      "revision": "64186980182fc3041e8c8bc281381e38e61a003a",
+      "url": "https://github.com/yazi-rs/plugins/archive/64186980182fc3041e8c8bc281381e38e61a003a.tar.gz",
+      "hash": "09hw3512l0yk19s5kk57xf142pwrv0vyi3gy92ydmvpwy9k6vhl4"
     },
     "starship.yazi": {
       "type": "Git",
@@ -91,9 +91,9 @@
         "repo": "starship.yazi"
       },
       "branch": "main",
-      "revision": "247f49da1c408235202848c0897289ed51b69343",
-      "url": "https://github.com/Rolv-Apneseth/starship.yazi/archive/247f49da1c408235202848c0897289ed51b69343.tar.gz",
-      "hash": "0szqnq1dh28jbbwx60kh3gk53i6aavar8md7vpxdcps3qz2s37nh"
+      "revision": "af8bf6f82165b83272b6501ce7445cf2c61fbf51",
+      "url": "https://github.com/Rolv-Apneseth/starship.yazi/archive/af8bf6f82165b83272b6501ce7445cf2c61fbf51.tar.gz",
+      "hash": "0850h00mh68wyhqxhnb85gmwb0lf6n20n7jpxf0dzyl9k9jj9crg"
     },
     "tokyo-night.yazi": {
       "type": "Git",
@@ -103,9 +103,9 @@
         "repo": "tokyo-night.yazi"
       },
       "branch": "main",
-      "revision": "024fb096821e7d2f9d09a338f088918d8cfadf34",
-      "url": "https://github.com/BennyOe/tokyo-night.yazi/archive/024fb096821e7d2f9d09a338f088918d8cfadf34.tar.gz",
-      "hash": "112r9b7gan3y4shm0dfgbbgnxasi7ywlbk1pksdbpaglkczv0412"
+      "revision": "caa00abcce9886373d687d8aea8b812870f74da7",
+      "url": "https://github.com/BennyOe/tokyo-night.yazi/archive/caa00abcce9886373d687d8aea8b812870f74da7.tar.gz",
+      "hash": "0ck20w1jwn92sh96y8jw9ffkch4dlfv6a0zmdhzx78xvalwny69i"
     },
     "torrent-preview.yazi": {
       "type": "Git",
@@ -115,9 +115,9 @@
         "repo": "torrent-preview.yazi"
       },
       "branch": "main",
-      "revision": "76970b6f9d6f3031e9cd57c8595a53e9f9f48c18",
-      "url": "https://github.com/kirasok/torrent-preview.yazi/archive/76970b6f9d6f3031e9cd57c8595a53e9f9f48c18.tar.gz",
-      "hash": "1r89vnq4idigpd92rz80cg2lvz8yrmhs0nhxnfxj82rv4nh6vxs0"
+      "revision": "c9e67df81cb62759bd84a2fad5a0d9b6713bd595",
+      "url": "https://github.com/kirasok/torrent-preview.yazi/archive/c9e67df81cb62759bd84a2fad5a0d9b6713bd595.tar.gz",
+      "hash": "1hf4y5p31s9j0pd92y0aqm97i2a5v2cfl7fhx0ajihkjkdli198q"
     },
     "what-size.yazi": {
       "type": "Git",
@@ -127,9 +127,9 @@
         "repo": "what-size.yazi"
       },
       "branch": "main",
-      "revision": "f08f7f2d5c94958ac4cb66c51a7c24b4319c6c93",
-      "url": "https://github.com/pirafrank/what-size.yazi/archive/f08f7f2d5c94958ac4cb66c51a7c24b4319c6c93.tar.gz",
-      "hash": "1ckihyf89qg12m69gf5w5viszwbpr77hhxr6hky0lclkqc1qlh5b"
+      "revision": "b23e3a4cf44ce12b81fa6be640524acbd40ad9d3",
+      "url": "https://github.com/pirafrank/what-size.yazi/archive/b23e3a4cf44ce12b81fa6be640524acbd40ad9d3.tar.gz",
+      "hash": "0kwb081j6mjl93q89igxn4jb5kv47pfb22hnv02pdndfdl7rncs8"
     },
     "yatline-tokyo-night.yazi": {
       "type": "Git",
@@ -139,9 +139,9 @@
         "repo": "yatline-tokyo-night.yazi"
       },
       "branch": "main",
-      "revision": "f246d3564849a0d57f65053cc5b916929395bfa9",
-      "url": "https://github.com/wekauwau/yatline-tokyo-night.yazi/archive/f246d3564849a0d57f65053cc5b916929395bfa9.tar.gz",
-      "hash": "095rfms0db5wsrz7wzkd7ir2qyj3ykwfdvikyz09ydy55dlga2jx"
+      "revision": "5a8d026481e96ecec558c831028cc8d94c8ac3ae",
+      "url": "https://github.com/wekauwau/yatline-tokyo-night.yazi/archive/5a8d026481e96ecec558c831028cc8d94c8ac3ae.tar.gz",
+      "hash": "0ff15rd8xx7i26fh2cibxfi5l9yq8xifapwrzs1yy5wwdsrqb7d2"
     },
     "yatline.yazi": {
       "type": "Git",
@@ -151,9 +151,9 @@
         "repo": "yatline.yazi"
       },
       "branch": "main",
-      "revision": "1b4a9a1ad22a98d39185c19dcd99a18cd964f1d7",
-      "url": "https://github.com/imsi32/yatline.yazi/archive/1b4a9a1ad22a98d39185c19dcd99a18cd964f1d7.tar.gz",
-      "hash": "17gdiarh9iaqbcspic6c7q368360byl92b312jlalmavpzzjymcb"
+      "revision": "93282055cfb4d74a9bc8e47cf2035ded9b3c5b00",
+      "url": "https://github.com/imsi32/yatline.yazi/archive/93282055cfb4d74a9bc8e47cf2035ded9b3c5b00.tar.gz",
+      "hash": "103c3by4j4axpmb3q5zccqpfm1ylbnx97jcavgcbyy889c7isfnm"
     },
     "yazi-plugin-bat": {
       "type": "Git",
@@ -163,9 +163,9 @@
         "repo": "yazi-plugin-bat"
       },
       "branch": "main",
-      "revision": "1925c200632f017119dd685601b5f2d7d4ab266b",
-      "url": "https://github.com/mgumz/yazi-plugin-bat/archive/1925c200632f017119dd685601b5f2d7d4ab266b.tar.gz",
-      "hash": "03y1qw0ilz57sn95q51lffnxjhb0mj7cdfn209hnpbd63dg5vwl1"
+      "revision": "cce74d67b9ccdd226ed35baaea1c7660efa78356",
+      "url": "https://github.com/mgumz/yazi-plugin-bat/archive/cce74d67b9ccdd226ed35baaea1c7660efa78356.tar.gz",
+      "hash": "1b797nasyf8f80qfjmi7c8qbi8pi0kmc7yn1pmxciyhnmp84vw5n"
     }
   },
   "version": 3
