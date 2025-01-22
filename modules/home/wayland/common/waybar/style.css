@@ -20,7 +20,7 @@
     color: @base0D;
     padding: 0 7px;
     transition: all 1s ease;
-    background-color: shade(@base04, 0.3);
+    background-color: shade(@base04, .3);
     border-radius: 6px;
     border: 0px transparent;
 }
@@ -110,4 +110,10 @@
     border-radius: 7px;
     background-color: shade(@base0E, .4);
     padding: 0 5px;
+}
+
+#tray,
+#workspaces {
+    background-color: shade(@base04, .2);
+    border-radius: 7px;
 }
