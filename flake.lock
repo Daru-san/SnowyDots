@@ -1489,11 +1489,11 @@
     "walls": {
       "flake": false,
       "locked": {
-        "lastModified": 1737745066,
-        "narHash": "sha256-JyPKBGmBGtORh7Fhzi5NUZ/8+dLvOzWmDu6zoRR5hmI=",
+        "lastModified": 1737746868,
+        "narHash": "sha256-2+Q38PhwfIXHzOEmUbV74bt1dccIxFa1nKxYUeWGZE8=",
         "owner": "~darumaka",
         "repo": "Wallpapers",
-        "rev": "992ebf43e22052e95db8a782ab0dbd225d0ebd1a",
+        "rev": "832ed06a774c87a6da9ae3cd9be1b8fe8057fb1a",
         "type": "sourcehut"
       },
       "original": {
