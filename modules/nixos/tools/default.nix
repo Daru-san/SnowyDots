@@ -9,5 +9,6 @@
     ./syncthing.nix
     ./env.nix
     ./pipewire.nix
+    ./searx.nix
   ];
 }
