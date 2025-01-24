@@ -103,7 +103,7 @@
     ])
     (with inputs; [
       rimi.packages.${system}.default
-      anipy-cli.packages.${system}.default
+      # anipy-cli.packages.${system}.default
       color-picker.packages.${system}.default
       snowyvim.packages.${system}.neovim
     ])

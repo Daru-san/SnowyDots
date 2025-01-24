@@ -13,6 +13,6 @@
     ./nautilus
     ./spotify
     ./floorp
-    ./elia
+    # ./elia
   ];
 }
