@@ -3,13 +3,12 @@
   transition: none !important;
   opacity: 1 !important;
 }
+
 #TabsToolbar {
   visibility: collapse !important;
 }
 
-:root[sizemode='fullscreen']
-  #TabsToolbar
-  > :is(#window-controls, .titlebar-buttonbox-container) {
+:root[sizemode='fullscreen'] #TabsToolbar> :is(#window-controls, .titlebar-buttonbox-container) {
   visibility: visible !important;
   z-index: 2;
 }
@@ -43,14 +42,11 @@
     auto auto;
   padding-right: 20px;
 }
-:root[tabsintitlebar]
-  #toolbar-menubar[autohide='true']:not([inactive])
-  #main-menubar {
+
+:root[tabsintitlebar] #toolbar-menubar[autohide='true']:not([inactive]) #main-menubar {
   background-color: var(--lwt-accent-color);
-  background-image: linear-gradient(
-      var(--toolbar-bgcolor, --toolbar-non-lwt-bgcolor),
-      var(--toolbar-bgcolor, --toolbar-non-lwt-bgcolor)
-    ),
+  background-image: linear-gradient(var(--toolbar-bgcolor, --toolbar-non-lwt-bgcolor),
+      var(--toolbar-bgcolor, --toolbar-non-lwt-bgcolor)),
     var(--lwt-additional-images, none), var(--lwt-header-image, none);
   mask-image: linear-gradient(to left, transparent, black 20px);
 }
@@ -58,11 +54,14 @@
 #toolbar-menubar:not([inactive]) {
   z-index: 2;
 }
-#toolbar-menubar[autohide='true'][inactive] > #menubar-items {
+
+#toolbar-menubar[autohide='true'][inactive]>#menubar-items {
   opacity: 0;
   pointer-events: none;
   margin-left: var(--uc-window-drag-space-pre, 0px);
-} /* hides the sidebar header */
+}
+
+/* hides the sidebar header */
 #sidebar-header {
   display: none !important;
 }
@@ -87,7 +86,8 @@
 #sidebar-box {
   --uc-sidebar-width: 44px;
   --uc-sidebar-hover-width: 260px;
-  --uc-autohide-sidebar-delay: 1ms; /* Waiting time before hiding sidebar */
+  --uc-autohide-sidebar-delay: 1ms;
+  /* Waiting time before hiding sidebar */
   position: relative;
   min-width: var(--uc-sidebar-width) !important;
   width: var(--uc-sidebar-width) !important;
@@ -98,14 +98,16 @@
 #sidebar-box[positionend] {
   direction: rtl;
 }
-#sidebar-box[positionend] > * {
+
+#sidebar-box[positionend]>* {
   direction: ltr;
 }
 
 #sidebar-box[positionend]:-moz-locale-dir(rtl) {
   direction: ltr;
 }
-#sidebar-box[positionend]:-moz-locale-dir(rtl) > * {
+
+#sidebar-box[positionend]:-moz-locale-dir(rtl)>* {
   direction: rtl;
 }
 
@@ -129,7 +131,7 @@
   will-change: min-width;
 }
 
-#sidebar-box:hover > #sidebar {
+#sidebar-box:hover>#sidebar {
   min-width: var(--uc-sidebar-hover-width) !important;
   transition-delay: 0ms !important;
 }
@@ -141,6 +143,7 @@
 
 .sidebar-panel #search-box {
   -moz-appearance: none !important;
+  appearance: none !important;
   background-color: rgba(249, 249, 250, 0.1) !important;
   color: inherit !important;
 }
@@ -154,17 +157,24 @@
   border-inline-width: 0px 1px;
 }
 
-#sidebar-box:not([positionend]) > :-moz-locale-dir(rtl),
-#sidebar-box[positionend] > * {
+#sidebar-box:not([positionend])> :-moz-locale-dir(rtl),
+#sidebar-box[positionend]>* {
   border-inline-width: 1px 0px;
 }
 
 /* Move statuspanel to the other side when sidebar is hovered so it doesn't get covered by sidebar */
 
-#sidebar-box:not([positionend]):hover ~ #appcontent #statuspanel {
+#sidebar-box:not([positionend]):hover~#appcontent #statuspanel {
   inset-inline: auto 0px !important;
 }
-#sidebar-box:not([positionend]):hover ~ #appcontent #statuspanel-label {
+
+#sidebar-box:not([positionend]):hover~#appcontent #statuspanel-label {
   margin-inline: 0px !important;
   border-left-style: solid !important;
+}
+
+/* Center urlbar text */
+#urlbar:not([focused]) #urlbar-input,
+#urlbar:not([focused]) .urlbar-input {
+  text-align: center !important;
 }
