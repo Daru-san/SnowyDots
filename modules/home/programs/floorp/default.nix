@@ -27,51 +27,6 @@
         reddit-enhancement-suite
       ];
 
-      bookmarks = [
-        {
-          name = "Dev Docs";
-          tags = [ "docs" ];
-          keyword = "devdocs";
-          url = "https://devdocs.io";
-        }
-        {
-          name = "Linux Kernel";
-          tags = [ "kernel" ];
-          keyword = "kernel";
-          url = "https://kernel.org";
-        }
-        {
-          name = "Youtube Studio";
-          tags = [ "youtube" ];
-          keyword = "studio";
-          url = "https://studio.youtube.com";
-        }
-        {
-          name = "Github";
-          tags = [ "git" ];
-          keyword = "github";
-          url = "https://github.com";
-        }
-        {
-          name = "Sourcehut";
-          tags = [ "git" ];
-          keyword = "sr.ht";
-          url = "https://git.sr.ht";
-        }
-        {
-          name = "Proton Mail";
-          tags = [ "mail" ];
-          keyword = "proton";
-          url = "https://mail.proton.me";
-        }
-        {
-          name = "Khan Academy";
-          tags = [ "learn" ];
-          keyword = "khan";
-          url = "https://www.khanacademy.org";
-        }
-      ];
-
       containersForce = true;
       containers = {
         general = {
