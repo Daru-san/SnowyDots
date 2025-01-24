@@ -401,7 +401,6 @@
         "floorp.legacy.dlui.enable" = true;
         "floorp.navbar.bottom" = true;
         "floorp.search.top.mode" = false;
-        "floorp.startup.oldVersion" = "11.20.0";
         "floorp.tabbar.style" = 2;
         "floorp.tabsleep.enabled" = true;
         "floorp.user.js.customize" = "Fastfox";
