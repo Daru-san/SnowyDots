@@ -127,12 +127,12 @@
 
     cpu = {
       interval = 2;
-      format = "   {usage}%";
+      format = "  {usage}%";
     };
 
     memory = {
       interval = 10;
-      format = "   {used:0.1f}GiB/{total:0.1f}GiB";
+      format = "  {used:0.1f}GiB/{total:0.1f}GiB";
       tooltip-format = "{percentage}%";
     };
 
@@ -147,7 +147,7 @@
 
     network = {
       format = "{ifname}";
-      format-wifi = "   {signalStrength}%";
+      format-wifi = "  {signalStrength}%";
       format-ethernet = "󰈀  Ethernet";
       format-disconnected = "󱚵  Disconnected";
       tooltip-format = "{ifname} via {gwaddr} 󰈀";
