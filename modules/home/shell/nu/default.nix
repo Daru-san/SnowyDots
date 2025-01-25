@@ -77,6 +77,10 @@ in
               completer: $multiple_completers
             }
           }
+          cursor_shape: {
+            vi_insert: blink_line
+            vi_normal: blink_underscore
+          }
         }
         $env.PATH = ($env.PATH |
           split row (char esep) |
@@ -92,7 +96,7 @@ in
       '';
 
       shellAliases = {
-        zc = "clear ; z";
+        zc = "clear ; cd";
         zngrt = "cd (git rev-parse --show-toplevel)";
       } // config.home.shellAliases;
     };
