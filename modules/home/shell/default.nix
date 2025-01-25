@@ -38,8 +38,10 @@
       tty-clock = "${pkgs.tty-clock}/bin/tty-clock";
       trashy = "${pkgs.trashy}/bin/trashy";
       fzf = "${config.programs.fzf.package}/bin/fzf";
+      syst = "${pkgs.systemctl-tui}/bin/systemctl-tui";
     in
     {
+      syst = syst;
       clock = "${tty-clock} -bscBrnS";
       tp = "${trashy} put";
       te = "${trashy} empty";
