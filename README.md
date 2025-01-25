@@ -1,20 +1,29 @@
-# SnowyDots
+<!-- markdownlint-disable MD003 -->
 
----
+# SnowyDots
 
 <!--markdownlint-disable-->
 <p style="text-align: center;" align="center">
 My functional, advanced NixOS configuration.
+
+<p style="text-align: center;" align="center">
+<i>Main configuration for <a href="https://sr.ht/~darumaka/SnowOS/">SnowOS</a> </i>
 </p>
 
 <div style="text-align: center;" align="center">
-    <img src="https://img.shields.io/static/v1?label=NixOS&message=24.11(unstable)&style=flat&logo=nixos&colorA=24273A&colorB=9173ff&logoColor=CAD3F5"/>
-    <img src="https://img.shields.io/static/v1?label=Hyprland&message=0.41.1&style=flat&logo=Hyprland&colorA=24273A&colorB=9173ff&logoColor=CAD3F5"/>
+    <img src="https://img.shields.io/static/v1?label=NixOS&message=25.05(unstable)&style=flat&logo=nixos&colorA=24273A&colorB=9173ff&logoColor=CAD3F5"/>
+    <img src="https://img.shields.io/static/v1?label=Niri&message=Wayland&style=flat&logo=wayland&colorA=24273A&colorB=9173ff&logoColor=CAD3F5"/>
     <img src="https://img.shields.io/static/v1?label=Sourcehut&message=SnowyDots&style=flat&logo=sourcehut&colorA=24273A&colorB=9173ff&logoColor=CAD3F5" alt="https://git.sr.ht/~darumaka/SnowyDots"/>
 </div>
+
+<br>
 <!--markdownlint-enable-->
 
----
+<!-- markdownlint-disable MD003 -->
+
+![Wallpaper](https://i.imgur.com/xQBT2JP.png)
+
+![Shell](https://i.imgur.com/zHH73v3.png)
 
 ## Installing NixOS
 
@@ -37,9 +46,9 @@ mkfs.ext4 -L root /dev/root-partition # your partition name here
 # It isn't necessary to separate home and root but I do it anyway
 mkfs.ext4 -L home /dev/home-partition
 
-# This may not be useful if like me, you only use zram, without swap devices
-# I usually use swap partitions instead of swap files, set up one like this
-mkswap -L swap /dev/swap-partition # replace with your partition
+# This may not be useful if like me, youuse zram, without swap devices
+# Using swap partitions
+mkswap -L swap /dev/swap-partition
 swapon /dev/by-label/swap
 
 # Mount your partitions
@@ -76,7 +85,7 @@ cd snow/systems/laptop
 vi hardware-configuration.nix
 
 # Build the system configuration
-sudo nixos-rebuild switch --flake .#system # e.g .#Aurorus
+sudo nixos-rebuild switch --flake .#system # e.g .#Aria
 
 # Then build the home configuration
 
@@ -84,7 +93,7 @@ sudo nixos-rebuild switch --flake .#system # e.g .#Aurorus
 nix shell nixpkgs#home-manager
 
 # Then switch the config
-home-manager switch --flake .#daru@Aurorus
+home-manager switch --flake .#daru@Aria
 ```
 
 ## Resources
@@ -97,7 +106,7 @@ home-manager switch --flake .#daru@Aurorus
 - [MyNixOS](https://mynixos.com "Best nix resource")
 - [NixOS install guide](https://nixos.wiki/wiki/NixOS_Installation_Guide)
 
-### Really useful
+### I found useful
 
 - [Nixvim github](https://github.com/nix-community/nixvim)
 - [Nix on devdocs](https://devdocs.io/nix/)
