@@ -3,7 +3,8 @@
     enable = true;
     settings = {
       gui = {
-        windowSize = "half";
+        screenMode = "half";
+        border = "hidden";
         mainPanelSplitMode = "horizontal";
         expandFocusedSidePanel = true;
         mouseEvents = true;
