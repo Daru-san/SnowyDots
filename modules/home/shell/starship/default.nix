@@ -32,7 +32,7 @@
         "$status"
       ];
       cmd_duration = {
-        format = "[⏱︎   $duration]($style) ";
+        format = "[$duration]($style) ";
         show_notifications = true;
         min_time_to_notify = 300000;
       };
