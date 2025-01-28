@@ -60,6 +60,7 @@ in
             zig => $fish_completer
             rimi => $fish_completer
             nix => $fish_completer
+            berg => $fish_completer
           } | do $in $spans
         }
 
