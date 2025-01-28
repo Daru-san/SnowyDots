@@ -36,6 +36,7 @@
 
       # Developmentment
       hut
+      codeberg-cli
       rustc
       clang
       zig
