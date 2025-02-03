@@ -7,7 +7,5 @@
   home.sessionVariables.QT_QPA_PLATFORM = "wayland";
   qt = {
     enable = true;
-    platformTheme.name = "gtk3";
-    style.name = "Adwaita-Dark";
   };
 }
