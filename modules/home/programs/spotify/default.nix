@@ -32,12 +32,14 @@ in
       adblockify
       powerBar
       oldSidebar
-      history
       shuffle
       fullAppDisplay
       playNext
       volumePercentage
       writeify
+      lastfm
+      seekSong
+      wikify
     ];
     enabledCustomApps = with spicePkgs.apps; [
       newReleases
