@@ -7,6 +7,17 @@ let
   extraConfig = {
     gtk-decoration-layout = "";
   };
+  iconTheme = {
+    name = "WhiteSur-dark";
+    package = pkgs.whitesur-icon-theme.override {
+      boldPanelIcons = true;
+      alternativeIcons = true;
+      themeVariants = [
+        "green"
+        "default"
+      ];
+    };
+  };
 in
 rec {
   gtk = {
@@ -28,18 +39,6 @@ rec {
       size = config.stylix.fonts.sizes.applications;
     };
 
-    iconTheme = {
-      name = "WhiteSur-dark";
-      package = pkgs.whitesur-icon-theme.override {
-        boldPanelIcons = true;
-        alternativeIcons = true;
-        themeVariants = [
-          "green"
-          "default"
-        ];
-      };
-    };
-
     gtk3 = {
       inherit extraConfig;
     };
@@ -59,7 +58,15 @@ rec {
     };
   };
   home.sessionVariables.GTK_THEME = gtk.theme.name;
+
   stylix = {
+    iconTheme = {
+      enable = true;
+      dark = iconTheme.name;
+      light = iconTheme.name;
+      package = iconTheme.package;
+    };
+
     cursor = {
       name = "phinger-cursors-dark";
       package = pkgs.phinger-cursors;
