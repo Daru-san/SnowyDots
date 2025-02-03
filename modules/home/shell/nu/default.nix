@@ -15,11 +15,41 @@ let
       atuin gen-completions --shell nushell > $out/atuin.nu
     '';
   };
+  command-not-found = pkgs.writeScript "command-not-found" ''
+    #!${pkgs.bash}/bin/bash
+    source ${config.programs.nix-index.package}/etc/profile.d/command-not-found.sh
+    command_not_found_handle "$@"
+  '';
 in
 {
   programs = {
     nushell = {
       enable = true;
+      settings = {
+        edit_mode = "vi";
+        show_banner = false;
+        completions = {
+          case_sensitive = false;
+          quick = false;
+          partial = true;
+          algorithm = "prefix";
+          use_ls_colors = true;
+          external = {
+            enable = true;
+            max_results = 100;
+          };
+        };
+        history = {
+          sync_on_enter = true;
+          isolation = true;
+          file_format = "sqlite";
+        };
+        rm.always_trash = true;
+        cursor_shape = {
+          vi_insert = "blink_line";
+          vi_normal = "blink_underscore";
+        };
+      };
       extraConfig = ''
         let carapace_completer = {|spans: list<string>|
           carapace $spans.0 nushell ...$spans
@@ -65,24 +95,19 @@ in
         }
 
         $env.config = {
-          edit_mode: vi,
-          show_banner: false,
           completions: {
-            case_sensitive: false
-            quick: true
-            partial: true
-            algorithm: "fuzzy"
             external: {
-              enable: true
-              max_results: 100
               completer: $multiple_completers
             }
           }
-          cursor_shape: {
-            vi_insert: blink_line
-            vi_normal: blink_underscore
+          hooks: {
+            command_not_found: {
+              |command_name|
+              print (${command-not-found} $command_name | str trim)
+            }
           }
         }
+
         $env.PATH = ($env.PATH |
           split row (char esep) |
           prepend ${config.home.homeDirectory}/.apps |
