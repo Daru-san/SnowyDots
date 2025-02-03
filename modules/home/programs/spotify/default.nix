@@ -10,7 +10,7 @@ in
   imports = [ inputs.spicetify-nix.homeManagerModules.spicetify ];
   programs.spicetify = {
     enable = true;
-    theme = spicePkgs.themes.hazy; # text, lucid
+    theme = spicePkgs.themes.text;
     enabledSnippets = with spicePkgs.snippets; [
       autoHideFriends
       hideFriendsActivityButton
