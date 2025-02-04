@@ -55,6 +55,7 @@
       # GUI Util
       file-roller
       cheese
+      varia
 
       # Android
       adbtuifm

@@ -473,6 +473,10 @@
             install_url = urlPrefix "tridactyl-vim";
             inherit installation_mode;
           };
+          "giantpinkrobots@protonmail.com" = {
+            install_url = urlPrefix "varia-integrator";
+            inherit installation_mode;
+          };
           "{c2c003ee-bd69-42a2-b0e9-6f34222cb046}" = {
             install_url = urlPrefix "auto-tab-discard";
             inherit installation_mode;
