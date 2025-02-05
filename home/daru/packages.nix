@@ -65,6 +65,7 @@
       pandoc
       glow
       texliveSmall
+      libreoffice-qt6-fresh
 
       # System monitoring
       gping
