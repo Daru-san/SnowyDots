@@ -202,6 +202,36 @@
         )
         (
           let
+            obs = getExe pkgs.obs-cmd;
+            record = cmd: "${obs} recording ${cmd}";
+            audio = device: cmd: "${obs} audio ${cmd} ${device}";
+          in
+          {
+            "alt+f6".action.spawn = [
+              (record "start")
+            ];
+            "alt+f8".action.spawn = [
+              (record "stop")
+            ];
+            "alt+f7".action.spawn = [
+              (record "toggle-pause")
+            ];
+            "alt+f1".action.spawn = [
+              (audio "Desktop Audio" "toggle")
+            ];
+            "alt+f4".action.spawn = [
+              (audio "Desktop Audio" "mute")
+            ];
+            "alt+f2".action.spawn = [
+              (audio "MiMic" "mute")
+            ];
+            "alt+f3".action.spawn = [
+              (audio "MiMic" "toggle")
+            ];
+          }
+        )
+        (
+          let
             swayosd = getExe' config.services.swayosd.package "swayosd-client";
           in
           {
@@ -311,7 +341,7 @@
 
             "Mod+x".action = sh "pkill nwg-bar || ${nwgbar}";
 
-            "Mod+p".action = sh "pkill pulsemixer || ${ghostty} --class pulsemixer --detach pulsemixer";
+            "Mod+p".action = sh "pkill pulsemixer || ${ghostty} -e pulsemixer";
 
             "Mod+Shift+b".action = sh "pkill overskride || ${overskride}";
           }
