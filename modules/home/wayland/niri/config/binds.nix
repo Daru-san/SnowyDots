@@ -204,7 +204,7 @@
           let
             obs = getExe pkgs.obs-cmd;
             record = cmd: "${obs} recording ${cmd}";
-            audio = device: cmd: "${obs} audio ${cmd} ${device}";
+            audio = device: cmd: ''${obs} audio ${cmd} "${device}"'';
           in
           {
             "alt+f6".action.spawn = [
