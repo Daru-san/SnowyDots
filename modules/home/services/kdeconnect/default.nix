@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
   services.kdeconnect = {
-    package = pkgs.valent;
+    indicator.enable = true;
   };
 }
