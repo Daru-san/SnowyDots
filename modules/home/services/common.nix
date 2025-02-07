@@ -3,7 +3,10 @@
   services = {
     playerctld.enable = true;
     easyeffects.enable = true;
-    kdeconnect.enable = true;
+    kdeconnect = {
+      enable = true;
+      indicator = true;
+    };
     udiskie.enable = true;
     gnome-keyring = {
       enable = true;
