@@ -29,7 +29,6 @@
     };
     kdeconnect = {
       enable = true;
-      package = pkgs.valent;
     };
     yazi.enable = false;
   };
