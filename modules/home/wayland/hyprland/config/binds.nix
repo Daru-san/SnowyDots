@@ -105,12 +105,12 @@ in
           (mkBindExe "supershift" "m" "${syncthingtray} -w" "Open syncthing tray")
 
           # OBS Studio global keybindings
-          (mkBindP "shift" "F6" obs "Start recording")
-          (mkBindP "shift" "F8" obs "Stop recording")
-          (mkBindP "shift" "F7" obs "Toggle recording(pause/unpause)")
-          (mkBindP "shift" "F1" obs "Split recording file")
-          (mkBindP "shift" "F3" obs "Mute microphone audio")
-          (mkBindP "shift" "F4" obs "Mute desktop audio")
+          (mkBindSend "shift" "f3" obs "shift" "m" "Mute desktop audio")
+          (mkBindSend "shift" "f4" obs "shift" "n" "Mute microphone audio")
+          (mkBindSend "shift" "f5" obs "shift" "c" "Split recording file")
+          (mkBindSend "shift" "f6" obs "shift" "r" "Start recording")
+          (mkBindSend "shift" "f7" obs "shift" "t" "Toggle recording (pause/unpause)")
+          (mkBindSend "shift" "f8" obs "shift" "s" "Stop recording")
         ];
 
       binddle =
