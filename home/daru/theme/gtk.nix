@@ -7,17 +7,25 @@ let
   extraConfig = {
     gtk-decoration-layout = "";
   };
-  iconTheme = {
-    name = "WhiteSur-dark";
-    package = pkgs.whitesur-icon-theme.override {
-      boldPanelIcons = true;
-      alternativeIcons = true;
-      themeVariants = [
-        "green"
-        "default"
-      ];
+  iconTheme =
+    let
+      whitesur-fix = pkgs.whitesur-icon-theme.overrideAttrs (oldAttrs: {
+        postInstall = ''
+          find -L $out -type l -print -delete
+        '';
+      });
+    in
+    {
+      name = "WhiteSur-dark";
+      package = whitesur-fix.override {
+        boldPanelIcons = true;
+        alternativeIcons = true;
+        themeVariants = [
+          "green"
+          "default"
+        ];
+      };
     };
-  };
 in
 rec {
   gtk = {
