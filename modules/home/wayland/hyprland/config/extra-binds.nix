@@ -38,8 +38,8 @@ in
         "supershift,tab,cyclenext"
         "super,tab,changegroupactive"
 
-        "super, page_up,workspace,e+1"
-        "supershift,page_down,workspace,e-1"
+        "super, page_up, workspace,e-1"
+        "super, page_down, workspace,e+1"
       ]
       ++
         # Change workspace
