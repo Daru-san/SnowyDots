@@ -2,7 +2,6 @@
 {
   imports =
     (with inputs; [
-      niri.homeModules.stylix
       stylix.homeManagerModules.stylix
     ])
     ++ [
