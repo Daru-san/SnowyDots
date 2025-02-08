@@ -13,6 +13,7 @@
       scrcpy
       keepassxc
       obsidian
+      morgen
 
       # Science
       kdePackages.kalzium
