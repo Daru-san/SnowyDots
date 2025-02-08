@@ -38,6 +38,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Hyprland idle inhibitor
+    vigiland.url = "github:Jappie3/vigiland";
 
     # My own repos
     snowy-shell.url = "github:Daru-san/SnowyShell";
