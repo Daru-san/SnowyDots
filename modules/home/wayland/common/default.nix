@@ -15,7 +15,6 @@ in
     ./hyprlock
     ./wlsunset
     ./anyrun
-    ./swaync
     ./ghostty
     ./waybar
     ./snowy-shell
@@ -26,7 +25,6 @@ in
       hypridle.enable = true;
       hyprpaper.enable = true;
       wlsunset.enable = true;
-      swaync.enable = true;
       swayosd.enable = true;
     };
     programs = {
