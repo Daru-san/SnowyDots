@@ -63,9 +63,12 @@
           let
             workspace = index: window: "workspace ${toString index},^(${window})(.*)$";
             workspace-title = index: window: "workspace ${toString index},title:(${window})(.*)$";
+            special = workspace: window: "workspace special:${workspace},^(${window})(.*)$";
             group = x: "group,^(${x})$";
           in
           [
+            (special "obs-studio" "com.obsproject.Studio")
+            (special "virt-manager" "virt-manager")
 
             (workspace 2 "floorp")
             (group "floorp")
