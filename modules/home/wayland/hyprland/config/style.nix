@@ -13,15 +13,14 @@
       master = {
         mfact = 0.55;
         allow_small_split = true;
-        no_gaps_when_only = false;
       };
       group.groupbar.enabled = false;
       decoration = {
         rounding = 6;
         blur.enabled = true;
-        drop_shadow = false;
-        shadow_range = 7;
-        shadow_render_power = 6;
+        shadow = {
+          enabled = true;
+        };
         dim_inactive = true;
         dim_strength = 0.34;
       };
