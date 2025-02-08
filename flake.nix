@@ -38,6 +38,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+
     # My own repos
     snowy-shell.url = "github:Daru-san/SnowyShell";
     rimi.url = "github:Daru-san/rimi";
@@ -49,8 +50,6 @@
       flake = false;
     };
 
-    # niri
-    niri.url = "github:sodiboo/niri-flake";
   };
   outputs =
     {
