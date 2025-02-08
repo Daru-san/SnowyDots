@@ -38,23 +38,23 @@ in
       e = "exec";
       mkBind =
         mods: key: action: desc:
-        "${mods},${key},${desc},${action}";
+        "${mods}, ${key}, ${desc}, ${action}";
 
       mkBindExe =
         mods: key: action: desc:
-        "${mods},${key},${desc},${e},${action}";
+        "${mods}, ${key}, ${desc}, ${e}, ${action}";
 
       mkBindSingle =
         key: action: desc:
-        ",${key},${desc},${e},${action}";
+        ", ${key}, ${desc}, ${e}, ${action}";
 
       mkBindPass =
         mod: key: prog: desc:
-        "${mod},${key},${desc},pass,class:${prog}";
+        "${mod}, ${key}, ${desc}, pass, class:${prog}";
 
       mkBindSend =
         mod: key: prog: orig-mod: orig-key: desc:
-        "${mod},${key},${desc},sendshotcut,${orig-mod},${orig-key},class:${prog}";
+        "${mod}, ${key}, ${desc}, sendshortcut, ${orig-mod}, ${orig-key}, class:${prog}";
     in
     {
       bindd =
