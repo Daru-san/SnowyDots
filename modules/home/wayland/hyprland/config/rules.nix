@@ -34,19 +34,23 @@
               "pulsemixer"
               "valent"
               "xdg-desktop-portal-kde"
+              "xdg-desktop-portal-gtk"
               "io.github.kaii_lb.Overskride"
+              "io.github.giantpinkrobots.varia"
             ];
             resized-windows = [
               "foot"
               "nmtui"
               "pulsemixer"
               "org.freedesktop.impl.portal.desktop.kde"
+              "xdg-desktop-portal-gtk"
               "xdg-desktop-portal-kde"
               "org.gnome.FileRoller"
               "org.twosheds.iwgtk"
               "valent"
               "com.github.wwmm.easyeffects"
               "io.github.kaii_lb.Overskride"
+              "io.github.giantpinkrobots.varia"
             ];
           in
           [
