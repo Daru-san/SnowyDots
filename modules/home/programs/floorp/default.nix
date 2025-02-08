@@ -93,7 +93,7 @@
 
       search = {
         force = true;
-        default = "SearXNG";
+        default = "Brave Search";
         privateDefault = "DuckDuckGo";
 
         order = [
