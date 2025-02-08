@@ -61,38 +61,38 @@
         )
         (
           let
-            w = x: y: "workspace ${toString x},^(${y})(.*)$";
-            wt = x: y: "workspace ${toString x},title:(${y})(.*)$";
-            g = x: "group,^(${x})$";
+            workspace = index: window: "workspace ${toString index},^(${window})(.*)$";
+            workspace-title = index: window: "workspace ${toString index},title:(${window})(.*)$";
+            group = x: "group,^(${x})$";
           in
           [
-            (w 2 "floorp")
-            (w 4 "org.gnome.Nautilus")
 
-            (wt 5 "Spotify")
+            (workspace 2 "floorp")
+            (group "floorp")
+            (workspace 4 "org.gnome.Nautilus")
 
-            (w 6 "mpv")
+            (workspace-title 5 "Spotify")
 
-            (w 6 "FreeTube")
+            (workspace 6 "mpv")
+            (group "mpv")
 
-            (w 7 "libreoffice")
-            (w 7 "org.prismlauncher.PrismLauncher")
-            (w 7 "Minecraft")
-            (w 7 "com.obsproject.Studio")
+            (workspace 6 "FreeTube")
 
-            (g "oculante")
-            (w 8 "oculante")
+            (workspace 7 "libreoffice")
+            (workspace 7 "org.prismlauncher.PrismLauncher")
+            (workspace 7 "Minecraft")
 
-            (w 8 "org.kde.kdenlive")
-            (g "org.kde.kdenlive")
+            (group "oculante")
+            (workspace 8 "oculante")
 
-            (w 8 "krita")
-            (g "krita")
+            (workspace 8 "org.kde.kdenlive")
+            (group "org.kde.kdenlive")
 
-            (w 9 "virt-manager")
+            (workspace 8 "^Gimp$")
+            (group "^Gimp$")
 
-            (w 9 "org.pwmt.zathura")
-            (g "org.pwmt.zathura")
+            (workspace 9 "org.pwmt.zathura")
+            (group "org.pwmt.zathura")
           ]
         )
       ];
