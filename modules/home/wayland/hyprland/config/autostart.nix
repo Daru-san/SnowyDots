@@ -5,8 +5,8 @@
   ...
 }:
 let
-  inherit (lib) getExe getExe';
-  ghostty = getExe config.programs.kitty.package;
+  inherit (lib) getExe;
+  ghostty = getExe config.programs.ghostty.package;
 in
 {
   wayland.windowManager.hyprland.settings = {
