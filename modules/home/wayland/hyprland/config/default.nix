@@ -5,7 +5,5 @@
     ./devices.nix
     ./style.nix
     ./autostart.nix
-    ./plugin.nix
-    ./scroller.nix
   ];
 }
