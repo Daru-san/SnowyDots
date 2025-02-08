@@ -31,17 +31,19 @@ in
         "SUPERSHIFT,apostrophe,changegroupactive,b"
 
         "SUPER,u,togglespecialworkspace,stash"
+        "supershift,u,movetoworkspace,special: stash"
+        "super,o,togglespecialworkspace, obs-studio"
+        "super,y,togglespecialworkspace, virt-manager"
 
-        "supershift,o,cyclenext"
-        "super,o,changegroupactive"
-        "alt, tab, hyprexpo:expo, toggle"
+        "supershift,tab,cyclenext"
+        "super,tab,changegroupactive"
 
-        "super, tab,workspace,e+1"
-        "supershift,tab,workspace,e-1"
+        "super, page_up,workspace,e+1"
+        "supershift,page_down,workspace,e-1"
       ]
       ++
-      # Change workspace
-      (map (n: "SUPER,${n},workspace,${n}") workspaces)
+        # Change workspace
+        (map (n: "SUPER,${n},workspace,${n}") workspaces)
       ++
         # Move window to workspace
         (map (n: "SUPERSHIFT,${n},movetoworkspace,${n}") workspaces)
