@@ -18,6 +18,7 @@ in
     ./swaync
     ./ghostty
     ./waybar
+    ./snowy-shell
   ];
   config = mkIf cfg.enable {
     services = {
@@ -28,7 +29,8 @@ in
       swayosd.enable = true;
     };
     programs = {
-      waybar.enable = true;
+      waybar.enable = false;
+      snowy-shell.enable = true;
       anyrun.enable = true;
       hyprlock.enable = true;
       ghostty.enable = true;

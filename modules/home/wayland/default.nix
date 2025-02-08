@@ -1,6 +1,7 @@
 {
   imports = [
     ./common
+    ./hyprland
     ./niri
   ];
   home.sessionVariables = {

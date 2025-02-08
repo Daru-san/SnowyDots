@@ -11,7 +11,10 @@ let
 in
 {
   options.wayland.enable = mkEnableOption "Enable wayland";
-  imports = [ inputs.niri.nixosModules.niri ];
+  imports = [
+    inputs.niri.nixosModules.niri
+    ./polkit
+  ];
   config = mkIf cfg.enable {
     niri-flake = {
       cache.enable = true;
