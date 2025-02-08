@@ -9,7 +9,7 @@ let
   cfg = config.wayland;
 in
 {
-  options.wayland.enable = mkEnableOption "Enable wayland using niri";
+  options.wayland.enable = mkEnableOption "Enable wayland using Hyprland";
   imports = [
     ./hypridle
     ./hyprlock
@@ -21,6 +21,7 @@ in
     ./snowy-shell
   ];
   config = mkIf cfg.enable {
+    wayland.windowManager.hyprland.enable = true;
     services = {
       hypridle.enable = true;
       hyprpaper.enable = true;

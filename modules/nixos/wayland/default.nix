@@ -20,7 +20,9 @@ in
       cache.enable = true;
     };
     programs = {
-      niri.enable = true;
+      niri.enable = false;
+      hyprland.enable = true;
+      hyprlock.enable = true;
       dconf.enable = true;
       seahorse.enable = true;
       file-roller.enable = true;

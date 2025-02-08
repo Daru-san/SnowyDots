@@ -6,7 +6,7 @@
   ...
 }:
 let
-  cfg = config.wayland;
+  cfg = config.wayland.windowManager.hyprland;
 in
 {
   imports = [ ./config ];
@@ -15,7 +15,6 @@ in
       settings.env = lib.mapAttrsToList (
         name: value: "${name},${builtins.toString value}"
       ) config.home.sessionVariables;
-      enable = false;
       package = inputs.hyprland.packages.${system}.default;
       systemd = {
         enable = true;
