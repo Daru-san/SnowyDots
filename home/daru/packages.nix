@@ -47,7 +47,6 @@
       gdb
       seer
       valgrind
-      lua
 
       # Desktop
       swww
