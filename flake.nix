@@ -39,6 +39,7 @@
     };
 
     # My own repos
+    snowy-shell.url = "github:Daru-san/SnowyShell";
     rimi.url = "github:Daru-san/rimi";
     color-picker.url = "github:Daru-san/color-picker-rs";
     snowyvim.url = "sourcehut:~darumaka/SnowyVim";
