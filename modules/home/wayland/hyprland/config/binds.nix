@@ -95,6 +95,7 @@ in
           (mkBind "super" "f" "fullscreen" "Toggle fullscreen")
           (mkBind "super" "v" "togglefloating" "Toggle floating")
           (mkBindExe "supershift" "x" "hyprctl reload" "Reload hyprland")
+          (mkBindExe "super" "f12" "systemctl suspend" "Suspend system")
 
           (mkBindExe "supershift" "l" "${hyprlock} --immediate" "Lock the screen")
 
