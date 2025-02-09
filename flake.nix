@@ -51,7 +51,6 @@
       url = "sourcehut:~darumaka/Wallpapers";
       flake = false;
     };
-
   };
   outputs =
     {
