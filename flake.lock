@@ -28,11 +28,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1738959920,
-        "narHash": "sha256-/MiSM0DbXOhgufZrZuf4q3EEMA5E+7vPXi1HxT1e8AE=",
+        "lastModified": 1739380580,
+        "narHash": "sha256-wGtGEfdooudj74wn59Vu5Z2DLsrX9cxdGTFc9sJrP9M=",
         "owner": "aylur",
         "repo": "astal",
-        "rev": "5e0e00e148af0f173ca0883bc2fbbfb103d81f36",
+        "rev": "956b74fd9ff8c607b6683b404860c4e6b30ffe2b",
         "type": "github"
       },
       "original": {
@@ -810,11 +810,11 @@
     },
     "nixpkgs_7": {
       "locked": {
-        "lastModified": 1738824222,
-        "narHash": "sha256-U3SNq+waitGIotmgg/Et3J7o4NvUtP2gb2VhME5QXiw=",
+        "lastModified": 1739214665,
+        "narHash": "sha256-26L8VAu3/1YRxS8MHgBOyOM8xALdo6N0I04PgorE7UM=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "550e11f27ba790351d390d9eca3b80ad0f0254e7",
+        "rev": "64e75cd44acf21c7933d61d7721e812eac1b5a0a",
         "type": "github"
       },
       "original": {
@@ -973,11 +973,11 @@
         "nixpkgs": "nixpkgs_7"
       },
       "locked": {
-        "lastModified": 1739392090,
-        "narHash": "sha256-g8+AR6yttXUIyIs7sEndnl4DK/YibMR25FP12zdQ254=",
+        "lastModified": 1739462781,
+        "narHash": "sha256-Jk6/ToTPuWyJTj8E2JXM/ckFVNW82lYrgXJwjeqwYVI=",
         "owner": "Daru-san",
         "repo": "SnowyShell",
-        "rev": "c78e46432e1c5cc8c96db35b2dfda770c32a486a",
+        "rev": "ef36cc16c8a60706526b3ea90270a979e2315f97",
         "type": "github"
       },
       "original": {
