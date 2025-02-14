@@ -18,6 +18,7 @@
       # Science
       kdePackages.kalzium
       element
+      celestia
 
       # Content creation
       kdenlive
