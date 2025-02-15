@@ -11,6 +11,8 @@
     userName = "Daru";
     userEmail = "mica.tui@proton.me";
 
+    signing.format = "ssh";
+
     extraConfig = {
       core = {
         editor = "vi";
