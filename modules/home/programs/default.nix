@@ -13,6 +13,7 @@
     ./nautilus
     ./spotify
     ./floorp
+    ./zen
     # ./elia
   ];
 }

@@ -41,6 +41,14 @@
     # Hyprland idle inhibitor
     vigiland.url = "github:Jappie3/vigiland";
 
+    # Zen browser
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+
+    zenix = {
+      url = "github:anders130/zenix";
+      inputs.zen-browser.follows = "zen-browser";
+    };
+
     # My own repos
     snowy-shell.url = "github:Daru-san/SnowyShell";
     rimi.url = "github:Daru-san/rimi";
