@@ -70,8 +70,8 @@
             (special "obs-studio" "com.obsproject.Studio")
             (special "virt-manager" "virt-manager")
 
-            (workspace 2 "floorp")
-            (group "floorp")
+            (workspace 2 "zen")
+            (group "zen")
             (workspace 4 "org.gnome.Nautilus")
 
             (workspace-title 5 "Spotify")

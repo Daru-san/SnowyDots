@@ -12,7 +12,6 @@
     ./yt-dlp
     ./nautilus
     ./spotify
-    ./floorp
     ./zen
     # ./elia
   ];

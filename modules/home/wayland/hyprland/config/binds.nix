@@ -60,7 +60,7 @@ in
       bindd =
         let
           terminal = getExe config.programs.ghostty.package;
-          browser = getExe config.programs.floorp.package;
+          browser = getExe config.programs.zen.package;
           file-manager = getExe pkgs.nautilus;
           editor = "nvim";
           yazi = getExe config.programs.yazi.package;
