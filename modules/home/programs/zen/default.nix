@@ -1,6 +1,5 @@
 {
   pkgs,
-  config,
   system,
   inputs,
   ...
@@ -23,9 +22,9 @@
       tabGroups = true;
     };
 
-    profiles.${config.home.username} = {
+    profiles.default = {
       isDefault = true;
-      id = 7;
+      id = 0;
 
       userChrome = ''
         #zen-appcontent-navbar-container {
