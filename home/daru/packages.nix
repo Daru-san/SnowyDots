@@ -100,6 +100,7 @@
       hexyl
       xdg-user-dirs
       tealdeer
+      aichat
 
       # The craft
       prismlauncher
