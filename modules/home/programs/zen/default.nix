@@ -7,16 +7,25 @@
 }:
 {
   imports = [ inputs.zenix.hmModules.default ];
+
+  programs.firefox = {
+    enable = true;
+    package = null;
+    profiles.default.isDefault = true;
+  };
+
   programs.zenix = {
     enable = true;
 
     chrome = {
       findbar = true;
       hideTitlebarButtons = true;
+      tabGroups = true;
     };
 
     profiles.${config.home.username} = {
       isDefault = true;
+      id = 7;
 
       userChrome = builtins.readFile ./userChrome.css;
 
@@ -29,6 +38,10 @@
         widegithub
         hover-zoom-plus
         reddit-enhancement-suite
+        ublock-origin
+        tridactyl
+        aria2-integration
+        auto-tab-discard
       ];
 
       containersForce = true;
@@ -388,59 +401,6 @@
         "media.ffmpeg.vaapi.enabled" = true;
         "dom.ipc.processCount.webIsolated" = 1;
 
-        "floorp.Tree-type.verticaltab.optimization" = true;
-        "floorp.browser.nora.csk.data" = "{}";
-        "floorp.browser.note.backup.latest.time" = "1731912540255";
-        "floorp.browser.sidebar.enable" = false;
-        "floorp.browser.sidebar.is.displayed" = false;
-        "floorp.browser.ssb.enabled" = true;
-        "floorp.browser.ssb.toolbars.disabled" = true;
-        "floorp.browser.tabbar.settings" = 2;
-        "floorp.browser.tabs.openNewTabPosition" = 1;
-        "floorp.browser.tabs.verticaltab" = true;
-        "floorp.browser.user.interface" = 8;
-        "floorp.browser.workspace.showWorkspaceName" = false;
-        "floorp.browser.workspaces.enabled" = false;
-        "floorp.downloading.red.color" = false;
-        "floorp.legacy.dlui.enable" = true;
-        "floorp.navbar.bottom" = true;
-        "floorp.search.top.mode" = false;
-        "floorp.tabbar.style" = 2;
-        "floorp.tabsleep.enabled" = true;
-        "floorp.user.js.customize" = "Fastfox";
-        "floorp.verticaltab.paddingtop.enabled" = true;
-      };
-    };
-    policies = {
-      DisableAppUpdate = true;
-      DisableFirefoxAccounts = true;
-      DisableFirefoxStudies = true;
-      DisablePocket = true;
-      DisableProfileImport = true;
-      DisableSetDesktopBackground = true;
-      DisableTelemetry = true;
-      DisplayBookmarksToolbar = "never";
-      DNSOverHTTPS = {
-        Enabled = true;
-        Locked = true;
-      };
-      DontCheckDefaultBrowser = true;
-      ExtensionUpdate = true;
-      OfferToSaveLogins = false;
-      PasswordManagerEnabled = false;
-      EnableTrackingProtection = {
-        Value = true;
-        Locked = true;
-        Cryptomining = true;
-        Fingerprinting = true;
-        EmailTracking = true;
-      };
-      HardwareAcceleration = true;
-      OverrideFirstRunPage = "";
-      PopupBlocking = {
-        Default = true;
-      };
-      Preferences = {
         "browser.backspace_action" = 0;
         "privacy.trackingprotection.enabled" = true;
         "media.peerconnection.ice.default_address_only" = true;
@@ -450,43 +410,6 @@
         "geo.enabled" = false;
         "webgl.disabled" = true;
       };
-
-      ExtensionSettings =
-        let
-          installation_mode = "force_installed";
-          urlPrefix = x: "http://addons.mozilla.org/firefox/downloads/latest/${x}/latest.xpi";
-        in
-        {
-          "uBlock0@raymondhill.net" = {
-            install_url = urlPrefix "ublock-origin";
-            inherit installation_mode;
-          };
-          "{e0de5ee2-4619-413a-8300-a43a90196a6d}" = {
-            install_url = urlPrefix "simplerentfox";
-            inherit installation_mode;
-          };
-          "{3c078156-979c-498b-8990-85f7987dd929}" = {
-            install_url = urlPrefix "sidebery";
-            inherit installation_mode;
-          };
-          "contact@maxhu.dev" = {
-            install_url = urlPrefix "mtab";
-            inherit installation_mode;
-          };
-          "tridactyl.vim@cmcaine.co.uk" = {
-            install_url = urlPrefix "tridactyl-vim";
-            inherit installation_mode;
-          };
-          "giantpinkrobots@protonmail.com" = {
-            install_url = urlPrefix "varia-integrator";
-            inherit installation_mode;
-          };
-          "{c2c003ee-bd69-42a2-b0e9-6f34222cb046}" = {
-            install_url = urlPrefix "auto-tab-discard";
-            inherit installation_mode;
-          };
-          "bing@search.mozilla.org".installation_mode = "blocked";
-        };
     };
   };
 }
