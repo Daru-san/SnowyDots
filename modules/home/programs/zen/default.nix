@@ -27,7 +27,11 @@
       isDefault = true;
       id = 7;
 
-      userChrome = builtins.readFile ./userChrome.css;
+      userChrome = ''
+        #zen-appcontent-navbar-container {
+          order: 1 !important;
+        }
+      '';
 
       extensions = with inputs.firefox-addons.packages.${system}; [
         keepassxc-browser
