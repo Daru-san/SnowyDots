@@ -413,6 +413,7 @@
         "network.dns.http3_echconfig.enabled" = true;
         "geo.enabled" = false;
         "webgl.disabled" = true;
+        "dom.ipc.forkserver.enable" = true;
       };
     };
   };
