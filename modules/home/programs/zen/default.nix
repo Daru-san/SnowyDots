@@ -413,6 +413,20 @@
         "geo.enabled" = false;
         "webgl.disabled" = true;
         "dom.ipc.forkserver.enable" = true;
+
+        "zen.urlbar.behavior" = "float";
+
+        "zen.view.grey-out-inactive-windows" = false;
+        "zen.view.show-bottom-border" = true;
+        "zen.view.show-newtab-button-border-top" = true;
+        "zen.view.show-newtab-button-top" = false;
+        "zen.view.sidebar-expanded" = false;
+        "zen.view.use-single-toolbar" = false;
+
+        "identity.fxaccounts.enabled" = false;
+        "signon.rememberSignons" = false;
+        "services.sync.prefs.sync.signon.rememberSignons" = false;
+        "signon.rememberSignons.visibilityToggle" = false;
       };
     };
   };
