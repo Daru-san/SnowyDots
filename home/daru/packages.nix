@@ -14,6 +14,7 @@
       keepassxc
       obsidian
       morgen
+      vesktop
 
       # Science
       kdePackages.kalzium
