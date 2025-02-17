@@ -35,6 +35,8 @@ in
         "super,o,togglespecialworkspace, obs-studio"
         "super,y,togglespecialworkspace, virt-manager"
 
+        "super,g,togglegroup"
+
         "supershift,tab,cyclenext"
         "super,tab,changegroupactive"
 
