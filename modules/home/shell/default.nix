@@ -40,6 +40,7 @@
       trashy = "${pkgs.trashy}/bin/trashy";
       fzf = "${config.programs.fzf.package}/bin/fzf";
       syst = "${pkgs.systemctl-tui}/bin/systemctl-tui";
+      wget2 = "${pkgs.wget2}/bin/wget2";
     in
     {
       syst = syst;
@@ -55,5 +56,6 @@
       cgrt = ''cd "$(git rev-parse --show-toplevel)"'';
       trashy-empty = "${trashy} list | ${fzf} --multi | awk '{$1=$1;print}' | rev | cut -d ' ' -f1 | rev | xargs ${trashy} empty --match=exact --force";
       trashy-restore = "${trashy} list | ${fzf} --multi | awk '{$1=$1;print}' | rev | cut -d ' ' -f1 | rev | xargs ${trashy} restore --match=exact --force";
+      wget = wget2;
     };
 }
