@@ -1078,11 +1078,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1739888779,
-        "narHash": "sha256-R8BYprUlPOyi0yzj1SfIyhh/+8sU5i7naPQqkDBU40k=",
+        "lastModified": 1739893782,
+        "narHash": "sha256-lyf5BAiX4YHM5HFcda6NjEjM1RQwXp9h6iWxPM5Y2HQ=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "3f91137ad8871319ae68c98be443c1e965b8e32f",
+        "rev": "429cff2f393ab91f16c68d927c98e98f417c2523",
         "type": "sourcehut"
       },
       "original": {
