@@ -13,7 +13,6 @@ in
     theme = spicePkgs.themes.text;
     enabledSnippets = with spicePkgs.snippets; [
       autoHideFriends
-      hideFriendsActivityButton
       removePopular
       hideMadeForYou
       removeConnectBar
