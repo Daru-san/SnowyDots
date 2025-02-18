@@ -10,7 +10,12 @@
   programs.firefox = {
     enable = true;
     package = null;
-    profiles.default.isDefault = true;
+    nativeMessagingHosts = [
+      pkgs.tridactyl-native
+    ];
+    profiles.default = {
+      isDefault = true;
+    };
   };
 
   programs.zenix = {
