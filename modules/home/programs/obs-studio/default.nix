@@ -6,7 +6,6 @@
       obs-vaapi
       obs-pipewire-audio-capture
       input-overlay
-      droidcam-obs
       obs-websocket
     ];
   };
