@@ -32,20 +32,22 @@
         }
       '';
 
-      extensions = with inputs.firefox-addons.packages.${system}; [
-        keepassxc-browser
-        multi-account-containers
-        auto-tab-discard
-        buster-captcha-solver
-        github-file-icons
-        widegithub
-        hover-zoom-plus
-        reddit-enhancement-suite
-        ublock-origin
-        tridactyl
-        aria2-integration
-        auto-tab-discard
-      ];
+      extensions = {
+        packages = with inputs.firefox-addons.packages.${system}; [
+          keepassxc-browser
+          multi-account-containers
+          auto-tab-discard
+          buster-captcha-solver
+          github-file-icons
+          widegithub
+          hover-zoom-plus
+          reddit-enhancement-suite
+          ublock-origin
+          tridactyl
+          aria2-integration
+          auto-tab-discard
+        ];
+      };
 
       containersForce = true;
       containers = {
