@@ -51,6 +51,7 @@
           tridactyl
           aria2-integration
           auto-tab-discard
+          user-agent-string-switcher
         ];
       };
 
