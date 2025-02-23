@@ -74,7 +74,7 @@
             (group "zen")
             (workspace 4 "org.gnome.Nautilus")
 
-            (workspace-title 5 "Spotify")
+            (workspace 5 "spotify")
 
             (workspace 6 "mpv")
             (group "mpv")
