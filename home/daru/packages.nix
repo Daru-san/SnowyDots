@@ -94,8 +94,8 @@
       xdg-utils
       unrar
       onefetch
-      trashy
       turtle
+      gtrash
       rqbit
       dconf-editor
       hexyl
