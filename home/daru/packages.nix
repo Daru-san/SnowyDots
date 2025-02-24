@@ -15,6 +15,7 @@
       obsidian
       morgen
       vesktop
+      aria2
 
       # Science
       kdePackages.kalzium
