@@ -28,6 +28,7 @@
       ${pkgs.rqbit}/bin/rqbit -v error completions fish | source
       ${inputs.rimi.packages.${system}.rimi}/bin/rimi completions fish | source
       ${pkgs.codeberg-cli}/bin/berg completion fish | source
+      ${pkgs.gtrash}/bin/gtrash completion fish | source
     '';
   };
 
