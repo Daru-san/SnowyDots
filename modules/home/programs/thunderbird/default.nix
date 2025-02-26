@@ -1,4 +1,10 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  system,
+  ...
+}:
 let
   name = config.home.username;
   user-js = pkgs.fetchFromGitHub {
@@ -17,9 +23,16 @@ in
           installation_mode = "force_installed";
           install_url = "https://addons.thunderbird.net/thunderbird/downloads/latest/provider-for-google-calendar/latest.xpi";
         };
+        "uBlock0@raymondhill.net.xpi" = {
+          installation_mode = "force_installed";
+          install_url = "https://addons.thunderbird.net/thunderbird/downloads/latest/ublock-origin/latest.xpi";
+        };
       };
     };
     profiles.${name} = {
+      extensions = with inputs.firefox-addons.packages.${system}; [
+        ublock-origin
+      ];
       isDefault = true;
       extraConfig =
         builtins.readFile "${user-js}/user.js"
