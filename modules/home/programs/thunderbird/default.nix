@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 let
+  name = config.home.username;
   user-js = pkgs.fetchFromGitHub {
     owner = "HorlogeSkynet";
     repo = "thunderbird-user.js";
@@ -10,11 +11,23 @@ in
 {
   programs.thunderbird = {
     enable = true;
-    profiles.daru = {
+    profiles.${name} = {
       isDefault = true;
-      extraConfig = builtins.readFile "${user-js}/user.js";
+      extraConfig =
+        builtins.readFile "${user-js}/user.js"
+        + ''
+          user_pref("javascript.enabled", true);
+        '';
+
+      inherit (config.programs.zenix.profiles.default) search;
+
+      feedAccounts = {
+        ${name} = { };
+      };
+
       settings = {
-        inherit (config.programs.zenix.profiles.default) search;
+        "font.name.sans-serif.x-western" = "Rubik";
+        "font.size.variable.x-western" = 17;
       };
     };
   };
