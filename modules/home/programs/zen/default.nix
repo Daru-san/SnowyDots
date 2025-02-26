@@ -139,6 +139,7 @@
           "Nix Options"
           "Home Manager"
           "Nixvim Options"
+          "Crates.io"
         ];
 
         engines =
@@ -214,6 +215,17 @@
                 "@gh"
                 "@g"
                 "@git"
+              ];
+            };
+
+            "Crates.io" = {
+              urls = [ { template = "https://crates.io/search?q={searchTerms}"; } ];
+              iconUpdateURL = "https://crates.io/favicon.ico";
+              updateInterval = 24 * 60 * 60 * 1000;
+              definedAliases = [
+                "@cargo"
+                "@cg"
+                "@rs"
               ];
             };
 
