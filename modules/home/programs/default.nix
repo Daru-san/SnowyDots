@@ -13,6 +13,7 @@
     ./nautilus
     ./spotify
     ./zen
+    ./thunderbird
     # ./elia
   ];
 }
