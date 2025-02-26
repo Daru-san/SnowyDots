@@ -11,6 +11,14 @@ in
 {
   programs.thunderbird = {
     enable = true;
+    package = pkgs.thunderbird.override {
+      extraPolicies.ExtensionSettings = {
+        "{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}" = {
+          installation_mode = "force_installed";
+          install_url = "https://addons.thunderbird.net/thunderbird/downloads/latest/provider-for-google-calendar/latest.xpi";
+        };
+      };
+    };
     profiles.${name} = {
       isDefault = true;
       extraConfig =
