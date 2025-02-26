@@ -68,10 +68,13 @@
           in
           [
             (special "obs-studio" "com.obsproject.Studio")
-            (special "virt-manager" "virt-manager")
+            (special "virt-manager" ".virt-manager-wrapped")
 
             (workspace 2 "zen")
             (group "zen")
+            (workspace 2 "thunderbird")
+            (group "thunderbird")
+
             (workspace 4 "org.gnome.Nautilus")
 
             (workspace 5 "spotify")
