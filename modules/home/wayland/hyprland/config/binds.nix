@@ -44,6 +44,10 @@ in
         mods: key: action: desc:
         "${mods}, ${key}, ${desc}, ${e}, ${action}";
 
+      mkBindExeDispatch =
+        dispatcher: mods: key: action: desc:
+        "${mods}, ${key}, ${desc}, ${e}, [${dispatcher}] ${action}";
+
       mkBindSingle =
         key: action: desc:
         ", ${key}, ${desc}, ${e}, ${action}";
@@ -61,7 +65,7 @@ in
         let
           terminal = getExe config.programs.ghostty.package;
           browser = getExe config.programs.zenix.package;
-          file-manager = getExe pkgs.nautilus;
+          file-manager = getExe pkgs.pcmanfm-qt;
           editor = "nvim";
           yazi = getExe config.programs.yazi.package;
           hyprlock = getExe config.programs.hyprlock.package;
@@ -77,7 +81,11 @@ in
           );
         in
         [
-          (mkBindExe "super" "e" "hyprctl clients | grep 'nautilus' || ${file-manager}" "Launch file manager")
+          # (mkBindExe "super" "e" "hyprctl clients | grep 'nautilus' || ${file-manager}" "Launch file manager")
+          (mkBindExeDispatch "Workspace 4" "super" "e"
+            "hyprctl clients | grep 'pcmanfm-qt' || ${file-manager}"
+            "Launch file manager"
+          )
           (mkBindExe "super" "b" browser "Launch the browser")
           (mkBindExe "altshift" "m" g4music "Open a music player")
           # (mkBindExe "Super" "n" valent "Launch valent")
