@@ -6,9 +6,6 @@
     enableNixpkgsReleaseCheck = false;
   };
 
-  # Make neovim the default editor
-  home.sessionVariables.EDITOR = "nvim";
-
   # Enable home-manager
   programs.home-manager.enable = true;
 
