@@ -3,7 +3,7 @@
     "tab" = ":buffer-next";
     "S-tab" = ":buffer-previous";
     "C-s" = ":write";
-    "esc-esc" = "quit!";
+    "S-esc" = ":quit!";
     "C-g" = [
       ":write-all"
       ":new"
