@@ -14,6 +14,7 @@
     ./spotify
     ./zen
     ./thunderbird
+    ./helix
     # ./elia
   ];
 }
