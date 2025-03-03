@@ -23,7 +23,7 @@
       celestia
 
       # Content creation
-      kdenlive
+      kdePackages.kdenlive
       gimp
 
       # Media
