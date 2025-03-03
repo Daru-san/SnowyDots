@@ -14,4 +14,5 @@ with pkgs;
   jq-lsp
   gopls
   lua-language-server
+  tailwindcss-language-server
 ]
