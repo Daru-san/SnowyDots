@@ -1,11 +1,13 @@
 { pkgs, lib, ... }:
 {
+  stylix.targets.helix.enable = false;
   programs.helix = {
     enable = true;
     languages = import ./languages.nix { inherit pkgs lib; };
     defaultEditor = true;
     extraPackages = import ./packages.nix { inherit pkgs; };
     settings = {
+      theme = "kaolin-dark";
       keys = import ./keys.nix;
       editor = {
         auto-save = {
