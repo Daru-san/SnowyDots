@@ -10,5 +10,6 @@
     ./env.nix
     ./pipewire.nix
     ./searx.nix
+    ./mtkclient.nix
   ];
 }
