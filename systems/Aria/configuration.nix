@@ -19,6 +19,8 @@
         "uinput"
         "kvm"
         "libvirtd"
+        "plugdev"
+        "dialout"
       ];
     };
   };
