@@ -1,8 +1,8 @@
 { pkgs, lib, ... }:
 let
   codelldb-debuger = {
-    command = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter/codelldb";
-    name = "codelldb";
+    command = lib.getExe' pkgs.lldb "lldb-dap";
+    name = "dap-lldb";
     port-arg = "--port {}";
     transport = "tcp";
     templates = [
