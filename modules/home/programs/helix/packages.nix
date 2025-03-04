@@ -15,4 +15,5 @@ with pkgs;
   gopls
   lua-language-server
   tailwindcss-language-server
+  clang-tools
 ]
