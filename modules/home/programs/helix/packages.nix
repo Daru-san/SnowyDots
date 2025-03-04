@@ -17,6 +17,9 @@ with pkgs;
   tailwindcss-language-server
   clang-tools
   efm-langserver
+  mesonlsp
+  python3Packages.python-lsp-server
+  vscode-langservers-extracted
   vale-ls
   markdownlint-cli
 ]
