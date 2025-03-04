@@ -23,6 +23,51 @@ let
     ];
   };
 
+  lldb-rust-primer =
+    pkgs.writers.writePython3 "rust-primer.py"
+      {
+        libraries = with pkgs.pythonPackages; [
+          pathlib
+        ];
+      }
+      ''
+        import subprocess
+        import pathlib
+        import lldb
+
+        # Determine the sysroot for the active Rust interpreter
+        rustlib_etc = pathlib.Path(subprocess.getoutput('rustc --print sysroot')) / 'lib' / 'rustlib' / 'etc'
+        if not rustlib_etc.exists():
+            raise RuntimeError('Unable to determine rustc sysroot')
+
+            # Load lldb_lookup.py and execute lldb_commands with the correct path
+            lldb.debugger.HandleCommand(f"""command script import "{rustlib_etc / 'lldb_lookup.py'}" """)
+            lldb.debugger.HandleCommand(f"""command source -s 0 "{rustlib_etc / 'lldb_commands'}" """)")")
+      '';
+
+  lldb-rust = {
+    inherit (lldb-dap) command port-arg transport;
+    name = "dap-lldb-rust";
+    templates = [
+      {
+        name = "binary";
+        request = "launch";
+        completion = [
+          {
+            completion = "filename";
+            name = "binary";
+          }
+        ];
+        args = {
+          program = "{0}";
+          initCommands = [
+            "command script import ${lib.getExe lldb-rust-primer}"
+          ];
+        };
+      }
+    ];
+  };
+
   efm-config = lib.generators.toYAML {
     version = 2;
     languages = {
@@ -80,7 +125,7 @@ in
     {
       name = "rust";
       language-servers = [ "rust-analyzer" ];
-      debugger = codelldb-debuger;
+      debugger = lldb-rust;
     }
     {
       name = "markdown";

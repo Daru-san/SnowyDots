@@ -21,5 +21,6 @@ with pkgs;
   python3Packages.python-lsp-server
   vscode-langservers-extracted
   vale-ls
+  rustc
   markdownlint-cli
 ]
