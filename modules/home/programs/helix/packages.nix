@@ -16,5 +16,7 @@ with pkgs;
   lua-language-server
   tailwindcss-language-server
   clang-tools
+  efm-langserver
+  vale-ls
   markdownlint-cli
 ]

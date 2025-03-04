@@ -86,7 +86,8 @@ in
       name = "markdown";
       language-servers = [
         "marksman"
-        "ltex-ls"
+        "vale"
+        "ltex-ls-plus"
         {
           name = "efm";
           only-features = [ "diagnostics" ];
