@@ -1,6 +1,6 @@
 { pkgs, lib, ... }:
 let
-  codelldb-debuger = {
+  lldb-dap = {
     command = lib.getExe' pkgs.lldb "lldb-dap";
     name = "dap-lldb";
     port-arg = "--port {}";
@@ -70,12 +70,12 @@ in
     {
       name = "c";
       language-servers = [ "clangd" ];
-      debugger = codelldb-debuger;
+      debugger = lldb-dap;
     }
     {
       name = "cpp";
       language-servers = [ "clangd" ];
-      debugger = codelldb-debuger;
+      debugger = lldb-dap;
     }
     {
       name = "rust";
@@ -96,7 +96,7 @@ in
     }
     {
       name = "zig";
-      debugger = codelldb-debuger;
+      debugger = lldb-dap;
     }
     {
       name = "python";
