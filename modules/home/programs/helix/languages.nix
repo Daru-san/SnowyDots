@@ -23,6 +23,23 @@ let
     ];
   };
 
+  efm-config = lib.generators.toYAML {
+    version = 2;
+    languages = {
+      markdown = {
+        lint-command = "markdownlint -s";
+        lint-stdin = true;
+        lint-after-open = true;
+        lint-on-save = true;
+        lint-formats = [
+          "%f:%l %m"
+          "%f:%l:%c %m"
+          "%f: %l: %m"
+        ];
+      };
+    };
+  };
+
 in
 {
   language-server = {
@@ -31,6 +48,13 @@ in
     };
     sqls = {
       command = "sqls";
+    };
+    efm = {
+      command = [
+        "efm-langserver"
+        "-c"
+        efm-config
+      ];
     };
   };
   language = [
@@ -63,6 +87,10 @@ in
       language-servers = [
         "marksman"
         "ltex-ls"
+        {
+          name = "efm";
+          only-features = [ "diagnostics" ];
+        }
       ];
     }
     {

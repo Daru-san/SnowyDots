@@ -16,4 +16,5 @@ with pkgs;
   lua-language-server
   tailwindcss-language-server
   clang-tools
+  markdownlint-cli
 ]
