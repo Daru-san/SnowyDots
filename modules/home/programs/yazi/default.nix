@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   imports = [ ./plugins.nix ];
   programs.yazi = {
@@ -24,7 +24,7 @@
       opener = {
         edit = [
           {
-            run = ''nvim "$@"'';
+            run = ''${config.home.sessionVariables.EDITOR} "$@"'';
             block = true;
           }
         ];
