@@ -54,7 +54,7 @@ let
         args = {
           program = "{0}";
           initCommands = [
-            "command script import ${lib.getExe lldb-rust-primer}"
+            "command script import ${lldb-rust-primer}/bin/rust-primer.py"
           ];
         };
       }
