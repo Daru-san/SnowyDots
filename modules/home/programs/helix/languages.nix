@@ -61,22 +61,24 @@ let
     ];
   };
 
-  efm-config = lib.generators.toYAML {
-    version = 2;
-    languages = {
-      markdown = {
-        lint-command = "markdownlint -s";
-        lint-stdin = true;
-        lint-after-open = true;
-        lint-on-save = true;
-        lint-formats = [
-          "%f:%l %m"
-          "%f:%l:%c %m"
-          "%f: %l: %m"
-        ];
+  efm-config = pkgs.writeText "config.yaml" (
+    lib.generators.toYAML { } {
+      version = 2;
+      languages = {
+        markdown = {
+          lint-command = "markdownlint -s";
+          lint-stdin = true;
+          lint-after-open = true;
+          lint-on-save = true;
+          lint-formats = [
+            "%f:%l %m"
+            "%f:%l:%c %m"
+            "%f: %l: %m"
+          ];
+        };
       };
-    };
-  };
+    }
+  );
 
 in
 {
@@ -88,11 +90,7 @@ in
       command = "sqls";
     };
     efm = {
-      command = [
-        "efm-langserver"
-        "-c"
-        efm-config
-      ];
+      command = "efm-langserver -c ${efm-config}";
     };
   };
   language = [
