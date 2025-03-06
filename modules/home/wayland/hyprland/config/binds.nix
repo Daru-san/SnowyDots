@@ -82,10 +82,8 @@ in
         in
         [
           # (mkBindExe "super" "e" "hyprctl clients | grep 'nautilus' || ${file-manager}" "Launch file manager")
-          (mkBindExeDispatch "Workspace 4" "super" "e"
-            "hyprctl clients | grep 'pcmanfm-qt' || ${file-manager}"
-            "Launch file manager"
-          )
+          (mkBindExeDispatch "workspace 4" "super" "e" file-manager "Launch file manager")
+
           (mkBindExe "super" "b" browser "Launch the browser")
           (mkBindExe "altshift" "m" g4music "Open a music player")
           # (mkBindExe "Super" "n" valent "Launch valent")
