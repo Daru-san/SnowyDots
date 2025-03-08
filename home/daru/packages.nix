@@ -13,7 +13,6 @@
       scrcpy
       keepassxc
       obsidian
-      morgen
       vesktop
       aria2
 
@@ -58,7 +57,7 @@
       # GUI Util
       file-roller
       cheese
-      stable.varia
+      varia
 
       # Android
       adbtuifm
@@ -94,7 +93,6 @@
       xdg-utils
       unrar
       onefetch
-      turtle
       gtrash
       rqbit
       dconf-editor
@@ -105,12 +103,10 @@
 
       # The craft
       prismlauncher
-      mangayomi
     ])
     (with inputs; [
       rimi.packages.${system}.default
       color-picker.packages.${system}.default
-      snowyvim.packages.${system}.neovim
     ])
   ];
 }
