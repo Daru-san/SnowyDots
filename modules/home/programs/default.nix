@@ -10,7 +10,6 @@
     ./yazi
     ./freetube
     ./yt-dlp
-    ./nautilus
     ./spotify
     ./zen
     ./thunderbird
