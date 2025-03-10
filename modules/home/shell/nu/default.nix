@@ -72,6 +72,7 @@ in
         ${import-completions {
           gh = "gh-completions";
           tealdeer = "tldr-completions";
+          git = "git-completions";
         }}
         let carapace_completer = {|spans: list<string>|
           carapace $spans.0 nushell ...$spans
@@ -107,7 +108,6 @@ in
           match $spans.0 {
             __zoxide_z | __zoxide_zi => $zoxide_completer
             zig => $fish_completer
-            git => $fish_completer
             rimi => $fish_completer
             nix => $fish_completer
             berg => $fish_completer
