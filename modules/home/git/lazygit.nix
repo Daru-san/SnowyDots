@@ -30,7 +30,7 @@
         };
       };
       os = {
-        editPreset = "nvim";
+        editPreset = "hx";
       };
       refresher = {
         refreshInterval = 7;
