@@ -31,33 +31,9 @@
       isDefault = true;
       id = 0;
 
-      # Credit https://github.com/sprokolopolis/Zen-bottombar
       userChrome = ''
         #zen-appcontent-navbar-container {
-          z-index: 999999 !important;
-          position: absolute;
-          bottom: 0 !important;
-          background: light-dark(rgb(235, 235, 239), rgb(31, 30, 37));
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          padding-top: var(--zen-element-separation);
-          width: 100%;
-          min-height: 46px;
-        }
-
-        #nav-bar {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          width: calc(100% - 184px);
-        }
-
-        :root:not([inDOMFullscreen="true"]):not([chromehidden~="location"]):not([chromehidden~="toolbar"]) {
-          & #tabbrowser-tabpanels {
-            padding-right: 0 !important;
-            padding-bottom: var(--zen-element-separation);
-          }
+          order: 1 !important;
         }
       '';
 
@@ -429,8 +405,6 @@
 
         "cookiebanners.service.mode" = 2;
         "cookiebanners.service.mode.privateBrowsing" = 2;
-
-        "svg.context-properties.content.enable" = true;
 
         "nglayout.initialpaint.delay" = 0;
         "nglayout.initialpaint.delay_in_oopif" = 0;
