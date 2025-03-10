@@ -21,7 +21,8 @@ let
     command_not_found_handle "$@"
   '';
 
-  import-scripts = paths: builtins.map (path: "use ${pkgs.nu_scripts}/${path} *") paths;
+  import-scripts =
+    paths: builtins.map (path: "use ${pkgs.nu_scripts}/share/nu_scripts/${path} *") paths;
   import-aliases =
     set:
     builtins.concatStringsSep "\n" (
