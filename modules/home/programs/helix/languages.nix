@@ -136,7 +136,7 @@ in
       name = "markdown";
       language-servers = [
         "marksman"
-        "vale"
+        "vale-ls"
         "ltex-ls-plus"
         {
           name = "efm";
