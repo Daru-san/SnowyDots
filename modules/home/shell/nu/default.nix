@@ -31,7 +31,7 @@ let
   import-completions =
     set:
     builtins.concatStringsSep "\n" (
-      import-scripts (lib.mapAttrsToList (name: value: "custom-completions/${name}/${value}") set)
+      import-scripts (lib.mapAttrsToList (name: value: "custom-completions/${name}/${value}.nu") set)
     );
 in
 {
@@ -107,13 +107,11 @@ in
 
           match $spans.0 {
             __zoxide_z | __zoxide_zi => $zoxide_completer
-            _ => $carapace_completer
-            git => $fish_completer
-            adb => $fish_completer
             zig => $fish_completer
             rimi => $fish_completer
             nix => $fish_completer
             berg => $fish_completer
+            _ => $carapace_completer
           } | do $in $spans
         }
 
