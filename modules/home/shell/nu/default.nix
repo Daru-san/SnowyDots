@@ -20,6 +20,18 @@ let
     source ${config.programs.nix-index.package}/etc/profile.d/command-not-found.sh
     command_not_found_handle "$@"
   '';
+
+  import-scripts = paths: builtins.map (path: "use ${pkgs.nu_scripts}/${path} *") paths;
+  import-aliases =
+    set:
+    builtins.concatStringsSep "\n" (
+      import-scripts (lib.mapAttrsToList (name: value: "aliases/${name}/${value}.nu") set)
+    );
+  import-completions =
+    set:
+    builtins.concatStringsSep "\n" (
+      import-scripts (lib.mapAttrsToList (name: value: "custom-completions/${name}/${value}") set)
+    );
 in
 {
   programs = {
@@ -50,7 +62,17 @@ in
           vi_normal = "blink_underscore";
         };
       };
+
       extraConfig = ''
+        ${import-aliases {
+          bat = "bat-aliases";
+          git = "git-aliases";
+        }}
+        ${import-completions {
+          adb = "adb-completions";
+          gh = "gh-completions";
+          tealdeer = "tldr-completions";
+        }}
         let carapace_completer = {|spans: list<string>|
           carapace $spans.0 nushell ...$spans
           | from json
