@@ -19,7 +19,7 @@ in
       "*.{md,rst}" = {
         BasedOnStyles = lib.concatStringsSep ", " [
           "proselint"
-          "google"
+          "Google"
           "write-good"
           "Vale"
         ];
