@@ -1,9 +1,34 @@
 { pkgs, lib, ... }:
+let
+  vale = pkgs.vale.withStyles (s: [
+    s.proselint
+    s.google
+    s.write-good
+  ]);
+in
 {
   stylix.targets.helix.enable = false;
+  xdg.configFile."vale/.vale.ini".text = lib.generators.toINIWithGlobalSection { } {
+    globalSection = {
+      StylesPath = "${vale}/share/vale/styles";
+    };
+    sections = {
+      formats = {
+        mdx = "md";
+      };
+      "*.{md,rst}" = {
+        BasedOnStyles = lib.concatStringsSep ", " [
+          "proselint"
+          "google"
+          "write-good"
+          "Vale"
+        ];
+      };
+    };
+  };
   programs.helix = {
     enable = true;
-    languages = import ./languages.nix { inherit pkgs lib; };
+    languages = import ./languages.nix { inherit pkgs lib vale; };
     defaultEditor = true;
     extraPackages = import ./packages.nix { inherit pkgs; };
     settings = {
