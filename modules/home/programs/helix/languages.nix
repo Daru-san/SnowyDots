@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  vale,
+  ...
+}:
 let
   lldb-dap = {
     command = lib.getExe' pkgs.lldb "lldb-dap";
@@ -101,6 +106,13 @@ in
           };
         };
       };
+    };
+    vale = {
+      command = lib.getExe (
+        pkgs.vale-ls.override {
+          inherit vale;
+        }
+      );
     };
   };
   language = [
