@@ -61,7 +61,17 @@ let
     ];
   };
 
+  dprint-config = pkgs.writers.writeJSON "config.json" {
+    markdown = {
+      lineWidth = 80;
     };
+    excludes = [ ];
+    plugins = with pkgs.dprint-plugins; [
+      g-plane-pretty_yaml
+      g-plane-malva
+      dprint-plugin-markdown
+      dprint-plugin-toml
+    ];
   };
 
 in
@@ -129,6 +139,16 @@ in
           only-features = [ "diagnostics" ];
         }
       ];
+      formatter = {
+        command = lib.getExe pkgs.dprint;
+        args = [
+          "fmt"
+          "--stdin"
+          "md"
+          "-c"
+          "${dprint-config}/config.json"
+        ];
+      };
     }
     {
       name = "zig";
