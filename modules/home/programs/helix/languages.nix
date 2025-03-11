@@ -61,36 +61,6 @@ let
     ];
   };
 
-  toYaml =
-    name: data:
-    pkgs.runCommand "toYaml"
-      {
-        buildInputs = [
-          pkgs.yj
-        ];
-        json = builtins.toJSON data;
-        passAsFile = [ "json" ];
-
-      }
-      ''
-        mkdir -p $out
-        yj -jy < "$jsonPath" > $out/${name}
-      '';
-
-  efm-config = toYaml "config.yaml" {
-    version = 2;
-    languages = {
-      markdown = {
-        lint-command = "markdownlint -s";
-        lint-stdin = true;
-        lint-after-open = true;
-        lint-on-save = true;
-        lint-formats = [
-          "%f:%l %m"
-          "%f:%l:%c %m"
-          "%f: %l: %m"
-        ];
-      };
     };
   };
 
@@ -104,7 +74,23 @@ in
       command = "sqls";
     };
     efm = {
-      command = "efm-langserver -c ${efm-config}/config.yaml";
+      command = lib.getExe pkgs.efm-langserver;
+      config = {
+        version = 2;
+        languages = {
+          markdown = {
+            lint-command = "${lib.getExe pkgs.markdownlint-cli} -s";
+            lint-stdin = true;
+            lint-after-open = true;
+            lint-on-save = true;
+            lint-formats = [
+              "%f:%l %m"
+              "%f:%l:%c %m"
+              "%f: %l: %m"
+            ];
+          };
+        };
+      };
     };
   };
   language = [
