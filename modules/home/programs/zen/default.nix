@@ -24,11 +24,11 @@
       isDefault = true;
       id = 0;
 
-      userChrome = ''
-        #zen-appcontent-navbar-container {
-          order: 1 !important;
-        }
-      '';
+      # userChrome = ''
+      #   #zen-appcontent-navbar-container {
+      #     order: 1 !important;
+      #   }
+      # '';
 
       extensions = {
         packages = with inputs.firefox-addons.packages.${system}; [
