@@ -40,8 +40,6 @@ in
           user_pref("javascript.enabled", true);
         '';
 
-      inherit (config.programs.zenix.profiles.default) search;
-
       feedAccounts = {
         ${name} = { };
       };
