@@ -34,16 +34,11 @@
         packages = with inputs.firefox-addons.packages.${system}; [
           keepassxc-browser
           multi-account-containers
-          auto-tab-discard
           buster-captcha-solver
           github-file-icons
           widegithub
           hover-zoom-plus
           reddit-enhancement-suite
-          ublock-origin
-          tridactyl
-          aria2-integration
-          auto-tab-discard
           user-agent-string-switcher
         ];
       };
@@ -442,5 +437,76 @@
         "signon.rememberSignons.visibilityToggle" = false;
       };
     };
+    policies = {
+      DisableAppUpdate = true;
+      DisableFirefoxAccounts = true;
+      DisableFirefoxStudies = true;
+      DisablePocket = true;
+      DisableProfileImport = true;
+      DisableSetDesktopBackground = true;
+      DisableTelemetry = true;
+      DisplayBookmarksToolbar = "never";
+      DNSOverHTTPS = {
+        Enabled = true;
+        Locked = true;
+      };
+      DontCheckDefaultBrowser = true;
+      ExtensionUpdate = true;
+      OfferToSaveLogins = false;
+      PasswordManagerEnabled = false;
+      EnableTrackingProtection = {
+        Value = true;
+        Locked = true;
+        Cryptomining = true;
+        Fingerprinting = true;
+        EmailTracking = true;
+      };
+      HardwareAcceleration = true;
+      OverrideFirstRunPage = "";
+      PopupBlocking = {
+        Default = true;
+      };
+      Preferences = {
+        "browser.backspace_action" = 0;
+        "privacy.trackingprotection.enabled" = true;
+        "media.peerconnection.ice.default_address_only" = true;
+        "network.captive-portal-service.enabled" = false;
+        "network.dns.echconfig.enabled" = true;
+        "network.dns.http3_echconfig.enabled" = true;
+        "geo.enabled" = false;
+        "webgl.disabled" = true;
+      };
+
+      ExtensionSettings =
+        let
+          installation_mode = "force_installed";
+          urlPrefix = x: "http://addons.mozilla.org/firefox/downloads/latest/${x}/latest.xpi";
+        in
+        {
+          "uBlock0@raymondhill.net" = {
+            install_url = urlPrefix "ublock-origin";
+            inherit installation_mode;
+          };
+          "contact@maxhu.dev" = {
+            install_url = urlPrefix "mtab";
+            inherit installation_mode;
+          };
+          "tridactyl.vim@cmcaine.co.uk" = {
+            install_url = urlPrefix "tridactyl-vim";
+            inherit installation_mode;
+          };
+          "{c2c003ee-bd69-42a2-b0e9-6f34222cb046}" = {
+            install_url = urlPrefix "auto-tab-discard";
+            inherit installation_mode;
+          };
+          "giantpinkrobots@protonmail.com" = {
+            install_url = urlPrefix "varia-integrator";
+            inherit installation_mode;
+          };
+
+          "bing@search.mozilla.org".installation_mode = "blocked";
+        };
+    };
+
   };
 }
