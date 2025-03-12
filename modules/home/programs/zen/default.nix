@@ -5,26 +5,19 @@
   ...
 }:
 {
-  imports = [ inputs.zenix.hmModules.default ];
-
-  programs.firefox = {
-    enable = true;
-    package = null;
-    nativeMessagingHosts = [
-      pkgs.tridactyl-native
-    ];
-    profiles.default = {
-      isDefault = true;
-    };
-  };
+  imports = [ inputs.zenix.homeModules.default ];
+  nixpkgs.overlays = [ inputs.zenix.overlays.default ];
 
   programs.zenix = {
     enable = true;
 
+    nativeMessagingHosts = [
+      pkgs.tridactyl-native
+    ];
+
     chrome = {
       findbar = true;
       hideTitlebarButtons = true;
-      tabGroups = true;
     };
 
     profiles.default = {
