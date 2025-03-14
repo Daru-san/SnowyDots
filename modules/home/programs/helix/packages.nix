@@ -23,4 +23,5 @@ with pkgs;
   vale-ls
   rustc
   markdownlint-cli
+  typescript-language-server
 ]
