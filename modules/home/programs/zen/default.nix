@@ -40,6 +40,9 @@
           hover-zoom-plus
           reddit-enhancement-suite
           user-agent-string-switcher
+          ublock-origin
+          tridactyl
+          auto-tab-discard
         ];
       };
 
