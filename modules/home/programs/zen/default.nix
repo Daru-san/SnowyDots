@@ -428,7 +428,7 @@
         "zen.view.show-bottom-border" = true;
         "zen.view.show-newtab-button-border-top" = true;
         "zen.view.show-newtab-button-top" = false;
-        "zen.view.sidebar-expanded" = false;
+        "zen.view.sidebar-expanded" = true;
         "zen.view.use-single-toolbar" = false;
 
         "identity.fxaccounts.enabled" = false;
