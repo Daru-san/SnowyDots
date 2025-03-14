@@ -107,6 +107,9 @@ in
         };
       };
     };
+    typos = {
+      command = lib.getExe pkgs.typos-lsp;
+    };
     vale = {
       command = lib.getExe (
         pkgs.vale-ls.override {
@@ -137,7 +140,10 @@ in
     }
     {
       name = "rust";
-      language-servers = [ "rust-analyzer" ];
+      language-servers = [
+        "rust-analyzer"
+        "typos"
+      ];
       debugger = lldb-rust;
     }
     {
@@ -145,7 +151,7 @@ in
       language-servers = [
         "marksman"
         "vale-ls"
-        "ltex-ls-plus"
+        "typos"
         {
           name = "efm";
           only-features = [ "diagnostics" ];
@@ -165,6 +171,10 @@ in
     {
       name = "zig";
       debugger = lldb-dap;
+      language-servers = [
+        "zls"
+        "typos"
+      ];
     }
     {
       name = "python";
