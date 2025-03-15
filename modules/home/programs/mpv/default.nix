@@ -30,6 +30,9 @@
         max_width = 250;
       };
     };
+    extraInput = ''
+      u           script-message-to youtube_upnext menu     #! Youtube Recommendations
+    '';
     scripts = with pkgs.mpvScripts; [
       sponsorblock
       uosc
@@ -38,6 +41,8 @@
       mpris
       reload
       thumbfast
+      memo
+      youtube-upnext
     ];
   };
 }
