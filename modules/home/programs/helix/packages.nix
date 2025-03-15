@@ -24,4 +24,5 @@ with pkgs;
   rustc
   markdownlint-cli
   typescript-language-server
+  glsl_analyzer
 ]
