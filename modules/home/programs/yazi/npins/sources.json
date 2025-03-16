@@ -35,18 +35,6 @@
       "url": "https://github.com/lpnh/fg.yazi/archive/92edf0b4bfce831d6b3178117b1aa7d8557f424e.tar.gz",
       "hash": "1gjbvhyx29pr5bh4zc4adjg9q8wwsiz5rkrrl4p9q08fs9ghmwg8"
     },
-    "glow.yazi": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "Reledia",
-        "repo": "glow.yazi"
-      },
-      "branch": "main",
-      "revision": "c76bf4fb612079480d305fe6fe570bddfe4f99d3",
-      "url": "https://github.com/Reledia/glow.yazi/archive/c76bf4fb612079480d305fe6fe570bddfe4f99d3.tar.gz",
-      "hash": "0584l13nr0spnjbi7lcsa2cxkyb4pnzf87yxwfrmv0nsqza9vyqc"
-    },
     "hexyl.yazi": {
       "type": "Git",
       "repository": {
@@ -131,18 +119,6 @@
       "url": "https://github.com/Rolv-Apneseth/starship.yazi/archive/6c639b474aabb17f5fecce18a4c97bf90b016512.tar.gz",
       "hash": "0l1vhh63xs2cam4bd2dw1i2gjg83zccv3cic1h85x743437d84kf"
     },
-    "tokyo-night.yazi": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "BennyOe",
-        "repo": "tokyo-night.yazi"
-      },
-      "branch": "main",
-      "revision": "695dac6bcc605ba4b0bf1b1f56169eaa7cc4bb40",
-      "url": "https://github.com/BennyOe/tokyo-night.yazi/archive/695dac6bcc605ba4b0bf1b1f56169eaa7cc4bb40.tar.gz",
-      "hash": "12r45cga4k0wn83qw0s845jrrq23dk7j7pc0b9vd5dn2ng2761pv"
-    },
     "torrent-preview.yazi": {
       "type": "Git",
       "repository": {
@@ -178,18 +154,6 @@
       "revision": "8e18dad0b398089e47c578b0a696df3733b3e376",
       "url": "https://github.com/imsi32/yatline-gruvbox-material.yazi/archive/8e18dad0b398089e47c578b0a696df3733b3e376.tar.gz",
       "hash": "0j1q44dhikyzbvxskdspd0r8kv4ar594w5ijqs523wr01ql2in97"
-    },
-    "yatline-tokyo-night.yazi": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "wekauwau",
-        "repo": "yatline-tokyo-night.yazi"
-      },
-      "branch": "main",
-      "revision": "5a8d026481e96ecec558c831028cc8d94c8ac3ae",
-      "url": "https://github.com/wekauwau/yatline-tokyo-night.yazi/archive/5a8d026481e96ecec558c831028cc8d94c8ac3ae.tar.gz",
-      "hash": "0ff15rd8xx7i26fh2cibxfi5l9yq8xifapwrzs1yy5wwdsrqb7d2"
     },
     "yatline.yazi": {
       "type": "Git",
