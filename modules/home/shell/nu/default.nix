@@ -110,6 +110,7 @@ in
             zig => $fish_completer
             rimi => $fish_completer
             berg => $fish_completer
+            xmake => $fish_completer
             _ => $carapace_completer
           } | do $in $spans
         }
