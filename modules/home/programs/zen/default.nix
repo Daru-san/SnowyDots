@@ -16,6 +16,7 @@
     ];
 
     chrome = {
+      enable = false;
       findbar = true;
       hideTitlebarButtons = true;
     };
