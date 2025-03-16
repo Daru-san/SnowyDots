@@ -29,9 +29,9 @@
       ffmpeg
       oculante
       exiftool
+      mdcat
       g4music
       qmmp
-      pwvucontrol
       mediainfo
       musikcube
       pulsemixer
@@ -49,6 +49,7 @@
       gdb
       seer
       valgrind
+      xmake
 
       # Desktop
       swww
