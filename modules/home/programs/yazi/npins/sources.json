@@ -91,9 +91,9 @@
         "repo": "plugins"
       },
       "branch": "main",
-      "revision": "a1b678dfacfd2726fad364607aeaa7e1fded3cfa",
-      "url": "https://github.com/yazi-rs/plugins/archive/a1b678dfacfd2726fad364607aeaa7e1fded3cfa.tar.gz",
-      "hash": "1m61ar7znslz9wjl23ssymg8xd761a1yvi72i8mxfl5ymfwvpyjn"
+      "revision": "cb6165b25515b653a70f72a67889579d190facfe",
+      "url": "https://github.com/yazi-rs/plugins/archive/cb6165b25515b653a70f72a67889579d190facfe.tar.gz",
+      "hash": "1vrwkdcsbiv9kldcvcx1njd60d7yrpsvhgvlmr6wwm76w7nzlg2w"
     },
     "plugins-yazi": {
       "type": "Git",
