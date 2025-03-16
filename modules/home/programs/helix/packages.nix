@@ -25,4 +25,8 @@ with pkgs;
   markdownlint-cli
   typescript-language-server
   glsl_analyzer
+  kdePackages.qtdeclarative
+  ruff
+  basedpyright
+  stylua
 ]

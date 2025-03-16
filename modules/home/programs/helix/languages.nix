@@ -88,6 +88,17 @@ in
     sqls = {
       command = "sqls";
     };
+    ruff = {
+      command = "ruff";
+      args = [ "server" ];
+    };
+    basedpyright = {
+      config = {
+        basedpyright.analysis.diagnosticSeverityOverrides = {
+          reportUnknownVariableType = "none";
+        };
+      };
+    };
     efm = {
       command = lib.getExe pkgs.efm-langserver;
       config = {
@@ -178,7 +189,19 @@ in
     }
     {
       name = "python";
-      language-servers = [ "pylsp" ];
+      language-servers = [
+        "basedpyright"
+        "ruff"
+      ];
+      formatter = {
+        command = "ruff";
+        args = [
+          "format"
+          "--quiet"
+          "-"
+        ];
+      };
+      auto-format = true;
     }
     {
       name = "sql";
@@ -193,6 +216,14 @@ in
           "fmt"
           "-"
         ];
+      };
+    }
+    {
+      name = "lua";
+      auto-format = true;
+      formatter = {
+        command = "stylua";
+        args = [ "-" ];
       };
     }
   ];
