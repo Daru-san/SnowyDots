@@ -8,6 +8,9 @@
     enableFishIntegration = true;
     initLua = ./init.lua;
     keymap = import ./keymap.nix;
+    theme.flavor = {
+      dark = "ayu-dark";
+    };
     settings = {
       manager = {
         ratio = [

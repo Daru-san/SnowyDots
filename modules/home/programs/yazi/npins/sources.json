@@ -1,5 +1,17 @@
 {
   "pins": {
+    "ayu-dark.yazi": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "kmlupreti",
+        "repo": "ayu-dark.yazi"
+      },
+      "branch": "main",
+      "revision": "5412a78219a646c2c3192ae810da95676a218c45",
+      "url": "https://github.com/kmlupreti/ayu-dark.yazi/archive/5412a78219a646c2c3192ae810da95676a218c45.tar.gz",
+      "hash": "14p88var0mgc55slglz03i08cwbxj2x76p8xafkvzq49zby10s5d"
+    },
     "clipboard.yazi": {
       "type": "Git",
       "repository": {
@@ -47,6 +59,18 @@
       "url": "https://github.com/Reledia/hexyl.yazi/archive/228a9ef2c509f43d8da1847463535adc5fd88794.tar.gz",
       "hash": "0f3039w44yavqjg21z4pdh1ss75galx2z18bh39x0d0cpiz6pzay"
     },
+    "mdcat.yazi": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "GrzegorzKozub",
+        "repo": "mdcat.yazi"
+      },
+      "branch": "main",
+      "revision": "d3d5089d06fe4ed14504726722f89c977f9eb54a",
+      "url": "https://github.com/GrzegorzKozub/mdcat.yazi/archive/d3d5089d06fe4ed14504726722f89c977f9eb54a.tar.gz",
+      "hash": "1b0qjlxa2kdardgznna1kzkn2vg2mxbymnjr7b768ckic8nwvahp"
+    },
     "open-with-cmd.yazi": {
       "type": "Git",
       "repository": {
@@ -82,6 +106,18 @@
       "revision": "a1b678dfacfd2726fad364607aeaa7e1fded3cfa",
       "url": "https://github.com/yazi-rs/plugins/archive/a1b678dfacfd2726fad364607aeaa7e1fded3cfa.tar.gz",
       "hash": "1m61ar7znslz9wjl23ssymg8xd761a1yvi72i8mxfl5ymfwvpyjn"
+    },
+    "plugins-yazi": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "AnirudhG07",
+        "repo": "plugins-yazi"
+      },
+      "branch": "main",
+      "revision": "524c52c7e433834e36a502abd1e31a6a65c8caf0",
+      "url": "https://github.com/AnirudhG07/plugins-yazi/archive/524c52c7e433834e36a502abd1e31a6a65c8caf0.tar.gz",
+      "hash": "1j28hbbsjv0cn4x23ily0ds66lkp951gh56dig6s3yh6frqfmcqs"
     },
     "starship.yazi": {
       "type": "Git",
@@ -130,6 +166,18 @@
       "revision": "b23e3a4cf44ce12b81fa6be640524acbd40ad9d3",
       "url": "https://github.com/pirafrank/what-size.yazi/archive/b23e3a4cf44ce12b81fa6be640524acbd40ad9d3.tar.gz",
       "hash": "0kwb081j6mjl93q89igxn4jb5kv47pfb22hnv02pdndfdl7rncs8"
+    },
+    "yatline-gruvbox-material.yazi": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "imsi32",
+        "repo": "yatline-gruvbox-material.yazi"
+      },
+      "branch": "main",
+      "revision": "8e18dad0b398089e47c578b0a696df3733b3e376",
+      "url": "https://github.com/imsi32/yatline-gruvbox-material.yazi/archive/8e18dad0b398089e47c578b0a696df3733b3e376.tar.gz",
+      "hash": "0j1q44dhikyzbvxskdspd0r8kv4ar594w5ijqs523wr01ql2in97"
     },
     "yatline-tokyo-night.yazi": {
       "type": "Git",

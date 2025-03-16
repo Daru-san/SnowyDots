@@ -1,22 +1,6 @@
 {
   manager.prepend_keymap = [
     {
-      on = [
-        "f"
-        "g"
-      ];
-      run = "plugin fg";
-      desc = "find file by content";
-    }
-    {
-      on = [
-        "f"
-        "f"
-      ];
-      run = "plugin fg --args='fzf'";
-      desc = "find file by file name";
-    }
-    {
       on = [ "l" ];
       run = "plugin smart-enter";
       desc = "Enter the child directory, or open the file";
@@ -32,12 +16,12 @@
       desc = "Open lazygit";
     }
     {
-      on = [ "t" ];
+      on = [ "b" ];
       run = "plugin hide-preview";
       desc = "Hide or show preview";
     }
     {
-      on = [ "T" ];
+      on = [ "B" ];
       run = "plugin max-preview";
       desc = "Maximize or restore preview";
     }
