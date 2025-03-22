@@ -107,6 +107,7 @@
     (with inputs; [
       # rimi.packages.${system}.default
       color-picker.packages.${system}.default
+      vim.packages.${system}.default
     ])
   ];
 }
