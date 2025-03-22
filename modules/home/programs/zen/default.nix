@@ -119,10 +119,10 @@
         order = [
           "SearXNG"
           "Brave Search"
-          "DuckDuckGo"
+          "ddg"
           "StartPage"
           "Github"
-          "Reddit"
+          "reddit"
           "My NixOS"
           "Noogle"
           "ArchLinux Wiki"
@@ -139,19 +139,19 @@
             disabled.metaData.hidden = true;
           in
           {
-            "Google" = {
+            "google" = {
               inherit (disabled) metaData;
             };
-            "Bing" = {
+            "bing" = {
               inherit (disabled) metaData;
             };
-            "Amazon.com" = {
+            "amazondotcom-us" = {
               inherit (disabled) metaData;
             };
-            "Wikipedia (en)" = {
+            "wikipedia" = {
               inherit (disabled) metaData;
             };
-            "DuckDuckGo" = {
+            "ddg" = {
               metaData.alias = "@dg";
             };
 
@@ -169,7 +169,7 @@
 
             "Brave Search" = {
               urls = [ { template = "https://search.brave.com/search?q={searchTerms}"; } ];
-              iconUpdateURL = "https://brave.com/static-assets/images/brave-logo-sans-text.svg";
+              icon = "https://brave.com/static-assets/images/brave-logo-sans-text.svg";
               updateInterval = 24 * 60 * 60 * 1000;
               definedAliases = [
                 "@br"
@@ -180,7 +180,7 @@
 
             "StartPage" = {
               urls = [ { template = "https://www.startpage.com/sp/search?query={searchTerms}"; } ];
-              iconUpdateURL = "https://www.startpage.com/sp/cdn/favicons/favicon-gradient.ico";
+              icon = "https://www.startpage.com/sp/cdn/favicons/favicon-gradient.ico";
               updateInterval = 24 * 60 * 60 * 1000;
               definedAliases = [
                 "@sp"
@@ -191,7 +191,7 @@
 
             "Reddit" = {
               urls = [ { template = "https://www.reddit.com/search/?q={searchTerms}"; } ];
-              iconUpdateURL = "https://www.redditstatic.com/shreddit/assets/favicon/favicon.ico";
+              icon = "https://www.redditstatic.com/shreddit/assets/favicon/favicon.ico";
               updateInterval = 24 * 60 * 60 * 1000;
               definedAliases = [
                 "@r"
@@ -201,7 +201,7 @@
 
             "Github" = {
               urls = [ { template = "https://github.com/search?q={searchTerms}"; } ];
-              iconUpdateURL = "https://github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg";
+              icon = "https://github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg";
               updateInterval = 24 * 60 * 60 * 1000;
               definedAliases = [
                 "@gh"
@@ -212,7 +212,7 @@
 
             "Crates.io" = {
               urls = [ { template = "https://crates.io/search?q={searchTerms}"; } ];
-              iconUpdateURL = "https://crates.io/favicon.ico";
+              icon = "https://crates.io/favicon.ico";
               updateInterval = 24 * 60 * 60 * 1000;
               definedAliases = [
                 "@cargo"
@@ -223,7 +223,7 @@
 
             "ArchLinux Wiki" = {
               urls = [ { template = "https://wiki.archlinux.org/index.php?search={searchTerms}"; } ];
-              iconUpdateURL = "https://wiki.archlinux.org/favicon.ico";
+              icon = "https://wiki.archlinux.org/favicon.ico";
               updateInterval = 24 * 60 * 60 * 1000;
               definedAliases = [
                 "@archwiki"
@@ -234,7 +234,7 @@
 
             "NixOS Wiki" = {
               urls = [ { template = "https://wiki.nixos.org/w/index.php?search={searchTerms}"; } ];
-              iconUpdateURL = "https://wiki.nixos.org/favicon.ico";
+              icon = "https://wiki.nixos.org/favicon.ico";
               updateInterval = 24 * 60 * 60 * 1000;
               definedAliases = [
                 "@nw"
@@ -244,7 +244,7 @@
 
             "Noogle" = {
               urls = [ { template = "https://noogle.dev/q?term={searchTerms}"; } ];
-              iconUpdateUrl = "https://noogle.dev/favicon.png";
+              icon = "https://noogle.dev/favicon.png";
               updateInterval = 24 * 60 * 60 * 1000;
               definedAliases = [
                 "@noogle"
@@ -330,7 +330,7 @@
 
             "Nixvim Options" = {
               urls = [ { template = "https://nix-community.github.io/nixvim/search/?query={searchTerms}"; } ];
-              iconUpdateURL = "https://nix-community.github.io/nixvim/search/favicon.ico";
+              icon = "https://nix-community.github.io/nixvim/search/favicon.ico";
               updateInterval = 24 * 60 * 60 * 1000;
               definedAliases = [
                 "@nxv"
