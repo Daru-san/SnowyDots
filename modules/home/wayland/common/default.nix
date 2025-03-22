@@ -18,6 +18,7 @@ in
     ./ghostty
     ./waybar
     ./snowy-shell
+    ./ashell
   ];
   config = mkIf cfg.enable {
     wayland.windowManager.hyprland.enable = true;
