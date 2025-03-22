@@ -7,5 +7,6 @@
     "audio/mpeg" = [ "qmmp.desktop" ];
     "audio/mp4" = [ "qmmp.desktop" ];
     "*.ogg" = [ "qmmp.desktop" ];
+    "text/plain" = [ "Helix.desktop" ];
   };
 }
