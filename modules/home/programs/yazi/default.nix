@@ -4,6 +4,7 @@
   programs.yazi = {
     enable = true;
     package = pkgs.yazi;
+    shellWrapperName = "y";
     enableNushellIntegration = true;
     enableFishIntegration = true;
     initLua = ./init.lua;
