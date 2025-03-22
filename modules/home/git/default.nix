@@ -15,7 +15,7 @@
 
     extraConfig = {
       core = {
-        editor = "hx";
+        editor = "vi";
         fileMode = false;
         autocrlf = false;
       };

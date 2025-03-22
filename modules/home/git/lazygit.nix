@@ -30,7 +30,7 @@
         };
       };
       os = {
-        editPreset = "hx";
+        editPreset = "vi";
       };
       refresher = {
         refreshInterval = 7;
