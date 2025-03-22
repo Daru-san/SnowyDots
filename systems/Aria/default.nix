@@ -49,6 +49,8 @@
       "https://snowy-cache.cachix.org"
       "https://anyrun.cachix.org"
       "https://cache.garnix.io"
+      "https://helix.cachix.org"
+      "https://yazi.cachix.org"
     ];
 
     trusted-public-keys = [
