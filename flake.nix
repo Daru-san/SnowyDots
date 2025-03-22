@@ -5,6 +5,7 @@
     # Nixpkgs repos
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
+    gimppkgs.url = "github:jtojnar/nixpkgs/gimp-meson";
 
     stackpkgs.url = "github:ryze312/stackpkgs";
 

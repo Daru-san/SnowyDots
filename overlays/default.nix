@@ -12,4 +12,10 @@
       config.allowUnfree = true;
     };
   };
+
+  gimppkgs = final: _prev: {
+    gimp3 = import inputs.gimppkgs {
+      inherit (final) system;
+    };
+  };
 }
