@@ -4,7 +4,9 @@
   inputs = {
     # Nixpkgs repos
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
+
     gimppkgs.url = "github:jtojnar/nixpkgs/gimp-meson";
 
     stackpkgs.url = "github:ryze312/stackpkgs";
@@ -59,6 +61,7 @@
 
     # My own repos
     snowy-shell.url = "github:Daru-san/SnowyShell";
+    vim.url = "sourcehut:~darumaka/SnowyVim";
     rimi.url = "github:Daru-san/rimi";
     color-picker.url = "github:Daru-san/color-picker-rs";
     snowpkgs.url = "github:Daru-san/Snowpkgs";
