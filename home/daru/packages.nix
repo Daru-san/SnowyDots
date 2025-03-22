@@ -23,7 +23,6 @@
 
       # Content creation
       kdePackages.kdenlive
-      gimp3.gimp
 
       # Media
       ffmpeg

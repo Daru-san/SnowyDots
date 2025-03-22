@@ -14,6 +14,7 @@
     ./zen
     ./thunderbird
     ./helix
+    ./gimp
     # ./elia
   ];
 }
