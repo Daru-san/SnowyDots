@@ -4,9 +4,6 @@ let
 in
 {
   programs.yazi = {
-    flavours = {
-      "ayu-dark" = getPlugin "ayu-dark.yazi";
-    };
     plugins = {
       "smart-enter" = ./smart-enter;
       "mdcat" = getPlugin "mdcat.yazi";
