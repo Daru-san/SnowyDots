@@ -105,7 +105,7 @@
       prismlauncher
     ])
     (with inputs; [
-      rimi.packages.${system}.default
+      # rimi.packages.${system}.default
       color-picker.packages.${system}.default
     ])
   ];
