@@ -317,7 +317,9 @@
             };
 
             "Home Manager" = {
-              urls = [ { template = "https://home-manager-options.extranix.com/?query={searchTerms}"; } ];
+              urls = [
+                { template = "https://home-manager-options.extranix.com/?query={searchTerms}&release=master"; }
+              ];
               icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
               definedAliases = [
                 "@hm"
