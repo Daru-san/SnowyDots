@@ -21,6 +21,10 @@
       flake = false;
     };
 
+    yazi.url = "github:sxyazi/yazi";
+
+    helix.url = "github:helix-editor/helix";
+
     # Theme manager
     stylix.url = "github:danth/stylix";
 
