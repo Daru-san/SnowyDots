@@ -2,7 +2,6 @@
 with pkgs;
 [
   marksman
-  ltex-ls-plus
   nil
   nixd
   rust-analyzer
