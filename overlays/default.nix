@@ -18,4 +18,10 @@
       inherit (final) system;
     };
   };
+
+  snow-packages = final: _prev: {
+    snow = import inputs.snow-nixpkgs {
+      inherit (final) system;
+    };
+  };
 }
