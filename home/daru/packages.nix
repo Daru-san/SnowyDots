@@ -30,6 +30,7 @@
       exiftool
       mdcat
       g4music
+      lua
       qmmp
       mediainfo
       musikcube
