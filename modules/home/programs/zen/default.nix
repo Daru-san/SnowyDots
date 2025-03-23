@@ -144,7 +144,7 @@
       search = {
         force = true;
         default = "Brave Search";
-        privateDefault = "DuckDuckGo";
+        privateDefault = "ddg";
 
         order = [
           "SearXNG"
@@ -219,7 +219,7 @@
               ];
             };
 
-            "Reddit" = {
+            "reddit" = {
               urls = [ { template = "https://www.reddit.com/search/?q={searchTerms}"; } ];
               icon = "https://www.redditstatic.com/shreddit/assets/favicon/favicon.ico";
               updateInterval = 24 * 60 * 60 * 1000;
