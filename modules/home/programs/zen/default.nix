@@ -5,20 +5,15 @@
   ...
 }:
 {
-  imports = [ inputs.zenix.homeModules.default ];
-  nixpkgs.overlays = [ inputs.zenix.overlays.default ];
+  imports = [ inputs.snow-zen.homeManagerModules.zen-browser ];
 
-  programs.zenix = {
+  programs.zen = {
     enable = true;
 
-    nativeMessagingHosts = [
-      pkgs.tridactyl-native
-    ];
-
-    chrome = {
-      enable = false;
-      findbar = true;
-      hideTitlebarButtons = true;
+    package = pkgs.zen-browser.override {
+      nativeMessagingHosts = [
+        pkgs.tridactyl-native
+      ];
     };
 
     profiles.default = {

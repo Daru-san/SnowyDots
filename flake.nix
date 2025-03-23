@@ -54,8 +54,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    zenix = {
-      url = "github:anders130/zenix";
+    snow-zen = {
+      url = "git+https://codeberg.org/Daru-san/snow-zen";
       inputs.zen-browser.follows = "zen-browser";
     };
 
