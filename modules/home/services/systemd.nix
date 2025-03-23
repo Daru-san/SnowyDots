@@ -17,11 +17,5 @@
         WantedBy = [ "default.target" ];
       };
     };
-    turtle-service = {
-      Service.ExecStart = "${pkgs.turtle}/bin/turtle_service";
-      Install = {
-        WantedBy = [ "graphical-session.target" ];
-      };
-    };
   };
 }
