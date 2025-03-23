@@ -20,7 +20,7 @@
   };
 
   snow-packages = final: _prev: {
-    snow = import inputs.snow-nixpkgs {
+    snow-overlay = import inputs.snow-nixpkgs {
       inherit (final) system;
     };
   };
