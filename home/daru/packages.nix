@@ -50,6 +50,7 @@
       seer
       valgrind
       xmake
+      go
 
       # Desktop
       swww
