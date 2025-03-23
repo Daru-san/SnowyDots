@@ -40,11 +40,11 @@ backgroundColor:
   text: #ffffff
 appearance:
   backgroundColor: "#1e1e2e"
-  primaryColor: "#fab387"
+  primaryColor: "#448877"
   secondaryColor: "#11111b"
   successColor: "#a6e3a1"
   dangerColor: "#f38ba8"
-  textColor: "#f38ba8"
+  textColor: "#ffffff"
   workspaceColors:
     - "#fab387"
     - "#b4befe"
