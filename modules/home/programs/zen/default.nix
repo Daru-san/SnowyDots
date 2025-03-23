@@ -33,9 +33,32 @@
       id = 0;
 
       userChrome = ''
+        :root {
+            --zen-primary-color: #808080 !important;
+        }
+
+        @media not (prefers-color-scheme: dark) {
+            :root {
+                --zen-colors-primary: #D2D2D2 !important;
+                --zen-colors-secondary: #D2D2D2 !important;
+                --zen-colors-tertiary: #FFFFFF !important;
+                --zen-colors-border: #DDDDDD !important;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --zen-colors-primary: #373737 !important;
+                --zen-colors-secondary: #373737 !important;
+                --zen-colors-tertiary: #171717 !important;
+                --zen-colors-border: #202020 !important;
+            }
+        }
+
         #zen-appcontent-navbar-container {
           order: 1 !important;
         }
+        ${builtins.readFile "${inputs.zen-findbar}/chrome.css"}
       '';
 
       extensions = {

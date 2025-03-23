@@ -59,6 +59,11 @@
       inputs.zen-browser.follows = "zen-browser";
     };
 
+    zen-findbar = {
+      url = "github:RobotoSkunk/zen-better-findbar";
+      flake = false;
+    };
+
     # My own repos
     snowy-shell.url = "github:Daru-san/SnowyShell";
     vim.url = "sourcehut:~darumaka/SnowyVim";
