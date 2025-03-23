@@ -1,0 +1,51 @@
+when:
+  branch: master
+  cron: "0 4 * * 6"
+  event: tag
+
+clone:
+  git:
+    image: woodpeckerci/plugin-git
+    settings:
+      recursive: true
+
+steps:
+  setup-git:
+    image: bitnami/git
+    environment:
+      MAIL:
+        from_secret: mail
+    commands:
+      - git config user.name "UpdateBot"
+      - git config user.email $MAIL
+    when:
+      - event: tag
+
+  update:
+    name: Update flake inputs
+    image: netfloex/action-image-nix:0.0.0-unstable
+    commands:
+      - nix flake update --commit-lock-file
+    when:
+      - event: tag
+
+  create-pr:
+    image: johnwalkerx/gitea-pull-request-create-plugin:latest
+    pull: true
+    settings:
+      gitea_address: https://codeberg.org
+      gitea_token:
+        from_secret: token
+      owner: ${CI_REPO_OWNER}
+      repo: ${CI_REPO_NAME}
+      branch: ${CI_COMMIT_BRANCH}
+      base_branch: master
+      pr_title: Update flake.lock
+      pr_body: Automated update pull request
+      skip_on_missing_branch: true
+      close_pr_if_empty: true
+      delete_branch_if_pr_empty: true
+      merge_when_checks_succeed: true
+      delete_branch_after_merge: true
+    when:
+      - event: tag
