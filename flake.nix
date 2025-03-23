@@ -11,7 +11,7 @@
 
     stackpkgs.url = "github:ryze312/stackpkgs";
 
-    snow-nixpkgs = "github:Daru-san/nixpkgs/ashell-update";
+    snow-nixpkgs.url = "github:Daru-san/nixpkgs/ashell-update";
 
     # Home manager
     home-manager = {
