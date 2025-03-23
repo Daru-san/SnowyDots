@@ -4,7 +4,7 @@ position: Top
 modules:
   left:
     - Workspaces
-    #    - MediaPlayer
+       - MediaPlayer
   center:
     - WindowTitle
   right:
