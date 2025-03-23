@@ -64,7 +64,7 @@ in
       bindd =
         let
           terminal = getExe config.programs.ghostty.package;
-          browser = getExe config.programs.zenix.package;
+          browser = getExe config.programs.zen.package;
           file-manager = getExe pkgs.pcmanfm-qt;
           editor = "nvim";
           yazi = getExe config.programs.yazi.package;
