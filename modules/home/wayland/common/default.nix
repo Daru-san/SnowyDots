@@ -30,7 +30,7 @@ in
     };
     programs = {
       waybar.enable = false;
-      snowy-shell.enable = true;
+      snowy-shell.enable = false;
       anyrun.enable = true;
       hyprlock.enable = true;
       ghostty.enable = true;
