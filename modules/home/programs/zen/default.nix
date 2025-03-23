@@ -16,6 +16,18 @@
       ];
     };
 
+    profiles.extra = {
+      isDefault = false;
+      id = 1;
+      extensions = {
+        packages = with inputs.firefox-addons.packages.${system}; [
+          multi-account-containers
+          user-agent-string-switcher
+          ublock-origin
+          auto-tab-discard
+        ];
+      };
+    };
     profiles.default = {
       isDefault = true;
       id = 0;
