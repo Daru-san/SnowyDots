@@ -8,28 +8,6 @@
 }:
 let
   inherit (lib) getExe getExe';
-  inherit (pkgs) writeShellScriptBin;
-  idle-inhibit =
-    let
-      vigiland = getExe (
-        inputs.vigiland.packages.${pkgs.system}.default.overrideAttrs {
-          meta.mainProgram = "vigiland";
-        }
-      );
-    in
-    getExe (
-      writeShellScriptBin "idle-inhibit" ''
-        inhibited=off
-        if pgrep 'vigiland'; then
-          ${pkgs.killall}/bin/killall vigiland
-          inhibited=off
-        else
-          ${vigiland} &
-          inhibited=on
-        fi
-        hyprctl notify -1 6000 0 "Idle inhibiting is now ''${inhibited}"
-      ''
-    );
 in
 {
   imports = [ ./extra-binds.nix ];
@@ -107,8 +85,6 @@ in
 
           (mkBindSingle "caps_lock" "${swayosd} --caps-lock" "Show caps lock")
 
-          (mkBindExe "super" "grave" idle-inhibit "Turn on the idle inhibitor")
-
           (mkBindExe "supershift" "m" "${syncthingtray} -w" "Open syncthing tray")
 
           # OBS Studio global keybindings
@@ -164,7 +140,6 @@ in
           easyeffects = getExe config.services.easyeffects.package;
           color-picker = getExe inputs.color-picker.packages.${system}.default;
           pk = getExe' pkgs.busybox "pkill";
-          nwg-bar = getExe pkgs.nwg-bar;
 
           iwgtk = getExe pkgs.iwgtk;
 
@@ -185,9 +160,6 @@ in
 
           # Color picker
           (mkBindExe "supershift" "c" "${pk} color-picker || ${color-picker}" "Launch the color picker")
-
-          # wlogout
-          (mkBindExe "super" "x" nwg-bar "Show login menu")
 
           # Audio mixer
           (mkBindExe "super" "p" "${pk} pulsemixer || ${ghostty} -e pulsemixer" "Launch pulsemixer")
