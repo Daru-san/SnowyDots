@@ -1,42 +1,49 @@
 {
   config,
   lib,
-  inputs,
-  system,
-  pkgs,
   ...
 }:
 let
-  inherit (lib) types mkOption;
+  inherit (lib)
+    mkOption
+    flatten
+    optionalString
+    getExe
+    types
+    ;
+  inherit (types)
+    nullOr
+    package
+    listOf
+    str
+    ;
   cfg = config.env.editor;
 in
 {
   options.env.editor = {
     package = mkOption {
-      type = types.nullOr types.package;
+      type = nullOr package;
       default = null;
     };
     flags = mkOption {
-      type = types.nullOr (types.listOf types.str);
+      type = nullOr (listOf str);
       default = null;
     };
     extraPackages = mkOption {
-      type = types.nullOr (types.listOf types.package);
+      type = nullOr (listOf package);
       default = null;
     };
   };
 
-config = {
-  home = {
-    packages = [
-      cfg.extraPackages
-      cfg.package
-    ];
-    sessionVariables.EDITOR =
-      lib.getExe cfg.package + lib.optionalString
-      (cfg.flags!=null)
-      (" " + (builtins.concatStringsSep " " cfg.flags)
-      );
-  };
+  config = {
+    home = {
+      packages = flatten [
+        cfg.extraPackages
+        cfg.package
+      ];
+      sessionVariables.EDITOR =
+        getExe cfg.package
+        + optionalString (cfg.flags != null) (" " + (builtins.concatStringsSep " " cfg.flags));
+    };
   };
 }
