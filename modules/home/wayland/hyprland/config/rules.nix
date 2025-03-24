@@ -2,19 +2,11 @@
 {
   wayland.windowManager.hyprland = {
     settings = {
-      windowrulev2 = [
-        "float,class:(firefox)(.*),title:(Library)"
-        "float,class:(firefox)(.*),title:(About Mozilla Firefox)"
-        "float,class:(lazarus),title:(Completion)"
-      ];
-      windowrule = lib.flatten [
-        [
-          "float,title:(Syncthing Tray)"
-          "size 65%,title:(Syncthing Tray)"
-        ]
-        [
-          "size 65%,title:(Open Images — Krita)"
-        ]
+      windowrulev2 = lib.flatten [
+        "float,class:(zen)(.*),title:(Library)"
+        "float,title:(Syncthing Tray)"
+        "size 65%,title:(Syncthing Tray)"
+        "size 65%,title:(Open Images — Krita)"
         (
           let
             window = [
@@ -54,17 +46,17 @@
             ];
           in
           [
-            (map (c: "float,^(${c})(.*)$") window)
-            (map (d: "center,^(${d})(.*)$") window)
-            (map (e: "size 60%,^(${e})(.*)$") resized-windows)
+            (map (c: "float,class:^(${c})(.*)$") window)
+            (map (d: "center,class:^(${d})(.*)$") window)
+            (map (e: "size 60%,class:^(${e})(.*)$") resized-windows)
           ]
         )
         (
           let
-            workspace = index: window: "workspace ${toString index},^(${window})(.*)$";
-            workspace-title = index: window: "workspace ${toString index},title:(${window})(.*)$";
-            special = workspace: window: "workspace special:${workspace},^(${window})(.*)$";
-            group = x: "group,^(${x})$";
+            workspace = index: window: "workspace ${toString index}, class:^(${window})(.*)$";
+            workspace-title = index: window: "workspace ${toString index}, title:(${window})(.*)$";
+            special = workspace: window: "workspace special:${workspace}, class:^(${window})(.*)$";
+            group = x: "group, class:^(${x})$";
           in
           [
             (special "obs-studio" "com.obsproject.Studio")
