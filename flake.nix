@@ -192,6 +192,7 @@
           };
           modules = [
             ./home/daru
+            ./modules/options/home/editor.nix
             modules.home
             {
               home = {
