@@ -32,8 +32,11 @@ config = {
       cfg.extraPackages
       cfg.package
     ];
-    editor =
-      lib.getExe cfg.package + lib.optional cfg.flags (" " + (builtins.concatStringsSep " " cfg.flags));
+    sessionVariables.EDITOR =
+      lib.getExe cfg.package + lib.optionalString
+      (cfg.flags!=null)
+      (" " + (builtins.concatStringsSep " " cfg.flags)
+      );
   };
   };
 }

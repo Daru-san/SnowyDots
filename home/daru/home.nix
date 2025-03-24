@@ -4,7 +4,6 @@
     username = "daru";
     homeDirectory = "/home/${username}";
     enableNixpkgsReleaseCheck = false;
-    sessionVariables."EDITOR" = "nvim";
   };
 
   # Enable home-manager
