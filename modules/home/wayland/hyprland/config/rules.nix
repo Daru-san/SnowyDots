@@ -62,6 +62,9 @@
             (special "obs-studio" "com.obsproject.Studio")
             (special "virt-manager" ".virt-manager-wrapped")
 
+            (workspace 1 "neovide")
+            (group "neovide")
+
             (workspace 2 "zen")
             (group "zen")
             (workspace 2 "thunderbird")
