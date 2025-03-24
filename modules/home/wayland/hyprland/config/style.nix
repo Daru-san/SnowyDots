@@ -18,6 +18,7 @@
       group.groupbar = {
         enabled = true;
         render_titles = false;
+        height = 1;
       };
       decoration = {
         rounding = 6;
