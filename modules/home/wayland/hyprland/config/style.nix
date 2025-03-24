@@ -15,7 +15,10 @@
         mfact = 0.55;
         allow_small_split = true;
       };
-      group.groupbar.enabled = false;
+      group.groupbar = {
+        enabled = true;
+        render_titles = false;
+      };
       decoration = {
         rounding = 6;
         blur.enabled = true;
