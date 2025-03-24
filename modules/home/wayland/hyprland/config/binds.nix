@@ -44,7 +44,7 @@ in
           terminal = getExe config.programs.ghostty.package;
           browser = getExe config.programs.zen.package;
           file-manager = getExe pkgs.pcmanfm-qt;
-          editor = "nvim";
+          editor = "${getExe pkgs.neovide} --neovim-bin ${getExe inputs.vim.packages.${system}.default}";
           yazi = getExe config.programs.yazi.package;
           hyprlock = getExe config.programs.hyprlock.package;
           btop = getExe config.programs.btop.package;
