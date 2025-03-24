@@ -15,6 +15,7 @@
     ./thunderbird
     ./helix
     ./gimp
+    ./editor
     # ./elia
   ];
 }
