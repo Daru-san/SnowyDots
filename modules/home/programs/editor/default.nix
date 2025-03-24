@@ -6,13 +6,23 @@
   pkgs,
   ...
 }:
+let
+  cfg = config.env.editor;
+in
 {
-  options.home.editor = {
+  options.env.editor = {
     package = lib.types.package;
   };
 
   home = {
-    packages = [ pkgs.neovide ];
+    packages = [
+      pkgs.neovide
+      cfg.package
+    ];
+    editor = lib.getExe cfg.package;
+  };
+
+  env = {
     editor.package = inputs.vim.packages.${system}.default.extend {
       nixpkgs.overlays = [ inputs.snowpkgs.overlays.default ];
       extraConfigLua = ''
@@ -28,8 +38,6 @@
           vim.g.neovide_cursor_trail_size = 0
           vim.g.neovide_cursor_animate_in_insert_mode = false
           vim.g.neovide_cursor_animate_command_line = false
-          vim.g.neovide_scroll_animation_far_lines = 0
-          vim.g.neovide_scroll_animation_length = 0.00
           vim.o.guifont = "${config.stylix.fonts.monospace.name}:${toString config.stylix.fonts.sizes.terminal}"
         end
       '';
