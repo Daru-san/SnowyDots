@@ -26,6 +26,7 @@ in
     };
   };
 
+config = {
   home = {
     packages = [
       cfg.extraPackages
@@ -33,5 +34,6 @@ in
     ];
     editor =
       lib.getExe cfg.package + lib.optional cfg.flags (" " + (builtins.concatStringsSep " " cfg.flags));
+  };
   };
 }
