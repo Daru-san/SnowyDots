@@ -68,7 +68,7 @@ in
 
           (mkBindExe "super" "q" terminal "Launch a terminal")
           (mkBindExe "super" "r" "${terminal} -e ${yazi}" "Launch yazi")
-          (mkBindExe "super" "z" "${terminal} -e ${editor}" "Launch a text editor")
+          (mkBindExe "super" "z" editor "Launch a text editor")
           (mkBindExe "super" "m" "${terminal} -e ${btop}" "Launch a system monitor")
 
           (mkBindExe "supershift" "v" "${copyq} menu" "Launch the clipboard menu")
