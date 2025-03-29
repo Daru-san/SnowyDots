@@ -11,5 +11,6 @@
     ./pipewire.nix
     ./searx.nix
     ./mtkclient.nix
+    ./printing.nix
   ];
 }
