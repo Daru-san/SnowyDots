@@ -11,6 +11,16 @@
       fsType = "ext4";
     };
 
+    "/mnt/windows" = {
+      device = "/dev/disk/by-uuid/0406691905DB227B";
+      fsType = "ntfs";
+    };
+
+    "/mnt/forest" = {
+      device = "/dev/disk/by-uuid/d82bb92e-1dff-46ab-9553-1ed958915ea2";
+      fsType = "ext4";
+    };
+
     "/boot" = {
       device = "/dev/disk/by-uuid/7ED4-6E7F";
       fsType = "vfat";
