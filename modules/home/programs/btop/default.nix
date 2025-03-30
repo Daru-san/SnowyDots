@@ -49,18 +49,6 @@ in
 
       # Disks and memeory
       disks_filter =
-        let
-          home-dirs = [
-            "Music"
-            "Pictures"
-            "Documents"
-            "Development"
-            "snow"
-            "Misc"
-            "Videos"
-            "Wallpapers"
-          ];
-        in
         "exclude="
         + concatStringsSep " " (flatten [
           "/boot"
@@ -68,8 +56,8 @@ in
           "/etc"
           "/var"
           "/tmp"
+          "/mnt/windows"
           "/persist"
-          (map (x: "/home/daru/${x}") home-dirs)
         ]);
       mem_graphs = false;
       mem_below_net = true;
