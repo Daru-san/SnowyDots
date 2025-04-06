@@ -7,6 +7,7 @@
         "float,title:(Syncthing Tray)"
         "size 65%,title:(Syncthing Tray)"
         "size 65%,title:(Open Images — Krita)"
+        "content none, class:mpv"
         (
           let
             window = [
