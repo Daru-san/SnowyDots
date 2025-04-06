@@ -1105,11 +1105,11 @@
         "nixpkgs": "nixpkgs_9"
       },
       "locked": {
-        "lastModified": 1743625496,
-        "narHash": "sha256-xT8gfM2ZV4bOCjttoqtpVb89em2ubyIALak5QIE/X24=",
+        "lastModified": 1743975406,
+        "narHash": "sha256-SdRvGcbIGApF62LxN/U9vFjBh/EE3dNKdo5ffLECzAY=",
         "owner": "Daru-san",
         "repo": "Snowpkgs",
-        "rev": "6db92c9741832b66377ce1b74bdcd37c1ef56640",
+        "rev": "1ef1f6780033ce3f169e495a95928707835745e3",
         "type": "github"
       },
       "original": {
