@@ -145,6 +145,7 @@ in
       shellAliases = {
         zc = "clear ; cd";
         zngrt = "cd (git rev-parse --show-toplevel)";
+        devices = ''(${pkgs.android-tools}/bin/adb devices | tail -n +2) | detect columns --no-headers | rename --column  {"column0": device, "column1": type}'';
       } // config.home.shellAliases;
     };
   };
