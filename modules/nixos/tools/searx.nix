@@ -1,7 +1,7 @@
 { config, lib, ... }:
 {
   services.searx = {
-    enable = true;
+    enable = false;
     environmentFile = "/home/daru/.searxng.env";
     settings = {
       use_default_settings = true;
