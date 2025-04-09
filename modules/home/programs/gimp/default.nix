@@ -12,7 +12,7 @@ in
     outputs.overlays.gimppkgs
   ];
 
-  home.packages = [ pkgs.gimp3.gimp ];
+  home.packages = [ pkgs.gimp3.gimp3 ];
 
   xdg.configFile.photogimp = {
     target = "GIMP/3.0";
