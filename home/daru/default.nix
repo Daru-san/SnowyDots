@@ -17,7 +17,6 @@
       (with inputs; [
         snowpkgs.overlays.default
         stackpkgs.overlays.default
-        yazi.overlays.default
         helix.overlays.default
       ])
       (with outputs.overlays; [
