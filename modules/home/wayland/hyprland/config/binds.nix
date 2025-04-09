@@ -43,7 +43,7 @@ in
         let
           terminal = getExe config.programs.ghostty.package;
           browser = getExe config.programs.zen.package;
-          file-manager = getExe pkgs.pcmanfm-qt;
+          file-manager = getExe pkgs.nautilus;
           editor = "${getExe pkgs.neovide} --neovim-bin ${getExe config.env.editor.package}";
           yazi = getExe config.programs.yazi.package;
           hyprlock = getExe config.programs.hyprlock.package;
