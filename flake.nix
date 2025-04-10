@@ -36,7 +36,7 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     # Firefox addons
-    firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+    firefox-addons.url = "gitlab:rycee/nur-expressions/9f965a7bea82a14311991e99e013fdf615e25eac?dir=pkgs/firefox-addons";
 
     # Featureful wayland launcher
     anyrun.url = "github:anyrun-org/anyrun";
