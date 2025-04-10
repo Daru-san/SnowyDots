@@ -30,9 +30,6 @@ in
       };
     };
     profiles.${name} = {
-      extensions = with inputs.firefox-addons.packages.${system}; [
-        ublock-origin
-      ];
       isDefault = true;
       extraConfig =
         builtins.readFile "${user-js}/user.js"
