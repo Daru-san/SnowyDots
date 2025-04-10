@@ -25,7 +25,7 @@
       flake = false;
     };
 
-    yazi.url = "github:sxyazi/yazi";
+    yazi.url = "github:sxyazi/yazi/v25.4.8";
 
     helix.url = "github:helix-editor/helix";
 
