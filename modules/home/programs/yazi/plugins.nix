@@ -16,7 +16,7 @@ in
       "starship" = getPlugin "starship.yazi";
       "open-with-cmd" = getPlugin "open-with-cmd.yazi";
       "hexyl" = getPlugin "hexyl.yazi";
-      "git" = (getPlugin "plugins") + "/git.yazi";
+      # "git" = (getPlugin "plugins") + "/git.yazi";
       "what-size" = getPlugin "what-size.yazi";
       "clipboard" = getPlugin "clipboard.yazi";
       "copy-file-contents" = (getPlugin "plugins-yazi") + "/copy-file-contents.yazi";
