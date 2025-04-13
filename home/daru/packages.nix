@@ -52,6 +52,7 @@
       valgrind
       xmake
       go
+      woodpecker-cli
 
       # Desktop
       swww
