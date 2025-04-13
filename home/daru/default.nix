@@ -18,6 +18,7 @@
         snowpkgs.overlays.default
         stackpkgs.overlays.default
         helix.overlays.default
+        yazi.overlays.default
       ])
       (with outputs.overlays; [
         stable-packages
