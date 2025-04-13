@@ -8,7 +8,6 @@ let
   plugins = inputs.anyrun.packages.${system};
 in
 {
-  imports = [ inputs.anyrun.homeManagerModules.default ];
   programs.anyrun = {
     package = pkgs.anyrun;
     config = {
