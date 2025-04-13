@@ -11,6 +11,16 @@
       extraPackages = [ pkgs.neovide ];
       package = inputs.vim.packages.${system}.default.extend {
         nixpkgs.overlays = [ inputs.snowpkgs.overlays.default ];
+        dependencies = {
+          yazi.package = pkgs.yazi;
+          lazygit.package = pkgs.lazygit;
+          go.package = pkgs.go;
+          rust-analyzer.package = pkgs.rust-analyzer;
+          direnv.package = pkgs.direnv;
+          git.package = pkgs.go;
+          ripgrep.package = pkgs.ripgrep;
+          gcc.package = pkgs.gcc;
+        };
         extraConfigLua = ''
           if vim.g.neovide then
             vim.keymap.set('n', '<D-s>', ':w<CR>')
