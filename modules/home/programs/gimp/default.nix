@@ -9,10 +9,10 @@ let
 in
 {
   nixpkgs.overlays = [
-    outputs.overlays.gimppkgs
+    outputs.overlays.master-packages
   ];
 
-  home.packages = [ pkgs.gimp3.gimp3 ];
+  home.packages = [ pkgs.master.gimp3 ];
 
   xdg.configFile.photogimp = {
     target = "GIMP/3.0";

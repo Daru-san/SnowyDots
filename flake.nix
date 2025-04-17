@@ -7,7 +7,7 @@
 
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
 
-    gimppkgs.url = "github:jtojnar/nixpkgs/gimp-meson";
+    masterpkgs.url = "github:nixos/nixpkgs/master";
 
     stackpkgs.url = "github:ryze312/stackpkgs";
 

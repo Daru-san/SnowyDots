@@ -13,8 +13,8 @@
     };
   };
 
-  gimppkgs = final: _prev: {
-    gimp3 = import inputs.gimppkgs {
+  master-packages = final: _prev: {
+    master = import inputs.masterpkgs {
       inherit (final) system;
     };
   };
