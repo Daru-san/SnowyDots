@@ -26,5 +26,9 @@
         command = "syncthingtray --wait";
       };
     };
+    nextcloud-client = {
+      enable = true;
+      startInBackground = true;
+    };
   };
 }
