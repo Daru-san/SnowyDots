@@ -48,7 +48,6 @@ in
           yazi = getExe config.programs.yazi.package;
           hyprlock = getExe config.programs.hyprlock.package;
           btop = getExe config.programs.btop.package;
-          clipse-gui = getExe pkgs.clipse-gui;
           swayosd = getExe' config.services.swayosd.package "swayosd-client";
           g4music = getExe pkgs.g4music;
           obs = "^(com\.obsproject\.Studio)$";
@@ -71,7 +70,6 @@ in
           (mkBindExe "super" "z" editor "Launch a text editor")
           (mkBindExe "super" "m" "${terminal} -e ${btop}" "Launch a system monitor")
 
-          (mkBindExe "supershift" "v" "${clipse-gui} menu" "Launch the clipboard manager menu")
 
           (mkBind "supershift" "q" "killactive" "Kill active window")
           (mkBind "supershift" "e" "exit" "Exit hyprland session")
@@ -146,6 +144,9 @@ in
           # Screenshots
           hyprshot = getExe pkgs.hyprshot;
 
+          # Clipboard
+          clipse-gui = getExe pkgs.clipse-gui;
+
           ghostty = getExe pkgs.ghostty;
           overskride = getExe pkgs.overskride;
         in
@@ -156,6 +157,10 @@ in
 
           (mkBindExe "super" "a" "hyprctl clients | grep 'easyeffects' || ${easyeffects}"
             "Launch easyeffects audio mixer"
+          )
+
+          (mkBindExe "supershift" "v" "${pk} .clipse-gui-wrapped || ${clipse-gui} menu"
+            "Launch the clipboard manager menu"
           )
 
           # Color picker
