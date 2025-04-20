@@ -54,6 +54,8 @@
       xmake
       go
       woodpecker-cli
+      rustup
+      git-repo
 
       # Desktop
       swww
@@ -105,6 +107,8 @@
       xdg-user-dirs
       tealdeer
       aichat
+      lz4
+      android-tools
 
       # The craft
       prismlauncher
