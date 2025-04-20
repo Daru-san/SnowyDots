@@ -13,6 +13,7 @@ in
     exec-once = [
       "[workspace 1] ${ghostty}"
       "[workspace 3] ${ghostty} -e ${getExe config.programs.btop.package}"
+      (getExe pkgs.clipse + " --listen-shell")
     ];
   };
 }
