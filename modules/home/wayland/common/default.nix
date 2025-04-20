@@ -19,6 +19,7 @@ in
     ./waybar
     ./snowy-shell
     ./ashell
+    ./clipse
   ];
   config = mkIf cfg.enable {
     wayland.windowManager.hyprland.enable = true;
@@ -27,6 +28,7 @@ in
       hyprpaper.enable = true;
       wlsunset.enable = true;
       swayosd.enable = true;
+      clipse.enable = true;
     };
     programs = {
       waybar.enable = false;

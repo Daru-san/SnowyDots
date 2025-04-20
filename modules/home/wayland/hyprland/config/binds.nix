@@ -48,7 +48,7 @@ in
           yazi = getExe config.programs.yazi.package;
           hyprlock = getExe config.programs.hyprlock.package;
           btop = getExe config.programs.btop.package;
-          copyq = getExe pkgs.copyq;
+          clipse-gui = getExe pkgs.clipse-gui;
           swayosd = getExe' config.services.swayosd.package "swayosd-client";
           g4music = getExe pkgs.g4music;
           obs = "^(com\.obsproject\.Studio)$";
@@ -71,7 +71,7 @@ in
           (mkBindExe "super" "z" editor "Launch a text editor")
           (mkBindExe "super" "m" "${terminal} -e ${btop}" "Launch a system monitor")
 
-          (mkBindExe "supershift" "v" "${copyq} menu" "Launch the clipboard menu")
+          (mkBindExe "supershift" "v" "${clipse-gui} menu" "Launch the clipboard manager menu")
 
           (mkBind "supershift" "q" "killactive" "Kill active window")
           (mkBind "supershift" "e" "exit" "Exit hyprland session")
