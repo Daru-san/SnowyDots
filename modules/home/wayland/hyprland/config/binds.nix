@@ -70,7 +70,6 @@ in
           (mkBindExe "super" "z" editor "Launch a text editor")
           (mkBindExe "super" "m" "${terminal} -e ${btop}" "Launch a system monitor")
 
-
           (mkBind "supershift" "q" "killactive" "Kill active window")
           (mkBind "supershift" "e" "exit" "Exit hyprland session")
           (mkBind "super" "s" "togglesplit" "Toggle split layout")
@@ -159,9 +158,7 @@ in
             "Launch easyeffects audio mixer"
           )
 
-          (mkBindExe "supershift" "v" "${pk} .clipse-gui-wrapped || ${clipse-gui} menu"
-            "Launch the clipboard manager menu"
-          )
+          (mkBindExe "supershift" "v" "${pk} clipse-gui || ${clipse-gui}" "Launch the clipboard manager menu")
 
           # Color picker
           (mkBindExe "supershift" "c" "${pk} color-picker || ${color-picker}" "Launch the color picker")
