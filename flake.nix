@@ -9,8 +9,6 @@
 
     masterpkgs.url = "github:nixos/nixpkgs/master";
 
-    stackpkgs.url = "github:ryze312/stackpkgs";
-
     snow-nixpkgs.url = "github:Daru-san/nixpkgs/ashell-update";
 
     # Home manager
@@ -24,6 +22,9 @@
       url = "github:tinted-theming/schemes";
       flake = false;
     };
+
+    #secrets
+    sops-nix.url = "github:Mic92/sops-nix";
 
     yazi.url = "github:sxyazi/yazi/v25.4.8";
 

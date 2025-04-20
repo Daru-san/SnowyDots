@@ -12,5 +12,6 @@
     ./searx.nix
     ./mtkclient.nix
     ./printing.nix
+    ./secrets.nix
   ];
 }
