@@ -33,11 +33,9 @@
       mdcat
       g4music
       lua
-      qmmp
       mediainfo
       musikcube
       pulsemixer
-      stackpkgs.audiorelay
 
       # Developmentment
       hut
