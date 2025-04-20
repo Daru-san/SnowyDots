@@ -1,4 +1,4 @@
-{ pkgs, outputs, ... }:
+{ pkgs, ... }:
 let
   src = pkgs.fetchFromGitHub {
     owner = "Diolinux";
@@ -8,11 +8,7 @@ let
   };
 in
 {
-  nixpkgs.overlays = [
-    outputs.overlays.master-packages
-  ];
-
-  home.packages = [ pkgs.master.gimp3 ];
+  home.packages = [ pkgs.gimp3 ];
 
   xdg.configFile.photogimp = {
     target = "GIMP/3.0";
