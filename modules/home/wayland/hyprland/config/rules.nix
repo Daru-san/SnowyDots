@@ -17,6 +17,7 @@
               "nm-connection-editor"
               "org.kde.kdeconnect.daemon"
               ".blueman-manager-wrapped"
+              ".clipse-gui-wrapped"
               "org.twosheds.iwgtk"
               "com.github.hluk.copyq"
               "com.github.wwmm.easyeffects"
