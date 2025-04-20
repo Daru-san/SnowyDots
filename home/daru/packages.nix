@@ -16,6 +16,7 @@
       obsidian
       vesktop
       aria2
+      seanime
 
       # Science
       kdePackages.kalzium
