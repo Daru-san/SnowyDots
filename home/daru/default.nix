@@ -16,7 +16,6 @@
     overlays = lib.flatten [
       (with inputs; [
         snowpkgs.overlays.default
-        stackpkgs.overlays.default
         helix.overlays.default
         yazi.overlays.default
       ])
