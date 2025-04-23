@@ -17,6 +17,7 @@
       vesktop
       aria2
       seanime
+      nextcloud-client
 
       # Science
       kdePackages.kalzium
@@ -58,6 +59,7 @@
       # Desktop
       swww
       ayugram-desktop
+      qownnotes
 
       # GUI Util
       file-roller
