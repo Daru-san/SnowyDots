@@ -248,6 +248,7 @@
                 "@cargo"
                 "@cg"
                 "@rs"
+                "@crates"
               ];
             };
 
