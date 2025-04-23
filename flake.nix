@@ -30,6 +30,8 @@
 
     helix.url = "github:helix-editor/helix";
 
+    niri.url = "github:sodiboo/niri-flake";
+
     # Theme manager
     stylix.url = "github:danth/stylix";
 

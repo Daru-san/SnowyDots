@@ -12,12 +12,17 @@ in
 {
   options.wayland.enable = mkEnableOption "Enable wayland";
   imports = [
-    ./polkit
+    inputs.niri.nixosModules.niri
   ];
   config = mkIf cfg.enable {
+    nixpkgs.overlays = [
+      inputs.niri.overlays.niri
+    ];
+    niri-flake = {
+      cache.enable = true;
+    };
     programs = {
-      hyprland.enable = true;
-      hyprlock.enable = true;
+      niri.enable = true;
       dconf.enable = true;
       seahorse.enable = true;
       file-roller.enable = true;
