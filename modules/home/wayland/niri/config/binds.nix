@@ -144,8 +144,8 @@
             yazi = getExe config.programs.yazi.package;
             hyprlock = getExe config.programs.hyprlock.package;
             btop = getExe config.programs.btop.package;
-            copyq = getExe pkgs.copyq;
             valent = getExe pkgs.valent;
+            clipse = getExe pkgs.clipse-gui;
             easyeffects = getExe config.services.easyeffects.package;
           in
           {
@@ -154,8 +154,7 @@
             "Mod+e".action.spawn = [ file-manager ];
 
             "Mod+Shift+v".action.spawn = [
-              copyq
-              "menu"
+              clipse
             ];
 
             "Mod+n".action.spawn = [ valent ];
