@@ -16,6 +16,7 @@
     ./helix
     ./gimp
     ./nvim
+    ./keepasscx
     # ./elia
   ];
 }

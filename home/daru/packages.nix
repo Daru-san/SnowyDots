@@ -12,7 +12,6 @@
     (with pkgs; [
       # GUI
       scrcpy
-      keepassxc
       obsidian
       vesktop
       aria2
