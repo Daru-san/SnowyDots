@@ -40,6 +40,7 @@
       # Developmentment
       hut
       codeberg-cli
+      vala
       rustc
       clang
       zig
