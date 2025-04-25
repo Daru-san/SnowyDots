@@ -144,7 +144,6 @@
             yazi = getExe config.programs.yazi.package;
             hyprlock = getExe config.programs.hyprlock.package;
             btop = getExe config.programs.btop.package;
-            valent = getExe pkgs.valent;
             clipse = getExe pkgs.clipse-gui;
             easyeffects = getExe config.services.easyeffects.package;
           in
@@ -156,8 +155,6 @@
             "Mod+Shift+v".action.spawn = [
               clipse
             ];
-
-            "Mod+n".action.spawn = [ valent ];
 
             "Mod+a".action.spawn = [ easyeffects ];
 
