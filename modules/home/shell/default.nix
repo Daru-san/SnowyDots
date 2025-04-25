@@ -1,8 +1,6 @@
 {
   config,
   pkgs,
-  inputs,
-  system,
   ...
 }:
 {
@@ -10,6 +8,7 @@
     ./extras.nix
     ./starship
     ./nix-index
+    ./nix-tools
     ./nu
   ];
 
@@ -36,13 +35,11 @@
   home.shellAliases =
     let
       bat = "${config.programs.bat.package}/bin/bat";
-      tty-clock = "${pkgs.tty-clock}/bin/tty-clock";
       syst = "${pkgs.systemctl-tui}/bin/systemctl-tui";
       wget2 = "${pkgs.wget2}/bin/wget2";
     in
     {
       syst = syst;
-      clock = "${tty-clock} -bscBrnS";
       cat = bat;
       c = "clear";
       cgrt = ''cd "$(git rev-parse --show-toplevel)"'';

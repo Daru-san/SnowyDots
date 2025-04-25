@@ -11,7 +11,7 @@
       enableNushellIntegration = true;
     };
 
-    # cd on steriods
+    # cd on steroids
     zoxide = {
       enable = true;
       enableFishIntegration = true;
@@ -34,24 +34,6 @@
         "--sort"
         "--exact"
       ];
-    };
-
-    # Direnv
-    direnv = {
-      enable = true;
-      nix-direnv.enable = true;
-      silent = true;
-      config = {
-        whitelist.prefix = [
-          "~/Development/Repos"
-        ];
-        global.disable_stdin = true;
-      };
-    };
-
-    nix-your-shell = {
-      enable = true;
-      enableNushellIntegration = true;
     };
 
     carapace = {
