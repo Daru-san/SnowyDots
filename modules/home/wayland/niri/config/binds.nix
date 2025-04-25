@@ -170,8 +170,6 @@
             ];
 
             "Mod+z".action.spawn = [
-              terminal
-              "-e"
               editor
             ];
             "Mod+t".action.spawn = [
