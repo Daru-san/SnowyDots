@@ -23,6 +23,7 @@
           { app-id = "Generate Password"; }
           { app-id = "^nmtui$"; }
           { app-id = "valent"; }
+          { app-id = ".clipse-gui-wrapped"; }
         ];
         block-out-from = "screencast";
       }
@@ -41,6 +42,7 @@
           { app-id = "pulsemixer"; }
           { app-id = "valent"; }
           { app-id = "io.github.kaii_lb.Overskride"; }
+          { app-id = ".clipse-gui-wrapped"; }
         ];
       }
     ];
