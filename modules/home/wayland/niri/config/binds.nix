@@ -144,7 +144,6 @@
             yazi = getExe config.programs.yazi.package;
             hyprlock = getExe config.programs.hyprlock.package;
             btop = getExe config.programs.btop.package;
-            clipse = getExe pkgs.clipse-gui;
             easyeffects = getExe config.services.easyeffects.package;
           in
           {
@@ -152,9 +151,6 @@
 
             "Mod+e".action.spawn = [ file-manager ];
 
-            "Mod+Shift+v".action.spawn = [
-              clipse
-            ];
 
             "Mod+a".action.spawn = [ easyeffects ];
 
@@ -308,6 +304,7 @@
             color-picker = getExe inputs.color-picker.packages.${system}.default;
             iwgtk = getExe pkgs.iwgtk;
             ghostty = getExe pkgs.ghostty;
+            clipse = getExe pkgs.clipse-gui;
             nwgbar = getExe pkgs.nwg-bar;
             blueman = getExe' pkgs.blueman "blueman-manager";
           in
@@ -323,6 +320,7 @@
             "Mod+p".action = sh "pkill pulsemixer || ${ghostty} -e pulsemixer";
             "Mod+Shift+b".action = sh "pkill blueman-manager || ${blueman}";
 
+            "Mod+Shift+v".action = sh "pkill clipse-gui || ${clipse}";
           }
         )
       ];
