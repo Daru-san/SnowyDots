@@ -43,6 +43,10 @@
           { app-id = "valent"; }
           { app-id = "io.github.kaii_lb.Overskride"; }
           { app-id = ".clipse-gui-wrapped"; }
+          {
+            title = "mixer";
+            app-id = "com.mitchellh.ghostty";
+          }
         ];
       }
     ];

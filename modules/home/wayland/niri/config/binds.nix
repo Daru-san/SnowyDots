@@ -161,6 +161,7 @@
 
             "Mod+Shift+period".action.spawn = [
               terminal
+              "--title=btop"
               "-e"
               btop
             ];
@@ -170,6 +171,7 @@
             ];
             "Mod+t".action.spawn = [
               terminal
+              "--title=yazi-fm"
               "-e"
               yazi
             ];
@@ -317,7 +319,8 @@
 
             "Mod+x".action = sh "pkill nwg-bar || ${nwgbar}";
 
-            "Mod+p".action = sh "pkill pulsemixer || ${ghostty} -e pulsemixer";
+            "Mod+p".action = sh "pkill pulsemixer || ${ghostty} --title=mixer -e pulsemixer";
+
             "Mod+Shift+b".action = sh "pkill blueman-manager || ${blueman}";
 
             "Mod+Shift+v".action = sh "pkill clipse-gui || ${clipse}";
