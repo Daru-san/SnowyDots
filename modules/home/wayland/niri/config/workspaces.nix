@@ -2,19 +2,19 @@
   programs.niri.settings = {
     workspaces = {
       "1" = {
-        name = "sys";
+        name = "dev";
       };
       "2" = {
         name = "web";
       };
       "3" = {
-        name = "dev";
-      };
-      "5" = {
-        name = "media";
+        name = "sys";
       };
       "4" = {
         name = "files";
+      };
+      "5" = {
+        name = "media";
       };
       "6" = {
         name = "content";
@@ -35,6 +35,12 @@
     window-rules = [
       {
         matches = [
+          { app-id = "^neovide$"; }
+        ];
+        open-on-workspace = "dev";
+      }
+      {
+        matches = [
           { app-id = "^firefox$"; }
           { app-id = "floorp"; }
           { app-id = "^zen-browser$"; }
@@ -49,11 +55,16 @@
           { title = "^spotify$"; }
           { app-id = "^spotify$"; }
           { app-id = "Freetube"; }
-          { app-id = "^mangayomi$"; }
           { app-id = "^mpv$"; }
-          { app-id = "^prism$"; }
         ];
         open-on-workspace = "media";
+      }
+      {
+        matches = [
+          { app-id = "^prismlauncher$"; }
+          { app-id = "^libreoffice$"; }
+        ];
+        open-on-workspace = "misc";
       }
       {
         matches = [
