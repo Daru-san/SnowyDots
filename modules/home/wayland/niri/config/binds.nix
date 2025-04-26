@@ -308,8 +308,8 @@
             color-picker = getExe inputs.color-picker.packages.${system}.default;
             iwgtk = getExe pkgs.iwgtk;
             ghostty = getExe pkgs.ghostty;
-            overskride = getExe pkgs.overskride;
             nwgbar = getExe pkgs.nwg-bar;
+            blueman = getExe' pkgs.blueman "blueman-manager";
           in
           {
             "Mod+d".action = sh "pkill anyrun || ${anyrun}";
@@ -321,8 +321,8 @@
             "Mod+x".action = sh "pkill nwg-bar || ${nwgbar}";
 
             "Mod+p".action = sh "pkill pulsemixer || ${ghostty} -e pulsemixer";
+            "Mod+Shift+b".action = sh "pkill blueman-manager || ${blueman}";
 
-            "Mod+Shift+b".action = sh "pkill overskride || ${overskride}";
           }
         )
       ];
