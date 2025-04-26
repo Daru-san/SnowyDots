@@ -140,7 +140,11 @@
           let
             terminal = getExe config.programs.ghostty.package;
             file-manager = getExe pkgs.nautilus;
-            editor = "${getExe pkgs.neovide} --neovim-bin ${getExe config.env.editor.package}";
+            editor = [
+              (getExe pkgs.neovide)
+              "--neovim-bin"
+              (getExe config.env.editor.package)
+            ];
             yazi = getExe config.programs.yazi.package;
             hyprlock = getExe config.programs.hyprlock.package;
             btop = getExe config.programs.btop.package;
@@ -150,7 +154,6 @@
             "Mod+q".action.spawn = [ terminal ];
 
             "Mod+e".action.spawn = [ file-manager ];
-
 
             "Mod+a".action.spawn = [ easyeffects ];
 
@@ -166,9 +169,8 @@
               btop
             ];
 
-            "Mod+z".action.spawn = [
-              editor
-            ];
+            "Mod+z".action.spawn = editor;
+
             "Mod+t".action.spawn = [
               terminal
               "--title=yazi-fm"
