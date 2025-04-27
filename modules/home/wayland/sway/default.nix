@@ -20,6 +20,8 @@
           "systemctl --user start hypridle"
           "systemctl --user start swayosd"
           "systemctl --user start wlsunset"
+          "systemctl --user start flameshot"
+          "systemctl --user start waybar"
         ];
       };
       wrapperFeatures = {
