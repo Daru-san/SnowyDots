@@ -38,9 +38,11 @@ in
         launcher = config.wayland.windowManager.sway.config.menu;
         file-manager = getExe pkgs.nautilus;
         shotman = getExe pkgs.shotman;
-        editor = (getExe pkgs.neovide) + toGNUCommandLineShell {} {
-          neovim-bin = config.env.editor.package;
-        };
+        editor =
+          (getExe pkgs.neovide)
+          + toGNUCommandLineShell { } {
+            neovim-bin = config.env.editor.package;
+          };
         hyprlock = getExe config.programs.hyprlock.package;
         clipse = getExe pkgs.clipse-gui;
         easyeffects = getExe config.services.easyeffects.package;
