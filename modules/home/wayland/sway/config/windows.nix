@@ -7,10 +7,13 @@
       "2" = [
         { app_id = "^firefox$"; }
         { app_id = "^brave$"; }
-        { app_id = "^zen-browser$"; }
+        { app_id = "^zen$"; }
         { app_id = "floorp"; }
       ];
-      "3" = [ { app_id = "btop"; } ];
+      "3" = [
+        { app_id = "btop"; }
+        { title = "btop"; }
+      ];
       "4" = [ { app_id = "^org.gnome.Nautilus$"; } ];
       "5" = [
         { title = "^Spotify Free$"; }
@@ -30,8 +33,8 @@
       ];
       "8" = [
         { app_id = "oculante"; }
-        { app-id = "^Gimp$"; }
-        { app-id = "^krita$"; }
+        { app_id = "^Gimp$"; }
+        { app_id = "^krita$"; }
         { app_id = "org.kde.kdenlive"; }
       ];
       "9" = [ { app_id = "^org.pwmt.zathura$"; } ];
@@ -105,6 +108,7 @@
             "nmtui"
             "pulsemixer"
             "clipse-gui"
+            ".clipse-gui-wrapped"
           ];
           titles = [
             "CopyQ"
