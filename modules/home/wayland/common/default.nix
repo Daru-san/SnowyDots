@@ -18,10 +18,10 @@ in
     ./ghostty
     ./waybar
     ./snowy-shell
-    ./ashell
     ./clipse
   ];
   config = mkIf cfg.enable {
+    wayland.windowManager.sway.enable = true;
     services = {
       hypridle.enable = true;
       hyprpaper.enable = true;
@@ -30,7 +30,7 @@ in
       clipse.enable = true;
     };
     programs = {
-      waybar.enable = false;
+      waybar.enable = true;
       snowy-shell.enable = false;
       anyrun.enable = true;
       hyprlock.enable = true;
