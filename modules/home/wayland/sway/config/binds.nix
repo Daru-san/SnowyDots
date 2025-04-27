@@ -135,7 +135,7 @@ in
           "${mod}+F2" = "exec ${o} ${r} start";
           "${mod}+F3" = "exec ${o} ${r} stop";
         }
-      )
+      )//
         {
           "${mod}+tab" = "focus next";
           "${mod}+shift+tab" = "focus prev";
