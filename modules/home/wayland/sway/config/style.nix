@@ -1,8 +1,8 @@
-{ config, ... }:
 {
   wayland.windowManager.sway = {
     config = {
       defaultWorkspace = "workspace number 1";
+      workspaceLayout = "tabbed";
       fonts = {
         names = [
           "JetbrainsMono Nerd Font"
