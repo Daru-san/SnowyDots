@@ -46,7 +46,7 @@ in
           (getExe pkgs.neovide)
           + " "
           + toGNUCommandLineShell { } {
-            neovim-bin = config.env.editor.package;
+            neovim-bin = getExe config.env.editor.package;
           };
         hyprlock = getExe config.programs.hyprlock.package;
         clipse = getExe pkgs.clipse-gui;
@@ -135,15 +135,14 @@ in
           "${mod}+F2" = "exec ${o} ${r} start";
           "${mod}+F3" = "exec ${o} ${r} stop";
         }
-      )//
-        {
-          "${mod}+tab" = "focus next";
-          "${mod}+shift+tab" = "focus prev";
-          "${mod}+g" = "layout tabbed";
-          "${mod}+shift+g" = "layout default";
-          "${mod}+page_up" = "workspace prev";
-          "${mod}+page_down" = "workspace next";
-        }
-      ;
+      )
+      // {
+        "${mod}+tab" = "focus next";
+        "${mod}+shift+tab" = "focus prev";
+        "${mod}+g" = "layout tabbed";
+        "${mod}+shift+g" = "layout default";
+        "${mod}+page_up" = "workspace prev";
+        "${mod}+page_down" = "workspace next";
+      };
   };
 }
