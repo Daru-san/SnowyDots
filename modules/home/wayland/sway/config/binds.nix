@@ -35,6 +35,7 @@ in
     keybindings =
       let
         inherit (config.wayland.windowManager.sway.config) terminal;
+        exec = cmd: "exec ${cmd}";
         yazi = getExe config.programs.yazi.package;
         playerctl = getExe config.services.playerctld.package;
         browser = getExe config.programs.zen.package;
@@ -43,6 +44,7 @@ in
         flameshot = getExe pkgs.flameshot;
         editor =
           (getExe pkgs.neovide)
+          + " "
           + toGNUCommandLineShell { } {
             neovim-bin = config.env.editor.package;
           };
@@ -50,18 +52,19 @@ in
         clipse = getExe pkgs.clipse-gui;
         easyeffects = getExe config.services.easyeffects.package;
         color-picker = getExe inputs.color-picker.packages.${pkgs.system}.default;
+        iwgtk = getExe pkgs.iwgtk;
       in
       {
         #Basic binds
-        "${mod}+d" = "exec pkill anyrun || ${launcher}";
-        "${mod}+q" = "exec ${terminal}";
-        "${mod}+e" = "exec ${file-manager}";
-        "${mod}+b" = "exec pidof firefox || ${browser}";
-        "${mod}+r" = "exec ${terminal} -e ${yazi}";
-        "${mod}+z" = "exec ${terminal} -e ${editor}";
-        "${mod}+a" = "exec swaymsg -t get_tree | grep 'easyeffects' || ${easyeffects}";
-        "${mod}+i" = "exec pkill nmtui || ${terminal} --class nmtui --detach nmtui";
-        "${mod}+p" = "exec pkill pulsemixer || ${terminal} --class pulsemixer --detach pulsemixer";
+        "${mod}+d" = exec "pkill anyrun || ${launcher}";
+        "${mod}+q" = exec terminal;
+        "${mod}+e" = exec file-manager;
+        "${mod}+b" = exec "pidof zen-browser || ${browser}";
+        "${mod}+r" = exec "${terminal} -e ${yazi}";
+        "${mod}+z" = exec editor;
+        "${mod}+a" = exec "swaymsg -t get_tree | grep 'easyeffects' || ${easyeffects}";
+        "${mod}+i" = exec "pkill iwgtk || ${iwgtk}";
+        "${mod}+p" = exec "pkill pulsemixer || ${terminal} --class pulsemixer --detach pulsemixer";
 
         #Window bings
         "${mod}+shift+q" = "kill";
@@ -72,32 +75,32 @@ in
         "${mod}+f" = "fullscreen";
 
         #Lock screen
-        "${mod}+l" = "exec ${hyprlock} --immediate";
+        "${mod}+l" = exec "${hyprlock} --immediate";
 
         #Clipboard menu
-        "${mod}+shift+v" = "exec ${clipse} menu";
+        "${mod}+shift+v" = exec "pkill clipse-gui || ${clipse}";
 
         #Suspend
-        "${mod}+alt+F12" = "exec systemctl suspend";
+        "${mod}+alt+F12" = exec "systemctl suspend";
 
         #Color picker
-        "${mod}+shift+c" = "exec ${color-picker}";
+        "${mod}+shift+c" = exec color-picker;
 
         # Screenshotting
-        "Print" = "exec ${flameshot} gui";
-        "shift+print" = "exec ${flameshot} screen";
+        "Print" = exec "${flameshot} gui";
+        "shift+print" = exec "${flameshot} screen";
 
         # Media control
-        "XF86AudioNext" = "exec ${playerctl} next";
-        "XF86AudioPrev" = "exec ${playerctl} previous";
-        "XF86AudioPlay" = "exec ${playerctl} play-pause";
-        "XF86AudioStop" = "exec ${playerctl} stop";
+        "XF86AudioNext" = exec "${playerctl} next";
+        "XF86AudioPrev" = exec "${playerctl} previous";
+        "XF86AudioPlay" = exec "${playerctl} play-pause";
+        "XF86AudioStop" = exec "${playerctl} stop";
 
         #Same but for keyboards without media keys
-        "shift+F12" = "exec ${playerctl} next";
-        "shift+F9" = "exec ${playerctl} previous";
-        "shift+F10" = "exec ${playerctl} play-pause";
-        "shift+F11" = "exec ${playerctl} stop";
+        "shift+F12" = exec "${playerctl} next";
+        "shift+F9" = exec "${playerctl} previous";
+        "shift+F10" = exec "${playerctl} play-pause";
+        "shift+F11" = exec "${playerctl} stop";
       }
       // (
         let
@@ -132,6 +135,15 @@ in
           "${mod}+F2" = "exec ${o} ${r} start";
           "${mod}+F3" = "exec ${o} ${r} stop";
         }
-      );
+      )
+        {
+          "${mod}+tab" = "focus next";
+          "${mod}+shift+tab" = "focus prev";
+          "${mod}+g" = "layout tabbed";
+          "${mod}+shift+g" = "layout default";
+          "${mod}+page_up" = "workspace prev";
+          "${mod}+page_down" = "workspace next";
+        }
+      ;
   };
 }
