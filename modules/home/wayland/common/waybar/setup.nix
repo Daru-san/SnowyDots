@@ -3,6 +3,9 @@
   lib,
   ...
 }:
+let
+  inherit (lib) mkIf;
+in
 {
   main-bar = {
     layer = "top";
@@ -10,7 +13,8 @@
     height = 30;
     modules-left = [
       "idle_inhibitor"
-      "niri/workspaces"
+      (mkIf config.programs.niri.enable "niri/workspaces")
+      (mkIf config.wayland.windowManager.sway.enable "sway/workspaces")
       "group/music"
     ];
 
@@ -33,6 +37,11 @@
         deactivated = " ";
       };
     };
+
+    "sway/workspaces" = {
+      format = "{name}";
+    };
+
     "niri/workspaces" = {
       format = "{icon}";
       format-icons = {

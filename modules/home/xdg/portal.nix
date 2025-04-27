@@ -5,6 +5,11 @@
     xdg-desktop-portal-gtk
   ];
   config = {
+    sway = {
+      default = [
+        "gtk"
+      ];
+    };
     hyprland = {
       default = [
         "hyprland"
