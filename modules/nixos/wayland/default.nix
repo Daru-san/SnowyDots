@@ -18,6 +18,7 @@ in
       sway = {
         enable = true;
         package = pkgs.swayfx;
+        extraPackages = [ ];
       };
       dconf.enable = true;
       seahorse.enable = true;
