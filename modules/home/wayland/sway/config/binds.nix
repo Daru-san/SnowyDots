@@ -11,6 +11,9 @@ let
     getExe'
     range
     concatLines
+    cli
+    ;
+  inherit (cli)
     toGNUCommandLineShell
     ;
   mod = config.wayland.windowManager.sway.config.modifier;
@@ -37,7 +40,7 @@ in
         browser = getExe config.programs.zen.package;
         launcher = config.wayland.windowManager.sway.config.menu;
         file-manager = getExe pkgs.nautilus;
-        shotman = getExe pkgs.shotman;
+        flameshot = getExe pkgs.flameshot;
         editor =
           (getExe pkgs.neovide)
           + toGNUCommandLineShell { } {
@@ -81,8 +84,8 @@ in
         "${mod}+shift+c" = "exec ${color-picker}";
 
         # Screenshotting
-        "Print" = "exec ${shotman} --capture region";
-        "shift+print" = "exec ${shotman} --capture output";
+        "Print" = "exec ${flameshot} gui";
+        "shift+print" = "exec ${flameshot} screen";
 
         # Media control
         "XF86AudioNext" = "exec ${playerctl} next";

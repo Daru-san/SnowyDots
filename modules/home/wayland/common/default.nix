@@ -17,6 +17,7 @@ in
     ./anyrun
     ./ghostty
     ./waybar
+    ./flameshot
     ./snowy-shell
     ./clipse
   ];
@@ -28,6 +29,7 @@ in
       wlsunset.enable = true;
       swayosd.enable = true;
       clipse.enable = true;
+      flameshot.enable = true;
     };
     programs = {
       waybar.enable = true;
