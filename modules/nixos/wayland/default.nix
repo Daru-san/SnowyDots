@@ -14,26 +14,10 @@ in
     ./polkit
   ];
   config = mkIf cfg.enable {
-    xdg.portal = {
-      wlr.enable = lib.mkForce false;
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-hyprland
-        xdg-desktop-portal-gtk
-      ];
-      config = {
-        sway = {
-          default = [
-            "gtk"
-            "hyprland"
-          ];
-        };
-      };
-    };
     programs = {
       sway = {
         enable = true;
         package = pkgs.swayfx;
-        extraPackages = [ ];
       };
       dconf.enable = true;
       seahorse.enable = true;
