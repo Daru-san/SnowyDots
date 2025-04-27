@@ -72,7 +72,7 @@ vi hardware-configuration.nix
 nixos-install
 ```
 
-### Deploy my config
+### Deploy my configuration
 
 ```bash
 # Clone the github repo
