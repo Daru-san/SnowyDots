@@ -9,7 +9,6 @@
           "UbuntuMono Nerd Font"
         ];
         style = "Semi-Bold";
-        size = 13.4;
       };
       focus = {
         followMouse = true;
