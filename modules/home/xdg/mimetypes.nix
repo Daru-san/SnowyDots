@@ -39,7 +39,7 @@
         "webm"
         "x-matroska"
       ])
-      { "text/plain" ="neovide.desktop"; }
+      { "text/plain" = "neovide.desktop"; }
     ]
   );
 }
