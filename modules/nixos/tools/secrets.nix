@@ -9,7 +9,15 @@
   sops.defaultSopsFile = ../../../secrets/secrets.json;
   sops.defaultSopsFormat = "json";
   sops.age.keyFile = "/home/daru/.config/sops/age/keys.txt";
-  sops.secrets.nextcloud-secrets = {
-    owner = "daru";
-  };
+  # sops.secrets = {
+  #   "next-secrets/instance" = {
+  #     owner = "daru";
+  #   };
+  #   "next-secrets/pwd" = {
+  #     owner = "daru";
+  #   };
+  #   "next-secrets/username" = {
+  #     owner = "daru";
+  #   };
+  # };
 }
