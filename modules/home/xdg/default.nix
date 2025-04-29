@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }:
 {
@@ -9,7 +10,7 @@
     mime.enable = true;
     mimeApps = {
       enable = true;
-    } // import ./mimetypes.nix;
+    } // import ./mimetypes.nix {inherit lib; };
     desktopEntries = import ./desktop-entries.nix;
     portal = import ./portal.nix { inherit pkgs; };
   };
