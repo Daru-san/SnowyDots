@@ -13,8 +13,9 @@ in
     height = 30;
     modules-left = [
       "idle_inhibitor"
-      (mkIf config.programs.niri.enable "niri/workspaces")
-      (mkIf config.wayland.windowManager.sway.enable "sway/workspaces")
+      (mkIf (config.programs.niri.enable or false) "niri/workspaces")
+      (mkIf (config.wayland.windowManager.sway.enable or false) "sway/workspaces")
+      (mkIf (config.wayland.windowManger.hyprland.enable or false) "hyprland/workspaces")
       "group/music"
     ];
 
