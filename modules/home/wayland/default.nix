@@ -1,7 +1,6 @@
 {
   imports = [
     ./common
-    ./niri
     ./sway
   ];
   home.sessionVariables = {
