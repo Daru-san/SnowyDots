@@ -28,10 +28,6 @@
 
     yazi.url = "github:sxyazi/yazi/v25.4.8";
 
-    helix.url = "github:helix-editor/helix";
-
-    niri.url = "github:sodiboo/niri-flake";
-
     # Theme manager
     stylix.url = "github:danth/stylix";
 
