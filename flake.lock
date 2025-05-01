@@ -1066,11 +1066,11 @@
         "nixpkgs": "nixpkgs_9"
       },
       "locked": {
-        "lastModified": 1746100409,
-        "narHash": "sha256-RYk3s+QomZsoDofl34hCeVf6+N1SdGq7YxjFV6nTUbE=",
+        "lastModified": 1746121759,
+        "narHash": "sha256-wAH0187t9ie77QYOzzf1kzra5ZlUmkDEN3LaIE6f3SY=",
         "owner": "Daru-san",
         "repo": "Snowpkgs",
-        "rev": "c6acf9561a954295f5a77a195d1e1f8b34040bde",
+        "rev": "364ab74f6b569b31d07da5c44c6f1d036c544d04",
         "type": "github"
       },
       "original": {
