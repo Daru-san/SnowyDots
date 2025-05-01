@@ -143,6 +143,8 @@ in
         "${mod}+shift+g" = "layout default";
         "${mod}+page_up" = "workspace prev";
         "${mod}+page_down" = "workspace next";
+        "${mod}+ctrl+right" = "focus next";
+        "${mod}+ctrl+left" = "focus prev";
       };
   };
 }
