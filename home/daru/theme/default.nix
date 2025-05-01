@@ -17,7 +17,7 @@
       gtk.enable = false;
       spicetify.enable = false;
     };
-    image = inputs.walls + "/images/leafy_canopy_by_pugnaciousone_de2skrr.png";
+    image = inputs.walls + "/images/dark-floral.png"; # butterfly.png
     imageScalingMode = "stretch";
     opacity = {
       terminal = 0.8;
