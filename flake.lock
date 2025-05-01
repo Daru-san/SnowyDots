@@ -1489,11 +1489,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1746107937,
-        "narHash": "sha256-9YUnkbOUDsesdv/jEZb30lHO/x/3aomS37mN8GfCoTY=",
+        "lastModified": 1746118213,
+        "narHash": "sha256-7Bnl4gi4+5hq/eEf40Sd6b6YYBGrQGU0A23R0EyglCs=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "bc7071d32bbe0037c3eb756bf004f832c87b17fc",
+        "rev": "2641f9d8a4d9e5557edd7cfa051353cfe40be2ba",
         "type": "sourcehut"
       },
       "original": {
@@ -1505,11 +1505,11 @@
     "walls": {
       "flake": false,
       "locked": {
-        "lastModified": 1737746868,
-        "narHash": "sha256-2+Q38PhwfIXHzOEmUbV74bt1dccIxFa1nKxYUeWGZE8=",
+        "lastModified": 1746111914,
+        "narHash": "sha256-YAgSfiLGFceCorZAcU4f0TKyuVrab15PGM1XCdIXasY=",
         "owner": "~darumaka",
         "repo": "Wallpapers",
-        "rev": "832ed06a774c87a6da9ae3cd9be1b8fe8057fb1a",
+        "rev": "d19c9f9ff6a2d4e4e4d436e85dcbf76bfc4e9c06",
         "type": "sourcehut"
       },
       "original": {
