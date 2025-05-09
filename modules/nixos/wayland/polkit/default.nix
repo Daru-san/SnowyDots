@@ -26,6 +26,7 @@ let
         )
       }
     '';
+    meta.mainProgram = ["polkit"];
   };
 in
 {
