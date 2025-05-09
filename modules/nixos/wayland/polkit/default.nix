@@ -26,7 +26,7 @@ let
         )
       }
     '';
-    meta.mainProgram = [ "polkit" ];
+    meta.mainProgram = "polkit";
   };
 in
 {
