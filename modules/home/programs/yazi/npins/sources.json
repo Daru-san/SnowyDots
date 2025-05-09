@@ -9,21 +9,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "5412a78219a646c2c3192ae810da95676a218c45",
-      "url": "https://github.com/kmlupreti/ayu-dark.yazi/archive/5412a78219a646c2c3192ae810da95676a218c45.tar.gz",
-      "hash": "14p88var0mgc55slglz03i08cwbxj2x76p8xafkvzq49zby10s5d"
-    },
-    "clipboard.yazi": {
-      "type": "Git",
-      "repository": {
-        "type": "Git",
-        "url": "https://gitee.com/DreamMaoMao/clipboard.yazi.git"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "93b73d41e17f3342dab36c4280ec16d1afc7f40e",
-      "url": null,
-      "hash": "035mymkibcgvsdbfd5g9j8blrbfai89g7xl0nfjlmbh1wk9a3qn9"
+      "revision": "5f600aae96523937504d67fcc1ad17d37409a482",
+      "url": "https://github.com/kmlupreti/ayu-dark.yazi/archive/5f600aae96523937504d67fcc1ad17d37409a482.tar.gz",
+      "hash": "0zlk68n6b1x326z46mjwhpd3yxp1z3xk7nw8cafnz3yj2miqr3j5"
     },
     "fg.yazi": {
       "type": "Git",
@@ -47,9 +35,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "228a9ef2c509f43d8da1847463535adc5fd88794",
-      "url": "https://github.com/Reledia/hexyl.yazi/archive/228a9ef2c509f43d8da1847463535adc5fd88794.tar.gz",
-      "hash": "0f3039w44yavqjg21z4pdh1ss75galx2z18bh39x0d0cpiz6pzay"
+      "revision": "016a09bcc249dd3ce06267d54cc039e73de9c647",
+      "url": "https://github.com/Reledia/hexyl.yazi/archive/016a09bcc249dd3ce06267d54cc039e73de9c647.tar.gz",
+      "hash": "1rc4jkvycgsbyk1pcl9qf92mrq8qm345z9rxl7lpkjvnm4ndqbwp"
     },
     "mdcat.yazi": {
       "type": "Git",
@@ -60,9 +48,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "d3d5089d06fe4ed14504726722f89c977f9eb54a",
-      "url": "https://github.com/GrzegorzKozub/mdcat.yazi/archive/d3d5089d06fe4ed14504726722f89c977f9eb54a.tar.gz",
-      "hash": "1b0qjlxa2kdardgznna1kzkn2vg2mxbymnjr7b768ckic8nwvahp"
+      "revision": "7b7380a4ba81a0dc31243b9f55e4f7c255a41984",
+      "url": "https://github.com/GrzegorzKozub/mdcat.yazi/archive/7b7380a4ba81a0dc31243b9f55e4f7c255a41984.tar.gz",
+      "hash": "0jj7fd8d0nhcz2n4akr8waplqnffc9k44plhghiik70jj02wbcwn"
     },
     "open-with-cmd.yazi": {
       "type": "Git",
@@ -86,9 +74,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "73b7842bbccb12f15e1af54b8b06fc88f5efe82d",
-      "url": "https://github.com/ndtoan96/ouch.yazi/archive/73b7842bbccb12f15e1af54b8b06fc88f5efe82d.tar.gz",
-      "hash": "0cx9n5c2k5j2y2qk5rz022y3d26sl3j2v2dpm7fjka2jsc3x1nd5"
+      "revision": "2496cd9ac2d1fb52597b22ae84f3af06c826a86d",
+      "url": "https://github.com/ndtoan96/ouch.yazi/archive/2496cd9ac2d1fb52597b22ae84f3af06c826a86d.tar.gz",
+      "hash": "169w527cq18i3x9hswgsbx4lrlgqycv1dqhlg2faz7pdp93mzhrs"
     },
     "plugins": {
       "type": "Git",
@@ -99,9 +87,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "a1738e8088366ba73b33da5f45010796fb33221e",
-      "url": "https://github.com/yazi-rs/plugins/archive/a1738e8088366ba73b33da5f45010796fb33221e.tar.gz",
-      "hash": "1nkv7kx6d6yydki7k4v0m6rk866wlhld9ks58yyk26z2dchy88ks"
+      "revision": "864a0210d9ba1e8eb925160c2e2a25342031d8d3",
+      "url": "https://github.com/yazi-rs/plugins/archive/864a0210d9ba1e8eb925160c2e2a25342031d8d3.tar.gz",
+      "hash": "1ycgd8sswag7lnf2qx5r7zn3niz3q2q7jxw2nr07407z3vvg8zlv"
     },
     "plugins-yazi": {
       "type": "Git",
@@ -125,9 +113,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "c0707544f1d526f704dab2da15f379ec90d613c2",
-      "url": "https://github.com/Rolv-Apneseth/starship.yazi/archive/c0707544f1d526f704dab2da15f379ec90d613c2.tar.gz",
-      "hash": "06s9dv3h0cc5w6k26npzjybvafnz9c35vgskbp2r6whx6zvgxj0z"
+      "revision": "6fde3b2d9dc9a12c14588eb85cf4964e619842e6",
+      "url": "https://github.com/Rolv-Apneseth/starship.yazi/archive/6fde3b2d9dc9a12c14588eb85cf4964e619842e6.tar.gz",
+      "hash": "0dll24507lwbqpbnvci4ca8hhjnjr431grn5s0rrv5q82y19s97q"
     },
     "torrent-preview.yazi": {
       "type": "Git",
@@ -177,9 +165,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "6b0fc1ef5eca034460b4c69cb87c424103227a2e",
-      "url": "https://github.com/imsi32/yatline.yazi/archive/6b0fc1ef5eca034460b4c69cb87c424103227a2e.tar.gz",
-      "hash": "02cgbmj1wg0303b2lsyajknj7hif3cjrd1wrn2iyp2x6if9j4996"
+      "revision": "2ecf715d33866e5f8a63af25f6a242821746ddb7",
+      "url": "https://github.com/imsi32/yatline.yazi/archive/2ecf715d33866e5f8a63af25f6a242821746ddb7.tar.gz",
+      "hash": "1mfac6qvwphcqv0h188173f31ffhqgkdni1ca5ssg07509s2p0lp"
     },
     "yazi-plugin-bat": {
       "type": "Git",
@@ -190,9 +178,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "85b58bc12d886a2a906de48defc8f4876b3f35b3",
-      "url": "https://github.com/mgumz/yazi-plugin-bat/archive/85b58bc12d886a2a906de48defc8f4876b3f35b3.tar.gz",
-      "hash": "0ij6skcyi715gmbm43jg32v68gscywhzhqyvzx4smbbb5y4z649j"
+      "revision": "190b898e2073231aff8f2d621131d5215b796e8a",
+      "url": "https://github.com/mgumz/yazi-plugin-bat/archive/190b898e2073231aff8f2d621131d5215b796e8a.tar.gz",
+      "hash": "11b8lwzjnwfgrrfc6ccvwf8w7yawn16h3a5sin0ckjvxba4098hq"
     }
   },
   "version": 5
