@@ -41,7 +41,7 @@ in
         browser = getExe config.programs.zen.package;
         launcher = config.wayland.windowManager.sway.config.menu;
         file-manager = getExe pkgs.nautilus;
-        flameshot = getExe pkgs.flameshot;
+        flameshot = getExe config.services.flameshot.package;
         editor =
           (getExe pkgs.neovide)
           + " "
