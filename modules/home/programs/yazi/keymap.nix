@@ -51,11 +51,5 @@
       run = "plugin what-size";
       desc = "Calculate size of hovered file/folder";
     }
-    {
-      on = [ "<C-y>" ];
-      run = [ "plugin clipboard" ];
-      desc = "Copy current item(s) to system clipboard";
-    }
-
   ];
 }

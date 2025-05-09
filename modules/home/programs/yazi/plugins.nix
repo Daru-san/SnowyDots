@@ -19,7 +19,6 @@ in
       "git" = (getPlugin "plugins") + "/git.yazi";
       "vcs-files" = (getPlugin "plugins") + "/vcs-files.yazi";
       "what-size" = getPlugin "what-size.yazi";
-      "clipboard" = getPlugin "clipboard.yazi";
       "copy-file-contents" = (getPlugin "plugins-yazi") + "/copy-file-contents.yazi";
       "yatline-gruvbox-material" = getPlugin "yatline-gruvbox-material.yazi";
     };
