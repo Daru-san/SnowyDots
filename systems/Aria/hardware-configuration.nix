@@ -1,5 +1,9 @@
 {
-
+  boot.tmp = {
+    useTmpfs = true;
+    cleanOnBoot = true;
+    tmpfsSize = "50%";
+  };
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-uuid/50eefb2e-874f-4fa1-b03a-3c3c880b8f24";
