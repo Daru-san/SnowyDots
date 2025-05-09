@@ -12,7 +12,7 @@
 
   stylix = {
     enable = true;
-    base16Scheme = "${inputs.tinted-themes}/base16/material-vivid.yaml";
+    base16Scheme = "${inputs.tinted-themes}/base16/edge-dark.yaml";
     targets = {
       gtk.enable = false;
       spicetify.enable = false;
