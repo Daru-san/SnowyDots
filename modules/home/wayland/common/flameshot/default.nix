@@ -2,7 +2,7 @@
 {
   services.flameshot = {
     package = pkgs.flameshot.override {
-      enableWlrSupport = false;
+      enableWlrSupport = true;
       enableMonochromeIcon = true;
     };
     settings = {
