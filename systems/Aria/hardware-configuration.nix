@@ -2,7 +2,7 @@
   boot.tmp = {
     useTmpfs = true;
     cleanOnBoot = true;
-    tmpfsSize = "50%";
+    tmpfsSize = "70%";
   };
   fileSystems = {
     "/" = {
