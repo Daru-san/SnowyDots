@@ -9,9 +9,9 @@
       enable = true;
       killUnconfinedConfinables = true;
     };
-
-    sudo = {
+    sudo-rs = {
       enable = true;
+      execWheelOnly = true;
       extraRules = [
         {
           commands =
