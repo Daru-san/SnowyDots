@@ -111,6 +111,14 @@
 
       # The craft
       prismlauncher
+
+      (retroarch.override {
+        cores = with libretro; [
+          citra
+          melonds
+          mgba
+        ];
+      })
     ])
     (with inputs; [
       # rimi.packages.${system}.default
