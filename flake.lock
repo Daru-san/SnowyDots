@@ -461,11 +461,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1746798521,
-        "narHash": "sha256-axfz/jBEH9XHpS7YSumstV7b2PrPf7L8bhWUtLBv3nA=",
+        "lastModified": 1746892839,
+        "narHash": "sha256-0b9us0bIOgA1j/s/6zlxVyP3m97yAh0U+YwKayJ6mmU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "e95a7c5b6fa93304cd2fd78cf676c4f6d23c422c",
+        "rev": "12e67385964d9c9304daa81d0ad5ba3b01fdd35e",
         "type": "github"
       },
       "original": {
@@ -480,11 +480,11 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1746798521,
-        "narHash": "sha256-axfz/jBEH9XHpS7YSumstV7b2PrPf7L8bhWUtLBv3nA=",
+        "lastModified": 1746892839,
+        "narHash": "sha256-0b9us0bIOgA1j/s/6zlxVyP3m97yAh0U+YwKayJ6mmU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "e95a7c5b6fa93304cd2fd78cf676c4f6d23c422c",
+        "rev": "12e67385964d9c9304daa81d0ad5ba3b01fdd35e",
         "type": "github"
       },
       "original": {
@@ -546,11 +546,11 @@
     },
     "masterpkgs": {
       "locked": {
-        "lastModified": 1746804037,
-        "narHash": "sha256-3JlAaZwowAOH+mGbbeJUZvZqTe9c1mSLsqCXFmOBzwo=",
+        "lastModified": 1746898990,
+        "narHash": "sha256-oOUYZVPmyRzStdonB6ZxMHLspUulAXrOKBMYx7VP8Rk=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "34fe7674c57ec514470ac55f07e4e73d33c788eb",
+        "rev": "74e5fb80745f64262f14dd8119bbf3fcb1ff9ece",
         "type": "github"
       },
       "original": {
@@ -870,11 +870,11 @@
     },
     "nixpkgs_9": {
       "locked": {
-        "lastModified": 1746141548,
-        "narHash": "sha256-IgBWhX7A2oJmZFIrpRuMnw5RAufVnfvOgHWgIdds+hc=",
+        "lastModified": 1746663147,
+        "narHash": "sha256-Ua0drDHawlzNqJnclTJGf87dBmaO/tn7iZ+TCkTRpRc=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "f02fddb8acef29a8b32f10a335d44828d7825b78",
+        "rev": "dda3dcd3fe03e991015e9a74b22d35950f264a54",
         "type": "github"
       },
       "original": {
@@ -1066,11 +1066,11 @@
         "nixpkgs": "nixpkgs_9"
       },
       "locked": {
-        "lastModified": 1746458051,
-        "narHash": "sha256-GaDE5B+pfLVHZDC5rTKQmN3Gr0ngwx17J+MxAoxD20U=",
+        "lastModified": 1746892973,
+        "narHash": "sha256-GM/s8DJaS5tOj3AlIVKKMtmAwGelq7cd8QELKIlBJTA=",
         "owner": "Daru-san",
         "repo": "Snowpkgs",
-        "rev": "9050372135d19d46f03191d06e3f78e60e63c0ac",
+        "rev": "d46a2aae82ebb9f76291e85720e2486508d33760",
         "type": "github"
       },
       "original": {
@@ -1157,11 +1157,11 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1746804092,
-        "narHash": "sha256-e9AbbrWZYJ2JJZi01hVdDBP62/OeCBxH4padZAtDRoI=",
+        "lastModified": 1746875263,
+        "narHash": "sha256-WhcWBF8c7l9LoLQ18n9NjuvCBF5WJ6c2DemDTZgGKsI=",
         "owner": "danth",
         "repo": "stylix",
-        "rev": "8775d8322ad033c5f72d737aef3be146cbbe74a5",
+        "rev": "1c71f3bde228f7b17c1aad75f2b97276daf8db42",
         "type": "github"
       },
       "original": {
@@ -1489,11 +1489,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1746804496,
-        "narHash": "sha256-Te8LZojA75ZmWdwXaTUCYPPiU9CW224YPMOcfNb6RwU=",
+        "lastModified": 1746900626,
+        "narHash": "sha256-X9Zc67fKB7xtkrX1HFlTdfpnR26syggiug0VyX8HqGQ=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "65a3d05bb8458ddb242ccba658c216c153a715df",
+        "rev": "ef161436dc71cc449e4c0938fecfd173716a5dee",
         "type": "sourcehut"
       },
       "original": {
@@ -1562,11 +1562,11 @@
     "zen-findbar": {
       "flake": false,
       "locked": {
-        "lastModified": 1746783511,
-        "narHash": "sha256-SXCPk1epMb2Ps2P1H78QrAt2m9GVlz9qE/YZgm1q3wY=",
+        "lastModified": 1746821916,
+        "narHash": "sha256-otiiRVywyBAQer9I2TuxrqmDIoc2BS2QeW5OpYQXeIc=",
         "owner": "RobotoSkunk",
         "repo": "zen-better-findbar",
-        "rev": "35eb5ec748a3bd6794b2e7b1ec39a925c5d2721c",
+        "rev": "aa61b17f335e555d8c36f96e51a119b8b61792ea",
         "type": "github"
       },
       "original": {
