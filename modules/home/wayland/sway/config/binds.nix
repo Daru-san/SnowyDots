@@ -53,6 +53,7 @@ in
         easyeffects = getExe config.services.easyeffects.package;
         color-picker = getExe inputs.color-picker.packages.${pkgs.system}.default;
         iwgtk = getExe pkgs.iwgtk;
+        blueman = getExe' pkgs.blueman "blueman-manager";
       in
       {
         #Basic binds
@@ -64,6 +65,7 @@ in
         "${mod}+z" = exec editor;
         "${mod}+a" = exec "swaymsg -t get_tree | grep 'easyeffects' || ${easyeffects}";
         "${mod}+i" = exec "pkill iwgtk || ${iwgtk}";
+        "${mod}+i" = exec "pkill blueman-manager || ${blueman}";
         "${mod}+p" = exec "pkill pulsemixer || ${terminal} --class pulsemixer --detach pulsemixer";
 
         #Window bings
