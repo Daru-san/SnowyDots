@@ -9,6 +9,7 @@
         { app_id = "^brave$"; }
         { app_id = "^zen$"; }
         { app_id = "floorp"; }
+        { app_id = "^thunderbird$"; }
       ];
       "3" = [
         { app_id = "btop"; }
@@ -30,12 +31,15 @@
         { app_id = "com.obsproject.Studio"; }
         { app_id = ".virt-manager-wrapped"; }
         { app_id = "^waydroid$"; }
+        { app_id = "com.libretro.RetroArch"; }
       ];
       "8" = [
         { app_id = "oculante"; }
         { app_id = "^Gimp$"; }
+        { app_id = "^gimp$"; }
         { app_id = "^krita$"; }
         { app_id = "org.kde.kdenlive"; }
+        { app_id = "^libreoffice"; }
       ];
       "9" = [ { app_id = "^org.pwmt.zathura$"; } ];
     };
