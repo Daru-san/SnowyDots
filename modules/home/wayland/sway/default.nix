@@ -22,6 +22,8 @@
           "systemctl --user start wlsunset"
           "systemctl --user start flameshot"
           "systemctl --user start waybar"
+          "systemctl --user start kdeconnect"
+          "systemctl --user start kdeconnect-indicator"
         ];
       };
       wrapperFeatures = {
