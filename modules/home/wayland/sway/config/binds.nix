@@ -65,7 +65,7 @@ in
         "${mod}+z" = exec editor;
         "${mod}+a" = exec "swaymsg -t get_tree | grep 'easyeffects' || ${easyeffects}";
         "${mod}+i" = exec "pkill iwgtk || ${iwgtk}";
-        "${mod}+i" = exec "pkill blueman-manager || ${blueman}";
+        "${mod}+shift+i" = exec "pkill blueman-manager || ${blueman}";
         "${mod}+p" = exec "pkill pulsemixer || ${terminal} --class pulsemixer --detach pulsemixer";
 
         #Window bings
