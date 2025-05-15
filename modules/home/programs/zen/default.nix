@@ -143,7 +143,7 @@
 
       search = {
         force = true;
-        default = "Brave Search";
+        default = "StartPage";
         privateDefault = "ddg";
 
         order = [
