@@ -16,6 +16,7 @@
       aria2
       seanime
       nextcloud-client
+      planify
 
       # Science
       kdePackages.kalzium

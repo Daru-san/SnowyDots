@@ -10,6 +10,7 @@
         { app_id = "^zen$"; }
         { app_id = "floorp"; }
         { app_id = "^thunderbird$"; }
+        { app_id = "io.github.alainm23.planify"; }
       ];
       "3" = [
         { app_id = "btop"; }
