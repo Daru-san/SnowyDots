@@ -54,6 +54,7 @@ in
         color-picker = getExe inputs.color-picker.packages.${pkgs.system}.default;
         iwgtk = getExe pkgs.iwgtk;
         blueman = getExe' pkgs.blueman "blueman-manager";
+        planify = getExe pkgs.planify;
       in
       {
         #Basic binds
@@ -67,6 +68,7 @@ in
         "${mod}+i" = exec "pkill iwgtk || ${iwgtk}";
         "${mod}+shift+i" = exec "pkill blueman-manager || ${blueman}";
         "${mod}+p" = exec "pkill pulsemixer || ${terminal} --class pulsemixer --detach pulsemixer";
+        "${mod}+shift+p" = exec planify;
 
         #Window bings
         "${mod}+shift+q" = "kill";
