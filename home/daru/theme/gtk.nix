@@ -16,7 +16,7 @@ let
       });
     in
     {
-      name = "WhiteSur-dark";
+      name = "WhiteSur-green-dark";
       package = whitesur-fix.override {
         boldPanelIcons = true;
         alternativeIcons = true;
@@ -39,6 +39,8 @@ rec {
         roundedMaxWindow = true;
         altVariants = [ "alt" ];
         opacityVariants = [ "normal" ];
+        iconVariant = "zorin";
+        nautilusStyle = "mojave";
       };
     };
 
