@@ -2,7 +2,7 @@
 {
   imports =
     (with inputs; [
-      stylix.homeManagerModules.stylix
+      stylix.homeModules.stylix
     ])
     ++ [
       ./qt.nix
