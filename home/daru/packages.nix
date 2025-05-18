@@ -11,8 +11,6 @@
     (with pkgs; [
       # GUI
       scrcpy
-      obsidian
-      vesktop
       aria2
       seanime
       nextcloud-client
