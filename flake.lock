@@ -1628,11 +1628,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1747667999,
-        "narHash": "sha256-ODHtz6HPj0c0ruQkdWL8+wdKikTWnh3+WkSp/+Mm8io=",
+        "lastModified": 1747685550,
+        "narHash": "sha256-C9iK2aTlKNp6dlgfTuBwmmdvhZ5jSAGg+li/BuBR6o4=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "45ef13335cc7b9ad5db980bef72f0fee8dab52d2",
+        "rev": "c3e93f792c1f1b5b4ddd2fee823116f1613d43c6",
         "type": "sourcehut"
       },
       "original": {
