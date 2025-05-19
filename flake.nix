@@ -7,8 +7,6 @@
 
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
 
-    masterpkgs.url = "github:nixos/nixpkgs/master";
-
     snow-nixpkgs.url = "github:Daru-san/nixpkgs/ashell-update";
 
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
