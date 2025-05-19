@@ -13,10 +13,8 @@
     ./spotify
     ./zen
     ./thunderbird
-    ./helix
     ./gimp
     ./nvim
     ./keepasscx
-    # ./elia
   ];
 }
