@@ -14,5 +14,6 @@
     ./printing.nix
     ./secrets.nix
     ./transmission.nix
+    ./pkgs.nix
   ];
 }
