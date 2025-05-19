@@ -21,7 +21,7 @@
     woodpecker-cli
     rustup
     git-repo
-    roslyn
+    dotnet-sdk_9
   ];
   programs.java = {
     enable = true;
