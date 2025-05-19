@@ -44,5 +44,8 @@
       c = "clear";
       cgrt = ''cd "$(git rev-parse --show-toplevel)"'';
       wget = wget2;
+      flake = "nix flake";
+      nbuild = "nom build";
+      nshell = "nom shell";
     };
 }
