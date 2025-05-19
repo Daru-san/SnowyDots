@@ -12,6 +12,7 @@
 
   stylix = {
     enable = true;
+    enableReleaseChecks = false;
     base16Scheme = "${inputs.tinted-themes}/base16/vesper.yaml";
     targets = {
       gtk.enable = false;
