@@ -35,25 +35,6 @@
       musikcube
       pulsemixer
 
-      # Developmentment
-      hut
-      codeberg-cli
-      vala
-      rustc
-      clang
-      zig
-      jq
-      license-go
-      yq-go
-      gdb
-      seer
-      valgrind
-      xmake
-      go
-      woodpecker-cli
-      rustup
-      git-repo
-
       # Desktop
       swww
       ayugram-desktop
@@ -62,7 +43,7 @@
       # GUI Util
       file-roller
       cheese
-      stable.varia
+      varia
 
       # Android
       adbtuifm
