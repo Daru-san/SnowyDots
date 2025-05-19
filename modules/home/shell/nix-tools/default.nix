@@ -22,7 +22,7 @@
       silent = true;
       config = {
         whitelist.prefix = [
-          "~/Development/Repos"
+          "~/Forest/Development"
         ];
         global.disable_stdin = true;
       };
