@@ -49,7 +49,7 @@ in
             neovim-bin = getExe config.env.editor.package;
           };
         hyprlock = getExe config.programs.hyprlock.package;
-        clipse = getExe pkgs.clipse-gui;
+        copyq = getExe pkgs.copyq;
         easyeffects = getExe config.services.easyeffects.package;
         color-picker = getExe inputs.color-picker.packages.${pkgs.system}.default;
         iwgtk = getExe pkgs.iwgtk;
@@ -82,7 +82,7 @@ in
         "${mod}+l" = exec "${hyprlock} --immediate";
 
         #Clipboard menu
-        "${mod}+shift+v" = exec "pkill clipse-gui || ${clipse}";
+        "${mod}+shift+v" = exec "${copyq} menu";
 
         #Suspend
         "${mod}+alt+F12" = exec "systemctl suspend";

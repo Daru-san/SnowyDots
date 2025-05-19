@@ -19,7 +19,6 @@ in
     ./waybar
     ./flameshot
     ./snowy-shell
-    ./clipse
   ];
   config = mkIf cfg.enable {
     wayland.windowManager.sway.enable = true;
@@ -28,7 +27,6 @@ in
       hyprpaper.enable = true;
       wlsunset.enable = true;
       swayosd.enable = true;
-      clipse.enable = true;
       flameshot.enable = true;
     };
     programs = {
