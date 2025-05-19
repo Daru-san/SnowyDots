@@ -13,12 +13,6 @@
     };
   };
 
-  master-packages = final: _prev: {
-    master = import inputs.masterpkgs {
-      inherit (final) system;
-    };
-  };
-
   snow-packages = final: _prev: {
     snow-overlay = import inputs.snow-nixpkgs {
       inherit (final) system;
