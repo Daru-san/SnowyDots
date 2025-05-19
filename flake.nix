@@ -29,7 +29,7 @@
     yazi.url = "github:sxyazi/yazi/v25.4.8";
 
     # Theme manager
-    stylix.url = "github:danth/stylix";
+    stylix.url = "github:nix-community/stylix";
 
     # Spiced spotify
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
