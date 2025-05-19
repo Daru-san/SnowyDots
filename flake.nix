@@ -5,7 +5,7 @@
     # Nixpkgs repos
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
 
     snow-nixpkgs.url = "github:Daru-san/nixpkgs/ashell-update";
 
