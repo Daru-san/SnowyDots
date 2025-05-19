@@ -6,5 +6,6 @@
     ./git
     ./xdg
     ./programs
+    ./development
   ];
 }
