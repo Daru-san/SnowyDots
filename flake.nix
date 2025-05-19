@@ -11,6 +11,8 @@
 
     snow-nixpkgs.url = "github:Daru-san/nixpkgs/ashell-update";
 
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+
     # Home manager
     home-manager = {
       url = "github:nix-community/home-manager/master";
