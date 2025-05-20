@@ -846,6 +846,22 @@
     },
     "nixpkgs_17": {
       "locked": {
+        "lastModified": 1747542820,
+        "narHash": "sha256-GaOZntlJ6gPPbbkTLjbd8BMWaDYafhuuYRNrxCGnPJw=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "292fa7d4f6519c074f0a50394dbbe69859bb6043",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_18": {
+      "locked": {
         "lastModified": 1737003892,
         "narHash": "sha256-RCzJE9wKByLCXmRBp+z8LK9EgdW+K+W/DXnJS4S/NVo=",
         "owner": "NixOS",
@@ -1061,6 +1077,27 @@
         "type": "github"
       }
     },
+    "quickshell": {
+      "inputs": {
+        "nixpkgs": [
+          "waycute",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1747638064,
+        "narHash": "sha256-juEWrS6mOnlU5hva6sewhlRxTFc3cV8bV2Tt3xyTlcg=",
+        "ref": "refs/heads/master",
+        "rev": "02e06ea5774eeb3af982a483e5c7e949d276eafc",
+        "revCount": 535,
+        "type": "git",
+        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
+      }
+    },
     "rimi": {
       "inputs": {
         "nixpkgs": "nixpkgs_6",
@@ -1102,6 +1139,7 @@
         "vigiland": "vigiland",
         "vim": "vim",
         "walls": "walls",
+        "waycute": "waycute",
         "yazi": "yazi",
         "zen-browser": "zen-browser",
         "zen-findbar": "zen-findbar"
@@ -1656,10 +1694,29 @@
         "type": "sourcehut"
       }
     },
+    "waycute": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_17",
+        "quickshell": "quickshell"
+      },
+      "locked": {
+        "lastModified": 1747754612,
+        "narHash": "sha256-F4fskBfRmeqnIbiOF8/inzPjhu9RlSsGo5N7mXr989s=",
+        "owner": "~darumaka",
+        "repo": "waycute",
+        "rev": "f91a56c3a12565c04d983e91cbb6756a0a4fac56",
+        "type": "sourcehut"
+      },
+      "original": {
+        "owner": "~darumaka",
+        "repo": "waycute",
+        "type": "sourcehut"
+      }
+    },
     "yazi": {
       "inputs": {
         "flake-utils": "flake-utils_3",
-        "nixpkgs": "nixpkgs_17",
+        "nixpkgs": "nixpkgs_18",
         "rust-overlay": "rust-overlay"
       },
       "locked": {
