@@ -19,6 +19,7 @@ in
     ./waybar
     ./flameshot
     ./snowy-shell
+    ./waycute
   ];
   config = mkIf cfg.enable {
     wayland.windowManager.sway.enable = true;

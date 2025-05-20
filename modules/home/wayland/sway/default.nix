@@ -24,6 +24,7 @@
           "systemctl --user start waybar"
           "systemctl --user start kdeconnect"
           "systemctl --user start kdeconnect-indicator"
+          "systemctl --user start waycute"
         ];
       };
       wrapperFeatures = {

@@ -66,6 +66,7 @@
     };
 
     # My own repos
+    waycute.url = "sourcehut:~darumaka/waycute";
     snowy-shell.url = "github:Daru-san/SnowyShell";
     vim.url = "sourcehut:~darumaka/SnowyVim";
     rimi.url = "github:Daru-san/rimi";
