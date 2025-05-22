@@ -5,7 +5,6 @@ in
 {
   programs.yazi = {
     plugins = {
-      "smart-enter" = ./smart-enter;
       "mdcat" = getPlugin "mdcat.yazi";
       "bat" = getPlugin "yazi-plugin-bat";
       "ouch" = getPlugin "ouch.yazi";
