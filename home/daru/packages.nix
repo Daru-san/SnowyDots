@@ -88,6 +88,8 @@
       aichat
       lz4
       android-tools
+      wiki-tui
+      mprocs
 
       # The craft
       prismlauncher
