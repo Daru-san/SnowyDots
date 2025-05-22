@@ -143,10 +143,11 @@
 
       search = {
         force = true;
-        default = "StartPage";
+        default = "Qwant";
         privateDefault = "ddg";
 
         order = [
+          "Qwant"
           "SearXNG"
           "Brave Search"
           "ddg"
@@ -183,6 +184,15 @@
             };
             "ddg" = {
               metaData.alias = "@dg";
+            };
+
+            "Qwant" = {
+              urls = [ { template = "https://www.qwant.com/?q={searchTerms}"; } ];
+              icon = "https://www.qwant.com/favicon.ico";
+              definedAliases = [
+                "@qw"
+                "@qwant"
+              ];
             };
 
             "SearXNG" = {
