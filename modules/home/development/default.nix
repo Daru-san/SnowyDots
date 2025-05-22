@@ -22,6 +22,7 @@
     rustup
     git-repo
     dotnet-sdk_9
+    bacon
   ];
   programs.java = {
     enable = true;
