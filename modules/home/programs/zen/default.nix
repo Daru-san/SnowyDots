@@ -143,11 +143,11 @@
 
       search = {
         force = true;
-        default = "Qwant";
+        default = "qwant";
         privateDefault = "ddg";
 
         order = [
-          "Qwant"
+          "qwant"
           "SearXNG"
           "Brave Search"
           "ddg"
