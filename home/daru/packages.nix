@@ -38,7 +38,7 @@
       # Desktop
       swww
       ayugram-desktop
-      qownnotes
+      stable.qownnotes
 
       # GUI Util
       file-roller
