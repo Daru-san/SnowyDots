@@ -1,4 +1,3 @@
-{ config, inputs, ... }:
 {
   programs.zathura = {
     enable = true;
