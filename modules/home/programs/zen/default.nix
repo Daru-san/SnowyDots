@@ -186,7 +186,7 @@
               metaData.alias = "@dg";
             };
 
-            "Qwant" = {
+            "qwant" = {
               urls = [ { template = "https://www.qwant.com/?q={searchTerms}"; } ];
               icon = "https://www.qwant.com/favicon.ico";
               definedAliases = [
