@@ -87,9 +87,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "55bf6996ada3df4cbad331ce3be0c1090769fc7c",
-      "url": "https://github.com/yazi-rs/plugins/archive/55bf6996ada3df4cbad331ce3be0c1090769fc7c.tar.gz",
-      "hash": "06f9lxn52wvci4wbwziaa0qqgf8h0fbsb5slnx1himn539jbxw5z"
+      "revision": "43ff05269a41f0a42d2b0156631d9e8d1a4feb57",
+      "url": "https://github.com/yazi-rs/plugins/archive/43ff05269a41f0a42d2b0156631d9e8d1a4feb57.tar.gz",
+      "hash": "0xy7wpi6pcqjlin4bqixxygpwbzd1rwxhandri75x5vjdkvfvbn0"
     },
     "plugins-yazi": {
       "type": "Git",
@@ -139,9 +139,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "f1c6b691363e602d0ddbee29384017d08b608f64",
-      "url": "https://github.com/pirafrank/what-size.yazi/archive/f1c6b691363e602d0ddbee29384017d08b608f64.tar.gz",
-      "hash": "0n3j4qxx61jgz93kwzx11yfybqasqjl8mmj2cbawzmrpdam62nik"
+      "revision": "0a4904cf4f8f14d36fe72976d9b6b7597cd303ee",
+      "url": "https://github.com/pirafrank/what-size.yazi/archive/0a4904cf4f8f14d36fe72976d9b6b7597cd303ee.tar.gz",
+      "hash": "1zgipyqz2i0dhqwnan28g3nxic9gha2qfxcrjb7rimdkbfjd36ny"
     },
     "yatline-gruvbox-material.yazi": {
       "type": "Git",
