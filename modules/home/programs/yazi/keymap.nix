@@ -1,5 +1,5 @@
 {
-  manager.prepend_keymap = [
+  mgr.prepend_keymap = [
     {
       on = [ "<C-s>" ];
       run = ''shell "$SHELL" --block --confirm'';
