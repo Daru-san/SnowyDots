@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  boot.kernelPackages = pkgs.linuxPackages_cachyos-lto;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   services.scx = {
     enable = true;
     scheduler = "scx_bpfland";
