@@ -9,7 +9,7 @@
     initLua = ./init.lua;
     keymap = import ./keymap.nix;
     settings = {
-      manager = {
+      mgr = {
         ratio = [
           1
           3
