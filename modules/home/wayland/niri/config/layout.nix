@@ -21,6 +21,7 @@
     };
     animations = {
       enable = true;
+      slowdown = 0.60;
     };
   };
 }
