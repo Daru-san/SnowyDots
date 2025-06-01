@@ -2,6 +2,7 @@
   lib,
   pkgs,
   config,
+  inputs,
   ...
 }:
 let
@@ -11,18 +12,20 @@ in
 {
   options.wayland.enable = mkEnableOption "Enable wayland";
   imports = [
-    ./polkit
+    inputs.niri.nixosModules.niri
   ];
   config = mkIf cfg.enable {
+    nixpkgs.overlays = [
+      inputs.niri.overlays.niri
+    ];
+    niri-flake = {
+      cache.enable = true;
+    };
     programs = {
-      sway = {
-        enable = true;
-        package = pkgs.swayfx;
-        extraPackages = [ ];
-      };
       dconf.enable = true;
       seahorse.enable = true;
       file-roller.enable = true;
+      niri.enable = true;
     };
     security.pam.services.hyprlock = { };
     services.greetd = {

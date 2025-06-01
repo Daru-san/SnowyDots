@@ -22,7 +22,8 @@ in
     ./waycute
   ];
   config = mkIf cfg.enable {
-    wayland.windowManager.sway.enable = true;
+    wayland.windowManager.sway.enable = false;
+    programs.niri.enable = true;
     services = {
       hypridle.enable = true;
       hyprpaper.enable = true;

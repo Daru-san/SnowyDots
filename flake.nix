@@ -63,6 +63,8 @@
       flake = false;
     };
 
+    niri.url = "github:sodiboo/niri-flake";
+
     # My own repos
     waycute.url = "sourcehut:~darumaka/waycute";
     snowy-shell.url = "github:Daru-san/SnowyShell";
