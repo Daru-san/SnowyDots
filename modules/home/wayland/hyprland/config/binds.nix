@@ -1,4 +1,5 @@
-  {config,
+{
+  config,
   pkgs,
   system,
   inputs,
