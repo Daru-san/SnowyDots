@@ -11,16 +11,7 @@ let
 in
 {
   options.wayland.enable = mkEnableOption "Enable wayland";
-  imports = [
-    inputs.niri.nixosModules.niri
-  ];
   config = mkIf cfg.enable {
-    nixpkgs.overlays = [
-      inputs.niri.overlays.niri
-    ];
-    niri-flake = {
-      cache.enable = true;
-    };
     programs = {
       dconf.enable = true;
       seahorse.enable = true;
