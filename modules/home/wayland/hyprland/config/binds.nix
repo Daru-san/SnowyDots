@@ -1,4 +1,4 @@
-  config,
+  {config,
   pkgs,
   system,
   inputs,
@@ -49,14 +49,13 @@ in
           btop = getExe config.programs.btop.package;
           swayosd = getExe' config.services.swayosd.package "swayosd-client";
           obs = "^(com\.obsproject\.Studio)$";
-          copqy = getExe pkgs.copyq;
+          copyq = getExe pkgs.copyq;
         in
         [
           # (mkBindExe "super" "e" "hyprctl clients | grep 'nautilus' || ${file-manager}" "Launch file manager")
           (mkBindExeDispatch "workspace 4" "super" "e" file-manager "Launch file manager")
 
           (mkBindExe "super" "b" browser "Launch the browser")
-          (mkBindExe "altshift" "m" g4music "Open a music player")
           # (mkBindExe "Super" "n" valent "Launch valent")
           #
           (mkBindExe "supershift" "v" copyq "Launch copyq clipboard manager")
@@ -150,8 +149,6 @@ in
             "Launch easyeffects audio mixer"
           )
 
-          (mkBindExe "supershift" "v" "${pk} clipse-gui || ${clipse-gui}" "Launch the clipboard manager menu")
-
           # Color picker
           (mkBindExe "supershift" "c" "${pk} color-picker || ${color-picker}" "Launch the color picker")
 
@@ -164,14 +161,9 @@ in
           )
 
           # Screenshotting
-          (mkBindSingle "print" "${flameshot} gui")
-          (mkBindExe "shift" "print" "${flameshot} screen")
-          (mkBindSingle "print" "${pk} hyprshot || ${hyprshot} -m region -z -o ~/Pictures/Screenshots"
-            "Take a screenshot of a selected region"
-          )
-          (mkBindExe "alt" "print" "${pk} hyprshot || ${hyprshot} -m active -z -o ~/Pictures/Screenshots"
-            "Take a screenshot of the entire screen"
-          )
+          (mkBindSingle "print" "${flameshot} gui" "Take a screenshot of a selected region")
+
+          (mkBindExe "shift" "print" "${flameshot} screen" "Take a screenshot of the whole screen")
         ];
     };
 }
