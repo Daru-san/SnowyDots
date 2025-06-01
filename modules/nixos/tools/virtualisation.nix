@@ -13,6 +13,7 @@
     ];
     extraModprobeConfig = lib.concatLines [ "options i915 enable_gvt=1" ];
   };
+  environment.systemPackages = [ pkgs.virt-viewer ];
   programs.virt-manager.enable = true;
   virtualisation = {
     waydroid.enable = true;
