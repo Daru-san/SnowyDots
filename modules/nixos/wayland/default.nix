@@ -17,6 +17,9 @@ in
       seahorse.enable = true;
       file-roller.enable = true;
       niri.enable = true;
+      hyprland = {
+        enable = true;
+      };
     };
     security.pam.services.hyprlock = { };
     services.greetd = {
