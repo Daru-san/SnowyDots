@@ -44,9 +44,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Hyprland idle inhibitor
-    vigiland.url = "github:Jappie3/vigiland";
-
     hyprshell.url = "github:H3rmt/hyprswitch?ref=hyprshell";
 
     # Zen browser
@@ -64,8 +61,6 @@
       url = "github:RobotoSkunk/zen-better-findbar";
       flake = false;
     };
-
-    niri.url = "github:sodiboo/niri-flake";
 
     # My own repos
     waycute.url = "sourcehut:~darumaka/waycute";
