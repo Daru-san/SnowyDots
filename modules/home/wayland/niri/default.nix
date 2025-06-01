@@ -19,6 +19,7 @@
       systemd.target = "niri-session.target";
     };
     programs.niri = {
+      package = pkgs.niri;
       settings.environment = {
         QT_QPA_PLATFORM = "wayland";
         NIXOS_OZONE_WL = "true";

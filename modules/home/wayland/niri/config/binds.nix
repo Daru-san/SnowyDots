@@ -34,6 +34,8 @@
           "Mod+Shift+q".action.close-window = [ ];
           "Mod+Shift+Slash".action.show-hotkey-overlay = [ ];
 
+          "Mod+Tab".action.toggle-overview = [];
+
           "Mod+Left".action.focus-column-left = [ ];
           "Mod+Down".action.focus-window-down = [ ];
           "Mod+Up".action.focus-window-up = [ ];
@@ -103,38 +105,38 @@
           "Mod+Shift+Equal".action.set-window-height = "+10%";
         }
         {
-          "Mod+1".action.focus-workspace = "sys";
-          "Mod+2".action.focus-workspace = "web";
-          "Mod+3".action.focus-workspace = "dev";
-          "Mod+4".action.focus-workspace = "files";
-          "Mod+5".action.focus-workspace = "media";
-          "Mod+6".action.focus-workspace = "content";
-          "Mod+7".action.focus-workspace = "chat";
-          "Mod+8".action.focus-workspace = "vm";
-          "Mod+9".action.focus-workspace = "docs";
-          "Mod+0".action.focus-workspace = "misc";
+          "Mod+1".action.focus-workspace = 1;
+          "Mod+2".action.focus-workspace = 2;
+          "Mod+3".action.focus-workspace = 3;
+          "Mod+4".action.focus-workspace = 4;
+          "Mod+5".action.focus-workspace = 5;
+          "Mod+6".action.focus-workspace = 6;
+          "Mod+7".action.focus-workspace = 7;
+          "Mod+8".action.focus-workspace = 8;
+          "Mod+9".action.focus-workspace = 9;
+          "Mod+0".action.focus-workspace = 10;
 
-          "Mod+Ctrl+1".action.move-column-to-workspace = "sys";
-          "Mod+Ctrl+2".action.move-column-to-workspace = "web";
-          "Mod+Ctrl+3".action.move-column-to-workspace = "dev";
-          "Mod+Ctrl+4".action.move-column-to-workspace = "files";
-          "Mod+Ctrl+5".action.move-column-to-workspace = "media";
-          "Mod+Ctrl+6".action.move-column-to-workspace = "content";
-          "Mod+Ctrl+7".action.move-column-to-workspace = "chat";
-          "Mod+Ctrl+8".action.move-column-to-workspace = "vm";
-          "Mod+Ctrl+9".action.move-column-to-workspace = "docs";
-          "Mod+Ctrl+0".action.move-column-to-workspace = "misc";
+          "Mod+Ctrl+1".action.move-column-to-workspace = 1;
+          "Mod+Ctrl+2".action.move-column-to-workspace = 2;
+          "Mod+Ctrl+3".action.move-column-to-workspace = 3;
+          "Mod+Ctrl+4".action.move-column-to-workspace = 4;
+          "Mod+Ctrl+5".action.move-column-to-workspace = 5;
+          "Mod+Ctrl+6".action.move-column-to-workspace = 6;
+          "Mod+Ctrl+7".action.move-column-to-workspace = 7;
+          "Mod+Ctrl+8".action.move-column-to-workspace = 8;
+          "Mod+Ctrl+9".action.move-column-to-workspace = 8;
+          "Mod+Ctrl+0".action.move-column-to-workspace = 10;
 
-          "Mod+Shift+1".action.move-window-to-workspace = "sys";
-          "Mod+Shift+2".action.move-window-to-workspace = "web";
-          "Mod+Shift+3".action.move-window-to-workspace = "dev";
-          "Mod+Shift+4".action.move-window-to-workspace = "files";
-          "Mod+Shift+5".action.move-window-to-workspace = "media";
-          "Mod+Shift+6".action.move-window-to-workspace = "content";
-          "Mod+Shift+7".action.move-window-to-workspace = "chat";
-          "Mod+Shift+8".action.move-window-to-workspace = "vm";
-          "Mod+Shift+9".action.move-window-to-workspace = "docs";
-          "Mod+Shift+0".action.move-window-to-workspace = "misc";
+          "Mod+Shift+1".action.move-window-to-workspace = 1;
+          "Mod+Shift+2".action.move-window-to-workspace = 2;
+          "Mod+Shift+3".action.move-window-to-workspace = 3;
+          "Mod+Shift+4".action.move-window-to-workspace = 4;
+          "Mod+Shift+5".action.move-window-to-workspace = 5;
+          "Mod+Shift+6".action.move-window-to-workspace = 6;
+          "Mod+Shift+7".action.move-window-to-workspace = 7;
+          "Mod+Shift+8".action.move-window-to-workspace = 8;
+          "Mod+Shift+9".action.move-window-to-workspace = 8;
+          "Mod+Shift+0".action.move-window-to-workspace = 10;
         }
         (
           let
@@ -149,6 +151,8 @@
             hyprlock = getExe config.programs.hyprlock.package;
             btop = getExe config.programs.btop.package;
             easyeffects = getExe config.services.easyeffects.package;
+            copyq = getExe pkgs.copyq;
+            niriswitcher = getExe pkgs.niriswitcher;
           in
           {
             "Mod+q".action.spawn = [ terminal ];
@@ -160,6 +164,11 @@
             "Mod+alt+l".action.spawn = [
               hyprlock
               "--immediate"
+            ];
+
+            "Mod+V".action.spawn = [
+              copyq
+              "menu"
             ];
 
             "Mod+Shift+period".action.spawn = [
@@ -177,6 +186,23 @@
               "-e"
               yazi
             ];
+
+            "Alt+Tab" = {
+              action.spawn = [
+                "pkill"
+                "-USR1"
+                niriswitcher
+              ];
+              repeat = false;
+            };
+            "Alt+Shift+Tab" = {
+              action.spawn = [
+                "pkill"
+                "-USR1"
+                niriswitcher
+              ];
+              repeat = false;
+            };
           }
         )
         (
@@ -308,7 +334,6 @@
             color-picker = getExe inputs.color-picker.packages.${system}.default;
             iwgtk = getExe pkgs.iwgtk;
             ghostty = getExe pkgs.ghostty;
-            clipse = getExe pkgs.clipse-gui;
             nwgbar = getExe pkgs.nwg-bar;
             blueman = getExe' pkgs.blueman "blueman-manager";
           in
@@ -324,8 +349,6 @@
             "Mod+p".action = sh "pkill pulsemixer || ${ghostty} --title=mixer -e pulsemixer";
 
             "Mod+Shift+b".action = sh "pkill blueman-manager || ${blueman}";
-
-            "Mod+Shift+v".action = sh "pkill clipse-gui || ${clipse}";
           }
         )
       ];

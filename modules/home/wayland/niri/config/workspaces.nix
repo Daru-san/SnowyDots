@@ -1,35 +1,29 @@
 {
   programs.niri.settings = {
     workspaces = {
-      "1" = {
-        name = "dev";
-      };
-      "2" = {
+      "Web" = {
         name = "web";
       };
-      "3" = {
+      "System Info" = {
         name = "sys";
       };
-      "4" = {
+      "Files" = {
         name = "files";
       };
-      "5" = {
+      "Audio&Video" = {
         name = "media";
       };
-      "6" = {
+      "Video" = {
         name = "content";
       };
-      "7" = {
+      "Chat" = {
         name = "chat";
       };
-      "8" = {
+      "Virt" = {
         name = "vm";
       };
-      "9" = {
+      "Doc" = {
         name = "docs";
-      };
-      "10" = {
-        name = "misc";
       };
     };
     window-rules = [
@@ -58,13 +52,6 @@
           { app-id = "^mpv$"; }
         ];
         open-on-workspace = "media";
-      }
-      {
-        matches = [
-          { app-id = "^prismlauncher$"; }
-          { app-id = "^libreoffice$"; }
-        ];
-        open-on-workspace = "misc";
       }
       {
         matches = [

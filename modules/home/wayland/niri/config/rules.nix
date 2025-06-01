@@ -2,7 +2,7 @@
   programs.niri.settings = {
     window-rules = [
       {
-        variable-refresh-rate = true;
+        variable-refresh-rate = false;
         draw-border-with-background = false;
         open-maximized = true;
         clip-to-geometry = true;
@@ -29,6 +29,7 @@
       }
       {
         open-maximized = false;
+        open-floating = true;
         matches = [
           { app-id = "file-roller"; }
           { app-id = "nm-connection-editor"; }

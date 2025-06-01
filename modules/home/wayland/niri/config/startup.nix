@@ -17,8 +17,12 @@
       }
       {
         command = [
-          (lib.getExe config.services.clipse.package)
-          "--listen-shell"
+          (lib.getExe pkgs.copyq)
+        ];
+      }
+      {
+        command = [
+          (lib.getExe pkgs.niriswitcher)
         ];
       }
       {
