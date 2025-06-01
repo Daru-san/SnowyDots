@@ -22,6 +22,7 @@ in
       };
     };
     security.pam.services.hyprlock = { };
+    security.soteria.enable = true;
     services.greetd = {
       package = pkgs.greetd;
       enable = true;
