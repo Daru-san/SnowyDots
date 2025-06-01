@@ -7,7 +7,7 @@ let
   cfg = config.wayland.windowManager.hyprland;
 in
 {
-  imports = [ ./config ];
+  imports = [ ./config ./hyprshell.nix];
   config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland = {
       systemd = {
