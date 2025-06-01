@@ -16,7 +16,6 @@ in
       dconf.enable = true;
       seahorse.enable = true;
       file-roller.enable = true;
-      niri.enable = true;
       hyprland = {
         enable = true;
       };
