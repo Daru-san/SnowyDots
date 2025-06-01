@@ -34,7 +34,7 @@
           "Mod+Shift+q".action.close-window = [ ];
           "Mod+Shift+Slash".action.show-hotkey-overlay = [ ];
 
-          "Mod+Tab".action.toggle-overview = [];
+          "Mod+Tab".action.toggle-overview = [ ];
 
           "Mod+Left".action.focus-column-left = [ ];
           "Mod+Down".action.focus-window-down = [ ];
@@ -103,6 +103,8 @@
 
           "Mod+Shift+Minus".action.set-window-height = "-10%";
           "Mod+Shift+Equal".action.set-window-height = "+10%";
+
+          "Mod+v".action.toggle-window-floating = [ ];
         }
         {
           "Mod+1".action.focus-workspace = 1;
@@ -166,7 +168,7 @@
               "--immediate"
             ];
 
-            "Mod+V".action.spawn = [
+            "Mod+Shift+v".action.spawn = [
               copyq
               "menu"
             ];
