@@ -15,7 +15,7 @@ in
       "idle_inhibitor"
       (mkIf (config.programs.niri.enable or false) "niri/workspaces")
       (mkIf (config.wayland.windowManager.sway.enable or false) "sway/workspaces")
-      (mkIf (config.wayland.windowManger.hyprland.enable or false) "hyprland/workspaces")
+      (mkIf (config.wayland.windowManager.hyprland.enable or false) "hyprland/workspaces")
       "group/music"
     ];
 
