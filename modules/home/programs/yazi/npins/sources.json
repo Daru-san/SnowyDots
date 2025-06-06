@@ -22,9 +22,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "5b6bdee2aaea9a7a5c556783de5d10076b05f429",
-      "url": "https://github.com/lpnh/fg.yazi/archive/5b6bdee2aaea9a7a5c556783de5d10076b05f429.tar.gz",
-      "hash": "02fdn43kangfyv64d3v0rfp64w0plwhd1j6jqcvkncy80k55x0gf"
+      "revision": "6d5e4693e486c564f57491cb9afdf7bf813ae874",
+      "url": "https://github.com/lpnh/fg.yazi/archive/6d5e4693e486c564f57491cb9afdf7bf813ae874.tar.gz",
+      "hash": "0akns6d9n9pn7a55rxyma0q0xf53ydvy023kymbjk8gpkrrrv21k"
     },
     "hexyl.yazi": {
       "type": "Git",
@@ -74,9 +74,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "2496cd9ac2d1fb52597b22ae84f3af06c826a86d",
-      "url": "https://github.com/ndtoan96/ouch.yazi/archive/2496cd9ac2d1fb52597b22ae84f3af06c826a86d.tar.gz",
-      "hash": "169w527cq18i3x9hswgsbx4lrlgqycv1dqhlg2faz7pdp93mzhrs"
+      "revision": "10b462765f37502065555e83c68a72bb26870fe2",
+      "url": "https://github.com/ndtoan96/ouch.yazi/archive/10b462765f37502065555e83c68a72bb26870fe2.tar.gz",
+      "hash": "0dwim2ik7q794wkjp47zjvzh7szv5d60zaycw6h3gq5rlvpybmcs"
     },
     "plugins": {
       "type": "Git",
@@ -113,9 +113,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "428d43ac0846cb1885493a1f01c049a883b70155",
-      "url": "https://github.com/Rolv-Apneseth/starship.yazi/archive/428d43ac0846cb1885493a1f01c049a883b70155.tar.gz",
-      "hash": "0vsw1ai5msxk9p8dwshwnqxg07g5xxpxszdv5blqf94j5lqf8h32"
+      "revision": "6a0f3f788971b155cbc7cec47f6f11aebbc148c9",
+      "url": "https://github.com/Rolv-Apneseth/starship.yazi/archive/6a0f3f788971b155cbc7cec47f6f11aebbc148c9.tar.gz",
+      "hash": "1pqbn786sl31ajcaixiwgrb37yj6vdn2491pzgy0pf20h9iv8ldb"
     },
     "torrent-preview.yazi": {
       "type": "Git",
@@ -178,9 +178,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "190b898e2073231aff8f2d621131d5215b796e8a",
-      "url": "https://github.com/mgumz/yazi-plugin-bat/archive/190b898e2073231aff8f2d621131d5215b796e8a.tar.gz",
-      "hash": "11b8lwzjnwfgrrfc6ccvwf8w7yawn16h3a5sin0ckjvxba4098hq"
+      "revision": "4dea0a584f30247b8ca4183dc2bd38c80da0d7ea",
+      "url": "https://github.com/mgumz/yazi-plugin-bat/archive/4dea0a584f30247b8ca4183dc2bd38c80da0d7ea.tar.gz",
+      "hash": "13b6hzgg4z6bhrnm5r5lpf1m3k13mncansdg5x2s0rcby9lvrxiq"
     }
   },
   "version": 5
