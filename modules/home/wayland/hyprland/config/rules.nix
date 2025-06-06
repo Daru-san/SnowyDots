@@ -84,7 +84,10 @@
             (workspace 7 "libreoffice")
             (workspace 7 "org.prismlauncher.PrismLauncher")
             (workspace 7 "Minecraft")
+            (workspace 7 ".virt-manager-wrapped")
+            (workspace 7 "virt-viewer")
 
+            (workspace 8 "com.obsproject.Studio")
             (group "oculante")
             (workspace 8 "oculante")
 

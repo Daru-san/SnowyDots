@@ -32,8 +32,6 @@ in
 
         "SUPER,u,togglespecialworkspace,stash"
         "supershift,u,movetoworkspace,special: stash"
-        "super,o,togglespecialworkspace, obs-studio"
-        "super,y,togglespecialworkspace, virt-manager"
 
         "super,g,togglegroup"
 
