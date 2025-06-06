@@ -41,7 +41,6 @@ in
     {
       bindd =
         let
-          terminal = getExe config.programs.ghostty.package;
           browser = getExe config.programs.zen.package;
           file-manager = getExe pkgs.nautilus;
           editor = "${getExe pkgs.neovide} --neovim-bin ${getExe config.env.editor.package}";
@@ -49,6 +48,7 @@ in
           hyprlock = getExe config.programs.hyprlock.package;
           btop = getExe config.programs.btop.package;
           swayosd = getExe' config.services.swayosd.package "swayosd-client";
+          terminal = "SHELL=fish ${getExe inputs.smitty.packages.${system}.smitty}";
           obs = "^(com\.obsproject\.Studio)$";
           copyq = getExe pkgs.copyq;
         in
@@ -57,8 +57,8 @@ in
           (mkBindExeDispatch "workspace 4" "super" "e" file-manager "Launch file manager")
 
           (mkBindExe "super" "b" browser "Launch the browser")
+
           # (mkBindExe "Super" "n" valent "Launch valent")
-          #
           (mkBindExe "supershift" "v" copyq "Launch copyq clipboard manager")
 
           (mkBindExe "super" "q" terminal "Launch a terminal")

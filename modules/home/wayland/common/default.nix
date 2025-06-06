@@ -2,6 +2,8 @@
   config,
   lib,
   pkgs,
+  inputs,
+  system,
   ...
 }:
 let
@@ -38,6 +40,9 @@ in
       hyprlock.enable = true;
       ghostty.enable = true;
     };
-    home.packages = [ pkgs.wl-clipboard-rs ];
+    home.packages = [
+      pkgs.wl-clipboard-rs
+      inputs.smitty.packages.${system}.smitty
+    ];
   };
 }

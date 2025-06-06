@@ -63,6 +63,7 @@
     };
 
     # My own repos
+    smitty.url = "git+https://codeberg.org/Daru-san/smitty";
     waycute.url = "sourcehut:~darumaka/waycute";
     snowy-shell.url = "github:Daru-san/SnowyShell";
     vim.url = "sourcehut:~darumaka/SnowyVim";
