@@ -1066,17 +1066,17 @@
         "utils": "utils_3"
       },
       "locked": {
-        "lastModified": 1749347153,
-        "narHash": "sha256-JpjwMHVB4g8JuvTkW6sYE75/TlpjGuXXA6QpcAeFgyw=",
-        "ref": "refs/heads/master",
-        "rev": "e63ae86f9ae19ba26a020cbbfcc4cd171c7a6027",
-        "revCount": 74,
-        "type": "git",
-        "url": "https://codeberg.org/Daru-san/smitty"
+        "lastModified": 1749362864,
+        "narHash": "sha256-lxYSHcKUZ8rWNJL8tVP3E1GCL8XIad8TqWTiykUlPi4=",
+        "owner": "~darumaka",
+        "repo": "smitty",
+        "rev": "fd7fd21633e15ae252bf855c55b9d8d5dbb36719",
+        "type": "sourcehut"
       },
       "original": {
-        "type": "git",
-        "url": "https://codeberg.org/Daru-san/smitty"
+        "owner": "~darumaka",
+        "repo": "smitty",
+        "type": "sourcehut"
       }
     },
     "snow-nixpkgs": {
