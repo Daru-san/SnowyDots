@@ -1066,11 +1066,11 @@
         "utils": "utils_3"
       },
       "locked": {
-        "lastModified": 1749310046,
-        "narHash": "sha256-UJDI4IOVslvWj/P/7cxwkssFsdTdpUiU7UnspWwbUdU=",
+        "lastModified": 1749347153,
+        "narHash": "sha256-JpjwMHVB4g8JuvTkW6sYE75/TlpjGuXXA6QpcAeFgyw=",
         "ref": "refs/heads/master",
-        "rev": "6c79d0c4b6af651fb24e125548099c9fb7849c36",
-        "revCount": 61,
+        "rev": "e63ae86f9ae19ba26a020cbbfcc4cd171c7a6027",
+        "revCount": 74,
         "type": "git",
         "url": "https://codeberg.org/Daru-san/smitty"
       },
