@@ -59,7 +59,7 @@ in
           (mkBindExe "super" "b" browser "Launch the browser")
 
           # (mkBindExe "Super" "n" valent "Launch valent")
-          (mkBindExe "supershift" "v" copyq "Launch copyq clipboard manager")
+          (mkBindExe "supershift" "v" "${copyq} menu" "Launch copyq clipboard manager")
 
           (mkBindExe "super" "q" terminal "Launch a terminal")
           (mkBindExe "super" "r" "${terminal} -e ${yazi}" "Launch yazi")
