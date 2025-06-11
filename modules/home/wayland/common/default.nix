@@ -22,6 +22,7 @@ in
     ./flameshot
     ./snowy-shell
     ./waycute
+    ./wezterm
   ];
   config = mkIf cfg.enable {
     wayland.windowManager.sway.enable = false;
@@ -39,6 +40,7 @@ in
       anyrun.enable = true;
       hyprlock.enable = true;
       ghostty.enable = true;
+      wezterm.enable = true;
     };
     home.packages = [
       pkgs.wl-clipboard-rs
