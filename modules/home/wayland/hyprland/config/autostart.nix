@@ -10,12 +10,13 @@ let
   inherit (lib) getExe;
   ghostty = getExe config.programs.ghostty.package;
   smitty = getExe inputs.smitty.packages.${system}.smitty;
+  wezterm = getExe config.programs.wezterm.package;
 in
 {
   wayland.windowManager.hyprland.settings = {
     exec-once = [
-      "[workspace 1] ${ghostty}"
-      "[workspace 3] ${smitty} -e ${getExe config.programs.btop.package}"
+      "[workspace 1] ${wezterm}"
+      "[workspace 3] ${wezterm} -e ${getExe config.programs.btop.package}"
       (getExe pkgs.copyq)
       (getExe pkgs.soteria)
     ];

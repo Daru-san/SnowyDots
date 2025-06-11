@@ -48,7 +48,8 @@ in
           hyprlock = getExe config.programs.hyprlock.package;
           btop = getExe config.programs.btop.package;
           swayosd = getExe' config.services.swayosd.package "swayosd-client";
-          terminal = getExe inputs.smitty.packages.${system}.smitty;
+          # terminal = getExe inputs.smitty.packages.${system}.smitty;
+          terminal = getExe config.programs.wezterm.package;
           obs = "^(com\.obsproject\.Studio)$";
           copyq = getExe pkgs.copyq;
         in
