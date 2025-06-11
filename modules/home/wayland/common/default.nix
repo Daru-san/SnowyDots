@@ -39,7 +39,6 @@ in
       snowy-shell.enable = false;
       anyrun.enable = true;
       hyprlock.enable = true;
-      ghostty.enable = true;
       wezterm.enable = true;
     };
     home.packages = [
