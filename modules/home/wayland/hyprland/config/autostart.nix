@@ -17,6 +17,7 @@ in
       "[workspace 1] ${ghostty}"
       "[workspace 3] ${smitty} -e ${getExe config.programs.btop.package}"
       (getExe pkgs.copyq)
+      (getExe pkgs.soteria)
     ];
   };
 }
