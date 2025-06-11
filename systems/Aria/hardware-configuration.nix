@@ -15,9 +15,9 @@
       fsType = "ext4";
     };
 
-    "/mnt/windows" = {
-      device = "/dev/disk/by-uuid/0406691905DB227B";
-      fsType = "ntfs";
+    "/mnt/LinFs" = {
+      device = "/dev/disk/by-uuid/25bc9c69-c366-46f7-b0cb-8e73911f57d1";
+      fsType = "xfs";
     };
 
     "/mnt/forest" = {
