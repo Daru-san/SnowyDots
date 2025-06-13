@@ -4,6 +4,7 @@
   ...
 }:
 {
+  fonts.fontconfig.enable = true;
   stylix = {
     targets = {
       fontconfig.enable = true;
@@ -29,6 +30,8 @@
   home.packages = with pkgs; [
     monocraft
     comic-relief
+    nerd-fonts.iosevka
+    nerd-fonts.iosevka-term
     noto-fonts
   ];
 }
