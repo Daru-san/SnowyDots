@@ -5,5 +5,6 @@
     ./devices.nix
     ./style.nix
     ./autostart.nix
+    ./monitor.nix
   ];
 }
