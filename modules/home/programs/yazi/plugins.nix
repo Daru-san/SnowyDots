@@ -8,8 +8,8 @@ in
     flavors = {
       vscode-dark-plus = getPlugin "vscode-dark-plus.yazi";
     };
-    plugins = with pkgs.yaziPlugins; {
-      inherit
+    plugins = {
+      inherit (pkgs.yaziPlugins)
         git
         rsync
         mount
@@ -22,7 +22,6 @@ in
         piper
         chmod
         ;
-
       "torrent-preview" = getPlugin "torrent-preview.yazi";
       "max-preview" = (getPlugin "plugins") + "/max-preview.yazi";
       "hide-preview" = (getPlugin "plugins") + "/hide-preview.yazi";
