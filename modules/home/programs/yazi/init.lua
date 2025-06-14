@@ -15,13 +15,10 @@
 require("zoxide"):setup({ update_db = true })
 require("git"):setup()
 
-local yatline_gruvbox_material = require("yatline-gruvbox-material"):setup({
-	mode = "dark",
-	toughness = "hard",
-})
+local yatline_catppuccin = require("yatline-catppuccin"):setup("mocha")
 
 require("yatline"):setup({
-	theme = yatline_gruvbox_material,
+	theme = yatline_catppuccin,
 	section_separator = { open = "", close = "" },
 	part_separator = { open = "", close = "" },
 	inverse_separator = { open = "", close = "" },

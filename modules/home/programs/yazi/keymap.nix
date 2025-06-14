@@ -11,6 +11,11 @@
       desc = "Open lazygit";
     }
     {
+      on = [ "R" ];
+      run = "plugin rsync";
+      desc = "Copy files with rsync";
+    }
+    {
       on = [ "b" ];
       run = "plugin hide-preview";
       desc = "Hide or show preview";
@@ -29,6 +34,11 @@
       desc = "Chmod on selected files";
     }
     {
+      on = [ "u" ];
+      run = "plugin restore";
+      desc = "Restore deleted files";
+    }
+    {
       on = [ "o" ];
       run = "plugin open-with-cmd --args=block";
       desc = "Open with command in the terminal";
@@ -37,6 +47,22 @@
       on = [ "O" ];
       run = "plugin open-with-cmd";
       desc = "Open with command";
+    }
+    {
+      on = [
+        "f"
+        "r"
+      ];
+      run = "plugin fr rg";
+      desc = "Search file using rg";
+    }
+    {
+      on = [
+        "f"
+        "a"
+      ];
+      run = "plugin fr rga";
+      desc = "Search file using rga";
     }
     {
       on = [

@@ -1,6 +1,7 @@
 { pkgs, config, ... }:
 {
   imports = [ ./plugins.nix ];
+  stylix.targets.yazi.enable = false;
   programs.yazi = {
     enable = true;
     package = pkgs.yazi;
@@ -8,6 +9,9 @@
     enableFishIntegration = true;
     initLua = ./init.lua;
     keymap = import ./keymap.nix;
+    theme = {
+      dark = "vscode-dark-plus";
+    };
     settings = {
       mgr = {
         ratio = [
@@ -20,6 +24,12 @@
         show_hidden = false;
         show_symlink = false;
         linemode = "size";
+      };
+      preview = {
+        image_delay = 0;
+      };
+      input = {
+        cursor_blink = true;
       };
       opener = {
         edit = [
@@ -54,7 +64,7 @@
         append_previewers = [
           {
             name = "*";
-            run = "hexyl";
+            run = ''piper -- hexyl --border=none --terminal-width=$w "$1"'';
           }
         ];
         prepend_fetchers = [
@@ -72,7 +82,11 @@
         prepend_previewers = [
           {
             name = "*.ts";
-            run = "bat";
+            run = ''piper -- bat -p --color=always "$1"'';
+          }
+          {
+            name = "text/*";
+            run = ''piper -- bat -p --color=always "$1"'';
           }
           {
             mime = "application/bittorrent";
@@ -104,11 +118,15 @@
           }
           {
             name = "*.md";
-            run = "glow";
+            run = ''piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"'';
           }
           {
-            name = "text/*";
-            run = "bat";
+            name = "*.mdx";
+            run = ''piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"'';
+          }
+          {
+            name = "*.rst";
+            run = ''piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"'';
           }
         ];
       };
