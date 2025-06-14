@@ -5,7 +5,7 @@ let
 in
 {
   programs.yazi = {
-    flavours = {
+    flavors = {
       vscode-dark-plus = getPlugin "vscode-dark-plus.yazi";
     };
     plugins = with pkgs.yaziPlugins; {
