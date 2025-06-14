@@ -9,9 +9,6 @@
     enableFishIntegration = true;
     initLua = ./init.lua;
     keymap = import ./keymap.nix;
-    theme = {
-      dark = "vscode-dark-plus";
-    };
     settings = {
       mgr = {
         ratio = [

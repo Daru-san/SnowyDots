@@ -52,19 +52,6 @@
       "url": "https://github.com/kirasok/torrent-preview.yazi/archive/4ca5996a8264457cbefff8e430acfca4900a0453.tar.gz",
       "hash": "18xzhn94rppbn0c6bj7nrh0nn6ddx6c810sy0lrhrsxrsrs8x9xx"
     },
-    "vscode-dark-plus.yazi": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "956MB",
-        "repo": "vscode-dark-plus.yazi"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "113cc480e45d56851fa04e3a38e767a60445bf77",
-      "url": "https://github.com/956MB/vscode-dark-plus.yazi/archive/113cc480e45d56851fa04e3a38e767a60445bf77.tar.gz",
-      "hash": "10r5l5q88zfr2wnl9w3p29n1s1dh4skk935ayhmahwcnhqx60wyr"
-    },
     "what-size.yazi": {
       "type": "Git",
       "repository": {

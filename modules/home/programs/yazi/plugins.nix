@@ -5,9 +5,6 @@ let
 in
 {
   programs.yazi = {
-    flavors = {
-      vscode-dark-plus = getPlugin "vscode-dark-plus.yazi";
-    };
     plugins = {
       inherit (pkgs.yaziPlugins)
         git
