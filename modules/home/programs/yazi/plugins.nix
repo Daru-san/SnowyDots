@@ -17,6 +17,7 @@ in
         yatline-catppuccin
         vcs-files
         piper
+        mime-ext
         chmod
         ;
       "torrent-preview" = getPlugin "torrent-preview.yazi";
