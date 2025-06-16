@@ -33,10 +33,14 @@ in
         "SUPER,u,togglespecialworkspace,stash"
         "supershift,u,movetoworkspace,special: stash"
 
-        "super,g,togglegroup"
+        "super,g, makegroup, tab, toggle"
 
-        "supershift,tab,cyclenext"
-        "super,tab,changegroupactive"
+        "supershift, g, changegroup, toggletab"
+
+        "superalt,tab,cyclenext"
+
+        "super, tab, hy3: focustab, r"
+        "supershift, tab, hy3: focustab, l"
 
         "super, page_up, workspace,e-1"
         "super, page_down, workspace,e+1"
@@ -49,10 +53,13 @@ in
         (map (n: "SUPERSHIFT,${n},movetoworkspace,${n}") workspaces)
       ++
         # Move focus
-        (mapAttrsToList (key: direction: "SUPER,${key},movefocus,${direction}") directions)
+        (mapAttrsToList (key: direction: "SUPER,${key},hy3:movefocus,${direction}, warp") directions)
       ++
         # Swap windows
-        (mapAttrsToList (key: direction: "SUPERSHIFT,${key},movewindow,${direction}") directions)
+        (mapAttrsToList (
+          key: direction: "SUPERSHIFT,${key},hy3: movewindow,${direction}, once, visible"
+        ) directions)
+      ++ (mapAttrsToList (key: direction: "ALTSHIFT, ${key}, hy3: focustab, ${direction}") directions)
       ++
         # Move windows
         (mapAttrsToList (key: direction: "SUPERCONTROL,${key},movewindoworgroup,${direction}") directions)

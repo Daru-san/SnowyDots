@@ -2,6 +2,7 @@
   wayland.windowManager.hyprland = {
     settings = {
       general = {
+        layout = "hy3";
         gaps_in = 1;
         gaps_out = 3;
         border_size = 0;
