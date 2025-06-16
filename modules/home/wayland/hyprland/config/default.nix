@@ -6,5 +6,6 @@
     ./style.nix
     ./autostart.nix
     ./monitor.nix
+    ./plugins.nix
   ];
 }
