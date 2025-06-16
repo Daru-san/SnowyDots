@@ -3,7 +3,7 @@
   wayland.windowManager.hyprland = {
     plugins = with pkgs.hyprlandPlugins; [
       hy3
-      hyprexpo
+      hyprspace
     ];
     settings.plugin = {
       hy3 = {
@@ -12,8 +12,13 @@
           enable = true;
         };
       };
-      hyprexpo = {
-        workspace_method = "center first";
+      overview = {
+        centerAligned = false;
+        autoScroll = true;
+        exitOnClick = false;
+        onBottom = true;
+        showNewWorkspace = false;
+        showEmptyWorkspace = false;
       };
     };
   };
