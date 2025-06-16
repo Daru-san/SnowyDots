@@ -9,7 +9,7 @@ in
 {
   imports = [
     ./config
-    ./hyprshell.nix
+    # ./hyprshell.nix
   ];
   config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland = {
