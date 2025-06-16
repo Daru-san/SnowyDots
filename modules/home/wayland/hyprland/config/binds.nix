@@ -136,7 +136,6 @@ in
           iwgtk = getExe pkgs.iwgtk;
 
           # Screenshots
-          hyprshot = getExe pkgs.hyprshot;
           flameshot = getExe config.services.flameshot.package;
 
           ghostty = getExe pkgs.ghostty;
