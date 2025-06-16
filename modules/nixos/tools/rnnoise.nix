@@ -1,15 +1,15 @@
 { pkgs, ... }:
 {
   services.pipewire = {
-    extraConfig = {
-      "99-input-denoisin" = {
-        context.modules = [
+    extraConfig.pipewire = {
+      "99-input-denoising" = {
+        "context.modules" = [
           {
             name = "libpipewire-module-filter-chain";
             args = {
-              node.description = "Noise Canceling source";
-              media.name = "Noise Canceling source";
-              filter.graph = {
+              "node.description" = "Noise Canceling source";
+              "media.name" = "Noise Canceling source";
+              "filter.graph" = {
                 nodes = [
                   {
                     type = "ladspa";
@@ -24,15 +24,15 @@
                   }
                 ];
               };
-              capture.props = {
-                node.name = "capture.rnnoise_source";
-                node.passive = true;
-                audio.rate = 48000;
+              "capture.props" = {
+                "node.name" = "capture.rnnoise_source";
+                "node.passive" = true;
+                "audio.rate" = 48000;
               };
-              playback.props = {
-                node.name = "rnnoise_source";
-                media.class = "Audio/Source";
-                audio.rate = 48000;
+              "playback.props" = {
+                "node.name" = "rnnoise_source";
+                "media.class" = "Audio/Source";
+                "audio.rate" = 48000;
               };
             };
           }
