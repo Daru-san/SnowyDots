@@ -33,35 +33,35 @@ in
         "SUPER,u,togglespecialworkspace,stash"
         "supershift,u,movetoworkspace,special: stash"
 
-        "super,g, makegroup, tab, toggle"
+        "super,g, hy3:makegroup, tab, toggle"
 
-        "supershift, g, changegroup, toggletab"
+        "supershift, g, hy3:changegroup, toggletab"
 
         "superalt,tab,cyclenext"
 
-        "super, tab, hy3: focustab, r"
-        "supershift, tab, hy3: focustab, l"
+        "super, tab, hy3:focustab, r"
+        "supershift, tab, hy3:focustab, l"
 
         "super, page_up, workspace,e-1"
         "super, page_down, workspace,e+1"
 
-        "SUPER, grave, hyprexpo:expo, toggle"
+        "SUPER, grave, overview:toggle, toggle"
       ]
       ++
         # Change workspace
         (map (n: "SUPER,${n},workspace,${n}") workspaces)
       ++
         # Move window to workspace
-        (map (n: "SUPERSHIFT,${n},movetoworkspace,${n}") workspaces)
+        (map (n: "SUPERSHIFT,${n},hy3:movetoworkspace,${n}, follow") workspaces)
       ++
         # Move focus
         (mapAttrsToList (key: direction: "SUPER,${key},hy3:movefocus,${direction}, warp") directions)
       ++
         # Swap windows
         (mapAttrsToList (
-          key: direction: "SUPERSHIFT,${key},hy3: movewindow,${direction}, once, visible"
+          key: direction: "SUPERSHIFT,${key},hy3:movewindow,${direction}, once, visible"
         ) directions)
-      ++ (mapAttrsToList (key: direction: "ALTSHIFT, ${key}, hy3: focustab, ${direction}") directions)
+      ++ (mapAttrsToList (key: direction: "ALTSHIFT, ${key}, hy3:focustab, ${direction}") directions)
       ++
         # Move windows
         (mapAttrsToList (key: direction: "SUPERCONTROL,${key},movewindoworgroup,${direction}") directions)
