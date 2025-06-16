@@ -56,28 +56,19 @@
         (
           let
             workspace = index: window: "workspace ${toString index}, class:^(${window})(.*)$";
-            workspace-title = index: window: "workspace ${toString index}, title:(${window})(.*)$";
             special = workspace: window: "workspace special:${workspace}, class:^(${window})(.*)$";
-            group = x: "group, class:^(${x})$";
           in
           [
-            (special "obs-studio" "com.obsproject.Studio")
-            (special "virt-manager" ".virt-manager-wrapped")
-
             (workspace 1 "neovide")
-            (group "neovide")
 
             (workspace 2 "zen")
-            (group "zen")
             (workspace 2 "thunderbird")
-            (group "thunderbird")
 
             (workspace 4 "org.gnome.Nautilus")
 
             (workspace 5 "spotify")
 
             (workspace 6 "mpv")
-            (group "mpv")
 
             (workspace 6 "FreeTube")
 
@@ -88,17 +79,13 @@
             (workspace 7 "virt-viewer")
 
             (workspace 8 "com.obsproject.Studio")
-            (group "oculante")
             (workspace 8 "oculante")
 
             (workspace 8 "org.kde.kdenlive")
-            (group "org.kde.kdenlive")
 
             (workspace 8 "^Gimp$")
-            (group "^Gimp$")
 
             (workspace 9 "org.pwmt.zathura")
-            (group "org.pwmt.zathura")
           ]
         )
       ];
