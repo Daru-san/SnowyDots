@@ -7,6 +7,7 @@
     ];
     settings.plugin = {
       hy3 = {
+        tab_first_window = true;
         no_gaps_when_only = 0;
         autotile = {
           enable = true;
