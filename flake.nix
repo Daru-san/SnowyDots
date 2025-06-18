@@ -44,8 +44,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprshell.url = "github:H3rmt/hyprswitch?ref=hyprshell";
-
     # Zen browser
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";

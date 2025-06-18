@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   wayland.windowManager.hyprland = {
     plugins = with pkgs.hyprlandPlugins; [
@@ -7,6 +7,10 @@
     ];
     settings.plugin = {
       hy3 = {
+        tabs = {
+          opacity = 0.9;
+          text_font = config.stylix.fonts.monospace.name;
+        };
         tab_first_window = true;
         no_gaps_when_only = 0;
         autotile = {
