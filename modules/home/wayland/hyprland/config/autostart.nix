@@ -8,8 +8,6 @@
 }:
 let
   inherit (lib) getExe;
-  ghostty = getExe config.programs.ghostty.package;
-  smitty = getExe inputs.smitty.packages.${system}.smitty;
   wezterm = getExe config.programs.wezterm.package;
   nshell = getExe inputs.nameless-shell.packages.${system}.default;
 in
@@ -20,7 +18,7 @@ in
       "[workspace 3] ${wezterm} -e ${getExe config.programs.btop.package}"
       (getExe pkgs.copyq)
       (getExe pkgs.soteria)
-      (getExe nshell)
+      nshell
     ];
   };
 }
