@@ -73,7 +73,6 @@ in
           (mkBind "super" "f" "fullscreen" "Toggle fullscreen")
           (mkBind "super" "v" "togglefloating" "Toggle floating")
           (mkBindExe "supershift" "x" "hyprctl reload" "Reload hyprland")
-          (mkBindExe "super" "f12" "systemctl suspend" "Suspend system")
 
           (mkBindExe "supershift" "l" "${hyprlock} --immediate" "Lock the screen")
 
@@ -89,22 +88,37 @@ in
         ];
 
       binddle =
-        let
-          s = getExe' config.services.swayosd.package "swayosd-client";
-          mute = "${s} --output-volume mute-toggle";
-          raise-volume = "${s} --output-volume raise";
-          lower-volume = "${s} --output-volume lower";
-          raise-brightness = "${s} --brightness raise";
-          lower-brightness = "${s} --brightness lower";
-        in
-        [
-          (mkBindSingle "XF86MonBrightnessUp" raise-brightness "Raise brightness")
-          (mkBindSingle "XF86MonBrightnessDown" lower-brightness "Lower brightness")
+        (
+          let
+            s = getExe' config.services.swayosd.package "swayosd-client";
+            mute = "${s} --output-volume mute-toggle";
+            raise-volume = "${s} --output-volume raise";
+            lower-volume = "${s} --output-volume lower";
+            raise-brightness = "${s} --brightness raise";
+            lower-brightness = "${s} --brightness lower";
+          in
+          [
+            (mkBindSingle "XF86MonBrightnessUp" raise-brightness "Raise brightness")
+            (mkBindSingle "XF86MonBrightnessDown" lower-brightness "Lower brightness")
 
-          (mkBindSingle "XF86AudioRaiseVolume" raise-volume "Raise volume")
-          (mkBindSingle "XF86AudioLowerVolume" lower-volume "Lower volume")
-          (mkBindSingle "XF86AudioMute" mute "Mute audio")
-        ];
+            (mkBindSingle "XF86AudioRaiseVolume" raise-volume "Raise volume")
+            (mkBindSingle "XF86AudioLowerVolume" lower-volume "Lower volume")
+            (mkBindSingle "XF86AudioMute" mute "Mute audio")
+          ]
+        )
+        ++ (
+          let
+            # Screenshots
+            flameshot = getExe config.services.flameshot.package;
+          in
+          [
+            (mkBindExe "super" "f12" "systemctl suspend" "Suspend system")
+            # Screenshotting
+            (mkBindSingle "print" "${flameshot} gui" "Take a screenshot of a selected region")
+
+            (mkBindExe "shift" "print" "${flameshot} screen" "Take a screenshot of the whole screen")
+          ]
+        );
 
       binddl =
         let
@@ -135,9 +149,6 @@ in
 
           iwgtk = getExe pkgs.iwgtk;
 
-          # Screenshots
-          flameshot = getExe config.services.flameshot.package;
-
           ghostty = getExe pkgs.ghostty;
           overskride = getExe pkgs.overskride;
         in
@@ -161,10 +172,6 @@ in
             "Open the Overskride bluetooth manager"
           )
 
-          # Screenshotting
-          (mkBindSingle "print" "${flameshot} gui" "Take a screenshot of a selected region")
-
-          (mkBindExe "shift" "print" "${flameshot} screen" "Take a screenshot of the whole screen")
         ];
     };
 }
