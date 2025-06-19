@@ -35,7 +35,7 @@ in
       flameshot.enable = true;
     };
     programs = {
-      waybar.enable = true;
+      waybar.enable = false;
       snowy-shell.enable = false;
       anyrun.enable = true;
       hyprlock.enable = true;
