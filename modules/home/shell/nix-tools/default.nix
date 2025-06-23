@@ -1,3 +1,4 @@
+{ config, lib, ... }:
 {
   programs = {
     nix-init = {
@@ -25,6 +26,20 @@
           "~/Forest/Development"
         ];
         global.disable_stdin = true;
+      };
+    };
+
+    # Nh
+    nh = {
+      enable = true;
+      flake = "${config.home.homeDirectory}/snow/dots";
+      clean = {
+        enable = true;
+        dates = "daily";
+        extraArgs = lib.concatStringsSep " " [
+          "-k 2"
+          "-K 3d"
+        ];
       };
     };
   };
