@@ -38,9 +38,4 @@
       allowUnfreePredicate = _: true;
     };
   };
-  nix.gc = {
-    automatic = true;
-    frequency = "daily";
-    persistent = true;
-  };
 }
