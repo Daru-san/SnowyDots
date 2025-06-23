@@ -18,6 +18,8 @@ in
       "[workspace 3] ${wezterm} -e ${getExe config.programs.btop.package}"
       (getExe pkgs.copyq)
       (getExe pkgs.soteria)
+    ];
+    exec = [
       nshell
     ];
   };
