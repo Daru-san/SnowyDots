@@ -13,8 +13,12 @@
     ];
     extraModprobeConfig = lib.concatLines [ "options i915 enable_gvt=1" ];
   };
-  environment.systemPackages = [ pkgs.virt-viewer ];
+  environment.systemPackages = with pkgs; [
+    virt-viewer
+    waydroid-helper
+  ];
   programs.virt-manager.enable = true;
+
   virtualisation = {
     waydroid.enable = true;
     docker = {
