@@ -17,8 +17,8 @@
       };
       sansSerif = config.stylix.fonts.serif;
       monospace = {
-        package = pkgs.nerd-fonts.iosevka;
-        name = "Iosevka Nerd Font";
+        package = pkgs.nerd-fonts.fantasque-sans-mono;
+        name = "FantasqueSansM Nerd Font";
       };
       sizes = {
         desktop = 12;
