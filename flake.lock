@@ -503,11 +503,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1750704637,
-        "narHash": "sha256-PHhDLtkEBkH+ee27YCsMziijpbypsRGDTuOuz6mG7iE=",
+        "lastModified": 1750730235,
+        "narHash": "sha256-rZErlxiV7ssvI8t7sPrKU+fRigNc2KvoKZG3gtUtK50=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "873c5b2dc5c9387bf67e59a12abc4de12a4b8697",
+        "rev": "d07e9cceb4994ed64a22b9b36f8b76923e87ac38",
         "type": "github"
       },
       "original": {
@@ -522,11 +522,11 @@
         "nixpkgs": "nixpkgs_8"
       },
       "locked": {
-        "lastModified": 1750704637,
-        "narHash": "sha256-PHhDLtkEBkH+ee27YCsMziijpbypsRGDTuOuz6mG7iE=",
+        "lastModified": 1750730235,
+        "narHash": "sha256-rZErlxiV7ssvI8t7sPrKU+fRigNc2KvoKZG3gtUtK50=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "873c5b2dc5c9387bf67e59a12abc4de12a4b8697",
+        "rev": "d07e9cceb4994ed64a22b9b36f8b76923e87ac38",
         "type": "github"
       },
       "original": {
@@ -592,11 +592,11 @@
         "utils": "utils_2"
       },
       "locked": {
-        "lastModified": 1750708072,
-        "narHash": "sha256-lYJmyLenqhSxbjuNzwpGjn3G1l0zjZEo/LFf0MVyH2Q=",
+        "lastModified": 1750778161,
+        "narHash": "sha256-rtufLWpOOCPLYsUETHGn+T97FDTXBJQ9gaLQoNmdQOc=",
         "ref": "refs/heads/master",
-        "rev": "c7de20389c8ee9b328765786abb3e4d6f6e4cbfc",
-        "revCount": 72,
+        "rev": "72751b14896245f5bb0fcf783e5a783979e61228",
+        "revCount": 73,
         "type": "git",
         "url": "https://codeberg.org/Daru-san/nameless-shell"
       },
@@ -689,11 +689,11 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1750330365,
-        "narHash": "sha256-hJ7XMNVsTnnbV2NPmStCC07gvv5l2x7+Skb7hyUzazg=",
+        "lastModified": 1750646418,
+        "narHash": "sha256-4UAN+W0Lp4xnUiHYXUXAPX18t+bn6c4Btry2RqM9JHY=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "d883b6213afa179b58ba8bace834f1419707d0ad",
+        "rev": "1f426f65ac4e6bf808923eb6f8b8c2bfba3d18c5",
         "type": "github"
       },
       "original": {
@@ -1308,11 +1308,11 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1750688934,
-        "narHash": "sha256-nOWOzcB/U9QE8MZ5NV1eRwrsWnsqtcPA88v0SKwKmxA=",
+        "lastModified": 1750776006,
+        "narHash": "sha256-CZjHhCu9fJKZYHJDuMP5qygo0x9Mu44sRN1Mnkcspb4=",
         "owner": "nix-community",
         "repo": "stylix",
-        "rev": "67a6479c1aa95210a346a227743f074b82471432",
+        "rev": "edcecc02e6f113758f401b2248d739f28c063478",
         "type": "github"
       },
       "original": {
@@ -1538,11 +1538,11 @@
     "tinted-themes": {
       "flake": false,
       "locked": {
-        "lastModified": 1749495620,
-        "narHash": "sha256-pDz3SALMXwLvqvVPKj2pQn1Cr6WsPTWICaUhWfmXAYI=",
+        "lastModified": 1750770351,
+        "narHash": "sha256-LI+BnRoFNRa2ffbe3dcuIRYAUcGklBx0+EcFxlHj0SY=",
         "owner": "tinted-theming",
         "repo": "schemes",
-        "rev": "b15ea410ff2091a064a92d0f6b8bae80a2f27798",
+        "rev": "5a775c6ffd6e6125947b393872cde95867d85a2a",
         "type": "github"
       },
       "original": {
@@ -1703,11 +1703,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1750681171,
-        "narHash": "sha256-od1B9ssyZZDk4s2HUJ9pRzlKhioxc6AOmTTX0U42vH8=",
+        "lastModified": 1750776513,
+        "narHash": "sha256-QV7H+VylJOw5kAuBchPMty1b5rAJAG0vgEq5srUt5mI=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "b71ff30380420886b60f8f301d0aaa73f5978d39",
+        "rev": "b734f018084859c105275d55b87aa6e991e03884",
         "type": "sourcehut"
       },
       "original": {
