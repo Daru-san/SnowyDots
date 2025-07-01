@@ -21,6 +21,8 @@
     woodpecker-cli
     rustup
     git-repo
+    socat
+    zbus-xmlgen
     dotnet-sdk_9
     bacon
   ];
