@@ -14,11 +14,11 @@ in
       vim_keys = true;
       rounded_corners = true;
       graph_symbol = "braille";
-      shown_boxes = "cpu mem net proc gpu0";
+      shown_boxes = "cpu net proc gpu0 mem";
       update_ms = 400;
       base_10_sizes = false;
       background_update = true;
-      clock_format = "%d %b %R";
+      clock_format = "%d %b %X";
       log_level = ''"WARNING"%'';
 
       # Processes
@@ -28,7 +28,7 @@ in
       proc_gradient = true;
       proc_per_core = true;
       proc_mem_bytes = true;
-      proc_cpu_graphs = true;
+      proc_cpu_graphs = false;
       proc_info_smaps = false;
       proc_left = false;
       proc_aggregate = true;
@@ -39,7 +39,7 @@ in
       cpu_graph_lower = "user";
       cpu_invert_lower = true;
       cpu_single_graph = false;
-      cpu_bottom = true;
+      cpu_bottom = false;
       show_uptime = true;
       check_temp = true;
       cpu_sensor = "Auto";
@@ -47,7 +47,7 @@ in
       temp_scale = "celsius";
       show_cpu_freq = true;
 
-      # Disks and memeory
+      # Disks and memory
       disks_filter =
         "exclude="
         + concatStringsSep " " (flatten [
