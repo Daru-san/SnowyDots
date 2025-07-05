@@ -38,12 +38,6 @@ in
   programs = {
     nushell = {
       enable = true;
-      plugins = with pkgs.nushellPlugins; [
-        units
-        gstat
-        query
-        net
-      ];
       settings = {
         edit_mode = "vi";
         show_banner = false;
