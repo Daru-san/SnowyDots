@@ -9,7 +9,7 @@
 let
   inherit (lib) getExe;
   wezterm = getExe config.programs.wezterm.package;
-  nshell = getExe inputs.nameless-shell.packages.${system}.default;
+  # nshell = getExe inputs.nameless-shell.packages.${system}.default;
 in
 {
   wayland.windowManager.hyprland.settings = {
@@ -19,8 +19,8 @@ in
       (getExe pkgs.copyq)
       (getExe pkgs.soteria)
     ];
-    exec = [
-      nshell
-    ];
+    # exec = [
+    #   nshell
+   # ];
   };
 }
