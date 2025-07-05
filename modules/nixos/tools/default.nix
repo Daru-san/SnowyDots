@@ -15,5 +15,6 @@
     ./secrets.nix
     ./transmission.nix
     ./rnnoise.nix
+    ./security-ext.nix
   ];
 }
