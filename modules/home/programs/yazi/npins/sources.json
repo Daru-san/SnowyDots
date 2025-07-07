@@ -35,9 +35,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "aeca767ec27bfbea66873d667a729791de18f364",
-      "url": "https://github.com/yazi-rs/plugins/archive/aeca767ec27bfbea66873d667a729791de18f364.tar.gz",
-      "hash": "16xz3hl79r39160qr924ns2kyvf5nz74wik15xha2yj6r6bxfj22"
+      "revision": "cbc4450a6c238114362e3c2fbca355166c2a2202",
+      "url": "https://github.com/yazi-rs/plugins/archive/cbc4450a6c238114362e3c2fbca355166c2a2202.tar.gz",
+      "hash": "1ygd2b3ynacgpbqh104chqa9kc2kdlccv71xy1xfh9mzd77gpl52"
     },
     "torrent-preview.yazi": {
       "type": "Git",
@@ -48,9 +48,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "4ca5996a8264457cbefff8e430acfca4900a0453",
-      "url": "https://github.com/kirasok/torrent-preview.yazi/archive/4ca5996a8264457cbefff8e430acfca4900a0453.tar.gz",
-      "hash": "18xzhn94rppbn0c6bj7nrh0nn6ddx6c810sy0lrhrsxrsrs8x9xx"
+      "revision": "f46528243c458de3ffce38c44607d5a0cde67559",
+      "url": "https://github.com/kirasok/torrent-preview.yazi/archive/f46528243c458de3ffce38c44607d5a0cde67559.tar.gz",
+      "hash": "0njniirsr8zsh4xqk6sj24q0whrzlzj2b2gxw9d5kic728sny4jn"
     },
     "what-size.yazi": {
       "type": "Git",
@@ -61,9 +61,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "0a4904cf4f8f14d36fe72976d9b6b7597cd303ee",
-      "url": "https://github.com/pirafrank/what-size.yazi/archive/0a4904cf4f8f14d36fe72976d9b6b7597cd303ee.tar.gz",
-      "hash": "1zgipyqz2i0dhqwnan28g3nxic9gha2qfxcrjb7rimdkbfjd36ny"
+      "revision": "d8966568f2a80394bf1f9a1ace6708ddd4cc8154",
+      "url": "https://github.com/pirafrank/what-size.yazi/archive/d8966568f2a80394bf1f9a1ace6708ddd4cc8154.tar.gz",
+      "hash": "1hrmix9swh8f222s68zsh2n4pvi7pc6a70cf1jqfgzmb6mzn4q5k"
     }
   },
   "version": 5
