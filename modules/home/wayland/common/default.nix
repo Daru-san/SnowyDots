@@ -23,6 +23,7 @@ in
     ./snowy-shell
     ./waycute
     ./wezterm
+    ./foot
   ];
   config = mkIf cfg.enable {
     wayland.windowManager.sway.enable = false;
@@ -39,7 +40,8 @@ in
       snowy-shell.enable = false;
       anyrun.enable = true;
       hyprlock.enable = true;
-      wezterm.enable = true;
+      wezterm.enable = false;
+      foot.enable = true;
     };
     home.packages = [
       pkgs.wl-clipboard-rs

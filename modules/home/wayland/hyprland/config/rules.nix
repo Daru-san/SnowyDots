@@ -12,7 +12,6 @@
           let
             window = [
               "file-roller"
-              "foot"
               "iwgtk"
               "nm-connection-editor"
               "org.kde.kdeconnect.daemon"
@@ -33,7 +32,6 @@
               "io.github.giantpinkrobots.varia"
             ];
             resized-windows = [
-              "foot"
               "nmtui"
               "pulsemixer"
               "org.freedesktop.impl.portal.desktop.kde"

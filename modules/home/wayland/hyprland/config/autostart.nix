@@ -2,20 +2,19 @@
   config,
   pkgs,
   lib,
-  inputs,
-  system,
+  sysconfig,
   ...
 }:
 let
   inherit (lib) getExe;
-  wezterm = getExe config.programs.wezterm.package;
+  foot = getExe config.programs.foot.package;
   # nshell = getExe inputs.nameless-shell.packages.${system}.default;
 in
 {
   wayland.windowManager.hyprland.settings = {
     exec-once = [
-      "[workspace 1] ${wezterm}"
-      "[workspace 3] ${wezterm} -e ${getExe config.programs.btop.package}"
+      "[workspace 1] ${foot}"
+      "[workspace 3] ${foot} -e ${sysconfig.security.wrapperDir}/btop"
       (getExe pkgs.copyq)
       (getExe pkgs.soteria)
     ];
