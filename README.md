@@ -21,7 +21,7 @@ My functional, advanced NixOS configuration.
 
 <!-- markdownlint-disable MD003 -->
 
-![Wallpaper](https://i.imgur.com/P5eAQ8a.png)
+![Wallpaper](thttps://i.imgur.com/xAgigGk.png)
 
 ![Btop](https://i.imgur.com/urkjsts.png)
 
