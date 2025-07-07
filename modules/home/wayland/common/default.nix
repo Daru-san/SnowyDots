@@ -24,6 +24,7 @@ in
     ./waycute
     ./wezterm
     ./foot
+    ./swaync
   ];
   config = mkIf cfg.enable {
     wayland.windowManager.sway.enable = false;
@@ -34,6 +35,7 @@ in
       wlsunset.enable = true;
       swayosd.enable = true;
       flameshot.enable = true;
+      swaync.enable = true;
     };
     programs = {
       waybar.enable = true;
