@@ -2,6 +2,8 @@
   lib,
   pkgs,
   config,
+  inputs,
+  system,
   ...
 }:
 let
@@ -15,6 +17,20 @@ let
       atuin gen-completions --shell nushell > $out/atuin.nu
     '';
   };
+  crimson-completions =
+    let
+      crimson = inputs.crimson.packages.${system}.default;
+    in
+    pkgs.stdenvNoCC.mkDerivation {
+      name = "crimson-nushell-completions";
+      version = crimson.version;
+      dontUnpack = true;
+      nativeBuildInputs = [ crimson ];
+      installPhase = ''
+        mkdir $out
+        crimson completions nushell > $out/crimson.nu
+      '';
+    };
   command-not-found = pkgs.writeScript "command-not-found" ''
     #!${pkgs.bash}/bin/bash
     source ${config.programs.nix-index.package}/etc/profile.d/command-not-found.sh
@@ -111,6 +127,7 @@ in
             rimi => $fish_completer
             berg => $fish_completer
             xmake => $fish_completer
+            crimson => $fish_completer
             _ => $carapace_completer
           } | do $in $spans
         }
@@ -140,6 +157,7 @@ in
         }
 
         source ${atuin-completions}/atuin.nu
+        source ${crimson-completions}/crimson.nu
       '';
 
       shellAliases = {

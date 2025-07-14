@@ -1,6 +1,8 @@
 {
   config,
   pkgs,
+  system,
+  inputs,
   ...
 }:
 {
@@ -27,6 +29,7 @@
       ${pkgs.rqbit}/bin/rqbit -v error completions fish | source
       ${pkgs.codeberg-cli}/bin/berg completion fish | source
       ${pkgs.gtrash}/bin/gtrash completion fish | source
+      ${inputs.crimson.packages.${system}.default}/bin/crimson completions fish | source
       source ${pkgs.xmake}/share/xmake/scripts/completions/register-completions.fish
     '';
   };
