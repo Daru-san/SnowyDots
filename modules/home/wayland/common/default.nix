@@ -20,11 +20,11 @@ in
     ./ghostty
     ./waybar
     ./flameshot
-    ./snowy-shell
     ./waycute
     ./wezterm
     ./foot
     ./swaync
+    ./crimson
   ];
   config = mkIf cfg.enable {
     wayland.windowManager.sway.enable = false;
@@ -44,6 +44,7 @@ in
       hyprlock.enable = true;
       wezterm.enable = false;
       foot.enable = true;
+      crimson.enable = true;
     };
     home.packages = [
       pkgs.wl-clipboard-rs

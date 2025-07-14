@@ -7,7 +7,7 @@
   stylix.targets.waybar.addCss = false;
 
   programs.waybar = {
-    systemd.enable = true;
+    systemd.enable = false;
 
     settings = import ./setup.nix { inherit config lib; };
 

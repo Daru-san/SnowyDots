@@ -61,7 +61,7 @@
     };
 
     # My own repos
-    nameless-shell.url = "git+https://codeberg.org/Daru-san/nameless-shell";
+    crimson.url = "git+https://codeberg.org/Daru-san/crimson";
     smitty.url = "sourcehut:~darumaka/smitty";
     waycute.url = "sourcehut:~darumaka/waycute";
     snowy-shell.url = "github:Daru-san/SnowyShell";
