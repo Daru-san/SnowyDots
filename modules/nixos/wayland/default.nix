@@ -23,7 +23,7 @@ in
     security.pam.services.hyprlock = { };
     security.soteria.enable = true;
     services.greetd = {
-      package = pkgs.greetd;
+      package = pkgs.greetd.tuigreet;
       enable = true;
       settings = rec {
         initial_session = {
