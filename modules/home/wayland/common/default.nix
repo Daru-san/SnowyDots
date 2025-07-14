@@ -39,7 +39,6 @@ in
     };
     programs = {
       waybar.enable = true;
-      snowy-shell.enable = false;
       anyrun.enable = true;
       hyprlock.enable = true;
       wezterm.enable = false;
