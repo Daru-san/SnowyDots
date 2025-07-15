@@ -31,7 +31,7 @@
     libvirtd = {
       enable = true;
       qemu = {
-        package = pkgs.qemu_full;
+        package = pkgs.qemu;
         vhostUserPackages = [ pkgs.virtiofsd ];
         verbatimConfig = ''
           capability_filters = [ "device.json" ]
