@@ -19,7 +19,6 @@
       # Science
       kdePackages.kalzium
       element
-      celestia
 
       # Content creation
       kdePackages.kdenlive
@@ -90,9 +89,6 @@
       android-tools
       wiki-tui
       mprocs
-
-      # The craft
-      prismlauncher
 
       (retroarch.withCores (
         cores: with cores; [
