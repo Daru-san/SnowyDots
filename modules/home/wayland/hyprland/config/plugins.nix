@@ -3,7 +3,7 @@
   wayland.windowManager.hyprland = {
     plugins = with pkgs.hyprlandPlugins; [
       hy3
-      hyprspace
+      # hyprspace
     ];
     settings.plugin = {
       hy3 = {

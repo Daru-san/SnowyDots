@@ -45,7 +45,7 @@ in
         "super, page_up, workspace,e-1"
         "super, page_down, workspace,e+1"
 
-        "SUPER, grave, overview:toggle, toggle"
+        # "SUPER, grave, overview:toggle, toggle"
       ]
       ++
         # Change workspace
