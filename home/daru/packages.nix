@@ -14,7 +14,7 @@
       aria2
       seanime
       nextcloud-client
-      stable.planify
+      planify
 
       # Science
       kdePackages.kalzium
@@ -37,7 +37,7 @@
       # Desktop
       swww
       ayugram-desktop
-      stable.qownnotes
+      qownnotes
 
       # GUI Util
       file-roller
