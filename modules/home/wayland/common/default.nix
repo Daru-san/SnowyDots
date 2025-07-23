@@ -43,7 +43,7 @@ in
       hyprlock.enable = true;
       wezterm.enable = false;
       foot.enable = true;
-      crimson.enable = true;
+      crimson.enable = false;
     };
     home.packages = [
       pkgs.wl-clipboard-rs
