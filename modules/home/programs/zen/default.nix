@@ -143,7 +143,7 @@
 
       search = {
         force = true;
-        default = "qwant";
+        default = "StartPage";
         privateDefault = "ddg";
 
         order = [
