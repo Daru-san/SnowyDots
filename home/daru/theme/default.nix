@@ -13,12 +13,12 @@
   stylix = {
     enable = true;
     enableReleaseChecks = false;
-    base16Scheme = "${inputs.tinted-themes}/base16/vesper.yaml";
+    base16Scheme = "${inputs.tinted-themes}/base24/mountain.yaml"; # selenized-black qualia pop penumbra-dark pencil-dark operator-mono-dark base24/mountain.yaml material-vivid
     targets = {
       gtk.enable = false;
       spicetify.enable = false;
     };
-    image = inputs.walls + "/images/dark-floral.png"; # butterfly.png
+    image = inputs.walls + "/images/caidychen_original_characters_anime_girls.png"; # butterfly.png
     imageScalingMode = "stretch";
     opacity = {
       terminal = 0.8;
