@@ -39,7 +39,6 @@
         sd = "sudo poweroff -p";
         rb = "sudo reboot --reboot";
         rbf = "sudo reboot -f";
-        logout = "loginctl terminate-user $USER";
         rsync-copy = "${rsync} -avzhe --progress";
         rsync-move = "${rsync} --remove-source-files -zvh --progress";
         nix-list = "nix profile history --profile /nix/var/nix/profiles/system";
