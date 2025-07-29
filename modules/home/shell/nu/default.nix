@@ -63,6 +63,12 @@ let
     builtins.concatStringsSep "\n" (
       import-scripts (lib.mapAttrsToList (name: value: "custom-completions/${name}/${value}.nu") set)
     );
+
+  import-modules =
+    set:
+    builtins.concatStringsSep "\n" (
+      import-scripts (lib.mapAttrsToList (name: value: "modules/${name}/${value}.nu") set)
+    );
 in
 {
   programs = {
@@ -99,11 +105,33 @@ in
           bat = "bat-aliases";
           git = "git-aliases";
         }}
+
         ${import-completions {
           gh = "gh-completions";
           tealdeer = "tldr-completions";
           git = "git-completions";
+          cargo = "cargo-completions";
+          curl = "curl-completions";
         }}
+
+        ${import-modules {
+          background_task = "task";
+          history-utils = "mod";
+          nix = "nix";
+          network = "sockets/sockets";
+          formats = "from-cpuinfo";
+          cwdhist = "mod";
+        }}
+
+        ${import-modules {
+          formats = "from-dmidecode";
+          nix = "nufetch";
+        }}
+
+        ${import-modules {
+          formats = "to-ini";
+        }}
+
         let carapace_completer = {|spans: list<string>|
           carapace $spans.0 nushell ...$spans
           | from json
