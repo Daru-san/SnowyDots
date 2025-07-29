@@ -139,10 +139,7 @@ in
             }
           }
           hooks: {
-            command_not_found: {
-              |command_name|
-              print (${command-not-found} $command_name | str trim)
-            }
+            command_not_found: (source ${./command-not-found.nu})
           }
         }
 
