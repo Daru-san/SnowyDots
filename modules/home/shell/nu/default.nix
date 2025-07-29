@@ -38,7 +38,21 @@ let
   '';
 
   import-scripts =
-    paths: builtins.map (path: "use ${pkgs.nu_scripts}/share/nu_scripts/${path} *") paths;
+    initial_paths:
+    let
+      paths = builtins.map (path: {
+        inherit path;
+        exists = builtins.pathExists path;
+      }) (builtins.map (path: "${pkgs.nu_scripts}/share/nu_scripts/${path}") initial_paths);
+    in
+    if (builtins.any (v: !v.exists) paths) then
+      throw (
+        "The following nushell script paths do not exist:\n"
+        + (builtins.concatStringsSep "\n" (builtins.map (v: v.path) (builtins.filter (v: !v.exists) paths)))
+      )
+    else
+      builtins.map (value: "use ${value.path} *") paths;
+
   import-aliases =
     set:
     builtins.concatStringsSep "\n" (
