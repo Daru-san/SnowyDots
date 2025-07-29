@@ -3,6 +3,7 @@
   pkgs,
   system,
   inputs,
+  osConfig,
   ...
 }:
 {
@@ -39,16 +40,11 @@
     let
       bat = "${config.programs.bat.package}/bin/bat";
       syst = "${pkgs.systemctl-tui}/bin/systemctl-tui";
-      wget2 = "${pkgs.wget2}/bin/wget2";
     in
     {
       syst = syst;
       cat = bat;
-      c = "clear";
       cgrt = ''cd "$(git rev-parse --show-toplevel)"'';
-      wget = wget2;
-      flake = "nix flake";
-      nbuild = "nom build";
-      nshell = "nom shell";
-    };
+    }
+    // osConfig.environment.shellAliases;
 }
