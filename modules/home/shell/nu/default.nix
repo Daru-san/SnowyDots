@@ -31,11 +31,6 @@ let
         crimson completions nushell > $out/crimson.nu
       '';
     };
-  command-not-found = pkgs.writeScript "command-not-found" ''
-    #!${pkgs.bash}/bin/bash
-    source ${config.programs.nix-index.package}/etc/profile.d/command-not-found.sh
-    command_not_found_handle "$@"
-  '';
 
   import-scripts =
     initial_paths:
