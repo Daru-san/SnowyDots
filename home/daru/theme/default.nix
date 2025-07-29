@@ -1,4 +1,9 @@
-{ inputs, ... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  ...
+}:
 {
   imports =
     (with inputs; [
@@ -18,7 +23,16 @@
       gtk.enable = false;
       spicetify.enable = false;
     };
-    image = inputs.walls + "/images/caidychen_original_characters_anime_girls.png"; # butterfly.png
+    image =
+      let
+        path = inputs.walls + "/images/green-anime-aesthetic.png";
+        brightness = -30;
+        fillColor = "black";
+      in
+      pkgs.runCommand "dimmed-background.png" { } ''
+        ${lib.getExe' pkgs.imagemagick "magick"} "${path}" -brightness-contrast ${toString brightness} -fill ${fillColor} $out
+      '';
+
     imageScalingMode = "stretch";
     opacity = {
       terminal = 0.8;
