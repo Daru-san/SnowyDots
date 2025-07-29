@@ -194,11 +194,14 @@ in
         source ${crimson-completions}/crimson.nu
       '';
 
-      shellAliases = {
-        zc = "clear ; cd";
-        zngrt = "cd (git rev-parse --show-toplevel)";
-      }
-      // config.home.shellAliases;
+      shellAliases = lib.mkMerge [
+        {
+          zc = "clear ; cd";
+          zngrt = "cd (git rev-parse --show-toplevel)";
+          logout = lib.mkForce "loginctl terminate-user $env.User";
+        }
+        config.home.shellAliases
+      ];
     };
   };
 }

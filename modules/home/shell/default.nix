@@ -1,9 +1,8 @@
 {
   config,
   pkgs,
-  system,
-  inputs,
   osConfig,
+  lib,
   ...
 }:
 {
@@ -41,10 +40,13 @@
       bat = "${config.programs.bat.package}/bin/bat";
       syst = "${pkgs.systemctl-tui}/bin/systemctl-tui";
     in
-    {
-      syst = syst;
-      cat = bat;
-      cgrt = ''cd "$(git rev-parse --show-toplevel)"'';
-    }
-    // osConfig.environment.shellAliases;
+    lib.mkMerge [
+      {
+        syst = syst;
+        cat = bat;
+        cgrt = ''cd "$(git rev-parse --show-toplevel)"'';
+        ls = lib.mkForce (if config.programs.eza.enable then "${config.programs.eza.package}/bin/eza" else "ls");
+      }
+      osConfig.environment.shellAliases
+    ];
 }
