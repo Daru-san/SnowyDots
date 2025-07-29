@@ -9,9 +9,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "6d5e4693e486c564f57491cb9afdf7bf813ae874",
-      "url": "https://github.com/lpnh/fr.yazi/archive/6d5e4693e486c564f57491cb9afdf7bf813ae874.tar.gz",
-      "hash": "0akns6d9n9pn7a55rxyma0q0xf53ydvy023kymbjk8gpkrrrv21k"
+      "revision": "3d32e55b7367334abaa91f36798ef723098d0a6b",
+      "url": "https://github.com/lpnh/fr.yazi/archive/3d32e55b7367334abaa91f36798ef723098d0a6b.tar.gz",
+      "hash": "1afplxy0as8hsbq7nvy8d0x1zlxpyaf4b1kf6n9sy452qqab1cha"
     },
     "open-with-cmd.yazi": {
       "type": "Git",
@@ -35,9 +35,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "cbc4450a6c238114362e3c2fbca355166c2a2202",
-      "url": "https://github.com/yazi-rs/plugins/archive/cbc4450a6c238114362e3c2fbca355166c2a2202.tar.gz",
-      "hash": "1ygd2b3ynacgpbqh104chqa9kc2kdlccv71xy1xfh9mzd77gpl52"
+      "revision": "de53d90cb2740f84ae595f93d0c4c23f8618a9e4",
+      "url": "https://github.com/yazi-rs/plugins/archive/de53d90cb2740f84ae595f93d0c4c23f8618a9e4.tar.gz",
+      "hash": "056gjhqsnxv448r538fpn3kws7ac7d6r411ag75v3h6fs8x4l5lb"
     },
     "torrent-preview.yazi": {
       "type": "Git",
