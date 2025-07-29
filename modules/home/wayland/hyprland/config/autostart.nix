@@ -2,7 +2,7 @@
   config,
   pkgs,
   lib,
-  sysconfig,
+  osConfig,
   ...
 }:
 let
@@ -14,7 +14,7 @@ in
   wayland.windowManager.hyprland.settings = {
     exec-once = [
       "[workspace 1] ${foot}"
-      "[workspace 3] ${foot} -e ${sysconfig.security.wrapperDir}/btop"
+      "[workspace 3] ${foot} -e ${osConfig.security.wrapperDir}/btop"
       (getExe pkgs.copyq)
       (getExe pkgs.soteria)
     ];

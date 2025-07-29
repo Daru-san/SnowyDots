@@ -4,7 +4,7 @@
   system,
   inputs,
   lib,
-  sysconfig,
+  osConfig,
   ...
 }:
 let
@@ -47,7 +47,7 @@ in
           editor = "${getExe pkgs.neovide} --neovim-bin ${getExe config.env.editor.package}";
           yazi = getExe config.programs.yazi.package;
           hyprlock = getExe config.programs.hyprlock.package;
-          btop = "${sysconfig.security.wrapperDir}/btop";
+          btop = "${osConfig.security.wrapperDir}/btop";
           swayosd = getExe' config.services.swayosd.package "swayosd-client";
           # terminal = getExe inputs.smitty.packages.${system}.smitty;
           terminal = getExe config.programs.foot.package;

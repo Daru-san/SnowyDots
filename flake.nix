@@ -186,7 +186,7 @@
           extraSpecialArgs = {
             inherit inputs outputs;
             inherit (desktop) system;
-            sysconfig = self.nixosConfigurations.${desktop.hostName}.config;
+            osConfig = self.nixosConfigurations.${desktop.hostName}.config;
           };
           modules = [
             ./home/daru
