@@ -202,7 +202,8 @@ in
       shellAliases = {
         zc = "clear ; cd";
         zngrt = "cd (git rev-parse --show-toplevel)";
-      } // config.home.shellAliases;
+      }
+      // config.home.shellAliases;
     };
   };
 }
