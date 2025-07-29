@@ -8,7 +8,6 @@
 let
   inherit (lib) getExe;
   foot = getExe config.programs.foot.package;
-  # nshell = getExe inputs.nameless-shell.packages.${system}.default;
 in
 {
   wayland.windowManager.hyprland.settings = {
@@ -18,8 +17,5 @@ in
       (getExe pkgs.copyq)
       (getExe pkgs.soteria)
     ];
-    # exec = [
-    #   nshell
-   # ];
   };
 }
