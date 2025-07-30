@@ -90,6 +90,8 @@
       wiki-tui
       mprocs
 
+      prismlauncher
+
       (retroarch.withCores (
         cores: with cores; [
           citra
