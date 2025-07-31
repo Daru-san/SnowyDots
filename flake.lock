@@ -133,11 +133,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1753993275,
-        "narHash": "sha256-bBcq77JfkSZucZjq1G35ZlxJjGPfemv0j0OZhGlO8VE=",
+        "lastModified": 1753995475,
+        "narHash": "sha256-BtpPrf2DnvFQ2P069a2ggOAQm1uHYtxJ6Q4DFx9vtMk=",
         "ref": "refs/heads/master",
-        "rev": "0b0e32fc5db32f37ade8c795bddf5519d990ad39",
-        "revCount": 421,
+        "rev": "0dc4f7f8fefeac2f8b42c8c06490b59bfa870ea8",
+        "revCount": 422,
         "type": "git",
         "url": "https://codeberg.org/Daru-san/crimson"
       },
