@@ -38,12 +38,12 @@ in
       swaync.enable = true;
     };
     programs = {
-      waybar.enable = true;
+      waybar.enable = false;
       anyrun.enable = true;
       hyprlock.enable = true;
       wezterm.enable = false;
       foot.enable = true;
-      crimson.enable = false;
+      crimson.enable = true;
     };
     home.packages = [
       pkgs.wl-clipboard-rs
