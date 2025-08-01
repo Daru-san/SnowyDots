@@ -17,6 +17,7 @@ let
       atuin gen-completions --shell nushell > $out/atuin.nu
     '';
   };
+
   crimson-completions =
     let
       crimson = inputs.crimson.packages.${system}.default;
@@ -53,6 +54,7 @@ let
     builtins.concatStringsSep "\n" (
       import-scripts (lib.mapAttrsToList (name: value: "aliases/${name}/${value}.nu") set)
     );
+
   import-completions =
     set:
     builtins.concatStringsSep "\n" (
@@ -115,7 +117,6 @@ in
           nix = "nix";
           network = "sockets/sockets";
           formats = "from-cpuinfo";
-          cwdhist = "mod";
         }}
 
         ${import-modules {
