@@ -1,10 +1,10 @@
 {
   systemd = {
-    extraConfig = ''
-      DefaultCPUAccounting=yes
-      DefaultMemoryAccounting=yes
-      DefaultIOAccounting=yes
-    '';
+    settings.Manager = {
+      DefaultCPUAccounting=true;
+      DefaultMemoryAccounting=true;
+      DefaultIOAccounting=true;
+    };
     user.extraConfig = ''
       DefaultCPUAccounting=yes
       DefaultMemoryAccounting=yes
