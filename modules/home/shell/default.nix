@@ -47,7 +47,9 @@
         syst = syst;
         cat = bat;
         cgrt = ''cd "$(git rev-parse --show-toplevel)"'';
-        ls = lib.mkForce (if config.programs.eza.enable then "${config.programs.eza.package}/bin/eza" else "ls");
+        ls = lib.mkForce (
+          if config.programs.eza.enable then "${config.programs.eza.package}/bin/eza" else "ls"
+        );
       }
       osConfig.environment.shellAliases
     ];
