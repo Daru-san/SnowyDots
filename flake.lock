@@ -135,15 +135,13 @@
       "locked": {
         "lastModified": 1754406093,
         "narHash": "sha256-GNrdAEOxRHizV2kNVbsaAuR1riIsEyueGag3HXBQNZo=",
-        "ref": "refs/heads/master",
         "rev": "01bfcc09cc220019f863fff57b7b9cd0c983075f",
-        "revCount": 506,
-        "type": "git",
-        "url": "https://codeberg.org/Daru-san/crimson"
+        "type": "tarball",
+        "url": "https://codeberg.org/api/v1/repos/Daru-san/crimson/archive/01bfcc09cc220019f863fff57b7b9cd0c983075f.tar.gz"
       },
       "original": {
-        "type": "git",
-        "url": "https://codeberg.org/Daru-san/crimson"
+        "type": "tarball",
+        "url": "https://codeberg.org/Daru-san/crimson/archive/0.2.0.tar.gz"
       }
     },
     "fabric": {
