@@ -35,7 +35,7 @@ in
       wlsunset.enable = true;
       swayosd.enable = true;
       flameshot.enable = true;
-      swaync.enable = true;
+      swaync.enable = false;
     };
     programs = {
       waybar.enable = false;
