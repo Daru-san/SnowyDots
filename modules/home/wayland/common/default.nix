@@ -47,7 +47,6 @@ in
     };
     home.packages = [
       pkgs.wl-clipboard-rs
-      inputs.smitty.packages.${system}.smitty
     ];
   };
 }
