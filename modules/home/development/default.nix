@@ -25,6 +25,7 @@
     zbus-xmlgen
     dotnet-sdk_9
     bacon
+    glab
   ];
   programs.java = {
     enable = true;
