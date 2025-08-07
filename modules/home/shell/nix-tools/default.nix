@@ -42,5 +42,23 @@
         ];
       };
     };
+
+    nix-search-tv = {
+      enable = true;
+      enableTelevisionIntegration = true;
+      settings = {
+        indexes = [
+          "nixpkgs"
+          "home-manager"
+          "nixos"
+          "nur"
+        ];
+        experimental = {
+          render_docs_indexes = {
+            nvf = "https://notashelf.github.io/nvf/options.html";
+          };
+        };
+      };
+    };
   };
 }
