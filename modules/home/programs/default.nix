@@ -16,5 +16,6 @@
     ./gimp
     ./nvim
     ./keepasscx
+    ./television
   ];
 }
