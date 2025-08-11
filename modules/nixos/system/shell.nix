@@ -27,7 +27,7 @@
       let
         yazi = "${pkgs.yazi}/bin/yazi";
         rsync = "${pkgs.rsync}/bin/rsync";
-        wget2 = "${pkgs.stable.wget2}/bin/wget2";
+        wget2 = "${pkgs.wget2}/bin/wget2";
         vim = "${pkgs.neovim}/bin/nvim";
       in
       {
