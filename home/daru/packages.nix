@@ -36,7 +36,6 @@
 
       # Desktop
       swww
-      ayugram-desktop
       qownnotes
 
       # GUI Util
