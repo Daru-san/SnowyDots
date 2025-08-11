@@ -2,7 +2,6 @@
   lib,
   pkgs,
   config,
-  inputs,
   ...
 }:
 let
@@ -35,7 +34,7 @@ in
                 r = true;
               };
             in
-            "${pkgs.greetd.tuigreet}/bin/tuigreet ${flags}";
+            "${pkgs.tuigreet}/bin/tuigreet ${flags}";
           user = "daru";
         };
         default_session = initial_session;
