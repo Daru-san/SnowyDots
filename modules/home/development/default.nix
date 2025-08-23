@@ -26,6 +26,7 @@
     dotnet-sdk_9
     bacon
     glab
+    icon-library
   ];
   programs.java = {
     enable = true;
