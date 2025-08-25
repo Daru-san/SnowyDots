@@ -3,6 +3,12 @@
     enable = true;
     enableBashIntegration = true;
     enableFishIntegration = true;
+    settings = {
+      ui = {
+        use_nerd_font_icons = true;
+        show_preview_panel = true;
+      };
+    };
     channels = {
       git-log = {
         metadata = {
