@@ -18,31 +18,6 @@
           output = "{split: :0}";
         };
       };
-      files = {
-        metadata = {
-          description = "Files";
-          name = "files";
-          requirements = [
-            "fd"
-            "bat"
-          ];
-          source = {
-            command = "fd -t f";
-          };
-          preview = {
-            command = "bat -n --color=always {}";
-          };
-          ui = {
-            preview_panel = {
-              size = 70;
-              scrollbar = true;
-            };
-          };
-          keybindings = {
-            shortcut = "f1";
-          };
-        };
-      };
     };
   };
 }
