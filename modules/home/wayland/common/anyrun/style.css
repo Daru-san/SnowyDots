@@ -1,74 +1,65 @@
-* {
-  transition: 200ms ease;
-  font-family: Rubik;
-  font-size: 1.3rem;
-}
-
-#window,
-#match,
-#entry,
-#plugin,
-#main {
+window {
   background: transparent;
 }
 
-#match.activatable {
+box.main {
+  padding: 5px;
+  margin: 10px;
   border-radius: 10px;
-  padding: 0.3rem 0.9rem;
-  margin-top: 0.01rem;
+  border: 2px solid @theme_selected_bg_color;
+  background-color: @theme_bg_color;
+  box-shadow: 0 0 5px black;
 }
 
-#match.activatable:first-child {
-  margin-top: 0.7rem;
+
+text {
+  min-height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  font-family: Rubik;
 }
 
-#match.activatable:last-child {
-  margin-bottom: 0.6rem;
-}
-
-#plugin:hover #match.activatable {
-  border-radius: 4px;
-  padding: 0.3rem;
-  margin-top: 0.01rem;
-  margin-bottom: 0;
-}
-
-#match:selected,
-#match:hover,
-#plugin:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-#entry {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.matches {
+  background-color: rgba(0, 0, 0, 0);
   border-radius: 10px;
-  margin: 0.3rem;
-  padding: 0.3rem 1rem;
 }
 
-list>#plugin {
-  border-radius: 10px;
-  margin: 0 0.3rem;
+box.plugin:first-child {
+  margin-top: 5px;
 }
 
-list>#plugin:first-child {
-  margin-top: 0.3rem;
+box.plugin.info {
+  min-width: 200px;
 }
 
-list>#plugin:last-child {
-  margin-bottom: 0.3rem;
+list.plugin {
+  background-color: rgba(0, 0, 0, 0);
 }
 
-list>#plugin:hover {
-  padding: 0.6rem;
+label.match.description {
+  font-size: 10px;
 }
 
-box#main {
-  background: rgba(31, 31, 40, 0.5);
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.1),
-    0 0 0 1px rgba(0, 0, 0, 0.5);
-  border-radius: 24px;
-  padding: 0.3rem;
+label.plugin.info {
+  font-size: 14px;
+}
+
+.match {
+  background: transparent;
+}
+
+.match:selected {
+  border-left: 4px solid @theme_selected_bg_color;
+  background: transparent;
+  animation: fade 0.1s linear;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
