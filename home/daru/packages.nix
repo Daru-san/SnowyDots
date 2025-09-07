@@ -89,6 +89,8 @@
       wiki-tui
       mprocs
 
+      grayjay
+
       prismlauncher
 
       (retroarch.withCores (
