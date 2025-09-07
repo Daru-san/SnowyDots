@@ -9,7 +9,7 @@ let
 in
 {
   programs.anyrun = {
-    package = pkgs.anyrun;
+    package = plugins.anyrun;
     config = {
       plugins = with plugins; [
         rink
