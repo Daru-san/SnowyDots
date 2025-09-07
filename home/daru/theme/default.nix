@@ -25,8 +25,8 @@
     };
     image =
       let
-        path = inputs.walls + "/images/green-anime-aesthetic.png";
-        brightness = -30;
+        path = inputs.walls + "/images/caidychen_original_characters_anime_girls.png";
+        brightness = 0;
         fillColor = "black";
       in
       pkgs.runCommand "dimmed-background.png" { } ''
@@ -35,7 +35,7 @@
 
     imageScalingMode = "stretch";
     opacity = {
-      terminal = 0.8;
+      terminal = 0.7;
     };
     polarity = "dark";
   };
