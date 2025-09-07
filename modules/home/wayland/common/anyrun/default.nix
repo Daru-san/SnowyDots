@@ -16,6 +16,7 @@ in
         shell
         applications
         dictionary
+        nix-run
       ];
 
       width.fraction = 0.64;
@@ -36,6 +37,16 @@ in
         Config(
           desktop_actions: false,
           max_entries: 5,
+        )
+      '';
+      "nix-run.ron".text = ''
+        Config(
+          prefix: ":nr ",
+          // Whether or not to allow unfree packages
+          allow_unfree: true,
+          // Nixpkgs channel to get the package list from
+          channel: "nixpkgs-unstable",
+          max_entries: 3,
         )
       '';
     };
