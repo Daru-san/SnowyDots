@@ -72,7 +72,7 @@ in
           (mkBind "supershift" "e" "exit" "Exit hyprland session")
           (mkBind "super" "s" "togglesplit" "Toggle split layout")
           (mkBind "super" "f" "fullscreen" "Toggle fullscreen")
-          (mkBind "supershift" "f" "fullscreen state 0 2" "Toggle fake fullscreen")
+          (mkBind "supershift" "f" "fullscreenstate, 0, 2" "Toggle fake fullscreen")
           (mkBind "super" "v" "togglefloating" "Toggle floating")
           (mkBindExe "supershift" "x" "hyprctl reload" "Reload hyprland")
 
