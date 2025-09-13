@@ -17,9 +17,6 @@
     };
     syncthing = {
       enable = true;
-      extraOptions = [
-        "--no-default-folder"
-      ];
       tray = {
         enable = true;
         package = pkgs.syncthingtray;
