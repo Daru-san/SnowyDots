@@ -14,6 +14,7 @@
       editor = false;
       configurationLimit = 7;
       consoleMode = "auto";
+      memtest86.enable = true;
     };
     plymouth = {
       enable = true;
