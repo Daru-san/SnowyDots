@@ -16,5 +16,6 @@
     ./transmission.nix
     ./rnnoise.nix
     ./security-ext.nix
+    ./forgejo.nix
   ];
 }

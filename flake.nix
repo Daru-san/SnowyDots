@@ -7,8 +7,6 @@
 
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
 
-    snow-nixpkgs.url = "github:Daru-san/nixpkgs/ashell-update";
-
     # Home manager
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -59,6 +57,8 @@
       url = "github:RobotoSkunk/zen-better-findbar";
       flake = false;
     };
+
+    hy3.url = "github:outfoxxed/hy3/hl0.51.0";
 
     # My own repos
     crimson.url = "https://codeberg.org/Daru-san/crimson/archive/0.2.0.tar.gz";
