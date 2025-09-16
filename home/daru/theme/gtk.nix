@@ -16,13 +16,12 @@ let
       });
     in
     {
-      name = "WhiteSur-green-dark";
+      name = "WhiteSur-grey-dark";
       package = whitesur-fix.override {
         boldPanelIcons = true;
         alternativeIcons = true;
         themeVariants = [
-          "green"
-          "default"
+          "grey"
         ];
       };
     };
@@ -32,10 +31,10 @@ rec {
     enable = true;
 
     theme = {
-      name = "WhiteSur-Dark-alt-green";
+      name = "WhiteSur-Dark-alt-grey";
       package = pkgs.whitesur-gtk-theme.override {
         colorVariants = [ "dark" ];
-        themeVariants = [ "green" ];
+        themeVariants = [ "grey" ];
         roundedMaxWindow = true;
         altVariants = [ "alt" ];
         opacityVariants = [ "normal" ];
