@@ -54,7 +54,7 @@ in
         color-picker = getExe inputs.color-picker.packages.${pkgs.system}.default;
         iwgtk = getExe pkgs.iwgtk;
         blueman = getExe' pkgs.blueman "blueman-manager";
-        planify = getExe pkgs.stable.planify;
+        planify = getExe pkgs.planify;
       in
       {
         #Basic binds
