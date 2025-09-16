@@ -1,8 +1,8 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
   environment.systemPackages = [
     config.boot.kernelPackages.cpupower
-    config.boot.kernelPackages.perf
+    pkgs.perf
   ];
   services = {
     logind.powerKey = "ignore";
