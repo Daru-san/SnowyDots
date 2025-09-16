@@ -27,6 +27,7 @@
     bacon
     glab
     icon-library
+    ida-free
   ];
   programs.java = {
     enable = true;
