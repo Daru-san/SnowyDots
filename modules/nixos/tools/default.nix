@@ -17,5 +17,6 @@
     ./rnnoise.nix
     ./security-ext.nix
     ./forgejo.nix
+    ./ollama.nix
   ];
 }
