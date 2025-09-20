@@ -17,11 +17,11 @@
 
   services.forgejo = {
     enable = true;
-    appName = "SosuKanri";
     database.type = "postgres";
     # Enable support for Git Large File Storage
     lfs.enable = true;
     settings = {
+      DEFAULT.APP_NAME = "Geijutsu no ie";
       server = {
         DOMAIN = "git.sandaru.com";
         # ROOT_URL = "https://${srv.DOMAIN}/";
