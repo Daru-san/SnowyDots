@@ -58,8 +58,6 @@
       flake = false;
     };
 
-    hy3.url = "github:outfoxxed/hy3/hl0.51.0";
-
     # My own repos
     crimson.url = "https://codeberg.org/Daru-san/crimson/archive/0.2.0.tar.gz";
     waycute.url = "sourcehut:~darumaka/waycute";
