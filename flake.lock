@@ -642,11 +642,11 @@
     },
     "nixpkgs_15": {
       "locked": {
-        "lastModified": 1757487488,
-        "narHash": "sha256-zwE/e7CuPJUWKdvvTCB7iunV4E/+G0lKfv4kk/5Izdg=",
+        "lastModified": 1758277210,
+        "narHash": "sha256-iCGWf/LTy+aY0zFu8q12lK8KuZp7yvdhStehhyX1v8w=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ab0f3607a6c7486ea22229b92ed2d355f1482ee0",
+        "rev": "8eaee110344796db060382e15d3af0a9fc396e0e",
         "type": "github"
       },
       "original": {
@@ -825,11 +825,11 @@
         "systems": "systems_7"
       },
       "locked": {
-        "lastModified": 1757619215,
-        "narHash": "sha256-AAg3S94zMF4BtByF2k9/K/tbC0awNHCc50GxCjccUhw=",
+        "lastModified": 1758355505,
+        "narHash": "sha256-UhPFsF0+GGWgFjQIOPX7WtzRqguipC4YvBbyfr70jUY=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "43c6f7293eba3fa5ff699e339e55270305e51cab",
+        "rev": "6f976d5b23a628d848e7e92fc5063dcf94f76f32",
         "type": "github"
       },
       "original": {
@@ -874,11 +874,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1756738487,
-        "narHash": "sha256-8QX7Ab5CcICp7zktL47VQVS+QeaU4YDNAjzty7l7TQE=",
+        "lastModified": 1757885130,
+        "narHash": "sha256-56CMb5W/pgjKLh0bx2ekhn5rde/YmgR63HAqrY9/BCw=",
         "owner": "NuschtOS",
         "repo": "search",
-        "rev": "5feeaeefb571e6ca2700888b944f436f7c05149b",
+        "rev": "fae3c59a646e00c4b1d359c50b27458a0713d2fd",
         "type": "github"
       },
       "original": {
@@ -1364,11 +1364,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1757974941,
-        "narHash": "sha256-kWpEnL1ABPx1hyN8Fu2p+0b/nyEam8QwXFUKA0fI4WI=",
+        "lastModified": 1758373978,
+        "narHash": "sha256-86Rz1/qovpS1npmN9r43PxtjfmnqqwCBFtjn04INNME=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "507b1f6c3f08d099a9d45fed844ee9f2cc5a0b36",
+        "rev": "ec3ab9ec13b4059277f36f9fdc7ae86afa9fe13b",
         "type": "sourcehut"
       },
       "original": {
