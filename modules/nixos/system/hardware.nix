@@ -5,7 +5,7 @@
     pkgs.perf
   ];
   services = {
-    logind.powerKey = "ignore";
+    logind.settings.Login.HandlePowerKey = "ignore";
     fwupd.enable = true;
     fstrim.enable = true;
     earlyoom.enable = true;
