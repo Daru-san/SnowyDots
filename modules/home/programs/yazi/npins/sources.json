@@ -35,9 +35,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "de53d90cb2740f84ae595f93d0c4c23f8618a9e4",
-      "url": "https://github.com/yazi-rs/plugins/archive/de53d90cb2740f84ae595f93d0c4c23f8618a9e4.tar.gz",
-      "hash": "056gjhqsnxv448r538fpn3kws7ac7d6r411ag75v3h6fs8x4l5lb"
+      "revision": "d1c8baab86100afb708694d22b13901b9f9baf00",
+      "url": "https://github.com/yazi-rs/plugins/archive/d1c8baab86100afb708694d22b13901b9f9baf00.tar.gz",
+      "hash": "1caipq1zwainicgaagpa3r4c5xrscckndapa056y7cljwkl6frp7"
     },
     "torrent-preview.yazi": {
       "type": "Git",
