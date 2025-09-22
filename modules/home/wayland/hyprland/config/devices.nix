@@ -12,9 +12,6 @@
           drag_lock = true;
         };
       };
-      gestures = {
-        workspace_swipe = true;
-      };
     };
   };
 }
