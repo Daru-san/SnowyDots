@@ -6,9 +6,10 @@ in
   programs.wleave = {
     settings = {
       margin = 200;
-      buttons-per-row = "1/1";
+      buttons-per-row = "2/1";
       delay-command-ms = 100;
       close-on-lost-focus = true;
+      no-version-info = true;
       buttons = [
         {
           label = "lock";
