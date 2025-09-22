@@ -1,9 +1,4 @@
-{
-  lib,
-  pkgs,
-  config,
-  ...
-}:
+{ pkgs, ... }:
 {
   systemd.user.services = {
     seanime-server = {
@@ -22,23 +17,5 @@
         WantedBy = [ "default.target" ];
       };
     };
-    mpdris2 =
-      let
-        mpd = config.services.mpd;
-      in
-      {
-        Service = {
-          ExecStart = lib.concatStringsSep " " [
-            "${lib.getExe pkgs.mpdris2-rs}"
-            (lib.cli.toGNUCommandLineShell { } {
-              host = "${mpd.network.listenAddress}:${toString mpd.network.port}";
-              v = true;
-            })
-          ];
-        };
-        Install = {
-          WantedBy = [ "mpd.socket" ];
-        };
-      };
   };
 }

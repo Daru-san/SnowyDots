@@ -11,6 +11,9 @@
       };
     };
       extraConfig = # conf
+    mpd-mpris = {
+      enable = true;
+      mpd.useLocal = true;
     };
   };
 
