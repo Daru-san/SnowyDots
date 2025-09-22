@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  getPath = file: "${pkgs.wleave}/icons/${file}.svg";
+  getPath = file: "${pkgs.wleave}/share/wleave/icons/${file}.svg";
 in
 {
   programs.wleave = {
