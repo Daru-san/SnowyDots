@@ -10,10 +10,7 @@
         listenAddress = "127.0.0.1";
       };
     };
-    mpdris2 = {
-      enable = true;
-      multimediaKeys = true;
-      notifications = true;
+      extraConfig = # conf
     };
   };
 
