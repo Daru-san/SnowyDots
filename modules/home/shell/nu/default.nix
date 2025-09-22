@@ -97,7 +97,7 @@ in
         };
       };
 
-      extraConfig = ''
+      extraConfig = /*nu */''
         ${import-aliases {
           bat = "bat-aliases";
           git = "git-aliases";

@@ -27,7 +27,7 @@
   };
   programs.fish = {
     enable = true;
-    interactiveShellInit = ''
+    interactiveShellInit = /*fish */''
       ${pkgs.rqbit}/bin/rqbit -v error completions fish | source
       ${pkgs.codeberg-cli}/bin/berg completion fish | source
       ${pkgs.gtrash}/bin/gtrash completion fish | source
