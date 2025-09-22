@@ -151,7 +151,6 @@ in
 
           iwgtk = getExe pkgs.iwgtk;
 
-          ghostty = getExe pkgs.ghostty;
           overskride = getExe pkgs.overskride;
         in
         [
@@ -166,14 +165,10 @@ in
           # Color picker
           (mkBindExe "supershift" "c" "${pk} color-picker || ${color-picker}" "Launch the color picker")
 
-          # Audio mixer
-          (mkBindExe "super" "p" "${pk} pulsemixer || ${ghostty} -e pulsemixer" "Launch pulsemixer")
-
           # Bluetooth manager
           (mkBindExe "supershift" "i" "${pk} overskride || ${overskride}"
             "Open the Overskride bluetooth manager"
           )
-
         ];
     };
 }
