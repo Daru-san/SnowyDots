@@ -25,7 +25,7 @@
     };
     image =
       let
-        path = inputs.walls + "/images/caidychen_original_characters_anime_girls.png";
+        path = inputs.walls + "/images/caidychen_original_characters_anime_girls_mono.png";
         brightness = 0;
         fillColor = "black";
       in
