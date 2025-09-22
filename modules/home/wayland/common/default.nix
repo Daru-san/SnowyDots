@@ -25,6 +25,7 @@ in
     ./foot
     ./swaync
     ./crimson
+    ./wleave
   ];
   config = mkIf cfg.enable {
     wayland.windowManager.sway.enable = false;
@@ -44,6 +45,7 @@ in
       wezterm.enable = false;
       foot.enable = true;
       crimson.enable = true;
+      wleave.enable = true;
     };
     home.packages = [
       pkgs.wl-clipboard-rs
