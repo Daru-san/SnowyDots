@@ -148,6 +148,7 @@ in
           easyeffects = getExe config.services.easyeffects.package;
           color-picker = getExe inputs.color-picker.packages.${system}.default;
           pk = getExe' pkgs.busybox "pkill";
+          wleave = getExe config.programs.wleave.package;
 
           iwgtk = getExe pkgs.iwgtk;
 
@@ -161,6 +162,8 @@ in
           (mkBindExe "super" "a" "hyprctl clients | grep 'easyeffects' || ${easyeffects}"
             "Launch easyeffects audio mixer"
           )
+
+          (mkBindExe "super" "x" "${pk} wleave || ${wleave}" "Launch the wleave logout menu")
 
           # Color picker
           (mkBindExe "supershift" "c" "${pk} color-picker || ${color-picker}" "Launch the color picker")
