@@ -28,8 +28,8 @@
       oculante
       exiftool
       mdcat
-      g4music
       lua
+      euphonica
       mediainfo
       musikcube
       pulsemixer

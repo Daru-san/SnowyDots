@@ -65,6 +65,7 @@
             (workspace 4 "org.gnome.Nautilus")
 
             (workspace 5 "spotify")
+            (workspace 5 "io.github.htkhiem.Euphonica")
 
             (workspace 6 "mpv")
 
