@@ -11,7 +11,6 @@ in
   programs.spicetify = {
     enable = true;
     theme = spicePkgs.themes.text;
-    windowManagerPatch = true;
     enabledSnippets = with spicePkgs.snippets; [
       autoHideFriends
       removePopular
