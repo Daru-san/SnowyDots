@@ -1,4 +1,7 @@
 { config, ... }:
+let
+  cfg = config.services.mpd;
+in
 {
   services = {
     mpd = {
@@ -28,7 +31,7 @@
     config = # ron
       ''
         (
-            address: "127.0.0.1:6600",
+            address: "${cfg.network.listenAddress}:${toString cfg.network.port}",
             password: None,
             theme: None,
             cache_dir: None,
