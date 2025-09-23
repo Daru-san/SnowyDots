@@ -86,11 +86,12 @@ in
       oldSidebar
       shuffle
       fullAppDisplay
-      playNext
       volumePercentage
       writeify
+      oldLikeButton
       lastfm
       seekSong
+      addToQueueTop
       wikify
     ];
     enabledCustomApps = with spicePkgs.apps; [
