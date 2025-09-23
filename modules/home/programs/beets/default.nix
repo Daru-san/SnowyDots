@@ -8,7 +8,7 @@
     };
     settings = {
       directory = "${config.home.homeDirectory}/Music";
-      library = "${config.home.homeDirectory}/.beets/music.db";
+      library = "${config.home.homeDirectory}/Music/.beets/music.db";
       import = {
         move = false;
       };
