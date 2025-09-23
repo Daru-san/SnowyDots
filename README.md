@@ -21,13 +21,13 @@ My functional, advanced NixOS configuration.
 
 <!-- markdownlint-disable MD003 -->
 
-![Wallpaper](https://i.imgur.com/xAgigGk.png)
+![Wallpaper](https://i.imgur.com/mdKq12c.png)
 
-![Btop](https://i.imgur.com/urkjsts.png)
+![Btop](https://i.imgur.com/I1HYh6V.png)
 
-![Programming](https://i.imgur.com/P5eAQ8a.png)
+![Programming](https://i.imgur.com/NUCygDs.png)
 
-![Zen Browser](https://i.imgur.com/6OV7GVB.png)
+![rmpc](https://i.imgur.com/8Z457LW.png)
 
 ## Installing NixOS
 
