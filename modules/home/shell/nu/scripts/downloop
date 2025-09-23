@@ -1,0 +1,17 @@
+#!/usr/bin/env nu
+
+# Download a batch of files
+#
+# Specify a path on each iteration.
+# Files will be downloaded in the background.
+def main [] {
+    let tasks = []
+    loop {
+        print 'Path:'
+        let url = input
+        let id = job spawn {
+            curl -J -O -L $url
+        }
+        tasks | append id
+    }
+}

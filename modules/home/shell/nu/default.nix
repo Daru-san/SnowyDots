@@ -97,103 +97,105 @@ in
         };
       };
 
-      extraConfig = /*nu */''
-        ${import-aliases {
-          bat = "bat-aliases";
-          git = "git-aliases";
-        }}
+      extraConfig = # nu
+        ''
+          ${import-aliases {
+            bat = "bat-aliases";
+            git = "git-aliases";
+          }}
 
-        ${import-completions {
-          gh = "gh-completions";
-          tealdeer = "tldr-completions";
-          git = "git-completions";
-          cargo = "cargo-completions";
-          curl = "curl-completions";
-        }}
+          ${import-completions {
+            gh = "gh-completions";
+            tealdeer = "tldr-completions";
+            git = "git-completions";
+            cargo = "cargo-completions";
+            curl = "curl-completions";
+          }}
 
-        ${import-modules {
-          background_task = "task";
-          history-utils = "mod";
-          nix = "nix";
-          network = "sockets/sockets";
-          formats = "from-cpuinfo";
-        }}
+          ${import-modules {
+            background_task = "task";
+            history-utils = "mod";
+            nix = "nix";
+            network = "sockets/sockets";
+            formats = "from-cpuinfo";
+          }}
 
-        ${import-modules {
-          formats = "from-dmidecode";
-          nix = "nufetch";
-        }}
+          ${import-modules {
+            formats = "from-dmidecode";
+            nix = "nufetch";
+          }}
 
-        ${import-modules {
-          formats = "to-ini";
-        }}
+          ${import-modules {
+            formats = "to-ini";
+          }}
 
-        let carapace_completer = {|spans: list<string>|
-          carapace $spans.0 nushell ...$spans
-          | from json
-          | if ($in | default [] | where value == $"($spans | last)ERR" | is-empty) { $in } else { null }
-        }
-
-        $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
-
-        let fish_completer = {|spans|
-          ${lib.getExe pkgs.fish} --command $'complete "--do-complete=($spans | str join " ")"'
-          | from tsv --flexible --noheaders --no-infer
-          | rename value description
-        }
-
-        let zoxide_completer = {|spans|
-            $spans | skip 1 | zoxide query -l ...$in | lines | where {|x| $x != $env.PWD}
-        }
-
-        let multiple_completers = {|spans|
-          let expanded_alias = scope aliases
-          | where name == $spans.0
-          | get -o 0.expansion
-
-          let spans = if $expanded_alias != null {
-            $spans
-            | skip 1
-            | prepend ($expanded_alias | split row ' ' | take 1)
-          } else {
-            $spans
+          let carapace_completer = {|spans: list<string>|
+            carapace $spans.0 nushell ...$spans
+            | from json
+            | if ($in | default [] | where value == $"($spans | last)ERR" | is-empty) { $in } else { null }
           }
 
-          match $spans.0 {
-            __zoxide_z | __zoxide_zi => $zoxide_completer
-            zig => $fish_completer
-            rimi => $fish_completer
-            berg => $fish_completer
-            xmake => $fish_completer
-            crimson => $fish_completer
-            _ => $carapace_completer
-          } | do $in $spans
-        }
+          $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
 
-        $env.config = {
-          completions: {
-            external: {
-              completer: $multiple_completers
+          let fish_completer = {|spans|
+            ${lib.getExe pkgs.fish} --command $'complete "--do-complete=($spans | str join " ")"'
+            | from tsv --flexible --noheaders --no-infer
+            | rename value description
+          }
+
+          let zoxide_completer = {|spans|
+              $spans | skip 1 | zoxide query -l ...$in | lines | where {|x| $x != $env.PWD}
+          }
+
+          let multiple_completers = {|spans|
+            let expanded_alias = scope aliases
+            | where name == $spans.0
+            | get -o 0.expansion
+
+            let spans = if $expanded_alias != null {
+              $spans
+              | skip 1
+              | prepend ($expanded_alias | split row ' ' | take 1)
+            } else {
+              $spans
+            }
+
+            match $spans.0 {
+              __zoxide_z | __zoxide_zi => $zoxide_completer
+              zig => $fish_completer
+              rimi => $fish_completer
+              berg => $fish_completer
+              xmake => $fish_completer
+              crimson => $fish_completer
+              _ => $carapace_completer
+            } | do $in $spans
+          }
+
+          $env.config = {
+            completions: {
+              external: {
+                completer: $multiple_completers
+              }
+            }
+            hooks: {
+              command_not_found: (source ${./command-not-found.nu})
             }
           }
-          hooks: {
-            command_not_found: (source ${./command-not-found.nu})
+
+          $env.PATH = ($env.PATH |
+            split row (char esep) |
+            prepend ${config.home.homeDirectory}/.apps |
+            prepend ${./scripts} |
+            append /usr/bin/env
+          )
+
+          if ("${config.xdg.configHome}/nushell/extra.nu" | path exists) {
+            source ${config.xdg.configHome}/nushell/extra.nu
           }
-        }
 
-        $env.PATH = ($env.PATH |
-          split row (char esep) |
-          prepend ${config.home.homeDirectory}/.apps |
-          append /usr/bin/env
-        )
-
-        if ("${config.xdg.configHome}/nushell/extra.nu" | path exists) {
-          source ${config.xdg.configHome}/nushell/extra.nu
-        }
-
-        source ${atuin-completions}/atuin.nu
-        source ${crimson-completions}/crimson.nu
-      '';
+          source ${atuin-completions}/atuin.nu
+          source ${crimson-completions}/crimson.nu
+        '';
 
       shellAliases = lib.mkMerge [
         {

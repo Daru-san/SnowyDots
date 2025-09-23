@@ -1,0 +1,30 @@
+#!/usr/bin/env nu
+
+# Convert video files into GIF files
+#
+# Enter an input video, an output gif and optionally specify frames
+# per second and scale.
+def main [
+  --input(-i): string, # Path to an input video file
+  --output(-o): string, # Path to write the resultant gif to
+  --fps(-f): float = 10.0, # Frames per second of the resultant gif
+  --scale(-s): float = 320.0 # Factor to scale the image by, this will affect the resultant resolution. Aspect ratio will not change
+] {
+  let working_dir = mktemp -d
+
+  try {
+    let temp_img = $working_dir | path join $'($input).png'
+
+    ffmpeg -y -i $input -vf fps=($fps),scale=($scale):-1:flags=lanczos,palettegen $temp_img
+
+    ffmpeg -i $input -i $temp_img -filter_complex $'fps=($fps),scale=($scale):-1:flags=lanczos[x];[x][1:v]paletteuse' $output
+
+    rm -rf $working_dir
+  } catch { |err|
+    rm -rf $working_dir
+
+    error make {
+      text:  $'Failed to convert image due to error: ($err.msg)'
+    }
+  }
+}

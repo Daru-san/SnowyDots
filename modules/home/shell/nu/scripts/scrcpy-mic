@@ -1,0 +1,28 @@
+#!/usr/bin/env nu
+
+# Use a connected phone as a microphone
+#
+# Ensure that the devices are connected via adb.
+def main [] {
+    if (adb devices | detect columns | length ) == 0 {
+        error make {
+            msg: "No devices are connected"
+        }
+    }
+
+    let devices = (adb devices | tail -n +2) | detect columns --no-headers | rename --column  {"column0": device, "column1": type}
+
+    let device = $devices | input list --fuzzy "Select a device"
+
+    let mode = modes | input list --fuzzy "Select a mode"
+
+    scrcpy -s ($device | get device) --audio-source ($mode | str trim) --no-video --no-control --no-window
+}
+
+def modes [] {
+    let cmd = (bash -c "scrcpy --audio-source 0 2>&1" | head -n +1)
+    let start = ($cmd | str index-of "(") + 1
+    let end = ($cmd | str index-of ")") - 1
+    let modes_raw = ($cmd | str substring $start..$end)
+    ($modes_raw | str trim -rl) | split row "," | drop nth 0
+}
