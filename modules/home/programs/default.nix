@@ -17,5 +17,6 @@
     ./nvim
     ./keepasscx
     ./television
+    ./beets
   ];
 }
