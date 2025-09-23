@@ -15,7 +15,7 @@ rec {
   publicShare = "${hm}/Share";
   templates = null;
 
-  extraConfig = rec {
+  extraConfig = {
     XDG_SCREENSHOTS_DIR = "${pictures}/Screenshots";
     XDG_WALLPAPER_DIR = "${pictures}/Wallpapers";
     XDG_SECRET_DIR = "${hm}/Cabin/.secrets";
