@@ -76,7 +76,7 @@ in
           (mkBind "super" "v" "togglefloating" "Toggle floating")
           (mkBindExe "supershift" "x" "hyprctl reload" "Reload hyprland")
 
-          (mkBindExe "supershift" "l" "${hyprlock} --immediate" "Lock the screen")
+          (mkBindExe "superalt" "l" "${hyprlock} --immediate" "Lock the screen")
 
           (mkBindSingle "caps_lock" "${swayosd} --caps-lock" "Show caps lock")
 
