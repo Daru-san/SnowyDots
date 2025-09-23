@@ -82,7 +82,7 @@
 
             (workspace 8 "org.kde.kdenlive")
 
-            (workspace 8 "^Gimp$")
+            (workspace 8 "gimp")
 
             (workspace 9 "org.pwmt.zathura")
           ]
