@@ -23,7 +23,7 @@
       silent = true;
       config = {
         whitelist.prefix = [
-          "~/Forest/Development"
+          "${config.home.homeDirectory}/Cabin/Dev"
         ];
         global.disable_stdin = true;
       };

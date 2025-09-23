@@ -7,8 +7,8 @@
       enableUpdate = true;
     };
     settings = {
-      directory = "${config.home.homeDirectory}/Music";
-      library = "${config.home.homeDirectory}/Music/.beets/music.db";
+      directory = config.xdg.userDirs.music;
+      library = "${config.xdg.userDirs.music}.beets/music.db";
       import = {
         move = false;
       };

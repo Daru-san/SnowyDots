@@ -6,7 +6,7 @@ in
   services = {
     mpd = {
       enable = true;
-      musicDirectory = "${config.home.homeDirectory}/Music";
+      musicDirectory = config.xdg.userDirs.music;
       network = {
         startWhenNeeded = true;
         port = 6600;
