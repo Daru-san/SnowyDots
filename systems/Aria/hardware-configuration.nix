@@ -4,6 +4,16 @@
     cleanOnBoot = true;
     tmpfsSize = "70%";
   };
+
+  boot.initrd.luks.devices = {
+    frozen = {
+      name = "Cold Storage";
+      preLVM = true;
+      device = "/dev/disk/by-uuid/795c34e7-f791-45d8-a9c5-0ac58d8ba75e";
+      allowDiscards = true;
+    };
+  };
+
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-uuid/50eefb2e-874f-4fa1-b03a-3c3c880b8f24";
@@ -15,6 +25,15 @@
       fsType = "ext4";
     };
 
+    "/mnt/frost" = {
+      device = "/dev/mapper/frozen";
+      fsType = "ext4";
+    };
+
+    "/mnt/android" = {
+      device = "/dev/disk/by-uuid/63d42d12-43b0-4efe-8d8b-4926085034da";
+      fsType = "xfs";
+    };
 
     "/boot" = {
       device = "/dev/disk/by-uuid/7ED4-6E7F";
