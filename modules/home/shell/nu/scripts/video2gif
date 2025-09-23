@@ -24,7 +24,7 @@ def main [
     rm -rf $working_dir
 
     error make {
-      text:  $'Failed to convert image due to error: ($err.msg)'
+      msg:  $'Failed to convert image due to error: ($err.msg)'
     }
   }
 }
