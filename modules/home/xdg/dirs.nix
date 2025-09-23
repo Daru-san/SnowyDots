@@ -7,6 +7,7 @@ rec {
   createDirectories = true;
 
   desktop = null;
+  documents = "${hm}/Cabin/Documents";
   music = "${hm}/Cabin/Media/Music";
   pictures = "${hm}/Cabin/Media/Pictures";
   videos = "${hm}/Cabin/Media/Videos";
