@@ -12,6 +12,17 @@
       import = {
         move = false;
       };
+      plugins = [
+        "musicbrainz"
+        "deezer"
+        "convert"
+        "badfiles"
+        "embedart"
+        "fetchart"
+        "spotify"
+        "missing"
+        "duplicates"
+      ];
     };
   };
 }
