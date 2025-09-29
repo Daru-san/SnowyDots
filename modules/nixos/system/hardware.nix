@@ -11,6 +11,10 @@
     earlyoom.enable = true;
     thermald.enable = true;
   };
+  powerManagement = {
+    enable = true;
+    cpuFreqGovernor = "ondemand";
+  };
   programs.tuxclocker.enable = true;
   programs.mdevctl.enable = true;
   services.udev.extraRules = ''
