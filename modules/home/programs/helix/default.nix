@@ -38,11 +38,12 @@ in
         auto-save = {
           after-delay.enable = true;
         };
+        end-of-line-diagnostics = "hint";
         mouse = true;
         line-number = "absolute";
-        cursorline = true;
+        cursorline = false;
         cursorcolumn = false;
-        continue-comments = false;
+        continue-comments = true;
         auto-completion = true;
         path-completion = true;
         auto-format = true;
@@ -66,11 +67,20 @@ in
           ];
           right = [
             "diagnostics"
+            "workspace-diagnostics"
             "selections"
             "register"
             "position"
             "position-percentage"
             "file-encoding"
+          ];
+          mode.normal = "NORMAL";
+          mode.insert = "INSERT";
+          mode.select = "SELECT";
+          diagnostics = [
+            "hint"
+            "warning"
+            "error"
           ];
         };
         lsp = {
