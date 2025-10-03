@@ -34,6 +34,7 @@ in
     languages = import ./languages.nix { inherit pkgs lib vale; };
     # defaultEditor = true;
     extraPackages = import ./packages.nix { inherit pkgs; };
+    themes = import ./themes { inherit lib; };
     settings = {
       theme = "kaolin-dark";
       keys = import ./keys.nix;

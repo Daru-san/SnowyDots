@@ -1,0 +1,70 @@
+{
+  "pins": {
+    "aegir": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "slein-nl",
+        "repo": "aegir"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "a93ffa05bfc0dcf61a61894d6e7d1eaf4ff670a0",
+      "url": "https://github.com/slein-nl/aegir/archive/a93ffa05bfc0dcf61a61894d6e7d1eaf4ff670a0.tar.gz",
+      "hash": "1wd5mb6b7gk28swb1nhg4q6sx1hj414zl4ck8a2j389753v36y4p"
+    },
+    "darkvoid": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "darkvoid-theme",
+        "repo": "helix"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "9982aea8c765c5d7fc672b0c09b08fbbf2a3f888",
+      "url": "https://github.com/darkvoid-theme/helix/archive/9982aea8c765c5d7fc672b0c09b08fbbf2a3f888.tar.gz",
+      "hash": "0lw87r7ixcyjk7mq1nb85sdcqb419h6p1i0vz4f27vpn4r6hq6p1"
+    },
+    "grayscale": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "dlisboa",
+        "repo": "helix-grayscale"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "e9aac05a181120eb2c3db37a94d134155e793744",
+      "url": "https://github.com/dlisboa/helix-grayscale/archive/e9aac05a181120eb2c3db37a94d134155e793744.tar.gz",
+      "hash": "0ksawksh5yx405s0lzdf4mxc3ijxhdr9kkda58w14j34pcqvqyjh"
+    },
+    "oxocarbon": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "neoangelism",
+        "repo": "oxocarbon-helix"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "9a3351cc6953ae41e8d81d9ba8f0d69eac3c19f2",
+      "url": "https://github.com/neoangelism/oxocarbon-helix/archive/9a3351cc6953ae41e8d81d9ba8f0d69eac3c19f2.tar.gz",
+      "hash": "0xd6yqqm5wsinzgq24vkn52viyxbnk08ll8i2ssi31xbfsjrjnqb"
+    },
+    "rose-pine": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "rose-pine",
+        "repo": "helix"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "fc4eedacba6b83aa196052aa3570dd225cac84d2",
+      "url": "https://github.com/rose-pine/helix/archive/fc4eedacba6b83aa196052aa3570dd225cac84d2.tar.gz",
+      "hash": "11s5k5ky2g97x404wd3hgyxq541yvpkn63n6vjwrxmq0ywb0lz26"
+    }
+  },
+  "version": 5
+}
