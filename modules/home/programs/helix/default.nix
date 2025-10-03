@@ -8,7 +8,7 @@ let
 in
 {
   imports = [
-    ./yazelix.nix
+    # ./yazelix.nix
     ./efm-langserver.nix
   ];
   stylix.targets.helix.enable = false;
