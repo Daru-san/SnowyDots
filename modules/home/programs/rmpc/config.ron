@@ -1,0 +1,16 @@
+(
+        address: "MPD_ADDR:MPD_PORT",
+        password: None,
+        theme: None,
+        cache_dir: None,
+        on_song_change: None,
+        volume_step: 5,
+        max_fps: 30,
+        scrolloff: 0,
+        wrap_navigation: false,
+        enable_mouse: true,
+        enable_config_hot_reload: true,
+        select_current_song_on_change: false,
+        browser_song_sort: [Disc, Track, Artist, Title],
+        rewind_to_start_sec: Some(10),
+)

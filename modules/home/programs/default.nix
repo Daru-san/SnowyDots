@@ -19,5 +19,6 @@
     ./television
     ./beets
     ./helix
+    ./rmpc
   ];
 }
