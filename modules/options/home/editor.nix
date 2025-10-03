@@ -10,12 +10,14 @@ let
     optionalString
     getExe
     types
+    mkIf
     ;
   inherit (types)
     nullOr
     package
     listOf
     str
+    bool
     ;
   cfg = config.env.editor;
 in
@@ -33,17 +35,22 @@ in
       type = nullOr (listOf package);
       default = null;
     };
+    defaultEditor = mkOption {
+      type = bool;
+      default = false;
+    };
   };
 
-  config = {
+  config = mkIf (cfg.package != null) {
     home = {
       packages = flatten [
         cfg.extraPackages
         cfg.package
       ];
-      sessionVariables.EDITOR =
+      sessionVariables.EDITOR = mkIf cfg.defaultEditor (
         getExe cfg.package
-        + optionalString (cfg.flags != null) (" " + (builtins.concatStringsSep " " cfg.flags));
+        + optionalString (cfg.flags != null) (" " + (builtins.concatStringsSep " " cfg.flags))
+      );
     };
   };
 }
