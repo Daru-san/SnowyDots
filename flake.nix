@@ -38,7 +38,7 @@
 
     yazelix.url = "github:Daru-san/yazelix/merged";
     yazelix-hm = {
-      url = "github:luccahuguet/yazelix/merged?dir=home_manager";
+      url = "github:Daru-san/yazelix/merged?dir=home_manager";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
