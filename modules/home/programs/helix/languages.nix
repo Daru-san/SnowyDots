@@ -152,10 +152,6 @@ in
           only-features = [ "diagnostics" ];
         }
       ];
-      filetypes = [
-        "md"
-        "mdx"
-      ];
       formatter = {
         command = lib.getExe pkgs.dprint;
         args = [
