@@ -15,6 +15,13 @@
               type    "pipewire"
               name    "PipeWire Sound Server"
           }
+
+          audio_output {
+            type "fifo"
+            name "rmpc-fifo"
+            path "/tmp/mpd.fifo"
+            format "44100:16:2"
+          }
         '';
     };
     mpd-mpris = {
