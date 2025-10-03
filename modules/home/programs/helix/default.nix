@@ -7,11 +7,7 @@ let
   ]);
 in
 {
-  imports = [
-    # ./yazelix.nix
-    ./efm-langserver.nix
-  ];
-  stylix.targets.helix.enable = false;
+  stylix.targets.helix.enable = true;
   xdg.configFile."vale/.vale.ini".text = lib.generators.toINIWithGlobalSection { } {
     globalSection = {
       StylesPath = "${vale}/share/vale/styles";
@@ -37,7 +33,6 @@ in
     extraPackages = import ./packages.nix { inherit pkgs; };
     themes = import ./themes { inherit lib; };
     settings = {
-      theme = "kaolin-dark";
       keys = import ./keys.nix;
       editor = {
         auto-save = {
