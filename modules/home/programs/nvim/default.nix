@@ -9,6 +9,7 @@
   env = {
     editor = {
       extraPackages = [ pkgs.neovide ];
+      defaultEditor = false;
       package = inputs.vim.packages.${system}.default.extend {
         nixpkgs.overlays = [ inputs.snowpkgs.overlays.default ];
         dependencies = {

@@ -29,7 +29,7 @@ in
   programs.helix = {
     enable = true;
     languages = import ./languages.nix { inherit pkgs lib vale; };
-    # defaultEditor = true;
+    defaultEditor = true;
     extraPackages = import ./packages.nix { inherit pkgs; };
     themes = import ./themes { inherit lib; };
     settings = {
