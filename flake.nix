@@ -36,6 +36,13 @@
     # Featureful wayland launcher
     anyrun.url = "github:anyrun-org/anyrun/v25.9.3";
 
+    yazelix.url = "github:Daru-san/yazelix/merged";
+    yazelix-hm = {
+      url = "github:luccahuguet/yazelix/merged?dir=home_manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
     # Indexing for packages
     nix-index-database = {
       url = "github:nix-community/nix-index-database/0ef970b7021e0ee9ab93437d0e28296e86669b03";

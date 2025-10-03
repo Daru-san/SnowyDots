@@ -1,0 +1,31 @@
+{ pkgs, ... }:
+with pkgs;
+[
+  marksman
+  nil
+  nixd
+  rust-analyzer
+  sqls
+  taplo
+  pylyzer
+  zls
+  yaml-language-server
+  jq-lsp
+  gopls
+  lua-language-server
+  tailwindcss-language-server
+  clang-tools
+  efm-langserver
+  mesonlsp
+  python3Packages.python-lsp-server
+  vscode-langservers-extracted
+  vale-ls
+  rustc
+  markdownlint-cli
+  typescript-language-server
+  glsl_analyzer
+  kdePackages.qtdeclarative
+  ruff
+  basedpyright
+  stylua
+]

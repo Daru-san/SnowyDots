@@ -18,5 +18,6 @@
     ./keepasscx
     ./television
     ./beets
+    ./helix
   ];
 }
