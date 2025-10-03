@@ -1630,11 +1630,11 @@
         "nixpkgs": "nixpkgs_19"
       },
       "locked": {
-        "lastModified": 1759496942,
-        "narHash": "sha256-pJB/sD+YjHKfnQsOKYKN97yFJbNvgSZX/X7z2ZTnn/U=",
+        "lastModified": 1759497862,
+        "narHash": "sha256-9Ril1d3IKWi+6iWq2SWTArHbUHol1Eh3hCIy3Cyw2RM=",
         "owner": "Daru-san",
         "repo": "yazelix",
-        "rev": "5e7b77599f3a49d803a576168d0a5d10c143d9f6",
+        "rev": "212ec417c59de63d527c3984b4950184b78baa36",
         "type": "github"
       },
       "original": {
@@ -1655,11 +1655,11 @@
       },
       "locked": {
         "dir": "home_manager",
-        "lastModified": 1759496942,
-        "narHash": "sha256-pJB/sD+YjHKfnQsOKYKN97yFJbNvgSZX/X7z2ZTnn/U=",
+        "lastModified": 1759497862,
+        "narHash": "sha256-9Ril1d3IKWi+6iWq2SWTArHbUHol1Eh3hCIy3Cyw2RM=",
         "owner": "Daru-san",
         "repo": "yazelix",
-        "rev": "5e7b77599f3a49d803a576168d0a5d10c143d9f6",
+        "rev": "212ec417c59de63d527c3984b4950184b78baa36",
         "type": "github"
       },
       "original": {
