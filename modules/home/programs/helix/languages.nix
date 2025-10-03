@@ -101,22 +101,6 @@ in
     };
     efm = {
       command = lib.getExe pkgs.efm-langserver;
-      config = {
-        version = 2;
-        languages = {
-          markdown = {
-            lint-command = "${lib.getExe pkgs.markdownlint-cli} -s";
-            lint-stdin = true;
-            lint-after-open = true;
-            lint-on-save = true;
-            lint-formats = [
-              "%f:%l %m"
-              "%f:%l:%c %m"
-              "%f: %l: %m"
-            ];
-          };
-        };
-      };
     };
     typos = {
       command = lib.getExe pkgs.typos-lsp;

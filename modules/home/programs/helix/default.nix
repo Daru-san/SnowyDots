@@ -9,6 +9,7 @@ in
 {
   imports = [
     ./yazelix.nix
+    ./efm-langserver.nix
   ];
   stylix.targets.helix.enable = false;
   xdg.configFile."vale/.vale.ini".text = lib.generators.toINIWithGlobalSection { } {
