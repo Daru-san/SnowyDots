@@ -57,8 +57,10 @@ in
         statusline = {
           left = [
             "mode"
-            "spinner"
             "version-control"
+            "spinner"
+            "diagnostics"
+            "workspace-diagnostics"
           ];
           center = [
             "file-name"
@@ -66,9 +68,6 @@ in
             "file-modification-indicator"
           ];
           right = [
-            "diagnostics"
-            "workspace-diagnostics"
-            "selections"
             "register"
             "position"
             "position-percentage"
