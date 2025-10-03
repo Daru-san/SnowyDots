@@ -1,0 +1,15 @@
+version: 2
+#log-file: "/Users/some-user/.config/efm-langserver/log.log"
+#log-level: 2
+tools:
+    markdown-markdownlint: &markdown-markdownlint
+    lint-command: "markdownlint -s"
+    lint-stdin: true
+    lint-formats:
+        - "%f:%l %m"
+        - "%f:%l:%c %m"
+        - "%f: %l: %m"
+
+languages:
+    markdown:
+        - <<: *markdown-markdownlint

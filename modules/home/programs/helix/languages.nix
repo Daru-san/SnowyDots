@@ -101,6 +101,10 @@ in
     };
     efm = {
       command = lib.getExe pkgs.efm-langserver;
+      args = [
+        "-c"
+        "${./efm.yaml}"
+      ];
     };
     typos = {
       command = lib.getExe pkgs.typos-lsp;
