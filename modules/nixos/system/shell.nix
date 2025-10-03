@@ -29,6 +29,9 @@
         rsync = "${pkgs.rsync}/bin/rsync";
         wget2 = "${pkgs.wget2}/bin/wget2";
         vim = "${pkgs.neovim}/bin/nvim";
+        xhost = "${pkgs.xorg.xhost}/bin/xhost";
+        bash  = "${pkgs.bash}/bin/bash";
+        gparted = "${pkgs.gparted}/bin/gparted";
       in
       {
         y = yazi;
@@ -48,6 +51,7 @@
         powertop = "sudo powertop";
         bandwhich = "sudo bandwhich";
         usbtop = "sudo usbtop";
+        gparted = ''bash -c "${xhost} si:localuser:root && sudo sudo; sudo ${gparted} & sleep 1 && ${xhost} -si:localuser:root"'';
         rv = vim;
         rvi = vim;
         rvim = vim;
