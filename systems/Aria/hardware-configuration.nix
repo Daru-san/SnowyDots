@@ -30,11 +30,6 @@
       fsType = "ext4";
     };
 
-    "/mnt/android" = {
-      device = "/dev/disk/by-uuid/63d42d12-43b0-4efe-8d8b-4926085034da";
-      fsType = "xfs";
-    };
-
     "/boot" = {
       device = "/dev/disk/by-uuid/7ED4-6E7F";
       fsType = "vfat";
