@@ -13,6 +13,7 @@ with pkgs;
   jq-lsp
   gopls
   lua-language-server
+  luaPackages.teal-language-server
   tailwindcss-language-server
   clang-tools
   efm-langserver

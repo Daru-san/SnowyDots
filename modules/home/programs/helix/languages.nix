@@ -214,5 +214,11 @@ in
         args = [ "-" ];
       };
     }
+    {
+      name = "teal";
+      language-servers = [
+        "teal-language-server"
+      ];
+    }
   ];
 }
