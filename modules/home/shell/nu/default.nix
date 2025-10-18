@@ -114,7 +114,6 @@ in
 
           ${import-modules {
             background_task = "task";
-            history-utils = "mod";
             nix = "nix";
             network = "sockets/sockets";
             formats = "from-cpuinfo";
