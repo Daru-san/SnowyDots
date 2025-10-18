@@ -28,6 +28,7 @@
     glab
     icon-library
     luajit
+    luajitPackages.tl
   ];
   programs.java = {
     enable = true;
