@@ -11,5 +11,6 @@
     ./security.nix
     ./services.nix
     ./networking.nix
+    ./input.nix
   ];
 }
