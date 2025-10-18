@@ -27,7 +27,7 @@
     bacon
     glab
     icon-library
-    ida-free
+    luajit
   ];
   programs.java = {
     enable = true;

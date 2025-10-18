@@ -28,7 +28,6 @@
       oculante
       exiftool
       mdcat
-      lua
       euphonica
       mediainfo
       musikcube
