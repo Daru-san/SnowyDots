@@ -65,6 +65,11 @@
       flake = false;
     };
 
+    seanime = {
+      url = "github:Rishabh5321/seanime-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # My own repos
     crimson.url = "https://codeberg.org/Daru-san/crimson/archive/0.2.0.tar.gz";
     waycute.url = "sourcehut:~darumaka/waycute";
