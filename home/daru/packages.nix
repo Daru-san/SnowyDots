@@ -12,7 +12,6 @@
       # GUI
       scrcpy
       aria2
-      seanime
       nextcloud-client
       planify
 
