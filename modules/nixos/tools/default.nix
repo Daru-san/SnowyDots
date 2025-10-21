@@ -10,7 +10,7 @@
     ./env.nix
     ./pipewire.nix
     ./searx.nix
-    ./mtkclient.nix
+    # ./mtkclient.nix
     ./printing.nix
     ./secrets.nix
     ./transmission.nix
