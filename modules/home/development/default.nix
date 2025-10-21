@@ -28,6 +28,7 @@
     glab
     icon-library
     luajit
+    # ida-free
     luajitPackages.tl
   ];
   programs.java = {
