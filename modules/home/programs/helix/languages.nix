@@ -144,6 +144,14 @@ in
         "typos"
       ];
       debugger = lldb-rust;
+      auto-pairs = {
+        "(" = ")";
+        "{" = "}";
+        "[" = "]";
+        "\"" = "\"";
+        "`" = "`";
+        "<" = ">";
+      };
     }
     {
       name = "markdown";
