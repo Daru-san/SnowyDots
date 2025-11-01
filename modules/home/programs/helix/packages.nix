@@ -25,6 +25,8 @@ with pkgs;
   markdownlint-cli
   typescript-language-server
   glsl_analyzer
+  kotlin-language-server
+  jdt-language-server
   kdePackages.qtdeclarative
   ruff
   basedpyright
