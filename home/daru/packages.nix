@@ -91,6 +91,11 @@
 
       prismlauncher
 
+      (android-studio.override {
+        tiling_wm = true;
+        forceWayland = true;
+      })
+
       (retroarch.withCores (
         cores: with cores; [
           citra
