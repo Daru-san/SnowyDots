@@ -719,11 +719,11 @@
     },
     "nixpkgs_15": {
       "locked": {
-        "lastModified": 1761672384,
-        "narHash": "sha256-o9KF3DJL7g7iYMZq9SWgfS1BFlNbsm6xplRjVlOCkXI=",
+        "lastModified": 1761907660,
+        "narHash": "sha256-kJ8lIZsiPOmbkJypG+B5sReDXSD1KGu2VEPNqhRa/ew=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "08dacfca559e1d7da38f3cf05f1f45ee9bfd213c",
+        "rev": "2fb006b87f04c4d3bdf08cfdbc7fab9c13d94a15",
         "type": "github"
       },
       "original": {
@@ -949,11 +949,11 @@
         "systems": "systems_8"
       },
       "locked": {
-        "lastModified": 1761744315,
-        "narHash": "sha256-OknzyEoI+VEYgk/FWMyx3tvjb/MPPyqS+G/aemDz51w=",
+        "lastModified": 1761947009,
+        "narHash": "sha256-yutWdFO7EkJGdQOquwHvyWZ+3KpPowzy+v1xb8IA/K4=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "6233fc6b2c3f203d8a5970f4a2c1df5777902717",
+        "rev": "fedd0e287081c0e20a45fdf3bc0e1ecc6e9a0225",
         "type": "github"
       },
       "original": {
@@ -1130,11 +1130,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1761789420,
-        "narHash": "sha256-yxpW7m2DjKLElsWNF6mMZdr2raMpvoNgKt7OELTrKww=",
+        "lastModified": 1762001897,
+        "narHash": "sha256-bMsTPB8+CSs5mTatqyH68bblMt4hTj7BSxlXzkOCBq0=",
         "owner": "Rishabh5321",
         "repo": "seanime-flake",
-        "rev": "7a5c7aab0717315a406676af983672dff4cc3c7d",
+        "rev": "d6d638d8c537dd9d8e5cad542eea24d29b39488d",
         "type": "github"
       },
       "original": {
@@ -1596,11 +1596,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1761811653,
-        "narHash": "sha256-tU+6NqPNIw42Tp0sSNKNnzZO3vjAe/dSB5U12YHyz14=",
+        "lastModified": 1762017152,
+        "narHash": "sha256-tgFmaVR4C5f9qDqylBsS9euiUSxcVoiHxO0VH/izt0s=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "cee337184aee582dbc180b45dfcff511e2b464d9",
+        "rev": "11cceea12741a66adec7492fa603570944b90de6",
         "type": "sourcehut"
       },
       "original": {
