@@ -46,6 +46,9 @@ in
         continue-comments = true;
         auto-completion = true;
         path-completion = true;
+        completion-replace = true;
+        trim-trailing-whitespace = true;
+        trim-final-newlines = true;
         auto-format = true;
         preview-completion-insert = true;
         cursor-shape = {
@@ -59,6 +62,7 @@ in
             "mode"
             "version-control"
             "spinner"
+            "separator"
             "diagnostics"
             "workspace-diagnostics"
           ];
@@ -68,11 +72,15 @@ in
             "file-modification-indicator"
           ];
           right = [
+            "file-type"
+            "separator"
+            "selections"
             "register"
             "position"
             "position-percentage"
             "file-encoding"
           ];
+          separator = "|";
           mode.normal = "NORMAL";
           mode.insert = "INSERT";
           mode.select = "SELECT";
@@ -89,9 +97,13 @@ in
           auto-signature-help = true;
           display-inlay-hints = false;
           snippets = true;
+          display-color-swatches = true;
         };
         indent-guides = {
           render = true;
+        };
+        inline-diagnostics = {
+          cursor-line = "warning";
         };
       };
     };
