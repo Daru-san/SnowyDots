@@ -36,8 +36,8 @@
       notifications.showActionsOnHover = true;
       notifications.displayedTotal = 5;
       theme.bar.menus.menu.notifications.height = "47em";
-      theme.osd.orientation = "horizontal";
-      theme.osd.location = "bottom";
+      # theme.osd.orientation = "horizontal";
+      # theme.osd.location = "bottom";
       theme.osd.margins = "7px 7px 7px 8px";
       menus.clock.time.military = true;
       menus.clock.weather.enabled = false;
