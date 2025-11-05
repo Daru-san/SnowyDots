@@ -48,7 +48,6 @@ in
           yazi = getExe config.programs.yazi.package;
           hyprlock = getExe config.programs.hyprlock.package;
           btop = "${osConfig.security.wrapperDir}/btop";
-          swayosd = getExe' config.services.swayosd.package "swayosd-client";
           # terminal = getExe inputs.smitty.packages.${system}.smitty;
           terminal = getExe config.programs.foot.package;
           obs = "^(com\.obsproject\.Studio)$";
@@ -78,8 +77,6 @@ in
 
           (mkBindExe "superalt" "l" "${hyprlock} --immediate" "Lock the screen")
 
-          (mkBindSingle "caps_lock" "${swayosd} --caps-lock" "Show caps lock")
-
           # OBS Studio global keybindings
           (mkBindSend "shift" "f3" obs "shift" "m" "Mute desktop audio")
           (mkBindSend "shift" "f4" obs "shift" "n" "Mute microphone audio")
@@ -92,17 +89,12 @@ in
       binddle =
         (
           let
-            s = getExe' config.services.swayosd.package "swayosd-client";
-            mute = "${s} --output-volume mute-toggle";
-            raise-volume = "${s} --output-volume raise";
-            lower-volume = "${s} --output-volume lower";
-            raise-brightness = "${s} --brightness raise";
-            lower-brightness = "${s} --brightness lower";
+            wpctl = getExe' pkgs.wireplumber "wpctl";
+            mute = "${wpctl} set-mute @DEFAULT_SINK@ toggle";
+            raise-volume = "${wpctl} set-volume @DEFAULT_SINK@ 0.05+";
+            lower-volume = "${wpctl} set-volume @DEFAULT_SINK@ 0.05-";
           in
           [
-            (mkBindSingle "XF86MonBrightnessUp" raise-brightness "Raise brightness")
-            (mkBindSingle "XF86MonBrightnessDown" lower-brightness "Lower brightness")
-
             (mkBindSingle "XF86AudioRaiseVolume" raise-volume "Raise volume")
             (mkBindSingle "XF86AudioLowerVolume" lower-volume "Lower volume")
             (mkBindSingle "XF86AudioMute" mute "Mute audio")
