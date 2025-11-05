@@ -64,6 +64,7 @@ in
             "spinner"
             "separator"
             "diagnostics"
+            "separator"
             "workspace-diagnostics"
           ];
           center = [
