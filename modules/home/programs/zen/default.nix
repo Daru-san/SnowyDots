@@ -5,16 +5,18 @@
   ...
 }:
 {
-  imports = [ inputs.snow-zen.homeManagerModules.zen-browser ];
+  imports = [ inputs.zen-browser.homeModules.default ];
 
-  programs.zen = {
+  stylix.targets.zen-browser = {
+    enable = false;
+  };
+
+  programs.zen-browser = {
     enable = true;
 
-    package = pkgs.zen-browser.override {
-      nativeMessagingHosts = [
-        pkgs.tridactyl-native
-      ];
-    };
+    nativeMessagingHosts = [
+      pkgs.tridactyl-native
+    ];
 
     profiles.extra = {
       isDefault = false;
@@ -28,6 +30,7 @@
         ];
       };
     };
+
     profiles.default = {
       isDefault = true;
       id = 0;
