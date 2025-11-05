@@ -35,7 +35,7 @@ in
       hypridle.enable = true;
       hyprpaper.enable = true;
       wlsunset.enable = true;
-      swayosd.enable = true;
+      swayosd.enable = false;
       flameshot.enable = true;
       swaync.enable = false;
     };
