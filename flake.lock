@@ -1596,11 +1596,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1762357571,
-        "narHash": "sha256-gMk9zFFWAS53FgNaycklGCoxypSZXJgTFFSmJYbhVrE=",
+        "lastModified": 1762357711,
+        "narHash": "sha256-8gAFFt67KB+A5CjgVj+2brImU959X++zXUPX+V74zUc=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "4913b046b87cdc94cf276ad7b51b621264d573ae",
+        "rev": "861cb738f4114b7eddc0b7fbff2e16321301cdb7",
         "type": "sourcehut"
       },
       "original": {
