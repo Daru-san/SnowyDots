@@ -43,7 +43,7 @@
     unrar
     p7zip
     clinfo
-    glxinfo
+    mesa-demos
     exfatprogs
     nurl
     uutils-coreutils-noprefix
