@@ -50,7 +50,7 @@
       bar.customModules.cpu.pollingInterval = 2000;
       bar.customModules.ram.labelType = "used/total";
       bar.customModules.ram.round = false;
-      theme.font.size = "14px";
+      theme.font.size = "12px";
       theme.bar.outer_spacing = "0em";
       theme.bar.buttons.enableBorders = false;
       theme.bar.menus.monochrome = false;
