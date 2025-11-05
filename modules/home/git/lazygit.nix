@@ -24,10 +24,12 @@
           "master"
           "main"
         ];
-        paging = {
-          colorArg = "always";
-          pager = "diff-so-fancy";
-        };
+        pagers = [
+          {
+            colorArg = "always";
+            pager = "diff-so-fancy";
+          }
+        ];
       };
       os = {
         editPreset = "vi";
