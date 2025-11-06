@@ -7,27 +7,7 @@
 }:
 let
   package = pkgs.kakoune-unwrapped;
-  luar = pkgs.kakouneUtils.buildKakounePlugin {
-    pname = "laur";
-    version = lib.getVersion package;
-    src = pkgs.fetchFromGitHub {
-      owner = "gustavo-hms";
-      repo = "luar";
-      rev = "e32ac89fdc43e5dbd8750d55cbcf1aea66d3ebdf";
-      hash = "sha256-Hz4e3c/cv7K7+pXIOI3eqYmJgWHuRSdI50hqurGey/g=";
-    };
-  };
-
-  peneira = pkgs.kakouneUtils.buildKakounePlugin {
-    pname = "peneira";
-    version = lib.getVersion package;
-    src = pkgs.fetchFromGitHub {
-      owner = "gustavo-hms";
-      repo = "peneira";
-      rev = "affb262f00aa1f48437559c089faf192f4017129";
-      hash = "sha256-Ud6ybE96o3pgchAw0PDzWCxUT63qvJYRaxwUyP6uJ1A=";
-    };
-  };
+  popup-kak = inputs.popup-kak.packages.${system}.default;
   wrapped-kakoune = pkgs.wrapKakoune package {
     configure = {
       plugins = with pkgs.kakounePlugins; [
@@ -40,12 +20,14 @@ let
         kak-byline
         kak-fzf
         smarttab-kak
-        peneira
-        luar
       ];
     };
   };
-  extra-packages = import ../helix/packages.nix { inherit pkgs; };
+
+  extra-packages = import ../helix/packages.nix { inherit pkgs; } ++ [
+    popup-kak
+    pkgs.tmux
+  ];
 
   final-package = pkgs.symlinkJoin {
     pname = "kakoune";
@@ -64,6 +46,7 @@ in
   imports = [
     inputs.kak-tree-sitter-helix.homeManagerModules.${system}.kak-tree-sitter-helix
   ];
+
   programs = {
     kak-tree-sitter-helix.enable = true;
     kakoune = {
@@ -88,6 +71,51 @@ in
         };
         keyMappings =
           let
+            yazi-picker = pkgs.writeTextFile {
+              name = "yazi-picker";
+              executable = true;
+              text = ''
+              	#! ${lib.getExe pkgs.dash}
+
+    			id=(shuf -i 1-4096 -n 1)
+              	output=/tmp/kakoune-yazi-$id
+              	rm -f $output
+
+              	yazi --chooser-file $output > /dev/null
+
+              	cat $output
+              '';
+
+              destination = "/bin/yazi-picker";
+            };
+          	yazi-picker-cwd = pkgs.writeTextFile {
+              name = "yazi-picker";
+              executable = true;
+              text = ''
+              	#! ${lib.getExe pkgs.dash}
+
+    			id=(shuf -i 1-4096 -n 1)
+              	output=/tmp/kakoune-yazi-$id
+              	rm -f $output
+
+              	cd $(dirname "$0")
+
+              	yazi --chooser-file $output > /dev/null
+
+              	cat $output
+              '';
+
+              destination = "/bin/yazi-picker";
+          	};
+            zoxide-fzf = pkgs.writeTextFile {
+              name = "zoxide-fzf";
+              executable = true;
+              text = ''
+                	#! ${lib.getExe pkgs.dash}
+                	zoxide query --list | fzf
+              '';
+              destination = "/bin/zoxide-fzf";
+            };
             mkBind = mode: key: effect: docstring: {
               inherit
                 mode
@@ -98,6 +126,26 @@ in
             };
           in
           [
+            (mkBind "user" "g" ":popup lazygit<ret>" "Launch lazygit")
+            (mkBind "user" "f" ":popup --title open --kak-script %{edit %opt{popup_output}} -- fzf<ret>"
+              "Find a file using FZF"
+            )
+            (mkBind "normal" "<c-y>"
+              ":popup --title yazi --kak-script %{edit %opt{popup_output}} -- ${yazi-picker}/bin/yazi-picker<ret>"
+              "Find a file using Yazi"
+            )
+            (
+                mkBind "normal" "<c-Y>"
+              ":popup --title yazi --input %{val buffile} --kak-script %{edit %opt{popup_output}} -- ${yazi-picker}/bin/yazi-picker<ret>"
+              "Find a file from the current directory using Yazi"
+            )
+            (mkBind "user" "z"
+              ":popup --title zoxide --kak-script %{cd %opt{popup_output}} -- ${zoxide-fzf}/bin/zoxide-fzf<ret>"
+              "Change the active directory using Zoxide"
+            )
+            (mkBind "user" "Z" ":popup --title fzf --kak-script %{cd $out{popup_output}} -- fzf<ret>"
+              "Change the active directory using fzf"
+            )
             (
                 mkBind "normal" "<c-n>" ":lsp-formatting-sync nil<ret>" "Format the current Nix file"
             )
@@ -111,11 +159,9 @@ in
           ];
       };
       extraConfig = ''
-        require-module luar
-        require-module peneira
-        set-option global luar_interpreter luajit
         set-option global ui_options terminal_padding_char=
         eval %sh{kak-lsp}
+        evaluate-commands %sh{kak-popup init}
         lsp-enable
 
         require-module powerline
@@ -150,7 +196,7 @@ in
         }
 
         hook global BufSetOption filetype=nix %{
-          hoot buffer BufWritePre .* lsp-formatting-sync nil
+          hook buffer BufWritePre .* lsp-formatting-sync nil
           set-option buffer indentWidth 2
         }
 
@@ -190,11 +236,6 @@ in
               remove-hooks window semantic-tokens
             }
         }
-
-        set-option global peneira_files_command "rg --files"
-
-        map global normal <c-y> ':perenia-files<ret>'
-        map global normal <c-z> ':perenia-local-files<ret>'
 
         evaluate-commands %sh{ kak-tree-sitter --init $kak_session --kakoune --daemonize --server --with-highlighting }
 
