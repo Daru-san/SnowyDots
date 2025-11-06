@@ -52,6 +52,7 @@ in
     kakoune = {
       enable = true;
       package = final-package;
+      defaultEditor = true;
       config = {
         alignWithTabs = true;
         autoReload = "ask";
