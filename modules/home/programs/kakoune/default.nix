@@ -18,8 +18,6 @@ let
         powerline-kak
         kakboard
         kak-byline
-        kak-fzf
-        smarttab-kak
       ];
     };
   };
