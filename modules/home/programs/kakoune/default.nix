@@ -160,6 +160,7 @@ in
             (mkBind "normal" "<c-r>" ":lsp-rename-prompt<ret>" "Rename the hovered variable")
             (mkBind "normal" "<c-t>" ":popup nu<ret>" "Launch a terminal prompt")
             (mkBind "user" "b" ":pick-buffers<ret>" "Pick a buffer")
+            (mkBind "normal" "<c-s>" ":w<ret>" "Save the current file")
           ];
       };
       extraConfig = ''
