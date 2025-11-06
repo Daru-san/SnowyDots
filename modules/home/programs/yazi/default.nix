@@ -55,6 +55,14 @@
             name = "*.ts";
             use = "edit";
           }
+          {
+            name = "*.zig";
+            use = "edit";
+          }
+          {
+            name = "*.zig.zon";
+            use = "edit";
+          }
         ];
       };
       plugin = {
@@ -89,6 +97,14 @@
           }
           {
             name = "text/*";
+            run = ''piper -- bat -p --color=always "$1"'';
+          }
+          {
+            name = "*.zig";
+            run = ''piper -- bat -p --color=always "$1"'';
+          }
+          {
+            name = "*.zig.zon";
             run = ''piper -- bat -p --color=always "$1"'';
           }
           {
