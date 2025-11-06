@@ -243,6 +243,21 @@ in
             }
         }
 
+        hook global WinCreate .* %{
+          add-highlighter window/git-diff flag-lines Default git_diff_flags
+        }
+
+        hook global BufOpenFile .* %{
+            evaluate-commands -draft %sh{
+                cd $(dirname "$kak_buffile")
+                if [ $(git rev-parse --git-dir 2>/dev/null) ]; then
+                    for hook in WinCreate BufReload BufWritePost; do
+                        printf "hook buffer -group git-update-diff %s .* 'git update-diff'\n" "$hook"
+                    done
+                fi
+            }
+        }
+
         evaluate-commands %sh{ kak-tree-sitter --init $kak_session --kakoune --daemonize --server --with-highlighting }
 
         colorscheme base16-terminal
