@@ -55,7 +55,8 @@ let
     nativeBuildInputs = [ pkgs.makeWrapper ];
     postBuild = ''
       wrapProgram $out/bin/kak \
-        --suffix PATH : ${lib.makeBinPath extra-packages}
+        --suffix PATH : ${lib.makeBinPath extra-packages} \
+        --set KAKOUNE_POSIX_SHELL ${lib.getExe pkgs.dash}
     '';
   };
 in
