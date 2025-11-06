@@ -36,6 +36,11 @@
     # Featureful wayland launcher
     anyrun.url = "github:anyrun-org/anyrun/v25.9.3";
 
+    popup-kak = {
+      url = "github:enricozb/popup.kak";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     kak-tree-sitter-helix = {
       url = "github:Daru-san/kak-tree-sitter-helix";
       inputs.nixpkgs.follows = "nixpkgs";
