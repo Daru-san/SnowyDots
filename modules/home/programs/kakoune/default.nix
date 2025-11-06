@@ -117,6 +117,9 @@ in
               '';
               destination = "/bin/zoxide-fzf";
             };
+            fzf = pkgs.writeShellScript "fzf" ''
+            	fzf --preview 'bat --color=always {}'
+            '';
             mkBind = mode: key: effect: docstring: {
               inherit
                 mode
@@ -128,7 +131,7 @@ in
           in
           [
             (mkBind "user" "g" ":popup lazygit<ret>" "Launch lazygit")
-            (mkBind "user" "f" ":popup --title open --kak-script %{edit %opt{popup_output}} -- fzf<ret>"
+            (mkBind "user" "f" ":popup --title open --kak-script %{edit %opt{popup_output}} -- ${fzf}<ret>"
               "Find a file using FZF"
             )
             (mkBind "normal" "<c-y>"
