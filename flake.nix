@@ -36,6 +36,11 @@
     # Featureful wayland launcher
     anyrun.url = "github:anyrun-org/anyrun/v25.9.3";
 
+    kak-tree-sitter-helix = {
+      url = "github:Daru-san/kak-tree-sitter-helix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     yazelix.url = "github:Daru-san/yazelix/merged";
     yazelix-hm = {
       url = "github:Daru-san/yazelix/merged?dir=home_manager";
