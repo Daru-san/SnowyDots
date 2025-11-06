@@ -86,6 +86,29 @@ in
           setTitle = true;
           statusLine = "bottom";
         };
+        keyMappings =
+          let
+            mkBind = mode: key: effect: docstring: {
+              inherit
+                mode
+                key
+                effect
+                docstring
+                ;
+            };
+          in
+          [
+            (
+                mkBind "normal" "<c-n>" ":lsp-formatting-sync nil<ret>" "Format the current Nix file"
+            )
+            (mkBind "normal" "<c-a>" ":lsp-hover<ret>" "Show LSP hover information")
+            (mkBind "normal" "<tab>" ":buffer-next<ret>" "Go to the next buffer")
+            (mkBind "normal" "<s-tab>" ":buffer-previous<ret>" "Go to the previous buffer")
+            (mkBind "normal" "<c-x>" ":comment-line<ret>" "Toggle comment on the current line")
+            (mkBind "normal" "<c-r>" ":lsp-rename-prompt<ret>" "Rename the hovered variable")
+            (mkBind "normal" "<c-t>" ":popup nu<ret>" "Launch a terminal prompt")
+            (mkBind "user" "b" ":pick-buffers<ret>" "Pick a buffer")
+          ];
       };
       extraConfig = ''
         require-module luar
@@ -141,13 +164,6 @@ in
         map global object t '<a-semicolon>lsp-object Class Interface Struct<ret>' -docstring 'LSP class interface or struct'
         map global object d '<a-semicolon>lsp-diagnostic-object --include-warnings<ret>' -docstring 'LSP errors and warnings'
         map global object D '<a-semicolon>lsp-diagnostic-object<ret>' -docstring 'LSP errors'
-
-        map global normal <c-a> '<a-semicolon>lsp-hover<ret>' --docstring 'LSP hover information'
-
-        map global normal <tab> ': buffer-next<ret>'
-        map global normal <s-tab> ': buffer-previous<ret>'
-
-        map global normal <C-a> ': comment-line<ret>'
 
         require-module byline
 
