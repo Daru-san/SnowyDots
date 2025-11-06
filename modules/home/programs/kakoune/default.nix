@@ -182,6 +182,7 @@ in
         enable-auto-pairs
 
         lsp-inlay-diagnostics-enable global
+        lsp-auto-signature-help-enable
 
         map global insert <c-n> '<a-;>:lsp-snippets-select-next-placeholders<ret>' -docstring 'Select next snippet placeholder'
         hook global InsertCompletionShow .* %{
