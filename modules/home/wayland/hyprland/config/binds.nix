@@ -42,7 +42,7 @@ in
     {
       bindd =
         let
-          browser = getExe config.programs.zen.package;
+          browser = getExe config.programs.zen-browser.package;
           file-manager = getExe pkgs.nautilus;
           editor = "${getExe pkgs.neovide} --neovim-bin ${getExe config.env.editor.package}";
           yazi = getExe config.programs.yazi.package;
