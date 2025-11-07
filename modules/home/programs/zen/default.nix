@@ -146,7 +146,7 @@
 
       search = {
         force = true;
-        default = "StartPage";
+        default = "ddg";
         privateDefault = "ddg";
 
         order = [
