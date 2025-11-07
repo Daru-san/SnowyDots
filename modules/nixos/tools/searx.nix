@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{  lib, ... }:
 {
   services.searx = {
     enable = false;
