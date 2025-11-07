@@ -48,7 +48,7 @@ in
   programs = {
     kak-tree-sitter-helix.enable = true;
     kakoune = {
-      enable = true;
+      enable = false;
       package = final-package;
       defaultEditor = true;
       config = {

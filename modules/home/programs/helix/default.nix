@@ -27,7 +27,7 @@ in
     };
   };
   programs.helix = {
-    enable = true;
+    enable = false;
     languages = import ./languages.nix { inherit pkgs lib vale; };
     defaultEditor = false;
     extraPackages = import ./packages.nix { inherit pkgs; };
