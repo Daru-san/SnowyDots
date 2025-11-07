@@ -1,6 +1,5 @@
 {
   inputs,
-  config,
   ...
 }:
 {
@@ -14,7 +13,6 @@
     vimAlias = true;
     luaLoader.enable = true;
     imports = [
-      config.lib.stylix.nixvim.config
       inputs.vim.nixvimModules.default
     ];
   };
