@@ -3,6 +3,7 @@
   lib,
   system,
   inputs,
+  config,
   ...
 }:
 let
@@ -46,7 +47,7 @@ in
   ];
 
   programs = {
-    kak-tree-sitter-helix.enable = true;
+    kak-tree-sitter-helix.enable = config.programs.kakoune.enable;
     kakoune = {
       enable = false;
       package = final-package;

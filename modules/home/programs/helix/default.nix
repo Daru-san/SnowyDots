@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 let
   vale = pkgs.vale.withStyles (s: [
     s.proselint
@@ -8,21 +13,25 @@ let
 in
 {
   stylix.targets.helix.enable = true;
-  xdg.configFile."vale/.vale.ini".text = lib.generators.toINIWithGlobalSection { } {
-    globalSection = {
-      StylesPath = "${vale}/share/vale/styles";
-    };
-    sections = {
-      formats = {
-        mdx = "md";
-      };
-      "*.{md,rst}" = {
-        BasedOnStyles = lib.concatStringsSep ", " [
-          "proselint"
-          "Google"
-          "write-good"
-          "Vale"
-        ];
+  xdg.configFile."vale/.vale.ini".text =
+    lib.mkIf config.programs.helix.enable lib.generators.toINIWithGlobalSection { }
+      {
+        globalSection = {
+          StylesPath = "${vale}/share/vale/styles";
+        };
+        sections = {
+          formats = {
+            mdx = "md";
+          };
+          "*.{md,rst}" = {
+            BasedOnStyles = lib.concatStringsSep ", " [
+              "proselint"
+              "Google"
+              "write-good"
+              "Vale"
+            ];
+          };
+        };
       };
     };
   };
