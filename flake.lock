@@ -1715,11 +1715,11 @@
         "pascal-tools": "pascal-tools"
       },
       "locked": {
-        "lastModified": 1762548744,
-        "narHash": "sha256-X71UPiNAyGJRqQEmFGtOQNjbjiZik3lvG2kXIg3Z8Ms=",
+        "lastModified": 1762549218,
+        "narHash": "sha256-KBchIa0AgwUMQ8eSO9RYwR/VstasTFkA5YeM+E0b9SQ=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "860564aa1ca78ac4ac191a4c87a7a28b76c027ba",
+        "rev": "46bb7fac2298f3600ecba44a702537b8cd22aeaf",
         "type": "sourcehut"
       },
       "original": {
