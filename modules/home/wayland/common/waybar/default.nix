@@ -4,7 +4,10 @@
   ...
 }:
 {
-  stylix.targets.waybar.addCss = false;
+  stylix.targets.waybar = {
+    addCss = false;
+    font = "serif";
+  };
 
   programs.waybar = {
     systemd.enable = true;

@@ -10,9 +10,8 @@ in
   main-bar = {
     layer = "top";
     position = "top";
-    height = 30;
+    height = 25;
     modules-left = [
-      "idle_inhibitor"
       (mkIf (config.programs.niri.enable or false) "niri/workspaces")
       (mkIf (config.wayland.windowManager.sway.enable or false) "sway/workspaces")
       (mkIf (config.wayland.windowManager.hyprland.enable or false) "hyprland/workspaces")
@@ -21,6 +20,7 @@ in
 
     modules-center = [
       "clock"
+      "idle_inhibitor"
     ];
 
     modules-right = [
