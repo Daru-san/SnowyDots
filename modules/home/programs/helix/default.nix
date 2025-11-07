@@ -13,8 +13,9 @@ let
 in
 {
   stylix.targets.helix.enable = true;
-  xdg.configFile."vale/.vale.ini".text = lib.mkIf config.programs.helix.enable (
-    lib.generators.toINIWithGlobalSection { } {
+  xdg.configFile."vale/.vale.ini" = {
+    enable = config.programs.helix.enable;
+    text = lib.generators.toINIWithGlobalSection { } {
       globalSection = {
         StylesPath = "${vale}/share/vale/styles";
       };
@@ -31,8 +32,8 @@ in
           ];
         };
       };
-    }
-  );
+    };
+  };
   programs.helix = {
     enable = false;
     languages = import ./languages.nix { inherit pkgs lib vale; };
