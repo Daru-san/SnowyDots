@@ -16,7 +16,7 @@
   # };
 
   services.forgejo = {
-    enable = true;
+    enable = false;
     database.type = "postgres";
     # Enable support for Git Large File Storage
     lfs.enable = true;
@@ -41,7 +41,7 @@
   services.gitea-actions-runner = {
     package = pkgs.forgejo-runner;
     instances.default = {
-      enable = true;
+      enable = false;
       name = "monolith";
       url = "https://git.sandaru.com";
       token = "";

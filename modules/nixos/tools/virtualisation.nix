@@ -17,10 +17,11 @@
     virt-viewer
     waydroid-helper
   ];
-  programs.virt-manager.enable = true;
+
+  programs.virt-manager.enable = false;
 
   virtualisation = {
-    waydroid.enable = true;
+    waydroid.enable = false;
     docker = {
       enable = true;
       rootless = {
@@ -29,7 +30,7 @@
       };
     };
     libvirtd = {
-      enable = true;
+      enable = false;
       qemu = {
         package = pkgs.qemu;
         vhostUserPackages = [ pkgs.virtiofsd ];
@@ -41,7 +42,7 @@
     };
     spiceUSBRedirection.enable = true;
     kvmgt = {
-      enable = true;
+      enable = false;
       vgpus = {
         i915-GVTg_V5_4 = {
           uuid = [ "371badd6-8017-11ef-b809-57641e8f4eb1" ];

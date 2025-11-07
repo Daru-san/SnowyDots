@@ -1,7 +1,7 @@
 {
   services = {
     ollama = {
-      enable = true;
+      enable = false;
       loadModels = [
         "gpt-oss:20b"
         "deepseek-r1:latest"
