@@ -90,19 +90,6 @@
       grayjay
 
       prismlauncher
-
-      (android-studio.override {
-        tiling_wm = true;
-        forceWayland = true;
-      })
-
-      (retroarch.withCores (
-        cores: with cores; [
-          citra
-          melonds
-          mgba
-        ]
-      ))
     ])
     (with inputs; [
       # rimi.packages.${system}.default
