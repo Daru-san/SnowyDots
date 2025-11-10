@@ -20,8 +20,8 @@ in
       inputs.vim.nixvimModules.default
     ];
     lsp.servers.pasls = {
-      enable = false;
-      package = pascal-tools.pasls;
+      enable = true;
+      package = pascal-tools.pasls-prebuilt;
     };
     extraPackages = [
         pascal-tools.pasfmt
