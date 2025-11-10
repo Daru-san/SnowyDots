@@ -171,11 +171,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1762661016,
-        "narHash": "sha256-S19zwz43UI+DonRXqhWL0PHL5CdcZT0aq35pdMEAJLQ=",
+        "lastModified": 1762747412,
+        "narHash": "sha256-E9E30aYXUvRrsBG03cDnQnjGpFgfoct55BuPpAGzfEE=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "c1bf2c6f2ab60f2fb266d3f0becc058dc126def1",
+        "rev": "09deac38ec607361200ed0d88e77b50b00426f0f",
         "type": "gitlab"
       },
       "original": {
@@ -489,11 +489,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1762700578,
-        "narHash": "sha256-Twxr27SV+lPXW5oi1KWbVai+Hx9KkZGGex5aLxJDArI=",
+        "lastModified": 1762787259,
+        "narHash": "sha256-t2U/GLLXHa2+kJkwnFNRVc2fEJ/lUfyZXBE5iKzJdcs=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "d8efc4bfa764676af1fec08f99ce9450d21f2d47",
+        "rev": "37a3d97f2873e0f68711117c34d04b7c7ead8f4e",
         "type": "github"
       },
       "original": {
@@ -1052,11 +1052,11 @@
         "utils": "utils_2"
       },
       "locked": {
-        "lastModified": 1762550284,
-        "narHash": "sha256-nfRuAyp82YvQqiswKhhXkknIpJNq+cf9RV5PWZJb8Kk=",
+        "lastModified": 1762787711,
+        "narHash": "sha256-YaKVgZcod3pdRxrughZcYVlnTQ236iRYX38jhus61/I=",
         "owner": "~darumaka",
         "repo": "nix-pascal-tools",
-        "rev": "67db5bcdd7a0ebaa3618e14222851e8ca5626b8d",
+        "rev": "0e5300bb47a7e47116b84a8a639ff49fbe4396f0",
         "type": "sourcehut"
       },
       "original": {
@@ -1305,11 +1305,11 @@
         "systems": "systems_8"
       },
       "locked": {
-        "lastModified": 1762662552,
-        "narHash": "sha256-2uNkeyrn5z0TTXcT/Qr03/Ox2drGYoSZr5G0Cb9QkT0=",
+        "lastModified": 1762718300,
+        "narHash": "sha256-oOQimZTaV1jCw0OBmmK2g7Rdj3E8YGVpkJYD32BWKRQ=",
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
-        "rev": "effee117984c2740d532b9e0c2a63ff1b57c8120",
+        "rev": "c7175bd485ed5052df5075fcdde395b631316e94",
         "type": "github"
       },
       "original": {
@@ -1770,11 +1770,11 @@
         "pascal-tools": "pascal-tools_2"
       },
       "locked": {
-        "lastModified": 1762701345,
-        "narHash": "sha256-ke+LzgxLUkW058FV2jaCFTtEi3dePUwaydQHeve8030=",
+        "lastModified": 1762794071,
+        "narHash": "sha256-h0MehjpmPUZd9o5P+kcGDbWbXVCbP7Ap5egjsFqoSM4=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "19ab01e8a1fdb3c7cc0c5824030230d7d1d69b9c",
+        "rev": "42530a702f00a08b0ceac75386cffddd0a94bc93",
         "type": "sourcehut"
       },
       "original": {
@@ -1895,11 +1895,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1762665515,
-        "narHash": "sha256-0+A0nHL1+x1H4NL5bE6GyA252JOpUK6kvfHg/g75260=",
+        "lastModified": 1762748864,
+        "narHash": "sha256-YgQ80R6TW9GxS0Ozaqe9mTVewuOWqwRmMUhRUpKsoCs=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "1bea5e777dd0b99158c504da1fb2913ff119e96c",
+        "rev": "02bb5919dab81a3fea4d8d4663ea67922a463cd3",
         "type": "github"
       },
       "original": {
