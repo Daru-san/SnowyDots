@@ -61,14 +61,14 @@ in
             "-FU${pascal-gtk4-bindings}/bindings"
           ];
           insertCompletionsAsSnippets = true;
-          insertCompletionProcedureBrackets = true;
+          insertCompletionProcedureBrackets = false;
           includeWorkspaceFoldersAsUnitPaths = true;
           includeWorkspaceFoldersAsIncludePaths = true;
           checkSyntax = true;
           publishDiagnostics = true;
           workspaceSymbols = true;
           documentSymbols = true;
-          showSyntaxErrors = false;
+          showSyntaxErrors = true;
         };
       };
     };
