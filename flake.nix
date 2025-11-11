@@ -19,6 +19,11 @@
       flake = false;
     };
 
+    pascal-gtk-bindings = {
+      url = "github:Daru-san/pascal-gtk4-bindings";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     pascal-lsp = {
       url = "github:Daru-san/pascal-language-server";
       inputs.nixpkgs.follows = "nixpkgs";
