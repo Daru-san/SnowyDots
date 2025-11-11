@@ -5,6 +5,7 @@
 }:
 let
   pascal-tools = inputs.pascal-tools.packages.${system};
+  pascal-lsp = inputs.pascal-lsp.packages.${system};
 in
 {
   imports = [
@@ -21,10 +22,10 @@ in
     ];
     lsp.servers.pasls = {
       enable = true;
-      package = pascal-tools.pasls-prebuilt;
+      package = pascal-lsp.pasls;
     };
     extraPackages = [
-        pascal-tools.pasfmt
+      pascal-tools.pasfmt
     ];
   };
 }
