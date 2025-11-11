@@ -19,6 +19,11 @@
       flake = false;
     };
 
+    pascal-lsp = {
+      url = "github:Daru-san/pascal-language-server";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Pascal development tools
     pascal-tools = {
       url = "sourcehut:~darumaka/nix-pascal-tools";
