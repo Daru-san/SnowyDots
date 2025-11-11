@@ -1145,11 +1145,11 @@
         "utils": "utils_5"
       },
       "locked": {
-        "lastModified": 1762876836,
-        "narHash": "sha256-k/zKFDn6fOPpXxeZxrF9/SaRWcaN6GHbjKDd21kbBlE=",
+        "lastModified": 1762890449,
+        "narHash": "sha256-Z54uVS4cG8K66d1oV5Rqu7yyxBG4QWkwqG8WSfBp02o=",
         "owner": "~darumaka",
         "repo": "nix-pascal-tools",
-        "rev": "932bf60a9f414989891890c45d73706da5523415",
+        "rev": "01b08a73235822a2f2a240a8458ef5158ed7be9a",
         "type": "sourcehut"
       },
       "original": {
@@ -1324,11 +1324,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1762693511,
-        "narHash": "sha256-Bt7ZC2gKPSha0f1Ks1++jtgfE4o3SKF1Q2X2zahrI3U=",
+        "lastModified": 1762886056,
+        "narHash": "sha256-76Uv/wDJUN7HhKWAmglSqRlMJDGbCbz1TwRPGw9oPKY=",
         "owner": "Rishabh5321",
         "repo": "seanime-flake",
-        "rev": "81502f7d085f0b7286c14e6c47cc111a0d19f04a",
+        "rev": "e51876c32b4d7c70633e4b09525c808bc78cb272",
         "type": "github"
       },
       "original": {
@@ -1964,11 +1964,11 @@
         "pascal-tools": "pascal-tools_3"
       },
       "locked": {
-        "lastModified": 1762794071,
-        "narHash": "sha256-h0MehjpmPUZd9o5P+kcGDbWbXVCbP7Ap5egjsFqoSM4=",
+        "lastModified": 1762893680,
+        "narHash": "sha256-oKSBWrv3d6ZixU8t4LTLjoNk76JbgLDP8F4q21vl9Ao=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "42530a702f00a08b0ceac75386cffddd0a94bc93",
+        "rev": "78f4f257a678f210aba20a67bd6ad8662970f964",
         "type": "sourcehut"
       },
       "original": {
