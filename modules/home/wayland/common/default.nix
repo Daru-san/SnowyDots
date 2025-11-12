@@ -2,8 +2,6 @@
   config,
   lib,
   pkgs,
-  inputs,
-  system,
   ...
 }:
 let
@@ -30,7 +28,8 @@ in
   ];
   config = mkIf cfg.enable {
     wayland.windowManager.sway.enable = false;
-    wayland.windowManager.hyprland.enable = true;
+    wayland.windowManager.hyprland.enable = false;
+    programs.niri.enable = true;
     services = {
       hypridle.enable = true;
       hyprpaper.enable = true;
@@ -47,7 +46,7 @@ in
       foot.enable = true;
       crimson.enable = false;
       wleave.enable = true;
-      hyprpanel.enable = true;
+      hyprpanel.enable = false;
     };
     home.packages = [
       pkgs.wl-clipboard-rs
