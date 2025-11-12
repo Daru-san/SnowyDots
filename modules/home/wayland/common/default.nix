@@ -18,13 +18,14 @@ in
     ./ghostty
     ./waybar
     ./flameshot
-    ./waycute
+    # ./waycute
     ./wezterm
     ./foot
     ./swaync
     ./crimson
     ./wleave
     ./hyprpanel
+    ./dms
   ];
   config = mkIf cfg.enable {
     wayland.windowManager.sway.enable = false;
@@ -48,8 +49,5 @@ in
       wleave.enable = true;
       hyprpanel.enable = false;
     };
-    home.packages = [
-      pkgs.wl-clipboard-rs
-    ];
   };
 }
