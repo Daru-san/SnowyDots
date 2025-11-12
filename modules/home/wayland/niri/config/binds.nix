@@ -28,8 +28,6 @@
           "Mod+Ctrl+Shift+E".action.quit = {
             skip-confirmation = true;
           };
-          "Print".action.screenshot = [ ];
-          "Shift+Print".action.screenshot-screen = [ ];
           "Mod+F".action.fullscreen-window = [ ];
           "Mod+Shift+q".action.close-window = [ ];
           "Mod+Shift+Slash".action.show-hotkey-overlay = [ ];
@@ -149,6 +147,7 @@
             btop = getExe config.programs.btop.package;
             easyeffects = getExe config.services.easyeffects.package;
             copyq = getExe pkgs.copyq;
+            flameshot = getExe pkgs.flameshot;
           in
           {
             "Mod+q".action.spawn = [ terminal ];
@@ -179,6 +178,15 @@
               "--title=yazi-fm"
               "-e"
               yazi
+            ];
+            "Print".action.spawn = [
+              flameshot
+              "gui"
+            ];
+
+            "Shift+Print".action.screenshot-screen = [
+              flameshot
+              "full"
             ];
           }
         )
