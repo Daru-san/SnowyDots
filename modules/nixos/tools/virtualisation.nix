@@ -18,7 +18,7 @@
     waydroid-helper
   ];
 
-  programs.virt-manager.enable = false;
+  programs.virt-manager.enable = true;
 
   virtualisation = {
     waydroid.enable = false;
@@ -30,7 +30,7 @@
       };
     };
     libvirtd = {
-      enable = false;
+      enable = true;
       qemu = {
         package = pkgs.qemu;
         vhostUserPackages = [ pkgs.virtiofsd ];
@@ -42,7 +42,7 @@
     };
     spiceUSBRedirection.enable = true;
     kvmgt = {
-      enable = false;
+      enable = true;
       vgpus = {
         i915-GVTg_V5_4 = {
           uuid = [ "371badd6-8017-11ef-b809-57641e8f4eb1" ];
