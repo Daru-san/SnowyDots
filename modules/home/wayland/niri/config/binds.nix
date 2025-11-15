@@ -184,7 +184,7 @@
               "gui"
             ];
 
-            "Shift+Print".action.screenshot-screen = [
+            "Shift+Print".action.spawn = [
               flameshot
               "full"
             ];
