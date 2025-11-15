@@ -89,6 +89,28 @@
 
       grayjay
 
+      (pkgs.symlinkJoin {
+        name = "dolphin-fb";
+        version = lib.getVersion pkgs.kdePackages.dolphin;
+        preferLocalBuild = true;
+        paths = [ kdePackages.dolphin ];
+        nativeBuildInputs = [ makeWrapper ];
+        postBuild = ''
+          wrapProgram $out/bin/dolphin \
+            --prefix PATH : ${
+              lib.makeBinPath (
+                with kdePackages;
+                [
+                  qtsvg
+                  kio-fuse
+                  kio-extras
+                  dolphin-plugins
+                ]
+              )
+            }
+        '';
+      })
+
       prismlauncher
     ])
     (with inputs; [

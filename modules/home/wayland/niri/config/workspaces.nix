@@ -56,6 +56,7 @@
       {
         matches = [
           { app-id = "org.gnome.Nautilus"; }
+          { app-id = "org.kde.dolphin"; }
           { app-id = "oculante"; }
           { app-id = "io.github.giantpinkrobots.varia"; }
         ];
