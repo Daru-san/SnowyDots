@@ -21,5 +21,6 @@
     ./beets
     ./helix
     ./rmpc
+    ./flatpak
   ];
 }
