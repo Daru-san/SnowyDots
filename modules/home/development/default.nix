@@ -24,6 +24,7 @@
     socat
     zbus-xmlgen
     dotnet-sdk_9
+    nnd
     bacon
     glab
     icon-library
