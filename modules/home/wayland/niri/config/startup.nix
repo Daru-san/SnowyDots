@@ -22,18 +22,12 @@
       }
       {
         command = [
-          (lib.getExe pkgs.niriswitcher)
-        ];
-      }
-      {
-        command = [
-          (lib.getExe config.programs.ghostty.package)
+          (lib.getExe config.programs.foot.package)
           "-e"
           (lib.getExe config.programs.btop.package)
         ];
       }
       { command = [ (lib.getExe pkgs.xwayland-satellite) ]; }
-      { command = [ (lib.getExe' config.services.swayosd.package "swayosd-server") ]; }
       { command = [ (lib.getExe pkgs.varia) ]; }
     ];
   };
