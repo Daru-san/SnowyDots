@@ -22,6 +22,8 @@
     rustup
     git-repo
     socat
+    rojo
+    nasm
     zbus-xmlgen
     dotnet-sdk_9
     nnd
