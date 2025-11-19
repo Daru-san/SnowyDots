@@ -26,6 +26,7 @@
     nasm
     zbus-xmlgen
     dotnet-sdk_9
+    android-translation-layer
     nnd
     bacon
     glab
