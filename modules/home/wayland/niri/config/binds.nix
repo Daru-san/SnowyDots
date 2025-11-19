@@ -141,7 +141,7 @@
         (
           let
             terminal = getExe config.programs.foot.package;
-            file-manager = getExe' pkgs.kdePackages.dolphin "dolphin";
+            file-manager = "dolphin";
             yazi = getExe config.programs.yazi.package;
             hyprlock = getExe config.programs.hyprlock.package;
             btop = getExe config.programs.btop.package;
