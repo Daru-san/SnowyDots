@@ -89,6 +89,8 @@
 
       grayjay
 
+      blender
+
       (pkgs.symlinkJoin {
         name = "dolphin-fb";
         version = lib.getVersion pkgs.kdePackages.dolphin;
