@@ -25,7 +25,7 @@
     rojo
     nasm
     zbus-xmlgen
-    dotnet-sdk_9
+    # dotnet-sdk_9
     android-translation-layer
     nnd
     bacon
@@ -36,6 +36,6 @@
     luajitPackages.tl
   ];
   programs.java = {
-    enable = true;
+    enable = false;
   };
 }
