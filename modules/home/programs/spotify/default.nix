@@ -83,11 +83,9 @@ in
     enabledExtensions = with spicePkgs.extensions; [
       adblockify
       powerBar
-      oldSidebar
       shuffle
       fullAppDisplay
       volumePercentage
-      writeify
       oldLikeButton
       lastfm
       seekSong
