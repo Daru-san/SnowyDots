@@ -37,8 +37,8 @@
       qownnotes
 
       # GUI Util
-      file-roller
       cheese
+      kdePackages.arc
       varia
 
       # Android
@@ -91,31 +91,13 @@
 
       blender
 
-      (pkgs.symlinkJoin {
-        name = "dolphin-fb";
-        version = lib.getVersion pkgs.kdePackages.dolphin;
-        preferLocalBuild = true;
-        paths = [ kdePackages.dolphin ];
-        nativeBuildInputs = [ makeWrapper ];
-        postBuild = ''
-          wrapProgram $out/bin/dolphin \
-            --prefix PATH : ${
-              lib.makeBinPath (
-                with kdePackages;
-                [
-                  kio-fuse
-                  kio-extras
-                  dolphin-plugins
-                  kservice
-                  qtwayland
-                  kio
-                ]
-              )
-            } \
-            --set XDG_CONFIG_DIRS "${pkgs.kdePackages.kservice}/etc/xdg:$XDG_CONFIG_DIRS" \
-            --run "${pkgs.kdePackages.kservice}/bin/kbuildsycoca6 kbuildsycoca6 --noincremental ${pkgs.kdePackages.kservice}/etc/xdg/menus/applications.menu"
-        '';
-      })
+      (with kdePackages; [
+        dolphin-plugins
+        dolphin
+        kio-fuse
+        kio-gdrive
+        kio-admin
+      ])
 
       prismlauncher
     ])
