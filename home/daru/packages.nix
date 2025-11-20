@@ -14,13 +14,7 @@
       aria2
       nextcloud-client
       planify
-
-      # Science
-      kdePackages.kalzium
       element
-
-      # Content creation
-      kdePackages.kdenlive
 
       # Media
       ffmpeg
@@ -38,7 +32,6 @@
 
       # GUI Util
       cheese
-      kdePackages.arc
       varia
 
       # Android
@@ -91,15 +84,17 @@
 
       blender
 
-      (with kdePackages; [
-        dolphin-plugins
-        dolphin
-        kio-fuse
-        kio-gdrive
-        kio-admin
-      ])
-
       prismlauncher
+    ])
+    (with pkgs.kdePackages; [
+      kdenlive
+      kalzium
+      dolphin-plugins
+      ark
+      dolphin
+      kio-fuse
+      kio-gdrive
+      kio-admin
     ])
     (with inputs; [
       # rimi.packages.${system}.default
