@@ -1,0 +1,5 @@
+#!/usr/bin/env nu
+
+def main [url: string] {
+      nix-hash --type sha256 --to-sri (nix-prefetch-url $url)
+}
