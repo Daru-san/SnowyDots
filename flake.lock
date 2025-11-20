@@ -2131,11 +2131,11 @@
         "pascal-tools": "pascal-tools_3"
       },
       "locked": {
-        "lastModified": 1763550368,
-        "narHash": "sha256-Wsg1I7uVyeGb5KurBMP0Z7GacupJcBsfCm8x5rV/3jE=",
+        "lastModified": 1763646032,
+        "narHash": "sha256-VnxKjwXSvNCIMmuqkeyC2+eQbykjb5sFm8WdOWYzdiE=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "4eb8967134a34da62bb3efc2ae604b030c39617e",
+        "rev": "8012ef208dab3f389200bb97b200570b5e44a6d3",
         "type": "sourcehut"
       },
       "original": {
