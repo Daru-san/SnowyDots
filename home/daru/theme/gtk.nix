@@ -31,7 +31,7 @@ rec {
     enable = true;
 
     theme = {
-      name = "WhiteSur-Dark-grey";
+      name = "WhiteSur-Dark-alt-grey";
       package = pkgs.whitesur-gtk-theme.override {
         colorVariants = [ "dark" ];
         themeVariants = [ "grey" ];
