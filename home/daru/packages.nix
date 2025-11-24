@@ -25,6 +25,7 @@
       mediainfo
       musikcube
       pulsemixer
+      audacity
 
       # Desktop
       swww
