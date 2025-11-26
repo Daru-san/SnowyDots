@@ -48,7 +48,7 @@ in
       crimson.enable = false;
       wleave.enable = true;
       hyprpanel.enable = false;
-      dms.enable = false;
+      dankMaterialShell.enable = false;
     };
   };
 }
