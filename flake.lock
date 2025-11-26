@@ -646,11 +646,11 @@
         "xwayland-satellite-unstable": "xwayland-satellite-unstable"
       },
       "locked": {
-        "lastModified": 1764081740,
-        "narHash": "sha256-eeQzyHJjSQTxcjSCy1OgOgNAUjdBnIjSYntfJK0Z4+I=",
+        "lastModified": 1764157441,
+        "narHash": "sha256-FMfns2TcWIYChqTpvk6AZMGzInQqH8/Lo6l+b5ni33E=",
         "owner": "sodiboo",
         "repo": "niri-flake",
-        "rev": "e579b1a51f26341eeeb41e32d5b5c6e2a032e339",
+        "rev": "218bd0c018952831c2f782ddee573a7543041018",
         "type": "github"
       },
       "original": {
@@ -679,11 +679,11 @@
     "niri-unstable": {
       "flake": false,
       "locked": {
-        "lastModified": 1764046829,
-        "narHash": "sha256-XFSR43nAKXDMhtNa+V2sd6Url/bCPGwawkmCqUKKRfI=",
+        "lastModified": 1764152683,
+        "narHash": "sha256-mrW/Pd8OPqhUct6kG5PcQ/UBMfzxhES7uYvyzJfXZNY=",
         "owner": "YaLTeR",
         "repo": "niri",
-        "rev": "54c7fdcd1adcfade596aca1070062f3f0fb5d4d0",
+        "rev": "cbd0dfa28075766334af44f7886a99d14f02cc03",
         "type": "github"
       },
       "original": {
@@ -2147,11 +2147,11 @@
     "walls": {
       "flake": false,
       "locked": {
-        "lastModified": 1758059361,
-        "narHash": "sha256-dPwwZlq7wqFdJJBstzNksq6tomfElUO6NEQW95cEi0Y=",
+        "lastModified": 1764159533,
+        "narHash": "sha256-xrlF+FOi3sqHoIV8fkyowp9NQY3pmQis5+lq6Y4U6Ds=",
         "owner": "~darumaka",
         "repo": "Wallpapers",
-        "rev": "5cc5e3ef063ef65eba4c0795f073b58c6cdb21fe",
+        "rev": "b35090a9ba647b628d442ed336c4be1018beff42",
         "type": "sourcehut"
       },
       "original": {
