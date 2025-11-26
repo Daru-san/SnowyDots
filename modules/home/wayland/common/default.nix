@@ -40,7 +40,7 @@ in
       swaync.enable = false;
     };
     programs = {
-      waybar.enable = false;
+      waybar.enable = true;
       anyrun.enable = true;
       hyprlock.enable = true;
       wezterm.enable = false;
@@ -48,6 +48,7 @@ in
       crimson.enable = false;
       wleave.enable = true;
       hyprpanel.enable = false;
+      dms.enable = false;
     };
   };
 }
