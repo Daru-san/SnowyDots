@@ -175,11 +175,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1764605077,
-        "narHash": "sha256-gSmsmRFf00ih3GLg3xsz3Ccjqqzd9nffLPO4NH3pfAc=",
+        "lastModified": 1764609955,
+        "narHash": "sha256-UqaRXtBRVULZMmNvUqvxgIZjHDU9OVOzfu34Tw6mF9g=",
         "owner": "AvengeMedia",
         "repo": "DankMaterialShell",
-        "rev": "94851a51aa0f38769dc6f5b2d53e16ec055f7a56",
+        "rev": "9184c70883d02d931e044011261990948e99767b",
         "type": "github"
       },
       "original": {
@@ -351,11 +351,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1762980239,
-        "narHash": "sha256-8oNVE8TrD19ulHinjaqONf9QWCKK+w4url56cdStMpM=",
+        "lastModified": 1763759067,
+        "narHash": "sha256-LlLt2Jo/gMNYAwOgdRQBrsRoOz7BPRkzvNaI/fzXi2Q=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "52a2caecc898d0b46b2b905f058ccc5081f842da",
+        "rev": "2cccadc7357c0ba201788ae99c4dfa90728ef5e0",
         "type": "github"
       },
       "original": {
@@ -947,11 +947,11 @@
     },
     "nixpkgs_15": {
       "locked": {
-        "lastModified": 1763421233,
-        "narHash": "sha256-Stk9ZYRkGrnnpyJ4eqt9eQtdFWRRIvMxpNRf4sIegnw=",
+        "lastModified": 1764517877,
+        "narHash": "sha256-pp3uT4hHijIC8JUK5MEqeAWmParJrgBVzHLNfJDZxg4=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "89c2b2330e733d6cdb5eae7b899326930c2c0648",
+        "rev": "2d293cbfa5a793b4c50d17c05ef9e385b90edf6c",
         "type": "github"
       },
       "original": {
@@ -1175,11 +1175,11 @@
         "systems": "systems_14"
       },
       "locked": {
-        "lastModified": 1763549687,
-        "narHash": "sha256-btMp4ce7zZaiaRHYFoSaMUd+8zS5zetHcelqpEFdfCM=",
+        "lastModified": 1764581424,
+        "narHash": "sha256-ij6QCIm8EeXGG1F2Aj/mTwVF4U80MtxsJ4krW0I0U2E=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "6fff5d7fa73a0b82a8a4db02b6b229727ebd03e8",
+        "rev": "027c96a16116588dd28728b757a24e2d43d19187",
         "type": "github"
       },
       "original": {
@@ -2131,11 +2131,11 @@
         "pascal-tools": "pascal-tools_3"
       },
       "locked": {
-        "lastModified": 1763646032,
-        "narHash": "sha256-VnxKjwXSvNCIMmuqkeyC2+eQbykjb5sFm8WdOWYzdiE=",
+        "lastModified": 1764611192,
+        "narHash": "sha256-/KR0TrRSjNracOnSRQEmmBB0WFdFxUVDlM0L3EZXqyw=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "8012ef208dab3f389200bb97b200570b5e44a6d3",
+        "rev": "54ee810150f7124c8f30165a6b3114bf6e9b932e",
         "type": "sourcehut"
       },
       "original": {
