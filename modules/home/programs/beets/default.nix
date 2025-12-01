@@ -1,7 +1,7 @@
 { config, ... }:
 {
   programs.beets = {
-    enable = true;
+    enable = false;
     mpdIntegration = {
       enableStats = true;
       enableUpdate = true;
