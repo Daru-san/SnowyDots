@@ -30,7 +30,7 @@ in
       inputs.vim.nixvimModules.default
     ];
     lsp.servers.pasls = {
-      enable = true;
+      enable = false;
       package = pkgs.symlinkJoin {
         pname = "${pascal-lsp.pasls.pname}-env";
         version = lib.getVersion pascal-lsp.pasls;
