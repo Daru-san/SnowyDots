@@ -13,7 +13,6 @@
       scrcpy
       aria2
       nextcloud-client
-      planify
       element
 
       # Media
@@ -24,6 +23,7 @@
       euphonica
       mediainfo
       musikcube
+      gdu
       pulsemixer
       audacity
 
@@ -33,11 +33,9 @@
 
       # GUI Util
       cheese
-      varia
 
       # Android
       adbtuifm
-      waydroid-script
 
       # Documents
       glow
@@ -67,7 +65,6 @@
       unrar
       onefetch
       gtrash
-      rqbit
       dconf-editor
       hexyl
       xdg-user-dirs
@@ -79,8 +76,6 @@
       mprocs
 
       grayjay
-
-      blender
 
       prismlauncher
     ])
