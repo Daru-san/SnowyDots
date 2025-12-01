@@ -9,7 +9,6 @@
     ./home.nix
     ./theme
     ./packages.nix
-    ./scripts.nix
   ];
 
   nixpkgs = {
