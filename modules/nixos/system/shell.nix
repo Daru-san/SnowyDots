@@ -30,7 +30,6 @@
         wget2 = "${pkgs.wget2}/bin/wget2";
         vim = "${pkgs.neovim}/bin/nvim";
         xhost = "${pkgs.xorg.xhost}/bin/xhost";
-        bash  = "${pkgs.bash}/bin/bash";
         gparted = "${pkgs.gparted}/bin/gparted";
       in
       {
