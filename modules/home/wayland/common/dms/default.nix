@@ -18,9 +18,6 @@
     enableCalendarEvents = false;
     enableSystemSound = true;
 
-    default.settings = {
-      theme = "dark";
-      dynamicTheming = true;
-    };
+    default.settings = builtins.fromJSON (builtins.readFile ./settings.json);
   };
 }
