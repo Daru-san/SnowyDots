@@ -28,7 +28,6 @@
         ];
       }
       { command = [ (lib.getExe pkgs.xwayland-satellite) ]; }
-      { command = [ (lib.getExe pkgs.varia) ]; }
     ];
   };
 }
