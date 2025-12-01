@@ -22,6 +22,7 @@
     targets = {
       gtk.enable = false;
       spicetify.enable = false;
+      gdu.enable = true;
     };
     image =
       let
