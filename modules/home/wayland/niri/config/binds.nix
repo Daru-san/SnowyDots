@@ -140,7 +140,7 @@
             btop = "btop";
             easyeffects = getExe config.services.easyeffects.package;
             copyq = getExe pkgs.copyq;
-            flameshot = getExe pkgs.flameshot;
+            flameshot = getExe config.services.flameshot.package;
           in
           {
             "Mod+q".action.spawn = [ terminal ];
