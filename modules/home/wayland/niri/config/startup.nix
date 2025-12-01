@@ -24,7 +24,7 @@
         command = [
           (lib.getExe config.programs.foot.package)
           "-e"
-          (lib.getExe config.programs.btop.package)
+          "btop"
         ];
       }
       { command = [ (lib.getExe pkgs.xwayland-satellite) ]; }

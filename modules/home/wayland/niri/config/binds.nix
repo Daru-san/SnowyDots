@@ -137,7 +137,7 @@
             file-manager = getExe' pkgs.kdePackages.dolphin "dolphin";
             yazi = getExe config.programs.yazi.package;
             hyprlock = getExe config.programs.hyprlock.package;
-            btop = getExe config.programs.btop.package;
+            btop = "btop";
             easyeffects = getExe config.services.easyeffects.package;
             copyq = getExe pkgs.copyq;
             flameshot = getExe pkgs.flameshot;
