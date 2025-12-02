@@ -136,7 +136,7 @@
   "runningAppsGroupByApp": false,
   "clockDateFormat": "",
   "lockDateFormat": "",
-  "mediaSize": 0,
+  "mediaSize": 1,
   "dankBarLeftWidgets": [
     "workspaceSwitcher"
   ],
@@ -165,10 +165,6 @@
     },
     {
       "id": "notificationButton",
-      "enabled": true
-    },
-    {
-      "id": "battery",
       "enabled": true
     },
     {
