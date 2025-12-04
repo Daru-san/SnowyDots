@@ -75,8 +75,6 @@
       wiki-tui
       mprocs
 
-      grayjay
-
       prismlauncher
     ])
     (with pkgs.kdePackages; [
