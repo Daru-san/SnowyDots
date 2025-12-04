@@ -108,7 +108,6 @@
     vim.url = "sourcehut:~darumaka/SnowyVim";
     rimi.url = "github:Daru-san/rimi";
     color-picker.url = "github:Daru-san/color-picker-rs";
-    snowpkgs.url = "github:Daru-san/Snowpkgs";
     walls = {
       url = "sourcehut:~darumaka/Wallpapers";
       flake = false;

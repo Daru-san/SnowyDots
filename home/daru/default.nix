@@ -14,7 +14,6 @@
   nixpkgs = {
     overlays = lib.flatten [
       (with inputs; [
-        snowpkgs.overlays.default
         yazi.overlays.default
       ])
       (with outputs.overlays; [
