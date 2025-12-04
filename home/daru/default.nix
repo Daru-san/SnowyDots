@@ -19,7 +19,6 @@
       (with outputs.overlays; [
         stable-packages
         unstable-packages
-        small-packages
       ])
       (self: super: {
         nautilus = super.nautilus.overrideAttrs (nsuper: {

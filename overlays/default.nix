@@ -12,17 +12,4 @@
       config.allowUnfree = true;
     };
   };
-
-  small-packages = final: _prev: {
-    small = import inputs.nixpkgs-small {
-      inherit (final) system;
-      config.allowUnfree = true;
-    };
-  };
-
-  snow-packages = final: _prev: {
-    snow-overlay = import inputs.snow-nixpkgs {
-      inherit (final) system;
-    };
-  };
 }
