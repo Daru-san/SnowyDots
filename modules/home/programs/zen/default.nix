@@ -73,7 +73,6 @@
           widegithub
           hover-zoom-plus
           reddit-enhancement-suite
-          user-agent-string-switcher
           ublock-origin
           tridactyl
           auto-tab-discard
@@ -537,20 +536,12 @@
             install_url = urlPrefix "ublock-origin";
             inherit installation_mode;
           };
-          "contact@maxhu.dev" = {
-            install_url = urlPrefix "mtab";
-            inherit installation_mode;
-          };
           "tridactyl.vim@cmcaine.co.uk" = {
             install_url = urlPrefix "tridactyl-vim";
             inherit installation_mode;
           };
           "{c2c003ee-bd69-42a2-b0e9-6f34222cb046}" = {
             install_url = urlPrefix "auto-tab-discard";
-            inherit installation_mode;
-          };
-          "giantpinkrobots@protonmail.com" = {
-            install_url = urlPrefix "varia-integrator";
             inherit installation_mode;
           };
 
