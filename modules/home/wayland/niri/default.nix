@@ -12,9 +12,6 @@
     ./config
   ];
   config = lib.mkIf config.programs.niri.enable {
-    nixpkgs.overlays = [
-      inputs.niri.overlays.niri
-    ];
     wayland = {
       systemd.target = "niri-session.target";
     };
