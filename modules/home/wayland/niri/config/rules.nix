@@ -36,8 +36,7 @@
           { app-id = ".blueman-manager-wrapped"; }
           { app-id = "org.twosheds.iwgtk"; }
           { app-id = "com.github.hluk.copyq"; }
-          { app-id = "com.github.wwmm.easyeffects"; }
-          { app-id = "Generate Password"; }
+          { title = "^Generate Password$"; }
           { app-id = "org.gnome.FileRoller"; }
           { app-id = "nmtui"; }
           { app-id = "pulsemixer"; }
