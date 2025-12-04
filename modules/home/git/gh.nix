@@ -13,7 +13,6 @@
         ghq
         gh-cal
         gh-s
-        gh-download
       ];
       settings = {
         git_protocol = "ssh";
