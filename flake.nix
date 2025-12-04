@@ -103,7 +103,6 @@
     };
 
     # My own repos
-    crimson.url = "https://codeberg.org/Daru-san/crimson/archive/0.2.0.tar.gz";
     waycute.url = "sourcehut:~darumaka/waycute";
     snowy-shell.url = "github:Daru-san/SnowyShell";
     vim.url = "sourcehut:~darumaka/SnowyVim";

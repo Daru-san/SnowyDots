@@ -22,7 +22,6 @@ in
     ./wezterm
     ./foot
     ./swaync
-    ./crimson
     ./wleave
     ./hyprpanel
     ./dms
@@ -45,7 +44,6 @@ in
       hyprlock.enable = true;
       wezterm.enable = false;
       foot.enable = true;
-      crimson.enable = false;
       wleave.enable = true;
       hyprpanel.enable = false;
       dankMaterialShell.enable = true;
