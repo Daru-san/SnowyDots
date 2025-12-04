@@ -18,21 +18,6 @@ let
     '';
   };
 
-  crimson-completions =
-    let
-      crimson = inputs.crimson.packages.${system}.default;
-    in
-    pkgs.stdenvNoCC.mkDerivation {
-      name = "crimson-nushell-completions";
-      version = crimson.version;
-      dontUnpack = true;
-      nativeBuildInputs = [ crimson ];
-      installPhase = ''
-        mkdir $out
-        crimson completions nushell > $out/crimson.nu
-      '';
-    };
-
   import-scripts =
     initial_paths:
     let
@@ -165,7 +150,6 @@ in
               rimi => $fish_completer
               berg => $fish_completer
               xmake => $fish_completer
-              crimson => $fish_completer
               _ => $carapace_completer
             } | do $in $spans
           }
@@ -193,7 +177,6 @@ in
           }
 
           source ${atuin-completions}/atuin.nu
-          source ${crimson-completions}/crimson.nu
         '';
 
       shellAliases = lib.mkMerge [
