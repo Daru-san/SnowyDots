@@ -38,7 +38,6 @@
           "btop"
         ];
       }
-      { command = [ (lib.getExe pkgs.xwayland-satellite) ]; }
     ];
   };
 }
