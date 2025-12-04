@@ -29,12 +29,6 @@
     window-rules = [
       {
         matches = [
-          { app-id = "^neovide$"; }
-        ];
-        open-on-workspace = "dev";
-      }
-      {
-        matches = [
           { app-id = "^firefox$"; }
           { app-id = "floorp"; }
           { app-id = "^zen$"; }
@@ -64,8 +58,8 @@
       }
       {
         matches = [
-          { title = "^btop$"; }
-          { title = "^nvtop$"; }
+          { app-id = "^btop$"; }
+          { app-id = "^nvtop$"; }
         ];
         open-on-workspace = "sys";
       }

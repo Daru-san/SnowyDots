@@ -24,6 +24,17 @@
         command = [
           (lib.getExe config.programs.foot.package)
           "-e"
+          (lib.getExe pkgs.nvtopPackages.intel)
+          "-a"
+          "nvtop"
+        ];
+      }
+      {
+        command = [
+          (lib.getExe config.programs.foot.package)
+          "-e"
+          "btop"
+          "-a"
           "btop"
         ];
       }
