@@ -9,7 +9,6 @@
   imports = [ ./configuration.nix ];
   nixpkgs = {
     overlays = [
-      inputs.snowpkgs.overlays.default
       outputs.overlays.stable-packages
     ];
     config.allowUnfree = true;
