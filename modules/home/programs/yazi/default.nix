@@ -63,6 +63,38 @@
             name = "*.zig.zon";
             use = "edit";
           }
+          {
+            name = "meson.build";
+            use = "edit";
+          }
+          {
+            name = "*.vala";
+            use = "edit";
+          }
+          {
+            name = "*.xml";
+            use = "edit";
+          }
+          {
+            name = "*.bp";
+            use = "edit";
+          }
+          {
+            name = "Makefile";
+            use = "edit";
+          }
+          {
+            name = "*.mk";
+            use = "edit";
+          }
+          {
+            name = "Kconfig";
+            use = "edit";
+          }
+          {
+            name = "build.config*";
+            use = "edit";
+          }
         ];
       };
       plugin = {
@@ -105,6 +137,38 @@
           }
           {
             name = "*.zig.zon";
+            run = ''piper -- bat -p --color=always "$1"'';
+          }
+          {
+            name = "meson.build";
+            run = ''piper -- bat -p --color=always "$1"'';
+          }
+          {
+            name = "*.vala";
+            run = ''piper -- bat -p --color=always "$1"'';
+          }
+          {
+            name = "*.xml";
+            run = ''piper -- bat -p --color=always "$1"'';
+          }
+          {
+            name = "*.bp";
+            run = ''piper -- bat -p --color=always "$1"'';
+          }
+          {
+            name = "Makefile";
+            run = ''piper -- bat -p --color=always "$1"'';
+          }
+          {
+            name = "*.mk";
+            run = ''piper -- bat -p --color=always "$1"'';
+          }
+          {
+            name = "Kconfig";
+            run = ''piper -- bat -p --color=always "$1"'';
+          }
+          {
+            name = "build.config*";
             run = ''piper -- bat -p --color=always "$1"'';
           }
           {
