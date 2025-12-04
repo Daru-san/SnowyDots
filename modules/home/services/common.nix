@@ -4,7 +4,6 @@
     playerctld.enable = true;
     easyeffects = {
       enable = true;
-      package = pkgs.small.easyeffects;
     };
     kdeconnect = {
       enable = true;
