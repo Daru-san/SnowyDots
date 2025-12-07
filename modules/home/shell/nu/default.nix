@@ -169,7 +169,8 @@ in
             split row (char esep) |
             prepend ${config.home.homeDirectory}/.apps |
             prepend ${./scripts} |
-            append /usr/bin/env
+            prepend ${config.home.homeDirectory}/.cargo/bin |
+            append /usr/bin/env |
           )
 
           if ("${config.xdg.configHome}/nushell/extra.nu" | path exists) {
