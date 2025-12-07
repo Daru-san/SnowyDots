@@ -170,7 +170,7 @@ in
             prepend ${config.home.homeDirectory}/.apps |
             prepend ${./scripts} |
             prepend ${config.home.homeDirectory}/.cargo/bin |
-            append /usr/bin/env |
+            append /usr/bin/env
           )
 
           if ("${config.xdg.configHome}/nushell/extra.nu" | path exists) {
