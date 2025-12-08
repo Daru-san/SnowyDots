@@ -1709,11 +1709,11 @@
         "pascal-tools": "pascal-tools_3"
       },
       "locked": {
-        "lastModified": 1765223656,
-        "narHash": "sha256-sbS8J7BUqmHbipJBQwndh+AJa9Eb8DXeOC+YzkwSF1s=",
+        "lastModified": 1765227663,
+        "narHash": "sha256-gjMcxEN5jMmn8kaLmx4rQGMjwVIib2VxkOOQUVpaB20=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "329a3054145ef6a014b0266a763c5b1c383d06a0",
+        "rev": "bbdad77cbaaaddd414f960c5388e207909b09568",
         "type": "sourcehut"
       },
       "original": {
