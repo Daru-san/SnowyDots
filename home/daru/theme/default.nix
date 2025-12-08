@@ -23,6 +23,7 @@
       gtk.enable = false;
       spicetify.enable = false;
       gdu.enable = true;
+      fcitx5.enable = true;
     };
     image =
       let
