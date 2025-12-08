@@ -46,7 +46,7 @@ in
       foot.enable = true;
       wleave.enable = true;
       hyprpanel.enable = false;
-      dankMaterialShell.enable = true;
+      dankMaterialShell.enable = false;
     };
   };
 }
