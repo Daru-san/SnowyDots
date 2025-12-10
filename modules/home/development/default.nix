@@ -24,7 +24,7 @@
     git-repo
     socat
     (gradle_9.override {
-      java = pkgs.jdk25;
+      java = pkgs.openjdk25;
     })
     rojo
     nasm
@@ -39,6 +39,6 @@
   ];
   programs.java = {
     enable = true;
-    package = pkgs.jdk25;
+    package = pkgs.openjdk25;
   };
 }
