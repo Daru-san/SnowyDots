@@ -23,7 +23,9 @@
     rustup
     git-repo
     socat
-    gradle
+    (gradle_9.override {
+      java = pkgs.jdk25;
+    })
     rojo
     nasm
     zbus-xmlgen
