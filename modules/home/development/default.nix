@@ -23,6 +23,7 @@
     rustup
     git-repo
     socat
+    gradle
     rojo
     nasm
     zbus-xmlgen
@@ -35,6 +36,6 @@
     luajitPackages.tl
   ];
   programs.java = {
-    enable = false;
+    enable = true;
   };
 }
