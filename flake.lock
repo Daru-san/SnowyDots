@@ -921,11 +921,11 @@
         "systems": "systems_11"
       },
       "locked": {
-        "lastModified": 1765387814,
-        "narHash": "sha256-+Vem9v3dVV9IJ75T1GJjeyY6Qhs/bHFsCcZLMdueCys=",
+        "lastModified": 1765401232,
+        "narHash": "sha256-ffXsWehi0RcFIZIPCFXLAZHQ53xyZ9CaoHf+zdUHDOQ=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "c50d50b1688672a9ca567c9f884adb76654bda9c",
+        "rev": "abd3e966f3c45b9128c306ba9e6310cf8461d566",
         "type": "github"
       },
       "original": {
@@ -1709,11 +1709,11 @@
         "pascal-tools": "pascal-tools_3"
       },
       "locked": {
-        "lastModified": 1765398565,
-        "narHash": "sha256-DLhMmLCzNYJy5AdXn7tgk367g0kg23l4qGKB0BJL1ug=",
+        "lastModified": 1765412795,
+        "narHash": "sha256-MDZCVM7PmVWaMd1Wu0OHRQcyjZS9XjfCy1IXsTvSPgo=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "a43e6cc1b53efab1a6728e8cd8b04774add74143",
+        "rev": "adce81378cfc047a8504a29d0ffeb9894a874e39",
         "type": "sourcehut"
       },
       "original": {
@@ -1867,11 +1867,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1765344150,
-        "narHash": "sha256-RoGBKQglbF19aINeV8F7DHCXxF7FrMRLgL2yjl9vOiQ=",
+        "lastModified": 1765405258,
+        "narHash": "sha256-MBTzpYc9xs+7hxE0Ibq74oJVHTbV6dB/+xfFXqvdiRI=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "1adab25828578301037855c59849e9bbecf8948b",
+        "rev": "5c8aa8907184ccb957de071097e8f325d93a0922",
         "type": "github"
       },
       "original": {
