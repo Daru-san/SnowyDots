@@ -26,8 +26,7 @@
     mutableUserTasks = false;
     userTasks = import ./tasks.nix;
     userKeymaps = import ./keymaps.nix;
-    userSettings = (import ./settings.nix { inherit lib; }) ++ {
-      lsp = import ./lsp.nix;
+    userSettings = (import ./settings.nix { inherit lib; }) // {
       "experimental.theme_overrides" = {
         "background.appearance" = "blurred";
         background = "#09090bBB";
