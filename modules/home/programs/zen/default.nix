@@ -58,9 +58,6 @@
             }
         }
 
-        #zen-appcontent-navbar-container {
-          order: 1 !important;
-        }
         ${builtins.readFile "${inputs.zen-findbar}/chrome.css"}
       '';
 
