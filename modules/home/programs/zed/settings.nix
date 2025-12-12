@@ -11,9 +11,6 @@
   preview_tabs = {
     enabled = false;
   };
-  features = {
-    copilot = false;
-  };
   window_decorations = "server";
   tabs = {
     show_diagnostics = "off";
@@ -41,7 +38,6 @@
     show_sign_in = false;
     show_branch_name = true;
   };
-  load_direnv = "shell_hook";
   tab_bar = {
     show = true;
   };
@@ -57,7 +53,9 @@
   };
   indent_guides = {
     enabled = true;
+    coloring = "indent_aware";
   };
+  show_whitespaces = "none";
   toolbar = {
     agent_review = false;
     code_actions = true;
@@ -68,14 +66,14 @@
   };
   show_signature_help_after_edits = true;
   auto_signature_help = true;
-  buffer_line_height = "standard";
+  buffer_line_height = "comfortable";
   helix_mode = true;
   telemetry = {
     diagnostics = false;
     metrics = false;
   };
+  buffer_font_size = lib.mkForce 16;
   disable_ai = true;
   base_keymap = "Atom";
-  ui_font_size = lib.mkForce 12.0;
   vim_mode = false;
 }
