@@ -17,6 +17,7 @@
         "$character"
       ];
       command_timeout = 50000;
+      scan_timeout = 50000;
       right_format = lib.concatStrings [
         "$nix_shell"
         "$git_branch"
