@@ -22,5 +22,6 @@
     ./helix
     ./rmpc
     ./flatpak
+    ./zed
   ];
 }

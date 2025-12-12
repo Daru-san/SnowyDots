@@ -1,0 +1,35 @@
+{ pkgs, ... }:
+with pkgs;
+[
+  marksman
+  nil
+  nixd
+  nixfmt-rfc-style
+  rustfmt
+  rust-analyzer
+  sqls
+  taplo
+  zls
+  yaml-language-server
+  jq-lsp
+  gopls
+  lua-language-server
+  luajitPackages.teal-language-server
+  luajit
+  clang-tools
+  efm-langserver
+  mesonlsp
+  vscode-langservers-extracted
+  vale-ls
+  rustc
+  markdownlint-cli
+  typescript-language-server
+  kotlin-language-server
+  jdt-language-server
+  just
+  just-formatter
+  just-lsp
+  typos
+  jq
+  stylua
+]

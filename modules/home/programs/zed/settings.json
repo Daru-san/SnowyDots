@@ -1,0 +1,124 @@
+{
+  "git": {
+    "branch_picker": {
+      "show_author_name": true
+    },
+    "blame": {
+      "show_avatar": false
+    }
+  },
+  "preview_tabs": {
+    "enabled": false
+  },
+  "window_decorations": "server",
+  "tabs": {
+    "show_diagnostics": "off",
+    "git_status": true,
+    "file_icons": false
+  },
+  "terminal": {
+    "button": true
+  },
+  "debugger": {
+    "button": true
+  },
+  "search": {
+    "button": true
+  },
+  "status_bar": {
+    "active_language_button": true
+  },
+  "project_panel": {
+    "button": true
+  },
+  "title_bar": {
+    "show_onboarding_banner": false,
+    "show_user_picture": false,
+    "show_sign_in": false,
+    "show_branch_name": true
+  },
+  "tab_bar": {
+    "show": true
+  },
+  "languages": {
+    "Nix": {
+      "tab_size": 2
+    }
+  },
+  "diagnostics": {
+    "inline": {
+      "enabled": true
+    }
+  },
+  "indent_guides": {
+    "enabled": true
+  },
+  "toolbar": {
+    "agent_review": false,
+    "code_actions": true,
+    "breadcrumbs": true
+  },
+  "scrollbar": {
+    "show": "never"
+  },
+  "show_signature_help_after_edits": true,
+  "auto_signature_help": true,
+  "buffer_line_height": "standard",
+  "helix_mode": true,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "disable_ai": true,
+  "base_keymap": "Atom",
+  "ui_font_size": 16.0,
+  "theme": "Base16 Grayscale Dark",
+  "vim_mode": false,
+  "auto_install_extensions": {
+    "java": true,
+    "jq": true,
+    "just": true,
+    "kotlin": true,
+    "lua": true,
+    "markdownlint": true,
+    "marksman": true,
+    "meson": true,
+    "nix": true,
+    "nu": true,
+    "scss": true,
+    "toml": true,
+    "typos": true,
+    "vala": true,
+    "vale": true,
+    "zig": true
+  },
+  "buffer_font_family": "FantasqueSansM Nerd Font",
+  "ui_font_family": "Rubik",
+  "experimental.theme_overrides": {
+    "background.appearance": "blurred",
+    "background": "#09090bBB",
+    "panel.background": "#00000000",
+    "editor.background": "#00000000",
+    "tab_bar.background": "#00000000",
+    "terminal.background": "#00000000",
+    "toolbar.background": "#00000000",
+    "tab.inactive_background": "#00000000",
+    "tab.active_background": "#3f3f4650",
+    "border": "#00000000",
+    "status_bar.background": "#09090bBB",
+    "title_bar.background": "#09090bBB",
+    "border.variant": "#00000000",
+    "scrollbar.track.background": "#52525b20",
+    "scrollbar.track.border": "#00000000",
+    "scrollbar.thumb.background": "#52525b30",
+    "scrollbar.thumb.border": "#00000000",
+    "elevated_surface.background": "#90",
+    "surface.background": "#90",
+    "editor.active_line_number": "#ffffffcc",
+    "editor.gutter.background": "#00000000",
+    "editor.indent_guide": "#ffffff30",
+    "editor.indent_guide_active": "#ffffff80",
+    "editor.line_number": "#ffffff80",
+    "editor.active_line.background": "#3f3f4640"
+  }
+}
