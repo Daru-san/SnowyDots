@@ -53,7 +53,6 @@
   };
   indent_guides = {
     enabled = true;
-    coloring = "indent_aware";
   };
   show_whitespaces = "none";
   toolbar = {
