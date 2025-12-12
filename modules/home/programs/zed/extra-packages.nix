@@ -26,6 +26,7 @@ with pkgs;
   typescript-language-server
   kotlin-language-server
   jdt-language-server
+  vala-language-server
   just
   just-formatter
   just-lsp
