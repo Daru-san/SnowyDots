@@ -9,6 +9,13 @@
           reveal_target = "center";
         }
       ];
+      alt-y = [
+        "task::Spawn"
+        {
+          task_name = "Yazi(Root)";
+          reveal_target = "center";
+        }
+      ];
     };
   }
 ]
