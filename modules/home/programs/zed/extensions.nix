@@ -19,4 +19,9 @@
   "ini"
   "basher"
   "assembly"
+  "crates-lsp"
+  "kdl"
+  "org"
+  "pascal"
+  "qml"
 ]
