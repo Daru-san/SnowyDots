@@ -22,12 +22,17 @@ with pkgs;
   vscode-langservers-extracted
   vale-ls
   rustc
+  cargo
+  rustc
   markdownlint-cli
   typescript-language-server
   kotlin-language-server
   jdt-language-server
+  blueprint-compiler
   vala-language-server
+  crates-lsp
   just
+  asm-lsp
   just-formatter
   just-lsp
   typos
