@@ -3,24 +3,7 @@
   programs.zed-editor = {
     enable = true;
     extraPackages = import ./extra-packages.nix { inherit pkgs; };
-    extensions = [
-      "zig"
-      "kotlin"
-      "java"
-      "just"
-      "jq"
-      "markdownlint"
-      "marksman"
-      "meson"
-      "vale"
-      "lua"
-      "nix"
-      "nu"
-      "toml"
-      "scss"
-      "typos"
-      "vala"
-    ];
+    extensions = import ./extensions.nix;
     mutableUserSettings = false;
     mutableUserKeymaps = false;
     mutableUserTasks = false;
