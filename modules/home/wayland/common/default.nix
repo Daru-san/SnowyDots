@@ -21,6 +21,7 @@ in
     ./foot
     ./swaync
     ./wleave
+    ./scarlet
   ];
   config = mkIf cfg.enable {
     wayland.windowManager.sway.enable = false;
