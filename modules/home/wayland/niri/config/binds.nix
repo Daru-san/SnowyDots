@@ -225,6 +225,8 @@
                 "set-volume"
                 "@DEFAULT_SINK@"
                 "0.05+"
+                "-l"
+                "1.0"
               ];
             };
 
@@ -235,6 +237,8 @@
                 "set-volume"
                 "@DEFAULT_SINK@"
                 "0.05-"
+                "-l"
+                "1.0"
               ];
             };
 
