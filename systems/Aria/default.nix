@@ -14,7 +14,6 @@
     config.allowUnfree = true;
   };
 
-  system.rebuild.enableNg = true;
   nix = {
     # package = pkgs.nixVersions.latest;
     registry = (lib.mapAttrs (_: flake: { inherit flake; })) (
