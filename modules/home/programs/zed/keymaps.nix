@@ -16,7 +16,7 @@
           reveal_target = "center";
         }
       ];
-      space-g = [
+      alt-b = [
         "task::Spawn"
         {
           task_name = "Lazygit";
