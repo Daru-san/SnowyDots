@@ -101,7 +101,7 @@
     };
 
     # My own repos
-    waycute.url = "sourcehut:~darumaka/waycute";
+    scarlet.url = "sourcehut:~darumaka/scarlet";
     vim.url = "sourcehut:~darumaka/SnowyVim";
     color-picker.url = "github:Daru-san/color-picker-rs";
     walls = {

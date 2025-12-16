@@ -1,0 +1,109 @@
+bar "HDMI-A-1" {
+    anchors "top" "left" "right"
+    height 20
+    margins 2
+
+    modules {
+        start {
+            niri-workspaces
+        }
+
+        center {
+            music
+            clock
+        }
+
+        end {
+            group {
+                css-name "stats"
+                spacing 5
+                modules {
+                    net-stats
+                    cpu
+                    memory
+                }
+            }
+            group {
+                css-name "system"
+                spacing 5
+
+                modules {
+                    network
+                    bluetooth
+                    audio
+                }
+            }
+            system-tray
+        }
+    }
+
+    configs {
+        audio {
+            hide-slider
+        }
+
+        niri-workspaces {
+            format "{index:d}"
+        }
+
+        network {
+            hide-label
+            tooltip-format "{ssid}"
+        }
+
+        cpu {
+            format "{usage:.2f}%"
+            tooltip-format "{all_cores}"
+            interval 1000
+        }
+
+        memory {
+            format "{ram_percentage:.2f}%"
+            tooltip-format "RAM: {used:.2f}Mb/{total:.2f}Mb\nSwap: {used_swap:.2f}Mb/{total_swap:.2f}Mb"
+            unit-format "Mb"
+        }
+
+        clock {
+            format "%X 󰇙 %a %e"
+            interval 1000
+        }
+
+        net-stats {
+            interval 1000
+            preferred-interface "wlan0"
+            tooltip-format "Connected to wlan0"
+        }
+
+        music {
+            hide-art
+            overflow-chars 40
+        }
+
+        bluetooth {
+            toggle-on-click
+            tooltip-format "Bluetooth is {state}"
+        }
+    }
+}
+
+popups {
+    notifications {
+        enable
+        timeout 3000
+        anchors "top"
+        layer "overlay"
+    }
+
+    osd {
+        enable
+        timeout 1000
+
+        layer "overlay"
+
+        orientation "horizontal"
+
+        margins bottom=80 top=10 left=12 right=13
+
+        anchors "bottom"
+    }
+}
