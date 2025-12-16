@@ -14,7 +14,7 @@ in
 {
   stylix.targets.helix.enable = true;
   xdg.configFile."vale/.vale.ini" = {
-    enable = config.programs.helix.enable;
+    enable = config.programs.helix.enable or config.programs.zed-editor.enable;
     text = lib.generators.toINIWithGlobalSection { } {
       globalSection = {
         StylesPath = "${vale}/share/vale/styles";
