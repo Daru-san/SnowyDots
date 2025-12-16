@@ -19,4 +19,14 @@
     use_new_terminal = true;
     allow_concurrent_runs = false;
   }
+  {
+    label = "Lazygit";
+    command = "lazygit";
+    shell = {
+      program = "sh";
+    };
+    hide = "always";
+    use_new_terminal = true;
+    allow_concurrent_runs = false;
+  }
 ]

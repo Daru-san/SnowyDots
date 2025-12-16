@@ -16,6 +16,13 @@
           reveal_target = "center";
         }
       ];
+      space-g = [
+        "task::Spawn"
+        {
+          task_name = "Lazygit";
+          reveal_target = "center";
+        }
+      ];
     };
   }
 ]

@@ -32,7 +32,8 @@
         ];
       };
       os = {
-        editPreset = "vi";
+        edit = "zed {{filename}}";
+        editAtLine = "zed {{filename}}:{{line}}";
       };
       refresher = {
         refreshInterval = 7;
