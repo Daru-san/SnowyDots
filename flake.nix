@@ -21,11 +21,6 @@
       flake = false;
     };
 
-    pascal-gtk-bindings = {
-      url = "github:Daru-san/pascal-gtk4-bindings";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     pascal-lsp = {
       url = "github:Daru-san/pascal-language-server";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,11 +31,6 @@
     # Pascal development tools
     pascal-tools = {
       url = "sourcehut:~darumaka/nix-pascal-tools";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    dms = {
-      url = "github:AvengeMedia/DankMaterialShell/v0.6.2";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -60,23 +50,6 @@
 
     # Featureful wayland launcher
     anyrun.url = "github:anyrun-org/anyrun/v25.9.3";
-
-    popup-kak = {
-      url = "github:enricozb/popup.kak";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    kak-tree-sitter-helix = {
-      url = "github:Daru-san/kak-tree-sitter-helix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    yazelix.url = "github:Daru-san/yazelix/merged";
-    yazelix-hm = {
-      url = "github:Daru-san/yazelix/merged?dir=home_manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    };
 
     # Indexing for packages
     nix-index-database = {
