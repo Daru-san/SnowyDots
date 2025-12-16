@@ -13,7 +13,6 @@
     ./spotify
     ./zen
     ./thunderbird
-    ./kakoune
     ./gimp
     ./nvim
     ./keepasscx

@@ -15,16 +15,12 @@ in
     ./hyprlock
     ./wlsunset
     ./anyrun
-    ./ghostty
     ./waybar
     ./flameshot
-    # ./waycute
     ./wezterm
     ./foot
     ./swaync
     ./wleave
-    ./hyprpanel
-    ./dms
   ];
   config = mkIf cfg.enable {
     wayland.windowManager.sway.enable = false;
@@ -47,6 +43,7 @@ in
       wleave.enable = true;
       hyprpanel.enable = false;
       dankMaterialShell.enable = false;
+      scarlet.enable = true;
     };
   };
 }

@@ -4,31 +4,32 @@ with pkgs;
   marksman
   nil
   nixd
+  nixfmt-rfc-style
+  rustfmt
   rust-analyzer
   sqls
   taplo
-  pylyzer
   zls
   yaml-language-server
   jq-lsp
   gopls
   lua-language-server
-  luaPackages.teal-language-server
-  tailwindcss-language-server
+  luajitPackages.teal-language-server
+  luajit
   clang-tools
   efm-langserver
   mesonlsp
-  python3Packages.python-lsp-server
   vscode-langservers-extracted
   vale-ls
   rustc
   markdownlint-cli
   typescript-language-server
-  glsl_analyzer
   kotlin-language-server
   jdt-language-server
-  kdePackages.qtdeclarative
-  ruff
-  basedpyright
+  just
+  just-formatter
+  just-lsp
+  typos
+  jq
   stylua
 ]
