@@ -32,8 +32,8 @@
         ];
       };
       os = {
-        edit = "zed {{filename}}";
-        editAtLine = "zed {{filename}}:{{line}}";
+        edit = "zeditor {{filename}}";
+        editAtLine = "zeditor {{filename}}:{{line}}";
       };
       refresher = {
         refreshInterval = 7;
