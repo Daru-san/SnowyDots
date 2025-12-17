@@ -74,6 +74,7 @@
       android-tools
       wiki-tui
       mprocs
+      authenticator
 
       prismlauncher
     ])
