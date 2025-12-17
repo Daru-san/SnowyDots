@@ -14,6 +14,8 @@
         savePathFixed = true;
         startupLaunch = false;
         useGrimAdapter = true;
+        disabledGrimWarning=true;
+        showDesktopNotification=false;
       };
     };
   };
