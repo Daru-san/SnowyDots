@@ -98,7 +98,7 @@ popups {
 
     osd {
         enable
-        timeout 1000
+        timeout 2000
 
         layer "overlay"
 
