@@ -847,11 +847,11 @@
         "utils": "utils_4"
       },
       "locked": {
-        "lastModified": 1765915806,
-        "narHash": "sha256-T1WLWUKjVQDkVZlU4jfYxibmrikWOHxLOnWaZhmEpL4=",
+        "lastModified": 1765979491,
+        "narHash": "sha256-Tkm+Xw5bVIeZ3b/gqy4Kg06UtCTwGpJD9wSsrbSYxek=",
         "owner": "~darumaka",
         "repo": "scarlet",
-        "rev": "057867e7bad3cbfdf6f8c1b55e84534cddb88532",
+        "rev": "8de6b04f6ab98abc9d95aad4904a1b6144af7d6b",
         "type": "sourcehut"
       },
       "original": {
@@ -867,11 +867,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1765910328,
-        "narHash": "sha256-seok5reu1/DTDuHZ9aa90mGpDMXNV/Bbezy+lCMBgok=",
+        "lastModified": 1765976382,
+        "narHash": "sha256-1vPKbvQ09jYcYwxbPi7iKiqQP3Zf6t3GmD/T9kDbFN8=",
         "owner": "Rishabh5321",
         "repo": "seanime-flake",
-        "rev": "cf4c442a7e3f021b649bfbdcdf4ef59214e0f8d5",
+        "rev": "c19cb39a359cab407a056934e3a257d793ce08b9",
         "type": "github"
       },
       "original": {
