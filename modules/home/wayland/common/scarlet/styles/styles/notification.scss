@@ -1,0 +1,39 @@
+#notification {
+    background-color: $base01;
+    border: 1px solid $base0A;
+
+    label {
+        font-size: 19px;
+        color: $base07;
+        margin-right: 9px;
+        max-width: 40px;
+        word-wrap: break-word;
+
+        &.time {
+            color: $base06;
+        }
+
+        &.name {
+            margin-left: 12px;
+        }
+
+        &.summary {
+            background-color: $base01;
+            margin-bottom: 9px;
+        }
+    }
+
+    box {
+        max-width: 10px;
+        width: 10px;
+        &.body {
+            margin-bottom: 10px;
+            background-color: $base01;
+        }
+
+        &.header {
+            border: 1px solid $base0A;
+            background-color: $base01;
+        }
+    }
+}

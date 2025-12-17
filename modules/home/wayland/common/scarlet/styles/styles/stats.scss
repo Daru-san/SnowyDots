@@ -1,0 +1,38 @@
+#stats {
+    background-color: shade($base01, 1.2);
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+#cpu,
+#memory,
+#net-stats {
+    background-color: shade($base08, 0.6);
+    padding-left: 3px;
+    padding-right: 3px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+#net-stats {
+    background-color: shade($base08, 0.6);
+
+    box {
+        margin-left: 2px;
+        margin-right: 2px;
+        &.sent {
+            background-color: $base02;
+        }
+        &.received {
+            background-color: $base02;
+        }
+    }
+}
+
+#memory,
+#cpu {
+    background-color: shade($base08, 0.6);
+    label {
+        margin-left: 5px;
+    }
+}

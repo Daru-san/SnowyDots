@@ -1,0 +1,40 @@
+#osd {
+    background-color: $base00;
+    border-radius: 6px;
+    margin-bottom: 50px;
+    border: 2px solid $base0A;
+    padding: 24px;
+    box {
+        image {
+            size: 12px;
+        }
+
+        label {
+            color: $base06;
+            font-size: 25px;
+            margin-left: 14px;
+            margin-right: 14px;
+            min-width: 70px;
+        }
+
+        progressbar {
+            min-width: 345px;
+            min-height: 25px;
+            background-color: transparent;
+            border-radius: $radius;
+            background-image: none;
+            trough {
+                min-height: 25px;
+                min-width: 6px;
+                background-image: none;
+                background-color: $base02;
+                progress {
+                    min-width: 6px;
+                    min-height: 25px;
+                    background-image: none;
+                    background-color: $base0A;
+                }
+            }
+        }
+    }
+}

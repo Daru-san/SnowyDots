@@ -1,0 +1,15 @@
+#workspaces {
+    background-color: shade($base03, 0.6);
+    button {
+        background-color: transparent;
+
+        padding-left: 6px;
+        padding-right: 6px;
+        &.focused,
+        &.active {
+            padding-left: 8px;
+            padding-right: 8px;
+            background-color: shade($base04, 0.5);
+        }
+    }
+}

@@ -1,0 +1,42 @@
+@import "colors.scss";
+
+* {
+    all: unset;
+    font-family: "FantasqueSansM Nerd Font";
+    font-size: 17px;
+}
+
+$radius: 7px;
+
+@import "styles/tray.scss";
+@import "styles/workspace.scss";
+@import "styles/system.scss";
+@import "styles/stats.scss";
+@import "styles/center.scss";
+@import "styles/osd.scss";
+@import "styles/notification.scss";
+@import "utils.scss";
+@import "mixins.scss";
+
+button {
+    border-radius: 6px;
+}
+
+#bar {
+    background-color: $base00;
+    padding: 6px;
+    margin: 1px;
+}
+
+tooltip {
+    background-color: $base01;
+    border-color: $base09;
+    border-width: 1px;
+    border-radius: $radius;
+    border-style: solid;
+    padding: 6px;
+}
+
+box {
+    border-radius: 6px;
+}

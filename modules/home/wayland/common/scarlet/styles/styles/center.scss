@@ -1,0 +1,32 @@
+#bar {
+    box {
+        &.center {
+            background-color: shade($base04, 0.4);
+        }
+    }
+}
+
+#clock,
+#music {
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+#music {
+    background-color: shade($base04, 0.2);
+    margin-right: 2px;
+
+    button {
+        &.previous,
+        &.pause-play,
+        &.next {
+            padding-left: 1px;
+            padding-right: 1px;
+            background-color: $base03;
+        }
+    }
+}
+
+#clock {
+    background-color: shade($base0F, 0.4);
+}
