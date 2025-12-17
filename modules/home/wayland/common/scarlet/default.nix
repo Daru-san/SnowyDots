@@ -5,7 +5,6 @@
   ];
 
   programs.scarlet = {
-    enable = true;
     config = ./config.kdl;
     systemd = {
       enable = true;
