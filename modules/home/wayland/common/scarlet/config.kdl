@@ -78,7 +78,7 @@ bar "HDMI-A-1" {
             hide-art
             format "{artist}: {title}"
             tooltip-format "{artist} - {album}: {title}"
-            overflow-chars 30
+            overflow-chars 25
         }
 
         bluetooth {
