@@ -5,4 +5,7 @@
       "nil"
     ];
   };
+  Markdown = {
+    format_on_save = "on";
+  };
 }
