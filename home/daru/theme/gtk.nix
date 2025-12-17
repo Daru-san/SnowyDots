@@ -31,15 +31,15 @@ rec {
     enable = true;
 
     theme = {
-      name = "WhiteSur-Dark-alt-grey";
-      package = pkgs.whitesur-gtk-theme.override {
+      name = "Colloid-Dark-Compact";
+      package = pkgs.colloid-gtk-theme.override {
         colorVariants = [ "dark" ];
-        themeVariants = [ "grey" ];
-        roundedMaxWindow = true;
-        altVariants = [ "alt" ];
-        opacityVariants = [ "normal" ];
-        iconVariant = "zorin";
-        nautilusStyle = "mojave";
+        themeVariants = [
+          "green"
+          "default"
+          "grey"
+        ];
+        sizeVariants = [ "compact" ];
       };
     };
 
