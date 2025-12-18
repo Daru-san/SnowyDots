@@ -11,6 +11,7 @@ bar "HDMI-A-1" {
         center {
             music
             clock
+            notification-icon
         }
 
         end {
@@ -78,34 +79,12 @@ bar "HDMI-A-1" {
             hide-art
             format "{artist}: {title}"
             tooltip-format "{artist} - {album}: {title}"
-            overflow-chars 25
+            max-chars 18
         }
 
         bluetooth {
             toggle-on-click
             tooltip-format "Bluetooth is {state}"
         }
-    }
-}
-
-popups {
-    notifications {
-        enable
-        timeout 3000
-        anchors "top"
-        layer "overlay"
-    }
-
-    osd {
-        enable
-        timeout 2000
-
-        layer "overlay"
-
-        orientation "horizontal"
-
-        margins bottom=80 top=10 left=12 right=13
-
-        anchors "bottom"
     }
 }
