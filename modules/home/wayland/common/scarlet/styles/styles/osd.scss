@@ -1,7 +1,7 @@
 #osd {
     background-color: $base00;
     border-radius: 6px;
-    margin-bottom: 50px;
+    margin-right: 50px;
     border: 2px solid $base0A;
     padding: 24px;
     box {
@@ -18,19 +18,19 @@
         }
 
         progressbar {
-            min-width: 345px;
-            min-height: 25px;
+            min-width: 25px;
+            min-height: 345px;
             background-color: transparent;
             border-radius: $radius;
             background-image: none;
             trough {
-                min-height: 25px;
-                min-width: 6px;
+                min-height: 6px;
+                min-width: 25px;
                 background-image: none;
                 background-color: $base02;
                 progress {
-                    min-width: 6px;
-                    min-height: 25px;
+                    min-width: 25px;
+                    min-height: 6px;
                     background-image: none;
                     background-color: $base0A;
                 }
