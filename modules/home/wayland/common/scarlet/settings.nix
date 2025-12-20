@@ -12,17 +12,14 @@
       timeout = 2000;
 
       layer = "overlay";
+      orientation = "vertical";
+
       margins = {
-
-        orientation = "horizontal";
-
-        bottom = 80;
-        top = 10;
         left = 12;
         right = 13;
       };
 
-      anchors = [ "bottom" ];
+      anchors = [ "right" ];
     };
   };
 }
