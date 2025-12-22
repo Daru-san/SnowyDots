@@ -20,9 +20,11 @@
     box {
         margin-left: 2px;
         margin-right: 2px;
+
         &.sent {
             background-color: $base02;
         }
+
         &.received {
             background-color: $base02;
         }
@@ -30,8 +32,10 @@
 }
 
 #memory,
-#cpu {
+#cpu,
+#disk-info {
     background-color: shade($base08, 0.6);
+
     label {
         margin-left: 5px;
     }

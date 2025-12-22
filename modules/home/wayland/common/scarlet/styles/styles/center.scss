@@ -7,7 +7,8 @@
 }
 
 #clock,
-#music {
+#music,
+#notification-icon {
     padding-left: 9px;
     padding-right: 9px;
 }
@@ -28,5 +29,9 @@
 }
 
 #clock {
+    background-color: shade($base0F, 0.4);
+}
+
+#notification-icon {
     background-color: shade($base0F, 0.4);
 }
