@@ -1,7 +1,8 @@
-bar "HDMI-A-1" {
+bar {
     anchors "top" "left" "right"
     height 20
     margins 2
+    monitors "HDMI-A-2"
 
     modules {
         start {
@@ -12,6 +13,7 @@ bar "HDMI-A-1" {
             music
             clock
             notification-icon
+            system-tray
         }
 
         end {
@@ -34,7 +36,6 @@ bar "HDMI-A-1" {
                     audio
                 }
             }
-            system-tray
         }
     }
 
@@ -85,6 +86,14 @@ bar "HDMI-A-1" {
         bluetooth {
             toggle-on-click
             tooltip-format "Bluetooth is {state}"
+        }
+
+        disk {
+            format "{used_space:.0f}Gb/{total_space:.0f}Gb"
+            tooltip-format "{mount_point} Read: {read} Write {write}"
+            interval 1000
+            select mountpoint="/nix/store"
+            unit-format "Gb"
         }
     }
 }

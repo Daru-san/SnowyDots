@@ -3,7 +3,7 @@
     notifications = {
       enable = true;
       timeout = 3000;
-      anchors = [ "top" ];
+      anchors = [ "top" "right"];
       layer = "overlay";
     };
 
