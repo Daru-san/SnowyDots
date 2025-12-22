@@ -80,7 +80,7 @@ bar {
             hide-art
             format "{artist}: {title}"
             tooltip-format "{artist} - {album}: {title}"
-            max-chars 18
+            max-chars 25
         }
 
         bluetooth {
