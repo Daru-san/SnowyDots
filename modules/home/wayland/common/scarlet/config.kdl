@@ -60,13 +60,13 @@ bar {
         }
 
         memory {
-            format "{ram_percentage:.2f}%"
+            format "{ram_percentage:.2f}% : {swap_percentage:.2f}%"
             tooltip-format "RAM: {used:.2f}Mb/{total:.2f}Mb\nSwap: {used_swap:.2f}Mb/{total_swap:.2f}Mb"
             unit-format "Mb"
         }
 
         clock {
-            format "%X 󰇙 %a %e"
+            format "%X  %a %e"
             interval 1000
         }
 
@@ -80,7 +80,7 @@ bar {
             hide-art
             format "{artist}: {title}"
             tooltip-format "{artist} - {album}: {title}"
-            max-chars 25
+            max-chars 18
         }
 
         bluetooth {
