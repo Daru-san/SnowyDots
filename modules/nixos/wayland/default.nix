@@ -15,6 +15,11 @@ in
       dconf.enable = true;
       seahorse.enable = true;
       niri.enable = true;
+      weylus = {
+        enable = true;
+        users = ["daru"];
+        openFirewall = true;
+      };
       hyprland = {
         enable = false;
       };
