@@ -38,6 +38,16 @@
           "btop"
         ];
       }
+      {
+        command = [
+          "niri"
+          "msg"
+          "output"
+          "HDMI-A-2"
+          "custom-mode"
+          "1920x1080@70"
+        ];
+      }
     ];
   };
 }
