@@ -847,11 +847,11 @@
         "utils": "utils_4"
       },
       "locked": {
-        "lastModified": 1766575466,
-        "narHash": "sha256-M7eArjWTdjxek4pHSivILBTGFPv/e1KHRA2jJld3ePs=",
+        "lastModified": 1766577860,
+        "narHash": "sha256-mS1qe2WB9+uG7ICgb7BRum2RXlvUCUdHwIV7OrzZpL4=",
         "owner": "~darumaka",
         "repo": "scarlet",
-        "rev": "6a3b9d299fd3e4a0fc6ec9b893c394b2c657d38b",
+        "rev": "6011e639af6423fe8e3ca1d0eeeb9ffe6ca6ff73",
         "type": "sourcehut"
       },
       "original": {
