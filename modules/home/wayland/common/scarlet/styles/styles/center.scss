@@ -18,6 +18,7 @@
     margin-right: 2px;
 
     button {
+
         &.previous,
         &.pause-play,
         &.next {
@@ -34,4 +35,18 @@
 
 #notification-icon {
     background-color: shade($base0F, 0.4);
+
+    color: $base06;
+
+    #dot-icon {
+        color: red;
+    }
+
+    &.empty {
+        color: shade($base06, 0.6);
+    }
+
+    &.dnd {
+        color: shade($base06, 0.6);
+    }
 }
