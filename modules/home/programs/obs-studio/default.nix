@@ -5,7 +5,6 @@
     plugins = with pkgs.obs-studio-plugins; [
       obs-vaapi
       obs-pipewire-audio-capture
-      input-overlay
     ];
   };
 }
