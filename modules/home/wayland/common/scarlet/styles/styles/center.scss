@@ -42,6 +42,15 @@
         color: red;
     }
 
+    #dot-icon,
+    #number-overlay {
+        all: unset;
+        font-size: 4px;
+        font-family: $font-family;
+        margin-left: 8px;
+        margin-bottom: 8px;
+    }
+
     &.empty {
         color: shade($base06, 0.6);
     }
