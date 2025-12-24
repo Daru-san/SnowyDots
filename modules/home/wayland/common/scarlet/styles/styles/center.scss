@@ -38,10 +38,6 @@
 
     color: $base06;
 
-    #dot-icon {
-        color: red;
-    }
-
     #dot-icon,
     #number-overlay {
         all: unset;
@@ -49,6 +45,10 @@
         font-family: $font-family;
         margin-left: 8px;
         margin-bottom: 8px;
+    }
+
+    #dot-icon {
+        color: $base07;
     }
 
     &.empty {
