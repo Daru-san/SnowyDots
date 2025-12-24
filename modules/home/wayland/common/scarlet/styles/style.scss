@@ -1,12 +1,13 @@
 @import "colors.scss";
 
+$radius: 7px;
+$font-family: "FantasqueSansM Nerd Font";
+
 * {
     all: unset;
-    font-family: "FantasqueSansM Nerd Font";
+    font-family: $font-family;
     font-size: 17px;
 }
-
-$radius: 7px;
 
 @import "styles/tray.scss";
 @import "styles/workspace.scss";
@@ -19,13 +20,17 @@ $radius: 7px;
 @import "mixins.scss";
 
 button {
-    border-radius: 6px;
+    border-radius: $radius;
 }
 
 #bar {
     background-color: $base00;
     padding: 6px;
     margin: 1px;
+
+    window {
+        border-radius: $radius;
+    }
 }
 
 tooltip {
@@ -38,5 +43,5 @@ tooltip {
 }
 
 box {
-    border-radius: 6px;
+    border-radius: $radius;
 }
