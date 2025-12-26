@@ -469,6 +469,7 @@
         "dom.ipc.forkserver.enable" = true;
 
         "zen.urlbar.behavior" = "float";
+        "zen.widget.linux.transparency" = true;
 
         "zen.view.grey-out-inactive-windows" = false;
         "zen.view.show-bottom-border" = true;
