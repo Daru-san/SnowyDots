@@ -24,6 +24,15 @@
           }
         '';
     };
+    mpdscribble = {
+      enable = true;
+      endpoints = {
+        "last.fm" = {
+          username = "Lunaritzol";
+          passwordFile = "${config.xdg.userDirs.extraConfig.XDG_SECRET_DIR}/scribble";
+        };
+      };
+    };
     mpd-mpris = {
       enable = true;
       mpd.useLocal = true;
