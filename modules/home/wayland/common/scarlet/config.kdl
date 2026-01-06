@@ -3,6 +3,7 @@ bar {
     height 20
     margins 2
     monitors "HDMI-A-2"
+	spacing 7
 
     modules {
         start {
@@ -10,9 +11,30 @@ bar {
         }
 
         center {
-            music
-            clock
-            notification-icon
+			group {
+				css-name "qs"
+				modules {
+					/* cava */
+					music
+					clock
+					notification-icon
+				}
+				popup {
+					autohide
+					show-arrow
+					modules {
+						group {
+							orientation "vertical"
+							modules {
+								music-player
+								calendar
+							}
+						}
+						notification-center
+					}
+				}
+			}
+			idle-inhibitor
             system-tray
         }
 
@@ -20,8 +42,43 @@ bar {
             group {
                 css-name "stats"
                 spacing 5
+				popup {
+					autohide
+					orientation "vertical"
+					modules {
+						label "stats-title"
+						group {
+							orientation "horizontal"
+							css-name "resources"
+							modules {
+								group {
+									css-name "io"
+									orientation "vertical"
+									modules {
+										label "io-header"
+										net-stats
+										disk "nix"
+										disk "home"
+										disk "cabin"
+									}
+								}
+								group {
+									css-name "cpus"
+									orientation "vertical"
+									modules {
+										cpu "info"
+										cpu "all-cores"
+										label "memory-header"
+										memory "ram"
+										memory "rem"
+									}
+								}
+							}
+						}
+					}
+				}
                 modules {
-                    net-stats
+					net-stats
                     cpu
                     memory
                 }
@@ -29,6 +86,34 @@ bar {
             group {
                 css-name "system"
                 spacing 5
+
+				popup {
+					autohide
+					orientation "vertical"
+					modules {
+						group {
+							orientation "horizontal"
+							css-name "contents"
+							modules {
+								group {
+									css-name "networking"
+									orientation "vertical"
+									modules {
+										network-stack
+										bluetooth-stack
+									}
+								}
+								group {
+									css-name "audio"
+									orientation "vertical"
+									modules {
+										audio-stack "output"
+									}
+								}
+							}
+						}
+					}
+				}
 
                 modules {
                     network
@@ -41,7 +126,13 @@ bar {
 
     configs {
         audio {
-            hide-slider
+			mute-on-click
+			slider {
+				format "hidden"
+			}
+			device-icon {
+				format "hidden"
+			}
         }
 
         niri-workspaces {
@@ -55,15 +146,64 @@ bar {
 
         cpu {
             format "{usage:.2f}%"
-            tooltip-format "{all_cores}"
+            tooltip-format "{brand}@{frequency:.2f}MHz"
             interval 1000
         }
+
+		cpu "all-cores" {
+			per-core
+			orientation "vertical"
+			format "Core #{name}: {frequency:.2f}MHz"
+			tooltip-format ""
+			interval 1000
+			icon {
+				format "hidden"
+			}
+			usage-indicator {
+				format "shown"
+				size {
+					width 150
+					height 10
+				}
+			}
+		}
+
+		cpu "info" {
+			format "{brand}"
+			interval 100000
+		}
 
         memory {
             format "{ram_percentage:.2f}% : {swap_percentage:.2f}%"
             tooltip-format "RAM: {used:.2f}Mb/{total:.2f}Mb\nSwap: {used_swap:.2f}Mb/{total_swap:.2f}Mb"
             unit-format "Mb"
         }
+
+		memory "ram" {
+			orientation "vertical"
+			format "Ram: {used:.2f}Mb/{total:.2f}Mb"
+			unit-format "Mb"
+			ram-indicator {
+				format "shown"
+				size {
+					width 50
+					height 10
+				}
+			}
+		}
+
+		memory "rem" {
+			orientation "vertical"
+			format "Swap: {used_swap:.2f}Mb/{total_swap:.2f}Mb"
+			unit-format "Mb"
+			swap-indicator {
+				format "shown"
+				size {
+					width 50
+					height 10
+				}
+			}
+		}
 
         clock {
             format "%R  %a %e"
@@ -77,10 +217,14 @@ bar {
         }
 
         music {
-            hide-art
-            format "{artist}: {title}"
+            format "{title}"
             tooltip-format "{artist} - {album}: {title}"
-            max-chars 18
+            max-chars 25
+			icon {
+				format "managed"
+				width 32
+				height 32
+			}
         }
 
         bluetooth {
@@ -95,5 +239,113 @@ bar {
             select mountpoint="/nix/store"
             unit-format "Gb"
         }
+
+		disk "nix" {
+			orientation "vertical"
+			format "Disk: {name}\n{used_space:.0f}Gb/{total_space:.0f}Gb\nRead: {read} : Write {write}"
+			interval 1000
+            select mountpoint="/nix/store"
+            unit-format "Gb"
+			usage-indicator {
+				format "shown"
+				size {
+					width 30
+					height 10
+				}
+			}
+		}
+
+		disk "home" {
+			orientation "vertical"
+			format "Disk: {name}\n{used_space:.0f}Gb/{total_space:.0f}Gb\nRead: {read} : Write {write}"
+			interval 1000
+            select mountpoint="/home"
+            unit-format "Gb"
+			usage-indicator {
+				format "shown"
+				size {
+					width 30
+					height 10
+				}
+			}
+		}
+
+		disk "cabin" {
+			orientation "vertical"
+			format "Disk: {name}\n{used_space:.0f}Gb/{total_space:.0f}Gb\nRead: {read} : Write {write}"
+			interval 1000
+            select mountpoint="/mnt/frost"
+            unit-format "Gb"
+			usage-indicator {
+				format "shown"
+				size {
+					width 30
+					height 10
+				}
+			}
+		}
+
+		network-stack {
+			name-format "{ssid:15...} {frequency_ghz:.1f}GHz"
+			tooltip-format "SSID: {ssid}\nBSSID: {bssid}\nFrequency: {frequency}\nStrenth: {strength}"
+		}
+
+		calendar {
+			show-heading
+			show-day-names
+			show-week-numbers
+		}
+
+		music-player {
+			title-format "{title}"
+			subtext-format "{album}\n{artist}"
+			cover-art {
+				width 200
+				height 200
+			}
+			progress-indicator {
+				size {
+					width 160
+					height 20
+				}
+			}
+		}
+
+		audio-stack "input" {
+			type "input"
+			slider {
+				size {
+					width 150
+					height 20
+				}
+			}
+		}
+
+		audio-stack "output" {
+			type "output"
+			slider {
+				size {
+					width 150
+					height 20
+				}
+			}
+		}
+
+		label "memory-header" {
+			text "Memory"
+		}
+
+		label "stats-title" {
+			text "Scarlet Top "
+			css-name "top-title"
+		}
+
+		label "io-header" {
+			text "IO Statistics"
+		}
+
+		notification-center {
+			secondary-date-format "%x"
+		}
     }
 }
