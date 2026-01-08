@@ -105,12 +105,6 @@
         stateVersion = "26.05";
       };
 
-      laptop = {
-        hostName = "Aurorus";
-        config = ./systems/Aurorus;
-        system = "x86_64-linux";
-        stateVersion = "24.11";
-      };
       systems = [
         "x86_64-linux"
       ];
@@ -129,26 +123,6 @@
       overlays = modules.overlays { inherit inputs; };
 
       nixosConfigurations = {
-        ${laptop.hostName} = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs outputs;
-            inherit (laptop) system;
-          };
-          modules = [
-            laptop.config
-            modules.system
-            {
-              nixpkgs.hostPlatform = laptop.system;
-              system = {
-                inherit (laptop) stateVersion;
-              };
-              networking = {
-                inherit (laptop) hostName;
-              };
-              wayland.hyprland.enable = true;
-            }
-          ];
-        };
         ${desktop.hostName} = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
@@ -172,23 +146,6 @@
       };
 
       homeConfigurations = {
-        "daru@${laptop.hostName}" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.${laptop.system};
-          extraSpecialArgs = {
-            inherit inputs outputs;
-            inherit (laptop) system;
-          };
-          modules = [
-            ./home/daru
-            modules.home
-            {
-              home = {
-                inherit (laptop) stateVersion;
-              };
-              wayland.enable = true;
-            }
-          ];
-        };
         "daru@${desktop.hostName}" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${desktop.system};
           extraSpecialArgs = {
