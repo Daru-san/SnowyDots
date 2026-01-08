@@ -14,6 +14,11 @@
       aria2
       nextcloud-client
       element
+      emblem
+      elastic
+      d-spy
+      sysprof
+      zapzap
 
       # Media
       ffmpeg
