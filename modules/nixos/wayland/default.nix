@@ -32,7 +32,7 @@ in
         initial_session = {
           command =
             let
-              flags = lib.cli.toGNUCommandLineShell { } {
+              flags = lib.cli.toCommandLineShellGNU { } {
                 t = true;
                 window-padding = 1;
                 g = "Be the key to this door.";
