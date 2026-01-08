@@ -49,7 +49,7 @@
     firefox-addons.url = "gitlab:rycee/nur-expressions/?dir=pkgs/firefox-addons";
 
     # Featureful wayland launcher
-    anyrun.url = "github:anyrun-org/anyrun/v25.9.3";
+    anyrun.url = "github:anyrun-org/anyrun/v25.12.0";
 
     # Indexing for packages
     nix-index-database = {
