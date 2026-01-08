@@ -14,7 +14,6 @@
       packages.myVimPackage = with pkgs.vimPlugins; {
         start = [
           vim-nix
-          vim-clap
           barbecue-nvim
         ];
       };
