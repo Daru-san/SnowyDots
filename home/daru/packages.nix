@@ -52,7 +52,7 @@
       npins
       nix-output-monitor
       nix-update
-      nixfmt-rfc-style
+      nixfmt
 
       # CLI
       spotdl

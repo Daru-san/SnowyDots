@@ -123,7 +123,7 @@
         let
           pkgs = pkgsFor."${system}";
         in
-        pkgs.nixfmt-rfc-style
+        pkgs.nixfmt
       );
 
       overlays = modules.overlays { inherit inputs; };

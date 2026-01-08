@@ -4,7 +4,7 @@ with pkgs;
   marksman
   nil
   nixd
-  nixfmt-rfc-style
+  nixfmt
   rustfmt
   rust-analyzer
   sqls
