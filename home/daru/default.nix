@@ -13,9 +13,6 @@
 
   nixpkgs = {
     overlays = lib.flatten [
-      (with inputs; [
-        yazi.overlays.default
-      ])
       (with outputs.overlays; [
         stable-packages
         unstable-packages

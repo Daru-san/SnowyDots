@@ -37,8 +37,6 @@
     #secrets
     sops-nix.url = "github:Mic92/sops-nix";
 
-    yazi.url = "github:sxyazi/yazi/v26.1.4";
-
     # Theme manager
     stylix.url = "github:nix-community/stylix";
 
