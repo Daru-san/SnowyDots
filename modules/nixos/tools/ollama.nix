@@ -8,7 +8,7 @@
       ];
     };
     nextjs-ollama-llm-ui = {
-      enable = true;
+      enable = false;
     };
   };
 }
