@@ -69,7 +69,7 @@ rec {
   home.sessionVariables.GTK_THEME = gtk.theme.name;
 
   stylix = {
-    iconTheme = {
+    icons = {
       enable = true;
       dark = iconTheme.name;
       light = iconTheme.name;
