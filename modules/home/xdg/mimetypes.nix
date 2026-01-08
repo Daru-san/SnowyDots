@@ -39,6 +39,9 @@
         "webm"
         "x-matroska"
       ])
+      (subtypes "application" "org.pwmt.zathura.desktop" [
+        "vnd.comicbook+zip"
+      ])
       { "text/plain" = "neovide.desktop"; }
     ]
   );
