@@ -2,7 +2,6 @@
   documentation.man.generateCaches = false;
   programs = {
     usbtop.enable = true;
-    adb.enable = true;
     git.enable = true;
     nh = {
       enable = true;
