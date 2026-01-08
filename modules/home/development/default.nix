@@ -23,9 +23,9 @@
     rustup
     git-repo
     socat
-    (gradle_9.override {
-      java = pkgs.openjdk25;
-    })
+    # (gradle_9.override {
+    #   java = pkgs.openjdk25;
+    # })
     rojo
     nasm
     zbus-xmlgen
@@ -38,7 +38,7 @@
     luajitPackages.tl
   ];
   programs.java = {
-    enable = true;
+    enable = false;
     package = pkgs.openjdk25;
   };
 }
