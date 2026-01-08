@@ -8,7 +8,7 @@
     uninstallUnmanaged = true;
     packages = [
       "org.vinegarhq.Sober"
-      "org.vinegarhq.Vinegar"
+      "re.sonny.Workbench"
     ];
     update = {
       onActivation = true;
