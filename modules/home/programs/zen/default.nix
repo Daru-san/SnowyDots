@@ -147,7 +147,6 @@
 
         order = [
           "qwant"
-          "SearXNG"
           "Brave Search"
           "ddg"
           "StartPage"
@@ -191,18 +190,6 @@
               definedAliases = [
                 "@qw"
                 "@qwant"
-              ];
-            };
-
-            "SearXNG" = {
-              urls = [ { template = "http://127.0.0.1:8888/search?q={searchTerms}"; } ];
-              icon = builtins.fetchurl {
-                url = "https://raw.githubusercontent.com/searxng/searxng/edf6d96625444b5b214b4ca0e2885467ed265411/src/brand/searxng-wordmark.svg";
-                sha256 = "sha256:1kpd7dk83m46pnmls22y7k30vpi089g044nh7kfw144sb5h48jaf";
-              };
-              definedAliases = [
-                "@sx"
-                "@sear"
               ];
             };
 
