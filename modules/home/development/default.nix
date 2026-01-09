@@ -8,6 +8,7 @@
     codeberg-cli
     vala
     rustc
+    cargo
     clang
     zig
     jq
@@ -20,25 +21,12 @@
     xmake
     go
     woodpecker-cli
-    rustup
     git-repo
     socat
-    # (gradle_9.override {
-    #   java = pkgs.openjdk25;
-    # })
-    rojo
-    nasm
     zbus-xmlgen
-    # dotnet-sdk_9
     nnd
     bacon
     glab
     luajit
-    # ida-free
-    luajitPackages.tl
   ];
-  programs.java = {
-    enable = false;
-    package = pkgs.openjdk25;
-  };
 }
