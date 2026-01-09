@@ -30,6 +30,8 @@ with pkgs;
   just-formatter
   just-lsp
   typos
+  cargo
+  crates-lsp
   jq
   stylua
 ]

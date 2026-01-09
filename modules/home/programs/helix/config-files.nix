@@ -26,4 +26,5 @@
     };
   };
 
+  "helix/runtime/queries/crates".source = "${config.programs.helix.package}/lib/runtime/queries/toml";
 }

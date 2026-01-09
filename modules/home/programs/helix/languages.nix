@@ -88,6 +88,9 @@ in
     sqls = {
       command = "sqls";
     };
+    crates-lsp = {
+      command = lib.getExe pkgs.crates-lsp;
+    };
     ruff = {
       command = "ruff";
       args = [ "server" ];
@@ -228,6 +231,20 @@ in
       language-servers = [
         "teal-language-server"
       ];
+    }
+    {
+      name = "crates";
+      scope = "source.toml";
+      injection-regex = "toml";
+      file-types = [ { glob = "Cargo.toml"; } ];
+      comment-token = "#";
+      language-servers = [ "crates-lsp" ];
+      grammar = "toml";
+      indent = {
+        tab-width = 4;
+        unit = "  ";
+      };
+      diagnostic-severity = "info";
     }
   ];
 }
