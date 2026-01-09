@@ -298,7 +298,6 @@
         (
           let
             anyrun = getExe config.programs.anyrun.package;
-            color-picker = getExe inputs.color-picker.packages.${system}.default;
             iwgtk = getExe pkgs.iwgtk;
             foot = getExe config.programs.foot.package;
             nwgbar = getExe pkgs.nwg-bar;
@@ -308,8 +307,6 @@
             "Mod+d".action.spawn = anyrun;
 
             "Mod+b".action = sh "pkill iwgtk || ${iwgtk}";
-
-            "Mod+Shift+c".action = sh "pkill color-picker || ${color-picker}";
 
             "Mod+x".action = sh "pkill nwg-bar || ${nwgbar}";
 
