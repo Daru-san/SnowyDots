@@ -1,8 +1,6 @@
 {
   config,
   pkgs,
-  inputs,
-  system,
   ...
 }:
 let
@@ -10,8 +8,8 @@ let
   user-js = pkgs.fetchFromGitHub {
     owner = "HorlogeSkynet";
     repo = "thunderbird-user.js";
-    rev = "2b839ae6cac30129c5bd0bf0d816824957095868";
-    hash = "sha256-DxZ9dDSdOBUQtoQ1T1cHBgnrxK60p7fChIe3P1G84iA=";
+    rev = "556709d1a4beced21f9888fb9b55dd623b415008";
+    hash = "sha256-/noAaozmxe9nf6BjUMzHv0L64tZfpsVt62daimxH2Xk=";
   };
 in
 {
@@ -27,11 +25,9 @@ in
     };
     profiles.${name} = {
       isDefault = true;
-      extraConfig =
-        builtins.readFile "${user-js}/user.js"
-        + ''
-          user_pref("javascript.enabled", true);
-        '';
+      extraConfig = builtins.readFile "${user-js}/user.js" + ''
+        user_pref("javascript.enabled", true);
+      '';
 
       feedAccounts = {
         ${name} = { };
