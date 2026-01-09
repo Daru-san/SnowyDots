@@ -3,6 +3,7 @@
   services = {
     vnstat.enable = true;
     gvfs.enable = true;
+    sysprof.enable = true;
   };
 
   systemd.services = {
