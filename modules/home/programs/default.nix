@@ -17,7 +17,6 @@
     ./nvim
     ./keepasscx
     ./television
-    ./beets
     ./helix
     ./rmpc
     ./flatpak
