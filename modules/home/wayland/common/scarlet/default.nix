@@ -14,7 +14,7 @@
     settings = import ./settings.nix;
     systemd = {
       enable = true;
-      # styles-watch-directory = "${config.xdg.configHome}/scarlet";
+      styles-watch-directory = "${config.xdg.configHome}/scarlet";
     };
   };
 }
