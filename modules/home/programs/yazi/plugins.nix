@@ -10,14 +10,13 @@ in
         git
         rsync
         mount
-        yatline
         starship
         restore
         ouch
-        yatline-catppuccin
         vcs-files
         piper
         chmod
+        recycle-bin
         ;
       "torrent-preview" = getPlugin "torrent-preview.yazi";
       "max-preview" = (getPlugin "plugins") + "/max-preview.yazi";
