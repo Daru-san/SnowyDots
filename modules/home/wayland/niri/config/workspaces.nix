@@ -53,6 +53,7 @@
           { app-id = "org.kde.dolphin"; }
           { app-id = "oculante"; }
           { app-id = "io.github.giantpinkrobots.varia"; }
+          { app-id = "^swayimg$"; }
         ];
         open-on-workspace = "files";
       }
