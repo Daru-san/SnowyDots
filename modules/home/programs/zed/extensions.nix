@@ -1,7 +1,5 @@
 [
   "zig"
-  "kotlin"
-  "java"
   "just"
   "jq"
   "markdownlint"

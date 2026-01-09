@@ -2,7 +2,7 @@
 with pkgs;
 [
   marksman
-  nil
+   nil
   nixd
   nixfmt
   rustfmt
@@ -13,21 +13,16 @@ with pkgs;
   yaml-language-server
   jq-lsp
   gopls
+  cargo
   lua-language-server
-  luajitPackages.teal-language-server
   luajit
   clang-tools
-  efm-langserver
   mesonlsp
   vscode-langservers-extracted
   vale-ls
   rustc
-  cargo
-  rustc
   markdownlint-cli
   typescript-language-server
-  kotlin-language-server
-  jdt-language-server
   blueprint-compiler
   vala-language-server
   crates-lsp
