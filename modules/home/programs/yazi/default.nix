@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 {
   imports = [ ./plugins.nix ];
-  stylix.targets.yazi.enable = false;
+  stylix.targets.yazi.enable = true;
   programs.yazi = {
     enable = true;
     package = pkgs.yazi;
