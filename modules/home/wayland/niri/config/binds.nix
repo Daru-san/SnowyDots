@@ -305,7 +305,7 @@
             blueman = getExe' pkgs.blueman "blueman-manager";
           in
           {
-            "Mod+d".action = sh "pkill anyrun || ${anyrun}";
+            "Mod+d".action.spawn = anyrun;
 
             "Mod+b".action = sh "pkill iwgtk || ${iwgtk}";
 
