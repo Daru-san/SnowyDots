@@ -83,7 +83,10 @@ in
 {
   language-server = {
     rust-analyzer = {
-      config.check = "clippy";
+      config = {
+        check = "clippy";
+        files.watcher = "server";
+      };
     };
     sqls = {
       command = "sqls";
