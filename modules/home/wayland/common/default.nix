@@ -29,7 +29,8 @@ in
     programs.niri.enable = true;
     services = {
       hypridle.enable = true;
-      hyprpaper.enable = true;
+      hyprpaper.enable = false;
+      swww.enable = true;
       wlsunset.enable = true;
       swayosd.enable = false;
       flameshot.enable = true;
