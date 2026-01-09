@@ -40,6 +40,12 @@
       }
       {
         command = [
+          (lib.getExe config.programs.anyrun.package)
+          "daemon"
+        ];
+      }
+      {
+        command = [
           "niri"
           "msg"
           "output"
