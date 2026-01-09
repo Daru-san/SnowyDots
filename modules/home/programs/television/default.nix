@@ -1,6 +1,6 @@
 {
   programs.television = {
-    enable = true;
+    enable = false;
     enableBashIntegration = true;
     enableFishIntegration = true;
     settings = {
