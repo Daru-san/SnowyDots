@@ -13,26 +13,7 @@ let
 in
 {
   stylix.targets.helix.enable = true;
-  xdg.configFile."vale/.vale.ini" = {
-    text = lib.generators.toINIWithGlobalSection { } {
-      globalSection = {
-        StylesPath = "${vale}/share/vale/styles";
-      };
-      sections = {
-        formats = {
-          mdx = "md";
-        };
-        "*.{md,rst}" = {
-          BasedOnStyles = lib.concatStringsSep ", " [
-            "proselint"
-            "Google"
-            "write-good"
-            "Vale"
-          ];
-        };
-      };
-    };
-  };
+  xdg.configFile = import ./config-files.nix { inherit vale lib config; };
   programs.helix = {
     enable = true;
     languages = import ./languages.nix { inherit pkgs lib vale; };
