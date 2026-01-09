@@ -8,6 +8,8 @@ with pkgs;
   rustfmt
   rust-analyzer
   sqls
+  asm-lsp
+  cmake-language-server
   taplo
   zls
   yaml-language-server
@@ -30,6 +32,7 @@ with pkgs;
   just-formatter
   just-lsp
   typos
+  blueprint-compiler
   cargo
   crates-lsp
   jq
