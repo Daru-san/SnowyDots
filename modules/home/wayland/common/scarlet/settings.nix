@@ -3,7 +3,10 @@
     notifications = {
       enable = true;
       timeout = 3000;
-      anchors = [ "top" "right"];
+      anchors = [
+        "top"
+        "right"
+      ];
       layer = "overlay";
     };
 
@@ -17,6 +20,11 @@
       margins = {
         left = 12;
         right = 13;
+      };
+
+      indicator-size = {
+        width = 20;
+        height = 200;
       };
 
       anchors = [ "right" ];
