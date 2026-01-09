@@ -27,6 +27,14 @@
     }
     {
       on = [
+        "R"
+        "b"
+      ];
+      run = "plugin recycle-bin";
+      desc = "Open Recycle Bin menu";
+    }
+    {
+      on = [
         "c"
         "m"
       ];
