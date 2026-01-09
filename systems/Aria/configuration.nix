@@ -48,7 +48,7 @@
     nurl
     uutils-coreutils-noprefix
     jmtpfs
-    stable.nix-melt
+    nix-melt
     ncdu
     busybox
     usbutils
