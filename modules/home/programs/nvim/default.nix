@@ -29,6 +29,10 @@ in
     imports = [
       inputs.vim.nixvimModules.default
     ];
+    plugins.jdtls.enable = false;
+    plugins.lsp.servers = {
+      kotlin_language_server.enable = lib.mkForce false;
+    };
     lsp.servers.pasls = {
       enable = false;
       package = pkgs.symlinkJoin {
