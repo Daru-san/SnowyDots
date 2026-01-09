@@ -72,7 +72,7 @@
     };
 
     # My own repos
-    scarlet.url = "sourcehut:~darumaka/scarlet/0.3.1";
+    scarlet.url = "sourcehut:~darumaka/scarlet/0.3.2";
     vim.url = "sourcehut:~darumaka/SnowyVim";
     color-picker.url = "github:Daru-san/color-picker-rs";
     walls = {
