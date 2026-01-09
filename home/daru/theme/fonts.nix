@@ -28,10 +28,7 @@
     };
   };
   home.packages = with pkgs; [
-    monocraft
     comic-relief
-    nerd-fonts.iosevka
-    nerd-fonts.iosevka-term
     noto-fonts
   ];
 }
