@@ -29,7 +29,7 @@ in
     imports = [
       inputs.vim.nixvimModules.default
     ];
-    plugins.jdtls.enable = false;
+    plugins.jdtls.enable = lib.mkForce false;
     plugins.lsp.servers = {
       kotlin_language_server.enable = lib.mkForce false;
     };
