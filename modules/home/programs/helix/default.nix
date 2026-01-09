@@ -34,9 +34,9 @@ in
     };
   };
   programs.helix = {
-    enable = false;
+    enable = true;
     languages = import ./languages.nix { inherit pkgs lib vale; };
-    defaultEditor = false;
+    defaultEditor = true;
     extraPackages = import ./packages.nix { inherit pkgs; };
     # themes = import ./themes { inherit lib; };
     settings = {
