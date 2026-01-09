@@ -15,7 +15,7 @@
       {
         "application/pdf" = "org.pwmt.zathura-pdf-mupdf.desktop";
       }
-      (subtypes "image" "oculante.desktop" [
+      (subtypes "image" "swayimg.desktop" [
         "png"
         "jpeg"
         "gif"
