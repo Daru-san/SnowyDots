@@ -9,8 +9,7 @@
 {
   home.packages = lib.mkMerge [
     (with pkgs; [
-      # GUI
-      scrcpy
+     # GUI
       aria2
       nextcloud-client
       element
@@ -18,28 +17,20 @@
       elastic
       d-spy
       sysprof
-      zapzap
 
       # Media
       ffmpeg
-      oculante
+      swayimg
       exiftool
       mdcat
-      euphonica
       mediainfo
-      musikcube
+      mpc
       gdu
       pulsemixer
-      audacity
 
       # Desktop
       swww
-      qownnotes
 
-      # GUI Util
-      cheese
-
-      # Android
       adbtuifm
 
       # Documents
@@ -63,39 +54,26 @@
       spotdl
       ouch
       tree
-      tgpt
       libnotify
       fd
       xdg-utils
       unrar
+      nautilus
       onefetch
       gtrash
       dconf-editor
       hexyl
       xdg-user-dirs
-      tealdeer
-      aichat
       lz4
       android-tools
-      wiki-tui
       mprocs
       authenticator
 
       prismlauncher
+      file-roller
     ])
     (with pkgs.kdePackages; [
       kdenlive
-      kalzium
-      dolphin-plugins
-      ark
-      dolphin
-      kio-fuse
-      kio-gdrive
-      kio-admin
-    ])
-    (with inputs; [
-      # rimi.packages.${system}.default
-      color-picker.packages.${system}.default
     ])
   ];
 }
