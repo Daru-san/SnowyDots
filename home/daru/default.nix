@@ -2,6 +2,7 @@
   inputs,
   outputs,
   lib,
+  osConfig,
   ...
 }:
 {
@@ -11,6 +12,7 @@
     ./packages.nix
   ];
 
+  nix.package = osConfig.nix.package;
   nixpkgs = {
     overlays = lib.flatten [
       (with outputs.overlays; [
