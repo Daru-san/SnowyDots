@@ -46,5 +46,8 @@ in
       wleave.enable = true;
       scarlet.enable = true;
     };
+    home.packages = with pkgs; [
+      wl-clipboard-rs
+    ];
   };
 }
