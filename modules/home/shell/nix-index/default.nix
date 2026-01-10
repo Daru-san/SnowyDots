@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  imports = [ inputs.nix-index-database.hmModules.nix-index ];
+  imports = [ inputs.nix-index-database.homeModules.nix-index ];
   programs = {
     command-not-found.enable = false;
     nix-index = {
