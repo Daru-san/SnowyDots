@@ -3,7 +3,6 @@
   config,
   inputs,
   outputs,
-  pkgs,
   ...
 }:
 {
@@ -16,7 +15,6 @@
   };
 
   nix = {
-    package = pkgs.lixStatic;
     registry = (lib.mapAttrs (_: flake: { inherit flake; })) (
       lib.filterAttrs (_: lib.isType "flake") inputs
     );
