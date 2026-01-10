@@ -1,5 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 with pkgs;
+let
+  pascal-lsp = inputs.pascal-lsp.packages.${system};
+in
 [
   marksman
   nil
@@ -37,4 +40,26 @@ with pkgs;
   crates-lsp
   jq
   stylua
+  (pkgs.symlinkJoin {
+    pname = "${pascal-lsp.pasls.pname}-env";
+    version = lib.getVersion pascal-lsp.pasls;
+    paths = [ pascal-lsp.pasls ];
+    preferLocalBuild = true;
+    nativeBuildInputs = [ pkgs.makeWrapper ];
+    postBuild = ''
+      wrapProgram $out/bin/pasls \
+        --set PP ${pkgs.fpc}/bin/fpc \
+        --set LAZARUSDIR ${pkgs.lazarus-qt6}/share/lazarus \
+        --set FPCDIR ${pkgs.lazarus-qt6}/share/fpcsrc \
+        --prefix PATH ${
+          lib.strings.makeBinPath (
+            with pkgs;
+            [
+              fpc
+              lazarus-qt6
+            ]
+          )
+        }
+    '';
+  })
 ]

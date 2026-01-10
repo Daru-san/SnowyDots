@@ -144,6 +144,13 @@ in
       debugger = lldb-dap;
     }
     {
+      name = "pascal";
+      language-servers = [ "pasls" ];
+      formatter = {
+        command = lib.getExe pkgs.pasfmt;
+      };
+    }
+    {
       name = "rust";
       language-servers = [
         "rust-analyzer"

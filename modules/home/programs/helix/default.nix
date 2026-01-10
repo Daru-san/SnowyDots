@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  inputs,
   ...
 }:
 let
@@ -18,7 +19,7 @@ in
     enable = true;
     languages = import ./languages.nix { inherit pkgs lib vale; };
     defaultEditor = true;
-    extraPackages = import ./packages.nix { inherit pkgs; };
+    extraPackages = import ./packages.nix { inherit pkgs inputs; };
     # themes = import ./themes { inherit lib; };
     settings = {
       keys = import ./keys.nix;
