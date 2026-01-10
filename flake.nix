@@ -48,7 +48,7 @@
 
     # Indexing for packages
     nix-index-database = {
-      url = "github:nix-community/nix-index-database/0ef970b7021e0ee9ab93437d0e28296e86669b03";
+      url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
