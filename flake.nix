@@ -46,9 +46,6 @@
     # Firefox addons
     firefox-addons.url = "gitlab:rycee/nur-expressions/?dir=pkgs/firefox-addons";
 
-    # Featureful wayland launcher
-    anyrun.url = "github:anyrun-org/anyrun/v25.12.0";
-
     # Indexing for packages
     nix-index-database = {
       url = "github:nix-community/nix-index-database/0ef970b7021e0ee9ab93437d0e28296e86669b03";
@@ -74,7 +71,6 @@
     # My own repos
     scarlet.url = "sourcehut:~darumaka/scarlet/0.3.2";
     vim.url = "sourcehut:~darumaka/SnowyVim";
-    color-picker.url = "github:Daru-san/color-picker-rs";
     walls = {
       url = "sourcehut:~darumaka/Wallpapers";
       flake = false;
