@@ -69,7 +69,7 @@
     };
 
     # My own repos
-    scarlet.url = "sourcehut:~darumaka/scarlet/0.3.2";
+    scarlet.url = "sourcehut:~darumaka/scarlet/0.3.3";
     vim.url = "sourcehut:~darumaka/SnowyVim";
     walls = {
       url = "sourcehut:~darumaka/Wallpapers";
