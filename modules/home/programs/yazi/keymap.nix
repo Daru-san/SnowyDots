@@ -27,8 +27,7 @@
     }
     {
       on = [
-        "R"
-        "b"
+        "<S-t>"
       ];
       run = "plugin recycle-bin";
       desc = "Open Recycle Bin menu";
