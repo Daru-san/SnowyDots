@@ -28,5 +28,7 @@
     bacon
     glab
     luajit
+    cargo-bloat
+    cargo-expand
   ];
 }
