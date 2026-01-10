@@ -51,6 +51,7 @@
       nixfmt
 
       # CLI
+      bluetuith
       spotdl
       ouch
       tree
@@ -62,6 +63,7 @@
       onefetch
       gtrash
       dconf-editor
+      trash-cli
       hexyl
       xdg-user-dirs
       lz4
