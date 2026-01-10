@@ -1,22 +1,21 @@
 {
-  pkgs,
-  inputs,
-  system,
+  config,
   ...
 }:
-let
-  plugins = inputs.anyrun.packages.${system};
-in
 {
   programs.anyrun = {
     config = {
-      plugins = with plugins; [
-        rink
-        shell
-        applications
-        dictionary
-        nix-run
-      ];
+      plugins =
+        let
+          plugin = plugin: "${config.programs.anyrun.package}/lib/lib${plugin}.so";
+        in
+        [
+          (plugin "rink")
+          (plugin "shell")
+          (plugin "applications")
+          (plugin "dictionary")
+          (plugin "nix_run")
+        ];
 
       width.fraction = 0.64;
       y.absolute = 310;
