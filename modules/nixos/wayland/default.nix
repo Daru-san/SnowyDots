@@ -17,7 +17,7 @@ in
       niri.enable = true;
       weylus = {
         enable = true;
-        users = ["daru"];
+        users = [ "daru" ];
         openFirewall = true;
       };
       hyprland = {
