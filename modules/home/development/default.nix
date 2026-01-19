@@ -30,5 +30,6 @@
     luajit
     cargo-bloat
     cargo-expand
+    cargo-show-asm
   ];
 }
