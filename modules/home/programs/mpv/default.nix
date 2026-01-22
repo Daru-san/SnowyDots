@@ -98,6 +98,7 @@
       thumbfast
       memo
       youtube-upnext
+      webtorrent-mpv-hook
     ];
   };
 }
