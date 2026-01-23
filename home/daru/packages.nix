@@ -1,15 +1,13 @@
 # Home packages shared between users
 {
   pkgs,
-  inputs,
-  system,
   lib,
   ...
 }:
 {
   home.packages = lib.mkMerge [
     (with pkgs; [
-     # GUI
+      # GUI
       aria2
       nextcloud-client
       element
@@ -59,7 +57,6 @@
       fd
       xdg-utils
       unrar
-      nautilus
       onefetch
       gtrash
       dconf-editor
@@ -72,10 +69,12 @@
       authenticator
 
       prismlauncher
-      file-roller
     ])
     (with pkgs.kdePackages; [
       kdenlive
+      dolphin
+      ark
+      kio-fuse
     ])
   ];
 }
