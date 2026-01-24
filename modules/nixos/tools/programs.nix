@@ -3,10 +3,6 @@
   programs = {
     usbtop.enable = true;
     git.enable = true;
-    nautilus-open-any-terminal = {
-      enable = true;
-      terminal = "foot";
-    };
     nh = {
       enable = true;
       clean = {
