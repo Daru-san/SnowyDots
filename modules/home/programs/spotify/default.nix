@@ -89,12 +89,8 @@ in
       oldLikeButton
       lastfm
       seekSong
-      addToQueueTop
-      wikify
     ];
     enabledCustomApps = with spicePkgs.apps; [
-      newReleases
-      lyricsPlus
       betterLibrary
       historyInSidebar
     ];
