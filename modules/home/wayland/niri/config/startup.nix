@@ -17,7 +17,7 @@
       }
       {
         command = [
-          (lib.getExe pkgs.hyprpolkitagent)
+          "${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent"
         ];
       }
       {
