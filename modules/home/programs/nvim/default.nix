@@ -21,7 +21,7 @@ in
     inputs.vim.homeModules.default
   ];
   programs.nixvim = {
-    enable = true;
+    enable = false;
     defaultEditor = false;
     viAlias = true;
     vimAlias = true;
