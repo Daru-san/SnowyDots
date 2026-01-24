@@ -35,7 +35,6 @@ in
       swayosd.enable = false;
       flameshot.enable = true;
       swaync.enable = false;
-      polkit-gnome.enable = true;
     };
     programs = {
       waybar.enable = false;

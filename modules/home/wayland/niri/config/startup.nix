@@ -17,6 +17,11 @@
       }
       {
         command = [
+          (lib.getExe pkgs.hyprpolkitagent)
+        ];
+      }
+      {
+        command = [
           (lib.getExe pkgs.copyq)
         ];
       }
