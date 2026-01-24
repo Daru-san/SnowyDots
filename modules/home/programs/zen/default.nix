@@ -161,6 +161,7 @@
           "Home Manager"
           "Nixvim Options"
           "Crates.io"
+          "Docs.rs"
         ];
 
         engines =
@@ -243,8 +244,19 @@
               definedAliases = [
                 "@cargo"
                 "@cg"
-                "@rs"
                 "@crates"
+              ];
+            };
+
+            "Docs.rs" = {
+              urls = [ { template = "https://docs.rs/releases/search?query={searchTerms}"; } ];
+              icon = "https://docs.rs/favicon.ico";
+              updateInterval = 24 * 60 * 60 * 1000;
+              definedAliases = [
+                "@docsrs"
+                "@rsdoc"
+                "@rustdoc"
+                "@doc"
               ];
             };
 
