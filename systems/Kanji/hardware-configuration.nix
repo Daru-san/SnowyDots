@@ -16,8 +16,8 @@
 
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-uuid/50eefb2e-874f-4fa1-b03a-3c3c880b8f24";
-      fsType = "xfs";
+      device = "/dev/disk/by-uuid/19ee6347-b472-4bf5-8bef-97e2fd32eb4b";
+      fsType = "ext4";
     };
 
     "/home" = {
