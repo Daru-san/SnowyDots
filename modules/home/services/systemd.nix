@@ -32,16 +32,13 @@ in
     suspend = {
       Unit = {
         Description = "Suspension service";
-        After = "night.timer";
+        After = "default.target";
       };
 
       Service = {
         Type = "oneshot";
         ExecStart = "${osConfig.systemd.package}/bin/systemctl suspend";
-      };
-
-      Install = {
-        WantedBy = [ "default.target" ];
+        X-RestartIfChanged = false;
       };
     };
   };
