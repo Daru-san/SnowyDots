@@ -11,7 +11,7 @@
     };
 
     nix-your-shell = {
-      enable = true;
+      enable = false;
       enableNushellIntegration = true;
       enableFishIntegration = true;
     };
