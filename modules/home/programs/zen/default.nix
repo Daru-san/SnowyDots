@@ -23,7 +23,6 @@
       id = 1;
       extensions = {
         packages = with inputs.firefox-addons.packages.${system}; [
-          multi-account-containers
           user-agent-string-switcher
           ublock-origin
           auto-tab-discard
@@ -64,7 +63,6 @@
       extensions = {
         packages = with inputs.firefox-addons.packages.${system}; [
           keepassxc-browser
-          multi-account-containers
           buster-captcha-solver
           github-file-icons
           widegithub
