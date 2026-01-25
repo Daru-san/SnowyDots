@@ -21,6 +21,7 @@ in
     ./foot
     ./swaync
     ./wleave
+    ./fuzzel
     ./scarlet
   ];
   config = mkIf cfg.enable {
@@ -38,7 +39,8 @@ in
     };
     programs = {
       waybar.enable = false;
-      anyrun.enable = true;
+      anyrun.enable = false;
+      fuzzel.enable = true;
       hyprlock.enable = true;
       wezterm.enable = false;
       foot.enable = true;

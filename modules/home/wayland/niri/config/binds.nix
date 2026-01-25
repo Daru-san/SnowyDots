@@ -297,14 +297,14 @@
         )
         (
           let
-            anyrun = getExe config.programs.anyrun.package;
+            fuzzel = getExe config.programs.fuzzel.package;
             iwgtk = getExe pkgs.iwgtk;
             foot = getExe config.programs.foot.package;
             nwgbar = getExe pkgs.nwg-bar;
             blueman = getExe' pkgs.blueman "blueman-manager";
           in
           {
-            "Mod+d".action.spawn = anyrun;
+            "Mod+d".action.spawn = sh "pkill fuzzel || ${fuzzel}";
 
             "Mod+b".action = sh "pkill iwgtk || ${iwgtk}";
 
