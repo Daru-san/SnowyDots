@@ -46,6 +46,7 @@
       npins
       nix-output-monitor
       nix-update
+      nix-tree
       nixfmt
 
       # CLI
