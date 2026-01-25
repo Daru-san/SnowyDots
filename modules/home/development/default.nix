@@ -31,5 +31,7 @@
     cargo-bloat
     cargo-expand
     cargo-show-asm
+    tokio-console
+    cargo-flamegraph
   ];
 }
