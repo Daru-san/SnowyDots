@@ -21,5 +21,6 @@
     ./rmpc
     ./flatpak
     ./zed
+    ./floorp
   ];
 }
