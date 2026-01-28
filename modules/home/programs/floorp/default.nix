@@ -1,6 +1,8 @@
 {
   pkgs,
   config,
+  system,
+  inputs,
   ...
 }:
 {
@@ -13,6 +15,32 @@
 
     profiles.${config.home.username} = {
       isDefault = true;
+
+      extensions = {
+        force = true;
+        packages = with inputs.firefox-addons.packages.${system}; [
+          keepassxc-browser
+          buster-captcha-solver
+          github-file-icons
+          widegithub
+          hover-zoom-plus
+          reddit-enhancement-suite
+          ublock-origin
+          tridactyl
+          auto-tab-discard
+        ];
+        settings = {
+          "uBlock0@raymondhill.net".settings = {
+            selectedFilterLists = [
+              "ublock-filters"
+              "ublock-badware"
+              "ublock-privacy"
+              "ublock-unbreak"
+              "ublock-quick-fixes"
+            ];
+          };
+        };
+      };
 
       containersForce = true;
       containers = {
@@ -77,6 +105,7 @@
           icon = "vacation";
         };
       };
+
       search = {
         force = true;
         default = "StartPage";
