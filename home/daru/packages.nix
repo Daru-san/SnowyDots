@@ -15,6 +15,7 @@
       elastic
       d-spy
       sysprof
+      heaptrack
 
       # Media
       ffmpeg
