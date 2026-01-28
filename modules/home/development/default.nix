@@ -33,5 +33,6 @@
     cargo-show-asm
     tokio-console
     cargo-flamegraph
+    rustc-demangle
   ];
 }
