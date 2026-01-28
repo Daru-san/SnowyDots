@@ -84,7 +84,9 @@ in
   language-server = {
     rust-analyzer = {
       config = {
-        check = "clippy";
+        check = {
+          command = "clippy";
+        };
         files.watcher = "server";
       };
     };
