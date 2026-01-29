@@ -222,6 +222,7 @@ in
     }
     {
       name = "toml";
+      language-servers = [ "taplo" ];
       formatter = {
         command = "taplo";
         args = [
@@ -250,7 +251,17 @@ in
       injection-regex = "toml";
       file-types = [ { glob = "Cargo.toml"; } ];
       comment-token = "#";
-      language-servers = [ "crates-lsp" ];
+      language-servers = [
+        "crates-lsp"
+        "taplo"
+      ];
+      formatter = {
+        command = "taplo";
+        args = [
+          "fmt"
+          "-"
+        ];
+      };
       grammar = "toml";
       indent = {
         tab-width = 4;
