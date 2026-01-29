@@ -86,6 +86,17 @@ in
       config = {
         check = {
           command = "clippy";
+          extraArgs = [
+            "--"
+            "-W"
+            "clippy::unwrap_used"
+            "-W"
+            "clippy::expect_used"
+            "-W"
+            "clippy::pedantic"
+            "-W"
+            "clippy::nursery"
+          ];
         };
         files.watcher = "server";
       };
