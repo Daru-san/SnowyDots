@@ -673,16 +673,16 @@
         "utils": "utils_3"
       },
       "locked": {
-        "lastModified": 1769707008,
-        "narHash": "sha256-uMpfMByFwkuZ4zr+HkWKs19wxDxH/ijv6MTltqSGH4g=",
+        "lastModified": 1769708046,
+        "narHash": "sha256-GX5+CiTDkyMVe+mBffj2YVRMznH3d2KVZlT60QGud44=",
         "owner": "~darumaka",
         "repo": "scarlet",
-        "rev": "8dbb446eac7dcb58aba952fba9605326f04f4ff0",
+        "rev": "c885eaa63545ad7b1626bef2f8c56a8a4eaf9e8d",
         "type": "sourcehut"
       },
       "original": {
         "owner": "~darumaka",
-        "ref": "0.4.0-beta.1",
+        "ref": "0.4.0",
         "repo": "scarlet",
         "type": "sourcehut"
       }
