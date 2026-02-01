@@ -99,6 +99,14 @@
         stateVersion = "26.05";
       };
 
+      laptop = {
+        hostName = "Rintaro";
+        config = ./systems/Rintaro;
+
+        system = "x86_64-linux";
+        stateVersion = "26.05";
+      };
+
       systems = [
         "x86_64-linux"
       ];
@@ -137,6 +145,26 @@
             }
           ];
         };
+        "${laptop.hostName}" = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs;
+            inherit (laptop) system;
+          };
+          modules = [
+            laptop.config
+            modules.system
+            {
+              nixpkgs.hostPlatform = laptop.system;
+              system = {
+                inherit (laptop) stateVersion;
+              };
+              networking = {
+                inherit (laptop) hostName;
+              };
+              wayland.enable = true;
+            }
+          ];
+        };
       };
 
       homeConfigurations = {
@@ -153,6 +181,24 @@
             {
               home = {
                 inherit (desktop) stateVersion;
+              };
+              wayland.enable = true;
+            }
+          ];
+        };
+        "daru@${laptop.hostName}" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.${laptop.system};
+          extraSpecialArgs = {
+            inherit inputs outputs;
+            inherit (laptop) system;
+            osConfig = self.nixosConfigurations.${laptop.hostName}.config;
+          };
+          modules = [
+            ./home/daru
+            modules.home
+            {
+              home = {
+                inherit (laptop) stateVersion;
               };
               wayland.enable = true;
             }
