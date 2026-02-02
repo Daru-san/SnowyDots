@@ -33,6 +33,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Pascal development tools
     pascal-tools = {
       url = "sourcehut:~darumaka/nix-pascal-tools";
@@ -117,6 +122,7 @@
       ];
       genSystems = nixpkgs.lib.genAttrs systems;
       pkgsFor = nixpkgs.legacyPackages;
+      lib = nixpkgs.lib;
     in
     {
       formatter = genSystems (
@@ -189,6 +195,7 @@
                 inherit (desktop) stateVersion;
               };
               wayland.enable = true;
+              programs.scarlet.enable = true;
             }
           ];
         };
@@ -207,6 +214,8 @@
                 inherit (laptop) stateVersion;
               };
               wayland.enable = true;
+              imports = [ inputs.noctalia.homeModules.default ];
+              programs.noctalia-shell.enable = true;
             }
           ];
         };

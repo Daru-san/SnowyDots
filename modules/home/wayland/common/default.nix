@@ -22,6 +22,7 @@ in
     ./swaync
     ./wleave
     ./fuzzel
+    ./noctalia
     ./scarlet
   ];
   config = mkIf cfg.enable {
@@ -45,7 +46,6 @@ in
       wezterm.enable = false;
       foot.enable = true;
       wleave.enable = true;
-      scarlet.enable = true;
     };
     home.packages = with pkgs; [
       wl-clipboard-rs
