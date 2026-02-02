@@ -10,7 +10,7 @@ bar {
         start {
 			idle-inhibitor
             niri-workspaces
-            niri-window-title
+            // niri-window-title
         }
 
         center {
@@ -22,7 +22,7 @@ bar {
 						max-size 500
 						orientation "horizontal"
 						module {
-							music
+							music-mini
 						}
 					}
 					clock
@@ -174,7 +174,7 @@ bar {
 									name "audio"
 									title "Audio"
 									items {
-										audio-stack "output"
+										audio-mixer "output"
 									}
 								}
 								group-listbox "networking" {
@@ -309,16 +309,8 @@ bar {
             tooltip-format "Connected to {interface}"
         }
 
-        music {
-            format "{title:25...}"
-            scroll-label "disable"
-            tooltip-format "{artist} - {album}: {title}"
-            max-chars 25
-			icon {
-				format "managed"
-				width 25
-				height 25
-			}
+        music-mini {
+        	progress-bar "disable"
         }
 
         bluetooth {
@@ -406,7 +398,7 @@ bar {
 			}
 		}
 
-		audio-stack "input" {
+		audio-mixer "input" {
 			type "input"
 			slider {
 				size {
@@ -416,7 +408,7 @@ bar {
 			}
 		}
 
-		audio-stack "output" {
+		audio-mixer "output" {
 			type "output"
 			slider {
 				size {
