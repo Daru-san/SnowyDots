@@ -28,7 +28,7 @@
 
     niri.url = "github:sodiboo/niri-flake";
 
-    fjord-launcher.url = "github:unmojang/FjordLauncher";
+    fjord-launcher.url = "github:hero-persson/FjordLauncherUnlocked";
 
     # Pascal development tools
     pascal-tools = {
