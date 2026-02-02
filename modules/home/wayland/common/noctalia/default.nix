@@ -73,7 +73,7 @@
               id = "MediaMini";
             }
             {
-              formatHorizontal = "dd HH:mm:ss";
+              formatHorizontal = "HH:mm:ss - ddd d MMM";
               formatVertical = "HH mm";
               id = "Clock";
               useMonospacedFont = true;
