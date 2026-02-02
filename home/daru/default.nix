@@ -1,5 +1,4 @@
 {
-  inputs,
   outputs,
   lib,
   osConfig,
@@ -15,7 +14,6 @@
   nix.package = osConfig.nix.package;
   nixpkgs = {
     overlays = lib.flatten [
-      inputs.fjord-launcher.overlays.default
       (with outputs.overlays; [
         stable-packages
         unstable-packages

@@ -2,6 +2,8 @@
 {
   pkgs,
   lib,
+  inputs,
+  system,
   ...
 }:
 {
@@ -71,7 +73,6 @@
       mprocs
       authenticator
 
-      fjord-launcher
       prismlauncher
     ])
     (with pkgs.kdePackages; [
@@ -79,6 +80,9 @@
       dolphin
       ark
       kio-fuse
+    ])
+    (with inputs; [
+      fjord-launcher.packages.${system}.default
     ])
   ];
 }
