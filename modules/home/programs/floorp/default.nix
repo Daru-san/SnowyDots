@@ -474,7 +474,6 @@
         Default = true;
       };
       Preferences = {
-        "browser.backspace_action" = 0;
         "privacy.trackingprotection.enabled" = true;
         "media.peerconnection.ice.default_address_only" = true;
         "network.captive-portal-service.enabled" = false;
