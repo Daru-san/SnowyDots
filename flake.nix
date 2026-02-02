@@ -155,6 +155,7 @@
             modules.system
             {
               nixpkgs.hostPlatform = laptop.system;
+              system.laptop = true;
               system = {
                 inherit (laptop) stateVersion;
               };
