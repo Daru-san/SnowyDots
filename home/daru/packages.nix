@@ -16,6 +16,7 @@
       d-spy
       sysprof
       heaptrack
+      zapzap
 
       # Media
       ffmpeg
@@ -70,10 +71,11 @@
       mprocs
       authenticator
 
+      fjord-launcher
       prismlauncher
     ])
     (with pkgs.kdePackages; [
-      kdenlive
+      # kdenlive
       dolphin
       ark
       kio-fuse
