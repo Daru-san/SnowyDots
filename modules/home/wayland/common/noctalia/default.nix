@@ -7,6 +7,21 @@
     package = pkgs.noctalia-shell;
     systemd.enable = true;
 
+    plugins = {
+      sources = [
+        {
+          enabled = true;
+          name = "Official Noctalia Plugins";
+          url = "https://github.com/noctalia-dev/noctalia-plugins";
+        }
+      ];
+      states = {
+        network-indicator = {
+          enabled = true;
+        };
+      };
+      version = 1;
+    };
     settings = {
       controlCenter = {
         cards = [
@@ -37,22 +52,6 @@
         ];
       };
 
-      plugins = {
-        sources = [
-          {
-            enabled = true;
-            name = "Official Noctalia Plugins";
-            url = "https://github.com/noctalia-dev/noctalia-plugins";
-          }
-        ];
-        states = {
-          network-indicator = {
-            enabled = true;
-          };
-        };
-
-        version = 1;
-      };
       general = {
         showChangelogOnStartup = false;
       };
@@ -88,8 +87,7 @@
           ];
           right = [
             {
-              id = "network-indicator";
-
+              id = "NetworkIndicator";
             }
             {
               id = "SystemMonitor";
