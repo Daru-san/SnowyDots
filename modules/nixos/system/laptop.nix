@@ -21,25 +21,24 @@ in
         criticalPowerAction = "HybridSleep";
         ignoreLid = true;
       };
-      auto-cpufreq.enable = true;
       power-profiles-daemon.enable = lib.mkForce false;
-     # tlp = {
-     #    enable = true;
-     #    settings = {
-     #      CPU_DRIVER_OPMODE_ON_AC = "active";
-     #      CPU_DRIVER_OPMODE_ON_BAT = "passive";
-     #      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-     #      CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
-     #      PLATFORM_PROFILE_ON_AC = "performance";
-     #      PLATFORM_PROFILE_ON_BAT = "balanced";
-     #      CPU_SCALING_GOVERNOR_ON_AC = "performance";
-     #      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-     #      RUNTIME_PM_ON_AC = "on";
-     #      RUNTIME_PM_ON_BAT = "auto";
-     #      USB_AUTOSUSPEND = 0;
-     #      NMI_WATCHDOG = 0;
-     #    };
-     #  };
+      tlp = {
+        enable = true;
+        settings = {
+          CPU_DRIVER_OPMODE_ON_AC = "active";
+          CPU_DRIVER_OPMODE_ON_BAT = "passive";
+          CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+          CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
+          PLATFORM_PROFILE_ON_AC = "performance";
+          PLATFORM_PROFILE_ON_BAT = "balanced";
+          CPU_SCALING_GOVERNOR_ON_AC = "performance";
+          CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+          RUNTIME_PM_ON_AC = "on";
+          RUNTIME_PM_ON_BAT = "auto";
+          USB_AUTOSUSPEND = 0;
+          NMI_WATCHDOG = 0;
+        };
+      };
       undervolt = {
         enable = false;
         tempAc = 77;
@@ -56,10 +55,7 @@ in
         };
       };
     };
-    powerManagement = {
-      powertop.enable = true;
-      cpuFreqGovernor = lib.mkForce "performance";
-    };
-    boot.kernelParams = [ "intel_pstate=active"];
+    powerManagement.powertop.enable = true;
+    boot.kernelParams = [ "intel_pstate=active" ];
   };
 }
