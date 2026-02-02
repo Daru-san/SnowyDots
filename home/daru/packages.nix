@@ -19,6 +19,7 @@
       sysprof
       heaptrack
       zapzap
+      oculante
 
       # Media
       ffmpeg
