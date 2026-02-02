@@ -4,6 +4,7 @@
     vnstat.enable = true;
     gvfs.enable = true;
     sysprof.enable = true;
+    upower.enable = true;
   };
 
   systemd.services = {
