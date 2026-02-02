@@ -108,8 +108,8 @@
 
       search = {
         force = true;
-        default = "StartPage";
-        privateDefault = "StartPage";
+        default = "ddg";
+        privateDefault = "ddg";
 
         order = [
           "qwant"
