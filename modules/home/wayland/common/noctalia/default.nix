@@ -8,10 +8,57 @@
     systemd.enable = true;
 
     settings = {
-      # configure noctalia here
+      controlCenter = {
+        cards = [
+          {
+            enabled = false;
+            id = "profile-card";
+          }
+          {
+            enabled = true;
+            id = "audio-card";
+          }
+          {
+            enabled = false;
+            id = "brightness-card";
+          }
+          {
+            enabled = true;
+            id = "media-sysmon-card";
+          }
+          {
+            enabled = false;
+            id = "calendar-card";
+          }
+          {
+            enabled = false;
+            id = "shortcuts-card";
+          }
+        ];
+      };
+
+      plugins = {
+        sources = [
+          {
+            enabled = true;
+            name = "Official Noctalia Plugins";
+            url = "https://github.com/noctalia-dev/noctalia-plugins";
+          }
+        ];
+        states = {
+          network-indicator = {
+            enabled = true;
+          };
+        };
+
+        version = 1;
+      };
+      general = {
+        showChangelogOnStartup = false;
+      };
       bar = {
         density = "compact";
-        position = "right";
+        position = "top";
         showCapsule = false;
         widgets = {
           left = [
@@ -23,23 +70,40 @@
           ];
           center = [
             {
-              formatHorizontal = "HH:mm";
+              id = "MediaMini";
+            }
+            {
+              formatHorizontal = "dd HH:mm:ss";
               formatVertical = "HH mm";
               id = "Clock";
               useMonospacedFont = true;
               usePrimaryColor = true;
             }
-
             {
-              id = "ControlCenter";
-              useDistroLogo = true;
+              id = "NotificationHistory";
+            }
+            {
+              id = "Tray";
             }
           ];
           right = [
             {
-              alwaysShowPercentage = false;
+              id = "network-indicator";
+
+            }
+            {
+              id = "SystemMonitor";
+            }
+            {
+              alwaysShowPercentage = true;
               id = "Battery";
               warningThreshold = 30;
+            }
+            {
+              id = "Volume";
+            }
+            {
+              id = "Brightness";
             }
             {
               id = "Network";
