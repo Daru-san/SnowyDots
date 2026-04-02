@@ -75,6 +75,8 @@
       authenticator
 
       prismlauncher
+      file-roller
+      nautilus
     ])
     (with inputs; [
       fjord-launcher.packages.${system}.default
