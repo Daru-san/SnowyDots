@@ -74,7 +74,6 @@
       mprocs
       authenticator
 
-      prismlauncher
       file-roller
       nautilus
     ])
