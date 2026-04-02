@@ -66,7 +66,19 @@
             {
               hideUnoccupied = false;
               id = "Workspace";
-              labelMode = "none";
+              labelMode = "index";
+              characterCount = 2;
+              colorizeIcons = false;
+              enableScrollWheel = true;
+              followFocusedScreen = false;
+              groupedBorderOpacity = 1;
+              iconScale = 0.8;
+              pillSize = 0.6;
+              showApplications = true;
+              showApplicationsHover = false;
+              showBadge = true;
+              showLabelsOnlyWhenOccupied = true;
+              unfocusedIconsOpacity = 1;
             }
           ];
           center = [
