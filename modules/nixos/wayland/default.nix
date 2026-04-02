@@ -14,14 +14,14 @@ in
     programs = {
       dconf.enable = true;
       seahorse.enable = true;
-      niri.enable = true;
+      niri.enable = false;
       weylus = {
         enable = true;
         users = [ "daru" ];
         openFirewall = true;
       };
       hyprland = {
-        enable = false;
+        enable = true;
       };
     };
     security.pam.services.hyprlock = { };
