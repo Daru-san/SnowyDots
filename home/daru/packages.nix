@@ -76,12 +76,6 @@
 
       prismlauncher
     ])
-    (with pkgs.kdePackages; [
-      # kdenlive
-      dolphin
-      ark
-      kio-fuse
-    ])
     (with inputs; [
       fjord-launcher.packages.${system}.default
     ])

@@ -24,7 +24,6 @@
       ];
     };
   };
-  services.desktopManager.plasma6.enable = true;
   programs = {
     nix-ld.enable = true;
     gnome-disks = {

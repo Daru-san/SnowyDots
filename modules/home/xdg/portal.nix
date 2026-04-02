@@ -4,7 +4,6 @@
   extraPortals = with pkgs; [
     xdg-desktop-portal-gtk
     xdg-desktop-portal-wlr
-    kdePackages.xdg-desktop-portal-kde
   ];
   config = {
     sway = {
