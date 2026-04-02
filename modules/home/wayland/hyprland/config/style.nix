@@ -1,6 +1,7 @@
 {
   wayland.windowManager.hyprland = {
     settings = {
+      ecosystem.no_update_news = true;
       general = {
         layout = "hy3";
         gaps_in = 1;
@@ -9,7 +10,7 @@
         allow_tearing = true;
       };
       binds = {
-        allow_workspace_cycles = true;
+        allow_workspace_cycles = false;
         workspace_back_and_forth = true;
       };
       master = {
