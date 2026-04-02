@@ -16,12 +16,13 @@
         }
       ];
       states = {
-        network-indicator = {
+        syncthing-status = {
           enabled = true;
         };
       };
       version = 1;
     };
+
     settings = {
       controlCenter = {
         cards = [
@@ -51,9 +52,10 @@
           }
         ];
       };
-
+      wallpaper.enabled = false;
       general = {
         showChangelogOnStartup = false;
+        radiusRatio = 0.2;
       };
       bar = {
         density = "compact";
@@ -82,15 +84,31 @@
               id = "NotificationHistory";
             }
             {
+              id = "plugin:syncthing-status";
+            }
+            {
               id = "Tray";
             }
           ];
           right = [
             {
-              id = "NetworkIndicator";
-            }
-            {
               id = "SystemMonitor";
+              compactMode = false;
+              showCpuCores = false;
+              showCpuFreq = true;
+              showCpuTemp = true;
+              showCpuUsage = true;
+              showDiskAvailable = false;
+              showDiskUsage = false;
+              showDiskUsageAsPercent = false;
+              showGpuTemp = false;
+              showLoadAverage = false;
+              showMemoryAsPercent = false;
+              showMemoryUsage = true;
+              showNetworkStats = true;
+              showSwapUsage = false;
+              useMonospaceFont = true;
+              usePadding = false;
             }
             {
               alwaysShowPercentage = true;
@@ -112,8 +130,16 @@
           ];
         };
       };
-      general = {
-        radiusRatio = 0.2;
+      noctaliaPerformance = {
+        disableWallpaper = true;
+        disableDesktopWidgets = true;
+      };
+      dock.enabled = false;
+      ui = {
+        translucentWidgets = true;
+        panelsAttachedToBar = false;
+        settingsPanelMode = "window";
+        settingsPanelSideBarCardStyle = false;
       };
     };
   };
