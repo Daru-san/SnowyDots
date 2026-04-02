@@ -42,9 +42,8 @@ in
     {
       bindd =
         let
-          browser = getExe config.programs.zen-browser.package;
+          browser = getExe config.programs.floorp.package;
           file-manager = getExe pkgs.nautilus;
-          editor = "${getExe pkgs.neovide} --neovim-bin ${getExe config.env.editor.package}";
           yazi = getExe config.programs.yazi.package;
           hyprlock = getExe config.programs.hyprlock.package;
           btop = "${osConfig.security.wrapperDir}/btop";
@@ -64,7 +63,6 @@ in
 
           (mkBindExe "super" "q" terminal "Launch a terminal")
           (mkBindExe "super" "r" "${terminal} -e ${yazi}" "Launch yazi")
-          (mkBindExe "super" "z" editor "Launch a text editor")
           (mkBindExe "super" "m" "${terminal} -e ${btop}" "Launch a system monitor")
 
           (mkBind "supershift" "q" "killactive" "Kill active window")
@@ -136,9 +134,8 @@ in
 
       binddr =
         let
-          anyrun = getExe config.programs.anyrun.package;
           easyeffects = getExe config.services.easyeffects.package;
-          color-picker = getExe inputs.color-picker.packages.${system}.default;
+          fuzzel = getExe config.programs.fuzzel.package;
           pk = getExe' pkgs.busybox "pkill";
           wleave = getExe config.programs.wleave.package;
 
@@ -147,7 +144,7 @@ in
           overskride = getExe pkgs.overskride;
         in
         [
-          (mkBindExe "super" "d" "${pk} anyrun || ${anyrun}" "Launch app launcher")
+          (mkBindExe "super" "d" "${pk} anyrun || ${fuzzel}" "Launch app launcher")
 
           (mkBindExe "super" "i" "${pk} iwgtk || ${iwgtk}" "Launch the iwgtk wifi menu")
 
@@ -156,9 +153,6 @@ in
           )
 
           (mkBindExe "super" "x" "${pk} wleave || ${wleave}" "Launch the wleave logout menu")
-
-          # Color picker
-          (mkBindExe "supershift" "c" "${pk} color-picker || ${color-picker}" "Launch the color picker")
 
           # Bluetooth manager
           (mkBindExe "supershift" "i" "${pk} overskride || ${overskride}"

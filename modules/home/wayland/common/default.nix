@@ -27,11 +27,11 @@ in
   ];
   config = mkIf cfg.enable {
     wayland.windowManager.sway.enable = false;
-    wayland.windowManager.hyprland.enable = false;
-    programs.niri.enable = true;
+    wayland.windowManager.hyprland.enable = true;
+    programs.niri.enable = false;
     services = {
       hypridle.enable = true;
-      hyprpaper.enable = false;
+      hyprpaper.enable = lib.mkDefault false;
       swww.enable = true;
       wlsunset.enable = true;
       swayosd.enable = false;

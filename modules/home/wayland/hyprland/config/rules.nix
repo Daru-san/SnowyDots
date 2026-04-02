@@ -2,12 +2,9 @@
 {
   wayland.windowManager.hyprland = {
     settings = {
-      windowrulev2 = lib.flatten [
-        "float,class:(zen)(.*),title:(Library)"
-        "float,title:(Syncthing Tray)"
-        "size 65%,title:(Syncthing Tray)"
-        "size 65%,title:(Open Images — Krita)"
-        "content none, class:mpv"
+      windowrule = lib.flatten [
+        "match:title (Open Images — Krita), size 65%"
+        "match:class mpv, content none"
         (
           let
             window = [
@@ -46,15 +43,14 @@
             ];
           in
           [
-            (map (c: "float,class:^(${c})(.*)$") window)
-            (map (d: "center,class:^(${d})(.*)$") window)
-            (map (e: "size 60%,class:^(${e})(.*)$") resized-windows)
+            (map (c: "match:class ^(${c})(.*)$, float true") window)
+            (map (d: "match:class ^(${d})(.*)$, center true") window)
+            (map (e: "match:class ^(${e})(.*)$, size 60%") resized-windows)
           ]
         )
         (
           let
-            workspace = index: window: "workspace ${toString index}, class:^(${window})(.*)$";
-            special = workspace: window: "workspace special:${workspace}, class:^(${window})(.*)$";
+            workspace = index: window: "match:class ^(${window})(.*)$, workspace ${toString index}";
           in
           [
             (workspace 1 "neovide")
