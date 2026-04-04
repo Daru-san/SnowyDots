@@ -6,8 +6,7 @@
 }:
 let
   inherit (lib) getExe getExe';
-  hyprlock = getExe config.programs.hyprlock.package;
-  lock_cmd = "pidof hyprlock || ${hyprlock}";
+  lock_cmd = "noctalia-shell ipc call lockScreen lock";
   pausemusic = getExe (
     pkgs.writeShellScriptBin "music-pause" ''
       ${getExe' config.services.playerctld.package "playerctl"} pause
@@ -18,7 +17,7 @@ in
   services.hypridle = {
     settings = {
       general = {
-        before_sleep_cmd = "${pausemusic} && ${hyprlock} --immediate-render --immediate";
+        before_sleep_cmd = "${pausemusic} && ${lock_cmd}";
         inherit lock_cmd;
         after_sleep_cmd = "hyprctl dispatch dpms on";
       };
