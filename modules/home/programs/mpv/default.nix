@@ -91,7 +91,7 @@
     scripts = with pkgs.mpvScripts; [
       sponsorblock-minimal
       uosc
-      mpv-cheatsheet
+      mpv-cheatsheet-ng
       quality-menu
       mpris
       reload
