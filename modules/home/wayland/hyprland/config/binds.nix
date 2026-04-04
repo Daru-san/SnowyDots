@@ -42,23 +42,16 @@ in
     {
       bindd =
         let
-          browser = getExe config.programs.floorp.package;
           file-manager = getExe pkgs.nautilus;
           yazi = getExe config.programs.yazi.package;
           hyprlock = getExe config.programs.hyprlock.package;
           btop = "${osConfig.security.wrapperDir}/btop";
-          # terminal = getExe inputs.smitty.packages.${system}.smitty;
           terminal = getExe config.programs.foot.package;
           obs = "^(com\.obsproject\.Studio)$";
           copyq = getExe pkgs.copyq;
         in
         [
-          # (mkBindExe "super" "e" "hyprctl clients | grep 'nautilus' || ${file-manager}" "Launch file manager")
           (mkBindExeDispatch "workspace 4" "super" "e" file-manager "Launch file manager")
-
-          (mkBindExe "super" "b" browser "Launch the browser")
-
-          # (mkBindExe "Super" "n" valent "Launch valent")
           (mkBindExe "supershift" "v" "${copyq} toggle" "Launch copyq clipboard manager")
 
           (mkBindExe "super" "q" terminal "Launch a terminal")
