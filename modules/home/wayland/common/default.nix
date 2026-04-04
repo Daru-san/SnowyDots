@@ -31,7 +31,7 @@ in
     # programs.niri.enable = false;
     services = {
       hypridle.enable = true;
-      hyprpaper.enable = lib.mkDefault false;
+      hyprpaper.enable = true;
       swww.enable = true;
       wlsunset.enable = true;
       swayosd.enable = false;
