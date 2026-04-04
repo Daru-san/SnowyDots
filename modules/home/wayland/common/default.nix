@@ -42,7 +42,7 @@ in
       waybar.enable = false;
       anyrun.enable = false;
       fuzzel.enable = true;
-      hyprlock.enable = true;
+      hyprlock.enable = false;
       wezterm.enable = false;
       foot.enable = true;
       wleave.enable = true;
