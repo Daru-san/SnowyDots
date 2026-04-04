@@ -10,7 +10,7 @@
     profileNames = [ config.home.username ];
   };
   programs.floorp = {
-    enable = true;
+    enable = false;
     nativeMessagingHosts = with pkgs; [ tridactyl-native ];
 
     profiles.${config.home.username} = {
