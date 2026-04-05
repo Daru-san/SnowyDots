@@ -79,6 +79,7 @@
     };
 
     # My own repos
+    frostpak.url = "github:Daru-san/frostpak";
     scarlet.url = "sourcehut:~darumaka/scarlet/0.4.1";
     vim.url = "sourcehut:~darumaka/SnowyVim";
     walls = {

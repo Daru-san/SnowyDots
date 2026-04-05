@@ -2,6 +2,7 @@
   outputs,
   lib,
   osConfig,
+  inputs,
   ...
 }:
 {
@@ -18,6 +19,7 @@
         stable-packages
         unstable-packages
       ])
+      inputs.frostpak.overlays.default
       (self: super: {
         nautilus = super.nautilus.overrideAttrs (nsuper: {
           buildInputs =
