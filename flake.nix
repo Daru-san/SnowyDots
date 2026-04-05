@@ -38,12 +38,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Pascal development tools
-    pascal-tools = {
-      url = "sourcehut:~darumaka/nix-pascal-tools";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     #secrets
     sops-nix.url = "github:Mic92/sops-nix";
 
