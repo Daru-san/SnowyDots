@@ -34,5 +34,6 @@
     tokio-console
     cargo-flamegraph
     rustc-demangle
+    vigil
   ];
 }
