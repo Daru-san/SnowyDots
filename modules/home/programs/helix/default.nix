@@ -18,7 +18,7 @@ in
   programs.helix = {
     enable = true;
     languages = import ./languages.nix { inherit pkgs lib vale; };
-    defaultEditor = true;
+    defaultEditor = false;
     extraPackages = import ./packages.nix { inherit pkgs inputs; };
     # themes = import ./themes { inherit lib; };
     settings = {
