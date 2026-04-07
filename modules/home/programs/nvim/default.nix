@@ -6,11 +6,19 @@
   ...
 }:
 let
+  stylix = config.stylix;
 in
 {
   imports = [
     inputs.vim.homeModules.default
   ];
+  stylix.targets.nixvim = {
+    transparentBackground = {
+      main = true;
+      numberLine = true;
+      signColumn = true;
+    };
+  };
   programs.nixvim = {
     enable = false;
     defaultEditor = false;
@@ -19,6 +27,7 @@ in
     luaLoader.enable = true;
     imports = [
       inputs.vim.nixvimModules.default
+      stylix.targets.nixvim.exportedModule
     ];
     plugins.jdtls.enable = lib.mkForce false;
     plugins.lsp.servers = {
