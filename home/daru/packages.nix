@@ -32,7 +32,7 @@
       pulsemixer
 
       # Desktop
-      swww
+      awww
 
       adbtuifm
 
