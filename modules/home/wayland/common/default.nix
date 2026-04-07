@@ -32,7 +32,7 @@ in
     services = {
       hypridle.enable = true;
       hyprpaper.enable = true;
-      swww.enable = true;
+      awww.enable = true;
       wlsunset.enable = true;
       swayosd.enable = false;
       flameshot.enable = true;
