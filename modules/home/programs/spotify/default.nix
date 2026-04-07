@@ -87,7 +87,6 @@ in
       fullAppDisplay
       volumePercentage
       oldLikeButton
-      lastfm
       seekSong
     ];
     enabledCustomApps = with spicePkgs.apps; [
