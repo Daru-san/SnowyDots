@@ -43,6 +43,8 @@
 
     atuin = {
       enable = true;
+      enableFishIntegration = true;
+      enableNushellIntegration = true;
       daemon.enable = true;
       settings = {
         workspaces = true;
