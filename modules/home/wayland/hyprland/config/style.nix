@@ -8,6 +8,9 @@
         gaps_out = 3;
         border_size = 0;
         allow_tearing = true;
+        snap = {
+          enabled = true;
+        };
       };
       binds = {
         allow_workspace_cycles = false;
@@ -37,6 +40,7 @@
       };
       render = {
         direct_scanout = 1;
+        new_render_scheduling = true;
       };
       misc = {
         vfr = true;
