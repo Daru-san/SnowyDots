@@ -16,7 +16,7 @@ in
   stylix.targets.helix.enable = true;
   xdg.configFile = import ./config-files.nix { inherit vale lib config; };
   programs.helix = {
-    enable = true;
+    enable = false;
     languages = import ./languages.nix { inherit pkgs lib vale; };
     defaultEditor = false;
     extraPackages = import ./packages.nix { inherit pkgs inputs; };
