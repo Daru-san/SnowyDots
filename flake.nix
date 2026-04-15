@@ -56,6 +56,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Zig dependencies
+    zls = {
+      url = "github:ShadowCurse/zls/add_size_align";
+      inputs.zig-overlay.follows = "zig";
+    };
+
+    zig.url = "github:silversquirl/zig-flake/compat";
+
     # Zen browser
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
