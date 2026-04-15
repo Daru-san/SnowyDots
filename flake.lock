@@ -1273,16 +1273,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1776210113,
-        "narHash": "sha256-fX/uDmJ1BKVkn1gcG5IrP4naevGkQDhjzL5enQqgAgg=",
-        "owner": "ShadowCurse",
+        "lastModified": 1776255592,
+        "narHash": "sha256-vJVeII9+SrSU1zidzh5DzWf9Zi/vYfMOkdVizUemP4M=",
+        "owner": "Daru-san",
         "repo": "zls",
-        "rev": "bb18fb1a5d368abdd95b878c08b3d52b151f54af",
+        "rev": "49309b5a925a80e165cf95c015a44beedf1f220b",
         "type": "github"
       },
       "original": {
-        "owner": "ShadowCurse",
-        "ref": "add_size_align",
+        "owner": "Daru-san",
         "repo": "zls",
         "type": "github"
       }
