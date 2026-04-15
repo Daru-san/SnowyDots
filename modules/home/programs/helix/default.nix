@@ -13,7 +13,7 @@ let
   ]);
 in
 {
-  stylix.targets.helix.enable = true;
+  stylix.targets.helix.enable = false;
   xdg.configFile = import ./config-files.nix { inherit vale lib config; };
   programs.helix = {
     enable = false;
