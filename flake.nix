@@ -58,7 +58,7 @@
 
     # Zig dependencies
     zls = {
-      url = "github:ShadowCurse/zls/add_size_align";
+      url = "github:Daru-san/zls";
       inputs.zig-overlay.follows = "zig";
     };
 
