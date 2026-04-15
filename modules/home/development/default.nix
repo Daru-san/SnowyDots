@@ -10,7 +10,7 @@
     rustc
     cargo
     clang
-    zig
+    zig_0_16
     jq
     license-go
     yq-go
