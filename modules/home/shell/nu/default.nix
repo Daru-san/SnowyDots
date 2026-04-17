@@ -91,7 +91,6 @@ in
 
           ${import-completions {
             gh = "gh-completions";
-            tealdeer = "tldr-completions";
             git = "git-completions";
             cargo = "cargo-completions";
             curl = "curl-completions";
