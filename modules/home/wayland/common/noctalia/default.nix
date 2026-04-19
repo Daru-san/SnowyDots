@@ -5,7 +5,6 @@
   ];
   programs.noctalia-shell = {
     package = pkgs.noctalia-shell;
-    systemd.enable = true;
 
     plugins = {
       sources = [

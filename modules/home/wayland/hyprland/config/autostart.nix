@@ -16,6 +16,7 @@ in
       "[workspace 3] ${foot} -e ${osConfig.security.wrapperDir}/btop"
       (getExe pkgs.copyq)
       (getExe pkgs.soteria)
+      (getExe pkgs.noctalia-shell)
     ];
   };
 }
