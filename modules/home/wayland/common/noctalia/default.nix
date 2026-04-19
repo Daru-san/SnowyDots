@@ -148,9 +148,10 @@
       };
       dock.enabled = false;
       ui = {
+        panelBackgroundOpacity = 0.71;
         translucentWidgets = true;
         panelsAttachedToBar = false;
-        settingsPanelMode = "window";
+        settingsPanelMode = "attached";
         settingsPanelSideBarCardStyle = false;
       };
     };
