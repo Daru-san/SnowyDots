@@ -2,6 +2,15 @@
 {
   wayland.windowManager.hyprland = {
     settings = {
+      layerrule = [
+        {
+          name = "noctalia";
+          match.namespace = "noctalia-background-.*$";
+          ignore_alpha = 0.5;
+          blur = true;
+          blur_popups = true;
+        }
+      ];
       windowrule = lib.flatten [
         "match:title (Open Images — Krita), size 65%"
         "match:class mpv, content none"
