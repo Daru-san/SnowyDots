@@ -20,6 +20,7 @@
       heaptrack
       zapzap
       oculante
+      iotas
 
       # Media
       ffmpeg
