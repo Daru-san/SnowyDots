@@ -1,4 +1,9 @@
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
 {
   imports = [
     inputs.noctalia.homeModules.default
@@ -147,7 +152,7 @@
       };
       dock.enabled = false;
       ui = {
-        panelBackgroundOpacity = 0.71;
+        panelBackgroundOpacity = lib.mkForce 0.71;
         translucentWidgets = true;
         panelsAttachedToBar = false;
         settingsPanelMode = "attached";
