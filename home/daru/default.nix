@@ -3,7 +3,6 @@
   lib,
   osConfig,
   inputs,
-  system,
   ...
 }:
 {
@@ -16,10 +15,6 @@
   nix.package = osConfig.nix.package;
   nixpkgs = {
     overlays = lib.flatten [
-      (self: super: {
-        zls_0_16 = inputs.zls.packages.${system}.default;
-        zig_0_16 = inputs.zig.packages.${system}.zig_0_16_0;
-      })
       (with outputs.overlays; [
         stable-packages
         unstable-packages
