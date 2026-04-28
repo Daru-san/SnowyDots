@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   boot = {
     consoleLogLevel = 2;
@@ -16,12 +15,6 @@
       consoleMode = "auto";
       memtest86.enable = true;
     };
-    plymouth = {
-      enable = true;
-      theme = "nixos-bgrt";
-      themePackages = with pkgs; [
-        nixos-bgrt-plymouth
-      ];
-    };
+    plymouth.enable = true;
   };
 }

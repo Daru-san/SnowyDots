@@ -115,6 +115,7 @@
       systems = [
         "x86_64-linux"
       ];
+      stylix = ./stylix.nix;
       genSystems = nixpkgs.lib.genAttrs systems;
       pkgsFor = nixpkgs.legacyPackages;
       lib = nixpkgs.lib;
@@ -139,6 +140,7 @@
           modules = [
             desktop.config
             modules.system
+            stylix
             {
               nixpkgs.hostPlatform = desktop.system;
               system = {
@@ -159,6 +161,7 @@
           modules = [
             laptop.config
             modules.system
+            stylix
             {
               nixpkgs.hostPlatform = laptop.system;
               system.laptop = true;
@@ -185,6 +188,7 @@
           modules = [
             ./home/daru
             modules.home
+            stylix
             {
               home = {
                 inherit (desktop) stateVersion;
@@ -205,6 +209,7 @@
           modules = [
             ./home/daru
             modules.home
+            stylix
             {
               home = {
                 inherit (laptop) stateVersion;

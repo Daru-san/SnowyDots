@@ -12,5 +12,6 @@
     ./services.nix
     ./networking.nix
     ./input.nix
+    ./stylix.nix
   ];
 }

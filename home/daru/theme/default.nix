@@ -1,7 +1,5 @@
 {
   inputs,
-  pkgs,
-  lib,
   ...
 }:
 {
@@ -15,30 +13,10 @@
       ./gtk.nix
     ];
 
-  stylix = {
-    enable = true;
-    enableReleaseChecks = false;
-    base16Scheme = "${inputs.tinted-themes}/base16/grayscale-dark.yaml"; # selenized-black qualia pop penumbra-dark pencil-dark operator-mono-dark base24/mountain.yaml material-vivid
-    targets = {
-      gtk.enable = false;
-      spicetify.enable = false;
-      gdu.enable = true;
-      fcitx5.enable = true;
-    };
-    image =
-      let
-        path = inputs.walls + "/images/caidychen_original_characters_anime_girls_mono.png";
-        brightness = 0;
-        fillColor = "black";
-      in
-      pkgs.runCommand "dimmed-background.png" { } ''
-        ${lib.getExe' pkgs.imagemagick "magick"} "${path}" -brightness-contrast ${toString brightness} -fill ${fillColor} $out
-      '';
-
-    imageScalingMode = "stretch";
-    opacity = {
-      terminal = 0.7;
-    };
-    polarity = "dark";
+  stylix.targets = {
+    gtk.enable = false;
+    spicetify.enable = false;
+    gdu.enable = true;
+    fcitx5.enable = true;
   };
 }

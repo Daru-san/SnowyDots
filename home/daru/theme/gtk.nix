@@ -7,29 +7,10 @@ let
   extraConfig = {
     gtk-decoration-layout = "";
   };
-  iconTheme =
-    let
-      whitesur-fix = pkgs.whitesur-icon-theme.overrideAttrs (oldAttrs: {
-        postInstall = ''
-          find -L $out -type l -print -delete
-        '';
-      });
-    in
-    {
-      name = "WhiteSur-grey-dark";
-      package = whitesur-fix.override {
-        boldPanelIcons = true;
-        alternativeIcons = true;
-        themeVariants = [
-          "grey"
-        ];
-      };
-    };
 in
 rec {
   gtk = {
     enable = true;
-
     theme = {
       name = "Colloid-Grey-Dark-Compact";
       package = pkgs.colloid-gtk-theme.override {
@@ -67,19 +48,4 @@ rec {
     };
   };
   home.sessionVariables.GTK_THEME = gtk.theme.name;
-
-  stylix = {
-    icons = {
-      enable = true;
-      dark = iconTheme.name;
-      light = iconTheme.name;
-      package = iconTheme.package;
-    };
-
-    cursor = {
-      name = "phinger-cursors-dark";
-      package = pkgs.phinger-cursors;
-      size = 26;
-    };
-  };
 }
