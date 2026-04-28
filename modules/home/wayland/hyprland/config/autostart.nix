@@ -17,6 +17,7 @@ in
       (getExe pkgs.copyq)
       (getExe pkgs.soteria)
       (getExe pkgs.noctalia-shell)
+      "${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent"
     ];
   };
 }
