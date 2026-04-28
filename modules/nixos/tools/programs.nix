@@ -2,6 +2,10 @@
   documentation.man.generateCaches = false;
   programs = {
     usbtop.enable = true;
+    nautilus-open-any-terminal = {
+      enable = true;
+      terminal = "foot";
+    };
     git.enable = true;
     nh = {
       enable = true;
