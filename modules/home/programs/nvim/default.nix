@@ -19,6 +19,13 @@ in
       signColumn = true;
     };
   };
+  programs.neovide = {
+    enable = true;
+    settings = {
+      neovim-bin = lib.getExe config.programs.nixvim.build.package;
+      title-hidden = false;
+    };
+  };
   programs.nixvim = {
     enable = true;
     defaultEditor = true;
@@ -29,6 +36,11 @@ in
       inputs.vim.nixvimModules.default
       stylix.targets.nixvim.exportedModule
     ];
+    extraConfigLua = ''
+      if vim.g.neovide then
+        vim.g.neovide_cursor_animation_length = 0
+      end
+    '';
     plugins.jdtls.enable = lib.mkForce false;
     plugins.lsp.servers = {
       kotlin_language_server.enable = lib.mkForce false;
