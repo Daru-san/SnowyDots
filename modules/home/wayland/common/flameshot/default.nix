@@ -13,9 +13,7 @@
         savePath = config.xdg.userDirs.extraConfig.XDG_SCREENSHOTS_DIR;
         savePathFixed = true;
         startupLaunch = false;
-        useGrimAdapter = true;
-        disabledGrimWarning=true;
-        showDesktopNotification=false;
+        showDesktopNotification = false;
       };
     };
   };
