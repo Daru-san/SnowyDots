@@ -43,8 +43,8 @@ in
 
       "super, page_up, workspace,e-1"
       "super, page_down, workspace,e+1"
-      "supershift, page_up, movetoworkspace, e-1"
-      "supershift, page_down, movetoworkspace, e+1"
+      "supershift, page_up, movetoworkspace, r-1"
+      "supershift, page_down, movetoworkspace, r+1"
 
       # "SUPER, grave, overview:toggle, toggle"
     ]
