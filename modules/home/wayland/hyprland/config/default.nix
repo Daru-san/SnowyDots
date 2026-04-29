@@ -7,5 +7,6 @@
     ./autostart.nix
     ./monitor.nix
     ./plugins.nix
+    ./gestures.nix
   ];
 }
