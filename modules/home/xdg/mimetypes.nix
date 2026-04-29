@@ -13,7 +13,7 @@
     in
     [
       {
-        "application/pdf" = "sioyek";
+        "application/pdf" = "sioyek.desktop";
       }
       (subtypes "image" "oculante.desktop" [
         "png"
@@ -39,7 +39,7 @@
         "webm"
         "x-matroska"
       ])
-      (subtypes "application" "sioyek" [
+      (subtypes "application" "sioyek.desktop" [
         "vnd.comicbook+zip"
       ])
       { "text/plain" = "neovide.desktop"; }
