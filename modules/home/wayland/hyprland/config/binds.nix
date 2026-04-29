@@ -84,11 +84,16 @@ in
             mute = "${wpctl} set-mute @DEFAULT_SINK@ toggle";
             raise-volume = "${wpctl} set-volume @DEFAULT_SINK@ 0.05+";
             lower-volume = "${wpctl} set-volume @DEFAULT_SINK@ 0.05-";
+            brightnessctl = getExe pkgs.brightnessctl;
+            raise-brightness = "${brightnessctl} set +5%";
+            lower-brightness = "${brightnessctl} set 5%-";
           in
           [
             (mkBindSingle "XF86AudioRaiseVolume" raise-volume "Raise volume")
             (mkBindSingle "XF86AudioLowerVolume" lower-volume "Lower volume")
             (mkBindSingle "XF86AudioMute" mute "Mute audio")
+            (mkBindSingle "XF86MonBrightnessUp" raise-brightness "Raise brightness")
+            (mkBindSingle "XF86MonBrightnessDown" lower-brightness "Lower brightness")
           ]
         )
         ++ (
