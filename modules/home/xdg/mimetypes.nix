@@ -13,7 +13,7 @@
     in
     [
       {
-        "application/pdf" = "org.pwmt.zathura-pdf-mupdf.desktop";
+        "application/pdf" = "sioyek";
       }
       (subtypes "image" "swayimg.desktop" [
         "png"
@@ -39,7 +39,7 @@
         "webm"
         "x-matroska"
       ])
-      (subtypes "application" "org.pwmt.zathura.desktop" [
+      (subtypes "application" "sioyek" [
         "vnd.comicbook+zip"
       ])
       { "text/plain" = "neovide.desktop"; }

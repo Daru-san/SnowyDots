@@ -90,6 +90,7 @@
             (workspace 8 "gimp")
 
             (workspace 9 "org.pwmt.zathura")
+            (workspace 9 "sioyek")
           ]
         )
       ];
