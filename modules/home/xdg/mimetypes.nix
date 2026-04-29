@@ -15,7 +15,7 @@
       {
         "application/pdf" = "sioyek";
       }
-      (subtypes "image" "swayimg.desktop" [
+      (subtypes "image" "oculante.desktop" [
         "png"
         "jpeg"
         "gif"
