@@ -59,7 +59,7 @@
           "border, 1, 2, default"
           "fade, 1, 4, default"
           "windows, 1, 3, default, popin 80%"
-          "workspaces, 1, 2, default, fade"
+          "workspaces, 1, 8, default, slidevert"
         ];
       };
     };
