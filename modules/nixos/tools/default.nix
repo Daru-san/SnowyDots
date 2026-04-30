@@ -14,7 +14,7 @@
     ./printing.nix
     ./secrets.nix
     ./transmission.nix
-    ./rnnoise.nix
+    # ./rnnoise.nix
     ./security-ext.nix
     ./forgejo.nix
     ./flatpak.nix
