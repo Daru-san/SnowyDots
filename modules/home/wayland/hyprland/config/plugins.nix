@@ -1,10 +1,11 @@
 { pkgs, config, ... }:
 {
   wayland.windowManager.hyprland = {
-    plugins = with pkgs.hyprlandPlugins; [
-      hy3
-      # hyprspace
-    ];
+    plugins =
+      (with pkgs.hyprlandPlugins; [
+        hy3
+      ])
+      ++ (with pkgs; [ hymission ]);
     settings.plugin = {
       hy3 = {
         tabs = {
