@@ -319,6 +319,26 @@
         "type": "github"
       }
     },
+    "kotlin-lsp": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1777434931,
+        "narHash": "sha256-EeMHb+BgjwPW6RNsttJFFYzRA8LN/WMHbARrmAatJfQ=",
+        "owner": "turtton",
+        "repo": "kotlin-lsp-flake",
+        "rev": "9979f908a751c1e6d096385c8bf88f52b8da20b3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "turtton",
+        "repo": "kotlin-lsp-flake",
+        "type": "github"
+      }
+    },
     "libnbtplusplus": {
       "flake": false,
       "locked": {
@@ -750,6 +770,7 @@
         "fjord-launcher": "fjord-launcher",
         "frostpak": "frostpak",
         "home-manager": "home-manager",
+        "kotlin-lsp": "kotlin-lsp",
         "niri": "niri",
         "nix-flatpak": "nix-flatpak",
         "nix-index-database": "nix-index-database",
