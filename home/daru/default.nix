@@ -20,6 +20,7 @@
         unstable-packages
       ])
       inputs.frostpak.overlays.default
+      inputs.kotlin-lsp.overlays.default
       (self: super: {
         nautilus = super.nautilus.overrideAttrs (nsuper: {
           buildInputs =

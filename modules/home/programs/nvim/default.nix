@@ -44,6 +44,10 @@ in
     plugins.jdtls.enable = lib.mkForce false;
     plugins.lsp.servers = {
       kotlin_language_server.enable = lib.mkForce false;
+      kotlin_lsp = {
+        enable = true;
+        package = pkgs.kotlin-lsp;
+      };
       zls.package = lib.mkForce pkgs.zls_0_16;
     };
     lsp.servers.pasls = {
