@@ -26,6 +26,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    kotlin-lsp = {
+      url = "github:turtton/kotlin-lsp-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     niri.url = "github:sodiboo/niri-flake";
 
     fjord-launcher = {
