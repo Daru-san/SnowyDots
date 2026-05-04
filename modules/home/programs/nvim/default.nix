@@ -32,6 +32,11 @@ in
     viAlias = true;
     vimAlias = true;
     luaLoader.enable = true;
+    nixpkgs = {
+      config = {
+        allowUnfree = true;
+      };
+    };
     imports = [
       inputs.vim.nixvimModules.default
       stylix.targets.nixvim.exportedModule
