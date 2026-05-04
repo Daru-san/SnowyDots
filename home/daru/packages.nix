@@ -19,6 +19,7 @@
       sysprof
       heaptrack
       zapzap
+      grim
       oculante
       iotas
 
