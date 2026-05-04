@@ -46,7 +46,7 @@ in
       "supershift, page_up, movetoworkspace, r-1"
       "supershift, page_down, movetoworkspace, r+1"
 
-      "SUPER, grave, hymission:toggle, toggle"
+      "SUPER, grave, hymission:toggle"
     ]
     ++
       # Change workspace
