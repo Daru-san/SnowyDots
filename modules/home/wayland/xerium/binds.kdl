@@ -1,0 +1,9 @@
+binds {
+    super+page_up { focus-workspace skip-inactive=#true "-1" }
+    super+page_down { focus-workspace skip-inactive=#true "+1" }
+    super+shift+page_up { move-to-workspace skip-inactive=#true "-1" }
+    super+shift+page_down { move-to-workspace skip-inactive=#false "+1" }
+    super+shift+q { kill; }
+    super+q { launch "foot" }
+    super+shift+e { quit; }
+}

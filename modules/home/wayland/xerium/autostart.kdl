@@ -1,0 +1,5 @@
+exec-start "foot" "-c" "btop"
+exec "foot" "-c" "btop"
+exec-start "awww-daemon"
+exec "awww" "img" "~/snow/Wallpapers/images/amongst_the_flowers.png"
+exec-start "nix" "shell" "nixpkgs#dms-shell" "nixpkgs#quickshell" "--command" "dms" "run"
