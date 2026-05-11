@@ -1,32 +1,32 @@
 general {
     enable-xwayland
-    allow-tearing
-}
-
-input {
-    keyboard {
-        repeat-rate 50
-        repeat-delay 100
+    layout "dwindle"
+    layouts {
+        master {
+            ratio 55.0
+        }
+        dwindle {
+            orientation "vertical"
+        }
     }
+    focus-model "follow-mouse"
+    window-placement-mode "tab"
 }
 
-output "eDP-1" {
-    mode "1366x786@60"
+
+output HDMI-A-1 {
+    mode "1920x1080@70"
     scale 1.0
-}
-
-style {
-    prefer-no-csd
-    blur {
-        enabled
-        size 3
-        passes 2
-    }
 }
 
 workspace 1 name="Work"
 workspace 2 name="browser"
 workspace 3 name="Files"
 workspace 4 name="OBS"
+workspace 5 name="Music"
+workspace 6 name="Media"
+workspace 7 name="Games"
+workspace 8 name="Studio"
+workspace 9 name="Docs"
 
-source "binds.kdl" "autostart.kdl" "env.kdl" "rules.kdl"
+source "style.kdl" "input.kdl" "binds.kdl" "env.kdl" "rules.kdl" "autostart.kdl" "marks.kdl"

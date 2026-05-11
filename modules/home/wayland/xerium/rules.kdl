@@ -1,11 +1,88 @@
 window-rule {
-    match app-id="^Neovide$"
+    match app-id="Neovide"
+    open-on-workspace index=1
     placement-mode "tab"
-    open-on-workspace name="Coding"
 }
-
 window-rule {
-    match app-id="^foot$" title="^btop$"
-    placement-mode "tab"
+    match app-id="foot" title="btop"
     open-on-workspace name="System Info"
+    placement-mode "tab"
+}
+window-rule {
+    match app-id="foot"
+    open-on-workspace name="Work"
+}
+window-rule {
+    match app-id="zen"
+    open-on-workspace index=2
+}
+window-rule {
+    match app-id="thunderbird"
+    open-on-workspace index=2
+}
+window-rule {
+    match app-id="org.gnome.Nautilus"
+    open-on-workspace index=4
+    floating
+    center
+}
+window-rule {
+    match app-id="spotify"
+    open-on-workspace index=5
+}
+window-rule {
+    match app-id="io.github.htkhiem.Euphonica"
+    open-on-workspace index=5
+}
+window-rule {
+    match app-id="mpv"
+    open-on-workspace index=6
+}
+window-rule {
+    match app-id="FreeTube"
+    open-on-workspace index=6
+}
+window-rule {
+    match app-id="libreoffice"
+    open-on-workspace index=7
+}
+window-rule {
+    match app-id="org.prismexecer.Prismexecer"
+    open-on-workspace index=7
+}
+window-rule {
+    match app-id="Minecraft"
+    open-on-workspace index=7
+}
+window-rule {
+    match app-id=".virt-manager-wrapped"
+    open-on-workspace index=7
+}
+window-rule {
+    match app-id="virt-viewer"
+    open-on-workspace index=7
+}
+window-rule {
+    match app-id="com.obsproject.Studio"
+    open-on-workspace index=8
+}
+window-rule {
+    match app-id="oculante"
+    open-on-workspace index=8
+}
+window-rule {
+    match app-id="org.kde.kdenlive"
+    open-on-workspace index=8
+}
+window-rule {
+    match app-id=gimp
+    open-on-workspace index=8
+}
+window-rule {
+    match app-id=org.pwmt.zathura
+    open-on-workspace index=9
+}
+window-rule {
+    match app-id=sioyek
+    open-on-workspace index=9
 }

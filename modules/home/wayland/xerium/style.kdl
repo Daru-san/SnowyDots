@@ -1,0 +1,34 @@
+style {
+    gaps {
+        inner 1
+        outer 3
+    }
+    blur {
+        enabled
+        // method "kawase"
+        passes 2
+        radius 3.0
+    }
+
+    corner-radius 6
+    inactive-dim 0.34
+    prefer-no-csd
+    border-width {
+        top 2
+        bottom 2
+        left 2
+        right 2
+    }
+    border-colors {
+        active "395573"
+        inactive "505456"
+    }
+    tab-indicator {
+        colors {
+            active "rgba(39, 55, 73, 0.6)"
+            active-border "rgba(39, 55, 73, 1)"
+            inactive "rgba(50, 54, 56, 0.6)"
+            inactive-border "rgba(50, 54, 56, 1)"
+        }
+    }
+}

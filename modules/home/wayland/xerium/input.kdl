@@ -1,0 +1,14 @@
+input {
+    keyboard {
+        repeat-rate 50
+        repeat-delay 300
+    }
+    touchpad {
+        tap-to-click
+        tap-to-drag
+        tap-to-drag-lock
+        natural-scroll
+        scroll-method "two-finger"
+        click-method "button-areas"
+    }
+}

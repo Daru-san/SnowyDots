@@ -1,9 +1,281 @@
 binds {
-    super+page_up { focus-workspace skip-inactive=#true "-1" }
-    super+page_down { focus-workspace skip-inactive=#true "+1" }
-    super+shift+page_up { move-to-workspace skip-inactive=#true "-1" }
-    super+shift+page_down { move-to-workspace skip-inactive=#false "+1" }
-    super+shift+q { kill; }
-    super+q { launch "foot" }
-    super+shift+e { quit; }
+    super+page_up {
+        focus-workspace skip-inactive=#true "-1"
+    }
+    super+ctrl+page_up {
+        focus-workspace skip-inactive=#true "-1"
+    }
+    super+page_down {
+        focus-workspace skip-inactive=#false "+1"
+    }
+    super+ctrl+page_down {
+        focus-workspace skip-inactive=#false "+1"
+    }
+    super+shift+page_up {
+        move-to-workspace  skip-inactive=#false "-1"
+    }
+    super+shift+page_down {
+        move-to-workspace  skip-inactive=#false "+1"
+    }
+
+    super+0 {
+        focus-workspace  0
+    }
+    super+1 {
+        focus-workspace  1
+    }
+    super+2 {
+        focus-workspace  2
+    }
+    super+3 {
+        focus-workspace  3
+    }
+    super+4 {
+        focus-workspace  4
+    }
+    super+5 {
+        focus-workspace  5
+    }
+    super+6 {
+        focus-workspace  6
+    }
+    super+7 {
+        focus-workspace  7
+    }
+    super+8 {
+        focus-workspace  8
+    }
+    super+9 {
+        focus-workspace  9
+    }
+    // Move window to workspace
+    super+shift+0 {
+        move-to-workspace  0
+    }
+    super+shift+1 {
+        move-to-workspace  1
+    }
+    super+shift+2 {
+        move-to-workspace  2
+    }
+    super+shift+3 {
+        move-to-workspace  3
+    }
+    super+shift+4 {
+        move-to-workspace  4
+    }
+    super+shift+5 {
+        move-to-workspace  5
+    }
+    super+shift+6 {
+        move-to-workspace  6
+    }
+    super+shift+7 {
+        move-to-workspace  7
+    }
+    super+shift+8 {
+        move-to-workspace  8
+    }
+    super+shift+9 {
+        move-to-workspace  9
+    }
+
+    super+shift+q {
+        kill-active
+    }
+    super+shift+e {
+        quit
+    }
+
+    super+q {
+        exec "foot"
+    }
+    super+r {
+        exec "yazi"
+    }
+    super+m {
+        exec "btop"
+    }
+    super+d {
+        exec-shell shell="nu" "fuzzel"
+    }
+    super+i {
+        exec "iwgtk"
+    }
+    super+a {
+        exec "xerictl clients | grep 'easyeffects' || easyeffects"
+    }
+    super+x {
+        exec "wleave"
+    }
+    super+shift+i {
+        exec "overskride"
+    }
+    super+alt+l {
+        exec "hyprlock" --immediate
+    }
+
+    super+v {
+        toggle-floating
+    }
+    super+f {
+        toggle-fullscreen
+    }
+    super+shift+f {
+        toggle-fakefullscreen
+    }
+    super+shift+x {
+        exec "xerictl reload"
+    }
+
+    super+h {
+        move-focus left
+    }
+    super+j {
+        move-focus down
+    }
+    super+k {
+        move-focus up
+    }
+    super+l {
+        move-focus right
+    }
+    super+left {
+        move-focus left
+    }
+    super+right {
+        move-focus right
+    }
+    super+up {
+        move-focus up
+    }
+    super+down {
+        move-focus down
+    }
+
+    super+shift+h {
+        move-window left
+    }
+    super+shift+j {
+        move-window down
+    }
+    super+shift+k {
+        move-window up
+    }
+    super+shift+l {
+        move-window right
+    }
+    super+shift+left {
+        move-window left
+    }
+    super+shift+right {
+        move-window right
+    }
+    super+shift+up {
+        move-window up
+    }
+    super+shift+down {
+        move-window down
+    }
+
+    super+alt+h {
+        focus-monitor left
+    }
+    super+alt+j {
+        focus-monitor down
+    }
+    super+alt+k {
+        focus-monitor up
+    }
+    super+alt+l {
+        focus-monitor right
+    }
+    super+alt+left {
+        focus-monitor left
+    }
+    super+alt+right {
+        focus-monitor right
+    }
+    super+alt+up {
+        focus-monitor up
+    }
+    super+alt+down {
+        focus-monitor down
+    }
+
+    super+alt+shift+h {
+        move-workspace-to-monitor left
+    }
+    super+alt+shift+j {
+        move-workspace-to-monitor down
+    }
+    super+alt+shift+k {
+        move-workspace-to-monitor up
+    }
+    super+alt+shift+l {
+        move-workspace-to-monitor right
+    }
+    super+alt+shift+left {
+        move-workspace-to-monitor left
+    }
+    super+alt+shift+right {
+        move-workspace-to-monitor right
+    }
+    super+alt+shift+up {
+        move-workspace-to-monitor up
+    }
+    super+alt+shift+down {
+        move-workspace-to-monitor down
+    }
+
+    XF86AudioNext {
+        exec "playerctl next"
+    }
+    XF86AudioPrev {
+        exec "playerctl previous"
+    }
+    XF86AudioPlay {
+        exec "playerctl play-pause"
+    }
+    XF86AudioStop {
+        exec "playerctl stop"
+    }
+    shift+F12 {
+        exec "playerctl next"
+    }
+    shift+F9 {
+        exec "playerctl previous"
+    }
+    shift+F10 {
+        exec "playerctl play-pause"
+    }
+    shift+F11 {
+        exec "playerctl stop"
+    }
+
+    XF86AudioRaiseVolume {
+        exec "wpctl set-volume @DEFAULT_SINK@ 0.05+"
+    }
+    XF86AudioLowerVolume {
+        exec "wpctl set-volume @DEFAULT_SINK@ 0.05-"
+    }
+    XF86AudioMute {
+        exec "wpctl set-mute @DEFAULT_SINK@ toggle"
+    }
+    XF86MonBrightnessUp {
+        exec "brightnessctl set +5%"
+    }
+    XF86MonBrightnessDown {
+        exec "brightnessctl set 5%-"
+    }
+
+    super+f12 {
+        exec "systemctl suspend"
+    }
+    Print {
+        exec "flameshot gui"
+    }
+    shift+Print {
+        exec "flameshot screen"
+    }
 }

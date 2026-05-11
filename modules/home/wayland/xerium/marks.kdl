@@ -1,0 +1,6 @@
+marks {
+    persist
+    tab-indicator #true
+    tab-indicator-glyph "*"
+    max-marks 240
+}
