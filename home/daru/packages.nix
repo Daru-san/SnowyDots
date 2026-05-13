@@ -38,6 +38,8 @@
 
       adbtuifm
 
+      audacity
+
       # Documents
       glow
 
