@@ -112,15 +112,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1776303232,
-        "narHash": "sha256-GduEzcuLb4ciMqeWQt3BO4y+V7Mgqsai3q/Kse7EusY=",
-        "owner": "hero-persson",
+        "lastModified": 1778667076,
+        "narHash": "sha256-A7uEnYraIEI9tRTCL5h0HpghourgS7kyR0hr+MM5khY=",
+        "owner": "Daru-san",
         "repo": "FjordLauncherUnlocked",
-        "rev": "26de12b3d28118b31e90cd5e39269dd2b846bdb8",
+        "rev": "6fdee7c5c5281f8881ace829f543539b98f11abd",
         "type": "github"
       },
       "original": {
-        "owner": "hero-persson",
+        "owner": "Daru-san",
         "repo": "FjordLauncherUnlocked",
         "type": "github"
       }
