@@ -38,7 +38,10 @@
 
       adbtuifm
 
+      # audio
       audacity
+      lmms-full
+      reaper
 
       # Documents
       glow
