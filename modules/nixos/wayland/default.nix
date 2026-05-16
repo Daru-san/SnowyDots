@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   config,
   ...
 }:
@@ -23,7 +24,26 @@ in
         enable = true;
       };
     };
+    security.pam.services.hyprlock = { };
     security.soteria.enable = true;
-    programs.regreet.enable = true;
+    services.greetd = {
+      enable = true;
+      settings = rec {
+        initial_session = {
+          command =
+            let
+              flags = lib.cli.toCommandLineShellGNU { } {
+                t = true;
+                window-padding = 1;
+                g = "Be the key to this door.";
+                r = true;
+              };
+            in
+            "${pkgs.tuigreet}/bin/tuigreet ${flags}";
+          user = "daru";
+        };
+        default_session = initial_session;
+      };
+    };
   };
 }
