@@ -12,6 +12,7 @@ in
   ];
   config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland = {
+      configType = "hyprlang";
       systemd = {
         enable = true;
         enableXdgAutostart = true;
