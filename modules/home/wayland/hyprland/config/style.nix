@@ -43,7 +43,6 @@
         new_render_scheduling = true;
       };
       misc = {
-        vfr = true;
         vrr = 3;
         enable_anr_dialog = false;
         render_unfocused_fps = 0;
