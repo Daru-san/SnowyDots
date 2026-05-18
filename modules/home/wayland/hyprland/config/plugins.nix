@@ -3,7 +3,18 @@
   wayland.windowManager.hyprland = {
     plugins =
       (with pkgs.hyprlandPlugins; [
-        hy3
+        (hy3.overrideAttrs (
+          old:
+          (finalAttrs: {
+            version = "0.55.0";
+            src = pkgs.fetchFromGitHub {
+              owner = "outfoxxed";
+              repo = "hy3";
+              tag = "hl${finalAttrs.version}";
+              hash = "sha256-P3wwiIfqo89evW7xzI+wOI/qM1WPZBiiSmGNtBmYeVk=";
+            };
+          })
+        ))
       ])
       ++ (with pkgs; [ hymission ]);
     settings.plugin = {
