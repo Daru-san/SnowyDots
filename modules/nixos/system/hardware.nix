@@ -13,7 +13,6 @@
   };
   powerManagement = {
     enable = true;
-    cpuFreqGovernor = "ondemand";
   };
   programs.mdevctl.enable = true;
   services.udev.extraRules = ''
