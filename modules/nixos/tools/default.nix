@@ -19,5 +19,6 @@
     ./forgejo.nix
     ./flatpak.nix
     ./ollama.nix
+    ./musnix.nix
   ];
 }
