@@ -83,7 +83,6 @@
 
       file-roller
       nautilus
-      fjordlauncher
     ])
   ];
 }
