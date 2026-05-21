@@ -1,5 +1,5 @@
 {
-  documentation.man.generateCaches = false;
+  documentation.man.cache.enable = false;
   programs = {
     usbtop.enable = true;
     nautilus-open-any-terminal = {
