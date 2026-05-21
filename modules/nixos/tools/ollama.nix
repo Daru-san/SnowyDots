@@ -1,7 +1,9 @@
+{ pkgs, ... }:
 {
   services = {
     ollama = {
       enable = true;
+      package = pkgs.ollama-vulkan;
       loadModels = [
         "gpt-oss:1.5b"
         "deepseek-r1:1.5b"
