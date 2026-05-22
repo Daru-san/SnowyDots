@@ -4,6 +4,9 @@
     ollama = {
       enable = true;
       package = pkgs.ollama-vulkan;
+      environmentVariables = {
+        GGML_VK_DISABLE_INTEGER_DOT_PRODUCT = "1";
+      };
       loadModels = [
         "deepseek-r1:1.5b"
         "qwen2:1.5b"
