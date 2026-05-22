@@ -44,14 +44,21 @@ in
         ];
       };
     };
-    virtualisation.oci-containers.containers.open-webui = {
-      image = "ghcr.io/open-webui/open-webui:main";
-      ports = [ "8080:8080" ];
+
+    open-webui = {
+      enable = true;
+      openFirewall = true;
+      host = "0.0.0.0";
+      port = 8080;
       environment = {
+        HOST = "0.0.0.0";
+        PORT = "8080";
+        ANONYMIZED_TELEMETRY = "False";
+        DO_NOT_TRACK = "True";
+        SCARF_NO_ANALYTICS = "True";
+        OLLAMA_API_BASE_URL = "http://127.0.0.1:11434/api";
         OLLAMA_BASE_URL = "http://127.0.0.1:11434";
-        DATA_DIR = "/app/backend/data";
       };
-      volumes = [ "open-webui-data:/app/backend/data" ];
     };
   };
 }
