@@ -152,6 +152,10 @@
               system = {
                 inherit (desktop) stateVersion;
               };
+              system.ai = {
+                enable = true;
+                large = true;
+              };
               networking = {
                 inherit (desktop) hostName;
               };
@@ -171,6 +175,10 @@
             {
               nixpkgs.hostPlatform = laptop.system;
               system.laptop = true;
+              system.ai = {
+                enable = true;
+                small = true;
+              };
               system = {
                 inherit (laptop) stateVersion;
               };
