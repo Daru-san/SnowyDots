@@ -41,6 +41,15 @@
       lmms-full
       reaper
 
+      # VST plugins
+      dragonfly-reverb
+      airwindows
+      geonkick
+      chow-tape-model
+      surge-xt
+      zynaddsubfx
+      lsp-plugins
+
       # Documents
       glow
 
