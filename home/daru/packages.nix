@@ -91,6 +91,7 @@
       file-roller
       nautilus
       fjordlauncher
+      alpaca
     ])
   ];
 }
