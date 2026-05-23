@@ -155,11 +155,17 @@
               system.ai = {
                 enable = true;
                 large = true;
-                ollama.package =
-                  let
-                    pkgs = import nixpkgs { inherit (desktop) system; };
-                  in
-                  pkgs.ollama;
+                ollama = {
+                  package =
+                    let
+                      pkgs = import nixpkgs { inherit (desktop) system; };
+                    in
+                    pkgs.ollama;
+                  extraVars = {
+                    OLLAMA_NUM_PARALLEL = "1";
+                    OMP_NUM_THREADS = "4";
+                  };
+                };
               };
               networking = {
                 inherit (desktop) hostName;
