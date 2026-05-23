@@ -41,18 +41,20 @@ in
           GGML_VK_DISABLE_INTEGER_DOT_PRODUCT = "1";
         }
         // cfg.ollama.extraVars;
+        syncModels = true;
         loadModels = mkMerge [
-          [ "phi3:3.8b" ]
+          [
+            "phi4-mini:3.8b"
+            "ministral-3:3b"
+            "gemma3:4b"
+          ]
           (mkIf cfg.large [
-            "mistral:7b"
             "llama3.1:8b"
             "qwen2.5:7b"
-            "gemma2:9b"
           ])
           (mkIf cfg.small [
             "llama:3.2:3b"
             "qwen3:1.7b"
-            "gemma2:3b"
           ])
         ];
       };
