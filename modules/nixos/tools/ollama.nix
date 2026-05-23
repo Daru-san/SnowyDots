@@ -10,6 +10,8 @@ let
     mkIf
     mkMerge
     mkPackageOption
+    mkOption
+    types
     ;
   cfg = config.system.ai;
 in
@@ -18,7 +20,17 @@ in
     enable = mkEnableOption "Enable AI through ollama";
     large = mkEnableOption "Enable large (larger than 3b) AI models";
     small = mkEnableOption "Enable small (smaller than 3b) AI models";
-    ollama.package = mkPackageOption pkgs "ollama-vulkan" { };
+    ollama = {
+      package = mkPackageOption pkgs "ollama-vulkan" { };
+      extraVars = mkOption {
+        type = types.attrsOf types.str;
+        default = { };
+        example = {
+          OLLAMA_NUM_PARALLEL = "1";
+          OMP_NUM_THREADS = "1";
+        };
+      };
+    };
   };
   config = mkIf cfg.enable {
     services = {
@@ -27,7 +39,8 @@ in
         package = cfg.ollama.package;
         environmentVariables = {
           GGML_VK_DISABLE_INTEGER_DOT_PRODUCT = "1";
-        };
+        }
+        // cfg.ollama.extraVars;
         loadModels = mkMerge [
           [ "phi3:3.8b" ]
           (mkIf cfg.large [
