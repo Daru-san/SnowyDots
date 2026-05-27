@@ -60,8 +60,12 @@ in
         ];
       };
 
-      open-webui = {
+      sillytavern = {
         enable = true;
+      };
+
+      open-webui = {
+        enable = false;
         openFirewall = true;
         host = "0.0.0.0";
         port = 8080;
