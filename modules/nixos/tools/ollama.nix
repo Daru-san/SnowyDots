@@ -41,7 +41,7 @@ in
           GGML_VK_DISABLE_INTEGER_DOT_PRODUCT = "1";
         }
         // cfg.ollama.extraVars;
-        syncModels = true;
+        syncModels = false;
         loadModels = mkMerge [
           [
             "phi4-mini:3.8b"
