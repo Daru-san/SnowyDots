@@ -51,6 +51,7 @@ in
           (mkIf cfg.large [
             "llama3.1:8b"
             "qwen2.5:7b"
+            "fluffy/llama-3.1-8b-stheno-v3.4:q4_K_M"
           ])
           (mkIf cfg.small [
             "llama:3.2:3b"
