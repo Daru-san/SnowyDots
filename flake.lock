@@ -531,11 +531,11 @@
     },
     "nixpkgs-stable_2": {
       "locked": {
-        "lastModified": 1779467186,
-        "narHash": "sha256-nOesoDCiXcUftqbRBMz9tt4blI5PvljMWbm3kuCA+0s=",
+        "lastModified": 1779796641,
+        "narHash": "sha256-ZsIrKmhp4vbBXoXXmR/tBXA/UCsAQiJL9vsgZEduhVY=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "b77b3de8775677f84492abe84635f87b0e153f0f",
+        "rev": "25f538306313eae3927264466c70d7001dcea1df",
         "type": "github"
       },
       "original": {
@@ -558,6 +558,22 @@
         "id": "nixpkgs",
         "ref": "nixos-unstable",
         "type": "indirect"
+      }
+    },
+    "nixpkgs_11": {
+      "locked": {
+        "lastModified": 1779877693,
+        "narHash": "sha256-NOF9NAREhxr50bbBfVcVOq+ArCMSoe8dP79Pk2uyARk=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "4100e830e085863741bc69b156ec4ccd53ab5be0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "nixpkgs_2": {
@@ -688,10 +704,7 @@
     "nixvim": {
       "inputs": {
         "flake-parts": "flake-parts_5",
-        "nixpkgs": [
-          "vim",
-          "nixpkgs"
-        ],
+        "nixpkgs": "nixpkgs_11",
         "systems": "systems_6"
       },
       "locked": {
@@ -1169,11 +1182,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1779979330,
-        "narHash": "sha256-/WaXFP9b3iFLiDIzB7ygoqvBIIwM4juUBQg6kSZFQUc=",
+        "lastModified": 1779981819,
+        "narHash": "sha256-7tepJB43ny9pZGzmlJ3NXEukJ4FiDnR465SWsqKvQ4Q=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "fd7ea3b6d6241624e43558d9f668bad85a0f9e0b",
+        "rev": "30ffe99c7d8a0d3a07cee95e596a645cfd310ab4",
         "type": "sourcehut"
       },
       "original": {
