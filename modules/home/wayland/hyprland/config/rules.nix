@@ -12,7 +12,7 @@
         }
       ];
       windowrule = lib.flatten [
-        "match:title (Open Images — Krita), size 65%"
+        "match:title (Open Images — Krita), size 65% 65%"
         "match:class mpv, content none"
         (
           let
@@ -54,7 +54,7 @@
           [
             (map (c: "match:class ^(${c})(.*)$, float true") window)
             (map (d: "match:class ^(${d})(.*)$, center true") window)
-            (map (e: "match:class ^(${e})(.*)$, size 60%") resized-windows)
+            (map (e: "match:class ^(${e})(.*)$, size 60% 60%") resized-windows)
           ]
         )
         (
