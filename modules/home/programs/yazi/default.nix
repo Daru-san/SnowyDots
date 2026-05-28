@@ -52,47 +52,47 @@
       open = {
         prepend_rules = [
           {
-            name = "*.ts";
+            url = "*.ts";
             use = "edit";
           }
           {
-            name = "*.zig";
+            url = "*.zig";
             use = "edit";
           }
           {
-            name = "*.zig.zon";
+            url = "*.zig.zon";
             use = "edit";
           }
           {
-            name = "meson.build";
+            url = "meson.build";
             use = "edit";
           }
           {
-            name = "*.vala";
+            url = "*.vala";
             use = "edit";
           }
           {
-            name = "*.xml";
+            url = "*.xml";
             use = "edit";
           }
           {
-            name = "*.bp";
+            url = "*.bp";
             use = "edit";
           }
           {
-            name = "Makefile";
+            url = "Makefile";
             use = "edit";
           }
           {
-            name = "*.mk";
+            url = "*.mk";
             use = "edit";
           }
           {
-            name = "Kconfig";
+            url = "Kconfig";
             use = "edit";
           }
           {
-            name = "build.config*";
+            url = "build.config*";
             use = "edit";
           }
         ];
@@ -100,69 +100,69 @@
       plugin = {
         append_previewers = [
           {
-            name = "*";
+            url = "*";
             run = ''piper -- hexyl --border=none --terminal-width=$w "$1"'';
           }
         ];
         prepend_fetchers = [
           {
             id = "git";
-            name = "*";
+            url = "*";
             run = "git";
           }
           {
             id = "git";
-            name = "*/";
+            url = "*/";
             run = "git";
           }
         ];
         prepend_previewers = [
           {
-            name = "*.ts";
+            url = "*.ts";
             run = ''piper -- bat -p --color=always "$1"'';
           }
           {
-            name = "text/*";
+            url = "text/*";
             run = ''piper -- bat -p --color=always "$1"'';
           }
           {
-            name = "*.zig";
+            url = "*.zig";
             run = ''piper -- bat -p --color=always "$1"'';
           }
           {
-            name = "*.zig.zon";
+            url = "*.zig.zon";
             run = ''piper -- bat -p --color=always "$1"'';
           }
           {
-            name = "meson.build";
+            url = "meson.build";
             run = ''piper -- bat -p --color=always "$1"'';
           }
           {
-            name = "*.vala";
+            url = "*.vala";
             run = ''piper -- bat -p --color=always "$1"'';
           }
           {
-            name = "*.xml";
+            url = "*.xml";
             run = ''piper -- bat -p --color=always "$1"'';
           }
           {
-            name = "*.bp";
+            url = "*.bp";
             run = ''piper -- bat -p --color=always "$1"'';
           }
           {
-            name = "Makefile";
+            url = "Makefile";
             run = ''piper -- bat -p --color=always "$1"'';
           }
           {
-            name = "*.mk";
+            url = "*.mk";
             run = ''piper -- bat -p --color=always "$1"'';
           }
           {
-            name = "Kconfig";
+            url = "Kconfig";
             run = ''piper -- bat -p --color=always "$1"'';
           }
           {
-            name = "build.config*";
+            url = "build.config*";
             run = ''piper -- bat -p --color=always "$1"'';
           }
           {
@@ -194,15 +194,15 @@
             run = "ouch";
           }
           {
-            name = "*.md";
+            url = "*.md";
             run = ''piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"'';
           }
           {
-            name = "*.mdx";
+            url = "*.mdx";
             run = ''piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"'';
           }
           {
-            name = "*.rst";
+            url = "*.rst";
             run = ''piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"'';
           }
         ];
