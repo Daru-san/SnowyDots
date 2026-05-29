@@ -24,6 +24,7 @@ in
     ./fuzzel
     ./noctalia
     ./scarlet
+    ./gammastep
   ];
   config = mkIf cfg.enable {
     wayland.windowManager.sway.enable = false;
@@ -33,7 +34,8 @@ in
       hypridle.enable = true;
       hyprpaper.enable = true;
       awww.enable = true;
-      wlsunset.enable = true;
+      wlsunset.enable = false;
+      gammastep = true;
       swayosd.enable = false;
       flameshot.enable = true;
       swaync.enable = false;
