@@ -35,7 +35,7 @@ in
       hyprpaper.enable = true;
       awww.enable = true;
       wlsunset.enable = false;
-      gammastep = true;
+      gammastep.enable = true;
       swayosd.enable = false;
       flameshot.enable = true;
       swaync.enable = false;
