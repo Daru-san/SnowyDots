@@ -107,7 +107,7 @@
         hostName = "Kanji";
         config = ./systems/Kanji;
         system = "x86_64-linux";
-        stateVersion = "26.05";
+        stateVersion = "26.11";
       };
 
       laptop = {
@@ -115,7 +115,7 @@
         config = ./systems/Rintaro;
 
         system = "x86_64-linux";
-        stateVersion = "26.05";
+        stateVersion = "26.11";
       };
 
       systems = [
