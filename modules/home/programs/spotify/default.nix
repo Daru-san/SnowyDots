@@ -86,8 +86,12 @@ in
       shuffle
       fullAppDisplay
       volumePercentage
-      oldLikeButton
+      lastfm
+      betterGenres
+      sessionStats
       seekSong
+      showQueueDuration
+      playNext
     ];
     enabledCustomApps = with spicePkgs.apps; [
       betterLibrary
