@@ -93,8 +93,8 @@ in
       showQueueDuration
       playNext
     ];
+
     enabledCustomApps = with spicePkgs.apps; [
-      betterLibrary
       historyInSidebar
     ];
   };
