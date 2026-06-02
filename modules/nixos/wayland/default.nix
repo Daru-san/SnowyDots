@@ -28,6 +28,7 @@ in
     security.soteria.enable = true;
     services.greetd = {
       enable = true;
+      useTextGreeter = true;
       settings = rec {
         initial_session = {
           command =
