@@ -47,7 +47,7 @@
     sops-nix.url = "github:Mic92/sops-nix";
 
     # Theme manager
-    stylix.url = "github:nix-community/stylix";
+    stylix.url = "github:nix-community/stylix/pull/2337/head";
 
     # Spiced spotify
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
