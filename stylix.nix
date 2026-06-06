@@ -32,8 +32,8 @@ in
     base16Scheme = "${inputs.tinted-themes}/base24/wryan.yaml";
     image =
       let
-        path = inputs.walls + "/images/dark-floral-mono.png";
-        brightness = -16;
+        path = inputs.walls + "/images/caidychen_original_characters_anime_girls_mono.png";
+        brightness = -6;
         fillColor = "black";
       in
       pkgs.runCommand "dimmed-background.png" { } ''
