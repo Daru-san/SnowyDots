@@ -27,7 +27,7 @@
       };
       decoration = {
         rounding = 6;
-        blur.enabled = true;
+        blur.enabled = false;
         shadow = {
           enabled = true;
         };

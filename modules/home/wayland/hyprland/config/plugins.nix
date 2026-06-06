@@ -18,6 +18,11 @@
           enable = true;
         };
       };
+      hyprglass = {
+        enabled = true;
+        default_theme = "dark";
+        default_preset = "clear";
+      };
       overview = {
         centerAligned = false;
         autoScroll = true;
