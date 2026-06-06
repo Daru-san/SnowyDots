@@ -32,7 +32,7 @@ in
     base16Scheme = "${inputs.tinted-themes}/base24/wryan.yaml";
     image =
       let
-        path = inputs.walls + "/images/green_leaf_plant_moss_spruce_dof_growth.png";
+        path = inputs.walls + "/images/dark-floral-mono.png";
         brightness = -16;
         fillColor = "black";
       in
