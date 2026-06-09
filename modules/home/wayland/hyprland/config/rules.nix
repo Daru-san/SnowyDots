@@ -67,7 +67,7 @@
             (workspace 2 "zen")
             (workspace 2 "thunderbird")
 
-            (workspace 4 "org.gnome.Nautilus")
+            "match:class ^(org.gnome.Nautilus)(.*)$, match:title ^(?!Save).+$, workspace 4"
 
             (workspace 5 "spotify")
             (workspace 5 "io.github.htkhiem.Euphonica")
