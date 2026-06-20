@@ -11,8 +11,8 @@ My functional, advanced NixOS configuration.
 </p>
 
 <div style="text-align: center;" align="center">
-    <img src="https://img.shields.io/static/v1?label=NixOS&message=25.11(unstable)&style=flat&logo=nixos&colorA=24273A&colorB=9173ff&logoColor=CAD3F5"/>
-    <img src="https://img.shields.io/static/v1?label=Niri&message=25.8&style=flat&logo=Niri&colorA=24273A&colorB=9173ff&logoColor=CAD3F5"/>
+    <img src="https://img.shields.io/static/v1?label=NixOS&message=26.11(unstable)&style=flat&logo=nixos&colorA=24273A&colorB=9173ff&logoColor=CAD3F5"/>
+    <img src="https://img.shields.io/static/v1?label=Hyprland&message=0.55.3&style=flat&logo=Hyprland&colorA=24273A&colorB=9173ff&logoColor=CAD3F5"/>
     <img src="https://img.shields.io/static/v1?label=Sourcehut&message=SnowyDots&style=flat&logo=sourcehut&colorA=24273A&colorB=9173ff&logoColor=CAD3F5" alt="https://git.sr.ht/~darumaka/SnowyDots"/>
 </div>
 
@@ -21,13 +21,13 @@ My functional, advanced NixOS configuration.
 
 <!-- markdownlint-disable MD003 -->
 
-![Wallpaper](https://i.imgur.com/08G1mlY.png)
+![Wallpaper](https://i.imgur.com/7MSP3p6.png)
 
-![Btop](https://i.imgur.com/6dPbVeV.png)
+![Btop](https://i.imgur.com/hIESVzi.png)
 
-![Programming](https://i.imgur.com/BQqLzlZ.png)
+![Programming](https://i.imgur.com/hIESVzi.png)
 
-![rmpc](https://i.imgur.com/E5sVRVA.png)
+![spicetify](https://i.imgur.com/dnsvzgr.png)
 
 ## Installing NixOS
 
