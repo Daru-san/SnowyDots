@@ -62,6 +62,8 @@ in
 
       sillytavern = {
         enable = true;
+        configFile = "${pkgs.sillytavern}/lib/node_modules/sillytavern/config.yaml";
+        port = 8000;
       };
 
       open-webui = {
