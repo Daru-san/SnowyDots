@@ -27,7 +27,7 @@ My functional, advanced NixOS configuration.
 
 ![Programming](https://i.imgur.com/hIESVzi.png)
 
-![spicetify](https://i.imgur.com/dnsvzgr.png)
+![spicetify](https://i.imgur.com/6x4ZDbh.png)
 
 ## Installing NixOS
 
