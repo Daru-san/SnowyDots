@@ -30,6 +30,9 @@
       mpc
       gdu
       pulsemixer
+      asciinema
+      asciinema-agg
+      kdePackages.kdenlive
 
       # Desktop
       awww
