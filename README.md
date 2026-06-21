@@ -29,6 +29,8 @@ My functional, advanced NixOS configuration.
 
 ![spicetify](https://i.imgur.com/ugzofzk.png)
 
+![rmpc](https://i.imgur.com/FSsrDZG.png)
+
 ## Installing NixOS
 
 ### Installation
