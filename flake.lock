@@ -383,11 +383,11 @@
         "xwayland-satellite-unstable": "xwayland-satellite-unstable"
       },
       "locked": {
-        "lastModified": 1782884397,
-        "narHash": "sha256-6GedKRIIuqv87r7WLfM6fgrdTlSkIh5FDlLlrfnUnmg=",
+        "lastModified": 1782904324,
+        "narHash": "sha256-u1SiMJLrf+iGykwXdu78xbizwkCb2r1aUMHfOgh7IG8=",
         "owner": "sodiboo",
         "repo": "niri-flake",
-        "rev": "53b3fdea7bf7ac9c9720cc7ae5e600384961a157",
+        "rev": "c11048188f434263cf5c207ddef453984d1e02ba",
         "type": "github"
       },
       "original": {
@@ -515,11 +515,11 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1782767157,
-        "narHash": "sha256-db/8NgfehQlPNt8rMY0J1gvwzTaURU/foM7y/AQimIM=",
+        "lastModified": 1782847189,
+        "narHash": "sha256-twXPFqFsrrY5r28Zh7Homgcp2gUMBgQ6WDS98Q/3xFI=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "1d4e0f865d68258aada31e68e6d79c8c463f3b34",
+        "rev": "b6018f87da91d19d0ab4cf979885689b469cdd41",
         "type": "github"
       },
       "original": {
@@ -1184,11 +1184,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1782901085,
-        "narHash": "sha256-CKVHfVciUH3581iAbVs4IFi55U/OXJIfLwNaNxGrjUc=",
+        "lastModified": 1782910911,
+        "narHash": "sha256-p4x3GpWQ3ieBOcCvJ3XxxsAuGxLT464jFjYnTt+0P1w=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "3c1b06fb89f6bab5fbd537eacf72869169f9a829",
+        "rev": "627970a31f9220fce79d3ddc774300f1e4f5131c",
         "type": "sourcehut"
       },
       "original": {
