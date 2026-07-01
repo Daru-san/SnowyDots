@@ -77,11 +77,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    musnix.url = "github:musnix/musnix";
+
     # My own repos
     frostpak.url = "github:Daru-san/frostpak";
     scarlet.url = "sourcehut:~darumaka/scarlet/0.4.1";
     vim.url = "sourcehut:~darumaka/SnowyVim";
-    musnix.url = "github:musnix/musnix";
     walls = {
       url = "sourcehut:~darumaka/Wallpapers";
       flake = false;
