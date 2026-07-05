@@ -12,14 +12,12 @@
       nextcloud-client
       element
       emblem
-      elastic
       d-spy
       sysprof
       heaptrack
       zapzap
       grim
       oculante
-      iotas
 
       # Media
       ffmpeg
@@ -94,7 +92,6 @@
       file-roller
       nautilus
       fjordlauncher
-      alpaca
     ])
   ];
 }
