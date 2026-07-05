@@ -16,7 +16,6 @@
     yq-go
     gdb
     seer
-    icon-library
     valgrind
     xmake
     go
