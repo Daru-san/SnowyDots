@@ -24,6 +24,9 @@ in
         enable = true;
       };
     };
+    services.gnome = {
+      sushi.enable = true;
+    };
     security.pam.services.hyprlock = { };
     security.soteria.enable = true;
     services.greetd = {
