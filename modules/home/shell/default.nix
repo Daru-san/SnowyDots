@@ -32,10 +32,6 @@
     '';
   };
 
-  home.sessionVariables = {
-    VLC_PLUGIN_PATH = "${pkgs.vlc-bittorrent}/lib";
-  };
-
   # Global shell aliases
   home.shellAliases =
     let

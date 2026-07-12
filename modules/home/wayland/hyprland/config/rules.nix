@@ -75,7 +75,6 @@
             (workspace 6 "mpv")
 
             (workspace 6 "FreeTube")
-            (workspace 6 "vlc")
 
             (workspace 7 "libreoffice")
             (workspace 7 "org.prismlauncher.PrismLauncher")

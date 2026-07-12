@@ -19,7 +19,6 @@
       grim
       oculante
       audacious
-      vlc
 
       # Media
       ffmpeg
