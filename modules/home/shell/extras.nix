@@ -30,7 +30,7 @@
         "--ansi"
       ];
       defaultCommand = "fd --type f";
-      historyWidgetOptions = [
+      historyWidget.options = [
         "--sort"
         "--exact"
       ];
