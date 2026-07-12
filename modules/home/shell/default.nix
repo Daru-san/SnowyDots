@@ -43,6 +43,7 @@
         syst = syst;
         cat = bat;
         cgrt = ''cd "$(git rev-parse --show-toplevel)"'';
+        VLC_PLUGIN_PATH = "${pkgs.vlc-bittorrent}/lib";
         ls = lib.mkForce (
           if config.programs.eza.enable then "${config.programs.eza.package}/bin/eza" else "ls"
         );
