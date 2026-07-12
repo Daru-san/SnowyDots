@@ -39,6 +39,18 @@
         "webm"
         "x-matroska"
       ])
+      (subtypes "audio" "audacious.desktop" [
+        "basic"
+        "L24"
+        "mpeg"
+        "mp4"
+        "x-aiff"
+        "x-mpegurl"
+        "vnd.rn-realaudio"
+        "ogg"
+        "vorbis"
+        "vnd.wav"
+      ])
       (subtypes "application" "sioyek.desktop" [
         "vnd.comicbook+zip"
       ])

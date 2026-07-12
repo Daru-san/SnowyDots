@@ -18,6 +18,7 @@
       zapzap
       grim
       oculante
+      audacious
 
       # Media
       ffmpeg
