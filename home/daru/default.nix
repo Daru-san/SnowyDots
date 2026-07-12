@@ -3,6 +3,7 @@
   lib,
   osConfig,
   inputs,
+  pkgs,
   ...
 }:
 {
@@ -18,10 +19,14 @@
       (with outputs.overlays; [
         stable-packages
         unstable-packages
+        spice-packages
       ])
       inputs.frostpak.overlays.default
       inputs.kotlin-lsp.overlays.default
       inputs.fjord-launcher.overlays.default
+      (self: super: {
+        spicetify-cli = pkgs.spice.spicetify-cli;
+      })
       (self: super: {
         nautilus = super.nautilus.overrideAttrs (nsuper: {
           buildInputs =

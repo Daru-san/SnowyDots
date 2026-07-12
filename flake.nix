@@ -50,7 +50,11 @@
     stylix.url = "github:nix-community/stylix/pull/2337/head";
 
     # Spiced spotify
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    spicepkgs.url = "github:nixos/nixpkgs/pull/540416/head";
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "spicepkgs";
+    };
 
     # Firefox addons
     firefox-addons.url = "gitlab:rycee/nur-expressions/?dir=pkgs/firefox-addons";
