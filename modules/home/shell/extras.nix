@@ -46,6 +46,9 @@
       enableFishIntegration = true;
       enableNushellIntegration = true;
       daemon.enable = true;
+      flags = [
+        "--disable-ctrl-r"
+      ];
       settings = {
         workspaces = true;
         store_failed = false;
