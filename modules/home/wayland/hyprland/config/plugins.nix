@@ -23,6 +23,9 @@
         default_theme = "dark";
         default_preset = "clear";
       };
+      hymission = {
+        niri_mode = true;
+      };
       overview = {
         centerAligned = false;
         autoScroll = true;
