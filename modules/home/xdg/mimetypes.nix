@@ -5,7 +5,7 @@
       subtypes =
         type: program: subtype:
         builtins.listToAttrs (
-          builtins.map (x: {
+          map (x: {
             name = type + "/" + x;
             value = program;
           }) subtype
