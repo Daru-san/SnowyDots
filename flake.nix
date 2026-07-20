@@ -34,7 +34,7 @@
     niri.url = "github:sodiboo/niri-flake";
 
     fjord-launcher = {
-      url = "github:Daru-san/FjordLauncherUnlocked";
+      url = "github:Cfauto28/FjordLauncherReUnlocked/11.0.3.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
