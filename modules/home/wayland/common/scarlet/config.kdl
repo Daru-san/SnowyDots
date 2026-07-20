@@ -1,9 +1,13 @@
 
 bar {
-    anchors "top" "left" "right"
+    anchors {
+        top
+        left
+        right
+    }
     height 20
     margins 5
-    // monitors "HDMI-A-2"
+    monitors "HDMI-A-2" "HDMI-A-1"
 	spacing 7
 
     modules {
@@ -247,10 +251,7 @@ bar {
 			}
 			usage-indicator {
 				format "shown"
-				size {
-					width 150
-					height 10
-				}
+				size width=150 height=10
 			}
 		}
 
@@ -271,10 +272,7 @@ bar {
 			unit-format "Mb"
 			ram-indicator {
 				format "shown"
-				size {
-					width 50
-					height 10
-				}
+				size width=50 height=10
 			}
 		}
 
@@ -284,10 +282,7 @@ bar {
 			unit-format "Mb"
 			swap-indicator {
 				format "shown"
-				size {
-					width 50
-					height 10
-				}
+				size width=50 height=10
 			}
 		}
 
@@ -334,10 +329,7 @@ bar {
             unit-format "Gb"
 			usage-indicator {
 				format "shown"
-				size {
-					width 30
-					height 10
-				}
+				size width=30 height=10
 			}
 		}
 
@@ -349,10 +341,7 @@ bar {
             unit-format "Gb"
 			usage-indicator {
 				format "shown"
-				size {
-					width 30
-					height 10
-				}
+				size width=30 height=10
 			}
 		}
 
@@ -364,10 +353,7 @@ bar {
             unit-format "Gb"
 			usage-indicator {
 				format "shown"
-				size {
-					width 30
-					height 10
-				}
+				size width=30 height=30
 			}
 		}
 
@@ -391,30 +377,21 @@ bar {
 				height 128
 			}
 			progress-indicator {
-				size {
-					width 160
-					height 20
-				}
+				size width=160 height=20
 			}
 		}
 
 		audio-mixer "input" {
 			type "input"
 			slider {
-				size {
-					width 150
-					height 20
-				}
+				size width=150 height=20
 			}
 		}
 
 		audio-mixer "output" {
 			type "output"
 			slider {
-				size {
-					width 150
-					height 20
-				}
+				size height=150 height=20
 			}
 		}
 
