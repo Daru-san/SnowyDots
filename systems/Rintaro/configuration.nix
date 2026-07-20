@@ -47,7 +47,6 @@
     exfatprogs
     nurl
     uutils-coreutils-noprefix
-    jmtpfs
     nix-melt
     ncdu
     busybox
