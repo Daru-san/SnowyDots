@@ -92,7 +92,8 @@
 
       file-roller
       nautilus
-      fjordlauncher
+      fjordlauncherreunlocked
+      libreoffice-qt-fresh
     ])
   ];
 }
