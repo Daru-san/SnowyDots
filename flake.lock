@@ -548,11 +548,11 @@
     },
     "nixpkgs_10": {
       "locked": {
-        "lastModified": 1783915482,
-        "narHash": "sha256-FmieJB8/OUvNxbkboi7+IGfIuSXY3nF/hZQm8kD0r50=",
+        "lastModified": 1784555310,
+        "narHash": "sha256-/FCliTPgiuV1owejZFNx3Ch9irdvkOfOFl+HHZ+DrtM=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "6cdc7fc76e8bf7fde9fa43a849fcaaa70e230dee",
+        "rev": "421eebfd0ec7bccd4abe826ce62d7e6e83129493",
         "type": "github"
       },
       "original": {
@@ -676,11 +676,11 @@
     },
     "nixpkgs_9": {
       "locked": {
-        "lastModified": 1784007870,
-        "narHash": "sha256-G9I5EeMhwLckqD5QLgowA6hNBaOjG9CeYIzfSz4gZ6k=",
-        "rev": "18b9261cb3294b6d2a06d03f96872827b8fe2698",
+        "lastModified": 1784796856,
+        "narHash": "sha256-vwxWgF+Gj276WznzGb1LxGsK/39HaQwgQXiU3EkC844=",
+        "rev": "e2587caef70cea85dd97d7daab492899902dbf5d",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1034379.18b9261cb329/nixexprs.tar.xz"
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1040357.e2587caef70c/nixexprs.tar.xz"
       },
       "original": {
         "id": "nixpkgs",
@@ -695,11 +695,11 @@
         "systems": "systems_6"
       },
       "locked": {
-        "lastModified": 1784057377,
-        "narHash": "sha256-yycNej5//EsRbV10moBoh+/63vXEwZD1ZFEiRm6C9rQ=",
+        "lastModified": 1785001306,
+        "narHash": "sha256-xWqmquUtqKXLeDZ1oQUO+rV4sjA9TShIJhLL8M5Bozo=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "07180a087e4a00720dc0731cbcd8dec796974381",
+        "rev": "48409beb41e8e28b64e8160ca82d8a93fb628963",
         "type": "github"
       },
       "original": {
@@ -1191,11 +1191,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1784136738,
-        "narHash": "sha256-i6YS/Aunqa5kGNuD1N44cyi63hynDGI+bCMygq0C9hI=",
+        "lastModified": 1785002697,
+        "narHash": "sha256-JqRBE3bGaZqMu26GzC3OZX9zxhMCXZKT/uPcbqKHm9E=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "766fe0d2eeca87922e80423aa316a8b04a691065",
+        "rev": "0631b9684d2f2ea68144aa101446ccc25dfc5d0c",
         "type": "sourcehut"
       },
       "original": {
