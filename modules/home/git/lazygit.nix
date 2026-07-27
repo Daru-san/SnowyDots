@@ -32,8 +32,8 @@
         ];
       };
       os = {
-        edit = "zeditor {{filename}}";
-        editAtLine = "zeditor {{filename}}:{{line}}";
+        edit = "hx {{filename}}";
+        editAtLine = "hx {{filename}}:{{line}}";
       };
       refresher = {
         refreshInterval = 7;
