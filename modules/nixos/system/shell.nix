@@ -29,7 +29,7 @@
         rsync = "${pkgs.rsync}/bin/rsync";
         wget2 = "${pkgs.wget2}/bin/wget2";
         vim = "${pkgs.neovim}/bin/nvim";
-        xhost = "${pkgs.xorg.xhost}/bin/xhost";
+        xhost = "${pkgs.xhost}/bin/xhost";
         gparted = "${pkgs.gparted}/bin/gparted";
       in
       {
