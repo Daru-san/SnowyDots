@@ -57,7 +57,7 @@
             }
         }
 
-        ${builtins.readFile "${inputs.zen-findbar}/chrome.css"}
+        ${builtins.readFile "${inputs.zen-findbar}/userChrome.css"}
       '';
 
       extensions = {
