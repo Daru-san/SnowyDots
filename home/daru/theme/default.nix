@@ -13,6 +13,7 @@
       ./gtk.nix
     ];
 
+  home.pointerCursor.enable = true;
   stylix.targets = {
     gtk.enable = false;
     spicetify.enable = false;
