@@ -19,6 +19,11 @@ My functional, advanced NixOS configuration.
 <br>
 <!--markdownlint-enable-->
 
+## Mirrors
+
+- [Main]Sourehut: https://git.sr.ht/~darumaka/SnowyDots
+- [Secondary]Github: https://github.com/Daru-san/SnowyDots
+
 <!-- markdownlint-disable MD003 -->
 
 ![Wallpaper](https://i.imgur.com/8Unmhug.png)
