@@ -19,6 +19,7 @@
       grim
       oculante
       audacious
+      brave
 
       # Media
       ffmpeg
