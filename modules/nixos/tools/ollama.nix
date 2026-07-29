@@ -24,7 +24,10 @@ in
       package = mkPackageOption pkgs "ollama-vulkan" { };
       extraVars = mkOption {
         type = types.attrsOf types.str;
-        default = { };
+        default = {
+          OLLAMA_FLASH_ATTENTION = 1;
+          OLLAMA_KV_CACHE_TYPE = "q8_0";
+        };
         example = {
           OLLAMA_NUM_PARALLEL = "1";
           OMP_NUM_THREADS = "1";
