@@ -1,446 +1,66 @@
-
 bar {
-    anchors {
-        top
-        left
-        right
-    }
-    height 20
-    margins 5
-    monitors "HDMI-A-2" "HDMI-A-1"
-	spacing 7
-
-    modules {
-        start {
-			idle-inhibitor
-            niri-workspaces
-            // niri-window-title
-        }
-
-        center {
-			group {
-				css-name "qs"
-				modules {
-					/* cava */
-					constraint {
-						max-size 500
-						orientation "horizontal"
-						module {
-							music-mini
-						}
-					}
-					clock
-					/* dynamic "date" */
-					notification-icon
-				}
-				popup {
-					autohide
-					show-arrow
-					orientation "horizontal"
-					modules {
-						group {
-							orientation "vertical"
-							modules {
-								constraint {
-									width 300
-									max-size 300
-									orientation "horizontal"
-									module {
-										music-player
-									}
-								}
-								calendar
-							}
-						}
-						notification-center
-					}
-				}
-			}
-            system-tray
-        }
-
-        end {
-            group {
-                css-name "stats"
-                spacing 5
-				// popup {
-				// 	orientation "vertical"
-				// 	// size {
-				// 	// 	width 665
-				// 	// }
-				// 	modules {
-				// 		constraint {
-				// 			width 500
-				// 			max-size 500
-				// 			orientation "horizontal"
-				// 			module {
-				// 				group-listbox {
-				// 					name "resources"
-				// 					title "Resources"
-				// 					items {
-				// 						group {
-				// 							orientation "horizontal"
-				// 							modules {
-				// 								group {
-				// 									orientation "vertical"
-				// 									modules {
-				// 										group-listbox {
-				// 											title "Processor"
-				// 											items {
-				// 												cpu "all-cores"
-				// 											}
-				// 										}
-				// 										group-listbox {
-				// 											title "Memory"
-				// 											items {
-				// 												memory "ram"
-				// 												memory "rem"
-				// 											}
-				// 										}
-				// 									}
-				// 								}
-				// 								group {
-				// 									css-name "io"
-				// 									orientation "vertical"
-				// 									modules {
-				// 										label "io-header"
-				// 										net-stats
-				// 										group-listbox {
-				// 											title "Disks"
-				// 											items {
-				// 												disk "nix"
-				// 												disk "home"
-				// 												disk "cabin"
-				// 											}
-				// 										}
-				// 									}
-				// 								}
-				// 							}
-				// 						}
-				// 					}
-				// 				}
-				// 			}
-				// 		}
-				// 	}
-				// }
-                modules {
-                	constraint {
-                		name "net-stats"
-                		width 70
-                		max-size 60
-                		orientation "horizontal"
-                		valign "center"
-                		module {
-							net-stats
-						}
-					}
-                    cpu
-                    memory
-                }
-            }
-            group {
-                css-name "system"
-                spacing 5
-
-				popup {
-					autohide
-					orientation "vertical"
-					modules {
-						group {
-							orientation "horizontal"
-							modules {
-						    	group-listbox "system-ov" {
-						    		name "system-ov"
-						    		title "Scarlet on NixOS"
-						    		suffix {
-						    			modules {
-							    			system-info "info"
-						    			}
-						    		}
-						    		items {
-						    			power-menu
-						    		}
-						    	}
-						    	group-listbox "system-info" {
-						    		name "system-info"
-						    		title "System Information"
-						    		items {
-						    			system-info "kernel_long_version"
-						    		}
-						    	}
-							}
-						}
-						group {
-							orientation "horizontal"
-							css-name "contents"
-							modules {
-								group-listbox "audio" {
-									name "audio"
-									title "Audio"
-									items {
-										audio-mixer "output"
-									}
-								}
-								group-listbox "networking" {
-									name "networking"
-									title "Networking"
-									items {
-										network-stack
-										bluetooth-stack
-									}
-								}
-							}
-						}
-					}
-				}
-
-                modules {
-                    network
-                    bluetooth
-                    audio
-                }
-            }
-        }
-    }
-
-    configs {
-		system-info "kernel_long_version" {
-			format "{kernel_long_version}"
-			interval 10000
-		}
-
-        audio {
-			mute-on-click
-			slider {
-				format "hidden"
-			}
-			device-icon {
-				format "hidden"
-			}
-        }
-
-        niri-workspaces {
-            format "{idx:d}"
-            per-output "disable"
-            sort-by "idx"
-        }
-
-        niri-window-title {
-        	format "{app_id}"
-        }
-
-        network {
-            tooltip-format "{ssid}"
-			format ""
-        }
-
-        cpu {
-            format "{usage:.2f}%"
-            tooltip-format "{brand}@{frequency:.2f}MHz"
-            interval 1000
-        }
-
-		cpu "all-cores" {
-			per-core
-			orientation "vertical"
-			format "Core #{name}: {frequency:.2f}MHz"
-			tooltip-format ""
-			interval 1000
-			icon {
-				format "hidden"
-			}
-			usage-indicator {
-				format "shown"
-				size width=150 height=10
-			}
-		}
-
-		cpu "info" {
-			format "{brand}"
-			interval 100000
-		}
-
-        memory {
-            format "{ram_percentage:.2f}% : {swap_percentage:.2f}%"
-            tooltip-format "RAM: {used:.2f}Mb/{total:.2f}Mb\nSwap: {used_swap:.2f}Mb/{total_swap:.2f}Mb"
-            unit-format "Mb"
-        }
-
-		memory "ram" {
-			orientation "vertical"
-			format "Ram: {used:.2f}Mb/{total:.2f}Mb"
-			unit-format "Mb"
-			ram-indicator {
-				format "shown"
-				size width=50 height=10
-			}
-		}
-
-		memory "rem" {
-			orientation "vertical"
-			format "Swap: {used_swap:.2f}Mb/{total_swap:.2f}Mb"
-			unit-format "Mb"
-			swap-indicator {
-				format "shown"
-				size width=50 height=10
-			}
-		}
-
-        clock {
-            format "%R  %a %e"
-            interval 1000
-        }
-
-		dynamic "date" {
-			command "date" "+%X"
-            interval 1000
-			format "{output}"
-			on-click "notify-send" "Scarlet" "Hello there, my name is Scarlet!"
-		}
-
-        net-stats {
-            interval 1000
-            preferred-interface "wlan0"
-            tooltip-format "Connected to {interface}"
-        }
-
-        music-mini {
-        	progress-bar "disable"
-        }
-
-        bluetooth {
-            toggle-on-click
-            tooltip-format "Bluetooth is {state}"
-        }
-
-        disk {
-            format "{used_space:.0f}Gb/{total_space:.0f}Gb"
-            tooltip-format "{mount_point} Read: {read} Write {write}"
-            interval 1000
-            select mountpoint="/nix/store"
-            unit-format "Gb"
-        }
-
-		disk "nix" {
-			orientation "vertical"
-			format "Disk: {name}\n{used_space:.0f}Gb/{total_space:.0f}Gb\nRead: {read} : Write {write}"
-			interval 1000
-            select mountpoint="/nix/store"
-            unit-format "Gb"
-			usage-indicator {
-				format "shown"
-				size width=30 height=10
-			}
-		}
-
-		disk "home" {
-			orientation "vertical"
-			format "Disk: {name}\n{used_space:.0f}Gb/{total_space:.0f}Gb\nRead: {read} : Write {write}"
-			interval 1000
-            select mountpoint="/home"
-            unit-format "Gb"
-			usage-indicator {
-				format "shown"
-				size width=30 height=10
-			}
-		}
-
-		disk "cabin" {
-			orientation "vertical"
-			format "Disk: {name}\n{used_space:.0f}Gb/{total_space:.0f}Gb\nRead: {read} : Write {write}"
-			interval 1000
-            select mountpoint="/mnt/frost"
-            unit-format "Gb"
-			usage-indicator {
-				format "shown"
-				size width=30 height=30
-			}
-		}
-
-		network-stack {
-			max-ssid-chars 20
-			display-frequency "disable"
-			display-bssid "enable"
-		}
-
-		calendar {
-			show-heading
-			show-day-names
-			show-week-numbers
-		}
-
-		music-player {
-			title-format "{title}"
-			subtext-format "{album}\nBy {artist}"
-			cover-art {
-				width 128
-				height 128
-			}
-			progress-indicator {
-				size width=160 height=20
-			}
-		}
-
-		audio-mixer "input" {
-			type "input"
-			slider {
-				size width=150 height=20
-			}
-		}
-
-		audio-mixer "output" {
-			type "output"
-			slider {
-				size height=150 height=20
-			}
-		}
-
-		label "memory-header" {
-			text "Memory"
-		}
-
-		label "stats-title" {
-			text "Scarlet Top "
-			css-name "scarlet-top-title"
-		}
-
-		label "io-header" {
-			text "IO Statistics"
-		}
-
-		label "disks" {
-			text "disks"
-		}
-
-		notification-center {
-			secondary-date-format "%x"
-		}
-
-		system-tray {
-			max-before-overflow 3
-		}
-
-		system-info "info" {
-			format "{hostname} on {distribution} {kernel_version}"
-			interval 10000
-		}
-    }
-}
-
-window {
-	disable
+	enabled #false
+	anchor "top" "left" "right"
+	monitors "HDMI-A-2"
+	height 30
+	orientation "horizontal"
+	spacing 12
 	modules {
-		picture
+		start {
+
+		}
+		center {
+			popup "island-group"
+		}
+		end {
+			popup "system-group"
+			popup "audio"
+			popup "networking"
+		}
 	}
-
-	layer "background"
-	anchor "top" "left" "right" "bottom"
-
 	configs {
-		picture {
-			image-path "/home/daru/snow/Wallpapers/images/walking_together_in_the_rain.png"
-			width 1920
-			height 1080
+		popup "island-group" {
+			child { group "island" }
+		}
+		group "island" {
+			orientation "horizontal"
+			modules {
+				music-mini
+				clock
+				notification-icon
+				tray
+			}
+		}
+		popup "system-group" {
+			child { group "system-mini" }
+			popup-child { group "system-full" }
+			show-arrow
+		}
+		group "system-mini" {
+			orientation "horizontal"
+			modules {
+				cpu-mini "overview"
+				memory-mini "overview"
+				netstats-mini
+			}
+		}
+		group "system-full" {
+			orientation "vertical"
+			modules {
+				cpu-applet
+				memory-applet
+				netstats-applet
+			}
+		}
+		popup "networking" {
+			child { group "networking-mini" }
+		}
+		group "networking-mini" {
+			orientation "horizontal"
+			modules {
+				network-mini
+				bluetooth-mini
+			}
 		}
 	}
 }
