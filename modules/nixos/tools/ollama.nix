@@ -25,7 +25,7 @@ in
       extraVars = mkOption {
         type = types.attrsOf types.str;
         default = {
-          OLLAMA_FLASH_ATTENTION = 1;
+          OLLAMA_FLASH_ATTENTION = "1";
           OLLAMA_KV_CACHE_TYPE = "q8_0";
         };
         example = {
