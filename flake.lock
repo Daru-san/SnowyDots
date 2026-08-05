@@ -676,11 +676,11 @@
     },
     "nixpkgs_9": {
       "locked": {
-        "lastModified": 1785571196,
-        "narHash": "sha256-xwSqxTsama0YTtS78+4YyCm6jJg09v78QWfP1cAyoVA=",
-        "rev": "148bab9c1c3c53136ecb44a6ea356a0ed5b39b06",
+        "lastModified": 1785828668,
+        "narHash": "sha256-VFlH/0nM6kkWQox9IaTqx2eCT3pmkr8bB7iVZ1bkaLs=",
+        "rev": "e72e4f299401a3689d4b3d5fc6496b11db7064eb",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1045728.148bab9c1c3c/nixexprs.tar.xz"
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1047536.e72e4f299401/nixexprs.tar.xz"
       },
       "original": {
         "id": "nixpkgs",
@@ -695,11 +695,11 @@
         "systems": "systems_6"
       },
       "locked": {
-        "lastModified": 1785527278,
-        "narHash": "sha256-rYFSM491MFFA1V6oax5PngXbevGt6n0o8sKhwFoItE0=",
+        "lastModified": 1785763201,
+        "narHash": "sha256-wA373y/B9orM3HatLu9oS+Ke5lmdZyBl/bdjd2gLMq4=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "a19efae6c1afe426e8243d79f6dfbab186be6df8",
+        "rev": "c7be49306b23a952c0151cf4bbeacd944ed82f2a",
         "type": "github"
       },
       "original": {
@@ -1191,11 +1191,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1785744211,
-        "narHash": "sha256-Fsi8n6lA5/B/RrARl1eh1WjvpWqLHsHfPaMGwKt2kAI=",
+        "lastModified": 1785931481,
+        "narHash": "sha256-ksUIx39Q4ceC6Qu+9LPd+ZKOU5Jqv4/7/KfDB2df32w=",
         "owner": "~darumaka",
         "repo": "SnowyVim",
-        "rev": "b2fb72ba7f3735800e2d6d6839ec34e47dd59fff",
+        "rev": "dfb5ccda914ed892697dc70df24eac483233ea00",
         "type": "sourcehut"
       },
       "original": {
