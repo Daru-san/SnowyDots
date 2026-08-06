@@ -90,6 +90,7 @@
       android-tools
       mprocs
       authenticator
+      rink
 
       file-roller
       nautilus
