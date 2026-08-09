@@ -2,6 +2,8 @@
 {
   pkgs,
   lib,
+  system,
+  inputs,
   ...
 }:
 {
@@ -96,6 +98,9 @@
       nautilus
       fjordlauncherreunlocked
       libreoffice-qt-fresh
+      bitwig-studio6
+      paulxstretch
+      chow-kick
     ])
   ];
 }

@@ -59,6 +59,11 @@
     # Firefox addons
     firefox-addons.url = "gitlab:rycee/nur-expressions/?dir=pkgs/firefox-addons";
 
+    audio = {
+      url = "github:polygon/audio.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Indexing for packages
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
@@ -67,7 +72,7 @@
 
     # Zen browser
     zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
+      url = "github:0xc000022070/zen-browser-flake/67202a6dc9ad712796fe31ef7797084d1fb8dbfe";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
