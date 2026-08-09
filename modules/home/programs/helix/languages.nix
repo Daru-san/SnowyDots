@@ -111,6 +111,9 @@ in
       command = "ruff";
       args = [ "server" ];
     };
+    ron-lsp = {
+      command = lib.getExe pkgs.ron-lsp;
+    };
     basedpyright = {
       config = {
         basedpyright.analysis.diagnosticSeverityOverrides = {
@@ -237,6 +240,11 @@ in
           "-"
         ];
       };
+    }
+    {
+      name = "ron";
+      auto-format = true;
+      language-servers = [ "ron-lsp" ];
     }
     {
       name = "lua";
