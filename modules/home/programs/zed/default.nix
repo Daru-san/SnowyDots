@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 {
   programs.zed-editor = {
-    enable = false;
+    enable = true;
     extraPackages = import ./extra-packages.nix { inherit pkgs; };
     extensions = import ./extensions.nix;
     mutableUserSettings = false;
