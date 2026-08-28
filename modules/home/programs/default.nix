@@ -23,5 +23,6 @@
     ./zed
     ./floorp
     ./sioyek
+    ./beets
   ];
 }
