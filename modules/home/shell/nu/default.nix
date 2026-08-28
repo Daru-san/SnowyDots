@@ -179,8 +179,6 @@ in
           source ${atuin-completions}/atuin.nu
         '';
 
-      environmentVariables = config.home.sessionVariables;
-
       shellAliases = lib.mkMerge [
         {
           zc = "clear ; cd";
