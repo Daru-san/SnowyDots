@@ -10,7 +10,7 @@
       directory = config.xdg.userDirs.music;
       library = "${config.xdg.userDirs.music}.beets/music.db";
       import = {
-        move = false;
+        move = true;
       };
       plugins = [
         "musicbrainz"
