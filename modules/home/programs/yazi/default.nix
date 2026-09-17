@@ -31,20 +31,20 @@
       opener = {
         edit = [
           {
-            run = ''${config.home.sessionVariables.EDITOR} "$@"'';
+            run = "${config.home.sessionVariables.EDITOR} %s";
             block = true;
           }
         ];
         play = [
           {
-            run = ''mpv "$@"'';
+            run = "mpv %s";
             orphan = true;
             for = "unix";
           }
         ];
         open = [
           {
-            run = ''xdg-open "$@"'';
+            run = "xdg-open %s";
             desc = "Open";
           }
         ];
