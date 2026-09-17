@@ -5,15 +5,6 @@
     tmpfsSize = "70%";
   };
 
-  boot.initrd.luks.devices = {
-    frozen = {
-      name = "Cold Storage";
-      preLVM = true;
-      device = "/dev/disk/by-uuid/795c34e7-f791-45d8-a9c5-0ac58d8ba75e";
-      allowDiscards = true;
-    };
-  };
-
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-uuid/19ee6347-b472-4bf5-8bef-97e2fd32eb4b";
@@ -26,7 +17,7 @@
     };
 
     "/mnt/frost" = {
-      device = "/dev/mapper/frozen";
+      device = "/dev/disk/by-label/soft";
       fsType = "ext4";
     };
 
