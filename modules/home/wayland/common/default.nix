@@ -28,8 +28,8 @@ in
   ];
   config = mkIf cfg.enable {
     wayland.windowManager.sway.enable = false;
-    wayland.windowManager.hyprland.enable = true;
-    # programs.niri.enable = false;
+    wayland.windowManager.hyprland.enable = false;
+    programs.niri.enable = true;
     services = {
       hypridle.enable = true;
       hyprpaper.enable = true;
