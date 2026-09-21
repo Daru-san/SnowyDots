@@ -22,6 +22,9 @@
       oculante
       audacious
       brave
+      obsidian
+      spotiflac
+      picard
 
       # Media
       ffmpeg
