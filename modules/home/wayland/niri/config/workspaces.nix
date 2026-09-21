@@ -92,6 +92,8 @@
           { app-id = "^krita$"; }
           { app-id = "org.kde.kdenlive"; }
           { app-id = "^com.obsproject.Studio"; }
+          { app-id = "^Audacity$"; }
+          { app-id = "^lmms$"; }
         ];
         open-on-workspace = "content";
       }
