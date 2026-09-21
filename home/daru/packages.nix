@@ -51,12 +51,13 @@
 
       # VST plugins
       dragonfly-reverb
-      airwindows
+      airwindows-lv2
       geonkick
       chow-tape-model
       surge-xt
       zynaddsubfx
       lsp-plugins
+      decent-sampler
 
       # Documents
       glow
