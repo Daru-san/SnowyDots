@@ -11,6 +11,7 @@
     layout = {
       empty-workspace-above-first = false;
       default-column-display = "tabbed";
+      background-color = "transparent";
       border = {
         enable = false;
       };

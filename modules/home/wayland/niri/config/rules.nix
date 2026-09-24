@@ -50,5 +50,11 @@
         ];
       }
     ];
+    layer-rules = [
+      {
+        matches = [ { namespace = "hyprpaper"; } ];
+        place-within-backdrop = true;
+      }
+    ];
   };
 }
