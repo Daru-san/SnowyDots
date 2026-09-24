@@ -29,6 +29,7 @@ in
   config = mkIf cfg.enable {
     wayland.windowManager.sway.enable = false;
     wayland.windowManager.hyprland.enable = false;
+    wayland.windowManager.mango.enable = true;
     programs.niri.enable = true;
     services = {
       hypridle.enable = true;
