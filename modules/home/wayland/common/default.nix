@@ -34,7 +34,7 @@ in
     services = {
       hypridle.enable = true;
       hyprpaper.enable = true;
-      awww.enable = true;
+      awww.enable = false;
       wlsunset.enable = false;
       gammastep.enable = true;
       swayosd.enable = false;
