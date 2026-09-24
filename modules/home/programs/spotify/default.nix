@@ -87,7 +87,6 @@ in
       fullAppDisplay
       volumePercentage
       lastfm
-      betterGenres
       sessionStats
       seekSong
       showQueueDuration
