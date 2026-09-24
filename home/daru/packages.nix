@@ -39,7 +39,6 @@
 
       # Desktop
       awww
-
       adbtuifm
 
       # audio
@@ -99,7 +98,7 @@
       file-roller
       nautilus
       fjordlauncherreunlocked
-      libreoffice-qt-fresh
+      libreoffice-qt
       bitwig-studio6
       paulxstretch
       chow-kick
