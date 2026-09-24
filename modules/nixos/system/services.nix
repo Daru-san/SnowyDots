@@ -13,10 +13,10 @@
   };
   systemd.services.nix-daemon = {
     serviceConfig = {
-      CPUWeight = 20;
+      CPUWeight = 50;
       MemoryHigh = "3G";
       MemoryMax = "4G";
-      IOWeight = 20;
+      IOWeight = 50;
     };
   };
 }
