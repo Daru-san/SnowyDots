@@ -27,6 +27,11 @@
       }
       {
         command = [
+          (lib.getExe pkgs.noctalia-shell)
+        ];
+      }
+      {
+        command = [
           (lib.getExe config.programs.foot.package)
           "-e"
           (lib.getExe pkgs.nvtopPackages.intel)
@@ -41,12 +46,6 @@
           "btop"
           "-a"
           "btop"
-        ];
-      }
-      {
-        command = [
-          (lib.getExe config.programs.anyrun.package)
-          "daemon"
         ];
       }
       {
