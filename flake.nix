@@ -33,6 +33,11 @@
 
     niri.url = "github:sodiboo/niri-flake";
 
+    mango = {
+      url = "github:mangowm/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     fjord-launcher = {
       url = "github:Cfauto28/FjordLauncherReUnlocked/11.0.3.1";
       inputs.nixpkgs.follows = "nixpkgs";
