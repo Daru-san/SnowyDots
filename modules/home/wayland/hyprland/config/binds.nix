@@ -107,9 +107,6 @@ in
             (mkBind "SUPER" "f" "hl.dsp.window.fullscreen()" "Toggle fullscreen")
             (mkBind "SUPER" "v" "hl.dsp.window.float()" "Toggle floating")
 
-            (mkBind "SUPER" "tab" "hl.plugin.hy3.focustab(\"left\")" "Focus the next tab")
-            (mkBind "SUPER+SHIFT" "tab" "hl.plugin.hy3.focustab(\"right\")" "Focus the previous tab")
-
             (mkBind "SUPER" "page_up" "hl.dsp.focus(${toLua { workspace = "e-1"; }})"
               "Focus the previous workspace"
             )
@@ -206,14 +203,14 @@ in
             # Move focus
             (mapAttrsToList (
               key: direction:
-              mkBind "SUPER" key "hl.plugin.hy3.movefocus(${direction}, ${toLua { warp = true; }})"
+              mkBind "SUPER" key "hl.plugin.hy3.move_focus(${direction}, ${toLua { warp = true; }})"
                 "Move focus to ${direction}"
             ) directions)
 
             # Move windows
             (mapAttrsToList (
               key: direction:
-              mkBind "SUPER+SHIFT" key "hl.plugin.hy3.movewindow(${direction}, ${
+              mkBind "SUPER+SHIFT" key "hl.plugin.hy3.move_window(${direction}, ${
                 toLua {
                   once = true;
                   visible = true;
@@ -221,7 +218,7 @@ in
               })" "Move active window to ${direction}"
             ) directions)
 
-            # (mapAttrsToList (key: direction: "ALT+SHIFT, ${key}, hy3:focustab, ${direction}") directions)
+            # (mapAttrsToList (key: direction: "ALT+SHIFT, ${key}, hy3.focus_tab, ${direction}") directions)
             # # Move windows
             # (mapAttrsToList (key: direction: "SUPER+CONTROL,${key},movewindoworgroup,${direction}") directions)
             # # Move monitor focus
