@@ -20,14 +20,10 @@
       (with outputs.overlays; [
         stable-packages
         unstable-packages
-        spice-packages
       ])
       inputs.frostpak.overlays.default
       inputs.kotlin-lsp.overlays.default
       inputs.fjord-launcher.overlays.default
-      (self: super: {
-        spicetify-cli = pkgs.spice.spicetify-cli;
-      })
       (_: _: {
         paulxstretch = inputs.audio.packages.${system}.paulxstretch;
       })

@@ -12,10 +12,4 @@
       config.allowUnfree = true;
     };
   };
-  spice-packages = final: _pref: {
-    spice = import inputs.spicepkgs {
-      inherit (final) system;
-      config.allowUnfree = true;
-    };
-  };
 }

@@ -55,10 +55,9 @@
     stylix.url = "github:nix-community/stylix";
 
     # Spiced spotify
-    spicepkgs.url = "github:nixos/nixpkgs/pull/540416/head";
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "spicepkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Firefox addons
