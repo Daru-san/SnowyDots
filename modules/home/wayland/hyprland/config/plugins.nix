@@ -2,7 +2,6 @@
 {
   wayland.windowManager.hyprland = {
     plugins = with pkgs; [
-      hymission
       hyprglass
       hyprlandPlugins.hy3
     ];

@@ -1,7 +1,7 @@
 {
   wayland.windowManager.hyprland = {
     settings = {
-      input = {
+      config.input = {
         repeat_delay = 300;
         repeat_rate = 50;
         follow_mouse = 1;

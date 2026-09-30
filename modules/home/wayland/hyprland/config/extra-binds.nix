@@ -1,7 +1,19 @@
 { lib, ... }:
 let
-  inherit (lib) range mapAttrsToList;
+  inherit (lib) range mapAttrsToList imap0;
   workspaces = map toString (range 0 9);
+  workspaces-numpad = [
+    "KP_Insert"
+    "KP_End"
+    "KP_Down"
+    "KP_Next"
+    "KP_Left"
+    "KP_Begin"
+    "KP_Right"
+    "KP_Home"
+    "KP_Up"
+    "KP_Prior"
+  ];
   directions = rec {
     left = "l";
     right = "r";
@@ -39,34 +51,8 @@ in
       "super, page_down, workspace,e+1"
       "supershift, page_up, movetoworkspace, r-1"
       "supershift, page_down, movetoworkspace, r+1"
-
-      "SUPER, grave, hymission:toggle"
     ]
-    ++
-      # Change workspace
-      (map (n: "SUPER,${n},workspace,${n}") workspaces)
-    ++
-      # Move window to workspace
-      (map (n: "SUPERSHIFT,${n},hy3:movetoworkspace,${n}, follow") workspaces)
-    ++
-      # Move focus
-      (mapAttrsToList (key: direction: "SUPER,${key},hy3:movefocus,${direction}, warp") directions)
-    ++
-      # Swap windows
-      (mapAttrsToList (
-        key: direction: "SUPERSHIFT,${key},hy3:movewindow,${direction}, once, visible"
-      ) directions)
-    ++ (mapAttrsToList (key: direction: "ALTSHIFT, ${key}, hy3:focustab, ${direction}") directions)
-    ++
-      # Move windows
-      (mapAttrsToList (key: direction: "SUPERCONTROL,${key},movewindoworgroup,${direction}") directions)
-    ++
-      # Move monitor focus
-      (mapAttrsToList (key: direction: "SUPERALT,${key},focusmonitor,${direction}") directions)
-    ++
-      # Move workspace to other monitor
-      (mapAttrsToList (
-        key: direction: "SUPERALTSHIFT,${key},movecurrentworkspacetomonitor,${direction}"
-      ) directions);
+    ++ lib.flatten [
+    ];
   };
 }

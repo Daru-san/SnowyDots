@@ -9,76 +9,215 @@
 }:
 let
   inherit (lib) getExe getExe';
+  mkLua = lib.generators.mkLuaInline;
+  toLua = lib.generators.toLua;
 in
 {
   imports = [ ./extra-binds.nix ];
   wayland.windowManager.hyprland.settings =
     let
-      e = "exec";
-      mkBind =
-        mods: key: action: desc:
-        "${mods}, ${key}, ${desc}, ${action}";
+      mkBind = mods: key: action: desc: {
+        _args = [
+          "${mods}+${key}"
+          (mkLua "hl.${action}")
+          (mkLua (toLua {
+            descption = desc;
+          }))
+        ];
+      };
 
-      mkBindExe =
-        mods: key: action: desc:
-        "${mods}, ${key}, ${desc}, ${e}, ${action}";
+      mkBindExe = mods: key: action: desc: {
+        _args = [
+          "${mods}+${key}"
+          (mkLua "hl.dsp.exec_cmd(\"${action}\"")
+          (mkLua (toLua {
+            descption = desc;
+          }))
+        ];
+      };
 
-      mkBindExeDispatch =
-        dispatcher: mods: key: action: desc:
-        "${mods}, ${key}, ${desc}, ${e}, [${dispatcher}] ${action}";
+      mkBindExeWith = mods: key: action: args: desc: {
+        _args = [
+          "${mods}+${key}"
+          (mkLua "hl.dsp.exec_cmd(\"${action}\"")
+          (mkLua (toLua args // { descption = desc; }))
+        ];
+      };
 
-      mkBindSingle =
-        key: action: desc:
-        ", ${key}, ${desc}, ${e}, ${action}";
+      mkBindSingle = key: action: desc: {
+        _args = [
+          key
+          (mkLua "hl.dsp.exec_raw(\"${action}\"")
+          (mkLua (toLua {
+            descption = desc;
+          }))
+        ];
+      };
 
-      mkBindPass =
-        mod: key: prog: desc:
-        "${mod}, ${key}, ${desc}, pass, class:${prog}";
+      mkBindSingleWith = key: action: args: desc: {
+        _args = [
+          key
+          (mkLua "hl.dsp.exec_raw(\"${action}\"")
+          (mkLua (toLua args // { descption = desc; }))
+        ];
+      };
 
-      mkBindSend =
-        mod: key: prog: orig-mod: orig-key: desc:
-        "${mod}, ${key}, ${desc}, sendshortcut, ${orig-mod}, ${orig-key}, class:${prog}";
+      mkBindExeProp = args: mods: key: action: desc: {
+        _args = [
+          "${mods}+${key}"
+          (mkLua "hl.dsp.exec_cmd(\"${action}\", ${toLua args}")
+          (mkLua (toLua {
+            descption = desc;
+          }))
+        ];
+      };
+
+      mkBindSend = mods: key: prog: orig-mod: orig-key: desc: {
+        _args = [
+          "${mods}+${key}"
+          (mkLua "hl.dsp.send_shortcut(${
+            toLua {
+              inherit mods key;
+              window = "class:${prog}";
+            }
+          })")
+        ];
+      };
     in
     {
-      bindd =
-        let
-          file-manager = getExe pkgs.nautilus;
-          yazi = getExe config.programs.yazi.package;
-          hyprlock = getExe config.programs.hyprlock.package;
-          btop = "${osConfig.security.wrapperDir}/btop";
-          terminal = getExe config.programs.foot.package;
-          obs = "^(com\.obsproject\.Studio)$";
-          copyq = getExe pkgs.copyq;
-        in
-        [
-          (mkBindExeDispatch "workspace 4" "super" "e" file-manager "Launch file manager")
-          (mkBindExe "supershift" "v" "${copyq} toggle" "Launch copyq clipboard manager")
-
-          (mkBindExe "super" "q" terminal "Launch a terminal")
-          (mkBindExe "super" "r" "${terminal} -e ${yazi}" "Launch yazi")
-          (mkBindExe "super" "m" "${terminal} -e ${btop}" "Launch a system monitor")
-
-          (mkBind "supershift" "q" "killactive" "Kill active window")
-          (mkBind "supershift" "e" "exit" "Exit hyprland session")
-          (mkBind "super" "f" "fullscreen" "Toggle fullscreen")
-          (mkBind "supershift" "f" "fullscreenstate, 0, 2" "Toggle fake fullscreen")
-          (mkBind "super" "v" "togglefloating" "Toggle floating")
-          (mkBindExe "supershift" "x" "hyprctl reload" "Reload hyprland")
-
-          (mkBindExe "superalt" "l" "${hyprlock} --immediate" "Lock the screen")
-
-          # OBS Studio global keybindings
-          (mkBindSend "shift" "f3" obs "shift" "m" "Mute desktop audio")
-          (mkBindSend "shift" "f4" obs "shift" "n" "Mute microphone audio")
-          (mkBindSend "shift" "f5" obs "shift" "c" "Split recording file")
-          (mkBindSend "shift" "f6" obs "shift" "r" "Start recording")
-          (mkBindSend "shift" "f7" obs "shift" "t" "Toggle recording (pause/unpause)")
-          (mkBindSend "shift" "f8" obs "shift" "s" "Stop recording")
-        ];
-
-      binddle =
+      bind = lib.flatten [
         (
           let
+            file-manager = getExe pkgs.nautilus;
+            yazi = getExe config.programs.yazi.package;
+            hyprlock = getExe config.programs.hyprlock.package;
+            btop = "${osConfig.security.wrapperDir}/btop";
+            terminal = getExe config.programs.foot.package;
+            obs = "^(com\.obsproject\.Studio)$";
+            copyq = getExe pkgs.copyq;
+          in
+          [
+            (mkBindExeProp { workspace = 4; } "SUPER" "e" file-manager "Launch file manager")
+            (mkBindExe "SUPER+SHIFT" "v" "${copyq} toggle" "Launch copyq clipboard manager")
+
+            (mkBindExe "SUPER" "q" terminal "Launch a terminal")
+            (mkBindExe "SUPER" "r" "${terminal} -e ${yazi}" "Launch yazi")
+            (mkBindExe "SUPER" "m" "${terminal} -e ${btop}" "Launch a system monitor")
+
+            (mkBind "SUPER+SHIFT" "q" "killactive" "Kill active window")
+            (mkBind "SUPER+SHIFT" "e" "exit" "Exit hyprland session")
+            (mkBind "SUPER" "f" "fullscreen" "Toggle fullscreen")
+            (mkBind "SUPER+SHIFT" "f" "fullscreenstate, 0, 2" "Toggle fake fullscreen")
+            (mkBind "SUPER" "v" "togglefloating" "Toggle floating")
+            (mkBindExe "SUPER+SHIFT" "x" "hyprctl reload" "Reload hyprland")
+
+            (mkBindExe "SUPER+ALT" "l" "${hyprlock} --immediate" "Lock the screen")
+
+            # OBS Studio global keybindings
+            (mkBindSend "SHIFT" "f3" obs "SHIFT" "m" "Mute desktop audio")
+            (mkBindSend "SHIFT" "f4" obs "SHIFT" "n" "Mute microphone audio")
+            (mkBindSend "SHIFT" "f5" obs "SHIFT" "c" "Split recording file")
+            (mkBindSend "SHIFT" "f6" obs "SHIFT" "r" "Start recording")
+            (mkBindSend "SHIFT" "f7" obs "SHIFT" "t" "Toggle recording (pause/unpause)")
+            (mkBindSend "SHIFT" "f8" obs "SHIFT" "s" "Stop recording")
+          ]
+        )
+        (
+          let
+            inherit (lib) range mapAttrsToList imap0;
+            workspaces = map toString (range 0 9);
+            workspaces-numpad = [
+              "KP_Insert"
+              "KP_End"
+              "KP_Down"
+              "KP_Next"
+              "KP_Left"
+              "KP_Begin"
+              "KP_Right"
+              "KP_Home"
+              "KP_Up"
+              "KP_Prior"
+            ];
+            directions = rec {
+              left = "l";
+              right = "r";
+              up = "u";
+              down = "d";
+              h = left;
+              l = right;
+              k = up;
+              j = down;
+            };
+            focusWorkspace =
+              id:
+              "hl.dsp.focus(${
+                toLua {
+                  workspace = id;
+                }
+              })";
+          in
+          [
+
+            # Change workspace
+            (map (n: mkBind "SUPER" n (focusWorkspace n) "Focus workspace ${n}") workspaces)
+
+            (imap0 (
+              n: key: mkBind "SUPER" key (focusWorkspace (toString n)) "Focus workspace ${toString n}"
+            ) workspaces-numpad)
+
+            # Move window to workspace
+            (map (
+              n:
+              mkBind "SUPER+SHIFT" n "hl.plugin.hy3.move_to_workspace(${n}, ${toLua { follow = true; }})"
+                "Move window to workspace ${n}"
+            ) workspaces)
+            (imap0 (
+              n: key:
+              mkBind "SUPER+SHIFT" key
+                "hl.plugin.hy3.move_to_workspace(${toString n}, ${toLua { follow = true; }})"
+                "Move window to workspace ${n}"
+            ) workspaces)
+
+            # Move focus
+            (mapAttrsToList (
+              key: direction:
+              mkBind "SUPER" key "hl.plugin.hy3.movefocus(${direction}, ${toLua { warp = true; }})"
+                "Move focus to ${direction}"
+            ) directions)
+
+            # Move windows
+            (mapAttrsToList (
+              key: direction:
+              mkBind "SUPER+SHIFT" key "hl.plugin.hy3.movewindow(${direction}, ${
+                toLua {
+                  once = true;
+                  visible = true;
+                }
+              })" "Move active window to ${direction}"
+            ) directions)
+
+            # (mapAttrsToList (key: direction: "ALT+SHIFT, ${key}, hy3:focustab, ${direction}") directions)
+            # # Move windows
+            # (mapAttrsToList (key: direction: "SUPER+CONTROL,${key},movewindoworgroup,${direction}") directions)
+            # # Move monitor focus
+            # (mapAttrsToList (key: direction: "SUPER+ALT,${key},focusmonitor,${direction}") directions)
+            # # Move workspace to other monitor
+            # (mapAttrsToList (
+            #   key: direction: "SUPER+ALT+SHIFT,${key},movecurrentworkspacetomonitor,${direction}"
+            # ) directions)
+          ]
+        )
+        (
+          let
+            mkBindSingle = mkBindSingleWith {
+              locked = true;
+              repeating = true;
+            };
+            mkBindExe = mkBindExeWith {
+              locked = true;
+              repeating = true;
+            };
+
             wpctl = getExe' pkgs.wireplumber "wpctl";
             mute = "${wpctl} set-mute @DEFAULT_SINK@ toggle";
             raise-volume = "${wpctl} set-volume @DEFAULT_SINK@ 0.05+";
@@ -86,6 +225,14 @@ in
             brightnessctl = getExe pkgs.brightnessctl;
             raise-brightness = "${brightnessctl} set +5%";
             lower-brightness = "${brightnessctl} set 5%-";
+
+            flameshot = getExe config.services.flameshot.package;
+
+            playerctl = getExe config.services.playerctld.package;
+            player-next = "${playerctl} next";
+            player-prex = "${playerctl} previous";
+            player-toggle = "${playerctl} play-pause";
+            player-stop = "${playerctl} stop";
           in
           [
             (mkBindSingle "XF86AudioRaiseVolume" raise-volume "Raise volume")
@@ -93,68 +240,58 @@ in
             (mkBindSingle "XF86AudioMute" mute "Mute audio")
             (mkBindSingle "XF86MonBrightnessUp" raise-brightness "Raise brightness")
             (mkBindSingle "XF86MonBrightnessDown" lower-brightness "Lower brightness")
-          ]
-        )
-        ++ (
-          let
-            # Screenshots
-            flameshot = getExe config.services.flameshot.package;
-          in
-          [
-            (mkBindExe "super" "f12" "systemctl suspend" "Suspend system")
+
+            (mkBindExe "SUPER" "f12" "systemctl suspend" "Suspend system")
+
             # Screenshotting
             (mkBindSingle "print" "${flameshot} gui" "Take a screenshot of a selected region")
+            (mkBindExe "SHIFT" "print" "${flameshot} screen" "Take a screenshot of the whole screen")
 
-            (mkBindExe "shift" "print" "${flameshot} screen" "Take a screenshot of the whole screen")
+            # Music players
+            (mkBindSingle "XF86AudioNext" player-next "Move to next track")
+            (mkBindSingle "XF86AudioPrev" player-prex "Move to previous track")
+            (mkBindSingle "XF86AudioPlay" player-toggle "Pause-play current track")
+            (mkBindSingle "XF86AudioStop" player-stop "Stop current track")
+
+            (mkBindExe "SHIFT" "F12" player-next "Move to next track")
+            (mkBindExe "SHIFT" "F9" player-prex "Move to previous track")
+            (mkBindExe "SHIFT" "F10" player-toggle "Pause-play current track")
+            (mkBindExe "SHIFT" "F11" player-stop "Stop current track")
           ]
-        );
+        )
 
-      binddl =
-        let
-          p = getExe config.services.playerctld.package;
-          next = "${p} next";
-          prev = "${p} previous";
-          toggle-play = "${p} play-pause";
-          stop = "${p} stop";
-        in
-        [
-          (mkBindSingle "XF86AudioNext" next "Move to next track")
-          (mkBindSingle "XF86AudioPrev" prev "Move to previous track")
-          (mkBindSingle "XF86AudioPlay" toggle-play "Pause-play current track")
-          (mkBindSingle "XF86AudioStop" stop "Stop current track")
+        (
+          let
+            easyeffects = getExe config.services.easyeffects.package;
+            fuzzel = getExe config.programs.fuzzel.package;
+            pk = getExe' pkgs.busybox "pkill";
+            wleave = getExe config.programs.wleave.package;
 
-          (mkBindExe "shift" "F12" next "Move to next track")
-          (mkBindExe "shift" "F9" prev "Move to previous track")
-          (mkBindExe "shift" "F10" toggle-play "Pause-play current track")
-          (mkBindExe "shift" "F11" stop "Stop current track")
-        ];
+            iwgtk = getExe pkgs.iwgtk;
 
-      binddr =
-        let
-          easyeffects = getExe config.services.easyeffects.package;
-          fuzzel = getExe config.programs.fuzzel.package;
-          pk = getExe' pkgs.busybox "pkill";
-          wleave = getExe config.programs.wleave.package;
+            overskride = getExe pkgs.overskride;
 
-          iwgtk = getExe pkgs.iwgtk;
+            mkBindExe = mkBindExeWith {
+              release = true;
+            };
+          in
+          [
+            (mkBindExe "SUPER" "d" "${pk} anyrun || ${fuzzel}" "Launch app launcher")
 
-          overskride = getExe pkgs.overskride;
-        in
-        [
-          (mkBindExe "super" "d" "${pk} anyrun || ${fuzzel}" "Launch app launcher")
+            (mkBindExe "SUPER" "i" "${pk} iwgtk || ${iwgtk}" "Launch the iwgtk wifi menu")
 
-          (mkBindExe "super" "i" "${pk} iwgtk || ${iwgtk}" "Launch the iwgtk wifi menu")
+            (mkBindExe "SUPER" "a" "hyprctl clients | grep 'easyeffects' || ${easyeffects}"
+              "Launch easyeffects audio mixer"
+            )
 
-          (mkBindExe "super" "a" "hyprctl clients | grep 'easyeffects' || ${easyeffects}"
-            "Launch easyeffects audio mixer"
-          )
+            (mkBindExe "SUPER" "x" "${pk} wleave || ${wleave}" "Launch the wleave logout menu")
 
-          (mkBindExe "super" "x" "${pk} wleave || ${wleave}" "Launch the wleave logout menu")
-
-          # Bluetooth manager
-          (mkBindExe "supershift" "i" "${pk} overskride || ${overskride}"
-            "Open the Overskride bluetooth manager"
-          )
-        ];
+            # Bluetooth manager
+            (mkBindExe "SUPER+SHIFT" "i" "${pk} overskride || ${overskride}"
+              "Open the Overskride bluetooth manager"
+            )
+          ]
+        )
+      ];
     };
 }

@@ -15,6 +15,6 @@
       consoleMode = "auto";
       memtest86.enable = true;
     };
-    plymouth.enable = true;
+    plymouth.enable = false;
   };
 }

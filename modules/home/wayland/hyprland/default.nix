@@ -12,13 +12,13 @@ in
   ];
   config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland = {
-      configType = "hyprlang";
+      configType = "lua";
       systemd = {
         enable = true;
         enableXdgAutostart = true;
       };
       settings = {
-        source = [ "extra.conf" ];
+        source = [ "extra.lua" ];
       };
     };
   };

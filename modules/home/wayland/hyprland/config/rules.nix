@@ -25,7 +25,6 @@
               ".clipse-gui-wrapped"
               "org.twosheds.iwgtk"
               "com.github.hluk.copyq"
-              "com.github.wwmm.easyeffects"
               "Generate Password"
               "org.gnome.FileRoller"
               "org.freedesktop.impl.portal.desktop.kde"
@@ -37,29 +36,25 @@
               "io.github.kaii_lb.Overskride"
               "io.github.giantpinkrobots.varia"
             ];
-            resized-windows = [
-              "nmtui"
-              "pulsemixer"
-              "org.freedesktop.impl.portal.desktop.kde"
-              "xdg-desktop-portal-gtk"
-              "xdg-desktop-portal-kde"
-              "org.gnome.FileRoller"
-              "org.twosheds.iwgtk"
-              "valent"
-              "com.github.wwmm.easyeffects"
-              "io.github.kaii_lb.Overskride"
-              "io.github.giantpinkrobots.varia"
-            ];
           in
           [
-            (map (c: "match:class ^(${c})(.*)$, float true") window)
-            (map (d: "match:class ^(${d})(.*)$, center true") window)
-            (map (e: "match:class ^(${e})(.*)$, size 60% 60%") resized-windows)
+            (map (c: {
+              match.class = "^(${c})(.*)$";
+              float = true;
+              center = true;
+              size = [
+                "(monitor_w*0.6)"
+                "(monitor_h*0.6)"
+              ];
+            }) window)
           ]
         )
         (
           let
-            workspace = index: window: "match:class ^(${window})(.*)$, workspace ${toString index}";
+            workspace = index: window: {
+              match.class = "^(${window})(.*)$";
+              workspace = toString index;
+            };
           in
           [
             (workspace 1 "neovide")

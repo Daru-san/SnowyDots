@@ -1,0 +1,2343 @@
+From 259bb51183fa70244ca02243d7e4278dc1e565e3 Mon Sep 17 00:00:00 2001
+From: SDGDen <sdgden@sdgcloud.nl>
+Date: Mon, 7 Sep 2026 21:47:50 +0200
+Subject: [PATCH 1/3] Feat: new group-related dispatchers + group_spawn_capture
+
+introduces the following:
+
+options:
+group_spawn_capture - if set to 1, focused groups will capture newly spawned windows and add them to the group automatically
+
+windowrules:
+grouptitle - will overwrite the window title in the group bar
+
+dispatchers:
+groupmerge - pulls window in x direction into the focused window/group
+groupsmart - does groupmerge if the focused window is a group, or groupjoin if not
+groupinit - initialize a group with only one member, this activates group_spawn_capture to work
+grouptitle - set the group title
+groupall - group all clients on the monitor, this correctly merges multiple groups.
+groupdisband - separate all clients in the group, disbanding the group entirely.
+
+grouptitle was also added as a field in the ipc.
+
+moved much of the existing groups code over to groups.c/groups.h, though i think that needs to be cleaned up before being merged.
+---
+ .gitignore                          |   1 +
+ docs/bindings/keys.md               |   8 +-
+ docs/configuration/miscellaneous.md |   1 +
+ include/mango/common/server.h       |   3 +
+ include/mango/config/parse_config.h |   2 +
+ include/mango/dispatch/bind.h       |   1 +
+ include/mango/layout/group.h        |  15 +
+ include/mango/manage/client.h       |   3 +
+ old-ver                             |   1 +
+ src/animation/client.c              |  10 +-
+ src/config/parse_config.c           |  26 ++
+ src/dispatch/bind.c                 | 120 -------
+ src/ipc/ipc.c                       |   2 +
+ src/layout/arrange.c                |   3 +
+ src/layout/group.c                  | 524 ++++++++++++++++++++++++++++
+ src/manage/client.c                 | 260 ++++----------
+ 16 files changed, 656 insertions(+), 324 deletions(-)
+ create mode 100644 include/mango/layout/group.h
+ create mode 120000 old-ver
+ create mode 100644 src/layout/group.c
+
+diff --git a/.gitignore b/.gitignore
+index 1f9030e66..d3ce94aa0 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -10,6 +10,7 @@ util.o
+ *-protocol.h
+ *-protocol.c
+ *-protocol.o
++/test
+ 
+ .envrc
+ .direnv
+diff --git a/docs/bindings/keys.md b/docs/bindings/keys.md
+index 3f2335176..d02e15a84 100644
+--- a/docs/bindings/keys.md
++++ b/docs/bindings/keys.md
+@@ -131,8 +131,14 @@ bindr=Super,Super_L,spawn,rofi -show run
+ | Command | Param | Description |
+ | :--- | :--- | :--- |
+ | `groupjoin` | `left/right/up/down`  | Join group by direction. |
++| `groupmerge` | `left/right/up/down`  | merge window in direction into focused group. |
++| `smartgroup` | `left/right/up/down` | groupmerge if a group is focused, groupjoin if not |
+ | `groupfocus` | `prev/next`  | Focus group member by direction. |
+-| `groupleave` | -  | Leave group. |
++| `groupleave` | - | eject current focused window from group. |
++| `grouptitle` | `string` | set the group bar title for the focused window
++| `groupinit` | - | initialize a new group with only the focused window |
++| `groupall` | - | group all windows on the current output, merging any existing groups |
++| `groupdisband` | - | ungroups all members of a group |
+ 
+ ### Tags & Monitors
+ 
+diff --git a/docs/configuration/miscellaneous.md b/docs/configuration/miscellaneous.md
+index 5732ab47f..b4bdea2d9 100644
+--- a/docs/configuration/miscellaneous.md
++++ b/docs/configuration/miscellaneous.md
+@@ -54,3 +54,4 @@ description: Advanced settings for XWayland, focus behavior, and system integrat
+ | `tag_carousel` | `0` | Enable tag carousel (cycling through tags). |
+ | `drag_tile_refresh_interval` | `8.0` | Interval (1.0–16.0) to refresh tiled window resize during drag. Too small may cause application lag. |
+ | `drag_floating_refresh_interval` | `8.0` | Interval (1.0–16.0) to refresh floating window resize during drag. Too small may cause application lag. |
++| `group_capture_spawn` | `0` | windows spawned while a group is focused will automatically be added to that group |
+diff --git a/include/mango/common/server.h b/include/mango/common/server.h
+index fa5b87a2a..9464093de 100644
+--- a/include/mango/common/server.h
++++ b/include/mango/common/server.h
+@@ -147,6 +147,9 @@ struct MangoServer {
+ 	double swipe_dy;
+ 
+ 	bool render_border;
++	bool group_capture_inhibit_arrange; /* suppress arranges while a
++										   group-captured spawn is being set up
++										 */
+ 
+ 	/* Other runtime state */
+ 	uint32_t chvt_backup_tag;
+diff --git a/include/mango/config/parse_config.h b/include/mango/config/parse_config.h
+index 648d6fbb4..bb7b2ac3e 100644
+--- a/include/mango/config/parse_config.h
++++ b/include/mango/config/parse_config.h
+@@ -109,6 +109,7 @@ typedef struct {
+ 	const char *animation_type_close;
+ 	const char *layer_animation_type_open;
+ 	const char *layer_animation_type_close;
++	char *grouptitle;
+ 	int32_t isnoborder;
+ 	int32_t isnoshadow;
+ 	int32_t isnoradius;
+@@ -458,6 +459,7 @@ typedef struct {
+ 	uint32_t special_gappov;
+ 	uint32_t borderpx;
+ 	uint32_t group_bar_height;
++	int32_t group_capture_spawn;
+ 	float scratchpad_width_ratio;
+ 	float scratchpad_height_ratio;
+ 	float special_dim;
+diff --git a/include/mango/dispatch/bind.h b/include/mango/dispatch/bind.h
+index 081cd02da..5265a053f 100644
+--- a/include/mango/dispatch/bind.h
++++ b/include/mango/dispatch/bind.h
+@@ -28,6 +28,7 @@ void focus_direction(const Arg *arg);
+ void focus_window_or_workspace(const Arg *arg);
+ void group_join(const Arg *arg);
+ void group_leave(const Arg *arg);
++void set_grouptitle(const Arg *arg);
+ void toggle_overview(const Arg *arg);
+ void switcher(const Arg *arg);
+ void toggle_hdr(const Arg *arg);
+diff --git a/include/mango/layout/group.h b/include/mango/layout/group.h
+new file mode 100644
+index 000000000..cd8d06b19
+--- /dev/null
++++ b/include/mango/layout/group.h
+@@ -0,0 +1,15 @@
++#ifndef __GROUP_H__
++#define __GROUP_H__ 1
++
++#include "mango/dispatch/bind.h"
++
++void group_init(const Arg *arg);
++void group_all(const Arg *arg);
++void group_merge(const Arg *arg);
++void group_disband(const Arg *arg);
++void group_smart(const Arg *arg);
++
++Client *group_capture_get_parent(void);
++bool group_capture_spawn(Client *c, Client *group_parent);
++
++#endif
+diff --git a/include/mango/manage/client.h b/include/mango/manage/client.h
+index 2cabea06b..00346b37c 100644
+--- a/include/mango/manage/client.h
++++ b/include/mango/manage/client.h
+@@ -220,6 +220,7 @@ struct Client {
+ 	Client *group_prev;
+ 	Client *group_next;
+ 	bool isgroupfocusing;
++	char *grouptitle;
+ };
+ 
+ void client_update_geometry(Client *c);
+@@ -261,6 +262,8 @@ void client_get_geometry(Client *c, struct wlr_box *geom);
+ Client *client_get_parent(Client *c);
+ int32_t client_has_children(Client *c);
+ const char *client_get_title(Client *c);
++const char *client_get_display_title(Client *c);
++void client_set_grouptitle(Client *c, const char *name);
+ int32_t client_is_float_type(Client *c);
+ int32_t client_is_rendered_on_mon(Client *c, Monitor *m);
+ int32_t client_is_unmanaged(Client *c);
+diff --git a/old-ver b/old-ver
+new file mode 120000
+index 000000000..05d8355f5
+--- /dev/null
++++ b/old-ver
+@@ -0,0 +1 @@
++/home/den/repos/mango-dev-2
+\ No newline at end of file
+diff --git a/src/animation/client.c b/src/animation/client.c
+index b02acedc8..fe7d2314a 100644
+--- a/src/animation/client.c
++++ b/src/animation/client.c
+@@ -390,13 +390,15 @@ void client_draw_groupbar(Client *c, struct ivec2 offsets) {
+ 	if (!c || !c->group_bar)
+ 		return;
+ 
+-	if (!c->group_next && !c->group_prev) {
+-		if (c->group_bar->scene_buffer->node.enabled)
+-			wlr_scene_node_set_enabled(&c->group_bar->scene_buffer->node,
+-									   false);
++	if (!c->group_next && !c->group_prev && !c->isgroupfocusing &&
++		c->group_bar->scene_buffer->node.enabled) {
++		wlr_scene_node_set_enabled(&c->group_bar->scene_buffer->node, false);
+ 		return;
+ 	}
+ 
++	if (!c->group_next && !c->group_prev && !c->isgroupfocusing)
++		return;
++
+ 	Client *head = c;
+ 	while (head->group_prev)
+ 		head = head->group_prev;
+diff --git a/src/config/parse_config.c b/src/config/parse_config.c
+index 6f478e4ac..2e7d00a14 100644
+--- a/src/config/parse_config.c
++++ b/src/config/parse_config.c
+@@ -18,6 +18,7 @@
+ #include "mango/input/pointer.h"
+ #include "mango/ipc/ipc.h"
+ #include "mango/layout/arrange.h"
++#include "mango/layout/group.h"
+ #include "mango/layout/layout.h"
+ #include "mango/manage/client.h"
+ #include "mango/manage/monitor.h"
+@@ -1068,6 +1069,8 @@ bool parse_option(Config *config, char *key, char *value, int line_number) {
+ 		config->borderpx = atoi(value);
+ 	} else if (strcmp(key, "group_bar_height") == 0) {
+ 		config->group_bar_height = atoi(value);
++	} else if (strcmp(key, "group_capture_spawn") == 0) {
++		config->group_capture_spawn = atoi(value);
+ 	} else if (strcmp(key, "rootcolor") == 0) {
+ 		int64_t color = parse_color(value);
+ 		if (color == -1) {
+@@ -1524,6 +1527,7 @@ bool parse_option(Config *config, char *key, char *value, int line_number) {
+ 		// string rule value, relay to a client property
+ 		rule->animation_type_open = NULL;
+ 		rule->animation_type_close = NULL;
++		rule->grouptitle = NULL;
+ 
+ 		// float rule value, relay to a client property
+ 		rule->focused_opacity = 0;
+@@ -1649,6 +1653,8 @@ bool parse_option(Config *config, char *key, char *value, int line_number) {
+ 					rule->isfullscreen = atoi(val);
+ 				} else if (strcmp(key, "isfakefullscreen") == 0) {
+ 					rule->isfakefullscreen = atoi(val);
++				} else if (strcmp(key, "grouptitle") == 0) {
++					rule->grouptitle = strdup(val);
+ 				} else if (strcmp(key, "globalkeybinding") == 0) {
+ 					char mod_str[256], keysym_str[256];
+ 					sscanf(val, "%255[^-]-%255[a-zA-Z]", mod_str, keysym_str);
+@@ -3259,10 +3265,13 @@ void free_config(void) {
+ 				free((void *)rule->animation_type_close);
+ 			if (rule->monitor)
+ 				free((void *)rule->monitor);
++			if (rule->grouptitle)
++				free((void *)rule->grouptitle);
+ 			rule->id = NULL;
+ 			rule->title = NULL;
+ 			rule->animation_type_open = NULL;
+ 			rule->animation_type_close = NULL;
++			rule->grouptitle = NULL;
+ 			rule->monitor = NULL;
+ 			// Frees arg.v of globalkeybinding if dynamically allocated.
+ 			if (rule->globalkeybinding.arg.v) {
+@@ -3709,6 +3718,7 @@ void override_config(void) {
+ 	config.special_gappov = CLAMP_INT(config.special_gappov, 0, 1000);
+ 	config.borderpx = CLAMP_INT(config.borderpx, 0, 200);
+ 	config.group_bar_height = CLAMP_INT(config.group_bar_height, 0, 500);
++	config.group_capture_spawn = CLAMP_INT(config.group_capture_spawn, 0, 1);
+ 	config.smartgaps = CLAMP_INT(config.smartgaps, 0, 1);
+ 	config.blur = CLAMP_INT(config.blur, 0, 1);
+ 	config.blur_layer = CLAMP_INT(config.blur_layer, 0, 1);
+@@ -3853,6 +3863,7 @@ void set_value_default() {
+ 
+ 	config.borderpx = 4;
+ 	config.group_bar_height = 50;
++	config.group_capture_spawn = 0;
+ 	config.overviewgappi = 5;
+ 	config.overviewgappo = 30;
+ 	config.overcircle_center_ratio = 0.5f;
+@@ -4539,6 +4550,21 @@ FuncType parse_func_name(char *func_name, Arg *arg, char *arg_value,
+ 		(*arg).i = parse_direction(arg_value);
+ 	} else if (strcmp(func_name, "groupleave") == 0) {
+ 		func = group_leave;
++	} else if (strcmp(func_name, "groupinit") == 0) {
++		func = group_init;
++	} else if (strcmp(func_name, "groupall") == 0) {
++		func = group_all;
++	} else if (strcmp(func_name, "groupmerge") == 0) {
++		func = group_merge;
++		(*arg).i = parse_direction(arg_value);
++	} else if (strcmp(func_name, "groupdisband") == 0) {
++		func = group_disband;
++	} else if (strcmp(func_name, "grouptitle") == 0) {
++		func = set_grouptitle;
++		(*arg).v = strdup(arg_value);
++	} else if (strcmp( func_name, "groupsmart") == 0) {
++		func = group_smart;
++		(*arg).i = parse_direction(arg_value);
+ 	} else if (strcmp(func_name, "focusid") == 0) {
+ 		func = focus_by_id;
+ 	} else if (strcmp(func_name, "incnmaster") == 0) {
+diff --git a/src/dispatch/bind.c b/src/dispatch/bind.c
+index 84b387243..fbe9cfb8c 100644
+--- a/src/dispatch/bind.c
++++ b/src/dispatch/bind.c
+@@ -258,98 +258,6 @@ void focus_window_or_workspace(const Arg *arg) {
+ 	return;
+ }
+ 
+-void group_join(const Arg *arg) {
+-
+-	if (!server.selected_monitor)
+-		return;
+-
+-	Monitor *oldmon = NULL;
+-
+-	Client *need_join_client = arg->tc ? arg->tc : server.selected_monitor->sel;
+-	if (!need_join_client || !need_join_client->mon)
+-		return;
+-
+-	if (need_join_client->mon->isoverview)
+-		return;
+-
+-	Client *need_replace_client = NULL;
+-	need_replace_client = direction_select(arg);
+-
+-	if (!need_replace_client || !need_replace_client->mon)
+-		return;
+-
+-	if (need_join_client == need_replace_client)
+-		return;
+-
+-	if (need_join_client->group_next || need_join_client->group_prev) {
+-		group_leave(&(Arg){.tc = need_join_client});
+-	}
+-
+-	if (need_join_client->mon != need_replace_client->mon) {
+-		oldmon = need_join_client->mon;
+-		need_join_client->mon = need_replace_client->mon;
+-	}
+-
+-	if (!need_replace_client->group_prev && !need_replace_client->group_next) {
+-		need_replace_client->isgroupfocusing = true;
+-	}
+-
+-	need_join_client->group_next = need_replace_client;
+-
+-	if (need_replace_client->group_prev) {
+-		need_replace_client->group_prev->group_next = need_join_client;
+-	}
+-
+-	need_join_client->group_prev = need_replace_client->group_prev;
+-
+-	need_replace_client->group_prev = need_join_client;
+-
+-	client_focus_group_member(need_join_client);
+-	arrange(need_join_client->mon, false, false);
+-
+-	// oldmon may already be destroyed.
+-	if (oldmon) {
+-		arrange(oldmon, false, false);
+-	}
+-
+-	return;
+-}
+-
+-void group_leave(const Arg *arg) {
+-
+-	if (!server.selected_monitor)
+-		return;
+-	Client *tc = arg->tc ? arg->tc : server.selected_monitor->sel;
+-	if (!tc || !tc->mon || !tc->isgroupfocusing)
+-		return;
+-	if (!tc->group_next && !tc->group_prev) {
+-		return;
+-	}
+-
+-	if (tc->mon->isoverview)
+-		return;
+-
+-	Client *rc = tc->group_next ? tc->group_next : tc->group_prev;
+-
+-	client_focus_group_member(rc);
+-	client_group_detach(tc);
+-
+-	tc->isgroupfocusing = false;
+-	tc->mon = rc->mon;
+-	client_unpark(tc, rc);
+-	/* rc stays focused: put tc right behind it in the focus stack. */
+-	wl_list_remove(&tc->flink);
+-	wl_list_insert(rc->flink.next, &tc->flink);
+-
+-	if (!rc->group_prev && !rc->group_next) {
+-		rc->isgroupfocusing = false;
+-	}
+-
+-	arrange(tc->mon, false, false);
+-
+-	return;
+-}
+-
+ void focus_last(const Arg *arg) {
+ 	Client *c = NULL;
+ 	Client *tc = NULL;
+@@ -492,34 +400,6 @@ void over_circle(const Arg *arg) {
+ 		server.selected_monitor->ov_tab_layout = 0;
+ }
+ 
+-void group_focus(const Arg *arg) {
+-	Client *c = arg->tc ? arg->tc : server.selected_monitor->sel;
+-	if (!c || !c->mon)
+-		return;
+-
+-	if (!c->group_prev && !c->group_next) {
+-		return;
+-	}
+-
+-	if (c->mon->isoverview)
+-		return;
+-
+-	Client *tc = NULL;
+-
+-	if (arg->i == NEXT) {
+-		tc = c->group_next;
+-	} else {
+-		tc = c->group_prev;
+-	}
+-
+-	if (!tc)
+-		return;
+-
+-	client_focus_group_member(tc);
+-	arrange(tc->mon, false, false);
+-	return;
+-}
+-
+ void inc_nmaster(const Arg *arg) {
+ 	if (!arg || !server.selected_monitor)
+ 		return;
+diff --git a/src/ipc/ipc.c b/src/ipc/ipc.c
+index 9a54ddba2..af2d85db8 100644
+--- a/src/ipc/ipc.c
++++ b/src/ipc/ipc.c
+@@ -504,6 +504,8 @@ cJSON *build_client_json(Client *c) {
+ 	cJSON_AddStringToObject(obj, "foreign_toplevel_id",
+ 							c->ext_foreign_toplevel->identifier);
+ 	cJSON_AddStringToObject(obj, "title", client_get_title(c));
++	cJSON_AddStringToObject(obj, "grouptitle",
++							c->grouptitle ? c->grouptitle : "");
+ 	cJSON_AddStringToObject(obj, "appid", client_get_appid(c));
+ 	cJSON_AddStringToObject(obj, "monitor",
+ 							c->mon ? c->mon->wlr_output->name : "");
+diff --git a/src/layout/arrange.c b/src/layout/arrange.c
+index 883717aaa..819b9bde8 100644
+--- a/src/layout/arrange.c
++++ b/src/layout/arrange.c
+@@ -1435,6 +1435,9 @@ arrange(Monitor *m, bool want_animation, bool from_view) {
+ 	if (!m || m->iscleanuping)
+ 		return;
+ 
++	if (server.group_capture_inhibit_arrange)
++		return;
++
+ 	if (!m->wlr_output->enabled)
+ 		return;
+ 
+diff --git a/src/layout/group.c b/src/layout/group.c
+new file mode 100644
+index 000000000..98399a89d
+--- /dev/null
++++ b/src/layout/group.c
+@@ -0,0 +1,524 @@
++#include "mango/layout/group.h"
++#include "mango/common/server.h"
++#include "mango/config/parse_config.h"
++#include "mango/draw/text-node.h"
++#include "mango/layout/arrange.h"
++#include "mango/manage/client.h"
++#include "mango/manage/monitor.h"
++
++void group_init(const Arg *arg) {
++	if (!server.selected_monitor)
++		return;
++	if (server.selected_monitor->isoverview)
++		return;
++
++	Client *target = arg->tc ? arg->tc : server.selected_monitor->sel;
++	if (!target || !target->mon)
++		return;
++	if (target->group_prev || target->group_next || target->isgroupfocusing)
++		return;
++
++	target->isgroupfocusing = true;
++	client_add_group_bar(target);
++	client_focus(target, 1);
++	arrange(target->mon, false, false);
++}
++
++
++void group_smart(const Arg *arg) {
++	if (!server.selected_monitor)
++		return;
++	if (server.selected_monitor->isoverview)
++		return;
++
++	Client *target = server.selected_monitor->sel;
++	if (!target || !target->mon)
++		return;
++	if (!target->group_prev && !target->group_next) {
++		group_join(arg);
++	} else {
++		group_merge(arg);
++	}
++	
++}
++
++void group_all(const Arg *arg) {
++	(void)arg;
++	if (!server.selected_monitor)
++		return;
++	if (server.selected_monitor->isoverview)
++		return;
++
++	Client *visible[256];
++	int count = 0;
++
++	Client *client;
++	wl_list_for_each(client, &server.clients, link) {
++		if (!VISIBLEON(client, server.selected_monitor))
++			continue;
++		if (!(client->group_prev || client->group_next ||
++			  client->isgroupfocusing)) {
++			if (count < 256)
++				visible[count++] = client;
++			continue;
++		}
++		Client *head = client;
++		while (head->group_prev && head->group_prev != head)
++			head = head->group_prev;
++		Client *cur = head;
++		while (cur && count < 256) {
++			visible[count++] = cur;
++			cur = cur->group_next;
++		}
++	}
++
++	if (count < 2)
++		return;
++
++	for (int index = 0; index < count; index++) {
++		if (visible[index]->group_next || visible[index]->group_prev)
++			client_group_detach(visible[index]);
++	}
++	Client *target = visible[0];
++
++	target->isgroupfocusing = true;
++
++	for (int index = 1; index < count; index++) {
++		visible[index]->group_next = target;
++		if (target->group_prev)
++			target->group_prev->group_next = visible[index];
++		visible[index]->group_prev = target->group_prev;
++		target->group_prev = visible[index];
++		client_park(visible[index]);
++		wlr_scene_node_set_enabled(&visible[index]->scene->node, false);
++		if (visible[index]->group_bar)
++			wlr_scene_node_set_enabled(
++				&visible[index]->group_bar->scene_buffer->node, false);
++	}
++	client_focus(target, 1);
++	arrange(target->mon, false, false);
++}
++
++void group_merge(const Arg *arg) {
++	if (!server.selected_monitor)
++		return;
++	if (server.selected_monitor->isoverview)
++		return;
++
++	Client *group = server.selected_monitor->sel;
++	if (!group || !group->mon)
++		return;
++
++	Client *target = direction_select(arg);
++	if (!target || target == group)
++		return;
++	Monitor *oldmon = NULL;
++
++	if (target->group_next || target->group_prev)
++		group_leave(&(Arg){.tc = target});
++
++	if (target->mon != group->mon) {
++		oldmon = target->mon;
++		target->mon = group->mon;
++	}
++
++	if (!group->group_prev && !group->group_next)
++		group->isgroupfocusing = true;
++
++	target->group_next = group;
++	if (group->group_prev)
++		group->group_prev->group_next = target;
++	target->group_prev = group->group_prev;
++	group->group_prev = target;
++
++	client_focus_group_member(target);
++	arrange(target->mon, false, false);
++
++	if (oldmon)
++		arrange(oldmon, false, false);
++}
++
++void group_disband(const Arg *arg) {
++	if (!server.selected_monitor)
++		return;
++
++	Client *target = arg->tc ? arg->tc : server.selected_monitor->sel;
++
++	if (!target || !target->mon)
++		return;
++
++	if (!target->group_prev && !target->group_next) {
++		if (target->isgroupfocusing) {
++			target->isgroupfocusing = false;
++			client_focus(target, 1);
++			arrange(target->mon, false, false);
++		}
++		return;
++	}
++
++	if (target->mon->isoverview)
++		return;
++
++	Client *head = target;
++	while (head->group_prev && head->group_prev != head)
++		head = head->group_prev;
++
++	Client *members[256];
++	int membercount = 0;
++
++	Client *current = head;
++	while (current && membercount < 256) {
++		members[membercount++] = current;
++		current = current->group_next;
++	}
++	for (int index = 0; index < membercount; index++) {
++		members[index]->mon = target->mon;
++		if (client_is_parked(members[index]))
++			client_unpark(members[index], target);
++		client_group_detach(members[index]);
++		wlr_scene_node_set_enabled(&members[index]->scene->node, true);
++	}
++	client_focus(target, 1);
++	arrange(target->mon, false, false);
++}
++
++Client *group_capture_get_parent(void) {
++	if (!config.group_capture_spawn || !server.selected_monitor)
++		return NULL;
++
++	Client *sel = server.selected_monitor->sel;
++	if (sel && (sel->group_prev || sel->group_next || sel->isgroupfocusing))
++		return sel;
++
++	return NULL;
++}
++
++bool group_capture_spawn(Client *c, Client *group_parent) {
++	if (!config.group_capture_spawn || !group_parent || !c->mon ||
++		c->mon != group_parent->mon ||
++		!(group_parent->group_prev || group_parent->group_next ||
++		  group_parent->isgroupfocusing))
++		return false;
++
++	c->group_prev = group_parent->group_prev;
++	if (group_parent->group_prev)
++		group_parent->group_prev->group_next = c;
++	c->group_next = group_parent;
++	group_parent->group_prev = c;
++	c->is_pending_open_animation = false;
++	client_focus_group_member(c);
++	return true;
++}
++
++void group_join(const Arg *arg) {
++
++	if (!server.selected_monitor)
++		return;
++
++	Monitor *oldmon = NULL;
++
++	Client *need_join_client = arg->tc ? arg->tc : server.selected_monitor->sel;
++	if (!need_join_client || !need_join_client->mon)
++		return;
++
++	if (need_join_client->mon->isoverview)
++		return;
++
++	Client *need_replace_client = NULL;
++	need_replace_client = direction_select(arg);
++
++	if (!need_replace_client || !need_replace_client->mon)
++		return;
++
++	if (need_join_client == need_replace_client)
++		return;
++
++	if (need_join_client->group_next || need_join_client->group_prev) {
++		group_leave(&(Arg){.tc = need_join_client});
++	}
++
++	if (need_join_client->mon != need_replace_client->mon) {
++		oldmon = need_join_client->mon;
++		need_join_client->mon = need_replace_client->mon;
++	}
++
++	if (!need_replace_client->group_prev && !need_replace_client->group_next) {
++		need_replace_client->isgroupfocusing = true;
++	}
++
++	need_join_client->group_next = need_replace_client;
++
++	if (need_replace_client->group_prev) {
++		need_replace_client->group_prev->group_next = need_join_client;
++	}
++
++	need_join_client->group_prev = need_replace_client->group_prev;
++
++	need_replace_client->group_prev = need_join_client;
++
++	client_focus_group_member(need_join_client);
++	arrange(need_join_client->mon, false, false);
++
++	// oldmon may already be destroyed.
++	if (oldmon) {
++		arrange(oldmon, false, false);
++	}
++
++	return;
++}
++
++void group_leave(const Arg *arg) {
++
++	if (!server.selected_monitor)
++		return;
++	Client *tc = arg->tc ? arg->tc : server.selected_monitor->sel;
++	if (!tc || !tc->mon || !tc->isgroupfocusing)
++		return;
++	if (!tc->group_next && !tc->group_prev) {
++		return;
++	}
++
++	if (tc->mon->isoverview)
++		return;
++
++	Client *rc = tc->group_next ? tc->group_next : tc->group_prev;
++
++	client_focus_group_member(rc);
++	client_group_detach(tc);
++
++	tc->isgroupfocusing = false;
++	tc->mon = rc->mon;
++	client_unpark(tc, rc);
++	/* rc stays focused: put tc right behind it in the focus stack. */
++	wl_list_remove(&tc->flink);
++	wl_list_insert(rc->flink.next, &tc->flink);
++
++	if (!rc->group_prev && !rc->group_next) {
++		rc->isgroupfocusing = false;
++	}
++
++	arrange(tc->mon, false, false);
++
++	return;
++}
++
++void group_focus(const Arg *arg) {
++	Client *c = arg->tc ? arg->tc : server.selected_monitor->sel;
++	if (!c || !c->mon)
++		return;
++
++	if (!c->group_prev && !c->group_next) {
++		return;
++	}
++
++	if (c->mon->isoverview)
++		return;
++
++	Client *tc = NULL;
++
++	if (arg->i == NEXT) {
++		tc = c->group_next;
++	} else {
++		tc = c->group_prev;
++	}
++
++	if (!tc)
++		return;
++
++	client_focus_group_member(tc);
++	arrange(tc->mon, false, false);
++	return;
++}
++
++void client_add_group_bar(Client *c) {
++
++	if (config.group_bar_height <= 0) {
++		return;
++	}
++
++	uint32_t layer = client_target_layer(c);
++
++	c->group_bar = mango_group_bar_create(c, GroupBar, server.layers[layer],
++										  config.groupbardata, 0, 0);
++	wlr_scene_node_lower_to_bottom(&c->group_bar->scene_buffer->node);
++	wlr_scene_node_set_enabled(&c->group_bar->scene_buffer->node, false);
++	mango_group_bar_update(c->group_bar, client_get_display_title(c),
++						   c->mon ? c->mon->wlr_output->scale
++						   : server.selected_monitor
++							   ? server.selected_monitor->wlr_output->scale
++							   : 1.0f);
++}
++
++void client_focus_group_member(Client *c) {
++	if (!c->group_prev && !c->group_next)
++		return;
++
++	if (c->isgroupfocusing)
++		return;
++
++	Client *head = c;
++	while (head->group_prev)
++		head = head->group_prev;
++
++	Client *cur_focusing = NULL;
++	while (head) {
++		if (head->isgroupfocusing) {
++			cur_focusing = head;
++			break;
++		}
++		head = head->group_next;
++	}
++
++	if (!cur_focusing || !cur_focusing->mon)
++		return;
++
++	if (cur_focusing && cur_focusing->mon->isoverview)
++		return;
++
++	cur_focusing->isgroupfocusing = false;
++	c->mon = cur_focusing->mon;
++	client_replace(c, cur_focusing, true, false);
++	mango_group_bar_set_focus(cur_focusing->group_bar, false);
++
++	c->isgroupfocusing = true;
++	mango_group_bar_set_focus(c->group_bar, true);
++
++	client_reparent_group(c);
++
++	client_focus(c, 1);
++
++	arrange(c->mon, false, false);
++}
++
++void client_check_tab_node_visible(Client *c) {
++
++	if (!c || !c->mon)
++		return;
++
++	Client *head = c;
++	while (head->group_prev)
++		head = head->group_prev;
++
++	Client *cur = head;
++	while (cur) {
++		if (!c->mon->isoverview && cur->group_bar &&
++			(cur->group_next || cur->group_prev || cur->isgroupfocusing) &&
++			TAGMATCH(c, c->mon) && ISNORMAL(c) && !c->isfullscreen) {
++			wlr_scene_node_set_enabled(&cur->group_bar->scene_buffer->node,
++									   true);
++		} else {
++			wlr_scene_node_set_enabled(&cur->group_bar->scene_buffer->node,
++									   false);
++		}
++		cur = cur->group_next;
++	}
++}
++
++void client_raise_group(Client *c) {
++	if (!c || !c->mon)
++		return;
++
++	Client *head = c;
++	while (head->group_prev)
++		head = head->group_prev;
++
++	Client *cur = head;
++	while (cur) {
++		if (cur->group_bar) {
++			wlr_scene_node_raise_to_top(&cur->group_bar->scene_buffer->node);
++		}
++		wlr_scene_node_raise_to_top(&cur->scene->node);
++		cur = cur->group_next;
++	}
++}
++
++void client_reparent_group(Client *c) {
++	if (!c || !c->mon)
++		return;
++
++	int32_t layer = client_target_layer(c);
++
++	Client *head = c;
++	while (head->group_prev)
++		head = head->group_prev;
++
++	Client *cur = head;
++	while (cur) {
++		if (cur->group_bar) {
++			wlr_scene_node_reparent(&cur->group_bar->scene_buffer->node,
++									server.layers[layer]);
++		}
++		wlr_scene_node_reparent(&cur->scene->node, server.layers[layer]);
++		cur = cur->group_next;
++	}
++}
++
++void client_handle_decorate_click(MangoGroupBar *gb) {
++
++	if (!gb)
++		return;
++
++	if (gb->node_data) {
++		Client *c = gb->node_data;
++		client_focus_group_member(c);
++	}
++}
++
++void client_set_group_mon(Client *c, Monitor *m) {
++	Client *head = c;
++	while (head->group_prev)
++		head = head->group_prev;
++
++	Client *cur = head;
++	while (cur) {
++		client_change_mon(cur, m);
++		cur = cur->group_next;
++	}
++}
++
++void client_set_group_config(Client *c) {
++	Client *head = c;
++	while (head->group_prev)
++		head = head->group_prev;
++
++	Client *cur = head;
++	while (cur) {
++		if (cur->jump_label_node)
++			mango_jump_label_node_apply_config(cur->jump_label_node,
++											   &config.jumplabeldata);
++		wlr_scene_rect_set_color(cur->droparea, config.dropcolor);
++		wlr_scene_rect_set_color(cur->splitindicator[0], config.splitcolor);
++		wlr_scene_rect_set_color(cur->splitindicator[1], config.splitcolor);
++		mango_group_bar_apply_config(cur->group_bar, &config.groupbardata);
++		cur = cur->group_next;
++	}
++}
++
++void client_group_detach(Client *c) {
++	if (c->group_prev)
++		c->group_prev->group_next = c->group_next;
++	if (c->group_next)
++		c->group_next->group_prev = c->group_prev;
++	c->group_prev = NULL;
++	c->group_next = NULL;
++	c->isgroupfocusing = false;
++}
++
++void client_group_replace(Client *old, Client *new) {
++	client_group_detach(new);
++
++	new->group_prev = old->group_prev;
++	new->group_next = old->group_next;
++	if (old->group_prev)
++		old->group_prev->group_next = new;
++	if (old->group_next)
++		old->group_next->group_prev = new;
++	old->group_prev = NULL;
++	old->group_next = NULL;
++
++	if (client_is_parked(old) || (!new->group_prev && !new->group_next)) {
++		new->isgroupfocusing = false;
++	} else {
++		new->isgroupfocusing = old->isgroupfocusing;
++	}
++}
+diff --git a/src/manage/client.c b/src/manage/client.c
+index f934ba102..95e0f3444 100644
+--- a/src/manage/client.c
++++ b/src/manage/client.c
+@@ -9,6 +9,7 @@
+ #include "mango/ipc/ipc.h"
+ #include "mango/layout/arrange.h"
+ #include "mango/layout/dwindle.h"
++#include "mango/layout/group.h"
+ #include "mango/layout/layout.h"
+ #include "mango/layout/scroll.h"
+ #include "mango/manage/layer.h"
+@@ -232,6 +233,36 @@ const char *client_get_title(Client *c) {
+ 	return c->surface.xdg->toplevel->title ? c->surface.xdg->toplevel->title
+ 										   : "broken";
+ }
++
++const char *client_get_display_title(Client *c) {
++	if (c->grouptitle && c->grouptitle[0])
++		return c->grouptitle;
++	return client_get_title(c);
++}
++
++void client_set_grouptitle(Client *c, const char *name) {
++	if (!c)
++		return;
++	free(c->grouptitle);
++	if (name && name[0])
++		c->grouptitle = strdup(name);
++	else
++		c->grouptitle = NULL;
++}
++
++void set_grouptitle(const Arg *arg) {
++	Client *c = arg->tc ? arg->tc : server.selected_monitor->sel;
++	if (!c)
++		return;
++	client_set_grouptitle(c, arg->v);
++	if (c->group_bar) {
++		mango_group_bar_update(c->group_bar, client_get_display_title(c),
++							   c->mon ? c->mon->wlr_output->scale : 1.0f);
++	}
++	if (c == client_focus_top(c->mon))
++		printstatus(IPC_WATCH_ARRANGGE);
++}
++
+ int32_t client_is_float_type(Client *c) {
+ 	struct wlr_xdg_toplevel *toplevel;
+ 	struct wlr_xdg_toplevel_state state;
+@@ -1225,6 +1256,8 @@ void apply_rule_properties(Client *c, const ConfigWinRule *r) {
+ 
+ 	APPLY_STRING_PROP(c, r, animation_type_open);
+ 	APPLY_STRING_PROP(c, r, animation_type_close);
++	if (r->grouptitle)
++		client_set_grouptitle(c, r->grouptitle);
+ }
+ void set_float_malposition(Client *tc) {
+ 	Client *c = NULL;
+@@ -1967,6 +2000,16 @@ handle_client_map(struct wl_listener *listener, void *data) {
+ 	wlr_scene_node_lower_to_bottom(&c->shield->node);
+ 	wlr_scene_node_set_enabled(&c->shield->node, false);
+ 
++	Client *group_parent = group_capture_get_parent();
++
++	// Suppress intermediate arranges while a group-captured spawn is set up.
++	// group_capture_spawn() lays out the joined group, so any earlier
++	// standalone layout pass would momentarily squash the pre-existing windows.
++	bool group_capture_active =
++		config.group_capture_spawn && group_parent != NULL;
++	if (group_capture_active)
++		server.group_capture_inhibit_arrange = true;
++
+ 	if (config.new_is_master && server.selected_monitor &&
+ 		!is_scroller_layout(server.selected_monitor))
+ 		// tile at the top
+@@ -2007,6 +2050,19 @@ handle_client_map(struct wl_listener *listener, void *data) {
+ 								WLR_EDGE_RIGHT);
+ 	}
+ 
++	server.group_capture_inhibit_arrange = false;
++
++	bool captured = group_capture_spawn(c, group_parent);
++
++	// The join is deferred until the apply_rules arranges are suppressed;
++	// if it did not happen (e.g. a rule moved the client off the parent's
++	// monitor), re-run the standalone layout pass that was suppressed.
++	if (group_capture_active && !captured)
++		arrange(c->mon, false, false);
++
++	// make sure the animation is open type
++	c->is_pending_open_animation = !captured;
++
+ 	// apply buffer effects of client
+ 	wlr_scene_node_for_each_buffer(&c->scene_surface->node,
+ 								   iter_xdg_scene_buffers, c);
+@@ -2019,8 +2075,6 @@ handle_client_map(struct wl_listener *listener, void *data) {
+ 		overview_backup_surface(c);
+ 	}
+ 
+-	// make sure the animation is open type
+-	c->is_pending_open_animation = true;
+ 	resize(c, c->geom, 0);
+ 	printstatus(IPC_WATCH_ARRANGGE);
+ }
+@@ -2295,6 +2349,7 @@ handle_client_destroy(struct wl_listener *listener, void *data) {
+ 		wl_list_remove(&c->set_decoration_mode.link);
+ 	}
+ 	switcher_remove_client(c);
++	free(c->grouptitle);
+ 	free(c);
+ }
+ 
+@@ -2352,7 +2407,7 @@ void handle_client_set_title(struct wl_listener *listener, void *data) {
+ 		return;
+ 
+ 	const char *title;
+-	title = client_get_title(c);
++	title = client_get_display_title(c);
+ 	mango_group_bar_update(c->group_bar, title,
+ 						   c->mon ? c->mon->wlr_output->scale : 1.0f);
+ 	if (title && c->foreign_toplevel)
+@@ -3029,7 +3084,7 @@ void client_set_maximize_screen(Client *c, int32_t maximizescreen,
+ 		maximizescreen_box.width = c->mon->w.width - 2 * config.gappoh;
+ 		maximizescreen_box.height = c->mon->w.height - 2 * config.gappov;
+ 
+-		if (c->group_next || c->group_prev) {
++		if (c->group_next || c->group_prev || c->isgroupfocusing) {
+ 			maximizescreen_box.height -= config.group_bar_height;
+ 			maximizescreen_box.y += config.group_bar_height;
+ 		}
+@@ -3062,7 +3117,7 @@ void reset_maximizescreen_size(Client *c) {
+ 	geom.width = c->mon->w.width - 2 * config.gappoh;
+ 	geom.height = c->mon->w.height - 2 * config.gappov;
+ 
+-	if (c->group_next || c->group_prev) {
++	if (c->group_next || c->group_prev || c->isgroupfocusing) {
+ 		geom.height -= config.group_bar_height;
+ 		geom.y += config.group_bar_height;
+ 	}
+@@ -3569,7 +3624,7 @@ void client_tile_resize(Client *c, struct wlr_box geo, int32_t interact) {
+ 		return;
+ 
+ 	if (!c->mon->isoverview && !c->isfullscreen &&
+-		(c->group_next || c->group_prev)) {
++		(c->group_next || c->group_prev || c->isgroupfocusing)) {
+ 		geo.y = geo.y + config.group_bar_height;
+ 		geo.height -= config.group_bar_height;
+ 	}
+@@ -3629,199 +3684,6 @@ void client_sync_layer(Client *c) {
+ 		client_reparent_group(c);
+ }
+ 
+-void client_add_group_bar(Client *c) {
+-
+-	if (config.group_bar_height <= 0) {
+-		return;
+-	}
+-
+-	uint32_t layer = client_target_layer(c);
+-
+-	c->group_bar = mango_group_bar_create(c, GroupBar, server.layers[layer],
+-										  config.groupbardata, 0, 0);
+-	wlr_scene_node_lower_to_bottom(&c->group_bar->scene_buffer->node);
+-	wlr_scene_node_set_enabled(&c->group_bar->scene_buffer->node, false);
+-	mango_group_bar_update(c->group_bar, client_get_title(c),
+-						   c->mon ? c->mon->wlr_output->scale
+-						   : server.selected_monitor
+-							   ? server.selected_monitor->wlr_output->scale
+-							   : 1.0f);
+-}
+-
+-void client_focus_group_member(Client *c) {
+-	if (!c->group_prev && !c->group_next)
+-		return;
+-
+-	if (c->isgroupfocusing)
+-		return;
+-
+-	Client *head = c;
+-	while (head->group_prev)
+-		head = head->group_prev;
+-
+-	Client *cur_focusing = NULL;
+-	while (head) {
+-		if (head->isgroupfocusing) {
+-			cur_focusing = head;
+-			break;
+-		}
+-		head = head->group_next;
+-	}
+-
+-	if (!cur_focusing || !cur_focusing->mon)
+-		return;
+-
+-	if (cur_focusing && cur_focusing->mon->isoverview)
+-		return;
+-
+-	cur_focusing->isgroupfocusing = false;
+-	c->mon = cur_focusing->mon;
+-	client_replace(c, cur_focusing, true, false);
+-	mango_group_bar_set_focus(cur_focusing->group_bar, false);
+-
+-	c->isgroupfocusing = true;
+-	mango_group_bar_set_focus(c->group_bar, true);
+-
+-	client_reparent_group(c);
+-
+-	client_focus(c, 1);
+-
+-	arrange(c->mon, false, false);
+-}
+-
+-void client_check_tab_node_visible(Client *c) {
+-
+-	if (!c || !c->mon)
+-		return;
+-
+-	Client *head = c;
+-	while (head->group_prev)
+-		head = head->group_prev;
+-
+-	Client *cur = head;
+-	while (cur) {
+-		if (!c->mon->isoverview && cur->group_bar &&
+-			(cur->group_next || cur->group_prev) && TAGMATCH(c, c->mon) &&
+-			ISNORMAL(c) && !c->isfullscreen) {
+-			wlr_scene_node_set_enabled(&cur->group_bar->scene_buffer->node,
+-									   true);
+-		} else {
+-			wlr_scene_node_set_enabled(&cur->group_bar->scene_buffer->node,
+-									   false);
+-		}
+-		cur = cur->group_next;
+-	}
+-}
+-
+-void client_raise_group(Client *c) {
+-	if (!c || !c->mon)
+-		return;
+-
+-	Client *head = c;
+-	while (head->group_prev)
+-		head = head->group_prev;
+-
+-	Client *cur = head;
+-	while (cur) {
+-		if (cur->group_bar) {
+-			wlr_scene_node_raise_to_top(&cur->group_bar->scene_buffer->node);
+-		}
+-		wlr_scene_node_raise_to_top(&cur->scene->node);
+-		cur = cur->group_next;
+-	}
+-}
+-
+-void client_reparent_group(Client *c) {
+-	if (!c || !c->mon)
+-		return;
+-
+-	int32_t layer = client_target_layer(c);
+-
+-	Client *head = c;
+-	while (head->group_prev)
+-		head = head->group_prev;
+-
+-	Client *cur = head;
+-	while (cur) {
+-		if (cur->group_bar) {
+-			wlr_scene_node_reparent(&cur->group_bar->scene_buffer->node,
+-									server.layers[layer]);
+-		}
+-		wlr_scene_node_reparent(&cur->scene->node, server.layers[layer]);
+-		cur = cur->group_next;
+-	}
+-}
+-
+-void client_handle_decorate_click(MangoGroupBar *gb) {
+-
+-	if (!gb)
+-		return;
+-
+-	if (gb->node_data) {
+-		Client *c = gb->node_data;
+-		client_focus_group_member(c);
+-	}
+-}
+-
+-void client_set_group_mon(Client *c, Monitor *m) {
+-	Client *head = c;
+-	while (head->group_prev)
+-		head = head->group_prev;
+-
+-	Client *cur = head;
+-	while (cur) {
+-		client_change_mon(cur, m);
+-		cur = cur->group_next;
+-	}
+-}
+-
+-void client_set_group_config(Client *c) {
+-	Client *head = c;
+-	while (head->group_prev)
+-		head = head->group_prev;
+-
+-	Client *cur = head;
+-	while (cur) {
+-		if (cur->jump_label_node)
+-			mango_jump_label_node_apply_config(cur->jump_label_node,
+-											   &config.jumplabeldata);
+-		wlr_scene_rect_set_color(cur->droparea, config.dropcolor);
+-		wlr_scene_rect_set_color(cur->splitindicator[0], config.splitcolor);
+-		wlr_scene_rect_set_color(cur->splitindicator[1], config.splitcolor);
+-		mango_group_bar_apply_config(cur->group_bar, &config.groupbardata);
+-		cur = cur->group_next;
+-	}
+-}
+-
+-void client_group_detach(Client *c) {
+-	if (c->group_prev)
+-		c->group_prev->group_next = c->group_next;
+-	if (c->group_next)
+-		c->group_next->group_prev = c->group_prev;
+-	c->group_prev = NULL;
+-	c->group_next = NULL;
+-	c->isgroupfocusing = false;
+-}
+-
+-void client_group_replace(Client *old, Client *new) {
+-	client_group_detach(new);
+-
+-	new->group_prev = old->group_prev;
+-	new->group_next = old->group_next;
+-	if (old->group_prev)
+-		old->group_prev->group_next = new;
+-	if (old->group_next)
+-		old->group_next->group_prev = new;
+-	old->group_prev = NULL;
+-	old->group_next = NULL;
+-
+-	if (client_is_parked(old) || (!new->group_prev && !new->group_next)) {
+-		new->isgroupfocusing = false;
+-	} else {
+-		new->isgroupfocusing = old->isgroupfocusing;
+-	}
+-}
+-
+ void mango_surface_frame_done(struct wlr_surface *surface, int sx, int sy,
+ 							  void *data) {
+ 	(void)sx;
+
+From 9a1bf8fe33df0c8df702aaa604bdd2028d8e4bad Mon Sep 17 00:00:00 2001
+From: SDGDen <sdgden@sdgcloud.nl>
+Date: Tue, 15 Sep 2026 00:43:06 +0200
+Subject: [PATCH 2/3] removed symlink
+
+---
+ old-ver | 1 -
+ 1 file changed, 1 deletion(-)
+ delete mode 120000 old-ver
+
+diff --git a/old-ver b/old-ver
+deleted file mode 120000
+index 05d8355f5..000000000
+--- a/old-ver
++++ /dev/null
+@@ -1 +0,0 @@
+-/home/den/repos/mango-dev-2
+\ No newline at end of file
+
+From 131bb74acfa35ea7b3f72ba65042c96f6bf715b9 Mon Sep 17 00:00:00 2001
+From: SDGDen <sdgden@sdgcloud.nl>
+Date: Tue, 15 Sep 2026 03:38:05 +0200
+Subject: [PATCH 3/3] finished refactor, added some new fields to the IPC for
+ debugging and ran testing harness to verify functionality
+
+---
+ docs/bindings/keys.md         |   2 +-
+ include/mango/dispatch/bind.h |   5 +
+ include/mango/layout/group.h  |  24 ++-
+ include/mango/manage/client.h |  10 -
+ src/animation/client.c        |   1 +
+ src/config/parse_config.c     |   2 +-
+ src/dispatch/bind.c           | 349 ++++++++++++++++++++++++++++++++++
+ src/input/pointer.c           |   1 +
+ src/ipc/ipc.c                 |  32 +++-
+ src/layout/arrange.c          |   1 +
+ src/layout/group.c            | 314 +-----------------------------
+ src/manage/client.c           |  16 +-
+ src/manage/monitor.c          |   1 +
+ 13 files changed, 415 insertions(+), 343 deletions(-)
+
+diff --git a/docs/bindings/keys.md b/docs/bindings/keys.md
+index 809cb4dce..7054c46a3 100644
+--- a/docs/bindings/keys.md
++++ b/docs/bindings/keys.md
+@@ -133,7 +133,7 @@ bindr=Super,Super_L,spawn,rofi -show run
+ | :--- | :--- | :--- |
+ | `groupjoin` | `left/right/up/down`  | Join group by direction. |
+ | `groupmerge` | `left/right/up/down`  | merge window in direction into focused group. |
+-| `smartgroup` | `left/right/up/down` | groupmerge if a group is focused, groupjoin if not |
++| `groupsmart` | `left/right/up/down` | groupmerge if a group is focused, groupjoin if not |
+ | `groupfocus` | `prev/next`  | Focus group member by direction. |
+ | `groupleave` | - | eject current focused window from group. |
+ | `grouptitle` | `string` | set the group bar title for the focused window
+diff --git a/include/mango/dispatch/bind.h b/include/mango/dispatch/bind.h
+index 178ef4e0e..2442b3928 100644
+--- a/include/mango/dispatch/bind.h
++++ b/include/mango/dispatch/bind.h
+@@ -34,6 +34,11 @@ void focus_direction(const Arg *arg);
+ void focus_window_or_workspace(const Arg *arg);
+ void group_join(const Arg *arg);
+ void group_leave(const Arg *arg);
++void group_init(const Arg *arg);
++void group_all(const Arg *arg);
++void group_merge(const Arg *arg);
++void group_disband(const Arg *arg);
++void group_smart(const Arg *arg);
+ void set_grouptitle(const Arg *arg);
+ void toggle_overview(const Arg *arg);
+ void enter_overview(const Arg *arg);
+diff --git a/include/mango/layout/group.h b/include/mango/layout/group.h
+index cd8d06b19..7d7b8532f 100644
+--- a/include/mango/layout/group.h
++++ b/include/mango/layout/group.h
+@@ -1,15 +1,21 @@
+-#ifndef __GROUP_H__
+-#define __GROUP_H__ 1
++#ifndef __LAYOUT_GROUP_H__
++#define __LAYOUT_GROUP_H__ 1
+ 
+-#include "mango/dispatch/bind.h"
+-
+-void group_init(const Arg *arg);
+-void group_all(const Arg *arg);
+-void group_merge(const Arg *arg);
+-void group_disband(const Arg *arg);
+-void group_smart(const Arg *arg);
++#include "mango/common/types.h"
++#include <stdbool.h>
+ 
+ Client *group_capture_get_parent(void);
+ bool group_capture_spawn(Client *c, Client *group_parent);
+ 
++void client_add_group_bar(Client *c);
++void client_focus_group_member(Client *c);
++void client_check_tab_node_visible(Client *c);
++void client_raise_group(Client *c);
++void client_reparent_group(Client *c);
++void client_handle_decorate_click(MangoGroupBar *gb);
++void client_set_group_mon(Client *c, Monitor *m);
++void client_set_group_config(Client *c);
++void client_group_detach(Client *c);
++void client_group_replace(Client *old, Client *new);
++
+ #endif
+diff --git a/include/mango/manage/client.h b/include/mango/manage/client.h
+index e5f889113..f3bc5b0cf 100644
+--- a/include/mango/manage/client.h
++++ b/include/mango/manage/client.h
+@@ -411,16 +411,6 @@ void client_pending_force_kill(Client *c);
+ void client_add_jump_label_node(Client *c);
+ uint32_t client_target_layer(Client *c);
+ void client_sync_layer(Client *c);
+-void client_add_group_bar(Client *c);
+-void client_focus_group_member(Client *c);
+-void client_check_tab_node_visible(Client *c);
+-void client_raise_group(Client *c);
+-void client_reparent_group(Client *c);
+-void client_handle_decorate_click(MangoGroupBar *gb);
+-void client_set_group_mon(Client *c, Monitor *m);
+-void client_set_group_config(Client *c);
+-void client_group_detach(Client *c);
+-void client_group_replace(Client *old, Client *new);
+ void mango_surface_frame_done(struct wlr_surface *surface, int sx, int sy,
+ 							  void *data);
+ // Feeds frame callbacks to all surfaces (including subsurfaces) of hidden
+diff --git a/src/animation/client.c b/src/animation/client.c
+index 5f2295731..a65fbf53b 100644
+--- a/src/animation/client.c
++++ b/src/animation/client.c
+@@ -3,6 +3,7 @@
+ #include "mango/common/server.h"
+ #include "mango/common/util.h"
+ #include "mango/layout/dwindle.h"
++#include "mango/layout/group.h"
+ #include "mango/layout/layout.h"
+ #include "mango/manage/client.h"
+ #include "mango/manage/misc.h"
+diff --git a/src/config/parse_config.c b/src/config/parse_config.c
+index ed17f4b5b..2900e7774 100644
+--- a/src/config/parse_config.c
++++ b/src/config/parse_config.c
+@@ -4631,7 +4631,7 @@ FuncType parse_func_name(char *func_name, Arg *arg, char *arg_value,
+ 	} else if (strcmp(func_name, "grouptitle") == 0) {
+ 		func = set_grouptitle;
+ 		(*arg).v = strdup(arg_value);
+-	} else if (strcmp( func_name, "groupsmart") == 0) {
++	} else if (strcmp(func_name, "groupsmart") == 0) {
+ 		func = group_smart;
+ 		(*arg).i = parse_direction(arg_value);
+ 	} else if (strcmp(func_name, "focusid") == 0) {
+diff --git a/src/dispatch/bind.c b/src/dispatch/bind.c
+index 96711ad53..e668468ab 100644
+--- a/src/dispatch/bind.c
++++ b/src/dispatch/bind.c
+@@ -4,6 +4,7 @@
+ #include "mango/common/server.h"
+ #include "mango/common/util.h"
+ #include "mango/config/parse_config.h"
++#include "mango/draw/text-node.h"
+ #include "mango/ext-protocol/ext-workspace.h"
+ #include "mango/ext-protocol/foreign-toplevel.h"
+ #include "mango/ext-protocol/xdg-activation.h"
+@@ -13,6 +14,7 @@
+ #include "mango/ipc/ipc.h"
+ #include "mango/layout/arrange.h"
+ #include "mango/layout/dwindle.h"
++#include "mango/layout/group.h"
+ #include "mango/layout/layout.h"
+ #include "mango/layout/overview.h"
+ #include "mango/layout/scroll.h"
+@@ -2527,6 +2529,353 @@ void focus_by_id(const Arg *arg) {
+ 	return;
+ }
+ 
++void group_init(const Arg *arg) {
++	if (!server.selected_monitor)
++		return;
++	if (server.selected_monitor->isoverview)
++		return;
++
++	Client *target = arg->tc ? arg->tc : server.selected_monitor->sel;
++	if (!target || !target->mon)
++		return;
++	if (target->group_prev || target->group_next || target->isgroupfocusing)
++		return;
++
++	target->isgroupfocusing = true;
++	client_add_group_bar(target);
++	client_focus(target, 1);
++	arrange(target->mon, false, false);
++}
++
++void group_smart(const Arg *arg) {
++	if (!server.selected_monitor)
++		return;
++	if (server.selected_monitor->isoverview)
++		return;
++
++	Client *target = server.selected_monitor->sel;
++	if (!target || !target->mon)
++		return;
++	if (!target->group_prev && !target->group_next) {
++		group_join(arg);
++	} else {
++		group_merge(arg);
++	}
++}
++
++void group_all(const Arg *arg) {
++	(void)arg;
++	if (!server.selected_monitor)
++		return;
++	if (server.selected_monitor->isoverview)
++		return;
++
++	Client *visible[256];
++	int count = 0;
++
++	Client *client;
++	wl_list_for_each(client, &server.clients, link) {
++		if (!VISIBLEON(client, server.selected_monitor))
++			continue;
++		if (!(client->group_prev || client->group_next ||
++			  client->isgroupfocusing)) {
++			if (count < 256)
++				visible[count++] = client;
++			continue;
++		}
++		Client *head = client;
++		while (head->group_prev && head->group_prev != head)
++			head = head->group_prev;
++		Client *cur = head;
++		while (cur && count < 256) {
++			bool duplicate = false;
++			for (int j = 0; j < count; j++) {
++				if (visible[j] == cur) {
++					duplicate = true;
++					break;
++				}
++			}
++			if (!duplicate)
++				visible[count++] = cur;
++			cur = cur->group_next;
++		}
++	}
++
++	if (count < 2)
++		return;
++
++	/* A ring walk starts at the group head, which may be a parked member.
++	 * Park everything but the already-active tab would leave server.clients
++	 * empty, so make the registered focusing member the rebuild anchor. */
++	for (int index = 1; index < count; index++) {
++		if (visible[index]->isgroupfocusing &&
++			!client_is_parked(visible[index])) {
++			Client *swap = visible[0];
++			visible[0] = visible[index];
++			visible[index] = swap;
++			break;
++		}
++	}
++
++	for (int index = 0; index < count; index++) {
++		if (visible[index]->group_next || visible[index]->group_prev)
++			client_group_detach(visible[index]);
++	}
++	Client *target = visible[0];
++
++	target->isgroupfocusing = true;
++
++	for (int index = 1; index < count; index++) {
++		visible[index]->group_next = target;
++		if (target->group_prev)
++			target->group_prev->group_next = visible[index];
++		visible[index]->group_prev = target->group_prev;
++		target->group_prev = visible[index];
++
++		const uint32_t tag = get_client_tag_idx(visible[index]);
++		if (visible[index]->mon) {
++			const Layout *layout =
++				visible[index]->mon->pertag->ltidxs[tag];
++			if (layout->id == DWINDLE)
++				dwindle_remove(
++					&visible[index]->mon->pertag->dwindle_root[tag],
++					visible[index]);
++			else if (layout->id == SCROLLER ||
++					 layout->id == VERTICAL_SCROLLER) {
++				struct TagScrollerState *st =
++					visible[index]->mon->pertag->scroller_state[tag];
++				if (st) {
++					struct ScrollerStackNode *cn =
++						find_scroller_node(st, visible[index]);
++					if (cn)
++						scroller_node_remove(st, cn);
++				}
++			}
++		}
++
++		client_park(visible[index]);
++		wlr_scene_node_set_enabled(&visible[index]->scene->node, false);
++		if (visible[index]->group_bar)
++			wlr_scene_node_set_enabled(
++				&visible[index]->group_bar->scene_buffer->node, false);
++	}
++	client_focus(target, 1);
++	arrange(target->mon, false, false);
++}
++
++void group_merge(const Arg *arg) {
++	if (!server.selected_monitor)
++		return;
++	if (server.selected_monitor->isoverview)
++		return;
++
++	Client *group = server.selected_monitor->sel;
++	if (!group || !group->mon)
++		return;
++
++	Client *target = direction_select(arg);
++	if (!target || target == group)
++		return;
++	Monitor *oldmon = NULL;
++
++	if (target->group_next || target->group_prev)
++		group_leave(&(Arg){.tc = target});
++
++	if (target->mon != group->mon) {
++		oldmon = target->mon;
++		target->mon = group->mon;
++	}
++
++	if (!group->group_prev && !group->group_next)
++		group->isgroupfocusing = true;
++
++	target->group_next = group;
++	if (group->group_prev)
++		group->group_prev->group_next = target;
++	target->group_prev = group->group_prev;
++	group->group_prev = target;
++
++	client_focus_group_member(target);
++	arrange(target->mon, false, false);
++
++	if (oldmon)
++		arrange(oldmon, false, false);
++}
++
++void group_disband(const Arg *arg) {
++	if (!server.selected_monitor)
++		return;
++
++	Client *target = arg->tc ? arg->tc : server.selected_monitor->sel;
++
++	if (!target || !target->mon)
++		return;
++
++	if (!target->group_prev && !target->group_next) {
++		if (target->isgroupfocusing) {
++			target->isgroupfocusing = false;
++client_focus(target, 1);
++	arrange(target->mon, false, false);
++}
++		return;
++	}
++
++	if (target->mon->isoverview)
++		return;
++
++	Client *head = target;
++	while (head->group_prev && head->group_prev != head)
++		head = head->group_prev;
++
++	Client *members[256];
++	int membercount = 0;
++
++	Client *current = head;
++	while (current && membercount < 256) {
++		members[membercount++] = current;
++		current = current->group_next;
++	}
++	for (int index = 0; index < membercount; index++) {
++		members[index]->mon = target->mon;
++		if (client_is_parked(members[index]))
++			client_unpark(members[index], target);
++		client_group_detach(members[index]);
++		wlr_scene_node_set_enabled(&members[index]->scene->node, true);
++	}
++	client_focus(target, 1);
++	arrange(target->mon, false, false);
++}
++
++void group_join(const Arg *arg) {
++	if (!server.selected_monitor)
++		return;
++
++	Monitor *oldmon = NULL;
++
++	Client *need_join_client = arg->tc ? arg->tc : server.selected_monitor->sel;
++	if (!need_join_client || !need_join_client->mon)
++		return;
++
++	if (need_join_client->mon->isoverview)
++		return;
++
++	Client *need_replace_client = NULL;
++	need_replace_client = direction_select(arg);
++
++	if (!need_replace_client || !need_replace_client->mon)
++		return;
++
++	if (need_join_client == need_replace_client)
++		return;
++
++	if (need_join_client->group_next || need_join_client->group_prev) {
++		group_leave(&(Arg){.tc = need_join_client});
++	}
++
++	if (need_join_client->mon != need_replace_client->mon) {
++		oldmon = need_join_client->mon;
++		need_join_client->mon = need_replace_client->mon;
++	}
++
++	if (!need_replace_client->group_prev && !need_replace_client->group_next) {
++		need_replace_client->isgroupfocusing = true;
++	}
++
++	need_join_client->group_next = need_replace_client;
++
++	if (need_replace_client->group_prev) {
++		need_replace_client->group_prev->group_next = need_join_client;
++	}
++
++	need_join_client->group_prev = need_replace_client->group_prev;
++
++	need_replace_client->group_prev = need_join_client;
++
++	client_focus_group_member(need_join_client);
++	arrange(need_join_client->mon, false, false);
++
++	if (oldmon) {
++		arrange(oldmon, false, false);
++	}
++
++	return;
++}
++
++void group_leave(const Arg *arg) {
++	if (!server.selected_monitor)
++		return;
++	Client *tc = arg->tc ? arg->tc : server.selected_monitor->sel;
++	if (!tc || !tc->mon || !tc->isgroupfocusing)
++		return;
++	if (!tc->group_next && !tc->group_prev) {
++		return;
++	}
++
++	if (tc->mon->isoverview)
++		return;
++
++	Client *rc = tc->group_next ? tc->group_next : tc->group_prev;
++
++	client_focus_group_member(rc);
++	client_group_detach(tc);
++
++	tc->isgroupfocusing = false;
++	tc->mon = rc->mon;
++	client_unpark(tc, rc);
++	/* rc stays focused: put tc right behind it in the focus stack. */
++	wl_list_remove(&tc->flink);
++	wl_list_insert(rc->flink.next, &tc->flink);
++
++	if (!rc->group_prev && !rc->group_next) {
++		rc->isgroupfocusing = false;
++	}
++
++	arrange(tc->mon, false, false);
++
++	return;
++}
++
++void group_focus(const Arg *arg) {
++	Client *c = arg->tc ? arg->tc : server.selected_monitor->sel;
++	if (!c || !c->mon)
++		return;
++
++	if (!c->group_prev && !c->group_next) {
++		return;
++	}
++
++	if (c->mon->isoverview)
++		return;
++
++	Client *tc = NULL;
++
++	if (arg->i == NEXT) {
++		tc = c->group_next;
++	} else {
++		tc = c->group_prev;
++	}
++
++	if (!tc)
++		return;
++
++	client_focus_group_member(tc);
++	arrange(tc->mon, false, false);
++	return;
++}
++
++void set_grouptitle(const Arg *arg) {
++	Client *c = arg->tc ? arg->tc : server.selected_monitor->sel;
++	if (!c)
++		return;
++	client_set_grouptitle(c, arg->v);
++	if (c->group_bar) {
++		mango_group_bar_update(c->group_bar, client_get_display_title(c),
++							   c->mon ? c->mon->wlr_output->scale : 1.0f);
++	}
++	if (c == client_focus_top(c->mon))
++		printstatus(IPC_WATCH_ARRANGGE);
++}
++
+ void load_config_file(const Arg *arg) {
+ 	snprintf(server.cli_config_path, sizeof(server.cli_config_path), "%s",
+ 			 arg->v);
+diff --git a/src/input/pointer.c b/src/input/pointer.c
+index 08c7d7150..3b06bd6f2 100644
+--- a/src/input/pointer.c
++++ b/src/input/pointer.c
+@@ -10,6 +10,7 @@
+ #include "mango/ipc/ipc.h"
+ #include "mango/layout/arrange.h"
+ #include "mango/layout/dwindle.h"
++#include "mango/layout/group.h"
+ #include "mango/layout/layout.h"
+ #include "mango/layout/scroll.h"
+ #include "mango/manage/client.h"
+diff --git a/src/ipc/ipc.c b/src/ipc/ipc.c
+index 219c3c09f..0c5f8e10b 100644
+--- a/src/ipc/ipc.c
++++ b/src/ipc/ipc.c
+@@ -538,7 +538,30 @@ cJSON *monitor_active_tags(Monitor *m) {
+ 			cJSON_AddItemToArray(arr, cJSON_CreateNumber(i + 1));
+ 	return arr;
+ }
++static int collect_group_info(Client *c, uint32_t *ids, int max, uint32_t *active) {
++	Client *head = c;
++	int n = 0;
++	*active = 0;
++	if (!c->group_prev && !c->group_next && !c->isgroupfocusing)
++		return 0;
++	while (head->group_prev && head->group_prev != head)
++		head = head->group_prev;
++	for (Client *m = head; m; m = m->group_next) {
++		if (n >= max)
++			break;
++		ids[n] = m->id;
++		if (m->isgroupfocusing)
++			*active = m->id;
++		n++;
++		if (m->group_next == head)
++			break;
++	}
++	return n;
++}
+ cJSON *build_client_json(Client *c) {
++	uint32_t group_ids[256];
++	uint32_t group_active = 0;
++	int group_size = collect_group_info(c, group_ids, 256, &group_active);
+ 	cJSON *obj = cJSON_CreateObject();
+ 
+ 	cJSON_AddNumberToObject(obj, "id", c->id);
+@@ -555,7 +578,14 @@ cJSON *build_client_json(Client *c) {
+ 	cJSON_AddBoolToObject(obj, "is_xwayland", c->type == X11 ? true : false);
+ 	cJSON_AddBoolToObject(obj, "is_swallowing", c->swallowing ? true : false);
+ 	cJSON_AddBoolToObject(obj, "is_swallowedby", c->swallowdby ? true : false);
+-	cJSON_AddBoolToObject(obj, "is_group", c->group_prev || c->group_next);
++	cJSON_AddBoolToObject(obj, "is_group", group_size > 0);
++	cJSON_AddBoolToObject(obj, "is_group_active", c->isgroupfocusing);
++	cJSON_AddNumberToObject(obj, "group_size", group_size);
++	cJSON_AddNumberToObject(obj, "group_active", group_active);
++	cJSON *group_members = cJSON_CreateArray();
++	for (int i = 0; i < group_size; i++)
++		cJSON_AddItemToArray(group_members, cJSON_CreateNumber(group_ids[i]));
++	cJSON_AddItemToObject(obj, "group_members", group_members);
+ 	cJSON_AddBoolToObject(obj, "is_visible", c->mon && VISIBLEON(c, c->mon));
+ 	cJSON_AddBoolToObject(obj, "is_focused", c->isfocusing);
+ 	cJSON_AddBoolToObject(obj, "is_fullscreen", c->isfullscreen);
+diff --git a/src/layout/arrange.c b/src/layout/arrange.c
+index 818bd1594..fb06fd6e5 100644
+--- a/src/layout/arrange.c
++++ b/src/layout/arrange.c
+@@ -5,6 +5,7 @@
+ #include "mango/input/pointer.h"
+ #include "mango/ipc/ipc.h"
+ #include "mango/layout/dwindle.h"
++#include "mango/layout/group.h"
+ #include "mango/layout/layout.h"
+ #include "mango/layout/scroll.h"
+ #include "mango/layout/vertical.h"
+diff --git a/src/layout/group.c b/src/layout/group.c
+index 98399a89d..8cabbd251 100644
+--- a/src/layout/group.c
++++ b/src/layout/group.c
+@@ -6,182 +6,6 @@
+ #include "mango/manage/client.h"
+ #include "mango/manage/monitor.h"
+ 
+-void group_init(const Arg *arg) {
+-	if (!server.selected_monitor)
+-		return;
+-	if (server.selected_monitor->isoverview)
+-		return;
+-
+-	Client *target = arg->tc ? arg->tc : server.selected_monitor->sel;
+-	if (!target || !target->mon)
+-		return;
+-	if (target->group_prev || target->group_next || target->isgroupfocusing)
+-		return;
+-
+-	target->isgroupfocusing = true;
+-	client_add_group_bar(target);
+-	client_focus(target, 1);
+-	arrange(target->mon, false, false);
+-}
+-
+-
+-void group_smart(const Arg *arg) {
+-	if (!server.selected_monitor)
+-		return;
+-	if (server.selected_monitor->isoverview)
+-		return;
+-
+-	Client *target = server.selected_monitor->sel;
+-	if (!target || !target->mon)
+-		return;
+-	if (!target->group_prev && !target->group_next) {
+-		group_join(arg);
+-	} else {
+-		group_merge(arg);
+-	}
+-	
+-}
+-
+-void group_all(const Arg *arg) {
+-	(void)arg;
+-	if (!server.selected_monitor)
+-		return;
+-	if (server.selected_monitor->isoverview)
+-		return;
+-
+-	Client *visible[256];
+-	int count = 0;
+-
+-	Client *client;
+-	wl_list_for_each(client, &server.clients, link) {
+-		if (!VISIBLEON(client, server.selected_monitor))
+-			continue;
+-		if (!(client->group_prev || client->group_next ||
+-			  client->isgroupfocusing)) {
+-			if (count < 256)
+-				visible[count++] = client;
+-			continue;
+-		}
+-		Client *head = client;
+-		while (head->group_prev && head->group_prev != head)
+-			head = head->group_prev;
+-		Client *cur = head;
+-		while (cur && count < 256) {
+-			visible[count++] = cur;
+-			cur = cur->group_next;
+-		}
+-	}
+-
+-	if (count < 2)
+-		return;
+-
+-	for (int index = 0; index < count; index++) {
+-		if (visible[index]->group_next || visible[index]->group_prev)
+-			client_group_detach(visible[index]);
+-	}
+-	Client *target = visible[0];
+-
+-	target->isgroupfocusing = true;
+-
+-	for (int index = 1; index < count; index++) {
+-		visible[index]->group_next = target;
+-		if (target->group_prev)
+-			target->group_prev->group_next = visible[index];
+-		visible[index]->group_prev = target->group_prev;
+-		target->group_prev = visible[index];
+-		client_park(visible[index]);
+-		wlr_scene_node_set_enabled(&visible[index]->scene->node, false);
+-		if (visible[index]->group_bar)
+-			wlr_scene_node_set_enabled(
+-				&visible[index]->group_bar->scene_buffer->node, false);
+-	}
+-	client_focus(target, 1);
+-	arrange(target->mon, false, false);
+-}
+-
+-void group_merge(const Arg *arg) {
+-	if (!server.selected_monitor)
+-		return;
+-	if (server.selected_monitor->isoverview)
+-		return;
+-
+-	Client *group = server.selected_monitor->sel;
+-	if (!group || !group->mon)
+-		return;
+-
+-	Client *target = direction_select(arg);
+-	if (!target || target == group)
+-		return;
+-	Monitor *oldmon = NULL;
+-
+-	if (target->group_next || target->group_prev)
+-		group_leave(&(Arg){.tc = target});
+-
+-	if (target->mon != group->mon) {
+-		oldmon = target->mon;
+-		target->mon = group->mon;
+-	}
+-
+-	if (!group->group_prev && !group->group_next)
+-		group->isgroupfocusing = true;
+-
+-	target->group_next = group;
+-	if (group->group_prev)
+-		group->group_prev->group_next = target;
+-	target->group_prev = group->group_prev;
+-	group->group_prev = target;
+-
+-	client_focus_group_member(target);
+-	arrange(target->mon, false, false);
+-
+-	if (oldmon)
+-		arrange(oldmon, false, false);
+-}
+-
+-void group_disband(const Arg *arg) {
+-	if (!server.selected_monitor)
+-		return;
+-
+-	Client *target = arg->tc ? arg->tc : server.selected_monitor->sel;
+-
+-	if (!target || !target->mon)
+-		return;
+-
+-	if (!target->group_prev && !target->group_next) {
+-		if (target->isgroupfocusing) {
+-			target->isgroupfocusing = false;
+-			client_focus(target, 1);
+-			arrange(target->mon, false, false);
+-		}
+-		return;
+-	}
+-
+-	if (target->mon->isoverview)
+-		return;
+-
+-	Client *head = target;
+-	while (head->group_prev && head->group_prev != head)
+-		head = head->group_prev;
+-
+-	Client *members[256];
+-	int membercount = 0;
+-
+-	Client *current = head;
+-	while (current && membercount < 256) {
+-		members[membercount++] = current;
+-		current = current->group_next;
+-	}
+-	for (int index = 0; index < membercount; index++) {
+-		members[index]->mon = target->mon;
+-		if (client_is_parked(members[index]))
+-			client_unpark(members[index], target);
+-		client_group_detach(members[index]);
+-		wlr_scene_node_set_enabled(&members[index]->scene->node, true);
+-	}
+-	client_focus(target, 1);
+-	arrange(target->mon, false, false);
+-}
+-
+ Client *group_capture_get_parent(void) {
+ 	if (!config.group_capture_spawn || !server.selected_monitor)
+ 		return NULL;
+@@ -210,126 +34,6 @@ bool group_capture_spawn(Client *c, Client *group_parent) {
+ 	return true;
+ }
+ 
+-void group_join(const Arg *arg) {
+-
+-	if (!server.selected_monitor)
+-		return;
+-
+-	Monitor *oldmon = NULL;
+-
+-	Client *need_join_client = arg->tc ? arg->tc : server.selected_monitor->sel;
+-	if (!need_join_client || !need_join_client->mon)
+-		return;
+-
+-	if (need_join_client->mon->isoverview)
+-		return;
+-
+-	Client *need_replace_client = NULL;
+-	need_replace_client = direction_select(arg);
+-
+-	if (!need_replace_client || !need_replace_client->mon)
+-		return;
+-
+-	if (need_join_client == need_replace_client)
+-		return;
+-
+-	if (need_join_client->group_next || need_join_client->group_prev) {
+-		group_leave(&(Arg){.tc = need_join_client});
+-	}
+-
+-	if (need_join_client->mon != need_replace_client->mon) {
+-		oldmon = need_join_client->mon;
+-		need_join_client->mon = need_replace_client->mon;
+-	}
+-
+-	if (!need_replace_client->group_prev && !need_replace_client->group_next) {
+-		need_replace_client->isgroupfocusing = true;
+-	}
+-
+-	need_join_client->group_next = need_replace_client;
+-
+-	if (need_replace_client->group_prev) {
+-		need_replace_client->group_prev->group_next = need_join_client;
+-	}
+-
+-	need_join_client->group_prev = need_replace_client->group_prev;
+-
+-	need_replace_client->group_prev = need_join_client;
+-
+-	client_focus_group_member(need_join_client);
+-	arrange(need_join_client->mon, false, false);
+-
+-	// oldmon may already be destroyed.
+-	if (oldmon) {
+-		arrange(oldmon, false, false);
+-	}
+-
+-	return;
+-}
+-
+-void group_leave(const Arg *arg) {
+-
+-	if (!server.selected_monitor)
+-		return;
+-	Client *tc = arg->tc ? arg->tc : server.selected_monitor->sel;
+-	if (!tc || !tc->mon || !tc->isgroupfocusing)
+-		return;
+-	if (!tc->group_next && !tc->group_prev) {
+-		return;
+-	}
+-
+-	if (tc->mon->isoverview)
+-		return;
+-
+-	Client *rc = tc->group_next ? tc->group_next : tc->group_prev;
+-
+-	client_focus_group_member(rc);
+-	client_group_detach(tc);
+-
+-	tc->isgroupfocusing = false;
+-	tc->mon = rc->mon;
+-	client_unpark(tc, rc);
+-	/* rc stays focused: put tc right behind it in the focus stack. */
+-	wl_list_remove(&tc->flink);
+-	wl_list_insert(rc->flink.next, &tc->flink);
+-
+-	if (!rc->group_prev && !rc->group_next) {
+-		rc->isgroupfocusing = false;
+-	}
+-
+-	arrange(tc->mon, false, false);
+-
+-	return;
+-}
+-
+-void group_focus(const Arg *arg) {
+-	Client *c = arg->tc ? arg->tc : server.selected_monitor->sel;
+-	if (!c || !c->mon)
+-		return;
+-
+-	if (!c->group_prev && !c->group_next) {
+-		return;
+-	}
+-
+-	if (c->mon->isoverview)
+-		return;
+-
+-	Client *tc = NULL;
+-
+-	if (arg->i == NEXT) {
+-		tc = c->group_next;
+-	} else {
+-		tc = c->group_prev;
+-	}
+-
+-	if (!tc)
+-		return;
+-
+-	client_focus_group_member(tc);
+-	arrange(tc->mon, false, false);
+-	return;
+-}
+-
+ void client_add_group_bar(Client *c) {
+ 
+ 	if (config.group_bar_height <= 0) {
+@@ -353,26 +57,24 @@ void client_focus_group_member(Client *c) {
+ 	if (!c->group_prev && !c->group_next)
+ 		return;
+ 
+-	if (c->isgroupfocusing)
+-		return;
+-
+ 	Client *head = c;
+ 	while (head->group_prev)
+ 		head = head->group_prev;
+ 
++	Client *cur = head;
+ 	Client *cur_focusing = NULL;
+-	while (head) {
+-		if (head->isgroupfocusing) {
+-			cur_focusing = head;
++	while (cur) {
++		if (cur != c && cur->isgroupfocusing && cur->mon)
++			cur_focusing = cur;
++		cur = cur->group_next;
++		if (cur == head)
+ 			break;
+-		}
+-		head = head->group_next;
+ 	}
+ 
+ 	if (!cur_focusing || !cur_focusing->mon)
+ 		return;
+ 
+-	if (cur_focusing && cur_focusing->mon->isoverview)
++	if (cur_focusing->mon->isoverview)
+ 		return;
+ 
+ 	cur_focusing->isgroupfocusing = false;
+@@ -521,4 +223,4 @@ void client_group_replace(Client *old, Client *new) {
+ 	} else {
+ 		new->isgroupfocusing = old->isgroupfocusing;
+ 	}
+-}
++}
+\ No newline at end of file
+diff --git a/src/manage/client.c b/src/manage/client.c
+index dff4db14d..087502daa 100644
+--- a/src/manage/client.c
++++ b/src/manage/client.c
+@@ -254,19 +254,6 @@ void client_set_grouptitle(Client *c, const char *name) {
+ 		c->grouptitle = NULL;
+ }
+ 
+-void set_grouptitle(const Arg *arg) {
+-	Client *c = arg->tc ? arg->tc : server.selected_monitor->sel;
+-	if (!c)
+-		return;
+-	client_set_grouptitle(c, arg->v);
+-	if (c->group_bar) {
+-		mango_group_bar_update(c->group_bar, client_get_display_title(c),
+-							   c->mon ? c->mon->wlr_output->scale : 1.0f);
+-	}
+-	if (c == client_focus_top(c->mon))
+-		printstatus(IPC_WATCH_ARRANGGE);
+-}
+-
+ int32_t client_is_float_type(Client *c) {
+ 	struct wlr_xdg_toplevel *toplevel;
+ 	struct wlr_xdg_toplevel_state state;
+@@ -3607,9 +3594,8 @@ void client_replace(Client *c, Client *w, bool is_group_change_member,
+ 		overview_backup_surface(c);
+ 	}
+ 
+-	if (w->group_bar && !is_group_change_member) {
++	if (w->group_bar)
+ 		wlr_scene_node_set_enabled(&w->group_bar->scene_buffer->node, false);
+-	}
+ 
+ 	if (w->jump_label_node) {
+ 		wlr_scene_node_set_enabled(&w->jump_label_node->scene_buffer->node,
+diff --git a/src/manage/monitor.c b/src/manage/monitor.c
+index 9e7a0b651..e6b693545 100644
+--- a/src/manage/monitor.c
++++ b/src/manage/monitor.c
+@@ -15,6 +15,7 @@
+ #include "mango/ipc/ipc.h"
+ #include "mango/layout/arrange.h"
+ #include "mango/layout/dwindle.h"
++#include "mango/layout/group.h"
+ #include "mango/layout/layout.h"
+ #include "mango/layout/scroll.h"
+ #include "mango/manage/client.h"
