@@ -3,7 +3,7 @@
     ./common
     ./sway
     ./hyprland
-    ./niri
+    # ./niri
     ./mango
   ];
   home.sessionVariables = {
