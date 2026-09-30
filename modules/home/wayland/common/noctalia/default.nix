@@ -208,68 +208,68 @@
           "lockscreen-login-box@eDP-1"
         ];
       };
-    };
-    "shell" = {
-      "screen_corners" = {
-        "enabled" = true;
+      "shell" = {
+        "screen_corners" = {
+          "enabled" = true;
+        };
+        "screen_time_enabled" = true;
       };
-      "screen_time_enabled" = true;
-    };
-    "theme" = {
-      "pure_black_dark" = true;
-    };
-    "widget" = {
-      "audio_visualizer" = {
-        "mirrored" = false;
-        "show_when_idle" = true;
+      "theme" = {
+        "pure_black_dark" = true;
       };
-      "battery" = {
-        "capsule" = true;
-        "show_label" = false;
-      };
-      "brightness" = {
-        "show_label" = false;
-      };
-      "clock" = {
-        "capsule" = true;
-        "format" = "{:%a %e - %H:%M}";
-      };
-      "cpu" = {
-        "stat" = "cpu_freq";
-      };
-      "media" = {
-        "anchor" = true;
-        "capsule" = true;
-        "show_progress" = true;
-        "title_scroll" = "always";
-      };
-      "network" = {
-        "show_label" = false;
-      };
-      "network_rx" = {
-        "network_speed_compact" = true;
-        "visualization" = "none";
-      };
-      "network_tx" = {
-        "network_speed_compact" = true;
-        "visualization" = "none";
-      };
-      "sysmon" = {
-        "visualization" = "none";
-      };
-      "tray" = {
-        "detached_panel" = true;
-        "drawer" = true;
-        "hide_passive" = false;
-      };
-      "volume" = {
-        "show_label" = false;
-      };
-      "workspaces" = {
-        "anchor" = true;
-        "label_source" = "name";
-        "labels_only_when_occupied" = true;
-        "style" = "focus_hint";
+      "widget" = {
+        "audio_visualizer" = {
+          "mirrored" = false;
+          "show_when_idle" = true;
+        };
+        "battery" = {
+          "capsule" = true;
+          "show_label" = false;
+        };
+        "brightness" = {
+          "show_label" = false;
+        };
+        "clock" = {
+          "capsule" = true;
+          "format" = "{:%a %e - %H:%M}";
+        };
+        "cpu" = {
+          "stat" = "cpu_freq";
+        };
+        "media" = {
+          "anchor" = true;
+          "capsule" = true;
+          "show_progress" = true;
+          "title_scroll" = "always";
+        };
+        "network" = {
+          "show_label" = false;
+        };
+        "network_rx" = {
+          "network_speed_compact" = true;
+          "visualization" = "none";
+        };
+        "network_tx" = {
+          "network_speed_compact" = true;
+          "visualization" = "none";
+        };
+        "sysmon" = {
+          "visualization" = "none";
+        };
+        "tray" = {
+          "detached_panel" = true;
+          "drawer" = true;
+          "hide_passive" = false;
+        };
+        "volume" = {
+          "show_label" = false;
+        };
+        "workspaces" = {
+          "anchor" = true;
+          "label_source" = "name";
+          "labels_only_when_occupied" = true;
+          "style" = "focus_hint";
+        };
       };
     };
   };
