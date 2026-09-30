@@ -2,7 +2,7 @@
 {
   wayland.windowManager.hyprland = {
     settings = {
-      layerrule = [
+      layer_rule = [
         {
           name = "noctalia";
           match.namespace = "noctalia-background-.*$";
@@ -11,9 +11,14 @@
           blur_popups = true;
         }
       ];
-      windowrule = lib.flatten [
-        "match:title (Open Images — Krita), size 65% 65%"
-        "match:class mpv, content none"
+      window_rule = lib.flatten [
+        {
+          match = {
+            class = "^(org.gnome.Nautilus)(.*)$";
+            title = "match:title ^(?!Save).+$";
+          };
+          workspace = 4;
+        }
         (
           let
             window = [
@@ -61,8 +66,6 @@
 
             (workspace 2 "zen")
             (workspace 2 "thunderbird")
-
-            "match:class ^(org.gnome.Nautilus)(.*)$, match:title ^(?!Save).+$, workspace 4"
 
             (workspace 5 "spotify")
             (workspace 5 "io.github.htkhiem.Euphonica")

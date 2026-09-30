@@ -10,26 +10,33 @@
 let
   inherit (lib) getExe getExe';
   mkLua = lib.generators.mkLuaInline;
-  toLua = lib.generators.toLua;
+  toLua = args: lib.generators.toLua { } args;
 in
 {
-  imports = [ ./extra-binds.nix ];
   wayland.windowManager.hyprland.settings =
     let
       mkBind = mods: key: action: desc: {
         _args = [
           "${mods}+${key}"
-          (mkLua "hl.${action}")
+          (mkLua action)
           (mkLua (toLua {
             descption = desc;
           }))
         ];
       };
 
+      mkBindWith = mods: key: action: args: desc: {
+        _args = [
+          "${mods}+${key}"
+          (mkLua action)
+          (mkLua (toLua (args // { descption = desc; })))
+        ];
+      };
+
       mkBindExe = mods: key: action: desc: {
         _args = [
           "${mods}+${key}"
-          (mkLua "hl.dsp.exec_cmd(\"${action}\"")
+          (mkLua "hl.dsp.exec_cmd(\"${action}\")")
           (mkLua (toLua {
             descption = desc;
           }))
@@ -39,33 +46,23 @@ in
       mkBindExeWith = mods: key: action: args: desc: {
         _args = [
           "${mods}+${key}"
-          (mkLua "hl.dsp.exec_cmd(\"${action}\"")
-          (mkLua (toLua args // { descption = desc; }))
-        ];
-      };
-
-      mkBindSingle = key: action: desc: {
-        _args = [
-          key
-          (mkLua "hl.dsp.exec_raw(\"${action}\"")
-          (mkLua (toLua {
-            descption = desc;
-          }))
+          (mkLua "hl.dsp.exec_cmd(\"${action}\")")
+          (mkLua (toLua (args // { descption = desc; })))
         ];
       };
 
       mkBindSingleWith = key: action: args: desc: {
         _args = [
           key
-          (mkLua "hl.dsp.exec_raw(\"${action}\"")
-          (mkLua (toLua args // { descption = desc; }))
+          (mkLua "hl.dsp.exec_raw(\"${action}\")")
+          (mkLua (toLua (args // { descption = desc; })))
         ];
       };
 
       mkBindExeProp = args: mods: key: action: desc: {
         _args = [
           "${mods}+${key}"
-          (mkLua "hl.dsp.exec_cmd(\"${action}\", ${toLua args}")
+          (mkLua "hl.dsp.exec_cmd(\"${action}\", ${toLua args})")
           (mkLua (toLua {
             descption = desc;
           }))
@@ -104,11 +101,38 @@ in
             (mkBindExe "SUPER" "r" "${terminal} -e ${yazi}" "Launch yazi")
             (mkBindExe "SUPER" "m" "${terminal} -e ${btop}" "Launch a system monitor")
 
-            (mkBind "SUPER+SHIFT" "q" "killactive" "Kill active window")
-            (mkBind "SUPER+SHIFT" "e" "exit" "Exit hyprland session")
-            (mkBind "SUPER" "f" "fullscreen" "Toggle fullscreen")
-            (mkBind "SUPER+SHIFT" "f" "fullscreenstate, 0, 2" "Toggle fake fullscreen")
-            (mkBind "SUPER" "v" "togglefloating" "Toggle floating")
+            (mkBind "SUPER+SHIFT" "e" "hl.dsp.exit()" "Exit hyprland session")
+
+            (mkBind "SUPER+SHIFT" "q" "hl.dsp.window.kill()" "Kill active window")
+            (mkBind "SUPER" "f" "hl.dsp.window.fullscreen()" "Toggle fullscreen")
+            (mkBind "SUPER" "v" "hl.dsp.window.float()" "Toggle floating")
+
+            (mkBind "SUPER" "tab" "hl.plugin.hy3.focustab(\"left\")" "Focus the next tab")
+            (mkBind "SUPER+SHIFT" "tab" "hl.plugin.hy3.focustab(\"right\")" "Focus the previous tab")
+
+            (mkBind "SUPER" "page_up" "hl.dsp.focus(${toLua { workspace = "e-1"; }})"
+              "Focus the previous workspace"
+            )
+            (mkBind "SUPER+SHIFT" "page_up" "hl.dsp.window.move(${toLua { workspace = "e-1"; }})"
+              "Move window to previous workspace"
+            )
+            (mkBind "SUPER" "page_down" "hl.dsp.focus(${toLua { workspace = "r+1"; }})"
+              "Focus the next workspace"
+            )
+            (mkBind "SUPER+SHIFT" "page_down" "hl.dsp.focus(${toLua { workspace = "r-1"; }})"
+              "Move window to the next workspace"
+            )
+
+            (mkBind "SUPER" "mouse_down" "hl.dsp.focus(${toLua { workspace = "e-1"; }})"
+              "Scroll to the previous workspace"
+            )
+            (mkBind "SUPER" "mouse_up" "hl.dsp.focus(${toLua { workspace = "e+1"; }})"
+              "Scroll to the next workspace"
+            )
+
+            (mkBindWith "SUPER" "mouse:272" "hl.dsp.window.drag()" { mouse = true; } "Drag window")
+            (mkBindWith "SUPER" "mouse:273" "hl.dsp.window.resize()" { mouse = true; } "Resize window")
+
             (mkBindExe "SUPER+SHIFT" "x" "hyprctl reload" "Reload hyprland")
 
             (mkBindExe "SUPER+ALT" "l" "${hyprlock} --immediate" "Lock the screen")
@@ -139,10 +163,10 @@ in
               "KP_Prior"
             ];
             directions = rec {
-              left = "l";
-              right = "r";
-              up = "u";
-              down = "d";
+              left = "\"l\"";
+              right = "\"r\"";
+              up = "\"u\"";
+              down = "\"d\"";
               h = left;
               l = right;
               k = up;
@@ -171,11 +195,12 @@ in
               mkBind "SUPER+SHIFT" n "hl.plugin.hy3.move_to_workspace(${n}, ${toLua { follow = true; }})"
                 "Move window to workspace ${n}"
             ) workspaces)
+
             (imap0 (
               n: key:
               mkBind "SUPER+SHIFT" key
                 "hl.plugin.hy3.move_to_workspace(${toString n}, ${toLua { follow = true; }})"
-                "Move window to workspace ${n}"
+                "Move window to workspace ${toString n}"
             ) workspaces)
 
             # Move focus
@@ -209,14 +234,18 @@ in
         )
         (
           let
-            mkBindSingle = mkBindSingleWith {
-              locked = true;
-              repeating = true;
-            };
-            mkBindExe = mkBindExeWith {
-              locked = true;
-              repeating = true;
-            };
+            mkBindSingle =
+              key: action: desc:
+              mkBindSingleWith key action {
+                locked = true;
+                repeating = true;
+              } desc;
+            mkBindExe =
+              mods: key: action: desc:
+              mkBindExeWith mods key action {
+                locked = true;
+                repeating = true;
+              } desc;
 
             wpctl = getExe' pkgs.wireplumber "wpctl";
             mute = "${wpctl} set-mute @DEFAULT_SINK@ toggle";
@@ -271,9 +300,11 @@ in
 
             overskride = getExe pkgs.overskride;
 
-            mkBindExe = mkBindExeWith {
-              release = true;
-            };
+            mkBindExe =
+              mods: key: action: desc:
+              mkBindExeWith mods key action {
+                release = true;
+              } desc;
           in
           [
             (mkBindExe "SUPER" "d" "${pk} anyrun || ${fuzzel}" "Launch app launcher")

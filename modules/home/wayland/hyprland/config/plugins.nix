@@ -5,7 +5,7 @@
       hyprglass
       hyprlandPlugins.hy3
     ];
-    settings.plugin = {
+    settings.config.plugin = {
       hy3 = {
         tabs = {
           opacity = 0.9;
@@ -21,17 +21,6 @@
         enabled = true;
         default_theme = "dark";
         default_preset = "clear";
-      };
-      hymission = {
-        niri_mode = true;
-      };
-      overview = {
-        centerAligned = false;
-        autoScroll = true;
-        exitOnClick = false;
-        onBottom = true;
-        showNewWorkspace = false;
-        showEmptyWorkspace = false;
       };
     };
   };
