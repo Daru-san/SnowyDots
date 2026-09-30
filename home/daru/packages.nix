@@ -94,6 +94,16 @@
       mprocs
       authenticator
       rink
+      pandoc
+      (texliveMedium.withPackages (
+        ps: with ps; [
+          cjk
+          cjkpunct
+          xecjk
+          luatexja
+          ctex
+        ]
+      ))
 
       file-roller
       nautilus
