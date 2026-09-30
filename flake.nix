@@ -44,7 +44,7 @@
     };
 
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell/legacy-v4";
+      url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -240,7 +240,7 @@
               };
               wayland.enable = true;
               imports = [ inputs.noctalia.homeModules.default ];
-              programs.noctalia-shell.enable = true;
+              programs.noctalia.enable = true;
             }
           ];
         };
@@ -261,7 +261,7 @@
               };
               wayland.enable = true;
               imports = [ inputs.noctalia.homeModules.default ];
-              programs.noctalia-shell.enable = true;
+              programs.noctalia.enable = true;
             }
           ];
         };
