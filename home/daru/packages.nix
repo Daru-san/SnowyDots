@@ -23,6 +23,7 @@
       obsidian
       spotiflac
       picard
+      puddletag
 
       # Media
       ffmpeg
@@ -91,6 +92,7 @@
       xdg-user-dirs
       lz4
       android-tools
+      toml2nix
       mprocs
       authenticator
       rink
