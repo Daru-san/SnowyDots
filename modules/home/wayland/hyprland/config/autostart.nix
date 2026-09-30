@@ -21,9 +21,6 @@ in
             (map (cmd: (mkCmd cmd { })) [
               (getExe pkgs.copyq)
               "${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent"
-              (getExe pkgs.copyq)
-              (getExe pkgs.soteria)
-              (getExe pkgs.noctalia-shell)
             ])
             ++ [
               (mkCmd "${foot}" { workspace = 1; })
