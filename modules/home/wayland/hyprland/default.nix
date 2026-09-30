@@ -17,9 +17,6 @@ in
         enable = true;
         enableXdgAutostart = true;
       };
-      settings = {
-        source = [ "extra.lua" ];
-      };
     };
   };
 }
