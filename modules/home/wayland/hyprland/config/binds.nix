@@ -304,7 +304,7 @@ in
               } desc;
           in
           [
-            (mkBindExe "SUPER" "d" "${pk} anyrun || ${fuzzel}" "Launch app launcher")
+            (mkBindExe "SUPER" "d" "${pk} fuzzel || ${fuzzel}" "Launch app launcher")
 
             (mkBindExe "SUPER" "i" "${pk} iwgtk || ${iwgtk}" "Launch the iwgtk wifi menu")
 
