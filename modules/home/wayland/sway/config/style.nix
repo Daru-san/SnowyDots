@@ -1,7 +1,7 @@
 {
   wayland.windowManager.sway = {
     config = {
-      defaultWorkspace = "workspace number 1";
+      defaultWorkspace = "1";
       workspaceLayout = "tabbed";
       fonts = {
         names = [
@@ -36,6 +36,7 @@
       blur_radius 3
 
       corner_radius 7
+      animation_duration_ms = 250
 
       shadows false
       shadow_blur_radius 70

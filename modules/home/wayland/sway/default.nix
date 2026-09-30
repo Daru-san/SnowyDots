@@ -18,11 +18,11 @@
         extraCommands = [
           "systemctl --user start easyeffects"
           "systemctl --user start hypridle"
-          "systemctl --user start swayosd"
-          "systemctl --user start wlsunset"
+          "systemctl --user start noctalia"
+          "systemctl --user start gammastep"
           "systemctl --user start flameshot"
-          "systemctl --user start waybar"
           "systemctl --user start kdeconnect"
+          "systemctl --user start hyprpaper"
           "systemctl --user start kdeconnect-indicator"
         ];
       };
@@ -30,8 +30,8 @@
         gtk = true;
       };
       config = {
-        terminal = lib.getExe config.programs.ghostty.package;
-        menu = lib.getExe config.programs.anyrun.package;
+        terminal = lib.getExe config.programs.foot.package;
+        menu = lib.getExe config.programs.fuzzel.package;
       };
     };
   };

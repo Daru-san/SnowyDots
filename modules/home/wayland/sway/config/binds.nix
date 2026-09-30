@@ -22,11 +22,33 @@ in
   wayland.windowManager.sway.extraConfig =
     let
       workspaces = map toString (range 0 9);
+      workspaces-numpad = [
+        "KP_Insert"
+        "KP_End"
+        "KP_Down"
+        "KP_Next"
+        "KP_Left"
+        "KP_Begin"
+        "KP_Right"
+        "KP_Home"
+        "KP_Up"
+        "KP_Prior"
+      ];
     in
     concatLines [
       (concatLines (map (n: "bindsym --to-code ${mod}+${n} workspace number ${n}") workspaces))
       (concatLines (
+        lib.imap0 (
+          n: key: "bindsym --to-code ${mod}+${key} workspace number ${toString n}"
+        ) workspaces-numpad
+      ))
+      (concatLines (
         map (n: "bindsym --to-code ${mod}+Shift+${n} move container to workspace number ${n}") workspaces
+      ))
+      (concatLines (
+        lib.imap0 (
+          n: key: "bindsym --to-code ${mod}+Shift+${key} move container to workspace number ${toString n}"
+        ) workspaces-numpad
       ))
     ];
   wayland.windowManager.sway.config = {
@@ -38,37 +60,32 @@ in
         exec = cmd: "exec ${cmd}";
         yazi = getExe config.programs.yazi.package;
         playerctl = getExe config.services.playerctld.package;
-        browser = getExe config.programs.zen.package;
         launcher = config.wayland.windowManager.sway.config.menu;
-        file-manager = getExe pkgs.nautilus;
+        file-manager = getExe pkgs.kdePackages.dolphin;
         flameshot = getExe config.services.flameshot.package;
         editor =
           (getExe pkgs.neovide)
           + " "
           + toGNUCommandLineShell { } {
-            neovim-bin = getExe config.env.editor.package;
+            neovim-bin = "nvim";
           };
         hyprlock = getExe config.programs.hyprlock.package;
         copyq = getExe pkgs.copyq;
         easyeffects = getExe config.services.easyeffects.package;
-        color-picker = getExe inputs.color-picker.packages.${pkgs.system}.default;
         iwgtk = getExe pkgs.iwgtk;
         blueman = getExe' pkgs.blueman "blueman-manager";
-        planify = getExe pkgs.planify;
       in
       {
         #Basic binds
-        "${mod}+d" = exec "pkill anyrun || ${launcher}";
+        "${mod}+d" = exec "pkill fuzzel || ${launcher}";
         "${mod}+q" = exec terminal;
         "${mod}+e" = exec file-manager;
-        "${mod}+b" = exec "pidof zen-browser || ${browser}";
         "${mod}+r" = exec "${terminal} -e ${yazi}";
         "${mod}+z" = exec editor;
         "${mod}+a" = exec "swaymsg -t get_tree | grep 'easyeffects' || ${easyeffects}";
         "${mod}+i" = exec "pkill iwgtk || ${iwgtk}";
         "${mod}+shift+i" = exec "pkill blueman-manager || ${blueman}";
         "${mod}+p" = exec "pkill pulsemixer || ${terminal} --class pulsemixer --detach pulsemixer";
-        "${mod}+shift+p" = exec planify;
 
         #Window bings
         "${mod}+shift+q" = "kill";
@@ -86,9 +103,6 @@ in
 
         #Suspend
         "${mod}+alt+F12" = exec "systemctl suspend";
-
-        #Color picker
-        "${mod}+shift+c" = exec color-picker;
 
         # Screenshotting
         "Print" = exec "${flameshot} gui";
@@ -143,6 +157,10 @@ in
       // {
         "${mod}+tab" = "focus next";
         "${mod}+shift+tab" = "focus prev";
+        "${mod}+right" = "focus next";
+        "${mod}+left" = "focus prev";
+        "${mod}+shift+left" = "move left";
+        "${mod}+shift+right" = "move right";
         "${mod}+g" = "layout tabbed";
         "${mod}+shift+g" = "layout default";
         "${mod}+page_up" = "workspace prev";
