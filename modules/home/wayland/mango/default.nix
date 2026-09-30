@@ -10,6 +10,8 @@
     ./binds.nix
     ./autostart.nix
     ./rules.nix
+    ./input.nix
+    ./style.nix
   ];
   wayland.windowManager.mango = {
     package = pkgs.mango;

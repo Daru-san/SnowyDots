@@ -3,10 +3,10 @@ let
   inherit (lib) range mapAttrsToList;
   workspaces = map toString (range 0 9);
   directions = rec {
-    left = "l";
-    right = "r";
-    up = "u";
-    down = "d";
+    left = "left";
+    right = "right";
+    up = "up";
+    down = "down";
     h = left;
     l = right;
     k = up;
@@ -20,20 +20,20 @@ in
       "SUPER, btn_right, moveresize, curresize"
     ];
     bind = [
-      "SUPER,apostrophe,changegroupactive,f"
-      "SUPERSHIFT,apostrophe,changegroupactive,b"
+      # "SUPER,apostrophe,changegroupactive,f"
+      # "SUPER+SHIFT,apostrophe,changegroupactive,b"
 
-      "super,g, hy3:makegroup, tab, toggle"
+      "SUPER,g, groupinit"
 
-      "supershift, g, hy3:changegroup, toggletab"
+      # "SUPER+SHIFT, g, changegroup, toggletab"
 
-      "super, tab, focusstack, next"
-      "supershift, tab, focusstack, prev"
+      "SUPER, tab, focusstack, next"
+      "SUPER+SHIFT, tab, focusstack, prev"
 
-      "super, page_up, viewtoleft,"
-      "super, page_down, viewtoright,"
-      "supershift, page_up, tagtoleft"
-      "supershift, page_down, tagtoright"
+      "SUPER, page_up, viewtoleft,"
+      "SUPER, page_down, viewtoright,"
+      "SUPER+SHIFT, page_up, tagtoleft"
+      "SUPER+SHIFT, page_down, tagtoright"
 
       "SUPER, w, toggleoverview"
     ]
@@ -42,19 +42,19 @@ in
       (map (n: "SUPER,${n},view,${n}") workspaces)
     ++
       # Move window to workspace
-      (map (n: "SUPERSHIFT,${n},tag,${n}, follow") workspaces)
+      (map (n: "SUPER+SHIFT,${n},tag,${n}, follow") workspaces)
     ++
       # Move focus
-      (mapAttrsToList (key: direction: "SUPER,${key},hy3:focusdir,${direction}") directions)
-    ++ (mapAttrsToList (key: direction: "ALTSHIFT, ${key}, exchange_client, ${direction}") directions)
+      (mapAttrsToList (key: direction: "SUPER,${key},focusdir,${direction}") directions)
+    ++ (mapAttrsToList (key: direction: "ALT+SHIFT, ${key}, exchange_client, ${direction}") directions)
     ++
       # Move windows
-      (mapAttrsToList (key: direction: "SUPERCONTROL,${key},move_client,${direction}") directions)
+      (mapAttrsToList (key: direction: "SUPER+CTRL,${key},move_client,${direction}") directions)
     ++
       # Move monitor focus
-      (mapAttrsToList (key: direction: "SUPERALT,${key},focusmon,${direction}") directions)
+      (mapAttrsToList (key: direction: "SUPER+ALT,${key},focusmon,${direction}") directions)
     ++
       # Move workspace to other monitor
-      (mapAttrsToList (key: direction: "SUPERALTSHIFT,${key},tagmon,${direction}") directions);
+      (mapAttrsToList (key: direction: "SUPER+ALT+SHIFT,${key},tagmon,${direction}") directions);
   };
 }

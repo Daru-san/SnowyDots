@@ -12,9 +12,8 @@ in
 {
   wayland.windowManager.mango.settings = {
     exec-once = [
-      "[workspace 3] ${foot} -e ${osConfig.security.wrapperDir}/btop -t btop"
+      "${foot} -e ${osConfig.security.wrapperDir}/btop -t btop"
       (getExe pkgs.copyq)
-      (getExe pkgs.noctalia-shell)
       "${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent"
     ];
   };

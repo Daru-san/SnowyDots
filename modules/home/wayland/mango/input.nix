@@ -5,10 +5,10 @@
         delay = 300;
         rate = 50;
       };
-      follow_mouse = 1;
-      touchpad_natural_scrolling = true;
-      disable_while_typing = true;
-      tap_to_click = true;
+      follows_mouse = 1;
+      touchpad_natural_scrolling = 1;
+      disable_while_typing = 1;
+      tap_to_click = 1;
     };
   };
 }

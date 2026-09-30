@@ -1,7 +1,10 @@
 { lib, ... }:
 {
-  wayland.windowManager.hyprland = {
+  wayland.windowManager.mango = {
     settings = {
+      tagrule = [
+        "id:*, layout_name:scroller"
+      ];
       windowrule = lib.flatten [
         (
           let

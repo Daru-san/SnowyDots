@@ -9,6 +9,9 @@ let
   inherit (lib) getExe getExe';
 in
 {
+  imports = [
+    ./extra-binds.nix
+  ];
   wayland.windowManager.mango.settings =
     let
       e = "spawn";
@@ -26,7 +29,7 @@ in
 
       mkBindSingle =
         key: action: desc:
-        ", ${key}, ${desc}, ${e}, ${action}";
+        "NONE, ${key}, ${e}, ${action}";
     in
     {
       bind =
@@ -86,7 +89,7 @@ in
             # Screenshotting
             (mkBindSingle "print" "${flameshot} gui" "Take a screenshot of a selected region")
 
-            (mkBindExe "shift" "print" "${flameshot} screen" "Take a screenshot of the whole screen")
+            (mkBindExe "SHIFT" "print" "${flameshot} screen" "Take a screenshot of the whole screen")
           ]
         )
         ++ (
@@ -103,10 +106,10 @@ in
             (mkBindSingle "XF86AudioPlay" toggle-play "Pause-play current track")
             (mkBindSingle "XF86AudioStop" stop "Stop current track")
 
-            (mkBindExe "shift" "F12" next "Move to next track")
-            (mkBindExe "shift" "F9" prev "Move to previous track")
-            (mkBindExe "shift" "F10" toggle-play "Pause-play current track")
-            (mkBindExe "shift" "F11" stop "Stop current track")
+            (mkBindExe "SHIFT" "F12" next "Move to next track")
+            (mkBindExe "SHIFT" "F9" prev "Move to previous track")
+            (mkBindExe "SHIFT" "F10" toggle-play "Pause-play current track")
+            (mkBindExe "SHIFT" "F11" stop "Stop current track")
           ]
         );
 
