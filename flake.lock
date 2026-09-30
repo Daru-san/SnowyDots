@@ -966,7 +966,6 @@
         "scarlet": "scarlet",
         "seanime": "seanime",
         "sops-nix": "sops-nix",
-        "spicepkgs": "spicepkgs",
         "spicetify-nix": "spicetify-nix",
         "stylix": "stylix",
         "tinted-themes": "tinted-themes",
@@ -1097,26 +1096,10 @@
         "type": "github"
       }
     },
-    "spicepkgs": {
-      "locked": {
-        "lastModified": 1783898001,
-        "narHash": "sha256-EbHtnei7167fm5ZzK3LoRdjKQhgkMpLqF9ERH04phQU=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "d7efcc99aa06d2737ed05edce1b3a77aafce99a1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "pull/540416/head",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "spicetify-nix": {
       "inputs": {
         "nixpkgs": [
-          "spicepkgs"
+          "nixpkgs"
         ],
         "systems": "systems_4"
       },
