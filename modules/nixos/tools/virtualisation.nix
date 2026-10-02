@@ -22,9 +22,7 @@
     (lib.optional config.programs.virt-manager.enable [
       pkgs.virt-viewer
     ])
-    ++ (lib.optional config.virtualisation.waydroid.enable [
-      pkgs.waydroid-helper
-    ]);
+    ++ (lib.optional config.virtualisation.waydroid.enable pkgs.waydroid-helper);
 
   programs.virt-manager.enable = false;
 
