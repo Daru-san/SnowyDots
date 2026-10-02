@@ -26,15 +26,14 @@ My functional, advanced NixOS configuration.
 
 <!-- markdownlint-disable MD003 -->
 
-![Wallpaper](https://i.imgur.com/8Unmhug.png)
+![Wallpaper](https://i.imgur.com/3gFdK7g.png)
 
-![Btop](https://i.imgur.com/M2og0T2.png)
+![Btop](https://i.imgur.com/oL5kvFW.png)
 
-![Programming](https://i.imgur.com/9OCuJ0q.png)
+![Programming](https://i.imgur.com/ZWmeihP.png)
 
-![spicetify](https://i.imgur.com/ugzofzk.png)
+![Sioyek](https://i.imgur.com/RhkBRhc.png)
 
-![rmpc](https://i.imgur.com/FSsrDZG.png)
 
 ## Installing NixOS
 
