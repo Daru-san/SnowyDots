@@ -27,7 +27,10 @@
   programs.virt-manager.enable = false;
 
   virtualisation = {
-    waydroid.enable = false;
+    waydroid = {
+      enable = true;
+      package = pkgs.waydroid-nftables;
+    };
     docker = {
       enable = true;
       rootless = {
