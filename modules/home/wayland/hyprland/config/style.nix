@@ -127,7 +127,7 @@
           enabled = true;
           speed = 6;
           bezier = "overshot";
-          style = "slide";
+          style = "slidevert";
         }
         {
           leaf = "specialWorkspace";
