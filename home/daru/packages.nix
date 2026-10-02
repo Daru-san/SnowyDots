@@ -37,6 +37,7 @@
       asciinema
       asciinema-agg
       kdePackages.kdenlive
+      novelwriter
 
       # Desktop
       awww
