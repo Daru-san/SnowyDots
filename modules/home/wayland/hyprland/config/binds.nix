@@ -166,10 +166,10 @@ in
               "KP_Prior"
             ];
             directions = rec {
-              left = "\"l\"";
-              right = "\"r\"";
-              up = "\"u\"";
-              down = "\"d\"";
+              left = "left";
+              right = "right";
+              up = "up";
+              down = "down";
               h = left;
               l = right;
               k = up;
@@ -209,14 +209,14 @@ in
             # Move focus
             (mapAttrsToList (
               key: direction:
-              mkBind "SUPER" key "hl.plugin.hy3.move_focus(${direction}, ${toLua { warp = true; }})"
+              mkBind "SUPER" key "hl.plugin.hy3.move_focus(\"${direction}\", ${toLua { warp = true; }})"
                 "Move focus to ${direction}"
             ) directions)
 
             # Move windows
             (mapAttrsToList (
               key: direction:
-              mkBind "SUPER+SHIFT" key "hl.plugin.hy3.move_window(${direction}, ${
+              mkBind "SUPER+SHIFT" key "hl.plugin.hy3.move_window(\"${direction}\", ${
                 toLua {
                   once = true;
                   visible = true;
@@ -224,9 +224,18 @@ in
               })" "Move active window to ${direction}"
             ) directions)
 
-            # (mapAttrsToList (key: direction: "ALT+SHIFT, ${key}, hy3.focus_tab, ${direction}") directions)
             # # Move windows
-            # (mapAttrsToList (key: direction: "SUPER+CONTROL,${key},movewindoworgroup,${direction}") directions)
+            (mapAttrsToList (
+              key: direction:
+              mkBind "SUPER+CONTROL" key "hl.dsp.window.move(${
+                toLua {
+                  inherit direction;
+                  group_aware = true;
+                }
+              })" "Move active window to ${direction}"
+            ) directions)
+
+            # (mapAttrsToList (key: direction: "ALT+SHIFT, ${key}, hy3.focus_tab, ${direction}") directions)
             # # Move monitor focus
             # (mapAttrsToList (key: direction: "SUPER+ALT,${key},focusmonitor,${direction}") directions)
             # # Move workspace to other monitor
