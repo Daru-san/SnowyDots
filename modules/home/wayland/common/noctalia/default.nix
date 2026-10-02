@@ -1,14 +1,5 @@
 {
-  pkgs,
-  inputs,
-  ...
-}:
-{
-  imports = [
-    inputs.noctalia.homeModules.default
-  ];
   programs.noctalia = {
-    package = pkgs.noctalia;
     systemd.enable = true;
 
     settings = {

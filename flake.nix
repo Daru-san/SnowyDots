@@ -238,8 +238,6 @@
                 inherit (desktop) stateVersion;
               };
               wayland.enable = true;
-              imports = [ inputs.noctalia.homeModules.default ];
-              programs.noctalia.enable = true;
             }
           ];
         };
@@ -259,8 +257,6 @@
                 inherit (laptop) stateVersion;
               };
               wayland.enable = true;
-              imports = [ inputs.noctalia.homeModules.default ];
-              programs.noctalia.enable = true;
             }
           ];
         };

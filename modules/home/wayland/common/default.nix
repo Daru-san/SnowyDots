@@ -50,6 +50,7 @@ in
       wezterm.enable = false;
       foot.enable = true;
       wleave.enable = true;
+      noctalia.enable = true;
     };
     home.packages = with pkgs; [
       wl-clipboard-rs
