@@ -5,9 +5,11 @@
     enable32Bit = true;
     extraPackages = with pkgs; [
       intel-media-driver
-      intel-vaapi-driver
       vpl-gpu-rt
-      intel-compute-runtime-legacy1
     ];
+
+  };
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "iHD";
   };
 }
