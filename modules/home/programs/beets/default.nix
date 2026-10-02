@@ -9,6 +9,9 @@
     settings = {
       directory = config.xdg.userDirs.music;
       library = "${config.xdg.userDirs.music}.beets/music.db";
+      paths = {
+        default = "$albumartist/$album%aunique{}/$track.$title";
+      };
       import = {
         move = true;
       };
