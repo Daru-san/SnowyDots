@@ -116,15 +116,21 @@ in
             (mkBind "SUPER" "page_down" "hl.dsp.focus(${toLua { workspace = "r+1"; }})"
               "Focus the next workspace"
             )
-            (mkBind "SUPER+SHIFT" "page_down" "hl.dsp.focus(${toLua { workspace = "r-1"; }})"
+            (mkBind "SUPER+SHIFT" "page_down" "hl.dsp.window.move(${toLua { workspace = "r-1"; }})"
               "Move window to the next workspace"
             )
 
-            (mkBind "SUPER" "mouse_down" "hl.dsp.focus(${toLua { workspace = "e-1"; }})"
+            (mkBind "SUPER" "mouse_down" "hl.dsp.focus(${toLua { workspace = "e+1"; }})"
+              "Scroll to the next workspace"
+            )
+            (mkBind "SUPER+SHIFT" "mouse_down" "hl.dsp.window.move(${toLua { workspace = "e+1"; }})"
+              "Scroll and move window to the next workspace"
+            )
+            (mkBind "SUPER" "mouse_up" "hl.dsp.focus(${toLua { workspace = "e-1"; }})"
               "Scroll to the previous workspace"
             )
-            (mkBind "SUPER" "mouse_up" "hl.dsp.focus(${toLua { workspace = "e+1"; }})"
-              "Scroll to the next workspace"
+            (mkBind "SUPER+SHIFT" "mouse_up" "hl.dsp.window.move(${toLua { workspace = "e-1"; }})"
+              "Scroll and move window to the previous workspace"
             )
 
             (mkBindWith "SUPER" "mouse:272" "hl.dsp.window.drag()" { mouse = true; } "Drag window")
