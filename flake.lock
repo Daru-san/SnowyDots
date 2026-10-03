@@ -334,11 +334,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1791031019,
-        "narHash": "sha256-QP4omArn0WyRy8Te8CA2kR/lGoTaYzX468osA8PTKvI=",
+        "lastModified": 1791056543,
+        "narHash": "sha256-3baflZPgDkutB+KeTtY8uLVFZAsgfBqv0f8BydeIXV0=",
         "owner": "Daru-san",
         "repo": "frostpak",
-        "rev": "bdc9e371c6c5b120965ff44e49ad71188a88a25a",
+        "rev": "f54d8c1f60a0e4e5a5d83f81709de1e294688240",
         "type": "github"
       },
       "original": {
