@@ -20,6 +20,7 @@
     };
   };
   networking.firewall = {
+    checkReversePath = false;
     enable = true;
     allowedTCPPorts = [
       59100
