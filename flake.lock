@@ -277,11 +277,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788450739,
-        "narHash": "sha256-glZLQlzIn1fXH6PazR2iUmTo7kzzyYSshrWhLS9TqCU=",
+        "lastModified": 1790898470,
+        "narHash": "sha256-zTwuwezD0w3hpga6a6P8emidzAZFyWqlNeRBlpWOOl8=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "31729ca8cbdb4fa927b34e5f4353e6a83f39e993",
+        "rev": "024633cd702b10285db5cb19b40ad48d2399ba60",
         "type": "github"
       },
       "original": {
@@ -720,11 +720,11 @@
     },
     "nixpkgs_10": {
       "locked": {
-        "lastModified": 1789724158,
-        "narHash": "sha256-nlKgrm0dsVhOSopKheVBCcOpiIticufPPVLdVOI0euA=",
+        "lastModified": 1790981744,
+        "narHash": "sha256-sm6DclXJudZfP/pcDBQQsRqyMxBcQsuw+7yQr4rBBLE=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "0a3468a402c449992505b6a9fc5b06580141b750",
+        "rev": "55ba7f49ef2962b42cbd126522b7df5f95037679",
         "type": "github"
       },
       "original": {
@@ -848,11 +848,11 @@
     },
     "nixpkgs_9": {
       "locked": {
-        "lastModified": 1790689126,
-        "narHash": "sha256-VyUI5WA3WdOB9kjb04A0pxE6XTWC6cG95ZkoPSv58F0=",
-        "rev": "b4fd65b198c599cbe814fcb9f42d25d021595ec9",
+        "lastModified": 1791260994,
+        "narHash": "sha256-MFBjw66d4h06MvpW6lIl7RwarLteD0sk859CncGwb1Q=",
+        "rev": "151fa4e8ddfdd8dd25d945ad94ed54a13de9f6e4",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1082427.b4fd65b198c5/nixexprs.tar.zst"
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1086391.151fa4e8ddfd/nixexprs.tar.zst"
       },
       "original": {
         "id": "nixpkgs",
@@ -867,11 +867,11 @@
         "systems": "systems_6"
       },
       "locked": {
-        "lastModified": 1790541651,
-        "narHash": "sha256-/496IQz8qNWHHLnc3Zvr0l4uxJ34igNhJhn7ZKAefFk=",
+        "lastModified": 1791235629,
+        "narHash": "sha256-ySIbhYpjg8CnfuJTs/cfkEQuGpk02IzT+a3VDz7Cec0=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "5980a626794486abad69fca7667f9c11dfbc3bd7",
+        "rev": "8fbc7d3ff1154fab898895e7c4e71a4d06936ce3",
         "type": "github"
       },
       "original": {
@@ -1343,11 +1343,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1790800064,
-        "narHash": "sha256-LJyWEC6WYfOyyRsSGqOJN4aV007bhMW76Qj9vdCwSRQ=",
+        "lastModified": 1791300954,
+        "narHash": "sha256-dXUKIXH8t2+oMNyllyP379O0a03DVzpqcbveCTPrUE8=",
         "ref": "refs/heads/master",
-        "rev": "b70c35a4f30493f39afaba48c066e277fdf515c0",
-        "revCount": 708,
+        "rev": "b7ec66f39f38a982246c08109f3fff413f253823",
+        "revCount": 710,
         "type": "git",
         "url": "https://codeberg.org/Daru-san/SnowyVim"
       },
@@ -1359,14 +1359,15 @@
     "walls": {
       "flake": false,
       "locked": {
-        "path": "../Wallpapers",
+        "lastModified": 1784223906,
+        "narHash": "sha256-WjZpbdP94RgKXN+T+D6vomKW0K6Zc/iBkr8rmzfv4rc=",
+        "path": "/home/daru/snow/Wallpapers",
         "type": "path"
       },
       "original": {
-        "path": "../Wallpapers",
+        "path": "/home/daru/snow/Wallpapers",
         "type": "path"
-      },
-      "parent": []
+      }
     },
     "xwayland-satellite-stable": {
       "flake": false,
