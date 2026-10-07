@@ -110,12 +110,15 @@ in
             (mkBind "SUPER" "page_up" "hl.dsp.focus(${toLua { workspace = "e-1"; }})"
               "Focus the previous workspace"
             )
+
             (mkBind "SUPER+SHIFT" "page_up" "hl.dsp.window.move(${toLua { workspace = "e-1"; }})"
               "Move window to previous workspace"
             )
+
             (mkBind "SUPER" "page_down" "hl.dsp.focus(${toLua { workspace = "r+1"; }})"
               "Focus the next workspace"
             )
+
             (mkBind "SUPER+SHIFT" "page_down" "hl.dsp.window.move(${toLua { workspace = "r-1"; }})"
               "Move window to the next workspace"
             )
@@ -123,14 +126,40 @@ in
             (mkBind "SUPER" "mouse_down" "hl.dsp.focus(${toLua { workspace = "e+1"; }})"
               "Scroll to the next workspace"
             )
+
             (mkBind "SUPER+SHIFT" "mouse_down" "hl.dsp.window.move(${toLua { workspace = "e+1"; }})"
               "Scroll and move window to the next workspace"
             )
+
+            (mkBind "SUPER+ALT" "mouse_down" "hl.dsp.window.move(${
+              toLua {
+                direction = "right";
+                group_aware = true;
+              }
+            })" "Move window to the right with scroll wheel")
+
+            (mkBind "SUPER+CONTROL" "mouse_down"
+              "hl.plugin.hy3.move_focus(\"right\", ${toLua { warp = true; }})"
+              "Move focus to right"
+            )
+
             (mkBind "SUPER" "mouse_up" "hl.dsp.focus(${toLua { workspace = "e-1"; }})"
               "Scroll to the previous workspace"
             )
+
             (mkBind "SUPER+SHIFT" "mouse_up" "hl.dsp.window.move(${toLua { workspace = "e-1"; }})"
               "Scroll and move window to the previous workspace"
+            )
+
+            (mkBind "SUPER+ALT" "mouse_up" "hl.dsp.window.move(${
+              toLua {
+                direction = "right";
+                group_aware = true;
+              }
+            })" "Move window to the right with scroll wheel")
+
+            (mkBind "SUPER+CONTROL" "mouse_up" "hl.plugin.hy3.move_focus(\"left\", ${toLua { warp = true; }})"
+              "Move focus to left"
             )
 
             (mkBindWith "SUPER" "mouse:272" "hl.dsp.window.drag()" { mouse = true; } "Drag window")
