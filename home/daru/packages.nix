@@ -24,6 +24,8 @@
       spotiflac
       picard
       puddletag
+      soundwireserver
+      pavucontrol
 
       # Media
       ffmpeg
