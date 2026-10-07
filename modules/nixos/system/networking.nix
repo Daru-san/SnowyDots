@@ -32,6 +32,8 @@
     allowedUDPPorts = [
       59100
       59200
+      59010
+      59011
     ];
   };
   hardware.bluetooth = {
