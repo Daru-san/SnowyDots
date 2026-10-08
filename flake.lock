@@ -120,11 +120,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1791172946,
-        "narHash": "sha256-dqhLZafEJaHmjoVpss9kC/gNY0K25rZEq+W9NWLepZE=",
+        "lastModified": 1791447606,
+        "narHash": "sha256-2hEMUL3Rp/Qs9pviC35I8zY1HlBSl2Xrv166Qtzt4a4=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "b29e6cab45b83b19338d80037f60ffd5f32728d4",
+        "rev": "feea9d3711e802bf3e1f79d13abaafc2f8816f12",
         "type": "gitlab"
       },
       "original": {
@@ -373,11 +373,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791163078,
-        "narHash": "sha256-DiuwfdoZtEqVRsWuAhXcHa+cfvkr0t/xWW8ugkcxNyI=",
+        "lastModified": 1791306979,
+        "narHash": "sha256-KuLePuhwJM9NLt/gTLHzXaOoSZKGoB3m7NfXjiQ98HY=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "f53f3267f5d009dd8f99443505e609389d7ff267",
+        "rev": "fae6e9e42c3b762ab47635cddcfaf6f52374a61b",
         "type": "github"
       },
       "original": {
@@ -432,11 +432,11 @@
         "scenefx": "scenefx"
       },
       "locked": {
-        "lastModified": 1791196455,
-        "narHash": "sha256-NcnE1c8u1Me+q9sXj0UtZje1miUn50sCWVCLQY4TW3s=",
+        "lastModified": 1791463741,
+        "narHash": "sha256-pO3IuoIm+1/AnHSyEr7V1wym9z4eTfi+HiGdRRaBfAE=",
         "owner": "mangowm",
         "repo": "mango",
-        "rev": "99e6ba362b05e76a459c0d5d8f305357d87d2df9",
+        "rev": "c160dd2bfd1b56966ed0f0f195772f6f33c3d3bb",
         "type": "github"
       },
       "original": {
@@ -704,11 +704,11 @@
     },
     "nixpkgs-stable_2": {
       "locked": {
-        "lastModified": 1791143449,
-        "narHash": "sha256-9+n3ReS2y9xS199LoJjKUWHwZrISGHWgkD/LUZTDZyA=",
+        "lastModified": 1791426274,
+        "narHash": "sha256-MWhktfFtFE8Jl7bf9Pkp7TR5MSdYCjCswSo0Gkb4ywc=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "0d9e9b832d03ac387417e16ce1febf73b2e631e1",
+        "rev": "7c8764b7c7b09b34f632464276218ef9090eaa11",
         "type": "github"
       },
       "original": {
@@ -784,11 +784,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1791048980,
-        "narHash": "sha256-KgItSKML8Xvte0B7/uGnBDsYzSnnKHcOaiUbgWBXLXw=",
+        "lastModified": 1791260994,
+        "narHash": "sha256-Miqqk/ammqnTUxaoCyvtwoPeLbI1ksFyLxi/CazZpWY=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "a7868a727837f3c09cee2ce0ca671c76b1589fed",
+        "rev": "151fa4e8ddfdd8dd25d945ad94ed54a13de9f6e4",
         "type": "github"
       },
       "original": {
@@ -1002,16 +1002,16 @@
       "locked": {
         "lastModified": 1769793310,
         "narHash": "sha256-ef8m11en329YeJNksjMNHFHrKCy7+NNYqCo7utcBwl0=",
-        "owner": "scarlet-shell",
+        "owner": "~darumaka",
         "repo": "scarlet",
         "rev": "dc01693fe04baf05c5fc37efc26797309f83ce64",
-        "type": "gitlab"
+        "type": "sourcehut"
       },
       "original": {
-        "owner": "scarlet-shell",
+        "owner": "~darumaka",
         "ref": "0.4.1",
         "repo": "scarlet",
-        "type": "gitlab"
+        "type": "sourcehut"
       }
     },
     "scenefx": {
@@ -1044,11 +1044,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791131263,
-        "narHash": "sha256-wXaZRcyVdwx0HfHfPmGWqS5J5ql1tKpKcOMunnJkcL0=",
+        "lastModified": 1791290833,
+        "narHash": "sha256-uG26Mt26ZtYRpp9ALwvCYaDIZzKeahSQ0KbJe7K2iWU=",
         "owner": "Rishabh5321",
         "repo": "seanime-flake",
-        "rev": "9004854f20499c734fd1c3143719215af07ec382",
+        "rev": "454430e2f0db064010d8b6fc09a5e7eb4f88119d",
         "type": "github"
       },
       "original": {
@@ -1343,30 +1343,33 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1791300954,
-        "narHash": "sha256-dXUKIXH8t2+oMNyllyP379O0a03DVzpqcbveCTPrUE8=",
-        "ref": "refs/heads/master",
-        "rev": "b7ec66f39f38a982246c08109f3fff413f253823",
-        "revCount": 710,
-        "type": "git",
-        "url": "https://codeberg.org/Daru-san/SnowyVim"
+        "lastModified": 1791301431,
+        "narHash": "sha256-2x+MYuWQlS5dlZDFMKsEtU8PWTdRTr70KGVkw5rWBNA=",
+        "owner": "~darumaka",
+        "repo": "SnowyVim",
+        "rev": "f47cac1033e4a4d95d256e1c0086153549a9c058",
+        "type": "sourcehut"
       },
       "original": {
-        "type": "git",
-        "url": "https://codeberg.org/Daru-san/SnowyVim"
+        "owner": "~darumaka",
+        "repo": "SnowyVim",
+        "type": "sourcehut"
       }
     },
     "walls": {
       "flake": false,
       "locked": {
-        "lastModified": 1784223906,
-        "narHash": "sha256-WjZpbdP94RgKXN+T+D6vomKW0K6Zc/iBkr8rmzfv4rc=",
-        "path": "/home/daru/snow/Wallpapers",
-        "type": "path"
+        "lastModified": 1764159533,
+        "narHash": "sha256-xrlF+FOi3sqHoIV8fkyowp9NQY3pmQis5+lq6Y4U6Ds=",
+        "owner": "~darumaka",
+        "repo": "Wallpapers",
+        "rev": "b35090a9ba647b628d442ed336c4be1018beff42",
+        "type": "sourcehut"
       },
       "original": {
-        "path": "/home/daru/snow/Wallpapers",
-        "type": "path"
+        "owner": "~darumaka",
+        "repo": "Wallpapers",
+        "type": "sourcehut"
       }
     },
     "xwayland-satellite-stable": {
@@ -1412,11 +1415,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791266850,
-        "narHash": "sha256-F/scdmE9Y03TfSQWrBHaJWTRTr3rRQBqvJSDgF48g1c=",
+        "lastModified": 1791435089,
+        "narHash": "sha256-BpS+S99I5/oUAelESZqO8cSK7JyZ3C1SL7EsIv3icvI=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "d9e4e25d6ade5d541074045d332d887c044e11f5",
+        "rev": "be226e4c3efaaa2a6ae2d8852839f93d31e6ece9",
         "type": "github"
       },
       "original": {
