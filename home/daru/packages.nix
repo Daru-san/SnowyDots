@@ -26,6 +26,7 @@
       puddletag
       soundwireserver
       pavucontrol
+      kdePackages.minuet
 
       # Media
       ffmpeg
