@@ -29,6 +29,7 @@
       soundwireserver
       pavucontrol
       kdePackages.minuet
+      pixelkit
 
       # Media
       ffmpeg
@@ -120,9 +121,6 @@
       bitwig-studio6
       paulxstretch
       chow-kick
-    ])
-    (with inputs; [
-      pixelkit.packages.${system}.default
     ])
   ];
 }
