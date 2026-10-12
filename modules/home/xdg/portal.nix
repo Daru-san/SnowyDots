@@ -1,20 +1,38 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   enable = true;
-  extraPortals = with pkgs; [
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal-gnome
-  ];
+  extraPortals =
+    with pkgs;
+    [
+      xdg-desktop-portal-gtk
+    ]
+    ++ lib.optional config.wayland.windowManager.mango.enable or false xdg-desktop-portal-luminous
+    ++ lib.optional config.programs.niri.enable or false xdg-desktop-portal-gnome;
   config = {
     sway = {
       default = [
         "gtk"
-        "wlr"
+        "luminous"
       ];
     };
     niri = {
       default = [
         "gnome"
+        "gtk"
+      ];
+      "org.freedesktop.impl.portal.FileChooser" = "kde";
+      "org.freedesktop.impl.portal.Access" = "gtk";
+      "org.freedesktop.impl.portal.Notification" = "gtk";
+      "org.freedesktop.impl.portal.Secret" = "gnome-keyring";
+    };
+    mango = {
+      default = [
+        "luminous"
         "gtk"
       ];
       "org.freedesktop.impl.portal.FileChooser" = "kde";
