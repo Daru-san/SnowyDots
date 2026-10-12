@@ -14,15 +14,15 @@
     ./settings.nix
   ];
   wayland.windowManager.mango = {
-    package = pkgs.mango.overrideAttrs {
-      version = "0-unstable-2026-09-15";
+    package = pkgs.mango.overrideAttrs (_: rec {
+      version = "0.18.0";
       src = pkgs.fetchFromGitHub {
-        owner = "SDG-Den";
+        owner = "mangowm";
         repo = "mango";
-        rev = "a74839c78c2f9160900dcc0c366bae2005e2aee6";
-        hash = "sha256-xdQTvEtWPUHBVmeoLM80uXQvopAswqTPwv9T2QEBfT4=";
+        tag = version;
+        hash = "sha256-gRe1QxNkNZ0mriIuQqS5RDCnuXNroHcNY0fJiLwGVmc=";
       };
-    };
+    });
     systemd.enable = true;
   };
 }
