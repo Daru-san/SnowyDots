@@ -1,7 +1,19 @@
 { lib, ... }:
 let
-  inherit (lib) range mapAttrsToList;
+  inherit (lib) range mapAttrsToList imap0;
   workspaces = map toString (range 0 9);
+  workspaces-numpad = [
+    "KP_Insert"
+    "KP_End"
+    "KP_Down"
+    "KP_Next"
+    "KP_Left"
+    "KP_Begin"
+    "KP_Right"
+    "KP_Home"
+    "KP_Up"
+    "KP_Prior"
+  ];
   directions = rec {
     left = "left";
     right = "right";
@@ -40,9 +52,10 @@ in
     ++
       # Change workspace
       (map (n: "SUPER,${n},view,${n}") workspaces)
-    ++
-      # Move window to workspace
-      (map (n: "SUPER+SHIFT,${n},tag,${n}, follow") workspaces)
+    ++ (imap0 (n: key: "SUPER, ${key}, view, ${toString n}") workspaces-numpad)
+    # Move window to workspace
+    ++ (map (n: "SUPER+SHIFT,${n},tag,${n}, follow") workspaces)
+    ++ (imap0 (n: key: "SUPER+SHIFT, ${key}, tag, ${toString n}, follow") workspaces-numpad)
     ++
       # Move focus
       (mapAttrsToList (key: direction: "SUPER,${key},focusdir,${direction}") directions)
