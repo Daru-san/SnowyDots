@@ -11,7 +11,7 @@
     ./autostart.nix
     ./rules.nix
     ./input.nix
-    ./style.nix
+    ./settings.nix
   ];
   wayland.windowManager.mango = {
     package = pkgs.mango.overrideAttrs {
