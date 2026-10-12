@@ -31,19 +31,18 @@ in
       "SUPER, btn_left, moveresize, curmove"
       "SUPER, btn_right, moveresize, curresize"
     ];
+    axisbind = [
+      "SUPER, up, viewtoleft"
+      "SUPER, down, viewtoright"
+    ];
     bind = [
-      # "SUPER,apostrophe,changegroupactive,f"
-      # "SUPER+SHIFT,apostrophe,changegroupactive,b"
-
-      "SUPER,g, groupinit"
-
-      # "SUPER+SHIFT, g, changegroup, toggletab"
-
       "SUPER, tab, focusstack, next"
+      "SUPER, right, focusstack, next"
+      "SUPER, left, focusstack, prev"
       "SUPER+SHIFT, tab, focusstack, prev"
 
       "SUPER, page_up, viewtoleft,"
-      "SUPER, page_down, viewtoright,"
+      "SUPER, page_down, viewtoright"
       "SUPER+SHIFT, page_up, tagtoleft"
       "SUPER+SHIFT, page_down, tagtoright"
 
@@ -56,16 +55,15 @@ in
     # Move window to workspace
     ++ (map (n: "SUPER+SHIFT,${n},tag,${n}, follow") workspaces)
     ++ (imap0 (n: key: "SUPER+SHIFT, ${key}, tag, ${toString n}, follow") workspaces-numpad)
-    ++
-      # Move focus
-      (mapAttrsToList (key: direction: "SUPER,${key},focusdir,${direction}") directions)
-    ++ (mapAttrsToList (key: direction: "ALT+SHIFT, ${key}, exchange_client, ${direction}") directions)
+    ++ (mapAttrsToList (
+      key: direction: "SUPER+SHIFT, ${key}, exchange_stack_client, ${direction}"
+    ) directions)
     ++
       # Move windows
       (mapAttrsToList (key: direction: "SUPER+CTRL,${key},move_client,${direction}") directions)
-    ++
-      # Move monitor focus
-      (mapAttrsToList (key: direction: "SUPER+ALT,${key},focusmon,${direction}") directions)
+    # ++
+    # Move monitor focus
+    # (mapAttrsToList (key: direction: "SUPER+ALT,${key},focusmon,${direction}") directions)
     ++
       # Move workspace to other monitor
       (mapAttrsToList (key: direction: "SUPER+ALT+SHIFT,${key},tagmon,${direction}") directions);

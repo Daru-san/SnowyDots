@@ -2,10 +2,10 @@
 {
   wayland.windowManager.mango = {
     settings = {
-      tagrule = [
-        "id:*, layout_name:scroller"
+      tag_rule = [
+        "id:*, layout_name:monocle"
       ];
-      windowrule = lib.flatten [
+      window_rule = lib.flatten [
         (
           let
             window = [
@@ -44,14 +44,14 @@
             ];
           in
           [
-            (map (c: "appid:^(${c})(.*)$, isfloating:1") window)
-            (map (d: "appid:^(${d})(.*)$, offsetx:0, offsety:0") window)
-            (map (e: "appid:^(${e})(.*)$, width:0.6, height:60%") resized-windows)
+            (map (c: "app_id:^(${c})(.*)$, is_floating:1") window)
+            (map (d: "app_id:^(${d})(.*)$, offset_x:0, offset_y:0") window)
+            (map (e: "app_id:^(${e})(.*)$, width:0.6, height:60%") resized-windows)
           ]
         )
         (
           let
-            workspace = index: window: "appid:^(${window})(.*)$, tags:${toString index}";
+            workspace = index: window: "app_id:^(${window})(.*)$, tags:${toString index}";
           in
           [
             (workspace 1 "neovide")
@@ -59,7 +59,7 @@
             (workspace 2 "zen")
             (workspace 2 "thunderbird")
 
-            "appid:^(org.gnome.Nautilus)(.*)$, title:^(?!Save).+$, tags:4"
+            "app_id:^(org.gnome.Nautilus)(.*)$, title:^(?!Save).+$, tags:4"
 
             (workspace 5 "spotify")
             (workspace 5 "io.github.htkhiem.Euphonica")
