@@ -10,6 +10,7 @@ in
   wayland.windowManager.mango.settings =
     let
       hex = color: "0x${color}ff";
+      alpha = color: alpha: "0x${color}${alpha}";
     in
     {
 
@@ -37,9 +38,9 @@ in
       group_bar_decorate_focus_bg_color = hex colors.base0D;
       group_bar_decorate_border_color = hex colors.base0D;
       tab_bar_decorate_fg_color = hex colors.base05;
-      tab_bar_decorate_bg_color = hex colors.base01;
-      tab_bar_decorate_focus_fg_color = hex colors.base00;
-      tab_bar_decorate_focus_bg_color = hex colors.base0D;
-      tab_bar_decorate_border_color = hex colors.base0D;
+      tab_bar_decorate_bg_color = alpha colors.base01 "20";
+      tab_bar_decorate_focus_fg_color = hex colors.base05;
+      tab_bar_decorate_focus_bg_color = alpha colors.base0D "60";
+      tab_bar_decorate_border_color = hex colors.base0D "aa";
     };
 }
