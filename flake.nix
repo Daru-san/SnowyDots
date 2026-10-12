@@ -38,6 +38,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    pixelkit = {
+      url = "github:Kuucheen/PixelKit/v0.4.2";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     fjord-launcher = {
       url = "github:Cfauto28/FjordLauncherReUnlocked/11.0.3.1";
       inputs.nixpkgs.follows = "nixpkgs";

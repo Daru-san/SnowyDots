@@ -2,6 +2,8 @@
 {
   pkgs,
   lib,
+  inputs,
+  system,
   ...
 }:
 {
@@ -118,6 +120,9 @@
       bitwig-studio6
       paulxstretch
       chow-kick
+    ])
+    (with inputs; [
+      pixelkit.packages.${system}.default
     ])
   ];
 }
