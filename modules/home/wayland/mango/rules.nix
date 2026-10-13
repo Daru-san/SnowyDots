@@ -33,6 +33,7 @@
               "nmtui"
               "pulsemixer"
               "org.freedesktop.impl.portal.desktop.kde"
+              "com.github.hluk.copyq"
               "xdg-desktop-portal-gtk"
               "xdg-desktop-portal-kde"
               "org.gnome.FileRoller"
@@ -46,7 +47,7 @@
           [
             (map (c: "app_id:^(${c})(.*)$, is_floating:1") window)
             (map (d: "app_id:^(${d})(.*)$, offset_x:0, offset_y:0") window)
-            (map (e: "app_id:^(${e})(.*)$, width:0.6, height:60%") resized-windows)
+            (map (e: "app_id:^(${e})(.*)$, width:0.6, height:0.6") resized-windows)
           ]
         )
         (
