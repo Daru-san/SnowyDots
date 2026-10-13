@@ -47,7 +47,7 @@
       };
       monocle_tab_mode = 1;
       deck_tab_mode = 1;
-      border_px = 1;
+      border_px = 0;
       gap = {
         inner = {
           horizontal = 1;
