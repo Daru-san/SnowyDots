@@ -33,32 +33,63 @@ in
     in
     {
       bind =
-        let
-          file-manager = getExe pkgs.kdePackages.dolphin;
-          yazi = getExe config.programs.yazi.package;
-          hyprlock = getExe config.programs.hyprlock.package;
-          btop = "${osConfig.security.wrapperDir}/btop";
-          terminal = getExe config.programs.foot.package;
-          copyq = getExe pkgs.copyq;
-        in
-        [
-          (mkBindExe "SUPER" "e" file-manager "Launch file manager")
-          (mkBindExe "SUPER+SHIFT" "v" "${copyq} toggle" "Launch copyq clipboard manager")
+        (
+          let
+            file-manager = getExe pkgs.kdePackages.dolphin;
+            yazi = getExe config.programs.yazi.package;
+            hyprlock = getExe config.programs.hyprlock.package;
+            btop = "${osConfig.security.wrapperDir}/btop";
+            terminal = getExe config.programs.foot.package;
+            copyq = getExe pkgs.copyq;
+          in
+          [
+            (mkBindExe "SUPER" "e" file-manager "Launch file manager")
+            (mkBindExe "SUPER+SHIFT" "v" "${copyq} toggle" "Launch copyq clipboard manager")
 
-          (mkBindExe "SUPER" "q" terminal "Launch a terminal")
-          (mkBindExe "SUPER" "r" "${terminal} -e ${yazi}" "Launch yazi")
-          (mkBindExe "SUPER" "m" "${terminal} -e ${btop}" "Launch a system monitor")
+            (mkBindExe "SUPER" "q" terminal "Launch a terminal")
+            (mkBindExe "SUPER" "r" "${terminal} -e ${yazi}" "Launch yazi")
+            (mkBindExe "SUPER" "m" "${terminal} -e ${btop}" "Launch a system monitor")
 
-          (mkBind "SUPER+SHIFT" "q" "killclient" "Kill active window")
-          (mkBind "SUPER+SHIFT" "e" "quit" "Exit mango session")
-          (mkBind "SUPER" "f" "togglefullscreen" "Toggle fullscreen")
-          (mkBind "SUPER+SHIFT" "f" "togglefakefullscreen" "Toggle fake fullscreen")
-          (mkBind "SUPER" "v" "togglefloating" "Toggle floating")
-          (mkBind "SUPER" "c" "sleep_toggle_monitor" "Toggle monitor DPMS")
-          (mkBindExe "SUPER+SHIFT" "x" "reload_config" "Reload mango")
+            (mkBind "SUPER+SHIFT" "q" "killclient" "Kill active window")
+            (mkBind "SUPER+SHIFT" "e" "quit" "Exit mango session")
+            (mkBind "SUPER" "f" "togglefullscreen" "Toggle fullscreen")
+            (mkBind "SUPER+SHIFT" "f" "togglefakefullscreen" "Toggle fake fullscreen")
+            (mkBind "SUPER" "v" "togglefloating" "Toggle floating")
+            (mkBind "SUPER" "c" "sleep_toggle_monitor" "Toggle monitor DPMS")
+            (mkBindExe "SUPER+SHIFT" "x" "reload_config" "Reload mango")
 
-          (mkBindExe "SUPER+ALT" "l" "${hyprlock} --immediate" "Lock the screen")
-        ];
+            (mkBindExe "SUPER+ALT" "l" "${hyprlock} --immediate" "Lock the screen")
+          ]
+        )
+        ++
+
+          (
+            let
+              easyeffects = getExe config.services.easyeffects.package;
+              fuzzel = getExe config.programs.fuzzel.package;
+              pk = getExe' pkgs.busybox "pkill";
+              wleave = getExe config.programs.wleave.package;
+              iwgtk = getExe pkgs.iwgtk;
+              overskride = getExe pkgs.overskride;
+              hyprpicker = getExe pkgs.hyprpicker;
+            in
+            [
+              (mkBindExeSh "SUPER" "d" "${pk} fuzzel || ${fuzzel}" "Launch app launcher")
+
+              (mkBindExeSh "SUPER" "i" "${pk} iwgtk || ${iwgtk}" "Launch the iwgtk wifi menu")
+
+              (mkBindExeSh "SUPER" "a" easyeffects "Launch easyeffects audio mixer")
+
+              (mkBindExeSh "SUPER+SHIFT" "c" "${pk} hyprpicker || ${hyprpicker} -an" "Launch hyprpicker")
+
+              (mkBindExeSh "SUPER" "x" "${pk} wleave || ${wleave}" "Launch the wleave logout menu")
+
+              # Bluetooth manager
+              (mkBindExeSh "SUPER+SHIFT" "i" "${pk} overskride || ${overskride}"
+                "Open the Overskride bluetooth manager"
+              )
+            ]
+          );
 
       bindl =
         (
@@ -112,31 +143,5 @@ in
             (mkBindExe "SHIFT" "F11" stop "Stop current track")
           ]
         );
-
-      bindr =
-        let
-          easyeffects = getExe config.services.easyeffects.package;
-          fuzzel = getExe config.programs.fuzzel.package;
-          pk = getExe' pkgs.busybox "pkill";
-          wleave = getExe config.programs.wleave.package;
-          iwgtk = getExe pkgs.iwgtk;
-          overskride = getExe pkgs.overskride;
-        in
-        [
-          (mkBindExeSh "SUPER" "d" "${pk} anyrun || ${fuzzel}" "Launch app launcher")
-
-          (mkBindExeSh "SUPER" "i" "${pk} iwgtk || ${iwgtk}" "Launch the iwgtk wifi menu")
-
-          (mkBindExeSh "SUPER" "a" "hyprctl clients | grep 'easyeffects' || ${easyeffects}"
-            "Launch easyeffects audio mixer"
-          )
-
-          (mkBindExeSh "SUPER" "x" "${pk} wleave || ${wleave}" "Launch the wleave logout menu")
-
-          # Bluetooth manager
-          (mkBindExeSh "SUPER+SHIFT" "i" "${pk} overskride || ${overskride}"
-            "Open the Overskride bluetooth manager"
-          )
-        ];
     };
 }
