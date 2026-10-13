@@ -204,7 +204,7 @@
               nixpkgs.hostPlatform = laptop.system;
               system.laptop = true;
               system.ai = {
-                enable = true;
+                enable = false;
                 small = true;
               };
               system = {
