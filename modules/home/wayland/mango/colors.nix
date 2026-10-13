@@ -41,6 +41,6 @@ in
       tab_bar_decorate_bg_color = alpha colors.base01 "20";
       tab_bar_decorate_focus_fg_color = hex colors.base05;
       tab_bar_decorate_focus_bg_color = alpha colors.base0D "60";
-      tab_bar_decorate_border_color = alpha colors.base0D "aa";
+      tab_bar_decorate_border_color = alpha colors.base0D "40";
     };
 }
