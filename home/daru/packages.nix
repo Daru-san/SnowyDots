@@ -63,6 +63,10 @@
       zynaddsubfx
       lsp-plugins
       decent-sampler
+      sorcer
+      vaporizer2
+      mda_lv2
+      carla
 
       # Documents
       glow
