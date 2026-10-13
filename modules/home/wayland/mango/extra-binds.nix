@@ -14,6 +14,10 @@ let
     "KP_Up"
     "KP_Prior"
   ];
+  directions-stack = {
+    left = "prev";
+    right = "next";
+  };
   directions = rec {
     left = "left";
     right = "right";
@@ -36,11 +40,6 @@ in
       "SUPER, down, viewtoright"
     ];
     bind = [
-      "SUPER, tab, focusstack, next"
-      "SUPER, right, focusstack, next"
-      "SUPER, left, focusstack, prev"
-      "SUPER+SHIFT, tab, focusstack, prev"
-
       "SUPER, page_up, viewtoleft,"
       "SUPER, page_down, viewtoright"
       "SUPER+SHIFT, page_up, tagtoleft"
@@ -55,12 +54,15 @@ in
     # Move window to workspace
     ++ (map (n: "SUPER+SHIFT,${n},tag,${n}, follow") workspaces)
     ++ (imap0 (n: key: "SUPER+SHIFT, ${key}, tag, ${toString n}, follow") workspaces-numpad)
+    # Focus next or previous window
+    ++ (mapAttrsToList (key: direction: "SUPER, ${key}, focusstack, ${direction}") directions-stack)
+    # Move window to next or previous position in stack
     ++ (mapAttrsToList (
-      key: direction: "SUPER+SHIFT, ${key}, exchange_stack_client, ${direction}"
-    ) directions)
-    ++
-      # Move windows
-      (mapAttrsToList (key: direction: "SUPER+CTRL,${key},move_client,${direction}") directions)
+      key: direction: "SUPER+CTRL, ${key}, exchange_stack_client, ${direction}"
+    ) directions-stack)
+    # ++
+    # Move windows
+    # (mapAttrsToList (key: direction: "SUPER+CTRL,${key},move_client,${direction}") directions)
     # ++
     # Move monitor focus
     # (mapAttrsToList (key: direction: "SUPER+ALT,${key},focusmon,${direction}") directions)
