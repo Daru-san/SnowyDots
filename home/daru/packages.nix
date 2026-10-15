@@ -53,6 +53,7 @@
       audacity
       lmms-full
       reaper
+      ardour
 
       # VST plugins
       dragonfly-reverb
