@@ -23,6 +23,9 @@
         hash = "sha256-gRe1QxNkNZ0mriIuQqS5RDCnuXNroHcNY0fJiLwGVmc=";
       };
     });
-    systemd.enable = true;
+    systemd = {
+      enable = true;
+      xdgAutostart = true;
+    };
   };
 }
