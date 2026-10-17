@@ -11,8 +11,10 @@
     [
       xdg-desktop-portal-gtk
     ]
-    ++ lib.optional config.wayland.windowManager.mango.enable or false xdg-desktop-portal-luminous
-    ++ lib.optional config.programs.niri.enable or false xdg-desktop-portal-gnome;
+    ++ lib.optional (config.wayland.windowManager.mango.enable or false)
+    ||
+      (config.wayland.windowManager.sway.enable or false) xdg-desktop-portal-luminous
+      ++ lib.optional config.programs.niri.enable or false xdg-desktop-portal-gnome;
   config = {
     sway = {
       default = [
