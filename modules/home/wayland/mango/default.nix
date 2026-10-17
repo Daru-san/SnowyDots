@@ -1,6 +1,6 @@
 {
   inputs,
-  pkgs,
+  system,
   ...
 }:
 {
@@ -14,15 +14,7 @@
     ./settings.nix
   ];
   wayland.windowManager.mango = {
-    package = pkgs.mango.overrideAttrs (_: rec {
-      version = "0.18.0";
-      src = pkgs.fetchFromGitHub {
-        owner = "mangowm";
-        repo = "mango";
-        tag = version;
-        hash = "sha256-gRe1QxNkNZ0mriIuQqS5RDCnuXNroHcNY0fJiLwGVmc=";
-      };
-    });
+    package = inputs.mango.packages.${system}.mango;
     systemd = {
       enable = true;
       xdgAutostart = true;
