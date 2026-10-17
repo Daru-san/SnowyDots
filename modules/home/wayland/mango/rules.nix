@@ -60,6 +60,8 @@
             (workspace 2 "zen")
             (workspace 2 "thunderbird")
 
+            (workspace 3 "btop")
+
             "app_id:^(org.gnome.Nautilus)(.*)$, title:^(?!Save).+$, tags:4"
 
             (workspace 5 "spotify")
