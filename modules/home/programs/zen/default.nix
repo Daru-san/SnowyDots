@@ -45,7 +45,6 @@
           buster-captcha-solver
           github-file-icons
           widegithub
-          hover-zoom-plus
           reddit-enhancement-suite
           ublock-origin
           tridactyl
