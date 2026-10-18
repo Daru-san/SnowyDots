@@ -39,7 +39,7 @@
     };
 
     fjord-launcher = {
-      url = "github:Cfauto28/FjordLauncherReUnlocked/11.0.3.1";
+      url = "github:Cfauto28/FjordLauncherReUnlocked/11.1.1.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
