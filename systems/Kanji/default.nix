@@ -10,6 +10,7 @@
   nixpkgs = {
     overlays = [
       outputs.overlays.stable-packages
+      inputs.mango.overlays.default
     ];
     config.allowUnfree = true;
   };
