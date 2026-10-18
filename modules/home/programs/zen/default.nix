@@ -517,7 +517,10 @@
             install_url = urlPrefix "auto-tab-discard";
             inherit installation_mode;
           };
-
+          "{c23d8eea-4e71-4573-a245-4c97f8e1a1e0}" = {
+            install_url = urlPrefix "photoshow";
+            inherit installation_mode;
+          };
           "bing@search.mozilla.org".installation_mode = "blocked";
         };
     };
