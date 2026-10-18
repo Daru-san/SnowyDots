@@ -158,16 +158,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1783841521,
-        "narHash": "sha256-YOD9taiii0AEgnU0QI6GmVyerBRjqhjzcXsq2qQhraU=",
+        "lastModified": 1790703354,
+        "narHash": "sha256-7FnVDjh3iUODZQmIYza8ulBrc8abspPufiQka95VX4w=",
         "owner": "Cfauto28",
         "repo": "FjordLauncherReUnlocked",
-        "rev": "95000fa2b037bcfdd838b0ee82166a50499c2d1e",
+        "rev": "29555b29f69b579584becf510cef350f5815fe36",
         "type": "github"
       },
       "original": {
         "owner": "Cfauto28",
-        "ref": "11.0.3.1",
+        "ref": "11.1.1.1",
         "repo": "FjordLauncherReUnlocked",
         "type": "github"
       }
