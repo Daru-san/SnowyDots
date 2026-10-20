@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    transmission_4-qt6
+    transmission_4
     flood-for-transmission
   ];
   services.transmission = {
