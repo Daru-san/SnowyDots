@@ -15,9 +15,9 @@
     webInterface = true;
     openFirewall = true;
     browsing = true;
-    drivers = with pkgs; [
-      hplipWithPlugin
-    ];
+    # drivers = with pkgs.stable; [
+    #   hplipWithPlugin
+    # ];
     browsed.enable = true;
     startWhenNeeded = true;
   };
