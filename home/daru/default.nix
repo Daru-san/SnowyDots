@@ -12,6 +12,7 @@
     ./home.nix
     ./theme
     ./packages.nix
+    ./input-method.nix
   ];
 
   nix.package = osConfig.nix.package;
