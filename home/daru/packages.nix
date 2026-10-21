@@ -29,7 +29,6 @@
       soundwireserver
       pavucontrol
       kdePackages.minuet
-      pixelkit
 
       # Media
       ffmpeg
