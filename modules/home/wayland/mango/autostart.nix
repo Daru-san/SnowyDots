@@ -12,7 +12,7 @@ in
 {
   wayland.windowManager.mango.settings = {
     exec_once = [
-      "${foot} -e ${osConfig.security.wrapperDir}/btop --app-id btop"
+      "${foot} --app-id btop -e ${osConfig.security.wrapperDir}/btop"
       (getExe pkgs.copyq)
       "${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent"
     ];
