@@ -70,6 +70,8 @@
       vaporizer2
       mda_lv2
       carla
+      vital
+      odin2
 
       # Documents
       glow
