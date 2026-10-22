@@ -50,7 +50,7 @@ in
     plugins.lsp.servers = {
       kotlin_language_server.enable = lib.mkForce false;
       kotlin_lsp = {
-        enable = true;
+        enable = false;
         package = pkgs.kotlin-lsp;
       };
       zls.package = lib.mkForce pkgs.zls_0_16;
