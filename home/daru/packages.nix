@@ -126,7 +126,7 @@
       nautilus
       fjordlauncherreunlocked
       libreoffice-qt
-      bitwig-studio6
+      # bitwig-studio6
       paulxstretch
       chow-kick
     ])
