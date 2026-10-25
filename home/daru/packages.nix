@@ -50,9 +50,7 @@
       adbtuifm
 
       # audio
-      (audacity.override {
-        qt6 = pkgs.stable.qt6;
-      })
+      audacity
       lmms-full
       reaper
       ardour
