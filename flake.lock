@@ -334,11 +334,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1792583796,
-        "narHash": "sha256-hB1980VFJomMKrHx0wG7/czP0mfSe8ZSRDCdtY+l1Sg=",
+        "lastModified": 1792958956,
+        "narHash": "sha256-tbVoaCA9EzxGjEHrt7SZ+2DZYyXwh0EICq8QFlqxMoo=",
         "owner": "Daru-san",
         "repo": "frostpak",
-        "rev": "07860d3b2850797402fad8f6ab4386e53241583e",
+        "rev": "68a4e732db3692acbb84074941ad6667cb11ce80",
         "type": "github"
       },
       "original": {
@@ -721,11 +721,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1792094642,
-        "narHash": "sha256-zp8ToDMnqZcu4o4IH9pdwXFXGp7yLm/M0dEnNWnyd7I=",
+        "lastModified": 1792773339,
+        "narHash": "sha256-rZLrzrC6i+jnTAlvPZHogKDulY7WWDEv9hJeHieO7Zw=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "fe13242281a67641c0102cdb1087f0ebe586c7df",
+        "rev": "3ec636362e1816bc2f0888fa0fa2c69f1bc9e504",
         "type": "github"
       },
       "original": {
