@@ -5,7 +5,7 @@
 {
   home.packages = with pkgs; [
     hut
-    codeberg-cli
+    forgejo-cli
     vala
     rustc
     cargo

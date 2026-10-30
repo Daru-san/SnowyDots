@@ -26,7 +26,6 @@
   programs.fish = {
     enable = true;
     interactiveShellInit = /* fish */ ''
-      ${pkgs.codeberg-cli}/bin/berg completion fish | source
       ${pkgs.gtrash}/bin/gtrash completion fish | source
       source ${pkgs.xmake}/share/xmake/scripts/completions/register-completions.fish
     '';
