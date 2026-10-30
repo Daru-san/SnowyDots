@@ -29,6 +29,7 @@
       soundwireserver
       pavucontrol
       kdePackages.minuet
+      simplenote
 
       # Media
       ffmpeg
