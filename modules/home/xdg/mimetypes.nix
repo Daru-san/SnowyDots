@@ -14,7 +14,14 @@
     [
       {
         "application/pdf" = "sioyek.desktop";
+        "text/html" = "zen-beta.desktop";
       }
+      (subtypes "x-scheme-handler" "zen-beta.desktop" [
+        "http"
+        "https"
+        "about"
+        "unknown"
+      ])
       (subtypes "image" "oculante.desktop" [
         "png"
         "jpeg"
