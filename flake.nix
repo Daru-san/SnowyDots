@@ -34,7 +34,7 @@
     niri.url = "github:sodiboo/niri-flake";
 
     mango = {
-      url = "github:mangowm/mango/0.18.2";
+      url = "github:mangowm/mango/0.18.4";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
