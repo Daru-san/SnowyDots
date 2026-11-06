@@ -122,11 +122,10 @@
         ]
       ))
 
-      file-roller
-      nautilus
+      kdePackages.ark
+      kdePackages.dolphin
       fjordlauncherreunlocked
       libreoffice-qt
-      # bitwig-studio6
       paulxstretch
       chow-kick
     ])
