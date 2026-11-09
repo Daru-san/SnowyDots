@@ -1,8 +1,10 @@
 { pkgs, ... }:
 {
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  services.scx = {
+  services.scx-loader = {
     enable = true;
-    scheduler = "scx_rustland";
+    config = {
+      default_sched = "scx_rustland";
+    };
   };
 }
