@@ -10,6 +10,7 @@
     with pkgs;
     [
       xdg-desktop-portal-gtk
+      kdePackages.xdg-desktop-portal-kde
     ]
     ++ lib.optional (
       (config.wayland.windowManager.mango.enable or false)
@@ -48,7 +49,7 @@
         "hyprland"
         "gtk"
       ];
-      "org.freedesktop.impl.portal.FileChooser" = "gnome";
+      "org.freedesktop.impl.portal.FileChooser" = "kde";
       "org.freedesktop.impl.portal.Access" = "gtk";
       "org.freedesktop.impl.portal.Notification" = "gtk";
       "org.freedesktop.impl.portal.Secret" = "gnome-keyring";
