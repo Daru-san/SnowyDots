@@ -24,6 +24,7 @@
         group.groupbar = {
           enabled = true;
           render_titles = false;
+          disable_when_only = true;
           height = 1;
         };
         decoration = {
