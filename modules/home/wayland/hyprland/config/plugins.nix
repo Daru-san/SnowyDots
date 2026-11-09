@@ -5,7 +5,6 @@ in
 {
   wayland.windowManager.hyprland = {
     plugins = with pkgs; [
-      hyprglass
       hyprlandPlugins.hy3
     ];
     settings.config.plugin = {
@@ -50,11 +49,6 @@ in
         autotile = {
           enable = true;
         };
-      };
-      hyprglass = {
-        enabled = true;
-        default_theme = "dark";
-        default_preset = "clear";
       };
     };
   };
