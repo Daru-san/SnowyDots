@@ -32,6 +32,7 @@ in
       power-profiles-daemon.enable = lib.mkForce false;
       tlp = {
         enable = true;
+        pd.enable = true;
         settings = {
           CPU_DRIVER_OPMODE_ON_AC = "active";
           CPU_DRIVER_OPMODE_ON_BAT = "passive";
