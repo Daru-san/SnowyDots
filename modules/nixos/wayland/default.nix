@@ -23,8 +23,11 @@ in
         openFirewall = true;
       };
     };
-    services.gnome = {
-      sushi.enable = false;
+    services.displayManager.noctalia-greeter = {
+      enable = true;
+      cursorTheme = {
+        inherit (config.stylix.cursor) name package;
+      };
     };
     security.pam.services.hyprlock = { };
     security.soteria.enable = false;
