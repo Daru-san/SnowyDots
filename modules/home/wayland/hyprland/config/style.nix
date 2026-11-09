@@ -29,9 +29,12 @@
         };
         decoration = {
           rounding = 6;
-          blur.enabled = true;
-          shadow = {
+          blur = {
             enabled = true;
+            input_methods = true;
+            new_optimizations = true;
+            passes = 1;
+            variant = "haze";
           };
           dim_inactive = true;
           dim_strength = 0.34;
