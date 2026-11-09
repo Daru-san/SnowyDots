@@ -48,6 +48,7 @@ in
     '';
     plugins.jdtls.enable = lib.mkForce false;
     plugins.lsp.servers = {
+      asm_lsp.enable = lib.mkForce false;
       kotlin_language_server.enable = lib.mkForce false;
       kotlin_lsp = {
         enable = false;
