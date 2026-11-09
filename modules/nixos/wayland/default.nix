@@ -27,7 +27,7 @@ in
       sushi.enable = false;
     };
     security.pam.services.hyprlock = { };
-    security.soteria.enable = true;
+    security.soteria.enable = false;
     services.greetd = {
       enable = true;
       useTextGreeter = true;
