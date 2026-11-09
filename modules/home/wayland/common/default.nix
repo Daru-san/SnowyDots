@@ -51,6 +51,7 @@ in
       foot.enable = true;
       wleave.enable = true;
       noctalia.enable = true;
+      alacritty.enable = true;
     };
     home.packages = with pkgs; [
       wl-clipboard-rs
