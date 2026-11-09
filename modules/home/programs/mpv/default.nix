@@ -6,6 +6,7 @@
     config = {
       hwdec = "auto-safe";
       vo = "gpu";
+      gpu-api = "opengl";
       taskbar-progress = false;
       keep-open = "always";
       profile = "gpu-hq";
