@@ -112,6 +112,8 @@
       mprocs
       authenticator
       rink
+      tuidict
+      jatoba
       pandoc
       (texliveMedium.withPackages (
         ps: with ps; [
