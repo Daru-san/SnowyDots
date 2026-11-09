@@ -15,8 +15,8 @@ in
       dconf.enable = true;
       seahorse.enable = true;
       niri.enable = false;
-      hyprland.enable = false;
       mango.enable = true;
+      hyprland.enable = true;
       weylus = {
         enable = true;
         users = [ "daru" ];
