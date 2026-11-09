@@ -23,7 +23,7 @@
     git-repo
     socat
     zbus-xmlgen
-    nnd
+    stable.nnd
     bacon
     glab
     luajit
