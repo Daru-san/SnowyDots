@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
   services.scx-loader = {
     enable = true;
     config = {
