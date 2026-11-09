@@ -44,7 +44,7 @@
       asciinema-agg
       kdePackages.kdenlive
       novelwriter
-      tagainijisho
+      stable.tagainijisho
 
       # Desktop
       awww
