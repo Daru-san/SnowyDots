@@ -50,7 +50,7 @@
         misc = {
           vrr = 3;
           enable_anr_dialog = false;
-          render_unfocused_fps = 0;
+          render_unfocused_fps = 1;
           animate_mouse_windowdragging = false;
           enable_swallow = true;
           mouse_move_enables_dpms = true;
