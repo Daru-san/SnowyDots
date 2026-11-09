@@ -106,6 +106,7 @@
       hexyl
       xdg-user-dirs
       lz4
+      hydra-check
       android-tools
       toml2nix
       mprocs
