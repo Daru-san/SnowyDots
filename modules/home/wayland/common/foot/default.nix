@@ -2,6 +2,7 @@
   programs.foot = {
     server.enable = true;
     settings = {
+      colors-dark.blur = true;
       main = {
         app-id = "footerm";
         term = "xterm-256color";
@@ -25,8 +26,8 @@
         osc52 = "enabled";
       };
       desktop-notifications = {
-        command = ''notify-send --wait --app-name ''${app-id} --icon ''${app-id} --category ''${category} --urgency ''${urgency} --expire-time ''${expire-time} --hint STRING:image-path:''${icon} --hint BOOLEAN:suppress-sound:''${muted} --hint STRING:sound-name:''${sound-name} --replace-id ''${replace-id} ''${action-argument} --print-id -- ''${title} ''${body}'';
-        command-action-argument = ''--action ''${action-name}=''${action-label}'';
+        command = "notify-send --wait --app-name \${app-id} --icon \${app-id} --category \${category} --urgency \${urgency} --expire-time \${expire-time} --hint STRING:image-path:\${icon} --hint BOOLEAN:suppress-sound:\${muted} --hint STRING:sound-name:\${sound-name} --replace-id \${replace-id} \${action-argument} --print-id -- \${title} \${body}";
+        command-action-argument = "--action \${action-name}=\${action-label}";
         inhibit-when-focused = true;
       };
     };
