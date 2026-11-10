@@ -34,8 +34,9 @@
             input_methods = true;
             new_optimizations = true;
             passes = 1;
-            variant = "haze";
+            variant = "kawase";
           };
+          motion_blur.enabled = true;
           dim_inactive = true;
           dim_strength = 0.34;
         };
