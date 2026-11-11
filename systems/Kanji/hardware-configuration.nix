@@ -21,6 +21,11 @@
       fsType = "ext4";
     };
 
+    "/mnt/thaw" = {
+      device = "/dev/disk/by-label/hard";
+      fsType = "ext4";
+    };
+
     "/boot" = {
       device = "/dev/disk/by-uuid/7ED4-6E7F";
       fsType = "vfat";
