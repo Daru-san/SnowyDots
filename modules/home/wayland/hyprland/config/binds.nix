@@ -103,7 +103,8 @@ in
 
             (mkBind "SUPER+SHIFT" "e" "hl.dsp.exit()" "Exit hyprland session")
 
-            (mkBind "SUPER+SHIFT" "q" "hl.dsp.window.kill()" "Kill active window")
+            (mkBind "SUPER+SHIFT" "q" "hl.dsp.window.close()" "Close active window")
+            (mkBind "SUPER+CTRL" "q" "hl.dsp.window.kill()" "Force kill active window")
             (mkBind "SUPER" "f" "hl.dsp.window.fullscreen()" "Toggle fullscreen")
             (mkBind "SUPER" "v" "hl.dsp.window.float()" "Toggle floating")
 
