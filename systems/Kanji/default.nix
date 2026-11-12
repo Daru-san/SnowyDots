@@ -23,7 +23,6 @@
       "nixpkgs=${inputs.nixpkgs}"
       "nixos-config=${./configuration.nix}"
     ];
-    trustedUsers = [ "builder" ];
   };
   environment.etc = lib.mapAttrs' (name: value: {
     name = "nix/path/${name}";
@@ -42,6 +41,7 @@
     trusted-users = [
       "root"
       "daru"
+      "builder"
     ];
     builders-use-substitutes = true;
     substituters = [
