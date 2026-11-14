@@ -24,7 +24,7 @@ in
       };
     };
     services.displayManager.noctalia-greeter = {
-      enable = true;
+      enable = false;
       cursorTheme = {
         inherit (config.stylix.cursor) name package;
       };
