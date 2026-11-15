@@ -17,7 +17,9 @@ in
   xdg.configFile = import ./config-files.nix { inherit vale lib config; };
   programs.helix = {
     enable = true;
-    package = pkgs.mitos;
+    package = pkgs.mitos.overrideAttrs (_: {
+      buildInputs = with pkgs; [ aws-lc ];
+    });
     languages = import ./languages.nix { inherit pkgs lib vale; };
     defaultEditor = false;
     extraPackages = import ./packages.nix { inherit pkgs inputs; };
