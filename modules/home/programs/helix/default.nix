@@ -72,18 +72,18 @@ in
             "separator"
             "diagnostics"
             "workspace-diagnostics"
-            "spacer"
           ];
           right = [
-            "file-name"
             "file-modification-indicator"
+            "file-name"
             "separator"
-            "file-type"
             "spinner"
+            "file-type"
             "separator"
             "selections"
             "position"
             "position-percentage"
+            "spacer"
             "separator"
             "current-working-directory"
           ];
