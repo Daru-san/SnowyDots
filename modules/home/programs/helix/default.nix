@@ -11,19 +11,31 @@ let
     s.google
     s.write-good
   ]);
+  extraPackages = import ./packages.nix { inherit pkgs inputs; };
+  mitos = pkgs.mitos.overrideAttrs (o: {
+    nativeBuildInputs = o.nativeBuildInputs ++ [ pkgs.pkg-config ];
+    buildInputs = with pkgs; [ aws-lc ];
+  });
+
 in
 {
   stylix.targets.helix.enable = config.programs.helix.enable;
   xdg.configFile = import ./config-files.nix { inherit vale lib config; };
   programs.helix = {
     enable = true;
-    package = pkgs.mitos.overrideAttrs (_: {
-      buildInputs = with pkgs; [ aws-lc ];
-    });
+    package = pkgs.symlinkJoin {
+      name = "${lib.getName mitos}-wrapped-${lib.getVersion mitos}";
+      paths = [ mitos ];
+      preferLocalBuild = true;
+      nativeBuildInputs = [ pkgs.makeWrapper ];
+      postBuild = ''
+        wrapProgram $out/bin/ms \
+          --suffix PATH : ${lib.makeBinPath extraPackages}
+      '';
+    };
     languages = import ./languages.nix { inherit pkgs lib vale; };
     defaultEditor = false;
     themes = import ./themes { inherit lib; };
-    extraPackages = import ./packages.nix { inherit pkgs inputs; };
     settings = {
       keys = import ./keys.nix;
       theme = lib.mkForce "greyscale-dark";
