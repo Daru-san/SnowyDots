@@ -38,6 +38,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    mitos = {
+      url = "github:mitos-editor/mitos/v0.2.1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     fjord-launcher = {
       url = "github:Cfauto28/FjordLauncherReUnlocked/11.1.1.1";
       inputs.nixpkgs.follows = "nixpkgs";

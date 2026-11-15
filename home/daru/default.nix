@@ -25,6 +25,7 @@
       inputs.frostpak.overlays.default
       inputs.kotlin-lsp.overlays.default
       inputs.fjord-launcher.overlays.default
+      inputs.mitos.overlays.default
       (_: _: {
         paulxstretch = inputs.audio.packages.${system}.paulxstretch;
       })
