@@ -61,30 +61,31 @@ in
           insert = "bar";
           select = "underline";
         };
+        whitespace.render = "none";
+        breadcrumb.enable = true;
         bufferline = "multiple";
         statusline = {
           left = [
             "mode"
-            "version-control"
-            "spinner"
+            "separator"
+            "branch"
             "separator"
             "diagnostics"
-            "separator"
             "workspace-diagnostics"
-          ];
-          center = [
-            "file-name"
-            "read-only-indicator"
-            "file-modification-indicator"
+            "spacer"
           ];
           right = [
+            "file-name"
+            "file-modification-indicator"
+            "separator"
             "file-type"
+            "spinner"
             "separator"
             "selections"
-            "register"
             "position"
             "position-percentage"
-            "file-encoding"
+            "separator"
+            "current-working-directory"
           ];
           separator = "|";
           mode.normal = "NORMAL";
