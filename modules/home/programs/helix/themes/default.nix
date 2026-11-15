@@ -1,7 +1,3 @@
-{ lib, ... }:
-let
-  themes = import ./npins/default.nix;
-in
 {
   wryan = builtins.readFile ./wryan.toml;
   black-metal-marduk = builtins.readFile ./black-metal-marduk.toml;
