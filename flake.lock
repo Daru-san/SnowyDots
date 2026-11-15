@@ -446,6 +446,27 @@
         "type": "github"
       }
     },
+    "mitos": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1794213183,
+        "narHash": "sha256-t2FLmuFm0MNBgxTxoLv6ViYP3o3Oyk5ONI9XwUqH37Q=",
+        "owner": "mitos-editor",
+        "repo": "mitos",
+        "rev": "dcd3c8651e20d5667a0b03a1365cf67f05ff6a60",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mitos-editor",
+        "ref": "v0.2.1",
+        "repo": "mitos",
+        "type": "github"
+      }
+    },
     "mucap": {
       "inputs": {
         "naersk": "naersk",
@@ -922,6 +943,7 @@
         "home-manager": "home-manager",
         "kotlin-lsp": "kotlin-lsp",
         "mango": "mango",
+        "mitos": "mitos",
         "musnix": "musnix",
         "niri": "niri",
         "nix-flatpak": "nix-flatpak",
