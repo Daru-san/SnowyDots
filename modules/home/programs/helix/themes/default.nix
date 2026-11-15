@@ -3,12 +3,14 @@ let
   themes = import ./npins/default.nix;
 in
 {
-  aegir = builtins.readFile "${themes.aegir.outPath}/themes/aegir";
-  aegir_transparent = builtins.readFile "${themes.aegir.outPath}/themes/aegir_transparent.toml";
-  darkvoid = builtins.readFile "${themes.darkvoid.outPath}/darkvoid.toml";
-  grayscale = builtins.readFile "${themes.grayscale.outPath}/themes/grayscale.toml";
-  oxocarbon = builtins.readFile "${themes.oxocarbon.outPath}/oxocarbon.toml";
-  rose_pine = builtins.readFile "${themes.rose-pine.outPath}/rose_pine.toml";
-  rose_pine_dawm = builtins.readFile "${themes.rose-pine.outPath}/rose_pine_dawn.toml";
-  rose_pine_moon = builtins.readFile "${themes.rose-pine.outPath}/rose_pine_moon.toml";
+  wryan = builtins.readFile ./wryan.toml;
+  black-metal-marduk = builtins.readFile ./black-metal-marduk.toml;
+  black-metal = builtins.readFile ./black-metal.toml;
+  black-metal-immortal = builtins.readFile ./black-metal-immortal.toml;
+  black-metal-khold = builtins.readFile ./black-metal-khold.toml;
+  black-metal-gorgoroth = builtins.readFile ./black-metal-gorgoroth.toml;
+  berlin = builtins.readFile ./berlin.toml;
+  greyscale-dark = builtins.readFile ./grayscale-dark.toml;
+  mountain = builtins.readFile ./mountain.toml;
+  sequoia-monochrome-dark = builtins.readFile ./sequoia-monochrome-dark.toml;
 }

@@ -22,10 +22,11 @@ in
     });
     languages = import ./languages.nix { inherit pkgs lib vale; };
     defaultEditor = false;
+    themes = import ./themes { inherit lib; };
     extraPackages = import ./packages.nix { inherit pkgs inputs; };
-    # themes = import ./themes { inherit lib; };
     settings = {
       keys = import ./keys.nix;
+      theme = lib.mkForce "greyscale-dark";
       editor = {
         auto-save = {
           after-delay.enable = true;
