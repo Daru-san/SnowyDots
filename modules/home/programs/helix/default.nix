@@ -35,7 +35,7 @@ in
     };
     languages = import ./languages.nix { inherit pkgs lib vale; };
     defaultEditor = false;
-    themes = import ./themes { inherit lib; };
+    themes = import ./themes;
     settings = {
       keys = import ./keys.nix;
       theme = lib.mkForce "greyscale-dark";
